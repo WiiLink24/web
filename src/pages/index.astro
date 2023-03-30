@@ -1,4 +1,5 @@
 ---
+import Base from '../components/BaseHead.astro';
 import Services from '../components/Services.astro';
 import Header from '../components/HeaderMain.astro';
 import Footer from '../components/Footer.astro';
@@ -11,14 +12,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
 <!DOCTYPE html>
 <html lang="en-us">
-    
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="icon" type="image/x-icon" href=" ./Images/Favicon.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-
+    <Base />
     <body>
     <Header/>
 
@@ -34,7 +28,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
         <div class="topimg">
             <div class="imgbg"></div>
-            <div class="fade"></div>
         </div>
 
         <div class="herologoholder">
@@ -113,13 +106,29 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             <!-- Donators and Discord section -->
         <Donators />
 
-			<Footer />
+		<Footer />
 
             <!-- Activate parallax effect from Hero section -->
             <script>
                 import Parallax from "parallax-js";
                 var scene = document.getElementById('scene');
                 var parallaxInstance = new Parallax(scene);
+            </script>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+                });
+                }
             </script>
     </body>
 </html>

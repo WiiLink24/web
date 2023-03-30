@@ -23,49 +23,10 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</div>
-	</main>
-
 </body>
 
 
 <style>
-
-	.header{
-		left:5%;
-		width:900px;
-		font-size: 50px;
-		color:white;
-		line-height: 0px;
-		position: absolute;
-		font-family: Gilroy;
-	}
-
-	.new{
-		right:20px;
-		top:20px;
-		position: absolute;
-		color:white;
-		font-family: Gilroy;
-		padding-left:10px;
-		padding-right:10px;
-		padding-top:5px;
-		padding-bottom:5px;
-		background-color: red;
-		border-radius:8px;
-		z-index:1111;
-		display:none;
-	}
-
-	.mainpost{
-		display: none;
-		width:100%;
-		height:50%;
-		top:0;
-		left:0;
-		position: absolute;
-		overflow:hidden;
-	}
-
 	.post:nth-child(1){
 		display: block;
 	}
@@ -82,10 +43,6 @@ const posts = (await getCollection('blog')).sort(
 		display: block;
 	}
 
-	.mainpost:nth-child(1){
-		display: block;
-	}
-
 	.postholder{
 		width:80%;
 		display: grid;
@@ -97,6 +54,7 @@ const posts = (await getCollection('blog')).sort(
 		position: relative;
 		z-index: 10;
 	}
+	
 	.post{
 		position: relative;
     	height:250px;
@@ -118,10 +76,10 @@ const posts = (await getCollection('blog')).sort(
     	transition: 0.5s;
   	}
 
-  .post:hover img{
-	filter: blur(8px) brightness(0.7);
-	z-index:0;
-	transition: 0.5s;
+  	.post:hover img{
+		filter: blur(8px) brightness(0.7);
+		z-index:0;
+		transition: 0.5s;
   	}
 
 	img{
@@ -135,35 +93,6 @@ const posts = (await getCollection('blog')).sort(
 		left:50%;
 		transform: translate(-50%,0);
 		position: absolute;
-	}
-
-	.maintitle{
-		position: absolute;
-		z-index: 11;
-		font-size: 60px;
-		top:40%;
-		text-align: center;
-		left: 50%;
-		transform: translate(-50%,0);
-		font-family: Gilroy;
-		transition: 0.5s;
-	}
-
-	.maindesc{
-		position: absolute;
-		z-index: 11;
-		font-size: 30px;
-		top:54%;
-		text-align: center;
-		left: 50%;
-		transform: translate(-50%,0);
-		font-family: Cafe;
-		transition: 0.5s;
-		display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 	}
 
 	.title{
@@ -191,11 +120,11 @@ const posts = (await getCollection('blog')).sort(
 		bottom:0;
 		transform:translate(0,50px);
 		transition: 0.5s;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    	display: -webkit-box;
+    	-webkit-line-clamp: 1;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
 	}
 
 	.post:hover .desc{
@@ -225,12 +154,6 @@ const posts = (await getCollection('blog')).sort(
 		color:white;
 	}
 
-	@for $i from 1 through 10 {
-    .post:nth-child(#{$i}n) {
-		animation-name:fadeup;
-        animation-delay: #{$i * 0.5}s;
-    }
-
 	@keyframes fadeup{
 		0%{
 			opacity:0;
@@ -239,7 +162,6 @@ const posts = (await getCollection('blog')).sort(
 			opacity:1;
 		}
 	}
-}
 
 @media (max-width:1000px) {
 	.postholder{

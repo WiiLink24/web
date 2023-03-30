@@ -1,5 +1,5 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
+import Base from '../../components/BaseHead.astro';
 import Header from '../../components/Header.astro';
 import '../../styles/global.css';
 import Footer from '../../components/Footer.astro';
@@ -11,6 +11,8 @@ const posts = (await getCollection('blog')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
+
+<Base />
 
 <body>
 	<main>
@@ -285,6 +287,22 @@ const posts = (await getCollection('blog')).sort(
 		transform: translate(0, 50px);
 		transition: 0.5s;
 	}
+
+	.polka-dot {
+    	width: 240px;
+    	height: 240px;
+    	background-image: radial-gradient(#fff 10%, transparent 11%),
+      	radial-gradient(#fff 10%, transparent 11%);
+		background-size:30px 30px;
+    	background-position: 0 0, 30px 30px;
+    	opacity: 0.3;
+    	rotate: 30deg;
+    	left:-50px;
+    	top:-80px;
+    	background-repeat: repeat;
+    	position: absolute;
+    	z-index: 0;
+  	}
 
 	a{
 		bottom:50px;

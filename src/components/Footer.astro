@@ -1,18 +1,17 @@
 ---
 const today = new Date();
 ---
-
 <footer>
 	<div class="copyright">
 		<img class="copyimg" src="../../Images/wiimotes_logo.png">
 		<h3 class="copydesc">WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!</h3>
 		<h2 class="copytext"> <b style="font-family:RubikBold">Wii</b><b style="font-family:RubikMedium">Link</b> Team </br><d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></h2>
 		<div class="socials">
-			<img class="social" src="../../Images/github.svg">
-			<img class="social" src="../../Images/discord.svg">
-			<img class="social" src="../../Images/twitter.svg">
-			<img class="social" src="../../Images/patreon.svg">
-			<img class="social" src="../../Images/youtube.svg">
+			<a class="social" href="https://github.com/WiiLink24"><img src="../../Images/github.svg" width="30px"></a>
+			<a class="social" href="https://discord.gg/wiilink-750581992223146074"><img src="../../Images/discord.svg" width="30px"></a>
+			<a class="social" href="https://twitter.com/wiilink24?lang=es"><img src="../../Images/twitter.svg" width="30px"></a>
+			<a class="social" href="https://www.patreon.com/WiiLink24"><img src="../../Images/patreon.svg" width="30px"></a>
+			<a class="social" href="https://www.youtube.com/@WiiLink"><img src="../../Images/youtube.svg" width="30px"></a>
 		</div>
 		</div>
 	</div>
@@ -88,6 +87,10 @@ const today = new Date();
     top:18px;
     left:8%;
     position: absolute;
+}
+
+img{
+    border-radius: 0px;
 }
 
 </style>

@@ -15,7 +15,7 @@ import { SITE_TITLE } from '../consts';
 	<a href="/guide/faq"><div class="banner"> FAQ</div></a>
 	<div class="banner strong"> Install now</div>
 </ul>
-<img class="donate" src=" ../../Images/patreon.svg" width="30px">
+<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px"></a>
 <img class="langswitch" src=" ../../Images/langswitcher.png" width="30px">
 </r>
 
@@ -27,29 +27,8 @@ var r = document.querySelector("r");
 r.classList.toggle("sticky", window.scrollY > 500);
 	})
 </script>
-	<script>
-		window.addEventListener("scroll", function() {
-	var t = document.querySelector("t");
-	t.classList.toggle("sticky", window.scrollY > 0);
-		})
-	</script>
 <script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.display === "block") {
-  content.style.display = "none";
-} else {
-  content.style.display = "block";
-}
-});
-}
-</script>
 
 <style>
 
@@ -90,6 +69,12 @@ a:visited{
 	transform: translate(0,-50%);
 	filter: invert(1) opacity(0.7);
 	position: absolute;
+	transition: 0.2s;
+}
+
+.langswitch:hover{
+	filter: invert(1) opacity(1);
+	transition: 0.2s;
 }
 
 .donate{
@@ -98,6 +83,12 @@ a:visited{
 	transform: translate(0,-50%);
 	filter: invert(1) opacity(0.7);
 	position: absolute;
+	transition: 0.2s;
+}
+
+.donate:hover{
+	filter: invert(39%) sepia(54%) saturate(2336%) hue-rotate(332deg) brightness(82%) contrast(111%);
+	transition: 0.2s;
 }
 
 ul{
@@ -180,5 +171,9 @@ r.sticky ul{
 	left:50%;
 	transform: translate(-50%, -50%);
 	transition: 0.5s;
+}
+
+img{
+	border-radius: 0px;
 }
 </style>

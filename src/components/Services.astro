@@ -1,15 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
-import '../styles/global.css';
-const posts = (await getCollection('services'));
 import '../styles/global.css';
 ---
 
 <div class="itineraries">  
     <div class="itn">
         <div class="itnbg itn1"></div>
-        <img class="itnimg" style="width:50%;" src=" ./Images/wiiroomicon.png">
-        <img class="itnimg2" src=" ./Images/wiinomaicon.svg">  
+        <img class="itnimg" src=" ./Images/wiinomaicon.svg">  
         <h2 class="itnhead">Wii Room</h2>
         <h4 class="itnjpn">Wii no Ma</h4>
         <h3 class="itndesc">Watch new videos with Wii Room, a unique take on video on-demand.</h3>
@@ -17,8 +13,7 @@ import '../styles/global.css';
 
     <div class="itn">
         <div class="itnbg itn2"></div>
-        <img class="itnimg" src=" ./Images/digicamicon.png"> 
-        <img class="itnimg2" src=" ./Images/digicapicon2.svg">      
+        <img class="itnimg" src=" ./Images/digicapicon2.svg">      
         <h2 class="itnhead">Photo Print Channel</h2>
         <h4 class="itnjpn">Digicam Print Channel</h4>
         <h3 class="itndesc">Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.</h3>
@@ -26,16 +21,14 @@ import '../styles/global.css';
 
     <div class="itn">
         <div class="itnbg itn3"></div>
-        <img class="itnimg" src=" ./Images/kirbytvicon.png">
-        <img class="itnimg2" src=" ./Images/krbtvicon.svg">  
+        <img class="itnimg" src=" ./Images/krbtvicon.svg">  
         <h2 class="itnhead">Kirby TV Channel</h2>
         <h3 class="itndesc">Watch the original Kirby anime right from your Wii with the Kirby TV Channel.</h3>
     </div>
 
     <div class="itn">
         <div class="itnbg itn4"></div>
-        <img class="itnimg" src=" ./Images/damaeicon.png">
-        <img class="itnimg2" src=" ./Images/demaeicon.svg">
+        <img class="itnimg" src=" ./Images/demaeicon.svg">
         <h2 class="itnhead">Food Channel</h2>
         <h4 class="itnjpn">Demae Channel</h4>
         <h3 class="itndesc">Order food with the Food Channel and bring tasty goodness straight to your house.</h3>
@@ -43,24 +36,21 @@ import '../styles/global.css';
 
     <div class="itn">
         <div class="itnbg itn5"></div>
-        <img class="itnimg" src=" ./Images/weatherbg.png">
-        <img class="itnimg2" src=" ./Images/forecasticon.svg">  
+        <img class="itnimg" src=" ./Images/forecasticon.svg">  
         <h2 class="itnhead">Forecast Channel</h2>
         <h3 class="itndesc">Check the weather right on your Wii, and plan your attire in accordingly.</h3>
     </div>
 
     <div class="itn">
         <div class="itnbg itn6"></div>
-        <img class="itnimg" src=" ./Images/ntdochannelbg.png">
-        <img class="itnimg2" src=" ./Images/ntdoicon.svg">  
+        <img class="itnimg" src=" ./Images/ntdoicon.svg">  
         <h2 class="itnhead">Nintendo Channel</h2>
         <h3 class="itndesc">Watch all sorts of trailers, promos, and shows all from one interface.</h3>
     </div>
 
     <div class="itn">
         <div class="itnbg itn7"></div>
-        <img class="itnimg" src=" ./Images/tvtomobg.png">
-        <img class="itnimg2" src=" ./Images/tvnotomoicon.svg">
+        <img class="itnimg" src=" ./Images/tvnotomoicon.svg">
         <h2 class="itnhead">TV Guide Channel</h2>
         <h4 class="itnjpn">Terebi no Tomo Channel</h4>
         <h3 class="itndesc">Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!</h3>
@@ -90,57 +80,19 @@ import '../styles/global.css';
         transition: 0.5s;
     }
     
-    .objects{
-        width: 80%;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
-        gap: 30px;
-        top:30%;
-        left:50%;
-        transform: translate(-50%,0);
-        position: absolute;
-    }
-    
-    .obj{
-        position: relative;
-        height:250px;
-        width:100%;
-        background-color:rgba(21, 13, 23, 1);
-        border-radius: 18px;
-        hyphens:auto;
-        overflow: hidden;
-        transition: 0.5s;
-    }
-    
-      .itn:hover{
+    .itn:hover{
         background-color:rgba(206, 206, 206, 0.117);
         transform: translate(0,-5px);
         box-shadow: 0px 0px 70px rgb(43, 43, 43);
         transition: 0.5s;
       }
-    
-    .itn:hover .itnbg{
-        width:60%;
-    }
 
-    .itn:hover .itnimg2{
+    .itn:hover .itnimg{
         opacity:0.3;
         transform: translate(0px, -50%);
     }
     
     .itnimg{
-        width:45%;
-        right:-20px;
-        top:0;
-        left:0;
-        z-index: 1;
-        transform: translate(0,0px);
-        opacity:0;
-        position: absolute;
-        transition:0.5s;
-    }
-    
-    .itnimg2{
         width:25%;
         right:-20px;
         top:50%;
@@ -173,9 +125,9 @@ import '../styles/global.css';
     .itnbg{
         width:30%;
         height:130%;
-        rotate: 6deg;
+        rotate: 0deg;
         top:-10%;
-        left:-20%;
+        left:-25%;
         background-color: rgba(0, 0, 0, 0.506);
         z-index: 0;
         transition: 0.5s;
@@ -219,15 +171,12 @@ import '../styles/global.css';
     }
     
     .itn:hover .itnbg{
+        width:65%;
         opacity:0.8;
+        rotate: 6deg;
         transition: 0.5s;
     }
-    
-    .itn:hover .itnimg{
-       transform: translate(0,-20px);
-        transition: 0.5s;
-    }
-    
+
     .itnhead{
         right:20px;
         top:0%;
