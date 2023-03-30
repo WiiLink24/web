@@ -1,0 +1,93 @@
+---
+const today = new Date();
+---
+
+<footer>
+	<div class="copyright">
+		<img class="copyimg" src="../../Images/wiimotes_logo.png">
+		<h3 class="copydesc">WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!</h3>
+		<h2 class="copytext"> <b style="font-family:RubikBold">Wii</b><b style="font-family:RubikMedium">Link</b> Team </br><d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></h2>
+		<div class="socials">
+			<img class="social" src="../../Images/github.svg">
+			<img class="social" src="../../Images/discord.svg">
+			<img class="social" src="../../Images/twitter.svg">
+			<img class="social" src="../../Images/patreon.svg">
+			<img class="social" src="../../Images/youtube.svg">
+		</div>
+		</div>
+	</div>
+</footer>
+<style>
+.copyright{
+    bottom:0;
+    position: relative;
+	left:0;
+    width:100%;
+    height:200px;
+    background-image:url("../../Images/copyrightbg.png");
+    top:200px;
+    z-index: 5;
+    background-size: cover;
+}
+
+.copytext{
+    transform: translate(-100%,0);
+	font-family:Gilroy;
+    bottom:0;
+    right:170px;
+    font-size: 30px;
+    position: absolute;
+    text-align: right;
+    color: white;
+}
+
+.copyimg{
+    bottom:0; right:8%; position: absolute; width: 200px;
+}
+
+.socials{
+    display: flex;
+    width:20%;
+    position: absolute;
+    gap:15px;
+    left:8%;
+    bottom:30px;
+    transform: translate(0%,0);
+}
+
+.social:nth-child(1):hover{
+    filter: invert(4%) sepia(15%) saturate(6007%) hue-rotate(188deg) brightness(95%) contrast(100%);
+}
+
+.social:nth-child(2):hover{
+    filter: invert(12%) sepia(89%) saturate(3850%) hue-rotate(236deg) brightness(109%) contrast(88%);
+}
+
+.social:nth-child(3):hover{
+    filter: invert(57%) sepia(15%) saturate(2103%) hue-rotate(170deg) brightness(91%) contrast(93%);
+}
+
+.social:nth-child(4):hover{
+    filter: invert(39%) sepia(54%) saturate(2336%) hue-rotate(332deg) brightness(82%) contrast(111%);
+}
+
+.social:nth-child(5):hover{
+    filter: invert(9%) sepia(98%) saturate(6969%) hue-rotate(1deg) brightness(102%) contrast(93%);
+}
+
+.social{
+    width:30px;
+    height:30px;
+    filter: invert(100%) sepia(8%) saturate(7493%) hue-rotate(284deg) brightness(114%) contrast(103%);
+}
+
+.copydesc{
+    width:500px;
+    line-height: 1.5;
+    text-align: justify;
+    top:18px;
+    left:8%;
+    position: absolute;
+}
+
+</style>

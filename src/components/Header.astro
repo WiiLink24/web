@@ -1,0 +1,168 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import { SITE_TITLE } from '../consts';
+---
+
+
+
+<r class="bannerholder">
+	<a href="/"><img class="logo" src=" ../../Images/Wii_Link_Logo.png" width="200px"></a>
+	<ul>
+	<a href="/"><div class="banner"> Home</div></a>
+	<a href="/blog"><div class="banner"> News</div></a>
+	<a href="/guide/welcome"><div class="banner"> Guide</div></a>
+	<div class="banner"> Status</div>
+	<a href="/guide/faq"><div class="banner"> FAQ</div></a>
+	<div class="banner strong"> Install now</div>
+</ul>
+<img class="donate" src=" ../../Images/patreon.svg" width="30px">
+<img class="langswitch" src=" ../../Images/langswitcher.png" width="30px">
+</r>
+
+
+
+<script>
+	window.addEventListener("scroll", function() {
+var r = document.querySelector("r");
+r.classList.toggle("sticky", window.scrollY > 0);
+	})
+</script>
+	<script>
+		window.addEventListener("scroll", function() {
+	var t = document.querySelector("t");
+	t.classList.toggle("sticky", window.scrollY > 0);
+		})
+	</script>
+<script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+  content.style.display = "none";
+} else {
+  content.style.display = "block";
+}
+});
+}
+</script>
+
+<style>
+
+a:link{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.53);
+}
+
+a:visited{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.53);
+}
+
+.bannerholder{
+    top:0;
+    left:0;
+	width:100%;
+	height:128px;
+	background-color: rgba(255, 255, 255, 0);
+    z-index: 80;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.logo{
+	top:50%;
+	left:8%;
+	transform: translate(0,-50%);
+	position: absolute;
+}
+
+.donate{
+	top:50%;
+	right:12%;
+	transform: translate(0,-50%);
+	filter: invert(1) opacity(0.7);
+	position: absolute;
+}
+
+.langswitch{
+	top:50%;
+	right:8%;
+	transform: translate(0,-50%);
+	filter: invert(1) opacity(0.7);
+	position: absolute;
+}
+
+ul{
+	display: flex;
+	gap:30px;
+	left:20%;
+	top:40%;
+	transform: translate(0, -50%);
+	font-family: Cafe;
+	color:rgba(255, 255, 255, 0.53);
+	position: absolute;
+}
+
+.banner{
+    position:relative;
+    transition: 0.5s;
+}
+
+.banner:hover{
+	color:white;
+}
+
+.strong{
+	background: rgba(255, 0, 0, 0);
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+	border-radius: 18px;
+	border:2px solid rgb(62, 161, 85);
+	transform: translate(-8px, -7px);
+}
+
+.strong:hover{
+	background: rgb(62, 161, 85);
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.fade{
+    width:100%;
+    height:200px;
+    bottom:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
+    z-index: 1;
+    position: fixed;
+}
+
+t{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+t.sticky{
+    opacity: 1;
+    transition: 0.5s;
+}
+</style>

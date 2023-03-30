@@ -1,0 +1,410 @@
+---
+import { getCollection } from 'astro:content';
+import '../styles/global.css';
+const posts = (await getCollection('services'));
+import '../styles/global.css';
+---
+
+<div class="itineraries">  
+    <div class="itn">
+        <div class="itnbg itn1"></div>
+        <img class="itnimg" style="width:50%;" src=" ./Images/wiiroomicon.png">
+        <img class="itnimg2" src=" ./Images/wiinomaicon.svg">  
+        <h2 class="itnhead">Wii Room</h2>
+        <h4 class="itnjpn">Wii no Ma</h4>
+        <h3 class="itndesc">Watch new videos with Wii Room, a unique take on video on-demand.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn2"></div>
+        <img class="itnimg" src=" ./Images/digicamicon.png"> 
+        <img class="itnimg2" src=" ./Images/digicapicon2.svg">      
+        <h2 class="itnhead">Photo Print Channel</h2>
+        <h4 class="itnjpn">Digicam Print Channel</h4>
+        <h3 class="itndesc">Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn3"></div>
+        <img class="itnimg" src=" ./Images/kirbytvicon.png">
+        <img class="itnimg2" src=" ./Images/krbtvicon.svg">  
+        <h2 class="itnhead">Kirby TV Channel</h2>
+        <h3 class="itndesc">Watch the original Kirby anime right from your Wii with the Kirby TV Channel.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn4"></div>
+        <img class="itnimg" src=" ./Images/damaeicon.png">
+        <img class="itnimg2" src=" ./Images/demaeicon.svg">
+        <h2 class="itnhead">Food Channel</h2>
+        <h4 class="itnjpn">Demae Channel</h4>
+        <h3 class="itndesc">Order food with the Food Channel and bring tasty goodness straight to your house.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn5"></div>
+        <img class="itnimg" src=" ./Images/weatherbg.png">
+        <img class="itnimg2" src=" ./Images/forecasticon.svg">  
+        <h2 class="itnhead">Forecast Channel</h2>
+        <h3 class="itndesc">Check the weather right on your Wii, and plan your attire in accordingly.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn6"></div>
+        <img class="itnimg" src=" ./Images/ntdochannelbg.png">
+        <img class="itnimg2" src=" ./Images/ntdoicon.svg">  
+        <h2 class="itnhead">Nintendo Channel</h2>
+        <h3 class="itndesc">Watch all sorts of trailers, promos, and shows all from one interface.</h3>
+    </div>
+
+    <div class="itn">
+        <div class="itnbg itn7"></div>
+        <img class="itnimg" src=" ./Images/tvtomobg.png">
+        <img class="itnimg2" src=" ./Images/tvnotomoicon.svg">
+        <h2 class="itnhead">TV Guide Channel</h2>
+        <h4 class="itnjpn">Terebi no Tomo Channel</h4>
+        <h3 class="itndesc">Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!</h3>
+    </div>
+</div>
+
+<style>
+    .itineraries{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 30px;
+        left:50%;
+        transform: translate(-50%,0);
+        position: relative;
+    }
+    
+    .itn{
+        position: relative;
+        height:200px;
+        width:100%;
+        background-color:rgba(255, 255, 255, 0.041);
+        border-radius: 15px;
+        hyphens:auto;
+        overflow: hidden;
+        border: 3px solid rgba(255, 255, 255, 0.066);
+        transition: 0.5s;
+    }
+    
+    .objects{
+        width: 80%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+        gap: 30px;
+        top:30%;
+        left:50%;
+        transform: translate(-50%,0);
+        position: absolute;
+    }
+    
+    .obj{
+        position: relative;
+        height:250px;
+        width:100%;
+        background-color:rgba(21, 13, 23, 1);
+        border-radius: 18px;
+        hyphens:auto;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    
+      .itn:hover{
+        background-color:rgba(206, 206, 206, 0.117);
+        transform: translate(0,-5px);
+        box-shadow: 0px 0px 70px rgb(43, 43, 43);
+        transition: 0.5s;
+      }
+    
+    .itn:hover .itnbg{
+        width:60%;
+    }
+
+    .itn:hover .itnimg2{
+        opacity:0.3;
+        transform: translate(0px, -50%);
+    }
+    
+    .itnimg{
+        width:45%;
+        right:-20px;
+        top:0;
+        left:0;
+        z-index: 1;
+        transform: translate(0,0px);
+        opacity:0;
+        position: absolute;
+        transition:0.5s;
+    }
+    
+    .itnimg2{
+        width:25%;
+        right:-20px;
+        top:50%;
+        left:7%;
+        z-index: 0;
+        opacity: 0;
+        transform: translate(-20px,-50%);
+        position: absolute;
+        transition:0.5s;
+    }
+    
+    .itninfo{
+        font-family: ginto;
+        color: white;
+        z-index: 2;
+        position:absolute;
+        bottom:-50%;
+        left:12%;
+        font-size: 150%;
+        opacity: 0.7;
+        line-height: 30px;
+        transition:0.5s;
+    }
+    
+    .itn:hover .itninfo{
+        bottom:20%;
+        transition:0.5s;
+    }
+    
+    .itnbg{
+        width:30%;
+        height:130%;
+        rotate: 6deg;
+        top:-10%;
+        left:-20%;
+        background-color: rgba(0, 0, 0, 0.506);
+        z-index: 0;
+        transition: 0.5s;
+        position: absolute;
+    }
+    
+    .itn1{
+        background: linear-gradient(40deg, rgba(229,245,255,1) 0%, rgba(0,212,255,1) 100%);
+        filter: brightness(0.7) ;
+    }
+    
+    .itn2{
+        background: linear-gradient(40deg, rgb(247, 103, 110) 0%, rgba(255,0,37,1) 100%);
+        filter: brightness(0.7);
+    }
+    
+    .itn3{
+        background: linear-gradient(40deg, rgba(255,141,194,1) 0%, rgba(255,0,234,1) 100%);
+        filter: brightness(0.7);
+    }
+    
+    .itn4{
+        background: linear-gradient(40deg, rgba(255,227,156,1) 0%, rgba(255,164,0,1) 100%);
+        filter: brightness(0.7);
+        transform: scaleX(-1);
+    }
+    
+    .itn5{
+        background: linear-gradient(40deg, rgb(48, 22, 215) 0%, rgb(81, 145, 219) 100%);
+        filter: brightness(0.7);
+    }
+    
+    .itn6{
+        background: linear-gradient(40deg, rgb(170, 178, 179) 0%, rgb(51, 52, 54) 100%);
+        filter: brightness(0.7);
+    }
+    
+    .itn7{
+        background: linear-gradient(40deg, rgb(180, 217, 221) 0%, rgb(136, 194, 253) 100%);
+        filter: brightness(0.7);
+    }
+    
+    .itn:hover .itnbg{
+        opacity:0.8;
+        transition: 0.5s;
+    }
+    
+    .itn:hover .itnimg{
+       transform: translate(0,-20px);
+        transition: 0.5s;
+    }
+    
+    .itnhead{
+        right:20px;
+        top:0%;
+        font-size: 30px;
+        text-align: right;
+        position: relative;
+    }
+    
+    .itndesc{
+        display:block;
+        right:20px;
+        width:90%;
+        left:6%;
+        text-align:right;
+        position: relative;
+        font-size: 20px;
+    }
+    
+    .itnjpn{
+        right:20px;
+        top:20%;
+        font-size:15px;
+        position: absolute;
+    }
+
+    @media (max-width:1000px) {
+    .herologoholder{
+        left:0;
+        width:100%;
+    }
+    .herologo{
+        top:10%;
+        width:100%;
+        text-align: center;
+        position: absolute;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+
+    .parallaximpress{
+        scale: 60%;
+        left:50%;
+        position: absolute;
+    }
+
+    .collapsibles{
+        width:100%;
+        left:0;
+        top:20px;
+        position: absolute;
+        overflow:hidden;
+        display: block;
+    }
+
+    .faqholder{
+        width:100%;
+    }
+
+    .collapsible{
+        width:100%;
+    }
+
+    .content{
+        width:100%;
+    }
+
+    .visitfaq{
+        left:0;
+        width:100%;
+        position: absolute;
+    }
+
+    .logo{
+        width:100%;
+        text-align: center;
+    }
+
+    .topimg{
+        width:100%;
+        height: 100%;
+    }
+
+    .image{
+        background-size: cover;
+        width:100%;
+        height:100%;
+    }
+
+    .heroinstallholder{
+        right:0%;
+        top:60%;
+        width:100%;
+        height:130px;
+        position: absolute;
+
+    }
+    .heroinstall{
+        width:90%;
+        left:50%;
+        transform: translate(-50%,0);
+        top:0;
+        position: absolute;
+    }
+    .readdocs{
+        text-align: center;
+        left:0;
+        bottom:30px;
+    }
+    .bannerholder{
+        display:none;
+    }
+    .collapsibles{
+        width:95%;
+        left:50%;
+        transform: translate(-50%,0);
+        position: relative;
+    }
+    .collapsible{
+        width:100%;
+    }
+    .promotionalvideo{
+        width:100%;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+    }
+    .ytvid{
+        width:95%;
+        height:240px;
+    }
+    .content{
+        width:100%;
+    }
+    .contentslogan{
+        font-size: 25px;
+    }
+    .itineraries{
+        width: 100%;
+        gap: 30px;
+        left:50%;
+        transform: translate(-50%,0);
+        position: relative;
+        display:grid;
+        grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .itn{
+        height:100px;
+        width:100%;
+    }
+
+    .itnbg{
+        top:-40px;
+        height:400px;
+    }
+
+    .itnhead{
+        font-size:25px;
+    }
+    .itnjpn{
+        top:40%;
+        position: absolute;
+    }
+    .itndesc{
+        display:none;
+    }
+    .copydesc{
+        display:none;
+    }
+    .copytext{
+        bottom:30%;
+        left:0%;
+        width:45%;
+    }
+    .socials{
+        bottom: 20%;
+        left:3%;
+        gap:10px;
+    }
+}
+</style>

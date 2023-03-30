@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('guide')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<sidebar>
+	<div class="sidebarholder">
+        <div class="sidebarcontent">
+            {
+                posts.map((post) => (
+                    <div class="post">
+                        <a href={`/guide/${post.slug}/`}>
+                        <div class="title">{post.data.title}</div>
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</sidebar>
+<style>
+a{
+    color:white;
+    text-decoration: none;
+}
+
+ .sidebarholder{
+    width:18%;
+    height:88%;
+    bottom:0;
+    left:8%;
+    position: absolute;
+    overflow: scroll;
+ }
+
+ .sidebarcontent{
+    font-family: Cafe;
+    font-size: 15px;
+    position: absolute;
+ }
+
+ .post{
+    margin-bottom: 30px;
+ }
+</style>
