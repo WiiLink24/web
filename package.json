@@ -1,0 +1,20 @@
+{
+  "name": "blog",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "latest",
+    "@astrojs/rss": "latest",
+    "@astrojs/sitemap": "latest",
+    "astro": "latest",
+    "rollup": "latest",
+    "sass": "latest"
+  }
+}
