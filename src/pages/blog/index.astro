@@ -320,6 +320,40 @@ const posts = (await getCollection('blog')).sort(
 			transform: translate(0, 0px);
 		}
 	}
-}
+
+	@media (max-width:1000px) {
+		.postholder{
+			width:100%;
+			left:0;
+			transform: translate(0, 500px);
+		}
+		.postholder{
+			width:100%;
+			display: block;
+			overflow: hidden;
+		}
+		.post{
+			margin-bottom:20px;
+			height:180px;
+		}
+		.postholdermini{
+			width:100%;
+			left:0;
+			transform: translate(0, 0);
+		}
+		.postmini{
+			height:120px;
+		}
+		.title{
+		display: -webkit-box;
+    	-webkit-line-clamp: 1;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
+		}
+		.maindesc{
+			width:95%;
+		}
+	}
 </style>
 

@@ -257,27 +257,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     top:50%;
     transform: translate(0,-50%);
     position: absolute;
-    background-color:#ffffff15;
+    background-color:#2b873d;
     backdrop-filter: blur(4px);
     padding-left:30px;
     padding-top:0px;
     height:70px;
-    border-radius: 18px;
+    border-radius: 8px;
     border:0px solid #ffffff34;
     overflow: hidden;
-    transition: 0.5s;
-}
-
-.installbg{
-    width:100%;
-    height:100%;
-    left:0%;
-    top:0;
-    border-radius: 14px;
-    position: absolute;
-    background-color:#39b652;
-    z-index: 0;
-    animation-timing-function: linear;
     transition: 0.5s;
 }
 
@@ -308,7 +295,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .heroinstall:hover{
-    border: 4px solid #ffffff;
+    border: 0px solid #ffffff;
+    background-color:#287038;
     transition: 0.5s;
 }
 
@@ -550,11 +538,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   @media (max-width:1000px) {
     .parallaximpress{
-        top:50%;
+        top:35%;
         left:50%;
         position: absolute;
-        scale:80%;
+        scale:70%;
         transform: translate(-50%, -50%);
+        opacity: 0.3;
     }
     .logo{
         font-size:100px;
@@ -568,5 +557,76 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         width:60%;
         text-align: left;
     }
-  }
+    .collapsibles{
+        width:100%;
+        left:0;
+        transform: translate(0, 0);
+        display: block;
+    }
+    .faqholder{
+        width:100%;
+        left:0;
+        transform: translate(0, 0);
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+    }
+    .collapsible{
+        width: 100%;
+    }
+    .content{
+        width:100%;
+    }
+    .herologoholder{
+        left:0;
+        left:50%;
+        transform: translate(-50%, 0);
+        width:100%;
+    }
+    .herologo{
+        text-align: ;
+        left:50%;
+        transform: translate(-50%, -200px);
+        position: absolute;
+    }
+    .logo{
+        text-align: center;
+    }
+    .tagline{
+        width:100%;
+        text-align: center;
+        top:-30px;
+    }
+    .heroinstallholder{
+        right:0%;
+        transform: translate(0%, 0);
+        position: absolute;
+        width:100%;
+    }
+    .heroinstall{
+        width: 400px;
+        top:47%;
+        left:50%;
+        transform: translate(-50%, 0);
+        margin:0;
+        padding:0;
+        border-radius: 8px;
+    }
+    .readdocs{
+        top:57%;
+        width:100%;
+        text-align: center;
+        margin:0;
+        right:0;
+    }
+    .installtext{
+        left:5%;
+        font-size: 20px;
+    }
+    .installbg{
+        border-radius: 0px;
+    }
+    .heroinstall:hover .installtext{
+        left:40px;
+    }
 </style>
