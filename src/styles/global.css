@@ -170,6 +170,11 @@ img{
     width:80%;
 }
 
+.fa-solid::before{
+    color:rgb(54, 172, 54);
+    margin-right:15px;
+}
+
 @keyframes downup {
     0%{
         transform: translate(0, -20px);

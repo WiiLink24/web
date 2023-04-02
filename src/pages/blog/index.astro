@@ -24,7 +24,7 @@ const posts = (await getCollection('blog')).sort(
 					<div class="mainpost">
 						<a href={`/blog/${post.slug}/`}>
 						<div class="fade"></div>
-						<img style="filter:blur(8px) opacity(0.6);" src={post.data.heroImage} width="200px">
+						<img style="filter:blur(8px) opacity(0.3);" src={post.data.heroImage} width="200px">
 						<div class="maintitle">{post.data.title}</div>
 						<div class="maindesc">{post.data.description}</div>
 						</a>

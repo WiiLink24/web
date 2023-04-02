@@ -55,13 +55,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <!-- Pannels after the hero -->
         <div class="contentholder" id="start">
             <div class="polka-dot"></div>
-            <h2 class="contentslogan"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
+            <h2 class="contentslogan" style="text-align: center;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
             
             <Services />
 
             <!-- FAQ section -->
         <div class="bg">
-            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative;"><d style="font-family: Gilroy;"> Quick FAQ</d></h2>
+            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative; text-align: center;"><d style="font-family: Gilroy;">Quick FAQ</d></h2>
 
             <div class="collapsibles">
                 <div class="faqholder">
@@ -96,11 +96,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </div>
 
             <!-- The team section -->
-        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Our <h7 style="color:#1aa33a">Amazing</h7> Crew</d></h2>
+        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">Our Amazing Crew</d></h2> <h4 class="slogandef">Some of the incredible people who help bring WiiLink to life!</h4>
         <Members />
 
             <!-- News section -->
-        <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Newstand</d></h2>
+        <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">Newstand</d></h2>  <h4 class="slogandef">Catch up on the latest news of the service!</h4>
         <News />
 
             <!-- Donators and Discord section -->
@@ -193,7 +193,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   .bg{
     width:100%;
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(33, 33, 33);
     margin-top: 50px;
     left:50%;
     transform: translate(-50%,0);
@@ -305,6 +305,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     top:53%;
     right:10px;
     text-decoration: none;
+    position: absolute;
+}
+
+.slogandef{
+    right:11%;
+    transform: translate(0, -30px);
+    font-size:15px;
     position: absolute;
 }
 
@@ -478,7 +485,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .contentslogan{
-    text-align: center;
+    text-align: left;
+    left:12%;
+    transform: translate(0, 0);
     z-index: 2;
 }
 
@@ -631,6 +640,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     }
     .contentslogan{
         font-size: 30px;
+    }
+    .slogandef{
+        display: none;
     }
 }
 </style>
