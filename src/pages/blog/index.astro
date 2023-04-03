@@ -65,6 +65,10 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</div>
+
+			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;">Bring Wii News anywhere with our RSS Feed!</h3>
+			<a href="https://www.wiilink24.com/rss.xml"><div class="rss">Check it out!</div></a>
+
 		</section>
 		<Footer />
 	</main>
@@ -181,6 +185,7 @@ const posts = (await getCollection('blog')).sort(
 	.post:hover{
     	background-color:rgba(206, 206, 206, 0.117);
     	transform: translate(0,-5px);
+		border: 3px solid rgba(255, 255, 255, 0.208);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
     	transition: 0.5s;
   	}
@@ -190,6 +195,7 @@ const posts = (await getCollection('blog')).sort(
     	background-color:rgb(39, 39, 39);
     	transform: translate(0,-5px);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
+		border: 3px solid rgba(255, 255, 255, 0.252);
     	transition: 0.5s;
   	}
 
@@ -300,9 +306,19 @@ const posts = (await getCollection('blog')).sort(
     	left:-50px;
     	top:-80px;
     	background-repeat: repeat;
+		animation: rotate 240s linear infinite;
     	position: absolute;
     	z-index: 0;
   	}
+
+	@keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
 
 	a{
 		bottom:50px;
@@ -319,6 +335,26 @@ const posts = (await getCollection('blog')).sort(
 			opacity:1;
 			transform: translate(0, 0px);
 		}
+	}
+
+	.rss{
+		left:50%;
+		transform: translate(-50%,0);
+		padding:5px;
+		padding-left:10px;
+		padding-right:10px;
+		background-color:rgb(98, 141, 98);
+		border-radius:8px;
+		color:white;
+		font-family: Gilroy;
+		position:absolute;
+		transition: 0.5s;
+	}
+
+	.rss:hover{
+		transform: translate(-50%, -2px);
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.22);
+		transition: 0.5s;
 	}
 
 	@media (max-width:1000px) {

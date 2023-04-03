@@ -15,7 +15,7 @@ const wii = (await getCollection('wiicon'));
 <body>
 	<main>
 		<Header />
-		<img class="topimg" src="../Images/statustop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;">
+		<img class="topimg" src="../Images/statustop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.01; position:absolute; width:100%;">
 		
 		<a href="https://status.wiilink24.com/"><div class="status">***PLACEHOLDER*** Everything seems to be in working order! <u>View on Statuspage</u></div></a>
 		
@@ -192,14 +192,24 @@ const wii = (await getCollection('wiicon'));
       	radial-gradient(#fff 10%, transparent 11%);
 		background-size:30px 30px;
     	background-position: 0 0, 30px 30px;
-    	opacity: 0.3;
+    	opacity: 0.1;
     	rotate: 30deg;
-    	left:50px;
+    	left:6%;
     	top:178px;
     	background-repeat: repeat;
+		animation: rotate 240s linear infinite;
     	position: absolute;
     	z-index: 0;
   	}
+
+	@keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
 
 	a{
 		bottom:50px;

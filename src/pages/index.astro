@@ -54,9 +54,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
     <!-- Pannels after the hero -->
         <div class="contentholder" id="start">
-            <div class="polka-dot"></div>
             <h2 class="contentslogan" style="text-align: center;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
-            
+            <div class="polka-dot"></div>
             <Services />
 
             <!-- FAQ section -->
@@ -536,13 +535,23 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
       radial-gradient(#fff 10%, transparent 11%);
     background-size:30px 30px;
     background-position: 0 0, 30px 30px;
-    opacity: 0.3;
+    opacity: 0.1;
     rotate: 30deg;
-    left:50px;
+    left:6%;
     top:80px;
     background-repeat: repeat;
+    animation: rotate 240s linear infinite;
     position: absolute;
     z-index: 0;
+  }
+
+  @keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
   }
 
   @media (max-width:1000px) {
