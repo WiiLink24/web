@@ -17,6 +17,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     <Header/>
 
     <!-- Hero section -->
+
+    <div class="topimg">
+        <div class="imgbg"></div>
+    </div>
+
     <div class="hero">
         <div class="parallaximpress">
             <div class="parallax" id="scene">
@@ -24,10 +29,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
                 <div class="channelmid" data-depth="0.1" data-friction-x="1.5"> <img src="./Images/bgmid.png"></div>
                 <div class="channelbot" data-depth="0.05" data-friction-x="1.5"> <img src="./Images/bgbot.png" style="bottom:0; position:absolute;"></div>
             </div>
-        </div>
-
-        <div class="topimg">
-            <div class="imgbg"></div>
         </div>
 
         <div class="herologoholder">
@@ -54,13 +55,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
     <!-- Pannels after the hero -->
         <div class="contentholder" id="start">
-            <h2 class="contentslogan" style="text-align: center;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
+            <h2 class="contentslogan" style="text-align: center; width:100%;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
             <div class="polka-dot"></div>
             <Services />
 
             <!-- FAQ section -->
         <div class="bg">
-            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative; text-align: center;"><d style="font-family: Gilroy;">Quick FAQ</d></h2>
+            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative; text-align: center; width:100%; left:0;"><d style="font-family: Gilroy;">Quick FAQ</d></h2>
 
             <div class="collapsibles">
                 <div class="faqholder">
@@ -488,6 +489,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     left:12%;
     transform: translate(0, 0);
     z-index: 2;
+    width:40%;
 }
 
 .bannerholder{
@@ -652,6 +654,33 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     }
     .slogandef{
         display: none;
+    }
+}
+
+@media (min-width:2000px) {
+    .collapsibles{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    .contentslogan{
+        width:100%;
+       text-align: center;
+       left:0;
+
+    }
+    .hero{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+        overflow: visible;
+    }
+    .slogandef{
+        display:none;
+    }
+    .first{
+        left:50%;
+        transform: translate(-50%, 0);
     }
 }
 </style>

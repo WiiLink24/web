@@ -15,7 +15,7 @@ const wii = (await getCollection('wiicon'));
 <body>
 	<main>
 		<Header />
-		<img class="topimg" src="../Images/statustop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.01; position:absolute; width:100%;">
+		<img class="topimg" src="../Images/statustop.png" style="">
 		
 		<a href="https://status.wiilink24.com/"><div class="status">***PLACEHOLDER*** Everything seems to be in working order! <u>View on Statuspage</u></div></a>
 		
@@ -202,6 +202,10 @@ const wii = (await getCollection('wiicon'));
     	z-index: 0;
   	}
 
+	.topimg{
+		filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+	}
+
 	@keyframes rotate{
     0%{
         rotate:0deg;
@@ -264,7 +268,23 @@ const wii = (await getCollection('wiicon'));
 		z-index: 1;
 	}
 
-	@media (max-width:1000px) {
+	@media (min-width:2000px) {
+		section{
+			width:2500px;
+			left:50%;
+			transform: translate(-50%, 0);
+			position: relative;
+		}
+		.status{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+		}
+		.topimg{
+			width:3000px;
+			left:50%;
+			transform: translate(-50%, -158px);
+		}
 	}
 </style>
 

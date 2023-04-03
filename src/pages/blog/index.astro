@@ -17,7 +17,7 @@ const posts = (await getCollection('blog')).sort(
 <body>
 	<main>
 		<Header />
-		<img src="../Images/newstop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;">
+		<img src="../Images/newstop.png" class="topimg">
 		<section>
 			{
 				posts.map((post) => (
@@ -311,6 +311,10 @@ const posts = (await getCollection('blog')).sort(
     	z-index: 0;
   	}
 
+	.topimg{
+		filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+	}
+
 	@keyframes rotate{
     0%{
         rotate:0deg;
@@ -389,6 +393,25 @@ const posts = (await getCollection('blog')).sort(
 		}
 		.maindesc{
 			width:95%;
+		}
+	}
+
+	@media (min-width:2000px) {
+		section{
+			width:2500px;
+			left:50%;
+			transform: translate(-50%, 0);
+			position: relative;
+		}
+		.status{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+		}
+		.topimg{
+			width:3000px;
+			left:50%;
+			transform: translate(-50%, -158px);
 		}
 	}
 </style>

@@ -11,7 +11,7 @@ import { SITE_TITLE } from '../consts';
 	<a href="/"><div class="banner"> Home</div></a>
 	<a href="/blog"><div class="banner"> News</div></a>
 	<a href="/guide/welcome"><div class="banner"> Guide</div></a>
-	<a href="../status"><div class="banner"> Status</div></a>
+	<a href="/status"><div class="banner"> Status</div></a>
 	<a href="/guide/faq"><div class="banner"> FAQ</div></a>
 	<div class="banner strong"> Install now</div>
 </ul>
@@ -169,4 +169,14 @@ t.sticky{
 img{
 	border-radius: 0px;
 }
+
+@media (min-width:2000px) {
+		.bannerholder{
+			width:2000px;
+			left:50%;
+			top:10px;
+			transform: translate(-50%, 0);
+			border-radius: 8px;
+			position: fixed;
+	}
 </style>

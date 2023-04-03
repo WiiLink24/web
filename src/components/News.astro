@@ -169,5 +169,13 @@ const posts = (await getCollection('blog')).sort(
 		width:100%;
 	}
 }
+
+@media (min-width:2000px) {
+    .postholder{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 50px);
+    }
+}
 </style>
 
