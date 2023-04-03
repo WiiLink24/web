@@ -10,7 +10,7 @@ const vid = (await getCollection('video'));
 const wii = (await getCollection('wiicon'));
 ---
 
-<Base />
+<Base title="Wii Link - Status" />
 
 <body>
 	<main>
@@ -182,7 +182,7 @@ const wii = (await getCollection('wiicon'));
     	-webkit-line-clamp: 2;
     	-webkit-box-orient: vertical;
     	overflow: hidden;
-    	text-overflow: ellipsis;
+    	text-overflow: "ellipsis";
 	}
 
 	.polka-dot {
@@ -266,6 +266,45 @@ const wii = (await getCollection('wiicon'));
 		backdrop-filter:blur(8px);
 		-webkit-backdrop-filter: blur(8px);
 		z-index: 1;
+	}
+
+	@media (max-width:1000px) {
+		.postholder{
+			left:0;
+			transform: translate(0, -50px);
+			width:100%;
+			display: block;
+		}
+		.work{
+			right:20px;
+		}
+		.desc{
+			display:none;
+		}
+		.title{
+			right:20px;
+			width:100%;
+		}
+		.post{
+			height:150px;
+			margin-bottom: 10px;
+		}
+		.post:hover .image{
+			transform: translate(0, -50%);
+			scale:103%;
+		}
+		.image{
+			top:50%;
+			left:20px;
+			width:200px;
+			transform:translate(0, -50%);
+			opacity: 0.4;
+		}
+		.status{
+			padding-bottom:30px;
+			width:100%;
+			border-radius: 0px;
+		}
 	}
 
 	@media (min-width:2000px) {
