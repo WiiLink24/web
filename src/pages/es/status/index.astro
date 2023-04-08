@@ -1,13 +1,13 @@
 ---
 import { changeLanguage } from "i18next";
-import Base from "../../components/BaseHead.astro";
-import Header from "../../components/Header.astro";
-import "../../styles/global.css";
-import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Base from "../../../components/BaseHead.astro";
+import Header from "../../../components/Header.astro";
+import "../../../styles/global.css";
+import Footer from "../../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 
-changeLanguage("en");
+changeLanguage("es");
 
 const core = (await getCollection("core"));
 const vid = (await getCollection("video"));

@@ -1,18 +1,18 @@
 ---
-import Base from "../components/BaseHead.astro";
-import Services from "../components/Services.astro";
-import Header from "../components/HeaderMain.astro";
-import HeaderSmall from "../components/HeaderSmall.astro";
-import Footer from "../components/Footer.astro";
-import Members from "../components/Members.astro";
-import News from "../components/News.astro";
-import Donators from "../components/Donators.astro";
-import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Base from "../../components/BaseHead.astro";
+import Services from "../../components/Services.astro";
+import Header from "../../components/HeaderMain.astro";
+import HeaderSmall from "../../components/HeaderSmall.astro";
+import Footer from "../../components/Footer.astro";
+import Members from "../../components/Members.astro";
+import News from "../../components/News.astro";
+import Donators from "../../components/Donators.astro";
+import "../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("en");
+changeLanguage("es");
 ---
 <!DOCTYPE html>
 <html lang={i18next.language}>

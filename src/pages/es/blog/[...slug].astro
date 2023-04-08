@@ -1,10 +1,10 @@
 ---
 import { changeLanguage } from "i18next";
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../layouts/BlogPost.astro";
-import "../../styles/global.css";
+import BlogPost from "../../../layouts/BlogPost.astro";
+import "../../../styles/global.css";
 
-changeLanguage("en");
+changeLanguage("es");
 
 export async function getStaticPaths() {
     const posts = await getCollection("blog");
