@@ -1,18 +1,18 @@
 ---
-import Base from "../components/BaseHead.astro";
-import Services from "../components/Services.astro";
-import Header from "../components/HeaderMain.astro";
-import HeaderSmall from "../components/HeaderSmall.astro";
-import Footer from "../components/Footer.astro";
-import Members from "../components/Members.astro";
-import News from "../components/News.astro";
-import Donators from "../components/Donators.astro";
-import "../styles/global.css";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Base from "../../../components/BaseHead.astro";
+import Services from "../../../components/Services.astro";
+import Header from "../../../components/HeaderMain.astro";
+import HeaderSmall from "../../../components/HeaderSmall.astro";
+import Footer from "../../../components/Footer.astro";
+import Members from "../../../components/Members.astro";
+import News from "../../../components/News.astro";
+import Donators from "../../../components/Donators.astro";
+import "../../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("en");
+changeLanguage("es");
 ---
 <!DOCTYPE html>
 <html lang={i18next.language}>
@@ -45,7 +45,7 @@ changeLanguage("en");
 
         <div class="heroinstallholder">
             <div class="heroinstall">
-                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">{t("home.install")}</h2></a>
+                <h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">{t("home.install")}</h2>
                 <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
                 <div class="installbg"></div>
             </div>
