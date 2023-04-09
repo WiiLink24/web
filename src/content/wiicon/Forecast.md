@@ -1,6 +1,6 @@
 ---
 serviceName: "Forecast Channel"  
-serviceDesc: "The Demae Channel was a Japan-exclusive Channel that allowed you to deliver food to your home (sushi, chicken, pizza, hamburgers, etc). The service it used is Demae-Can. It was later released for the Wii U, but it was discontinued on March 31, 2017 for both the Wii and the Wii U."
+serviceDesc: "View the forecast right on your Wii! Thanks to Luna's efforts, we offer tons of cities!"
 serviceCompleted: "Full Release"
 serviceImage: "/Images/forecastbanner.png"
 serviceLink: "https://github.com/noahpistilli"

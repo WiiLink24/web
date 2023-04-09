@@ -1,6 +1,6 @@
 ---
 serviceName: "Metroid Prime Preview Channel"  
-serviceDesc: "The Demae Channel was a Japan-exclusive Channel that allowed you to deliver food to your home (sushi, chicken, pizza, hamburgers, etc). The service it used is Demae-Can. It was later released for the Wii U, but it was discontinued on March 31, 2017 for both the Wii and the Wii U."
+serviceDesc: "The channel features videos showing gameplay and storyline details. There is also a game where the player wipes off the screen to see a big picture. After the channel was retired, its videos and minigame were removed and replaced with a message saying the Metroid Prime 3 preview has expired and suggests that users delete the channel instead."
 serviceCompleted: "Planned"
 serviceImage: "/Images/metroidbanner.png"
 serviceLink: "https://github.com/noahpistilli"

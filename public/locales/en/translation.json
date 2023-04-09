@@ -45,16 +45,16 @@
     },
     "services": {
         "itn1name": "Wii Room",
-        "itn1jpn": "Wii no Ma",
+        "itn1jpn": "Wiiの間",
         "itn1desc": "Watch new videos with Wii Room, a unique take on video on-demand.",
         "itn2name": "Photo Print Channel",
-        "itn2jpn": "Digicam Print Channel",
+        "itn2jpn": "デジカメプリントチャンネル",
         "itn2desc": "Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.",
         "itn3name": "Kirby TV Channel",
         "itn3jpn": "",
         "itn3desc": "Watch the original Kirby anime right from your Wii with the Kirby TV Channel.",
         "itn4name": "Food Channel",
-        "itn4jpn": "Demae Channel",
+        "itn4jpn": "出前チャンネル",
         "itn4desc": "Order food with the Food Channel and bring tasty goodness straight to your house",
         "itn5name": "Forecast Channel",
         "itn5jpn": "",
@@ -63,7 +63,7 @@
         "itn6jpn": "",
         "itn6desc": "Watch all sorts of trailers, promos, and shows all from one interface.",
         "itn7name": "TV Guide Channel",
-        "itn7jpn": "Terebi no Tomo Channel",
+        "itn7jpn": "テレビガイドチャンネル",
         "itn7desc": "Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!"
     },
     "status": {
@@ -73,5 +73,12 @@
         "wc24desc": "Functionality provided by WiiConnect24, revived by WiiLink.",
         "video": "Video Streaming Services",
         "videodesc": "A myriad of services for you to best enjoy video within."
+    },
+    "download": {
+        "welcome": "Welcome!",
+        "oschoose": "Choose your OS to get started!",
+        "winreq": "10 or higher",
+        "linreq": "Requires Brew",
+        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>" 
     }
   }

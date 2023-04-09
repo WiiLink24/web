@@ -6,6 +6,8 @@ import "../../../styles/global.css";
 import Footer from "../../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("ru");
 
@@ -21,12 +23,12 @@ const wii = (await getCollection("wiicon"));
 		<Header />
 		<img class="topimg" src="../Images/statustop.png" style="">
 		
-		<a href="https://status.wiilink24.com/"><div class="status">***PLACEHOLDER*** Everything seems to be in working order! <u>View on Statuspage</u></div></a>
+		<a href="https://status.wiilink24.com/"><div class="status">View the server status</div></a>
 		
 		<section>
-			<h2 class="servicehead">Core services</h2>
+			<h2 class="servicehead">{t("status.core")}</h2>
 			<div class="polka-dot"></div>
-			<h4 class="servicedesc">Services core to WiiLink, originally only available within Japan.</h4>
+			<h4 class="servicedesc">{t("status.coredesc")}</h4>
 			<div class="postholder">
 				{
 					core.map((post) => (
@@ -46,8 +48,8 @@ const wii = (await getCollection("wiicon"));
 				}
 				</div>
 
-				<h2 class="servicehead">WiiConnect24 Channels</h2>
-			<h4 class="servicedesc">Functionality provided by WiiConnect24, revived by WiiLink.</h4>
+				<h2 class="servicehead">{t("status.wc24")}</h2>
+			<h4 class="servicedesc">{t("status.wc24desc")}</h4>
 			<div class="postholder">
 				{
 					wii.map((post) => (
@@ -68,8 +70,8 @@ const wii = (await getCollection("wiicon"));
 			</div>
 
 
-			<h2 class="servicehead">Video Streaming Services</h2>
-			<h4 class="servicedesc">A myriad of services for you to best enjoy video within.</h4>
+			<h2 class="servicehead">{t("status.video")}</h2>
+			<h4 class="servicedesc">{t("status.videodesc")}</h4>
 			<div class="postholder">
 				{
 					vid.map((post) => (
@@ -270,6 +272,14 @@ const wii = (await getCollection("wiicon"));
 		backdrop-filter:blur(8px);
 		-webkit-backdrop-filter: blur(8px);
 		z-index: 1;
+		transition: 0.5s;
+	}
+
+	.status:hover{
+		transform: translate(-50%,-2px);
+		box-shadow: 0px 0px 30px rgba(169, 182, 255, 0.137);
+		text-decoration: underline;
+		transition: 0.5s;
 	}
 
 	@media (max-width:1000px) {

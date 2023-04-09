@@ -1,6 +1,6 @@
 ---
 serviceName: "Wii Message Board"  
-serviceDesc: "The Demae Channel was a Japan-exclusive Channel that allowed you to deliver food to your home (sushi, chicken, pizza, hamburgers, etc). The service it used is Demae-Can. It was later released for the Wii U, but it was discontinued on March 31, 2017 for both the Wii and the Wii U."
+serviceDesc: "Send and receive messages to your Wii friends! Attach images and Miis to add more character to your messages!"
 serviceCompleted: "Halted"
 serviceImage: "/Images/msgbanner.png"
 serviceLink: "https://github.com/noahpistilli"

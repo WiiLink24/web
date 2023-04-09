@@ -1,6 +1,6 @@
 ---
 serviceName: "Food Channel"  
-serviceDesc: "The Food Channel is a channel where you can do stuff, idk, this is a neat placeholder I'm just using to test out what size of text fits best. Laurem Ipsum sucks, so I'm typing this!1!!11!"
+serviceDesc: "Order food from a Wii! That's right, you can now order food from Domino's or Deliveroo right on you Wii (Or, y'know, just stick to fake orders)!"
 serviceCompleted: "Public Beta"
 serviceImage: "/Images/demaebanner.png"
 serviceLink: "https://github.com/noahpistilli"

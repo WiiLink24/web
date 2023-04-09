@@ -1,6 +1,6 @@
 ---
 serviceName: "News Channel"  
-serviceDesc: "The Demae Channel was a Japan-exclusive Channel that allowed you to deliver food to your home (sushi, chicken, pizza, hamburgers, etc). The service it used is Demae-Can. It was later released for the Wii U, but it was discontinued on March 31, 2017 for both the Wii and the Wii U."
+serviceDesc: "Check the latest news right on your Wii! We are currently working on bringing it back, but we want to offer a great curation of news from all over the world!"
 serviceCompleted: "In Development"
 serviceImage: "/Images/newsbanner.png"
 serviceLink: "https://github.com/noahpistilli"

@@ -1,7 +1,7 @@
 ---
 serviceName: "Wii Room"  
-serviceDesc: "Wii Room is a channel where you can do stuff, idk, this is a neat placeholder I'm just using to test out what size of text fits best. Laurem Ipsum sucks, so I'm typing this!1!!11!"
-serviceCompleted: "Public Beta"
+serviceDesc: "A whacky new way of consuming media on your Wii! Receive guest appearences from famous Miis and go for a shopping spree (doesn't quite work lol)!"
+serviceCompleted: "Full Release"
 serviceImage: "/Images/wiinomabanner.png"
 serviceLink: "https://github.com/noahpistilli"
 ---
