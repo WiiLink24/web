@@ -2,7 +2,6 @@
 import Base from "../../components/BaseHead.astro";
 import Services from "../../components/Services.astro";
 import Header from "../../components/HeaderMain.astro";
-import HeaderSmall from "../../components/HeaderSmall.astro";
 import Footer from "../../components/Footer.astro";
 import Members from "../../components/Members.astro";
 import News from "../../components/News.astro";
@@ -556,9 +555,6 @@ Trans{
     position: absolute;
     z-index: 0;
   }
-  a:hover{
-    text-decoration: underline;
-  }
 
   @keyframes rotate{
     0%{
@@ -658,6 +654,9 @@ Trans{
     }
     .installbg{
         border-radius: 0px;
+    }
+    .rate{
+        display:none;
     }
     .heroinstall:hover .installtext{
         left:40px;

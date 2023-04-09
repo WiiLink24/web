@@ -1,5 +1,6 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import HeaderSmall from "../components/HeaderSmall.astro";
 import { SITE_TITLE } from '../consts';
 import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
@@ -21,6 +22,7 @@ import HeaderMain from './HeaderMain.astro';
 		<a href={localizePath("/guide/4faq")}><div class="banner">{t("header.faq")}</div></a>
 		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div id="light" class="banner strong">{t("header.install")}</div></a>
 		</ul>
+		<HeaderSmall />
 <a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px" style="border-radius:0px;"></a>
 <LanguageSelector showFlag={true} class="lang" />
 </r>
@@ -349,6 +351,7 @@ img{
 		left:0;
 		transform: translate(0, 0);
 		top:158px;
+		overflow: scroll;
 	}
 
 	.btn{
@@ -370,6 +373,21 @@ img{
 		position: relative;
 	}
 }
+
+@media (max-width:1000px){
+	ul{
+		display: none;
+	}
+
+	.lang{
+		display: none;
+	}
+
+	.donate{
+		display: none;
+	}
+}
+
 
 @media (min-width:2000px) {
 		.bannerholder{

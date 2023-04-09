@@ -7,6 +7,7 @@ const posts = (await getCollection('guide')).sort(
 
 <sidebar>
 	<div class="sidebarholder">
+        <h3 class="hover">Hover over me</h3>
         <div class="sidebarcontent">
             <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">Let's get you started</div>
             {
@@ -133,10 +134,66 @@ a:hover{
     transition: 0.2s;
  }
 
+ .hover{
+    display: none;
+ }
+
  .wiiguide:hover{
     background-color: rgb(58, 58, 197);
     text-decoration: underline;
     transition: 0.2s;
+ }
+
+ @media (max-width:1000px){
+    .sidebarholder{
+        width:20px;
+        height:86%;
+        left:0;
+        padding-top:20px;
+        border-radius: 0px;
+        border-top-right-radius: 18px;
+        overflow: scroll;
+        background-color: rgb(91, 91, 96);
+        transition: 0.5s;
+        z-index:100000;
+    }
+
+    .sidebarholder:hover{
+        width:300px;
+        background-color: rgb(27, 27, 29);
+        transition: 0.5s;
+    }
+
+    .sidebarcontent{
+        width:282px;
+        opacity: 0;
+        transform: translate(-20px, 0);
+        transition: 0.5s;
+    }
+
+    .wiiguide{
+        left:18px;
+    }
+
+    .sidebarholder:hover .sidebarcontent{
+        opacity: 1;
+        transform: translate(18px, 0);
+        transition: 0.5s;
+    }
+    .hover{
+        display: block;
+        rotate: 90deg;
+        top:8%;
+        right:0;
+        height:95px;
+        width:100px;
+        font-size: 10px;
+        position: absolute;
+    }
+
+    .sidebarholder:hover .hover{
+        display: none;
+    }
  }
 
 </style>
