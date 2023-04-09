@@ -9,8 +9,8 @@ const posts = (await getCollection('members'));
 			<div class="memberholder">
 				{
 					posts.map((post) => (
-                    <a href={post.data.memHub}>
-						<div class="member">
+                    <a class="member" href={post.data.memHub}>
+						<div>
 							<img src={post.data.memImage}>
 							<div class="title">{post.data.memName}</div>
 							<div class="desc">{post.data.memDesc}</div>
@@ -97,6 +97,19 @@ const posts = (await getCollection('members'));
         position: absolute;
     }
 
+	.member:nth-child(1){
+		border: 3px solid rgba(101, 201, 25, 0.708);
+	}
+
+	.member:nth-child(1) .desc{
+		background-color: rgba(96, 193, 22, 0.813);
+		right:10px;
+		padding:5px;
+		padding-left:10px;
+		padding-right:10px;
+		border-radius: 8px;
+	}
+
 	@media (max-width:1000px) {
 		.title{
 			display: none;
@@ -116,4 +129,12 @@ const posts = (await getCollection('members'));
 			left:50%;
 		}
 	}
+
+	@media (min-width:2000px) {
+    .memberholder{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+}
 </style>

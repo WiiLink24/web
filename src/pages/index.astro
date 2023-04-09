@@ -1,22 +1,31 @@
 ---
-import Base from '../components/BaseHead.astro';
-import Services from '../components/Services.astro';
-import Header from '../components/HeaderMain.astro';
-import Footer from '../components/Footer.astro';
-import Members from '../components/Members.astro';
-import News from '../components/News.astro';
-import Donators from '../components/Donators.astro'
-import '../styles/global.css';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
----
+import Base from "../components/BaseHead.astro";
+import Services from "../components/Services.astro";
+import Header from "../components/HeaderMain.astro";
+import Footer from "../components/Footer.astro";
+import Members from "../components/Members.astro";
+import News from "../components/News.astro";
+import Donators from "../components/Donators.astro";
+import "../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
+changeLanguage("en");
+---
 <!DOCTYPE html>
-<html lang="en-us">
-    <Base />
+<html lang={i18next.language}>
+<Base title="Wii Link"/>
+
     <body>
     <Header/>
 
     <!-- Hero section -->
+
+    <div class="topimg">
+        <div class="imgbg"></div>
+    </div>
+
     <div class="hero">
         <div class="parallaximpress">
             <div class="parallax" id="scene">
@@ -26,81 +35,78 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
             </div>
         </div>
 
-        <div class="topimg">
-            <div class="imgbg"></div>
-        </div>
-
         <div class="herologoholder">
             <div class="herologo">
                 <h1 class="logo">Wii<b style="font-family:RubikMedium;">Link</b></h1>
-                <h2 class="tagline">A new online service for the Wii.</h2>
+                <h2 class="tagline">{t("home.subtitle")}</h2>
             </div>
         </div>
 
         <div class="heroinstallholder">
             <div class="heroinstall">
-                <h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">Install it now</h2>
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">{t("home.install")}</h2></a>
                 <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
                 <div class="installbg"></div>
             </div>
-            <h3 class="readdocs">Check out the guide</h3>
+            <a href="/guide/1welcome"><h3 class="readdocs">{t("home.docs")}</h3></a>
         </div>
     </div>
     
-    <div class="rate">This site is in BETA, rate it!</div>
+    <div class="rate">{t("home.beta")}</div>
 
     <a href="#start"><div class="first"><img src=" ./Images/downarrow.png" width="40px"></div></a>
 
 
     <!-- Pannels after the hero -->
         <div class="contentholder" id="start">
+            <Trans i18nKey="home.info">
+               <h2 class="contentslogan" style="text-align: center; width:100%;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
+            </Trans>
             <div class="polka-dot"></div>
-            <h2 class="contentslogan"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
-            
             <Services />
 
             <!-- FAQ section -->
         <div class="bg">
-            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative;"><d style="font-family: Gilroy;"> Quick FAQ</d></h2>
+            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative; text-align: center; width:100%; left:0;"><d style="font-family: Gilroy;">{t("home.faq")}</d></h2>
 
             <div class="collapsibles">
                 <div class="faqholder">
-                <button type="button" class="collapsible">Why WiiLink?</button>
+                <button type="button" class="collapsible">{t("home.faq1")}</button>
                     <div class="content">
-                        <p>WiiLink is the only service to bring back Japanese exclusive Wii channels after they were officially shut down. We've made Wii no Ma, the Demae Channel, and Digicam Print Channel functional once more. With our service, you can experience all of these once more on your Nintendo Wii - possibly for the first time.</p>
+                        <p>{t("home.faqres1")}</p>
                     </div>
                 </div>
 
                 <div class="faqholder">
-                    <button type="button" class="collapsible">Why does WiiLink exist?</button>
+                    <button type="button" class="collapsible">{t("home.faq2")}</button>
                     <div class="content">
-                        <p>Without a replacement service for these channels, they would be lost to time, never to be seen again. However, thanks to our work, future generations of players can experience these channels again!</p>
+                        <p>{t("home.faqres2")}</p>
                     </div>
                 </div>
 
                     <div class="faqholder">
-                    <button type="button" class="collapsible">Is using WiiLink legal?</button>
+                    <button type="button" class="collapsible">{t("home.faq3")}</button>
                     <div class="content">
-                        <p>Absolutely. We develop all of our channels without copyrighted code and material, and rely solely on what is provided within the channel and public knowledge. All code is written from the ground up. You will have no legal trouble from using our service.</p>
+                        <p>{t("home.faqres3")}</p>
                     </div>
                 </div>
 
                 <div class="faqholder">
-                    <button type="button" class="collapsible">Can the Demae Channel order real food?</button>
+                    <button type="button" class="collapsible">{t("home.faq4")}</button>
                     <div class="content">
-                        <p>Yes!</p>
+                        <p>{t("home.faqres4")}</p>
                     </div>
                 </div>
-                    <h3 style="text-align: center; top:20px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">Any other questions? If so, be sure to read our full FAQ!</h3>
+                    <h3 style="text-align: center; top:20px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3>
             </div>
         </div>
 
             <!-- The team section -->
-        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Our <h7 style="color:#1aa33a">Amazing</h7> Crew</d></h2>
+        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">{t("home.team")}</d></h2> <h4 class="slogandef">{t("home.teamdef")}</h4>
         <Members />
 
             <!-- News section -->
-        <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;"> Newstand</d></h2>
+        <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">{t("home.news")}</d></h2>  <h4 class="slogandef">{t("home.newsdef")}</h4>
         <News />
 
             <!-- Donators and Discord section -->
@@ -193,7 +199,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
   .bg{
     width:100%;
-    background-color: rgb(40, 40, 40);
+    background-color: rgb(33, 33, 33);
     margin-top: 50px;
     left:50%;
     transform: translate(-50%,0);
@@ -305,6 +311,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     top:53%;
     right:10px;
     text-decoration: none;
+    position: absolute;
+}
+
+.slogandef{
+    right:11%;
+    transform: translate(0, -30px);
+    font-size:15px;
     position: absolute;
 }
 
@@ -441,11 +454,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .first{
-    width:100px;
-    height:100px;
     position: absolute;
-    bottom:0px;
-    left:8%;
+    width: 40px;
+    bottom:28px;
+    left:50%;
+    transform: translate(-50%, 0);
     animation-name: downup;
     animation-duration: 5s;
     animation-fill-mode: both;
@@ -478,8 +491,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 }
 
 .contentslogan{
-    text-align: center;
+    text-align: left;
+    left:12%;
+    transform: translate(0, 0);
     z-index: 2;
+    width:40%;
+}
+
+Trans{
+    text-align: center; width:100%; font-family:Gilroy; color:white; font-size: 40px;
 }
 
 .bannerholder{
@@ -523,17 +543,26 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 .polka-dot {
     width: 240px;
     height: 240px;
-    background-image: radial-gradient(#fff 10%, transparent 11%),
-      radial-gradient(#fff 10%, transparent 11%);
+    background-image: radial-gradient(#fff 10%, transparent 11%), radial-gradient(#fff 10%, transparent 11%);
     background-size:30px 30px;
     background-position: 0 0, 30px 30px;
-    opacity: 0.3;
+    opacity: 0.1;
     rotate: 30deg;
-    left:50px;
+    left:6%;
     top:80px;
     background-repeat: repeat;
+    animation: rotate 240s linear infinite;
     position: absolute;
     z-index: 0;
+  }
+
+  @keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
   }
 
   @media (max-width:1000px) {
@@ -626,11 +655,51 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
     .installbg{
         border-radius: 0px;
     }
+    .rate{
+        display:none;
+    }
     .heroinstall:hover .installtext{
         left:40px;
     }
     .contentslogan{
         font-size: 30px;
+    }
+    .slogandef{
+        display: none;
+    }
+}
+
+@media (min-width:2000px) {
+    .hero{
+        height:1500px;
+    }
+    .contentholder{
+        top:1348px;
+    }
+    .collapsibles{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    .contentslogan{
+        width:100%;
+       text-align: center;
+       left:0;
+
+    }
+    .hero{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+        overflow: visible;
+    }
+    .slogandef{
+        display:none;
+    }
+    .first{
+        left:50%;
+        transform: translate(-50%, 0);
+        top:1300px;
     }
 }
 </style>

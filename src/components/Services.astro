@@ -1,60 +1,79 @@
 ---
 import '../styles/global.css';
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import HeaderMain from './HeaderMain.astro';
 ---
 
 <div class="itineraries">  
+    <a href="/guide/wiinoma">
     <div class="itn">
         <div class="itnbg itn1"></div>
         <img class="itnimg" src=" ./Images/wiinomaicon.svg">  
-        <h2 class="itnhead">Wii Room</h2>
-        <h4 class="itnjpn">Wii no Ma</h4>
-        <h3 class="itndesc">Watch new videos with Wii Room, a unique take on video on-demand.</h3>
+        <h2 class="itnhead">{t("services.itn1name")}</h2>
+        <h4 class="itnjpn">{t("services.itn1jpn")}</h4>
+        <h3 class="itndesc">{t("services.itn1desc")}</h3>
     </div>
+</a>
 
+<a href="/guide/digicam">
     <div class="itn">
         <div class="itnbg itn2"></div>
         <img class="itnimg" src=" ./Images/digicapicon2.svg">      
-        <h2 class="itnhead">Photo Print Channel</h2>
-        <h4 class="itnjpn">Digicam Print Channel</h4>
-        <h3 class="itndesc">Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.</h3>
+        <h2 class="itnhead">{t("services.itn2name")}</h2>
+        <h4 class="itnjpn">{t("services.itn2jpn")}</h4>
+        <h3 class="itndesc">{t("services.itn2desc")}</h3>
     </div>
+    </a>
 
+    <a href="/guide/kirbytv">
     <div class="itn">
         <div class="itnbg itn3"></div>
         <img class="itnimg" src=" ./Images/krbtvicon.svg">  
-        <h2 class="itnhead">Kirby TV Channel</h2>
-        <h3 class="itndesc">Watch the original Kirby anime right from your Wii with the Kirby TV Channel.</h3>
+        <h2 class="itnhead">{t("services.itn3name")}</h2>
+        <h3 class="itndesc">{t("services.itn3desc")}</h3>
     </div>
+    </a>
 
+    <a href="/guide/demae">
     <div class="itn">
         <div class="itnbg itn4"></div>
         <img class="itnimg" src=" ./Images/demaeicon.svg">
-        <h2 class="itnhead">Food Channel</h2>
-        <h4 class="itnjpn">Demae Channel</h4>
-        <h3 class="itndesc">Order food with the Food Channel and bring tasty goodness straight to your house.</h3>
+        <h2 class="itnhead">{t("services.itn4name")}</h2>
+        <h4 class="itnjpn">{t("services.itn4jpn")}</h4>
+        <h3 class="itndesc">{t("services.itn4desc")}</h3>
     </div>
+    </a>
 
+    <a href="/guide/forecast">
     <div class="itn">
         <div class="itnbg itn5"></div>
         <img class="itnimg" src=" ./Images/forecasticon.svg">  
-        <h2 class="itnhead">Forecast Channel</h2>
-        <h3 class="itndesc">Check the weather right on your Wii, and plan your attire in accordingly.</h3>
+        <h2 class="itnhead">{t("services.itn5name")}</h2>
+        <h3 class="itndesc">{t("services.itn5desc")}</h3>
     </div>
+    </a>
 
+    <a href="/guide/nintendo">
     <div class="itn">
         <div class="itnbg itn6"></div>
-        <img class="itnimg" src=" ./Images/ntdoicon.svg">  
-        <h2 class="itnhead">Nintendo Channel</h2>
-        <h3 class="itndesc">Watch all sorts of trailers, promos, and shows all from one interface.</h3>
+        <img class="itnimg" src=" ./Images/ntdoicon.png">  
+        <h2 class="itnhead">{t("services.itn6name")}</h2>
+        <h3 class="itndesc">{t("services.itn6desc")}</h3>
     </div>
+    </a>
 
+    <a href="/guide/tvnotomo">
     <div class="itn">
         <div class="itnbg itn7"></div>
-        <img class="itnimg" src=" ./Images/tvnotomoicon.svg">
-        <h2 class="itnhead">TV Guide Channel</h2>
-        <h4 class="itnjpn">Terebi no Tomo Channel</h4>
-        <h3 class="itndesc">Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!</h3>
+        <img class="itnimg" src=" ./Images/tvnotomoicon.png">
+        <h2 class="itnhead">{t("services.itn7name")}</h2>
+        <h4 class="itnjpn">{t("services.itn7jpn")}</h4>
+        <h3 class="itndesc">{t("services.itn7desc")}</h3>
     </div>
+    </a>
 </div>
 
 <style>
@@ -84,6 +103,7 @@ import '../styles/global.css';
         background-color:rgba(206, 206, 206, 0.117);
         transform: translate(0,-5px);
         box-shadow: 0px 0px 70px rgb(43, 43, 43);
+        border: 3px solid rgba(255, 255, 255, 0.152);
         transition: 0.5s;
       }
 
@@ -199,7 +219,12 @@ import '../styles/global.css';
         right:20px;
         top:20%;
         font-size:15px;
+        opacity: 0.6;
         position: absolute;
+    }
+
+    a{
+        text-decoration: none;
     }
 
     @media (max-width:1000px) {
@@ -354,6 +379,14 @@ import '../styles/global.css';
         bottom: 20%;
         left:3%;
         gap:10px;
+    }
+}
+
+@media (min-width:2000px) {
+    .itineraries{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
     }
 }
 </style>

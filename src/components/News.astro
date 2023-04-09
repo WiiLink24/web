@@ -73,6 +73,7 @@ const posts = (await getCollection('blog')).sort(
     	background-color:rgba(206, 206, 206, 0.117);
     	transform: translate(0,-5px);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
+		border: 3px solid rgba(255, 255, 255, 0.196);
     	transition: 0.5s;
   	}
 
@@ -167,6 +168,14 @@ const posts = (await getCollection('blog')).sort(
 	.postholder{
 		width:100%;
 	}
+}
+
+@media (min-width:2000px) {
+    .postholder{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 50px);
+    }
 }
 </style>
 

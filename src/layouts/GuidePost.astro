@@ -15,10 +15,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 <body>
 	<main>
-		<div class="head">
-		<div class="fade2"></div>
-		<img class="image" src="../../Images/copyrightbg.png" width="100%" style="opacity: 0.3;">
-	</div>
 		<img src="../../Images/guidestop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.02; position:absolute; width:100%;">
 		<Header />
 		<Sidebar />
@@ -35,7 +31,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 
 <style>
 
-	a:link{
+a:link{
     color:rgba(32,213,136,1);  
 }
 
@@ -51,9 +47,9 @@ a:visited{
 		font-size: 40px;
 		font-family: Gilroy;
 		z-index: 100;
-		left:50%;
 		top:20px;
-		transform: translate(-50%, 0);
+		width:100%;
+		text-align: center;
 		color:white;
 		position:absolute;
 	}
@@ -128,7 +124,12 @@ a:visited{
 	a{
 		bottom:50px;
 		z-index:11;
-		color:white;
+		color:green;
+	}
+	@media (max-width:1000px){
+		.guideholder{
+			width:95%;
+		}
 	}
 </style>
 

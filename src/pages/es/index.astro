@@ -1,0 +1,705 @@
+---
+import Base from "../../components/BaseHead.astro";
+import Services from "../../components/Services.astro";
+import Header from "../../components/HeaderMain.astro";
+import Footer from "../../components/Footer.astro";
+import Members from "../../components/Members.astro";
+import News from "../../components/News.astro";
+import Donators from "../../components/Donators.astro";
+import "../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("es");
+---
+<!DOCTYPE html>
+<html lang={i18next.language}>
+<Base title="Wii Link"/>
+
+    <body>
+    <Header/>
+
+    <!-- Hero section -->
+
+    <div class="topimg">
+        <div class="imgbg"></div>
+    </div>
+
+    <div class="hero">
+        <div class="parallaximpress">
+            <div class="parallax" id="scene">
+                <div class="channeltop" data-depth="0.3"  data-friction-x="1.5"> <img src="./Images/bgtop.png"></div>
+                <div class="channelmid" data-depth="0.1" data-friction-x="1.5"> <img src="./Images/bgmid.png"></div>
+                <div class="channelbot" data-depth="0.05" data-friction-x="1.5"> <img src="./Images/bgbot.png" style="bottom:0; position:absolute;"></div>
+            </div>
+        </div>
+
+        <div class="herologoholder">
+            <div class="herologo">
+                <h1 class="logo">Wii<b style="font-family:RubikMedium;">Link</b></h1>
+                <h2 class="tagline">{t("home.subtitle")}</h2>
+            </div>
+        </div>
+
+        <div class="heroinstallholder">
+            <div class="heroinstall">
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">{t("home.install")}</h2></a>
+                <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
+                <div class="installbg"></div>
+            </div>
+            <a href="/guide/1welcome"><h3 class="readdocs">{t("home.docs")}</h3></a>
+        </div>
+    </div>
+    
+    <div class="rate">{t("home.beta")}</div>
+
+    <a href="#start"><div class="first"><img src=" ./Images/downarrow.png" width="40px"></div></a>
+
+
+    <!-- Pannels after the hero -->
+        <div class="contentholder" id="start">
+            <Trans i18nKey="home.info">
+               <h2 class="contentslogan" style="text-align: center; width:100%;"><b style="font-family: RubikBold;">Wii</b><b style="font-family: RubikMedium;">Link</b> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</h2>
+            </Trans>
+            <div class="polka-dot"></div>
+            <Services />
+
+            <!-- FAQ section -->
+        <div class="bg">
+            <h2 class="fa-solid fa-circle-question contentslogan" style="top:50px; position: relative; text-align: center; width:100%; left:0;"><d style="font-family: Gilroy;">{t("home.faq")}</d></h2>
+
+            <div class="collapsibles">
+                <div class="faqholder">
+                <button type="button" class="collapsible">{t("home.faq1")}</button>
+                    <div class="content">
+                        <p>{t("home.faqres1")}</p>
+                    </div>
+                </div>
+
+                <div class="faqholder">
+                    <button type="button" class="collapsible">{t("home.faq2")}</button>
+                    <div class="content">
+                        <p>{t("home.faqres2")}</p>
+                    </div>
+                </div>
+
+                    <div class="faqholder">
+                    <button type="button" class="collapsible">{t("home.faq3")}</button>
+                    <div class="content">
+                        <p>{t("home.faqres3")}</p>
+                    </div>
+                </div>
+
+                <div class="faqholder">
+                    <button type="button" class="collapsible">{t("home.faq4")}</button>
+                    <div class="content">
+                        <p>{t("home.faqres4")}</p>
+                    </div>
+                </div>
+                    <h3 style="text-align: center; top:20px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3>
+            </div>
+        </div>
+
+            <!-- The team section -->
+        <h2 class="fa-solid fa-code contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">{t("home.team")}</d></h2> <h4 class="slogandef">{t("home.teamdef")}</h4>
+        <Members />
+
+            <!-- News section -->
+        <h2 class="fa-solid fa-newspaper contentslogan" style="top:50px; position: relative;"> <d style="font-family: Gilroy;">{t("home.news")}</d></h2>  <h4 class="slogandef">{t("home.newsdef")}</h4>
+        <News />
+
+            <!-- Donators and Discord section -->
+        <Donators />
+
+		<Footer />
+
+            <!-- Activate parallax effect from Hero section -->
+            <script>
+                import Parallax from "parallax-js";
+                var scene = document.getElementById('scene');
+                var parallaxInstance = new Parallax(scene);
+            </script>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+                });
+                }
+            </script>
+    </body>
+</html>
+
+<style>
+
+    /* FAQ Styles */
+    .collapsible {
+    background-color: #77777733;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+    border-radius: 8px;
+    margin-top:40px;
+    position: relative;
+    border: 3px solid rgba(255, 255, 255, 0.201);
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+    text-align: center;
+    font-family: Gilroy;
+    transition: 0.2s;
+    text-decoration: none;
+  }
+
+  .collapsibles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(800px, 1fr));
+    position: relative;
+  }
+  
+  .active, .collapsible:hover {
+    background-color: #555;
+    transition: 0.2s;
+  }
+  
+  .content {
+    display: none;
+    overflow: hidden;
+    background-color: #f1f1f100;
+    top:5px;
+    border-radius: 8px ;
+    color:white;
+    font-family: Cafe;
+    width: 80%;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+  }
+
+  p{
+    width:90%;
+    text-align: justify;
+    font-family: Cafe;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+  }
+
+  .bg{
+    width:100%;
+    background-color: rgb(33, 33, 33);
+    margin-top: 50px;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+    padding-bottom:100px;
+    background-size: cover;
+  }
+
+  /* Hero Styles */
+  .hero{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: fixed;
+    overflow: hidden;
+}
+
+.herologoholder{
+    width:450px;
+    height:100%;
+    top:0;
+    left:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.herologo{
+    height:300px;
+    width:100%;
+    top:45%;
+    transform: translate(0,-50%);
+    position: absolute;
+}
+
+.logo{
+    top:0;
+    left:0px;
+    position: relative;
+    z-index: 1;
+    font-size:120px;
+    font-family: RubikBold;
+}
+
+.tagline{
+    position: relative;
+    top:-80px;
+    left:10px;
+}
+
+.heroinstallholder{
+    width:400px;
+    height:100%;
+    right:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.heroinstall{
+    width:90%;
+    top:50%;
+    transform: translate(0,-50%);
+    position: absolute;
+    background-color:#2b873d;
+    backdrop-filter: blur(4px);
+    padding-left:30px;
+    padding-top:0px;
+    height:70px;
+    border-radius: 8px;
+    border:0px solid #ffffff34;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installbg{
+    left:0;
+    transition: 0.5s;
+}
+
+.installtext{
+    transform: translate(0px,0);
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installtext{
+    transform: translate(40px,0);
+    transition: 0.5s;
+}
+
+.installarrow{
+    opacity: 1;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installarrow{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.heroinstall:hover{
+    border: 0px solid #ffffff;
+    background-color:#287038;
+    transition: 0.5s;
+}
+
+.readdocs{
+    font-size: 20px;
+    top:53%;
+    right:10px;
+    text-decoration: none;
+    position: absolute;
+}
+
+.slogandef{
+    right:11%;
+    transform: translate(0, -30px);
+    font-size:15px;
+    position: absolute;
+}
+
+    .parallaximpress{
+        width:1800px;
+        height:1000px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 1;
+    }
+
+    .parallax{
+        width:1800px;
+        height:1000px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .image{
+        object-fit: cover;
+    }
+
+    .channeltop{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.5;
+        position:relative;
+        opacity:0;
+        animation-name: fadeintop;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+
+    .channelmid{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.3;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        animation-name: fadeinmid;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.4s;
+    }
+
+    .channelbot{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.1;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        animation-name: fadeinbot;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeintop{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.5;
+            scale: 100%;
+        }
+    }
+
+    @keyframes fadeinmid{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.3;
+            scale: 100%;
+        }
+    }
+
+    @keyframes fadeinbot{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.1;
+            scale: 100%;
+        }
+    }
+    
+    .rate{
+    bottom:20px;
+    right:20px;
+    background-color: rgb(49, 49, 49);
+    color:white;
+    font-family: Cafe;
+    padding:10px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    position: absolute;
+  }
+	
+.topimg{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    overflow: hidden;
+    position:absolute;
+}
+
+.imgbg{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    background-image: url("../../Images/copyrightbg.png");
+    background-size:cover;
+    object-fit: cover;
+    filter: brightness(0.5);
+    position: absolute;
+}
+
+.first{
+    position: absolute;
+    width: 40px;
+    bottom:28px;
+    left:50%;
+    transform: translate(-50%, 0);
+    animation-name: downup;
+    animation-duration: 5s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    z-index: 10;
+}
+
+@keyframes downup {
+    0%{
+        transform: translate(0, -20px);
+    }
+    50%{
+        transform: translate(0,0px);
+    }
+    100%{
+        transform: translate(0,-20px);
+    }
+}
+
+/* Content Styles */
+.contentholder{
+    width:100%;
+    left:0;
+    top:100%;
+    background-color: #161616;
+    padding-top:50px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    position: absolute;
+}
+
+.contentslogan{
+    text-align: left;
+    left:12%;
+    transform: translate(0, 0);
+    z-index: 2;
+    width:40%;
+}
+
+Trans{
+    text-align: center; width:100%; font-family:Gilroy; color:white; font-size: 40px;
+}
+
+.bannerholder{
+    right:8%;
+    bottom:6%;
+    display:flex;
+    gap:8%;
+    z-index: 1;
+    transform: translate(-50%,0);
+    z-index: 2;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.banner{
+    position:relative;
+    filter: invert(1);
+    transition: 0.5s;
+}
+
+.banner:hover{
+    transform: translate(0,-10px);
+    transition: 0.5s;
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#fff 10%, transparent 11%), radial-gradient(#fff 10%, transparent 11%);
+    background-size:30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.1;
+    rotate: 30deg;
+    left:6%;
+    top:80px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    position: absolute;
+    z-index: 0;
+  }
+
+  @keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
+
+  @media (max-width:1000px) {
+    .parallaximpress{
+        top:35%;
+        left:50%;
+        position: absolute;
+        scale:70%;
+        transform: translate(-50%, -50%);
+        opacity: 0.3;
+    }
+    .logo{
+        font-size:100px;
+        text-align: left;
+        left:0;
+        transform: translate(0, 0);
+        margin: 0px;
+    }
+    .tagline{
+        font-size: 30px;
+        width:60%;
+        text-align: left;
+    }
+    .collapsibles{
+        width:100%;
+        left:0;
+        transform: translate(0, 0);
+        display: block;
+    }
+    .faqholder{
+        width:100%;
+        left:0;
+        transform: translate(0, 0);
+        position: relative;
+        padding: 0px;
+        margin: 0px;
+    }
+    .collapsible{
+        width: 100%;
+    }
+    .content{
+        width:100%;
+    }
+    .herologoholder{
+        left:0;
+        left:50%;
+        transform: translate(-50%, 0);
+        width:100%;
+    }
+    .herologo{
+        text-align: ;
+        left:50%;
+        transform: translate(-50%, -200px);
+        position: absolute;
+    }
+    .logo{
+        text-align: center;
+    }
+    .tagline{
+        width:100%;
+        text-align: center;
+        top:-30px;
+    }
+    .heroinstallholder{
+        right:0%;
+        transform: translate(0%, 0);
+        position: absolute;
+        width:100%;
+    }
+    .heroinstall{
+        width: 400px;
+        top:47%;
+        left:50%;
+        transform: translate(-50%, 0);
+        margin:0;
+        padding:0;
+        border-radius: 8px;
+    }
+    .readdocs{
+        top:57%;
+        width:100%;
+        text-align: center;
+        margin:0;
+        right:0;
+    }
+    .installtext{
+        left:5%;
+        font-size: 20px;
+    }
+    .installbg{
+        border-radius: 0px;
+    }
+    .rate{
+        display:none;
+    }
+    .heroinstall:hover .installtext{
+        left:40px;
+    }
+    .contentslogan{
+        font-size: 30px;
+    }
+    .slogandef{
+        display: none;
+    }
+}
+
+@media (min-width:2000px) {
+    .hero{
+        height:1500px;
+    }
+    .contentholder{
+        top:1348px;
+    }
+    .collapsibles{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+    }
+    .contentslogan{
+        width:100%;
+       text-align: center;
+       left:0;
+
+    }
+    .hero{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 0);
+        overflow: visible;
+    }
+    .slogandef{
+        display:none;
+    }
+    .first{
+        left:50%;
+        transform: translate(-50%, 0);
+        top:1300px;
+    }
+}
+</style>

@@ -1,30 +1,32 @@
 ---
-import Base from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import '../../styles/global.css';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import { changeLanguage } from "i18next";
+import Base from "../../components/BaseHead.astro";
+import Header from "../../components/Header.astro";
+import "../../styles/global.css";
+import Footer from "../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../components/FormattedDate.astro";
+import i18next, { t, changeLanguage } from "i18next";
 
-const posts = (await getCollection('blog')).sort(
-	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+changeLanguage("en");
+
+const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<Base />
+<Base title="Wii Link - News" />
 
 <body>
 	<main>
 		<Header />
-		<img src="../Images/newstop.png" style="filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;">
+		<img src="../Images/newstop.png" class="topimg">
 		<section>
 			{
 				posts.map((post) => (
 					<div class="mainpost">
 						<a href={`/blog/${post.slug}/`}>
 						<div class="fade"></div>
-						<img style="filter:blur(8px) opacity(0.6);" src={post.data.heroImage} width="200px">
+						<img style="filter:blur(8px) opacity(0.3);" src={post.data.heroImage} width="200px">
 						<div class="maintitle">{post.data.title}</div>
 						<div class="maindesc">{post.data.description}</div>
 						</a>
@@ -37,7 +39,7 @@ const posts = (await getCollection('blog')).sort(
 					posts.map((post) => (
 						<div class="post">
 							<a href={`/blog/${post.slug}/`}>
-							<div class="new">This just in!</div>
+							<div class="new">{t("blog.new")}</div>
 							<div class="fade"></div>
 							<img src={post.data.heroImage} width="200px">
 							<FormattedDate date={post.data.pubDate} />
@@ -49,7 +51,7 @@ const posts = (await getCollection('blog')).sort(
 				}
 			</div>
 
-			<h2 style="margin-top:60px; left:10%; position:relative; width:50%;">Older posts</h2>
+			<h2 style="margin-top:60px; left:10%; position:relative; width:50%;">{t("blog.other")}</h2>
 
 			<div class="postholdermini">
 				<div class="polka-dot"></div>
@@ -65,6 +67,10 @@ const posts = (await getCollection('blog')).sort(
 					))
 				}
 			</div>
+
+			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;">{t("blog.rss")}</h3>
+			<a href="https://www.wiilink24.com/rss.xml"><div class="rss">{t("blog.rssbtn")}</div></a>
+
 		</section>
 		<Footer />
 	</main>
@@ -115,7 +121,7 @@ const posts = (await getCollection('blog')).sort(
 	.postholder{
 		width:80%;
 		display: grid;
-		grid-template-columns:repeat(auto-fit, minmax(600px, 1fr));
+		grid-template-columns:repeat(auto-fit, minmax(500px, 1fr));
 		position: absolute;
 		gap: 20px;
 		top:45%;
@@ -181,6 +187,7 @@ const posts = (await getCollection('blog')).sort(
 	.post:hover{
     	background-color:rgba(206, 206, 206, 0.117);
     	transform: translate(0,-5px);
+		border: 3px solid rgba(255, 255, 255, 0.208);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
     	transition: 0.5s;
   	}
@@ -190,6 +197,7 @@ const posts = (await getCollection('blog')).sort(
     	background-color:rgb(39, 39, 39);
     	transform: translate(0,-5px);
     	box-shadow: 0px 0px 70px rgb(43, 43, 43);
+		border: 3px solid rgba(255, 255, 255, 0.252);
     	transition: 0.5s;
   	}
 
@@ -300,9 +308,23 @@ const posts = (await getCollection('blog')).sort(
     	left:-50px;
     	top:-80px;
     	background-repeat: repeat;
+		animation: rotate 240s linear infinite;
     	position: absolute;
     	z-index: 0;
   	}
+
+	.topimg{
+		filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+	}
+
+	@keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
 
 	a{
 		bottom:50px;
@@ -319,6 +341,26 @@ const posts = (await getCollection('blog')).sort(
 			opacity:1;
 			transform: translate(0, 0px);
 		}
+	}
+
+	.rss{
+		left:50%;
+		transform: translate(-50%,0);
+		padding:5px;
+		padding-left:10px;
+		padding-right:10px;
+		background-color:rgb(98, 141, 98);
+		border-radius:8px;
+		color:white;
+		font-family: Gilroy;
+		position:absolute;
+		transition: 0.5s;
+	}
+
+	.rss:hover{
+		transform: translate(-50%, -2px);
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.22);
+		transition: 0.5s;
 	}
 
 	@media (max-width:1000px) {
@@ -353,6 +395,25 @@ const posts = (await getCollection('blog')).sort(
 		}
 		.maindesc{
 			width:95%;
+		}
+	}
+
+	@media (min-width:2000px) {
+		section{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+			position: relative;
+		}
+		.status{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+		}
+		.topimg{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, -158px);
 		}
 	}
 </style>

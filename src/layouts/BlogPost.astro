@@ -14,7 +14,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 <html lang="en">\
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<head>
-		<BaseHead title="WiiLink News -"{title} description={description} />
+		<BaseHead title={title}description={description} />
 
 	</head>
 
@@ -216,5 +216,15 @@ transition: 0.5s;
 			top:100px;
 			width: 100%;
 		}
+	}
+
+	@media (min-width:2000px) {
+		main{
+			width:2000px;
+			left:50%;
+			top:10px;
+			transform: translate(-50%, 0);
+			border-radius: 8px;
+			position: relative;
 	}
 </style>

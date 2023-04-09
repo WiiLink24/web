@@ -1,10 +1,13 @@
 ---
 const today = new Date();
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
 ---
+
 <footer>
 	<div class="copyright">
 		<img class="copyimg" src="../../Images/wiimotes_logo.png">
-		<h3 class="copydesc">WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!</h3>
+		<h3 class="copydesc">{t("footer.desc")}</h3>
 		<h2 class="copytext"> <b style="font-family:RubikBold">Wii</b><b style="font-family:RubikMedium">Link</b> Team </br><d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></h2>
 		<div class="socials">
 			<a class="social" href="https://github.com/WiiLink24"><img src="../../Images/github.svg" width="30px"></a>
@@ -22,8 +25,9 @@ const today = new Date();
     position: relative;
 	left:0;
     width:100%;
-    height:200px;
-    background-image:url("../../Images/copyrightbg.png");
+    height:300px;
+    /* background-image:url("../../Images/copyrightbg.png"); */
+    background-color: rgb(28, 28, 28);
     top:200px;
     z-index: 5;
     background-size: cover;
@@ -33,7 +37,7 @@ const today = new Date();
     transform: translate(-100%,0);
 	font-family:Gilroy;
     bottom:0;
-    right:170px;
+    right:9%;
     font-size: 30px;
     position: absolute;
     text-align: right;
@@ -84,7 +88,7 @@ const today = new Date();
     width:500px;
     line-height: 1.5;
     text-align: justify;
-    top:18px;
+    bottom:80px;
     left:8%;
     position: absolute;
 }
@@ -100,7 +104,7 @@ img{
     }
     .copytext{
         left:20px;
-        top:20px;
+        bottom:80px;
         transform: translate(0, 0);
         text-align: left;
     }
@@ -111,4 +115,25 @@ img{
         right:20px;
     }
 }
+
+@media (min-width:2000px) {
+		.copyright{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+			position: relative;
+		}
+		.status{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+		}
+		.topimg{
+			width:3000px;
+			left:50%;
+			transform: translate(-50%, -158px);
+		}
+	}
 </style>
