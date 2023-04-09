@@ -23,7 +23,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 	</ul>
 	<HeaderSmall />
 <a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px"></a>
-<LanguageSelector showFlag={true} class="lang" />
+<LanguageSelector showFlag={false} class="lang" />
 </r>
 
 <div id="fade" class="oschoose">
@@ -190,13 +190,14 @@ r.sticky ul{
 	transform: translate(0,-50%);
     background-image: url("../../Images/langswitcher.png");
     background-size: cover;
-    background-color: rgba(255, 255, 0, 0);
-    color:green;
+    background-color: rgba(203, 203, 203, 0.768);
+    color:rgb(0, 0, 0);
     font-family:Cafe;
 	filter: opacity(0.7);
     border: 0px;
     width:35px;
     height:35px;
+	border-radius: 88px;
     z-index: 100000000;
     position: absolute;
 	transition:0.2s;

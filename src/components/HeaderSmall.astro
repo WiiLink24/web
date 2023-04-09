@@ -16,7 +16,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		<div class="sidenav">
 			<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('open').style.display='none'" style="position:absolute; right:30px; top:40px;"><img class="close" src="/Images/close.png" style="filter:invert(1)" width="38px"></a>
 			<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px"></a>
-<LanguageSelector showFlag={true} class="lang" />
+<LanguageSelector showFlag={false} class="lang" />
 			<ul>
 				<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
 				<a href={localizePath("/blog")}><div class="banner">{t("header.news")}</div></a>
@@ -99,13 +99,14 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 	transform: translate(0,-50%);
     background-image: url("../../Images/langswitcher.png");
     background-size: cover;
-    background-color: rgba(255, 255, 0, 0);
+    background-color: rgba(205, 205, 205, 0.338);
     color:green;
     font-family:Cafe;
 	filter: opacity(0.7);
     border: 0px;
     width:35px;
     height:35px;
+	border-radius: 88px;;
     z-index: 100000000;
     position: absolute;
 	transition:0.2s;
