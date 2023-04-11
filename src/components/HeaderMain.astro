@@ -32,10 +32,11 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		<h2 style="left:40px; margin-bottom:0px; position:absolute;">{t("download.welcome")}</h2>
 		<h3 style="left:40px; top:68px; margin-bottom:0px; position:absolute;">{t("download.oschoose")}</h3>
 		<div class="btns">
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.0/WiiLink_Patcher_Windows_v1.1.0"><div class="btn win"> <img class="osimg" src="../Images/windowslogo.png"><h3 style="bottom:120px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Windows</h3> <h4 style="bottom:150px; left:15px; font-size:20px; position:relative;">{t("download.winreq")}</h4></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.0/WiiLink_Patcher_macOS_v1.1.0"><div class="btn mac"><img class="osimg" src="../Images/applelogo.png"><h3 style="bottom:140px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">MacOS</h3> <h4 style="bottom:170px; left:15px; font-size:20px; position:relative;">{t("download.linreq")}</h4></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.0/WiiLink_Patcher_Linux_v1.1.0"><div class="btn lin"><img class="osimg" src="../Images/linuxlogo.png"><h3 style="bottom:80px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Linux</h3></div></a>
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.1/WiiLink_Patcher_Windows_v1.1.1.exe"><div class="btn win"> <img class="osimg" src="../Images/windowslogo.png"><h3 style="bottom:120px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Windows</h3> <h4 style="bottom:150px; left:15px; font-size:20px; position:relative;">{t("download.winreq")}</h4></div></a>
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.1/WiiLink_Patcher_macOS_v1.1.1"><div class="btn mac"><img class="osimg" src="../Images/applelogo.png"><h3 style="bottom:140px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">MacOS</h3> <h4 style="bottom:170px; left:15px; font-size:20px; position:relative;">{t("download.linreq")}</h4></div></a>
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.1.1/WiiLink_Patcher_Linux_v1.1.1"><div class="btn lin"><img class="osimg" src="../Images/linuxlogo.png"><h3 style="bottom:80px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Linux</h3></div></a>
 		</div>
+		<a href="https://github.com/WiiLink24/DeliverooHelper/releases"><div class="demae">Install the <bg style="font-family:Gilroy">Demae Deliveroo</bg> setup.</div></a>
 		<a href="/guide/1welcome"><h3 class="docs" style="text-align: center; width:100%; position:absolute; bottom:5px;"><Trans i18nKey={"download.checkdocs"}>Check out the installation tutorial on our <bg style="padding:5px; background-color:green; border-radius: 8px;">brand new guide!</bg></Trans></h3></a>
 	</div>
 </div>
@@ -53,6 +54,28 @@ r.classList.toggle("sticky", window.scrollY > 500);
 
 <style>
 
+	.demae{
+		width:90%;
+		height:50px;
+		bottom:80px;
+		font-family: Cafe;
+		font-size: 20px;
+		text-align: center;
+		line-height:50px;
+		color: white;
+		background-color: rgba(255, 255, 255, 0.175);
+	border:4px solid rgba(255, 255, 255, 0.328);
+	border-radius: 8px;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: absolute;
+		transition: 0.2s;
+	}
+	.demae:hover{
+		background-color: rgba(196, 196, 196, 0.175);
+		box-shadow: 0px 0px 58px rgba(255, 255, 255, 0.075);
+		transition: 0.2s;
+	}
 a:link{
 	text-decoration: none;
 	color: rgba(255, 255, 255, 0.53);
@@ -244,7 +267,7 @@ img{
 }
 .btns{
 	display:flex;
-	bottom:48px;
+	bottom:148px;
 	left:50%;
 	transform:translate(-50%,0);
 	position: absolute;
@@ -263,7 +286,7 @@ img{
 
 .container{
 	width:750px;
-	height:350px;
+	height:450px;
 	border:4px solid rgba(255, 255, 255, 0.423);
 	background-color: rgb(35, 35, 35);
 	top:50%;
