@@ -38,9 +38,9 @@ const wii = (await getCollection("wiicon"));
 							<div class="title">{post.data.serviceName}</div>
 							<div class="desc">{post.data.serviceDesc}</div>
 							<div class="work">
-								<div>{post.data.serviceHalted}</div>
-								<div>{post.data.serviceWorking}</div>
-								<div>{post.data.serviceCompleted}</div>
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
 							</div>
 						</div>
 					</a>
@@ -59,9 +59,9 @@ const wii = (await getCollection("wiicon"));
 							<div class="title">{post.data.serviceName}</div>
 							<div class="desc">{post.data.serviceDesc}</div>
 							<div class="work">
-								<div>{post.data.serviceHalted}</div>
-								<div>{post.data.serviceWorking}</div>
-								<div>{post.data.serviceCompleted}</div>
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
 							</div>
 						</div>
 						</a>
@@ -81,9 +81,9 @@ const wii = (await getCollection("wiicon"));
 							<div class="title">{post.data.serviceName}</div>
 							<div class="desc">{post.data.serviceDesc}</div>
 							<div class="work">
-								<div>{post.data.serviceHalted}</div>
-								<div>{post.data.serviceWorking}</div>
-								<div>{post.data.serviceCompleted}</div>
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
 							</div>
 						</div>
 						</a>
@@ -112,7 +112,7 @@ const wii = (await getCollection("wiicon"));
 	.postholder{
 		width:80%;
 		display: grid;
-		grid-template-columns:repeat(auto-fill, minmax(500px, 1fr));
+		grid-template-columns:repeat(auto-fit, minmax(640px, 1fr));
 		gap: 40px;
 		top:250px;
 		left:50%;
@@ -166,7 +166,7 @@ const wii = (await getCollection("wiicon"));
 		font-size: 30px;
 		top:30px;
 		right:40px;
-		width: 50%;
+		width: 60%;
 		text-align: right;
 		font-family: Gilroy;
 		transition: 0.5s;
@@ -248,11 +248,15 @@ const wii = (await getCollection("wiicon"));
 		top:78px;
 		right:40px;
 		position: absolute;
-		padding:5px;
-		border: 2px solid white;
+		border: 0px solid white;
 		border-radius: 18px;
-		padding-left: 10px;
-		padding-right: 10px;
+	}
+
+	.chip{
+		padding-left:10px;
+		padding-right:10px;
+		border-radius: 18px;
+		line-height: 30px;
 	}
 
 	.status{
@@ -320,9 +324,9 @@ const wii = (await getCollection("wiicon"));
 		}
 	}
 
-	@media (min-width:2000px) {
+	@media (min-width:2500px) {
 		section{
-			width:2000px;
+			width:2500px;
 			left:50%;
 			transform: translate(-50%, 0);
 			position: relative;

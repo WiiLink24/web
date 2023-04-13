@@ -29,7 +29,8 @@
     "donate": {
         "title": " Keep the groove going!",
         "join": "JUMP IN!",
-        "desc": "Keep up to date on all things WiiLink in our Discord server!"
+        "desc": "Keep up to date on all things WiiLink in our Discord server!",
+        "donors": "Huge thanks to out donors!"
     },
     "footer": {
         "desc": "WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!",
@@ -79,6 +80,7 @@
         "oschoose": "Choose your OS to get started!",
         "winreq": "10 or higher",
         "linreq": "Requires Brew",
-        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>" 
+        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>",
+        "deliveroo": "Install the Demae Deliveroo setup."
     }
   }

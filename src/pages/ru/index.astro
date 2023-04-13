@@ -252,7 +252,9 @@ changeLanguage("ru");
 
 .heroinstallholder{
     width:400px;
-    height:100%;
+    height:130px;
+    top:50%;
+    transform: translate(0, -50%);
     right:8%;
     z-index: 1;
     position: absolute;
@@ -260,8 +262,8 @@ changeLanguage("ru");
 
 .heroinstall{
     width:90%;
-    top:50%;
-    transform: translate(0,-50%);
+    top:0%;
+    transform: translate(0,0%);
     position: absolute;
     background-color:#2b873d;
     backdrop-filter: blur(4px);
@@ -308,8 +310,10 @@ changeLanguage("ru");
 
 .readdocs{
     font-size: 20px;
-    top:53%;
+    width: 97%;
+    bottom: 0;
     right:10px;
+    text-align: right;
     text-decoration: none;
     position: absolute;
 }
@@ -345,6 +349,7 @@ changeLanguage("ru");
     .channeltop{
         width:100%;
         height:100%;
+        scale: 80%;
         left:50%;
         top:50%;
         opacity: 0.5;
@@ -362,7 +367,7 @@ changeLanguage("ru");
         left:50%;
         top:50%;
         opacity: 0.3;
-        scale: 95%;
+        scale: 75%;
         position:relative;
         opacity:0;
         animation-name: fadeinmid;
@@ -377,7 +382,7 @@ changeLanguage("ru");
         left:50%;
         top:50%;
         opacity: 0.1;
-        scale: 95%;
+        transform: scale(0.7);
         position:relative;
         opacity:0;
         animation-name: fadeinbot;
@@ -642,7 +647,7 @@ Trans{
         border-radius: 8px;
     }
     .readdocs{
-        top:57%;
+        bottom:-50px;
         width:100%;
         text-align: center;
         margin:0;

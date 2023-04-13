@@ -10,6 +10,8 @@ import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("en");
 ---
 <!DOCTYPE html>
 <html lang={i18next.language}>
@@ -347,6 +349,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
     .channeltop{
         width:100%;
         height:100%;
+        scale: 80%;
         left:50%;
         top:50%;
         opacity: 0.5;
@@ -364,7 +367,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
         left:50%;
         top:50%;
         opacity: 0.3;
-        scale: 95%;
+        scale: 75%;
         position:relative;
         opacity:0;
         animation-name: fadeinmid;
@@ -379,7 +382,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
         left:50%;
         top:50%;
         opacity: 0.1;
-        scale: 95%;
+        transform: scale(0.7);
         position:relative;
         opacity:0;
         animation-name: fadeinbot;
