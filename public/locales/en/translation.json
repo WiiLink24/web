@@ -96,5 +96,7 @@
         "services": "Our services",
         "wiiguide": "Go to wii.guide",
         "hover": "Hover over me"
+        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>",
+        "deliveroo": "Install the Demae Deliveroo setup."
     }
   }

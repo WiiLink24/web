@@ -4,4 +4,14 @@ title: Welcome!
 pubDate: "Dec 03 2020"
 ---
 
-Placeholder WELCOME message!!!!1!!1!1
+## Welcome to the WiiLink guide!
+### Use the panel on your left to navigate around!
+
+#### Here are some guides that might interest you:
+* [Installation Guide](./2installation)
+
+* [Demae Installation Guide](./3demae_install)
+
+* [FAQ](./4FAQ)
+
+> This guide is still in its infancy, and there's a lot of work to be done!!

@@ -10,6 +10,8 @@ import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("en");
 ---
 <!DOCTYPE html>
 <html lang={i18next.language}>
@@ -95,8 +97,8 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
                         <p>{t("home.faqres4")}</p>
                     </div>
                 </div>
-                    <h3 style="text-align: center; top:20px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3>
             </div>
+            <a href="./guide/1welcome"><h3 style="text-align: center; top:80px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3></a>
         </div>
 
             <!-- The team section -->
@@ -145,7 +147,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 80%;
+    width: 100%;
     left:50%;
     transform: translate(-50%,0);
     border-radius: 8px;
@@ -163,7 +165,11 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
   .collapsibles{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(800px, 1fr));
+    width:95%;
+    left:50%;
+    transform: translate(-50%,30px);
+    grid-template-columns:repeat(auto-fill, minmax(700px, 1fr));
+    gap:20px;
     position: relative;
   }
   
@@ -180,10 +186,22 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
     border-radius: 8px ;
     color:white;
     font-family: Cafe;
-    width: 80%;
+    width: 100%;
     left:50%;
     transform: translate(-50%,0);
     position: relative;
+    animation: fadein 0.2s linear;
+  }
+
+  @keyframes fadein{
+    0%{
+        transform: translate(-50%, -8px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(-50%, 0px);
+        opacity: 1;
+    }
   }
 
   p{
@@ -347,6 +365,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
     .channeltop{
         width:100%;
         height:100%;
+        scale: 80%;
         left:50%;
         top:50%;
         opacity: 0.5;
@@ -364,7 +383,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
         left:50%;
         top:50%;
         opacity: 0.3;
-        scale: 95%;
+        scale: 75%;
         position:relative;
         opacity:0;
         animation-name: fadeinmid;
@@ -379,7 +398,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
         left:50%;
         top:50%;
         opacity: 0.1;
-        scale: 95%;
+        transform: scale(0.7);
         position:relative;
         opacity:0;
         animation-name: fadeinbot;
@@ -432,6 +451,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
     padding-right: 15px;
     border-radius: 8px;
     position: absolute;
+    display:none;
   }
 	
 .topimg{
