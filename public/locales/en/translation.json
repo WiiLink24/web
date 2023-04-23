@@ -24,14 +24,13 @@
         "new": "This just in!",
         "other": "Older posts",
         "rss": "Bring Wii News anywhere with our RSS Feed!",
-        "rssbtn": "Check it out!",
-        "desc": "Welcome back to the WiiLink news page, it's good to have you back! In the last *checks watch* 3 months since the last update, there have been many changes to WiiLink."
+        "rssbtn": "Check it out!"
     },
     "donate": {
         "title": " Keep the groove going!",
         "join": "JUMP IN!",
         "desc": "Keep up to date on all things WiiLink in our Discord server!",
-        "thx": "Huge thanks to our donators!"
+        "donors": "Huge thanks to out donors!"
     },
     "footer": {
         "desc": "WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!",
@@ -74,28 +73,13 @@
         "wc24": "WiiConnect24 Channels",
         "wc24desc": "Functionality provided by WiiConnect24, revived by WiiLink.",
         "video": "Video Streaming Services",
-        "videodesc": "A myriad of services for you to best enjoy video within.",
-        "old": "View the server status"
+        "videodesc": "A myriad of services for you to best enjoy video within."
     },
     "download": {
         "welcome": "Welcome!",
         "oschoose": "Choose your OS to get started!",
         "winreq": "10 or higher",
         "linreq": "Requires Brew",
-        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>" 
-    },
-    "team": {
-        "teamlead": "Team Lead",
-        "dev": "Developer",
-        "WebDev": "Web Designer",
-        "Trans": "Translator",
-        "Design": "Lead Designer"
-    },
-    "guide": {
-        "getstarted": "Let's get you started",
-        "services": "Our services",
-        "wiiguide": "Go to wii.guide",
-        "hover": "Hover over me"
         "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>",
         "deliveroo": "Install the Demae Deliveroo setup."
     }
