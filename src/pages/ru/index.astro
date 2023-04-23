@@ -97,8 +97,8 @@ changeLanguage("ru");
                         <p>{t("home.faqres4")}</p>
                     </div>
                 </div>
-                    <h3 style="text-align: center; top:20px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3>
             </div>
+            <a href="./guide/1welcome"><h3 style="text-align: center; top:80px; position: relative; left:50%; width:80%; transform:translate(-50%, 0);">{t("home.morefaq")}</h3></a>
         </div>
 
             <!-- The team section -->
@@ -147,7 +147,7 @@ changeLanguage("ru");
     color: white;
     cursor: pointer;
     padding: 18px;
-    width: 80%;
+    width: 100%;
     left:50%;
     transform: translate(-50%,0);
     border-radius: 8px;
@@ -165,7 +165,11 @@ changeLanguage("ru");
 
   .collapsibles{
     display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(800px, 1fr));
+    width:95%;
+    left:50%;
+    transform: translate(-50%,30px);
+    grid-template-columns:repeat(auto-fill, minmax(700px, 1fr));
+    gap:20px;
     position: relative;
   }
   
@@ -182,10 +186,22 @@ changeLanguage("ru");
     border-radius: 8px ;
     color:white;
     font-family: Cafe;
-    width: 80%;
+    width: 100%;
     left:50%;
     transform: translate(-50%,0);
     position: relative;
+    animation: fadein 0.2s linear;
+  }
+
+  @keyframes fadein{
+    0%{
+        transform: translate(-50%, -8px);
+        opacity: 0;
+    }
+    100%{
+        transform: translate(-50%, 0px);
+        opacity: 1;
+    }
   }
 
   p{

@@ -72,6 +72,21 @@
         "wc24": "Каналы WiiConnect24",
         "wc24desc": "То, что изначально предоставлял WiiConnect24, но теперь оживлённое WiiLink'ом",
         "video": "Стриминговые сервисы",
-        "videodesc": "Множество каналов, в которых можно глянуть видосики."
+        "videodesc": "Множество каналов, в которых можно глянуть видосики.",
+        "statuspage": "Russian"
+    },
+    "download": {
+        "welcome": "Welcome!",
+        "oschoose": "Choose your OS to get started!",
+        "winreq": "10 or higher",
+        "linreq": "Requires Brew",
+        "checkdocs": "Check out the installation tutorial on our <0>brand new guide!</0>",
+        "deliveroo": "Install the Demae Deliveroo setup."
+    },
+    "guide": {
+        "hover": "Hover over me",
+        "msg1": "Let's get started",
+        "msg2": "Our services",
+        "wiiguide": "Go to wii.guide"
     }
   }

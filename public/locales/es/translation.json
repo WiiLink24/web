@@ -73,7 +73,8 @@
         "wc24": "Canales de WiiConnect24",
         "wc24desc": "Funcionalidad de WiiConnect24, revivida gracias a WiiLink.",
         "video": "Servicio de Vídeos en Streaming",
-        "videodesc": "Un montón de servicios para que disfrutes de vídeos online."
+        "videodesc": "Un montón de servicios para que disfrutes de vídeos online.",
+        "statuspage": "Ver el estado de los servidores"
     },
     "download": {
         "welcome": "¡Bienvenido!",
@@ -82,5 +83,12 @@
         "linreq": "Requiere de Brew",
         "checkdocs": "¡Mira el tutorial de instalación en nuestra <0>nueva guía</0>!",
         "deliveroo": "Instala el ayudante de instalación de Demae Deliveroo."
+    },
+    "guide": {
+        "hover": "Pasa sobre mí",
+        "msg1": "Comencemos",
+        "msg2": "Nuestros servicios",
+        "wiiguide": "Ves a wii.guide"
     }
+
   }

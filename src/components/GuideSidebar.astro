@@ -3,13 +3,14 @@ import { getCollection } from 'astro:content';
 const posts = (await getCollection('guide')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
+import i18next, { t, changeLanguage } from "i18next";
 ---
 
 <sidebar>
 	<div class="sidebarholder">
-        <h3 class="hover">Hover over me</h3>
+        <h3 class="hover">{t("guide.hover")}</h3>
         <div class="sidebarcontent">
-            <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">Let's get you started</div>
+            <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">{t("guide.msg1")}</div>
             {
                 posts.map((post) => (
                     <div class="post">
@@ -22,7 +23,7 @@ const posts = (await getCollection('guide')).sort(
         </div>
 
         <div class="sidebarcontent">
-            <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">Our services</div>
+            <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">{t("guide.msg2")}</div>
             {
                 posts.map((post) => (
                     <div class="post2">
@@ -34,7 +35,7 @@ const posts = (await getCollection('guide')).sort(
             }
         </div>
 
-        <a href="https://wii.guide"><div class="wiiguide">Go to wii.guide</div></a>
+        <a href="https://wii.guide"><div class="wiiguide">{t("guide.wiiguide")}</div></a>
     </div>
 </sidebar>
 <style>
