@@ -12,6 +12,6 @@ pubDate: "Dec 03 2020"
 
 * [Demae Installation Guide](./3demae_install)
 
-* [FAQ](./4FAQ)
+* [FAQ](./4faq)
 
 > This guide is still in its infancy, and there's a lot of work to be done!!
