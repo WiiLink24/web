@@ -208,7 +208,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   	}
 
 	img{
-
+		background-image: url(./Images/defaultbanner.png);
+		background-size: cover;
+		background-position: center;
 		width: 100%;
 		left:0;
 		z-index: 0;
