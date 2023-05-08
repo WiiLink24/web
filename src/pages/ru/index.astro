@@ -44,7 +44,7 @@ changeLanguage("ru");
 
         <div class="heroinstallholder">
             <div class="heroinstall">
-                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; font-size:40px; z-index: 1;">{t("home.install")}</h2></a>
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; z-index: 1;">{t("home.install")}</h2></a>
                 <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
                 <div class="installbg"></div>
             </div>
@@ -589,22 +589,21 @@ Trans{
 
   @media (max-width:1000px) {
     .parallaximpress{
-        top:35%;
-        left:50%;
-        position: absolute;
-        scale:70%;
-        transform: translate(-50%, -50%);
+        top:0;
+        left:0;
+        position: fixed;
+        transform: scale(40%) translate(-100%,-70%);
         opacity: 0.3;
     }
     .logo{
-        font-size:100px;
+        font-size:80px;
         text-align: left;
-        left:0;
+        left:8px;
         transform: translate(0, 0);
         margin: 0px;
     }
     .tagline{
-        font-size: 30px;
+        font-size: 25px;
         width:60%;
         text-align: left;
     }
@@ -630,22 +629,22 @@ Trans{
     }
     .herologoholder{
         left:0;
-        left:50%;
-        transform: translate(-50%, 0);
+        top:100px;
         width:100%;
     }
     .herologo{
         text-align: ;
-        left:50%;
-        transform: translate(-50%, -200px);
+        left:0%;
         position: absolute;
     }
     .logo{
-        text-align: center;
+        text-align: left;
+        left:20px;
     }
     .tagline{
-        width:100%;
-        text-align: center;
+        width:90%;
+        text-align: left;
+        left:25px;
         top:-30px;
     }
     .heroinstallholder{
@@ -655,13 +654,13 @@ Trans{
         width:100%;
     }
     .heroinstall{
-        width: 400px;
-        top:47%;
-        left:50%;
-        transform: translate(-50%, 0);
+        width: 240px;
+        top:65%;
+        left:20px;
         margin:0;
         padding:0;
         border-radius: 8px;
+        height: 50px;
     }
     .readdocs{
         bottom:-50px;
@@ -671,8 +670,11 @@ Trans{
         right:0;
     }
     .installtext{
-        left:5%;
-        font-size: 20px;
+        text-align: center;
+        width: 100%;
+        position: relative;
+        font-size: 30px;
+        line-height: 45px;
     }
     .installbg{
         border-radius: 0px;
@@ -680,14 +682,30 @@ Trans{
     .rate{
         display:none;
     }
-    .heroinstall:hover .installtext{
-        left:40px;
-    }
     .contentslogan{
-        font-size: 30px;
+        font-size: 25px;
     }
     .slogandef{
         display: none;
+    }
+    .hero{
+        height:400px;
+    }
+    .contentholder{
+        top:400px;
+    }
+    .installarrow{
+        display: none;
+    }
+    .first{
+        display: none;
+    }
+    .readdocs{
+        display:none;
+    }
+    .polka-dot{
+        left:-28%;
+        top:18px;
     }
 }
 

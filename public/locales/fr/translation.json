@@ -1,0 +1,93 @@
+{
+    "home": {
+      "subtitle": "Un nouveau service en ligne pour la Wii.",
+      "install": "Installer!",
+      "docs": "Consulter le guide",
+      "beta": "Ce site est en BETA, notez-le !",
+      "info": "<0><1>Wii</1><2>Link</2> ressuscite de nombreuses chaînes exclusives à certaines régions. <br/> Y compris les chaînes uniquement disponibles au Japon !</0>",
+      "faq": " Simple FAQ",
+      "faq1": "Pourquoi WiiLink ?",
+      "faqres1": "WiiLink est le seul service à remettre en ligne des chaînes Wii exclusives au Japon après leur arrêt officiel. Nous avons rendu Wii no Ma, la chaîne Demae et la chaîne Digicam Print fonctionnelles à nouveau. Grâce à notre service, vous pouvez à nouveau profiter de toutes ces chaînes sur votre Nintendo Wii - peut-être même pour la première fois.",
+      "faq2": "Pourquoi WiiLink existe ?",
+      "faqres2": "Sans un service de remplacement pour ces chaînes, elles seraient perdues dans le temps, sans jamais être revues. Cependant, grâce à notre travail, les générations futures de joueurs pourront à nouveau profiter de ces chaînes !",
+      "faq3": "Est-ce que WiiLink est légal ?",
+      "faqres3": "Absolument. Nous développons toutes nos chaînes sans code ni matériel protégés par des droits d'auteur, et nous nous appuyons uniquement sur ce qui est fourni dans la chaîne et sur les connaissances du public. Tout le code est écrit de A à Z. Vous n'aurez aucun problème juridique en utilisant notre service.",
+      "faq4": "La chaîne Demae peut-elle passer de vraies commandes ?",
+      "faqres4": "Oui !",
+      "morefaq": "D'autres questions ? Si c'est le cas, n'hésitez pas à lire notre FAQ complète !",
+      "team": " Notre incroyable équipe",
+      "teamdef": "Quelques-unes des personnes incroyables qui ont contribué à donner vie à WiiLink !",
+      "news": " Actualités",
+      "newsdef": "Suivez les dernières actualités du service !"
+    },
+    "blog": {
+        "new": "Vient d'arriver !",
+        "other": "Articles précédents",
+        "rss": "Informez-vous sur l'actualité de la Wii partout avec notre flux RSS !",
+        "rssbtn": "Découvrez-le !"
+    },
+    "donate": {
+        "title": " Continuez le fun !",
+        "join": "REJOINDRE !",
+        "desc": "Restez informé sur tout ce qui concerne WiiLink sur notre serveur Discord !",
+        "donors": "Un grand merci à nos donateurs !"
+    },
+    "footer": {
+        "desc": "WiiLink est un service qui redonne vie aux chaînes japonaises exclusives de la Wii, aujourd'hui disparues, ainsi qu'aux chaînes multimédias. Ce service vous permet d'utiliser Wii Room, la chaîne Digicam Print, la chaîne Kirby TV et la chaîne Demae !",
+        "team": ""
+    },
+    "header": {
+        "home": "Accueil",
+        "news": "Actualités",
+        "guide": "Guide",
+        "status": "Statut",
+        "faq": "FAQ",
+        "install": "Installer"
+    },
+    "services": {
+        "itn1name": "Wii Room",
+        "itn1jpn": "Wiiの間",
+        "itn1desc": "Regardez de nouvelles vidéos avec Wii Room, une approche unique de la vidéo à la demande.",
+        "itn2name": "Chaîne Digicam Print",
+        "itn2jpn": "デジカメプリントチャンネル",
+        "itn2desc": "Créez des tirages parfaits avec la chaîne Digicam Print et concevez des albums photo à votre façon.",
+        "itn3name": "Chaîne Kirby TV",
+        "itn3jpn": "",
+        "itn3desc": "Regardez l'anime original Kirby depuis votre Wii grâce à la chaîne Kirby TV.",
+        "itn4name": "Chaîne Demae",
+        "itn4jpn": "出前チャンネル",
+        "itn4desc": "Commandez des repas avec la chaîne Demae et recevez des plats savoureux directement chez vous.",
+        "itn5name": "Chaîne Météo",
+        "itn5jpn": "",
+        "itn5desc": "Consultez la météo directement sur votre Wii et prévoyez votre tenue en conséquence.",
+        "itn6name": "Chaîne Nintendo",
+        "itn6jpn": "",
+        "itn6desc": "Regardez toutes sortes de trailers, de promos et d'émissions à partir d'une seule interface.",
+        "itn7name": "Chaîne Guide TV",
+        "itn7jpn": "テレビガイドチャンネル",
+        "itn7desc": "Envie de savoir ce qu'il y a à la télé ? Ne vous posez plus de questions avec la chaîne Guide TV !"
+    },
+    "status": {
+        "core": "Services de base",
+        "coredesc": "Services de base de WiiLink, à l'origine uniquement disponibles au Japon.",
+        "wc24": "Chaînes WiiConnect24",
+        "wc24desc": "Fonctionnalités fournies par WiiConnect24, relancées par WiiLink.",
+        "video": "Services de streaming vidéo",
+        "videodesc": "Une myriade de services pour vous permettre de profiter au maximum de contenus vidéos.",
+        "statuspage": "Consulter l'état du serveur"
+    },
+    "download": {
+        "welcome": "Bienvenue !",
+        "oschoose": "Choisissez votre OS pour commencer !",
+        "winreq": "10 or plus",
+        "linreq": "Nécessite Brew",
+        "checkdocs": "Consultez le tutoriel d'installation sur notre <0>tout nouveau guide !</0>",
+        "deliveroo": "Install the Demae Deliveroo setup."
+    },
+    "guide": {
+        "hover": "Survolez moi",
+        "msg1": "Commencer",
+        "msg2": "Nos services",
+        "wiiguide": "Aller vers wii.guide"
+    }
+  }

@@ -208,7 +208,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   	}
 
 	img{
-
+		background-image: url(./Images/defaultbanner.png);
+		background-size: cover;
+		background-position: center;
 		width: 100%;
 		left:0;
 		z-index: 0;
@@ -372,6 +374,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		.postholder{
 			width:100%;
 			display: block;
+			left:0;
+			transform: translate(0, 300px);
 			overflow: hidden;
 		}
 		.post{
@@ -394,7 +398,18 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     	text-overflow: ellipsis;
 		}
 		.maindesc{
-			width:95%;
+			width:100%;
+			font-size:25px;
+			transform: translate(-50%, -40px);
+		}
+		.maintitle{
+			width:100%;
+			font-size: 40px;
+		}
+		.mainpost{
+			top:-50px;
+			position: absolute;
+			height: 500px;
 		}
 	}
 
