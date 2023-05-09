@@ -1,1 +1,93 @@
-
+{
+    "home": {
+      "subtitle": "Um novo serviço online para a Wii.",
+      "install": "Instala-o agora",
+      "docs": "Consulta o guia",
+      "beta": "Este site está em estado BETA, avalia-o!",
+      "info": "O <0><1>Wii</1><2>Link</2> ressuscita muitos canais regionais exclusivos.  Incluindo canais lançados apenas no Japão!!</0>",
+      "faq": "Perguntas Frequentes",
+      "faq1": "Porquê o WiiLink?",
+      "faqres1": "O WiiLink é o único serviço a trazer de volta canais japoneses exclusivos Wii depois de terem sido oficialmente encerrados. Nós tornámos os canais ''Wii no Ma, the Demae Channel'' e ''Digicam Print Channel'' funcionais outra vez. Como o nosso serviço, podes experienciar todos eles uma vez mais na tua Nintendo Wii - possivelmente pela primeira vez.",
+      "faq2": "Porque é que o WiiLink existe?",
+      "faqres2": "Sem um serviço de substituição para estes canais, eles perder-se-iam no tempo, para nunca mais serem vistos. No entanto, graças ao nosso trabalho, as gerações futuras de jogadores podem voltar a ver estes canais!",
+      "faq3": "Usar o WiiLink é legal?",
+      "faqres3": "Absolutamente. Desenvolvemos todos os nossos canais sem códigos e materiais protegidos por direitos de autor e baseamo-nos apenas no que é fornecido no canal e no conhecimento público. Todo o código é escrito desde o início. Não terás problemas legais ao utilizar o nosso serviço.",
+      "faq4": "O canal Demae Channel pode encomendar comida a sério?",
+      "faqres4": "Sim!",
+      "morefaq": "Tens outras perguntas? Se sim, não deixes de ler as nossas PERGUNTAS FREQUENTES completas!",
+      "team": "A nossa equipa fantástica",
+      "teamdef": "Algumas das pessoas incríveis que ajudarama a dar vida ao WiiLink!",
+      "news": " Novo suporte",
+      "newsdef": "Fica a par das últimas novidades do serviço!"
+    },
+    "blog": {
+        "new": "Isto acabou de chegar",
+        "other": "Publicações mais antigas",
+        "rss": "Leva as notícias da Wii para todo o lado com o nosso feed RSS!",
+        "rssbtn": "Vê isto!"
+    },
+    "donate": {
+        "title": "Mantém o ritmo!",
+        "join": "JUNTA-TE A NÓS",
+        "desc": "Mantém-te a par de tudo o que se passa com o WiiLink no nosso servidor Discord!",
+        "donors": "Um grande obrigado aos nossos doadores!"
+    },
+    "footer": {
+        "desc": "O WiiLink é um serviço de revitalização dos canais exclusivos da Wii e dos canais multimédia japoneses, agora extintos. Este serviço permite-te usar o ''Wii Room'', o ''Digicam Print Channel'', o ''Kirby TV Channel'' e o ''Food Channel''!",
+        "team": ""
+    },
+    "header": {
+        "home": "Página Principal",
+        "news": "Notícias",
+        "guide": "Guia",
+        "status": "Estado",
+        "faq": "Perguntas Frequentes",
+        "install": "Instalar agora"
+    },
+    "services": {
+        "itn1name": "Wii Room",
+        "itn1jpn": "Wiiの間",
+        "itn1desc": "Vê novos vídeos com o ''Wii Room'', uma abordagem única ao vídeo a pedido.",
+        "itn2name": "Photo Print Channel",
+        "itn2jpn": "デジカメプリントチャンネル",
+        "itn2desc": "Cria impressões perfeitas com o ''Digicam Print Channel'' e concebe álbuns de fotografias da forma que só tu sabes fazer melhor.",
+        "itn3name": "Kirby TV Channel",
+        "itn3jpn": "",
+        "itn3desc": "Vê o anime original do Kirby directamente na tua Wii com o ''Kirby TV Channel''.",
+        "itn4name": "Food Channel",
+        "itn4jpn": "出前チャンネル",
+        "itn4desc": "Encomenda comida com o "Food Channel" e leva as delícias directamente à tua casa.",
+        "itn5name": "Forecast Channel",
+        "itn5jpn": "",
+        "itn5desc": "Verifica o tempo na tua Wii e planeia o teu vestuário em conformidade.",
+        "itn6name": "Nintendo Channel",
+        "itn6jpn": "",
+        "itn6desc": "Vê todo o tipo de trailers, promoções e programas, tudo a partir de uma única interface.",
+        "itn7name": "TV Guide Channel",
+        "itn7jpn": "テレビガイドチャンネル",
+        "itn7desc": "Queres saber o que está a dar na televisão? Não penses mais nisso com o ''TV Guide Channel''!"
+    },
+    "status": {
+        "core": "Serviços principais",
+        "coredesc": "Serviços essenciais ao WiiLink, inicialmente apenas disponíveis no Japão.",
+        "wc24": "Canais WiiConnect24",
+        "wc24desc": "Funcionalidade fornecida pelo WiiConnect24, reativada pelo WiiLink.",
+        "video": "Serviços de Streaming de Vídeo",
+        "videodesc": "Uma infinidade de serviços para que possas desfrutar melhor do teu vídeo.",
+        "statuspage": "Ver o estado do servidor"
+    },
+    "download": {
+        "welcome": "Bem-vindo!",
+        "oschoose": "Escolhe o teu sistema operativo para começar!",
+        "winreq": "10 ou superior",
+        "linreq": "Requer o Brew",
+        "checkdocs": "Vê o tutorial de instalação no nosso <0>novo guia!</0>",
+        "deliveroo": "Instalar a configuração do Demae Deliveroo."
+    },
+    "guide": {
+        "hover": "Passa o cursor sobre mim",
+        "msg1": "Vamos começar",
+        "msg2": "Os nossos serviços",
+        "wiiguide": "Ir ao wii.guide"
+    }
+  }
