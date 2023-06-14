@@ -1,0 +1,286 @@
+---
+import Base from "../../components/BaseHead.astro";
+import Services from "../../components/Services.astro";
+import Header from "../../components/HeaderMain.astro";
+import Footer from "../../components/Footer.astro";
+import Members from "../../components/Members.astro";
+import News from "../../components/News.astro";
+import Donators from "../../components/Donators.astro";
+import "../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("pt");
+---
+<!DOCTYPE html>
+<html lang={i18next.language}>
+<Base title="WiiLink - 404"/>
+
+    <body>
+    <!-- Hero section -->
+
+    <div class="hero">
+        <div class="parallaximpress">
+            <div class="parallax" id="scene">
+                <div class="channeltop" data-depth="0.3"  data-friction-x="1.5"> <img src="./Images/bgtop.png"></div>
+                <div class="channelmid" data-depth="0.1" data-friction-x="1.5"> <img src="./Images/bgmid.png"></div>
+                <div class="channelbot" data-depth="0.05" data-friction-x="1.5"> <img src="./Images/bgbot.png" style="bottom:0; position:absolute;"></div>
+            </div>
+        </div>
+
+<div class="err">
+    <h1 style="text-align:center; font-size:200px; top:0; font-family:RubikBold; margin:0;">404</h1>
+    <h3 style="text-align: center; font-size:50px; font-family: Gilroy; margin:0;">It appears you got lost...</h3>
+</div>
+
+            <!-- Activate parallax effect from Hero section -->
+            <script>
+                import Parallax from "parallax-js";
+                var scene = document.getElementById('scene');
+                var parallaxInstance = new Parallax(scene);
+            </script>
+            <script>
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+                
+                for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+                });
+                }
+            </script>
+    </body>
+</html>
+
+<style>
+
+    .err{
+        width:400px;
+        height:400px;
+        left:50%;
+        top:50%;
+        transform:translate(-50%,-50%);
+        position: absolute;
+    }
+
+  /* Hero Styles */
+  .hero{
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    position: fixed;
+    overflow: hidden;
+}
+
+.herologoholder{
+    width:450px;
+    height:100%;
+    top:0;
+    left:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.herologo{
+    height:300px;
+    width:100%;
+    top:45%;
+    transform: translate(0,-50%);
+    position: absolute;
+}
+
+.logo{
+    top:0;
+    left:0px;
+    position: relative;
+    z-index: 1;
+    font-size:120px;
+    font-family: RubikBold;
+}
+
+.tagline{
+    position: relative;
+    top:-80px;
+    left:10px;
+}
+
+.heroinstallholder{
+    width:400px;
+    height:100%;
+    right:8%;
+    z-index: 1;
+    position: absolute;
+}
+
+.heroinstall{
+    width:90%;
+    top:50%;
+    transform: translate(0,-50%);
+    position: absolute;
+    background-color:#2b873d;
+    backdrop-filter: blur(4px);
+    padding-left:30px;
+    padding-top:0px;
+    height:70px;
+    border-radius: 8px;
+    border:0px solid #ffffff34;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installbg{
+    left:0;
+    transition: 0.5s;
+}
+
+.installtext{
+    transform: translate(0px,0);
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installtext{
+    transform: translate(40px,0);
+    transition: 0.5s;
+}
+
+.installarrow{
+    opacity: 1;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.heroinstall:hover .installarrow{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.heroinstall:hover{
+    border: 0px solid #ffffff;
+    background-color:#287038;
+    transition: 0.5s;
+}
+
+.readdocs{
+    font-size: 20px;
+    top:53%;
+    right:10px;
+    text-decoration: none;
+    position: absolute;
+}
+
+.slogandef{
+    right:11%;
+    transform: translate(0, -30px);
+    font-size:15px;
+    position: absolute;
+}
+
+    .parallaximpress{
+        width:1800px;
+        height:1000px;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+        z-index: 1;
+    }
+
+    .parallax{
+        width:1800px;
+        height:1000px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .image{
+        object-fit: cover;
+    }
+
+    .channeltop{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.1;
+        position:relative;
+        opacity:0;
+        filter: brightness(0%);
+        animation-name: fadeintop;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+
+    .channelmid{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.05;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        filter: brightness(0%);
+        animation-name: fadeinmid;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.4s;
+    }
+
+    .channelbot{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.02;
+        scale: 95%;
+        position:relative;
+        opacity:0;
+        filter: brightness(0%);
+        animation-name: fadeinbot;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+
+    @keyframes fadeintop{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.5;
+            scale: 100%;
+        }
+    }
+
+    @keyframes fadeinmid{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.3;
+            scale: 100%;
+        }
+    }
+
+    @keyframes fadeinbot{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 0.1;
+            scale: 100%;
+        }
+    }
+</style>

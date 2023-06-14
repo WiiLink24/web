@@ -1,0 +1,346 @@
+---
+import { changeLanguage } from "i18next";
+import Base from "../../../../components/BaseHead.astro";
+import Header from "../../../../components/Header.astro";
+import "../../../../styles/global.css";
+import Footer from "../../../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../../consts";
+import { getCollection } from "astro:content";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("fr");
+
+const core = (await getCollection("core"));
+const vid = (await getCollection("video"));
+const wii = (await getCollection("wiicon"));
+---
+
+<Base title="WiiLink - Status" />
+
+<body>
+	<main>
+		<Header />
+		<img class="topimg" src="../Images/statustop.png" style="">
+		
+		<a href="https://status.wiilink24.com/"><div class="status">{t("status.statuspage")}</div></a>
+		
+		<section>
+			<h2 class="servicehead">{t("status.core")}</h2>
+			<div class="polka-dot"></div>
+			<h4 class="servicedesc">{t("status.coredesc")}</h4>
+			<div class="postholder">
+				{
+					core.map((post) => (
+						<a href={post.data.serviceLink}>
+						<div class="post">
+							<img class="image" src={post.data.serviceImage} width="200px">
+							<div class="title">{post.data.serviceName}</div>
+							<div class="desc">{post.data.serviceDesc}</div>
+							<div class="work">
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
+							</div>
+						</div>
+					</a>
+					))
+				}
+				</div>
+
+				<h2 class="servicehead">{t("status.wc24")}</h2>
+			<h4 class="servicedesc">{t("status.wc24desc")}</h4>
+			<div class="postholder">
+				{
+					wii.map((post) => (
+					<a href={post.data.serviceLink}>
+						<div class="post">
+							<img class="image" src={post.data.serviceImage} width="200px">
+							<div class="title">{post.data.serviceName}</div>
+							<div class="desc">{post.data.serviceDesc}</div>
+							<div class="work">
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
+							</div>
+						</div>
+						</a>
+					))
+				}
+			</div>
+
+
+			<h2 class="servicehead">{t("status.video")}</h2>
+			<h4 class="servicedesc">{t("status.videodesc")}</h4>
+			<div class="postholder">
+				{
+					vid.map((post) => (
+					<a href={post.data.serviceLink}>
+						<div class="post">
+							<img class="image" src={post.data.serviceImage} width="200px">
+							<div class="title">{post.data.serviceName}</div>
+							<div class="desc">{post.data.serviceDesc}</div>
+							<div class="work">
+								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
+								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
+								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
+							</div>
+						</div>
+						</a>
+					))
+				}
+			</div>
+		</section>
+		<Footer />
+	</main>
+</body>
+
+
+<style>
+	.servicehead{
+		position: relative;
+		top:230px;
+		left:8%;
+		width:80%;
+	}
+	.servicedesc{
+		position:relative;
+		top:200px;
+		left:8%;
+		width:80%;
+	}
+	.postholder{
+		width:80%;
+		display: grid;
+		grid-template-columns:repeat(auto-fit, minmax(640px, 1fr));
+		gap: 40px;
+		top:250px;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: relative;
+		padding-bottom:50px;
+		z-index: 10;
+	}
+
+	.post{
+		position: relative;
+    	height:250px;
+    	width:100%;
+		margin-bottom:50px;
+ 		background-color:rgba(255, 255, 255, 0.041);
+    	border-radius: 15px;
+		font-family: Gilroy;
+    	hyphens:auto;
+    	border: 3px solid rgba(255, 255, 255, 0.244);
+		opacity:0;
+    	transition: 0.5s;
+		animation-name: fadeup;
+		animation-duration:0.5s;
+		animation-fill-mode:forwards;
+		animation-delay:0.22s;
+	}
+
+	.post:hover{
+		border: 3px solid rgba(255, 255, 255, 0.483);
+	}
+
+	.post:hover .image{
+		transform: translate(0, -5px);
+		filter: drop-shadow(0px 0px 18px #ffffff14);
+		-webkit-filter: drop-shadow(0px 0px 18px #ffffff14);
+		scale:103%;
+		transition: 0.5s;
+	}
+
+	.image{
+		width:250px;
+		left:50px;
+		top:-30px;
+		position: absolute;
+		transition: 0.5s;
+	}
+
+	.title{
+		position: absolute;
+		z-index: 11;
+		font-size: 30px;
+		top:30px;
+		right:40px;
+		width: 60%;
+		text-align: right;
+		font-family: Gilroy;
+		transition: 0.5s;
+	}
+
+	.desc{
+		position: absolute;
+		font-family: Cafe;
+		width:90%;
+		margin-left:5%;
+		margin-right:5%;
+		font-size: 20px;
+		left:0px;
+		bottom:100px;
+		transform:translate(0,50px);
+		text-align: justify;
+		transition: 0.5s;
+    	display: -webkit-box;
+    	-webkit-line-clamp: 2;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+    	text-overflow: "ellipsis";
+	}
+
+	.polka-dot {
+    	width: 240px;
+    	height: 240px;
+    	background-image: radial-gradient(#fff 10%, transparent 11%),
+      	radial-gradient(#fff 10%, transparent 11%);
+		background-size:30px 30px;
+    	background-position: 0 0, 30px 30px;
+    	opacity: 0.1;
+    	rotate: 30deg;
+    	left:6%;
+    	top:178px;
+    	background-repeat: repeat;
+		animation: rotate 240s linear infinite;
+    	position: absolute;
+    	z-index: 0;
+  	}
+
+	.topimg{
+		filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+	}
+
+	@keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
+
+	a{
+		bottom:50px;
+		z-index:1;
+		color:white;
+	}
+
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(0, 10px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(0, 0px);
+		}
+	}
+
+	.status{
+		top:0;
+		right:0;
+		position: absolute;
+	}
+
+	.work{
+		top:78px;
+		right:40px;
+		position: absolute;
+		border: 0px solid white;
+		border-radius: 18px;
+	}
+
+	.chip{
+		padding-left:10px;
+		padding-right:10px;
+		border-radius: 18px;
+		line-height: 30px;
+	}
+
+	.status{
+		top:125px;
+		width:80%;
+		left:50%;
+		transform: translate(-50%, 0);
+		height:50px;
+		background-color: rgba(110, 110, 187, 0.452);
+		color: white;
+		font-family: Cafe;
+		font-size: 20px;
+		position: absolute;
+		border-radius: 8px;
+		text-align: center;
+		padding-top: 25px;
+		backdrop-filter:blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		z-index: 1;
+		transition: 0.5s;
+	}
+
+	.status:hover{
+		transform: translate(-50%,-2px);
+		box-shadow: 0px 0px 30px rgba(169, 182, 255, 0.137);
+		text-decoration: underline;
+		transition: 0.5s;
+	}
+
+	@media (max-width:1000px) {
+		.postholder{
+			left:0;
+			transform: translate(0, -50px);
+			width:100%;
+			display: block;
+		}
+		.work{
+			right:20px;
+		}
+		.desc{
+			display:none;
+		}
+		.title{
+			right:20px;
+			width:100%;
+		}
+		.post{
+			height:150px;
+			margin-bottom: 10px;
+		}
+		.post:hover .image{
+			transform: translate(0, -50%);
+			scale:103%;
+		}
+		.image{
+			top:50%;
+			left:20px;
+			width:200px;
+			transform:translate(0, -50%);
+			opacity: 0.4;
+		}
+		.status{
+			width:100%;
+			border-radius: 0px;
+		}
+	}
+
+	@media (min-width:2500px) {
+		section{
+			width:2500px;
+			left:50%;
+			transform: translate(-50%, 0);
+			position: relative;
+		}
+		.status{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, 0);
+		}
+		.topimg{
+			width:2000px;
+			left:50%;
+			transform: translate(-50%, -158px);
+		}
+	}
+</style>
+

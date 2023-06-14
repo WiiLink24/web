@@ -1,0 +1,93 @@
+{
+    "home": {
+        "subtitle": "Um novo serviço em linha para o Wii.",
+        "install": "Instalar",
+        "docs": "Consulte o guia",
+        "beta": "Este site está em BETA, avalie-o!",
+        "info": "O <0><1>Wii</1><2>Link</2> revive diversos canais exclusivos de vários lugares do mundo. <br/> Até mesmo os que foram lançados apenas no Japão!</0>",
+        "faq": " Perguntas e Respostas",
+        "faq1": "Por que usar o Wii Link?",
+        "faqres1": "O WiiLink é, atualmente, o único a trazer de volta canais extintos do Wii que eram exclusivos do Japão. Revivemos o Wii no Ma, o Demae Channel e o Digicam Print Channel. É possível usar todos esses canais novamente com o nosso serviço.",
+        "faq2": "Por que o WiiLink existe?",
+        "faqres2": "Sem um serviço para substituir estes canais, eles seriam perdidos no tempo. No entanto, graças ao nosso trabalho, futuros jogadores também poderão usá-los!",
+        "faq3": "O WiiLink é ilegal?",
+        "faqres3": "Absolutamente não. Tudo foi desenvolvido sem códigos ou materiais protegidos por direitos autorais, utilizando apenas conhecimento público e o que estiver contido nos canais. Toda linha de código foi escrita do zero. Você não terá nenhum problema com a lei se usar nosso serviço.",
+        "faq4": "É possível pedir comida de verdade com o Demae Channel?",
+        "faqres4": "Sim!",
+        "morefaq": "Mais alguma pergunta? Tente ler a seção de Perguntas e Respostas!",
+        "team": " Nossa Equipe Espetacular",
+        "teamdef": "Estas são algumas das pessoas que ajudam a manter o WiiLink vivo!",
+        "news": " Notícias",
+        "newsdef": "Veja as nossas notícias mais recentes!"
+    },
+    "blog": {
+        "new": "Agora mesmo!",
+        "other": "Postagens antigas",
+        "rss": "Leve notícias sobre o Wii a qualquer lugar com o nosso Feed RSS!",
+        "rssbtn": "Dê uma olhada!"
+    },
+    "donate": {
+        "title": " Ajude a gente!",
+        "join": "ENTRE!",
+        "desc": "Veja mais informações sobre o WiiLink no nosso servidor do Discord!",
+        "donors": "Agradecemos a quem doou!"
+    },
+    "footer": {
+        "desc": "O WiiLink é um serviço de recuperação para os extintos canais de Wii exclusivos do Japão. Este serviço permite que você use o Wii Room, o Digicam Print Channel, o Kirby TV Channel e o Food Channel!",
+        "team": ""
+    },
+    "header": {
+        "home": "Início",
+        "news": "Notícias",
+        "guide": "Guia",
+        "status": "Estado",
+        "faq": "Perguntas e Respostas",
+        "install": "Instalar"
+    },
+    "services": {
+        "itn1name": "Wii Room",
+        "itn1jpn": "Wiiの間",
+        "itn1desc": "Veja vários vídeos com o Wii Room, um jeito diferente de alugar.",
+        "itn2name": "Photo Print Channel",
+        "itn2jpn": "デジカメプリントチャンネル",
+        "itn2desc": "Crie edições perfeitas com o Digicam Print Channel e monte álbuns do seu jeito.",
+        "itn3name": "Kirby TV Channel",
+        "itn3jpn": "",
+        "itn3desc": "Assista o anime do Kirby direto do seu Wii usando o Kirby TV Channel.",
+        "itn4name": "Food Channel",
+        "itn4jpn": "出前チャンネル",
+        "itn4desc": "Encomende comidas deliciosas direto para a sua casa com o Food Channel.",
+        "itn5name": "Forecast Channel",
+        "itn5jpn": "",
+        "itn5desc": "Confira o tempo direto do seu Wii, para se vestir adequadamente.",
+        "itn6name": "Nintendo Channel",
+        "itn6jpn": "",
+        "itn6desc": "Assista a diversos trailers e programas usando uma interface só.",
+        "itn7name": "TV Guide Channel",
+        "itn7jpn": "テレビガイドチャンネル",
+        "itn7desc": "Quer saber o que está passando na TV? O TV Guide Channel vai te ajudar!"
+    },
+    "status": {
+        "core": "Serviços-base",
+        "coredesc": "Serviços antes exclusivos do Japão, disponíveis usando o WiiLink.",
+        "wc24": "Canais do WiiConnect24",
+        "wc24desc": "Providenciados pelo WiiConnect24, de volta à vida com o WiiLink.",
+        "video": "Serviços de Streaming",
+        "videodesc": "Vários serviços que te ajudarão a desfrutar dos melhores vídeos.",
+        "statuspage": "Ver o estado do servidor"
+    },
+    "download": {
+        "welcome": "Boas-vindas!",
+        "oschoose": "Escolha um Sistema Operacional antes de começar!",
+        "winreq": "10 ou acima",
+        "linreq": "Precisa de Brew",
+        "checkdocs": "Veja como instalar usando o nosso<0>novo guia!</0>",
+        "deliveroo": "Instalar o Demae Deliveroo."
+    },
+    "guide": {
+        "hover": "Passe o mouse aqui",
+        "msg1": "Vamos lá",
+        "msg2": "Nossos serviços",
+        "wiiguide": "Ir para wii.guide"
+    }
+}
