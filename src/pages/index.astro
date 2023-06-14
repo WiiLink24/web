@@ -23,7 +23,9 @@ changeLanguage("en");
     <!-- Hero section -->
 
     <div class="topimg">
-        <div class="imgbg"></div>
+        <div class="square sq1"></div>
+        <div class="square sq2"></div>
+        <div class="square sq3"></div>
     </div>
 
     <div class="hero">
@@ -347,6 +349,7 @@ changeLanguage("en");
         top:50%;
         left:50%;
         transform: translate(-50%, -50%);
+        filter: blur(8px) opacity(0.5);
         position: absolute;
         z-index: 1;
     }
@@ -486,6 +489,69 @@ changeLanguage("en");
     animation-fill-mode: both;
     animation-iteration-count: infinite;
     z-index: 10;
+}
+
+.square{
+    width:800px;
+    height: 800px;
+    border-radius: 100%;
+    filter: blur(1000px);
+    opacity: 0.1;
+    z-index: 0;
+    position: absolute;
+}
+
+.sq1{
+    background-color: rgb(84, 84, 211);
+    left: 5%;
+    top:5%;
+    animation: move 20s linear infinite;
+    animation-direction: alternate-reverse;
+}
+
+.sq2{
+    background-color: rgb(39, 172, 110);
+    right: 5%;
+    top:50%;
+    transform: translate(0,-50%);
+    animation: move2 20s linear infinite;
+    animation-direction: alternate-reverse;
+}
+
+.sq3{
+    background-color: rgb(158, 200, 197);
+    left: 50%;
+    transform: translate(-50%,0);
+    bottom:10%;
+    animation: move3 20s linear infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes move{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(70%, 80%);
+    }
+}
+
+@keyframes move2{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(-200%, -100%);
+    }
+}
+
+@keyframes move3{
+    0%{
+        transform: translate(0,0);
+    }
+    100%{
+        transform: translate(20%, -80%);
+    }
 }
 
 @keyframes downup {
