@@ -16,7 +16,7 @@ import HeaderMain from './HeaderMain.astro';
 	<a href="/"><img class="logo" src=" ../../Images/Wii_Link_Logo.png" width="200px"></a>
 	<ul>
 		<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
-		<a href={localizePath("/blog")}><div class="banner">{t("header.news")}</div></a>
+		<a href={localizePath("/news")}><div class="banner">{t("header.news")}</div></a>
 		<a href={localizePath("/guide/1welcome")}><div class="banner">{t("header.guide")}</div></a>
 		<a href={localizePath("/status")}><div class="banner">{t("header.status")}</div></a>
 		<a href={localizePath("/guide/4faq")}><div class="banner">{t("header.faq")}</div></a>
@@ -68,9 +68,9 @@ if (content.style.display === "block") {
 </script>
 
 <style>
-
-.demae{
-		width:90%;
+	
+	.demae{
+		width:88%;
 		height:50px;
 		bottom:80px;
 		font-family: Cafe;
@@ -78,8 +78,7 @@ if (content.style.display === "block") {
 		text-align: center;
 		line-height:50px;
 		color: white;
-		background-color: rgba(255, 255, 255, 0.175);
-	border:4px solid rgba(255, 255, 255, 0.328);
+		background-color: rgba(89, 86, 86, 0.175);
 	border-radius: 8px;
 		left:50%;
 		transform: translate(-50%, 0);
@@ -276,8 +275,7 @@ img{
 	width:200px;
 	height:150px;
 	margin:15px;
-	background-color: rgba(255, 255, 255, 0.175);
-	border:4px solid rgba(255, 255, 255, 0.328);
+	background-color: rgba(135, 129, 129, 0.21);
 	border-radius: 8px;
 	overflow: hidden;
 	transition: 0.5s;
@@ -286,12 +284,12 @@ img{
 .container{
 	width:750px;
 	height:450px;
-	border:4px solid rgba(255, 255, 255, 0.423);
+	border:2px solid rgba(255, 255, 255, 0.423);
 	background-color: rgb(35, 35, 35);
 	top:50%;
 	left:50%;
 	transform: translate(-50%, -50%);
-	border-radius: 18px;
+	border-radius: 8px;
 	position: absolute;
 	animation: sus 0.5s ease-in-out;
 }
@@ -316,8 +314,8 @@ img{
 }
 
 .btn:hover{
-	transform: translate(0, -5px);
-	box-shadow: 0px 0px 28px rgba(255, 255, 255, 0.233);
+	transform: translate(0, -3px);
+	box-shadow: 0px 0px 28px rgba(255, 255, 255, 0.119);
 	transition: 0.5s;
 }
 
@@ -327,11 +325,11 @@ img{
 }
 
 .win:hover{
-	background-color: blue;
+	background-color: rgb(118, 118, 204);
 }
 
 .mac:hover{
-	background-color: rgb(153, 139, 163);
+	background-color: rgb(181, 177, 185);
 }
 .paper{
 	position: relative;
@@ -341,9 +339,8 @@ img{
 	padding: 5px;
 	border-radius: 8px;
 }
-
 .docs{
-	opacity: 0.7;
+	opacity: 0.5;
 	transition: 0.2s;
 }
 
@@ -354,6 +351,14 @@ img{
 
 .paper:hover{
 	background-color: rgba(0, 0, 0, 0.575);
+}
+
+.paper:hover{
+	background-color: rgba(0, 0, 0, 0.575);
+}
+
+.lin:hover{
+	background-color: rgb(22, 22, 21);
 }
 
 @media (max-width:1000px){

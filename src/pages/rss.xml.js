@@ -7,10 +7,11 @@ export async function get(context) {
 	return rss({
 		title: SITE_TITLE,
 		description: SITE_DESCRIPTION,
+		info: SITE_DESCRIPTION,
 		site: context.site,
 		items: posts.map((post) => ({
 			...post.data,
-			link: `/blog/${post.slug}/`,
+			link: `/news/${post.slug}/`,
 		})),
 	});
 }

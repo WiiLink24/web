@@ -12,7 +12,7 @@ const posts = (await getCollection('blog')).sort(
 				{
 					posts.map((post) => (
 						<div class="post">
-							<a href={`/blog/${post.slug}/`}>
+							<a href={`/news/${post.slug}/`}>
 							<div class="fade"></div>
 							<img src={post.data.heroImage}>
 							<FormattedDate date={post.data.pubDate} />

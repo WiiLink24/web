@@ -8,10 +8,10 @@ import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, authImage, authDesc, authTitle} = Astro.props;
 ---
 
-<html lang="en">\
+<html lang="en">
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<head>
 		<BaseHead title={title}description={description} />
@@ -39,6 +39,18 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 					)
 				}
 			</div>
+
+
+			<div class="auths">
+				<img class="authimage" width={50} height={50} src={authImage} alt="" />
+				<div class="titles">
+					<div class="hold">
+						<div class="authtitle">{author}</div>
+						<div class="authtitle2">{authTitle}</div>
+					</div>
+					<div class="authdesc">{authDesc}</div>
+				</div>
+			</div>
 			
 				<div class="postexpand">
 					<slot />
@@ -65,11 +77,79 @@ a:visited{
     color:rgb(32, 180, 213);
 }
 
+.auths{
+	bottom:0;
+	width: 100%;
+	height:150px;
+	position: absolute;
+	border-top: 3px solid rgba(255, 255, 255, 0.066);
+	z-index: 10000;
+}
+
+.titles{
+	left:150px;
+	top:50%;
+	width:60%;
+	transform:translate(0, -50%);
+	position:absolute;
+}
+
+.authtitle{
+	font-family: Gilroy;
+	font-size: 30px;
+	position: relative;
+	float:left;
+	color:white;
+}
+
+.hold{
+	display:flex;
+	gap:10px;
+}
+
+.authtitle2{
+	position:relative;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	padding-right:10px;
+	border: 2px solid white;
+	border-radius:8px;
+	font-family: Gilroy;
+	font-size: 18px;
+	float:right;
+	top:0;
+	color:white;
+}
+
+.authdesc{
+	font-family: Ginto;
+	bottom:0px;
+	margin-top:5px;
+	font-size: 20px;
+	color:white;
+	position:relative;
+	top:0;
+}
+
+.authimage{
+	width:80px;
+	height:80px;
+	border-radius:8px;
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
+	top:50%;
+	left:40px;
+	transform: translate(0,-50%);
+	position: absolute;
+	filter:blur(0px);
+}
+
 	article{
 		top:0;
 		left:0;
 		width:100%;
 		height:auto;
+		padding-bottom:200px;
 		opacity:0;
 		position:relative;
 		animation-name: fadeup;
