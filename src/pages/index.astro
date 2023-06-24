@@ -1,4 +1,6 @@
 ---
+import Hero from "../components/Hero.astro";
+import SpecialHero from "../components/SpecialHero.astro";
 import Base from "../components/BaseHead.astro";
 import Services from "../components/Services.astro";
 import Header from "../components/HeaderMain.astro";
@@ -19,45 +21,7 @@ changeLanguage("en");
 
     <body>
     <Header/>
-
-    <!-- Hero section -->
-
-    <div class="topimg">
-        <div class="square sq1"></div>
-        <div class="square sq2"></div>
-        <div class="square sq3"></div>
-    </div>
-
-    <div class="hero">
-        <div class="parallaximpress">
-            <div class="parallax" id="scene">
-                <div class="channeltop" data-depth="0.3"  data-friction-x="1.5"> <img src="./Images/bgtop.png"></div>
-                <div class="channelmid" data-depth="0.1" data-friction-x="1.5"> <img src="./Images/bgmid.png"></div>
-                <div class="channelbot" data-depth="0.05" data-friction-x="1.5"> <img src="./Images/bgbot.png" style="bottom:0; position:absolute;"></div>
-            </div>
-        </div>
-
-        <div class="herologoholder">
-            <div class="herologo">
-                <h1 class="logo">Wii<b style="font-family:RubikMedium;">Link</b></h1>
-                <h2 class="tagline">{t("home.subtitle")}</h2>
-            </div>
-        </div>
-
-        <div class="heroinstallholder">
-            <div class="heroinstall">
-                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; z-index: 1;">{t("home.install")}</h2></a>
-                <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
-                <div class="installbg"></div>
-            </div>
-            <a href="/guide/1welcome"><h3 class="readdocs">{t("home.docs")}</h3></a>
-        </div>
-    </div>
-
-    <div class="rate">{t("home.beta")}</div>
-
-    <a href="#start"><div class="first"><img src=" ./Images/downarrow.png" width="40px"></div></a>
-
+    <SpecialHero />
 
     <!-- Pannels after the hero -->
         <div class="contentholder" id="start">
@@ -122,11 +86,7 @@ changeLanguage("en");
 		<Footer />
 
             <!-- Activate parallax effect from Hero section -->
-            <script>
-                import Parallax from "parallax-js";
-                var scene = document.getElementById('scene');
-                var parallaxInstance = new Parallax(scene);
-            </script>
+          
             <script>
                 var coll = document.getElementsByClassName("collapsible");
                 var i;
@@ -201,6 +161,7 @@ changeLanguage("en");
     color:white;
     text-align: center;
     font-size: 20px;
+    width:100%;
     font-family: Gilroy;
   }
   
@@ -208,6 +169,13 @@ changeLanguage("en");
     background-color: #555;
     transition: 0.2s;
   }
+
+  .slogandef{
+    right:11%;
+    transform: translate(0, -30px);
+    font-size:15px;
+    position: absolute;
+}
   
   .content {
     display: none;
@@ -256,344 +224,7 @@ changeLanguage("en");
   }
 
   /* Hero Styles */
-  .hero{
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    position: fixed;
-    overflow: hidden;
-}
 
-.herologoholder{
-    width:450px;
-    height:100%;
-    top:0;
-    left:8%;
-    z-index: 1;
-    position: absolute;
-}
-
-.herologo{
-    height:300px;
-    width:100%;
-    top:45%;
-    transform: translate(0,-50%);
-    position: absolute;
-}
-
-.logo{
-    top:0;
-    left:0px;
-    position: relative;
-    z-index: 1;
-    font-size:120px;
-    font-family: RubikBold;
-}
-
-.tagline{
-    position: relative;
-    top:-80px;
-    left:10px;
-}
-
-.heroinstallholder{
-    width:400px;
-    height:130px;
-    top:50%;
-    transform: translate(0, -50%);
-    right:8%;
-    z-index: 1;
-    position: absolute;
-}
-
-.heroinstall{
-    width:90%;
-    top:0%;
-    transform: translate(0,0%);
-    position: absolute;
-    background-color:#2b873d;
-    backdrop-filter: blur(4px);
-    padding-left:30px;
-    padding-top:0px;
-    height:70px;
-    border-radius: 8px;
-    border:0px solid #ffffff34;
-    overflow: hidden;
-    transition: 0.5s;
-}
-
-.heroinstall:hover .installbg{
-    left:0;
-    transition: 0.5s;
-}
-
-.installtext{
-    transform: translate(0px,0);
-    transition: 0.5s;
-}
-
-.heroinstall:hover .installtext{
-    transform: translate(40px,0);
-    transition: 0.5s;
-}
-
-.installarrow{
-    opacity: 1;
-    z-index: 10;
-    transition: 0.5s;
-}
-
-.heroinstall:hover .installarrow{
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.heroinstall:hover{
-    border: 0px solid #ffffff;
-    background-color:#287038;
-    transition: 0.5s;
-}
-
-.readdocs{
-    font-size: 20px;
-    width: 97%;
-    bottom: 0;
-    right:10px;
-    text-align: right;
-    text-decoration: none;
-    position: absolute;
-}
-
-.slogandef{
-    right:11%;
-    transform: translate(0, -30px);
-    font-size:15px;
-    position: absolute;
-}
-
-    .parallaximpress{
-        width:1800px;
-        height:1000px;
-        top:50%;
-        left:50%;
-        transform: translate(-50%, -50%);
-        filter: blur(8px) opacity(0.5);
-        position: absolute;
-        z-index: 1;
-    }
-
-    .parallax{
-        width:1800px;
-        height:1000px;
-        position: absolute;
-        z-index: 1;
-    }
-
-    .image{
-        object-fit: cover;
-    }
-
-    .channeltop{
-        width:100%;
-        height:100%;
-        scale: 80%;
-        left:50%;
-        top:50%;
-        opacity: 0.5;
-        position:relative;
-        opacity:0;
-        animation-name: fadeintop;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.3s;
-    }
-
-    .channelmid{
-        width:100%;
-        height:100%;
-        left:50%;
-        top:50%;
-        opacity: 0.3;
-        scale: 75%;
-        position:relative;
-        opacity:0;
-        animation-name: fadeinmid;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.4s;
-    }
-
-    .channelbot{
-        width:100%;
-        height:100%;
-        left:50%;
-        top:50%;
-        opacity: 0.1;
-        transform: scale(0.7);
-        position:relative;
-        opacity:0;
-        animation-name: fadeinbot;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        animation-delay: 0.5s;
-    }
-
-    @keyframes fadeintop{
-        0%{
-            opacity: 0;
-            scale: 90%;
-        }
-        100%{
-            opacity: 0.5;
-            scale: 100%;
-        }
-    }
-
-    @keyframes fadeinmid{
-        0%{
-            opacity: 0;
-            scale: 90%;
-        }
-        100%{
-            opacity: 0.3;
-            scale: 100%;
-        }
-    }
-
-    @keyframes fadeinbot{
-        0%{
-            opacity: 0;
-            scale: 90%;
-        }
-        100%{
-            opacity: 0.1;
-            scale: 100%;
-        }
-    }
-    
-    .rate{
-    bottom:20px;
-    right:20px;
-    background-color: rgb(49, 49, 49);
-    color:white;
-    font-family: Cafe;
-    padding:10px;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 8px;
-    position: absolute;
-    display: none;
-  }
-	
-.topimg{
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    overflow: hidden;
-    position:fixed;
-}
-
-.imgbg{
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    background-image: url("../../Images/copyrightbg.png");
-    background-size:cover;
-    object-fit: cover;
-    filter: brightness(0.5);
-    position: absolute;
-}
-
-.first{
-    position: absolute;
-    width: 40px;
-    bottom:68px;
-    left:50%;
-    transform: translate(-50%, 0);
-    animation-name: downup;
-    animation-duration: 5s;
-    animation-fill-mode: both;
-    animation-iteration-count: infinite;
-    z-index: 10;
-}
-
-.square{
-    width:800px;
-    height: 800px;
-    border-radius: 100%;
-    filter: blur(1000px);
-    opacity: 0.1;
-    z-index: 0;
-    position: absolute;
-}
-
-.sq1{
-    background-color: rgb(84, 84, 211);
-    left: 5%;
-    top:5%;
-    animation: move 40s linear infinite;
-    animation-direction: alternate-reverse;
-}
-
-.sq2{
-    background-color: rgb(39, 172, 110);
-    right: 5%;
-    top:50%;
-    transform: translate(0,-50%);
-    animation: move2 40s linear infinite;
-    animation-direction: alternate-reverse;
-}
-
-.sq3{
-    background-color: rgb(158, 200, 197);
-    left: 50%;
-    transform: translate(-50%,0);
-    bottom:10%;
-    animation: move3 40s linear infinite;
-    animation-direction: alternate-reverse;
-}
-
-@keyframes move{
-    0%{
-        transform: translate(0,0);
-    }
-    100%{
-        transform: translate(70%, 80%);
-    }
-}
-
-@keyframes move2{
-    0%{
-        transform: translate(0,0);
-    }
-    100%{
-        transform: translate(-200%, -100%);
-    }
-}
-
-@keyframes move3{
-    0%{
-        transform: translate(0,0);
-    }
-    100%{
-        transform: translate(20%, -80%);
-    }
-}
-
-@keyframes downup {
-    0%{
-        transform: translate(0, -20px);
-    }
-    50%{
-        transform: translate(0,0px);
-    }
-    100%{
-        transform: translate(0,-20px);
-    }
-}
 
 /* Content Styles */
 .contentholder{

@@ -23,6 +23,11 @@
     src: url(../../Fonts/Rubik-Medium.ttf);
 }
 
+@font-face {
+    font-family: Stigmature;
+    src: url(../../Fonts/Stigmature.otf);
+}
+
 html {
     scroll-behavior: smooth;
 }

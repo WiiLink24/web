@@ -44,9 +44,10 @@ changeLanguage("pt");
 
         <div class="heroinstallholder">
             <div class="heroinstall">
-                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; z-index: 1;">{t("home.install")}</h2></a>
+                <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><h2 class="installtext" style="top:-23px; position:absolute; z-index: 1;">{t("home.install")}</h2>
                 <img src=" ./Images/arrow.png" alt="arrow" class="installarrow" style="position:absolute; right:20px; top:50%; filter:invert(1); transform: rotate(90deg) translate(-50%,0); width:50px;">
                 <div class="installbg"></div>
+            </a>
             </div>
             <a href="/guide/1welcome"><h3 class="readdocs">{t("home.docs")}</h3></a>
         </div>
@@ -278,9 +279,9 @@ changeLanguage("pt");
 
 .heroinstall{
     width:90%;
-    top:0%;
+    top:0;
     transform: translate(0,0%);
-    position: absolute;
+    position: relative;
     background-color:#2b873d;
     backdrop-filter: blur(4px);
     padding-left:30px;

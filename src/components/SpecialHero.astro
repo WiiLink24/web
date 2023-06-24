@@ -1,0 +1,335 @@
+<div class="hero">
+    <div class="bgtext">
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+        <div class="bg1"></div>
+        <div class="bg2"></div>
+    </div>
+
+<a href="../news/2023-06-19-issue-17/">
+        <div class="parallax">
+            <div id="scene">
+                <div class="channeltop" data-depth="0.8" > <img src="./Images/call-to-action.png" width="800px" style="top:60px; position:absolute;   box-shadow: 0px 0px 80px rgba(82, 82, 82, 0.321);"></div>
+                <div class="channelmid" data-depth="0.5" > <img src="./Images/Platforms.png" width="400px" style="bottom:0; right:0; position:absolute;"></div>
+                <div class="channelbot" data-depth="0.4" > <img src="./Images/Instructions.png" width="500px" style="border-radius:0;"></div>
+            </div>
+            <div class="warn">Read up on the changes.</div>
+        </div>
+</a>
+
+
+
+    <div class="dwnld">
+        <div class="collablogo"><img src="./Images/CollabLogo.png" width="200px"></div>
+        <div class="maintext"><b style="font-family:Rubik; font-size: 50px;">Wii</b><b style="font-family:RubikMedium; font-size: 50px;">Link</b> is coming <t style="font-family:Stigmature; font-size: 50px; padding-left:5px; color:rgb(24, 214, 49);">nati©vely</t> to Dolphin!</div>
+        <div class="buttons">
+            <div class="dolbtn">Get Dolphin!</div>
+            <a style="text-decoration: none;" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class="linkbtn">Download WiiLink</div></a>
+        </div>
+    </div>
+
+    <script>
+        import Parallax from "parallax-js";
+        var scene = document.getElementById('scene');
+        var parallaxInstance = new Parallax(scene);
+    </script>
+
+    <style>
+img{
+    border-radius:0;
+}
+
+.bg1{
+    width:220%;
+    height:300px;
+    background: url(./Images/bgtextspecialhero.png);
+    background-repeat:repeat-x;
+    background-size:  3600px;
+    animation: scroll 40s linear infinite;
+    overflow:hidden;
+}
+
+.warn{
+    top:0;
+    right:0;
+    border-radius:80px;
+    position:absolute;
+    padding:10px;
+    padding-left:15px;
+    padding-right:15px;
+    font-family:Ginto;
+    background-color: rgba(54, 54, 54, 0.2);
+    border:2px solid white;
+    backdrop-filter:blur(8px);
+    color:white;
+    display:none;
+    animation: fadeup2 0.2s linear forwards;
+}
+
+@keyframes fadeup2{
+    0%{
+        opacity:0;
+        transform: translate(0, 5px);
+    }
+    100%{
+        opacity:1;
+        transform: translate(0, 0);
+    }
+}
+
+.parallax:hover .warn{
+    display:block;
+}
+
+.bgtext{
+    height:1000px;
+    width:100%;
+}
+
+.collablogo{
+    width:200px;
+    top:0;
+    left:50%;
+    transform:translate(-50%,0);
+    position:absolute;
+}
+
+.dwnld{
+    bottom:-130px;
+    left:50%;
+    transform:translate(-50%, 0);
+    z-index:1;
+    width:100%;
+    height:500px;
+    position:absolute;
+}
+
+.maintext{
+    font-family:Gilroy;
+    font-size: 40px;
+    top:80px;
+    position:absolute;
+    color:white;
+    width:100%;
+    text-align:center;
+}
+
+.bg2{
+    width:220%;
+    height:300px;
+    background: url(./Images/bgtextspecialhero.png);
+    background-repeat:repeat-x;
+    background-size:  3600px;
+    animation: scrollback 40s linear infinite;
+    overflow:hidden;
+}
+
+@keyframes scroll{
+    0%{
+        background-position:0;
+    }
+    100%{
+        background-position:-1000px;
+    }
+}
+
+
+@keyframes scrollback{
+    0%{
+        background-position:0;
+    }
+    100%{
+        background-position:1000px;
+    }
+}
+
+        .channeltop{
+        position:absolute;
+        backdrop-filter:blur(8px);
+        animation-name: fadeintop;
+        opacity:0;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.3s;
+    }
+
+    .buttons{
+        display:flex;
+        gap: 30px;
+        top:180px;
+        left:50%;
+        transform: translate(-50%, 0);
+        position:absolute;
+    }
+
+    .dolbtn{
+        padding:20px;
+        color:white;
+        background-color: ;
+        border:4px solid  #3099ff;
+        border-radius: 8px;
+        font-family: Ginto;
+        font-size: 25px;
+        text-decoration: none;
+        transition:0.2s;
+    }
+
+    .dolbtn:hover{
+        background-color:  #3099ff;
+        scale:105%;
+        box-shadow: 0px 0px 20px rgb(97, 211, 237, 0.3);
+        transition:0.2s;
+    }
+
+    .linkbtn{
+        padding:20px;
+        color:white;
+        background-color: ;
+        border-radius: 8px;
+        border:4px solid  #08cf21;
+        font-family: Ginto;
+        font-size: 25px;
+         text-decoration: none;
+        transition:0.2s;
+    }
+
+    .linkbtn:hover{
+        background-color:  #08cf21;
+        scale:105%;
+        box-shadow: 0px 0px 20px rgb(97, 211, 70, 0.3);
+        transition:0.2s;
+    }
+
+    .channeltop:hover{
+        filter: brightness(150%);
+        scale: 150%;
+    }
+
+
+    .channelmid{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.3;
+        scale: 75%;
+        position:relative;
+        opacity:0;
+        animation-name: fadeinmid;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.4s;
+    }
+
+    .channelbot{
+        width:100%;
+        height:100%;
+        left:50%;
+        top:50%;
+        opacity: 0.1;
+        transform: scale(0.7);
+        position:relative;
+        opacity:0;
+        animation-name: fadeinbot;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        animation-delay: 0.5s;
+    }
+    .parallax{
+        width:800px;
+        height:280px;
+        display:grid;
+        left:50%;
+        top:35%;
+        transform:translate(-50%,-50%);
+        position: absolute;
+        z-index: 1;
+    }
+
+    .hero{
+        top:0;
+        left:0;
+        background: url(./Images/SpecialBG.png);
+        background-size:100% 100%;
+        position: fixed;
+        width:100%;
+        height:100%;
+    }
+
+    @keyframes fadeintop{
+        0%{
+            opacity: 0;
+            scale: 50%;
+        }
+        100%{
+            opacity: 0.95;
+            scale: 100%;
+            backdrop-filter:blur(8px);
+        }
+    }
+
+    @keyframes fadeinmid{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+
+    @keyframes fadeinbot{
+        0%{
+            opacity: 0;
+            scale: 90%;
+        }
+        100%{
+            opacity: 1;
+            scale: 100%;
+        }
+    }
+
+    @media (max-height:800px) {
+        .parallax{
+            display:none;
+        }
+    }
+
+    @media (max-width:1000px) {
+
+        .parallax{
+            display:none;
+        }
+
+        .dwnld{
+            top:20px;
+        }
+
+        .buttons{
+            top:220px;
+        }
+
+        .dolbtn{
+            font-size: 15px;
+            width: 150px;
+            text-align: center;
+        }
+
+        .linkbtn{
+            font-size: 15px;
+            width: 150px;
+            text-align: center;
+        }
+
+    }
+
+    @media (min-width:2000px) {
+
+        .hero{
+            height:1100px;
+        }
+
+    }
+
+    </style>
