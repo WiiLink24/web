@@ -23,7 +23,7 @@
         <div class="collablogo"><img src="./Images/CollabLogo.png" width="200px"></div>
         <div class="maintext"><b style="font-family:Rubik; font-size: 50px;">Wii</b><b style="font-family:RubikMedium; font-size: 50px;">Link</b> is coming <t style="font-family:Stigmature; font-size: 50px; padding-left:5px; color:rgb(24, 214, 49);">nati©vely</t> to Dolphin!</div>
         <div class="buttons">
-            <div class="dolbtn">Get Dolphin!</div>
+            <div class="dolbtn"> <div class="warn2">Coming soon...</div>Get Dolphin!</div>
             <a style="text-decoration: none;" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class="linkbtn">Download WiiLink</div></a>
         </div>
     </div>
@@ -66,18 +66,33 @@ img{
     animation: fadeup2 0.2s linear forwards;
 }
 
-@keyframes fadeup2{
-    0%{
-        opacity:0;
-        transform: translate(0, 5px);
-    }
-    100%{
-        opacity:1;
-        transform: translate(0, 0);
-    }
+.warn2{
+    top:50%;
+    left:50%;
+    width:80%;
+    border-radius:8px;
+    position:absolute;
+    padding:20px;
+    padding-left:15px;
+    padding-right:15px;
+    font-family:Ginto;
+    font-size:20px;
+    text-align:center;
+    transform:translate(-50%,-50%);
+    background-color: rgba(54, 54, 54, 0.2);
+    border:2px solid white;
+    backdrop-filter:blur(8px);
+    color:white;
+    display:none;
+
 }
 
+
 .parallax:hover .warn{
+    display:block;
+}
+
+.dolbtn:hover .warn2{
     display:block;
 }
 
