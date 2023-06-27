@@ -1,13 +1,13 @@
 ---
 import { changeLanguage } from "i18next";
 import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../../layouts/GuidePost.astro";
+import BlogPost from "../../../layouts/BlogPost.astro";
 import "../../../styles/global.css";
 
-changeLanguage("ru");
+changeLanguage("es");
 
 export async function getStaticPaths() {
-    const posts = await getCollection("guide");
+    const posts = await getCollection("blog");
     return posts.map((post) => ({
         params: { slug: post.slug },
         props: post,
@@ -20,9 +20,4 @@ const { Content } = await post.render();
 
 <BlogPost {...post.data}>
 	<Content />
-    <style>
-        img{
-            width:500px;
-        }
-    </style>
 </BlogPost>
