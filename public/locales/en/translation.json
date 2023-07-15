@@ -17,7 +17,7 @@
       "morefaq": "Any other questions? If so, be sure to read our full FAQ!",
       "team": " Our Amazing Crew",
       "teamdef": "Some of the incredible people who help bring WiiLink to life!",
-      "news": " Newstand",
+      "news": " Newsstand",
       "newsdef": "Catch up on the latest news of the service!"
     },
     "blog": {
@@ -30,7 +30,7 @@
         "title": " Keep the groove going!",
         "join": "JUMP IN!",
         "desc": "Keep up to date on all things WiiLink in our Discord server!",
-        "donors": "Huge thanks to out donors!"
+        "donors": "Huge thanks to our donors!"
     },
     "footer": {
         "desc": "WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!",
@@ -56,7 +56,7 @@
         "itn3desc": "Watch the original Kirby anime right from your Wii with the Kirby TV Channel.",
         "itn4name": "Food Channel",
         "itn4jpn": "出前チャンネル",
-        "itn4desc": "Order food with the Food Channel and bring tasty goodness straight to your house",
+        "itn4desc": "Order food with the Food Channel and bring tasty goodness straight to your house.",
         "itn5name": "Forecast Channel",
         "itn5jpn": "",
         "itn5desc": "Check the weather right on your Wii, and plan your attire in accordingly.",
