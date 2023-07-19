@@ -22,7 +22,7 @@ pubDate: "2020-12-14"
 5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
 6. Follow the instructions on the page then copy the result.
 7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-8. Paste the patch from step 4 at the bottom of the `hacks_hash.ini` Save the file and proceed to Section I.
+8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file and proceed to Section I.
 
 ### Section I - Patching WADs
 
