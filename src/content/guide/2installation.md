@@ -11,6 +11,19 @@ pubDate: "2020-12-14"
 
 ## Instructions
 
+### vWii (Wii U) ONLY
+> If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, skip to Section I.
+
+
+1. Download `Priiloader_v0_10RC3.zip` from [here](https://github.com/DacoTaco/priiloader/releases/tag/0.10.0-RC3)
+2. Unzip `Priiloader_v0_10RC3.zip` and copy the apps folder to your SD Card or USB Drive.
+3. Download `LoadPriiloader.zip` from [here](https://cdn.discordapp.com/attachments/1078842520420765819/1131340628895219895/LoadPriiloader.zip).
+4. Unzip `LoadPriiloader.zip` and copy the apps folder to your SD Card or USB Drive.
+5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
+6. Follow the instructions on the page then copy the result.
+7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
+8. Paste the patch from step 4 at the bottom of the `hacks_hash.ini` Save the file and proceed to Section I.
+
 ### Section I - Patching WADs
 
 > [If you want to see detailed instructions on how to install the WADs, click here!](wiimodlite)
@@ -35,6 +48,17 @@ pubDate: "2020-12-14"
     - If you have previously installed the RiiConnect24 versions of the Forecast Channel and the Nintendo Channel, installing WiiLink's will overwrite them.
 
 17. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
+
+> The following steps are only if you are on vWii (Wii U). If you are not, proceed to Section II.
+
+
+18. Launch `Priiloader`.
+19. Follow the installation steps.
+20. Launch `Load Priiloader`
+21. Using your Wii Remote, go to `System Menu Hacks`.
+22. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. Feel free to enable others.
+23. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
+24. Return to the system menu.
 
 ### Section II - Adding your email to Set Personal Data
 
