@@ -76,6 +76,10 @@ import HeaderMain from './HeaderMain.astro';
     </a>
 </div>
 
+<div class="services">
+    Head over to the <a href="./status">status</a> tab to check out all we have to offer!
+</div>
+
 <style>
     .itineraries{
         width: 93%;
@@ -84,6 +88,7 @@ import HeaderMain from './HeaderMain.astro';
         gap: 30px;
         left:50%;
         transform: translate(-50%,0);
+        padding-bottom:50px;
         position: relative;
     }
     
@@ -97,6 +102,14 @@ import HeaderMain from './HeaderMain.astro';
         overflow: hidden;
         border: 3px solid rgba(255, 255, 255, 0.066);
         transition: 0.5s;
+    }
+
+    .services{
+        width:100%;
+        text-align:center;
+        color:white;
+        font-family: Cafe;
+        position:absolute;
     }
     
     .itn:hover{

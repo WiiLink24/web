@@ -121,6 +121,21 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 	  </div>
 </div>
 
+<div class="twittercontainer">
+  <h2 style="text-align: center; width:100%;">Get up to speed with all our antics on our Twitter!</h2>
+  <div class="tl">
+    <div class="tlin">
+  <a class="twitter-timeline" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div> 
+<div class="tlin">
+  <a class="twitter-timeline" href="https://twitter.com/WiiLink_es?ref_src=twsrc%5Etfw">Tweets by WiiLink_es</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</div>
+  <div class="tlin">
+  <a class="twitter-timeline" href="https://twitter.com/WiiLink_jp?ref_src=twsrc%5Etfw">Tweets by WiiLink_jp</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+</div>
+  </div>
+</div>
+
 <style>
   .name{
     position: relative;
@@ -151,6 +166,46 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		position: absolute;
 	  } 
 
+    .tlin{
+      width:33%;
+      box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.331);
+      border-radius: 20px;
+      border:2px solid rgba(125, 125, 202, 0.741);
+    }
+
+    .tl{
+      width:93%;
+      left:3%;
+      display:flex;
+      left:50%;
+      transform: translate(-50%,0);
+      gap:10px;
+      position:relative;
+    }
+
+    .follow{
+      display:grid;
+      gap:10px;
+      position:absolute;
+      left:50%;
+      top:20%;
+    }
+
+    .twittercontainer{
+        width:93%;
+        height:580px;
+        left:50%;
+        margin-bottom:200px;
+        position: relative;
+        transform: translate(-50%, 200px);
+        background: rgb(9,110,149);
+background: linear-gradient(38deg, rgba(9,110,149,1) 0%, rgba(0,172,238,1) 100%); 
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        border-top:3px solid #121212;
+        overflow: hidden;
+    }
+
 	.contentslogan{
     text-align: center;
     z-index: 2;
@@ -160,11 +215,12 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
         width:93%;
         height:580px;
         left:50%;
-        margin-bottom:200px;
+        margin-bottom:0px;
         position: relative;
         transform: translate(-50%, 200px);
         background-color: #5865f243;
-        border-radius: 8px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
         overflow: hidden;
     }
 
@@ -308,6 +364,12 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		transform: translate(-50%, 150px);
 	}
 
+  .twittercontainer{
+		width:100%;
+		border-radius: 0px;
+		transform: translate(-50%, 150px);
+	}
+
     .discordholder{
         width:100%;
         height:180px;
@@ -356,6 +418,11 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 @media (min-width:2000px) {
     .roundcontainer{
+        width:2000px;
+        left:50%;
+        transform: translate(-50%, 200px);
+    }
+    .twittercontainer{
         width:2000px;
         left:50%;
         transform: translate(-50%, 200px);
