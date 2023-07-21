@@ -4,7 +4,7 @@
       "install": "Install it now",
       "docs": "Check out the guide",
       "beta": "This site is in BETA, rate it!",
-      "info": "<0><1>Wii</1><2>Link</2> resurrects many region exclusive channels. <br/> Including channels only released in Japan!</0>",
+      "info": "<0><1>Wii</1><2>Link</2> resurrects many different channels. <br/> Here's what we currently support:</0>",
       "faq": " Quick FAQ",
       "faq1": "Why WiiLink?",
       "faqres1": "WiiLink is the only service to bring back Japanese exclusive Wii channels after they were officially shut down. We've made Wii no Ma, the Demae Channel, and Digicam Print Channel functional once more. With our service, you can experience all of these once more on your Nintendo Wii - possibly for the first time.",
@@ -15,7 +15,7 @@
       "faq4": "Can the Demae Channel order real food?",
       "faqres4": "Yes!",
       "morefaq": "Any other questions? If so, be sure to read our full FAQ!",
-      "team": " Our Amazing Crew",
+      "team": " People behind the project",
       "teamdef": "Some of the incredible people who help bring WiiLink to life!",
       "news": " Newsstand",
       "newsdef": "Catch up on the latest news of the service!"
@@ -28,12 +28,12 @@
     },
     "donate": {
         "title": " Keep the groove going!",
-        "join": "JUMP IN!",
-        "desc": "Keep up to date on all things WiiLink in our Discord server!",
-        "donors": "Huge thanks to our donors!"
+        "join": "JOIN!",
+        "desc": "Join our Discord server to chat with the community!",
+        "donors": "Huge thanks to the project's supporters!"
     },
     "footer": {
-        "desc": "WiiLink is a revival service for the now-defunct Japanese exclusive Wii channels and media channels. This service allows you to use Wii Room, Digicam Print Channel, Kirby TV Channel, and the Food Channel!",
+        "desc": "WiiLink is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.",
         "team": ""
     },
     "header": {
@@ -42,30 +42,30 @@
         "guide": "Guide",
         "status": "Status",
         "faq": "FAQ",
-        "install": "Install now"
+        "install": "Install"
     },
     "services": {
         "itn1name": "Wii Room",
         "itn1jpn": "Wiiの間",
-        "itn1desc": "Watch new videos with Wii Room, a unique take on video on-demand.",
-        "itn2name": "Photo Print Channel",
+        "itn1desc": "Re-enter the Wii Room, Nintendo's closed Japanese video-on-demand and shopping service.",
+        "itn2name": "Photo Prints Channel",
         "itn2jpn": "デジカメプリントチャンネル",
-        "itn2desc": "Create perfect prints with the Digicam Print Channel and design photo albums in a way only you do best.",
+        "itn2desc": "Create albums and business cards with photos from your SD card or with your Mii characters.",
         "itn3name": "Kirby TV Channel",
         "itn3jpn": "",
-        "itn3desc": "Watch the original Kirby anime right from your Wii with the Kirby TV Channel.",
+        "itn3desc": "Watch episodes of the Kirby: Right Back at Ya! anime on this channel previously only available in Europe.",
         "itn4name": "Food Channel",
         "itn4jpn": "出前チャンネル",
-        "itn4desc": "Order food with the Food Channel and bring tasty goodness straight to your house.",
+        "itn4desc": "Order various types of food directly to your home via your Wii, and pay on delivery.",
         "itn5name": "Forecast Channel",
         "itn5jpn": "",
-        "itn5desc": "Check the weather right on your Wii, and plan your attire in accordingly.",
+        "itn5desc": "Find current and upcoming weather from your local region or around the globe.",
         "itn6name": "Nintendo Channel",
         "itn6jpn": "",
-        "itn6desc": "Watch all sorts of trailers, promos, and shows all from one interface.",
+        "itn6desc": "An interactive guide to games for Wii, Nintendo DS and Nintendo 3DS, with trailers, demos and more.",
         "itn7name": "TV Guide Channel",
         "itn7jpn": "テレビガイドチャンネル",
-        "itn7desc": "Want to know what's playin' on TV? Wonder no more with the TV Guide Channel!"
+        "itn7desc": "Check your local TV programming guide, find shows that interest you and control your TV with your Wii Remote."
     },
     "status": {
         "core": "Core services",
