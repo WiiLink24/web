@@ -97,4 +97,4 @@ If you have used the standard version of the Food Delivery Channel before, go to
 
 ___
 
-#### Written by [PablosCorner](https://github.com/PablosCorner) (Last updated: 8/29/2023)
+#### Written by [PablosCorner](https://github.com/PablosCorner) (Last updated: 3/10/2023)
