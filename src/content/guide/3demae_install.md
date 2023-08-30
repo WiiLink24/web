@@ -82,7 +82,7 @@ If you have used the standard version of the Food Delivery Channel before, go to
 2. Follow the on-screen instructions, then click `Order` in the main menu.<br><br>
 ![Main Menu](https://github.com/RiiConnect24/Wii-Guide/blob/master/images/Demae-Dominos/success.png?raw=true)<br><br>
 3. You will now be prompted to select your region. Be sure to select your residing country correctly. Failure to do so will result in restaurants failing to load. You will then be prompted to select your state/province, then city. If your city is not on the list, you can select any one as it does not matter.<br><br>
-![Main Menu](https://github.com/nami1yt/Wii-Guide/master/images/Demae-Dominos/country-setup.png?raw-true)<br><br>
+![Main Menu](https://github.com/nami1yt/Wii-Guide/blob/master/images/Demae-Dominos/country-setup.png?raw=true)<br><br>
 4. Click the `Pizza` button. This will load all the restaurants in your area. The first restaurant in the list is the one closest to you.
 5. Click `See Menu` to list the different menu categories. Click the category you would like, then select a food item. In the item screen, you can add toppings and adjust quantity.
 6. After adding a food item, you will be brought to the basket. To add a food item, scroll to the bottom and select `Add Order`. To proceed to checkout, click `Next`.
