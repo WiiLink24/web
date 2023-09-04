@@ -24,11 +24,15 @@ pubDate: "2023-08-26"
 
 1. Open the application inside the Homebrew Channel.
 2. Run the application and follow the on-screen instructions.
-3. Install the channel using the provided WAD installer or the one of your choice.
-4. Return to the Wii Menu and open the channel.
+3. Install the Everybody Votes Channel using the provided WAD installer or the one of your choice.
+4. Return to the Wii Menu and open the Everybody Votes Channel.
 
 #### With any luck, you'll be up and running!
 
 </br>
 
-> IMPORTANT NOTICE: If you change the region of the polls, any previous data WILL BE PERMANENTLY ERASED!
+> IMPORTANT NOTICES:
+>
+> If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
+> 
+> If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!
