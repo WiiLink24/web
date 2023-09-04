@@ -7,7 +7,6 @@ pubDate: "2020-12-14"
 - An SD card or USB drive
 - A Wii with an Internet connection
 - A Windows or Unix based computer
-- [WiiLink Patcher](https://github.com/WiiLink24/WiiLink24-Patcher/releases)
 
 ## Instructions
 
@@ -29,36 +28,36 @@ pubDate: "2020-12-14"
 > [If you want to see detailed instructions on how to install the WADs, click here!](wiimodlite)
 
 
-1. Download `WiiLinkPatcher-Windows.bat` if you are on Windows, and `WiiLinkPatcher-Unix.sh` if you are on a Unix system
-2. On Windows run `WiiLinkPatcher-Windows.bat`. On Unix systems, open Terminal and type `bash`, then drag `WiiLinkPatcher-Unix.sh` into the terminal then press enter. It should look like this: `bash WiiLinkPatcher-Unix.sh`.
-3. Press 1 to choose "`Start`" and confirm your selection by pressing `ENTER`.
-4. For this guide, choose "`Install WiiLink on your Wii`"
-5. Follow the on screen instructions to select which versions of the available channels you would like.
-6. Connect the SD Card or USB Drive to your computer and select "`1`".
-7. If your device was detected successfully, select "`1`". If not, make sure there's a folder called `apps` on your SD Card or USB Device and try again.
-8. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
-9. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-10. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to `WiiLinkPatcher.bat` to your SD Card or USB Device.
-11. Put your SD card or USB drive in your Wii.
-12. Launch the Homebrew Channel on your Wii.
-13. Launch Wii Mod Lite.
-14. Using the +Control Pad on your Wii Remote, navigate to `WAD Manager`, and then navigate to the `wad` folder.
-15. If your Wii is not a Japanese region, install `WiiLink_SPD(Wii).wad` or `WiiLink_SPD(vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
-16. Highlight all other WADs with `WiiLink` in the name and press + to select them. When all of them are selected, press A twice to install the WADs.
+1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
+2. On Windows, run `WiiLink_Patcher_Windows_v1.X.X.exe`. <br>
+On MacOS, right click the `WiiLink_Patcher_macOS_v1.X.X` file in Finder and click Open. <br>
+On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/WiiLink_Patcher_Linux-<arch>_v1.X.X`
+3. Press `1` to choose "`Start Express Install Setup`".
+4. Follow the on screen instructions to select which versions of the available channels you would like.
+5. At step 6, press `1` to begin patching.
+6. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+7. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
+8. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to `WiiLinkPatcher.bat` to your SD Card or USB Device.
+9. Put your SD card or USB drive in your Wii.
+10. Launch the Homebrew Channel on your Wii.
+11. Launch Wii Mod Lite.
+12. Using the +Control Pad on your Wii Remote, navigate to `WAD Manager`, and then navigate to the `wad` folder.
+13. If your Wii is not a Japanese region, install `WiiLink_SPD(Wii).wad` or `WiiLink_SPD(vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
+14. Highlight all other WADs with `WiiLink` in the name and press + to select them. When all of them are selected, press A twice to install the WADs.
     - If you have previously installed the RiiConnect24 versions of the Forecast Channel and the Nintendo Channel, installing WiiLink's will overwrite them.
 
-17. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
+15. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
 > The following steps are only if you are on vWii (Wii U). If you are not, proceed to Section II.
 
 
-18. Launch `Priiloader`.
-19. Follow the installation steps.
-20. Launch `Load Priiloader`
-21. Using your Wii Remote, go to `System Menu Hacks`.
-22. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. Feel free to enable others.
-23. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-24. Return to the system menu.
+16. Launch `Priiloader`.
+17. Follow the installation steps.
+18. Launch `Load Priiloader`
+19. Using your Wii Remote, go to `System Menu Hacks`.
+20. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. Feel free to enable others.
+21. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
+22. Return to the system menu.
 
 ### Section II - Adding your email to Set Personal Data
 
