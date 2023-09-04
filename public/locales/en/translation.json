@@ -66,6 +66,9 @@
         "itn7name": "TV Guide Channel",
         "itn7jpn": "テレビガイドチャンネル",
         "itn7desc": "Check your local TV programming guide, find shows that interest you and control your TV with your Wii Remote."
+        "itn8name": "Everybody Votes Channel"
+        "itn8jpn": "",
+        "itn8desc": "Answer questions and tell the world your answer in national and worldwide polls."
     },
     "status": {
         "core": "Core services",
