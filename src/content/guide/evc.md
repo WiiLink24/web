@@ -24,8 +24,8 @@ pubDate: "2023-08-26"
 
 1. Open the application inside the Homebrew Channel.
 2. Run the application and follow the on-screen instructions.
-3. Install the Everybody Votes Channel using the provided WAD installer or the one of your choice.
-4. Return to the Wii Menu and open the Everybody Votes Channel.
+3. Install the Everybody Votes Channel and Region Select channel using the provided WAD installer or the one of your choice.
+5. Return to the Wii Menu and open the Everybody Votes Channel.
 
 #### With any luck, you'll be up and running!
 
@@ -36,3 +36,5 @@ pubDate: "2023-08-26"
 > If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
 > 
 > If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!
+>
+> To use custom regions, you must use AnyGlobeChanger.
