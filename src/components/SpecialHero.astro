@@ -1,4 +1,5 @@
 <div class="hero">
+    <div class="warning">This site is undergoing changes, the information it provides may be outdated.</div>
     <div class="bgtext">
         <div class="bg1"></div>
         <div class="bg2"></div>
@@ -26,7 +27,7 @@
             <a style="text-decoration: none;" href="https://dolphin-emu.org/download/dev/3a8e7de21405d45d7b443645c65c81720a5c2f15/"><div class="dolbtn">Get Dolphin!</div></a>
             <a style="text-decoration: none;" href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div class="linkbtn">Download WiiLink</div></a>
         </div>
-    </div>
+</div>
 
     <script>
         import Parallax from "parallax-js";
@@ -49,6 +50,19 @@ img{
     animation: scroll 120s linear infinite;
     overflow:hidden;
 }
+
+
+.warning{
+		width:100%;
+		padding:20px;
+		background-color: #bf2439;
+		color:white;
+        bottom:-20px;
+		text-align:center;
+		font-family: Rodin;
+		margin-bottom: 30px;
+        position: absolute;;
+	}
 
 .warn{
     top:0;
@@ -331,26 +345,46 @@ img{
             display:none;
         }
 
+        .warning{
+		width:70%;
+        border-bottom-right-radius:8px;
+        height:40px;
+		padding:20px;
+		background-color: #bf2439;
+		color:white;
+        top:0px;
+		text-align:center;
+		font-family: Rodin;
+        position: absolute;
+	}
+
         .dwnld{
-            top:20px;
+            top:80px;
         }
 
         .buttons{
-            top:220px;
+            top:150px;
+            gap:10px;
+            display:grid;
+            width:100%;
         }
 
         .dolbtn{
             font-size: 15px;
-            width: 150px;
+            width: 80%;
+            left:50%;
+            transform:translate(-50%,0);
             text-align: center;
+            position:relative;
         }
 
         .linkbtn{
             font-size: 15px;
-            width: 150px;
+            width: 80%;
+            left:50%;
+            transform:translate(-50%,0);
             text-align: center;
-        }
-
+            position:relative;
     }
 
     @media (min-width:2000px) {
