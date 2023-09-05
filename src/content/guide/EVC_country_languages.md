@@ -3,7 +3,7 @@ title: Language support - Everybody Votes Channel
 pubDate: "2023-08-26"
 ---
 
-![EVC Banner](../../public/Images/EVC_Banner.webp)
+![EVC Banner](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
 
 #### Below you'll find a list of the languages supported by the Everybody Votes Channel depending on the country you have set:
 
