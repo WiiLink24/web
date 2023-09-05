@@ -1,7 +1,7 @@
 ---
 serviceName: "Everybody Votes Channel"  
 serviceDesc: "Get really interesting polls right to your Wii, make predictions, cast your vote!"
-serviceWorking: "Private Beta"
+serviceCompleted: "Full Release"
 serviceImage: "/Images/politicsbanner.png"
-serviceLink: ""
+serviceLink: "./guide/evc"
 ---
