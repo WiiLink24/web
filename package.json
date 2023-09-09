@@ -10,14 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^0.18.2",
-    "@astrojs/rss": "^2.2.1",
-    "@astrojs/sitemap": "^1.2.1",
-    "accessible-astro-components": "^1.6.5",
-    "astro": "2.2.1",
-    "astro-i18next": "^1.0.0-beta.21",
-    "jquery-parallax.js": "^1.5.0",
-    "parallax-js": "^3.1.0",
-    "scss": "^0.2.4"
+    "astro": "^3.0.11",
+    "astro-particles": "^2.10.0",
+    "bootstrap-icons": "^1.10.5",
+    "tsparticles": "^2.12.0"
   }
 }

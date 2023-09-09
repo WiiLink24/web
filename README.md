@@ -1,41 +1,54 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=wiilink24.com&fontSize=90&animation=fadeIn)
+# Astro Starter Kit: Basics
 
-### _The front-facing website of the WiiLink project._
-<img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/WiiLink24/web" /> <img alt="" src="https://img.shields.io/github/repo-size/WiiLink24/web" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
-
-A website where you can download our products, as well as getting up to date with our advancements, getting assistance with our products, and informing yourself in the status of them.
-
-#### All the fun people who've contributed:
-<a href = "https://github.com/WiiLink24/web/graphs/contributors">
-  <img src = "https://contrib.rocks/image?repo=WiiLink24/web"/>
-</a>
-
-## Want to self-host?
-Simply clone this repository and open a terminal in the folder:
-```sh
-npm install astro
-npm install astro-i18next
-npm run dev
 ```
-### You will see a live preview of your changes inside your default web browser!
+npm create astro@latest -- --template basics
+```
 
-## Structure
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
+[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
 
-Inside the "public" folder you will see all static assets that astro will place at the root of the published site.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
-Inside it, we store all the assets like images, locales, fonts, and discord integration.
+![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
 
-In the src folder you will find the components (used to be able to reuse code in different sites); the content, which includes all the markdown files used in the site; layouts, the design for our guide and news sections; and all of the pages in the site in all supported locales.
+## 🚀 Project Structure
 
-In the styles folder you will find global css rules.
+Inside of your Astro project, you'll see the following folders and files:
 
-## I want to modify the languages or add more of them!
-That's amazing! But first please read up on the documentation for [Astro-i18next](https://github.com/yassinedoghri/astro-i18next), and don't forget to generate the website when you're done with ``` npx astro-i18next generate ```.
-You will also need to add the language code inside the ``` astro-i18next.config.mjs``` file located at the root of the folder!
+```
+/
+├── public/
+│   └── favicon.svg
+├── src/
+│   ├── components/
+│   │   └── Card.astro
+│   ├── layouts/
+│   │   └── Layout.astro
+│   └── pages/
+│       └── index.astro
+└── package.json
+```
 
-# That's about it, thanks for reading!!!
+Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-# You should also check out:
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
+There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+
+Any static assets, like images, can be placed in the `public/` directory.
+
+## 🧞 Commands
+
+All commands are run from the root of the project, from a terminal:
+
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
+
+## 👀 Want to learn more?
+
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
