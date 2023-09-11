@@ -69,12 +69,12 @@
     },
     "status": {
         "core": "Core services",
-        "coredesc": "Services core to WiiLink, originally only available within Japan.",
+        "coredesc": "Services core to WiiLink, originally only available from Japan!",
         "wc24": "WiiConnect24 Channels",
-        "wc24desc": "Functionality provided by WiiConnect24, revived by WiiLink.",
+        "wc24desc": "Functionality initially provided by WiiConnect24, now revived by WiiLink!",
         "video": "Video Streaming Services",
-        "videodesc": "A myriad of services for you to best enjoy video within.",
-        "statuspage": "View the server status"
+        "videodesc": "Streaming Services that allow you to watch videos on your Wii!",
+        "statuspage": "View the Server Status"
     },
     "download": {
         "welcome": "Welcome!",

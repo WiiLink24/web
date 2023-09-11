@@ -2,31 +2,28 @@
 title: Photo Print Channel
 pubDate: "2021-01-29"
 ---
-## Digicam arranges your beautiful photos into a masterpiece
+## The Photo Print Channel arranges your beautiful Photos into a masterpiece!
 
-- Print your perfect shots directly from your Wii.
+- Print your perfect Photos directly from your Wii!
 
-- Create your own design.
+- Create your own Business Card!
 
-- Emailed directly to you.
+- Photos are directly Emailed to you for the most convience.
+___
+## Installation Guide
 
-## FAQ
-### Are the photos directly mailed to me?
 
-> No! We use the email address you have registered via Set Personal Data.
+___
+## Troubleshooting & Questions
+### "Are the photos directly mailed to me?"
+> No. We use the email address you have registered via Set Personal Data.
 > Your photos are rendered on our server, and a ZIP file is emailed directly to you.
 
-### Digicam is telling me that my address is within "Dallas, TX"
+> If you want your Photos printed, you will have to do that yourself with a Printer.
 
-> This is the default address. Please change it via Set Personal Data.
+### "The Photo Print Channel is telling me that my selected image is not supported!"
 
-### I use Dolphin. My photos or Miis sometimes become black. What can I do?
-
-> Within Dolphin's graphics settings, disable the setting "Store XFB Copies to Texture Only".
-
-### Digicam is telling me that my selected image is not supported
-
-> Digicam only supports "baseline" (not "progressive", or "interlaced") JPEGs. Here are some tips to make your photo compatible:
+> Photo Print only supports "baseline" (not "progressive", or "interlaced") JPEGs. Here are some tips to make your photo compatible:
 - Using Photoshop:
 
     - Go to File > Export > Save for Web (Legacy)
@@ -40,3 +37,8 @@ pubDate: "2021-01-29"
 
     - You do not need to change any options - Paint.NET does not support progressive JPEG, and will save as baseline.
 
+### "Photo Print is telling me that my address is within 'Dallas, TX'"
+> This is the default address. Please change it via the "Set Personal Data" App.
+
+### "I use Dolphin. My photos or Miis sometimes become black. What can I do?"
+> Within Dolphin's graphics settings, disable the setting "Store XFB Copies to Texture Only".

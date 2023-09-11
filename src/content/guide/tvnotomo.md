@@ -1,10 +1,14 @@
 ---
 title: TV Guide Channel
-pubDate: "2021-01-29"
+pubDate: "2023-09-08"
 ---
-## The shows you want, right on your Wii.
+## A TV Guide Schedule, right on your Wii!
 
-- Explore a new way to discover shows, directly on your Wii.
+- Explore upcoming timeslots for TV Programs, directly on your Wii!
 
-- View shows occuring around you.
+- Use your Wii Remote as a TV Remote for certain TV's!
+___
+## Installation Guide
 
+___
+## Troubleshooting & Questions

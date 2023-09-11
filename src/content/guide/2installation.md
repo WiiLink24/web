@@ -4,9 +4,9 @@ pubDate: "2020-12-14"
 ---
 ## What you need
 
-- An SD card or USB drive
-- A Wii with an Internet connection
-- A Windows or Unix based computer
+- An SD Card or USB Drive
+- A Wii with an Internet Connection
+- A Windows, Mac, or Linux Computer
 
 ## Instructions
 
@@ -25,7 +25,7 @@ pubDate: "2020-12-14"
 
 ### Section I - Patching WADs
 
-> [If you want to see detailed instructions on how to install the WADs, click here!](wiimodlite)
+> [If you want to see detailed instructions on how to install the WADs, click here!](YAWMModMiiEdition)
 
 
 1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.

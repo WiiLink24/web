@@ -1,7 +1,7 @@
 ---
 serviceName: "Nintendo Channel"  
-serviceDesc: "Catch up on all thins Nintendo with these video archives! We might even start offering content from Nintendo creators and even our own!"
+serviceDesc: "Catch up on all sorts of Nintendo Content in one whole Channel! View Videos, Recommendations, and even play DS Demo Titles once again!"
 serviceCompleted: "Full Release"
 serviceImage: "/Images/nintendochannelbanner.png"
-serviceLink: "./guide/nintendo"
+serviceLink: "./guide/nintendochannel"
 ---
