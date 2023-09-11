@@ -1,6 +1,6 @@
 ---
 memName: NecroNova  
 memDesc: "Content Curator"
-memImage: "https://pbs.twimg.com/profile_images/1679328052701016068/L6365G9o_400x400.jpg"
-memHub: "https://twitter.com/_NecroNova"
+memImage: "https://avatars.githubusercontent.com/u/137644876?v=4"
+memHub: "(https://github.com/NecroNovaVGitHub)https://github.com/NecroNovaVGitHub"
 ---
