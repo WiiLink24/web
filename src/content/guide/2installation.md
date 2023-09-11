@@ -7,6 +7,7 @@ pubDate: "2020-12-14"
 - An SD Card or USB Drive
 - A Wii with an Internet Connection
 - A Windows, Mac, or Linux Computer
+- [WiiLink Patcher](https://github.com/WiiLink24/WiiLink24-Patcher)
 
 ## Instructions
 
@@ -32,23 +33,30 @@ pubDate: "2020-12-14"
 2. On Windows, run `WiiLink_Patcher_Windows_v1.X.X.exe`. <br>
 On MacOS, right click the `WiiLink_Patcher_macOS_v1.X.X` file in Finder and click Open. <br>
 On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/WiiLink_Patcher_Linux-<arch>_v1.X.X`
-3. Press `1` to choose "`Start Express Install Setup`".
-4. Follow the on screen instructions to select which versions of the available channels you would like.
-5. At step 6, press `1` to begin patching.
-6. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
-7. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-8. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to `WiiLinkPatcher.bat` to your SD Card or USB Device.
-9. Put your SD card or USB drive in your Wii.
-10. Launch the Homebrew Channel on your Wii.
-11. Launch Wii Mod Lite.
-12. Using the +Control Pad on your Wii Remote, navigate to `WAD Manager`, and then navigate to the `wad` folder.
-13. If your Wii is not a Japanese region, install `WiiLink_SPD(Wii).wad` or `WiiLink_SPD(vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
+
+> **For Linux Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture.
+
+3. Choose your installation setup:
+    - Press `1` for `Express Install Setup`. Follow the steps below:
+        1. Follow the on-screen instructions to select which versions of the available channels you would like.
+        2. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+    - Press `2` for `Custom Install Setup`. Follow the steps below:
+        1. Follow the on-screen instructions to select which channels to install.
+        2. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
+6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to `WiiLinkPatcher.bat` to your SD Card or USB Device.
+7. Put your SD card or USB drive in your Wii.
+8. Launch the Homebrew Channel on your Wii.
+9. Launch yawmME (YAWM ModMii Edition).
+12. Press `A` to select your source device, which defaults to `Wii SD Card`.
+13. If your Wii is not a Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
 14. Highlight all other WADs with `WiiLink` in the name and press + to select them. When all of them are selected, press A twice to install the WADs.
     - If you have previously installed the RiiConnect24 versions of the Forecast Channel and the Nintendo Channel, installing WiiLink's will overwrite them.
 
 15. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
-> The following steps are only if you are on vWii (Wii U). If you are not, proceed to Section II.
+> The following steps are only if you are on vWii (Wii U). If you are not, proceed [to Section II](#section-ii---adding-your-email-to-the-address-information-settings-spd).
 
 
 16. Launch `Priiloader`.
@@ -59,13 +67,13 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 21. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
 22. Return to the system menu.
 
-### Section II - Adding your email to Set Personal Data
+### Section II - Adding your email to the Address Information settings (SPD)
 
-> Adding your email to Set Personal Data will allow the Digicam Print Channel to send images to your email that you created using it.
+> Adding your email to the Address Information Settings will allow Photo Prints Channel to send images to your email that you created using it.
 
-1. Launch Digicam Print Channel from your Wii's home menu.
-2. On the bottom right, press `Address settings` and then `Yes`.
-3. Click on `Email Address` within SPD and type in your email address. (make sure you **put it in correctly** or it **will not work!**)
+1. Launch Photo Prints Channel from your Wii's home menu.
+2. On the bottom right, press `Address Settings` and then `Yes`.
+3. Click on `Email Address` within the settings and type in your email address. (make sure you **put it in correctly** or it **will not work!**)
 4. Press `OK` and then `Done`.
 5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu. After you’ve done that, it should work!
 
