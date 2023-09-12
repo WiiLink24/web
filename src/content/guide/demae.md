@@ -54,7 +54,7 @@ ___
 
 5. Double-check that you've typed the correct Console ID, as it can't be re-registered. If you need to re-register, ask a staff member in the server for assistance.
 
-#### Section III - Installing WADs
+#### Section III - Installing the WADs
 
 You will now install the Food Delivery Channel and Set Personal Data channels.
 
@@ -72,11 +72,11 @@ You will now install the Food Delivery Channel and Set Personal Data channels.
 
 ### If you happen to get `Error -1022` when installing `Food Channel (Domino's) (English).wad`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.
 
-#### Section IV - Setting your address information
+#### Section IV - Setting your Address Information
 
 > WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](https://theoldnet.com/get?url=https%3A%2F%2Fdemae.wiilink24.com%2Fprivacypolicy&year=2022&scripts=false&decode=false). (Currently archived, as new page is being worked on)
 
-> You are responsible for entering your correct address information. Failure to do so may result in orders not succeeding.
+> You are responsible for entering your correct Address Information. Failure to do so may result in orders not succeeding.
 
 In this section you will be setting your address information. This is required for proper usage of Food Channel (Domino's). 
 
@@ -89,7 +89,7 @@ Otherwise, click the `Change Address Information` button in the main menu.
 ![SPD Page 1](https://github.com/RiiConnect24/Wii-Guide/blob/master/images/Demae-Dominos/spd-1.png?raw=true)<br><br>
 ![SPD Page 2](https://github.com/RiiConnect24/Wii-Guide/blob/master/images/Demae-Dominos/spd-2.png?raw=true)
 
-#### Section V - Placing an order
+#### Section V - Placing an Order
 
 > This section requires you to have cash to pay for your meal.
 
@@ -270,10 +270,6 @@ ___
 ### "I got error -1017 when installing the Food Channel WAD! What do I do?"
 
 > This is a known issue with the patcher! In the meantime, you will find a file titled Demae.wad on the root of your SD card. Use your favorite WAD manager to install!
-
-### "I got error -1022 when installing the Food Channel WAD! What do I do?"
-
-> Using your favorite WAD manager, uninstall the Food Channel, and install again. For many, this means going to the location the Food Channel WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.
 
 ### "I'm getting an error message when adding food to my basket! What do I do?"
 
