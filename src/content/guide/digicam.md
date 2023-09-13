@@ -1,8 +1,8 @@
 ---
-title: Photo Print Channel
+title: Photo Prints Channel
 pubDate: "2021-01-29"
 ---
-## The Photo Print Channel arranges your beautiful Photos into a masterpiece!
+## The Photo Prints Channel arranges your beautiful Photos into a masterpiece!
 
 - Print your perfect Photos directly from your Wii!
 
@@ -21,7 +21,7 @@ ___
 
 > If you want your Photos printed, you will have to do that yourself with a Printer.
 
-### "The Photo Print Channel is telling me that my selected image is not supported!"
+### "The Photo Prints Channel is telling me that my selected image is not supported!"
 
 > Photo Print only supports "baseline" (not "progressive", or "interlaced") JPEGs. Here are some tips to make your photo compatible:
 - Using Photoshop:
