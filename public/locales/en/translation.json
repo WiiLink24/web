@@ -4,7 +4,7 @@
       "install": "Install it now",
       "docs": "Check out the guide",
       "beta": "This site is in BETA, rate it!",
-      "info": "<0><1>Wii</1><2>Link</2> resurrects many different channels. <br/> Here's what we currently support:</0>",
+      "info": "<0><1>Wii</1><2>Link</2> resurrects many different channels! <br/> Here's what we currently support:</0>",
       "faq": " Quick FAQ",
       "faq1": "Why WiiLink?",
       "faqres1": "WiiLink is the only service to bring back Japanese exclusive Wii channels after they were officially shut down. We've made Wii no Ma, the Demae Channel, and Digicam Print Channel functional once more. With our service, you can experience all of these once more on your Nintendo Wii - possibly for the first time.",
@@ -12,17 +12,15 @@
       "faqres2": "Without a replacement service for these channels, they would be lost to time, never to be seen again. However, thanks to our work, future generations of players can experience these channels again!",
       "faq3": "Is using WiiLink legal?",
       "faqres3": "Absolutely. We develop all of our channels without copyrighted code and material, and rely solely on what is provided within the channel and public knowledge. All code is written from the ground up. You will have no legal trouble from using our service.",
-      "faq4": "Can the Demae Channel order real food?",
-      "faqres4": "Yes!",
       "morefaq": "Any other questions? If so, be sure to read our full FAQ!",
       "team": " People behind the project",
-      "teamdef": "Some of the incredible people who help bring WiiLink to life!",
+      "teamdef": "Sere are some of the incredible people who help bring WiiLink to life!",
       "news": " Newsstand",
-      "newsdef": "Catch up on the latest news of the service!"
+      "newsdef": "Catch up on the latest News of the Service!"
     },
     "blog": {
         "new": "This just in!",
-        "other": "Older posts",
+        "other": "Older Posts",
         "rss": "Bring Wii News anywhere with our RSS Feed!",
         "rssbtn": "Check it out!"
     },
@@ -61,11 +59,11 @@
         "itn5jpn": "",
         "itn5desc": "Find current and upcoming Weather from your local region or around the globe!",
         "itn6name": "Nintendo Channel",
-        "itn6jpn": "",
+        "itn6jpn": "みんなのニンテンドーチャンネル",
         "itn6desc": "An Interactive guide to games for Wii, DS & 3DS, with Trailers, Demos and more!",
         "itn7name": "TV Guide Channel",
         "itn7jpn": "テレビの友チャンネル",
-        "itn7desc": "Check your local TV Programming Guide, find shows that interest you and control your TV with your Wii Remote!"
+        "itn7desc": "Check your local TV Programming Guide, find shows that interest you and control your TV with the Wii Remote!"
     },
     "status": {
         "core": "Japanese Services",
@@ -87,7 +85,7 @@
     "guide": {
         "hover": "Hover over me!",
         "msg1": "Let's get started",
-        "msg2": "Our services",
+        "msg2": "Our Aervices",
         "wiiguide": "Go to wii.guide"
     }
   }
