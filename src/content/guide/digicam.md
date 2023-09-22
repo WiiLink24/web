@@ -31,6 +31,7 @@ ___
 
 5. Highlight the WAD with `Photo Prints Channel (English)` or `Digicam Print Channel (Japan)` (depending on your Console Region) and `WiiLink SPD` as its name and press + to select them. When all of them are selected, press A twice to install the WADs.
 > The `WiiLink SPD` file should have either `(Wii)` or `(vWii)` in its name depending on the Console you're installing it on.
+#### If you happen to get `Error -1022` when installing `Photo Prints Channel (English)` or `Digicam Print Channel (Japan)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.
 
 7. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
