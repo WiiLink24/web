@@ -6,16 +6,42 @@ pubDate: "2023-08-26"
 
 - Partake in Worldwide polls alongside other users of the service!
 
+- Vote on completely original polls, made by either other people or WiiLink itself!
+
+- Check out Polls & Results in many different langauges, from any country youre in!
+
 - Propose your own polls and echo your questions to everyone!
 
 ![EVC Banner](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
 </br>
 
 > This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below.
+
+### What you need
+___
+- An SD Card or USB Drive
+- A Wii with an Internet Connection
+- A Windows, Mac, or Linux Computer
+- [WiiLink Patcher](https://github.com/WiiLink24/WiiLink24-Patcher)
+
+1. Download the latest version of the WiiLink Patcher for your operating system.
+
+2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
+> Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.
+3. After the Patcher is done downloading the files, simply disconnect your SD Card/USB Drive from your Computer, and input it into your Wii/Wii U.
+
+4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
+
+5. Highlight the WADs with `Everybody Votes Channel (WiiLink)` and `Region Select` as its name and press + to select it. When it is selected, press A twice to install the WADs.
+> Both WAD names might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.
+#### If you happen to get `Error -1022` when installing `Everybody Votes Channel (WiiLink)` or `Region Select`, uninstall the channels by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.
+
+6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
+
+### Congrats! You've installed the Everybody Votes Channel on your Console! Enjoy the Channel to your hearts content once again!
 ___
 
-## We're moving! - How to Transfer your Data
-
+## Moving time! - How to Transfer your Poll History Data
 
 * Please ensure that the EVC Transfer Tool (obtained via our [patcher](https://github.com/WiiLink24/WiiLink24-Patcher)) is in the "apps" folder of your SD Card.
 
@@ -24,7 +50,10 @@ ___
 3. Install the Everybody Votes Channel and Region Select channel using the provided WAD installer or the one of your choice.
 5. Return to the Wii Menu and open the Everybody Votes Channel.
 
-#### With any luck, you'll be up and running!
+#### With any luck, you'll be up and running! 
+
+* Here is an Infographic for people with reading issues, such as Dyslexia.
+![EVC Transfer Infographic](https://media.discordapp.net/attachments/997708025169203212/1155280197499752528/Switch_Providers_Inforgraphic.png)
 ___
 ## Important Notices!
 > If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
