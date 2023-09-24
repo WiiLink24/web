@@ -15,8 +15,6 @@ pubDate: "2023-08-26"
 ![EVC Banner](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
 </br>
 
-> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below.
-
 ### What you need
 ___
 - An SD Card or USB Drive
@@ -39,6 +37,8 @@ ___
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
 ### Congrats! You've installed the Everybody Votes Channel on your Console! Enjoy the Channel to your hearts content once again!
+
+> If you would like to migrate your poll data from RiiConnect24 over to WiiLink, please use the EVC Transfer Tool by following the instructions below.
 ___
 
 ## Moving time! - How to Transfer your Poll History Data
