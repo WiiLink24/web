@@ -53,7 +53,9 @@ ___
 #### With any luck, you'll be up and running! 
 
 * Here is an Infographic for people with reading issues, such as Dyslexia.
+
 ![EVC Transfer Infographic](https://media.discordapp.net/attachments/997708025169203212/1155280197499752528/Switch_Providers_Inforgraphic.png)
+</br>
 ___
 ## Important Notices!
 > If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
