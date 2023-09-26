@@ -1,0 +1,166 @@
+<div class="build">
+    <div class="build-holder">
+        <h1 class="title">Meet our amazing <b class="color">team</b></h1>
+        <h2 class="subtitle"><b style="font-family:Rubik;">WiiLink</b> is powered by <b class="color">100%</b> volunteer work. </br><b class="color">Here's some of the incredible people who help <b style="font-family:Rubik;">WiiLink</b> come to life!</b></h2>
+        <div id="members" class="members">
+        </div>
+        <div id="members_small" class="members_small">
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", async function () {
+
+       
+
+            // Fetch the latest release information from the GitHub repository using Octokit
+           fetch("json/team.json")
+           .then(response => response.json())
+           .then(data => showService(data));
+
+           function showService(data) {
+            let team = document.getElementById("members");
+            let teamSmall = document.getElementById("members_small");
+            for(let i = 0; i < data.members.member.length; i++) {
+                if(i < 10) {
+                if (i == 0 || i > Math.floor(Math.random() * 20)){
+                    team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + " style='top:0; object-fit:contain; position:relative;' width='30px' height='20px'></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
+                }
+                else {
+                team.innerHTML += "<div class='member' style='background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + " style='top:0; object-fit:contain; position:relative;' width='30px' height='20px'></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
+            }
+        } else {
+            teamSmall.innerHTML += "<div class='member' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></div>";
+        }
+
+           }
+        }
+    });
+    
+    </script>
+
+<style>
+    .build-holder{
+        left:50%;
+        transform: translate(-50%, 20px);
+        width:95%;
+        max-width:1500px;
+        padding-top:30px;
+        position:relative;
+    }
+    .members{
+      width:100%;
+      display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(345px,1fr));
+  gap: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  border-radius: 8px;
+  z-index: 10;
+  scroll-snap-type: both mandatory;
+    }
+    .members_small{
+        top:20px;
+      width:100%;
+      display: flex;
+  gap: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  border-radius: 8px;
+  z-index: 10;
+  scroll-snap-type: both mandatory;
+    }
+    .member:hover{
+        transform: rotate(5deg);
+    }
+    .large {
+  background: rgba(255, 0, 0, 0.25); grid-column: auto / span 2; grid-row: auto / span 2; height: 200px;
+}
+    .build-square:hover{
+        box-shadow: 0px 5px 15px #7d7d7d4b;
+        border-width:4px;
+        transition: 0.1s;
+    }
+    .bdg{
+        top:20px;
+        right:10px;
+        border-radius: 8px;
+        transform: translateZ(20px);
+        scale:80%;
+        font-size: 25px;
+        position: absolute;
+    }
+    .tier-title{
+        bottom:20px;
+        font-family:Gilroy;
+        position: absolute;
+    }
+    .tier-1{
+        background-image: url(tier_1_bg.png);
+        background-size: cover;
+        border:2px solid rgb(228, 255, 169);
+    }
+    .tier-2{
+        background-image: url(tier_2_bg.png);
+        background-size: cover;
+        border:2px solid rgb(148, 248, 255);
+    }
+    .tier-3{
+        background-image: url(tier_3_bg.png);
+        background-size: cover;
+        border:2px solid rgb(238, 206, 252);
+    }
+    .tier-4{
+        background-image: url(tier_4_bg.png);
+        background-size: cover;
+        border:2px solid rgb(205, 213, 204);
+    }
+    .tiers{
+        left:50%;
+        transform: translate(-50%, 0);
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap:wrap;
+        gap:20px;
+        position:relative;
+    }
+    .dots{
+        top:-80px;
+        width:150px;
+        height:150px;
+        opacity:0.5;
+        background-image:radial-gradient(#00000040 2px,transparent 2px);
+        background-size: 15px 15px;
+        z-index: 0;
+        position:relative;
+    }
+    .build{
+        top:calc(100% + 200px);
+        position: relative;
+    }
+    .subtitle{
+        left:50px;
+        width:80%;
+        text-align:left;
+        margin-bottom:20px;
+        font-size: 25px;
+    }
+    .color{
+        background: url(header_bg.png) 0 0;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+    .title{
+        text-align:left;
+        width:100%;
+        margin-bottom:15px;
+        font-size: 50px;
+        font-family: Gilroy;
+        position: relative;
+    }
+</style>

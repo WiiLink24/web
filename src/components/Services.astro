@@ -1,0 +1,152 @@
+<div class="svc-holder">
+<h1 class="title">Welcome to <b style="font-family:Rubik;">WiiLink</b>!</h1>
+<h2 class="subtitle">A community project for the Wii that works towards reviving and enhancing the discontinued 
+    WiiConnect24 channels and services, including the ones that were only available 
+    in Japan.</h2>
+    <div class="slider">
+        <div id="slide-track" class="slide-track">
+         
+        </div>
+        <div id="slide-track_2" class="slide-track back">
+          
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", async function () {
+
+       
+
+            // Fetch the latest release information from the GitHub repository using Octokit
+           fetch("json/services.json")
+           .then(response => response.json())
+           .then(data => showService(data));
+
+           function showService(data) {
+            let services = document.getElementById("slide-track");
+            let services2 = document.getElementById("slide-track_2");
+            for(let i = 0; i < 2; i++){
+            for(let i = 0; i < (data.services.service.length)/2; i++) {
+                services.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+                console.log(data.services.service[i].name);
+           }
+        }
+
+        for(let i = 0; i < 2; i++){
+            for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
+                services2.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+                console.log(data.services.service[i].name);
+           }
+        }
+           }
+    });
+    
+    </script>
+
+<style>
+    body {
+	align-items: center;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+}
+
+.title{
+    left:50px;
+    width:calc(100% - 50px);
+    background: url(header_bg.png) 0 0;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    font-size: 60px;
+    font-family: Gilroy;
+    position: relative;
+}
+
+.slide{
+    height:400px;
+    width: 300px;
+    position: absolute;
+}
+
+.subtitle{
+    left:50px;
+    width:70%;
+    font-size: 25px;
+    position: relative;
+}
+
+
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-450px * 5.35))}
+}
+
+@keyframes scrollback {
+	0% { transform: translateX(calc(-450px * 5.35))}
+	100% { transform: translateX(0);}
+}
+
+.svc-holder{
+    top: calc(100% + 50px);
+    z-index: 1;
+    position: relative;
+}
+
+.slider {
+	background: white;
+	height: auto;
+	margin: auto;
+    top:30px;
+	overflow:hidden;
+	position: relative;
+    rotate: -2deg;
+    z-index: 1;
+	width: 1500px;
+}
+	
+	.slider::before,
+	.slider::after {
+		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	.slider::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	.slider::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 80s linear infinite;
+        display: flex;
+		width: calc(450px * 14);
+	}
+
+    .back {
+		animation: scrollback 80s linear infinite;
+        transform: translate(0, 100px);
+        display: flex;
+        flex-direction: row;
+		width: calc(450px * 14);
+	}
+
+    img{
+        left:50%;
+        top:50%;
+        transform: translate(-50%, -50%);
+        position: absolute;
+    }
+
+
+</style>

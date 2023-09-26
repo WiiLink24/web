@@ -1,0 +1,194 @@
+{
+  "members": {
+    "member": [
+      {
+        "name": "Sketch",
+        "title": "Team Lead",
+        "color": "#5ef2b0",
+        "pfp": "https://github.com/noahpistilli.png",
+        "link": "https://github.com/noahpistilli",
+        "flag": "https://discord.com/assets/6ea8666882589830dd40b86f950081bf.svg"
+      },
+{
+          "name": "LunaValoäa",
+          "title": "Manager / Translator",
+          "color": "#FDB0C0",
+          "pfp": "https://github.com/lunavaloaa.png",
+          "link": "https://www.youtube.com/@LunaValoaa",
+          "flag": "https://discord.com/assets/4be7421b4e5f8718344dffd8549333e9.svg"
+},
+      {
+          "name": "Alex",
+          "title": "Web developer",
+          "color": "#5e97f2",
+          "pfp": "https://github.com/humanoidear.png",
+          "link": "",
+          "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        },
+  {
+          "name": "dhtdht020",
+          "title": "Tooling Developer",
+          "color": "#00AAAA",
+          "pfp": "https://github.com/dhtdht020.png",
+          "link": "https://twitter.com/dhtdht020",
+          "flag": "https://discord.com/assets/2fdf6f04696efea8e293bcff42a36dc9.svg"
+        },
+  {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+        {
+          "name": "oscie",
+          "title": "Developer / Manager",
+          "color": "#7289da",
+          "pfp": "https://github.com/oscie57.png",
+          "link": "https://github.com/oscie57",
+          "flag": "https://discord.com/assets/030eea881ddab556dcf9713ad69540cd.svg"
+        },
+        {
+          "name": "diego",
+          "title": "Translator(CA/ES/ZH)",
+          "color": "#fc5a4e",
+          "pfp": "https://yt3.googleusercontent.com/Sa19eMJLKRbYRc_i17ZqDm3FSItnjP0u6yuyaDRn9uD3X7y7G-qfZgFUtz1LMKjFPl1rvClGWQ",
+          "link": "https://twitter.com/korewadiego",
+          "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        },
+{
+          "name": "kouacc",
+          "title": "Translator (French)",
+          "color": "#1389a1",
+          "pfp": "https://github.com/kouacc.png",
+          "link": "https://github.com/kouacc",
+          "flag": "https://discord.com/assets/c1a36c711f0ae0ab46c7dce06f63a723.svg"
+        },
+  {
+"name": "NecroNova",
+        "title": "Content Curator",
+        "color": "#ff1dce",
+        "pfp": "https://avatars.githubusercontent.com/u/137644876?s=96&v=4",
+        "link": "https://github.com/NecroNovaVGitHub",
+"flag": "https://discord.com/assets/d788b9231ed2028dc29245f76cf0a415.svg"
+},
+{
+"name": "ZAZiOs",
+"title": "Translator (Russian)",
+"color": "#1c1c1c",
+"pfp": "https://github.com/ZAZiOs.png",
+"link": "https://www.youtube.com/@zazios",
+"flag": "https://discord.com/assets/01efcb4dcb5b464a6859688f7e48907f.svg"
+},
+  {
+  "name": "Deoku64",
+  "title": "Translator (JP/DEU)",
+  "color": "#abc9ff",
+  "pfp": "https://lh3.googleusercontent.com/a/ACg8ocI_OzmelcXabyC_3gEP1zV3EDTRRqCwgHKbu6AImFL2lNQ",
+  "link": "https://www.youtube.com/@Deoku64",
+  "flag": "https://discord.com/assets/0d7d66cf0a8f30478301c67839c17730.svg"
+  },
+{
+        "name": "Philemax",
+        "title": "Translator (FR, JP)",
+        "color": "#45c40c",
+        "pfp": "https://cdn.discordapp.com/attachments/854071808997982220/1156257879121215548/playan.png?ex=65145090&is=6512ff10&hm=7784bc6476a0af67314c1fb6db9e6dc1f6e2b75101902c7dea14304ce2263ad9&",
+        "link": "https://www.youtube.com/@Philemax/",
+        "flag": "https://discord.com/assets/728982808359b77ea519b24e6be7a218.svg"
+      },
+      {
+        "name": "Jinjo",
+        "title": "Translator (BR. PT)",
+        "color": "#6a329f",
+        "pfp": "https://media.discordapp.net/attachments/907021188721704962/1156260587815321640/7cce0e54168ee759a052262495b809f6.png?ex=65145316&is=65130196&hm=aa3c29136f3ff9fd490b41b8c12a084fba4beb6893ad3ff1146d0e0f66389fd5&=&width=438&height=438",
+        "link": "https://twitter.com/JinjoGuy",
+        "flag": "brazil"
+      },
+      {
+        "name": "Sketch",
+        "title": "Team Lead",
+        "color": "#5ef2b0",
+        "pfp": "https://github.com/noahpistilli.png",
+        "link": "https://github.com/noahpistilli",
+        "flag": "https://discord.com/assets/6ea8666882589830dd40b86f950081bf.svg"
+      },
+{
+          "name": "LunaValoäa",
+          "title": "Manager / Translator",
+          "color": "#FDB0C0",
+          "pfp": "https://github.com/lunavaloaa.png",
+          "link": "https://www.youtube.com/@LunaValoaa",
+          "flag": "https://discord.com/assets/4be7421b4e5f8718344dffd8549333e9.svg"
+},
+      {
+          "name": "Alex",
+          "title": "Web developer",
+          "color": "#5e97f2",
+          "pfp": "https://github.com/humanoidear.png",
+          "link": "",
+          "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        },
+  {
+          "name": "dhtdht020",
+          "title": "Tooling Developer",
+          "color": "#00AAAA",
+          "pfp": "https://github.com/dhtdht020.png",
+          "link": "https://twitter.com/dhtdht020",
+          "flag": "https://discord.com/assets/2fdf6f04696efea8e293bcff42a36dc9.svg"
+        },
+  {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+        {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+        {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+        {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+
+        {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        },
+        {
+          "name": "giustino",
+          "title": "Developer",
+          "color": "#05ffb8",
+          "pfp": "https://i.imgur.com/tbPj3GA.png",
+          "link": "https://github.com/ed0nkey",
+          "flag": "https://discord.com/assets/4d4f20f2f1c88447480002bbf675404a.svg"
+        }
+        
+
+
+]
+}
+}

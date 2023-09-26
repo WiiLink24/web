@@ -1,76 +1,88 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import DefaultHead from '../components/DefaultHead.astro';
+import Donate from '../components/Donate.astro';
+import Services from '../components/Services.astro';
+import BuildInfo from '../components/build.astro';
+import Team from '../components/team.astro';
 ---
 
-<Layout title="WiiLink's Temp Site">
-
+<Layout title="WiiLink - Temporary Site">
+<html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script is:inline src="/js/hover3D.js"></script>
 	</head>
 
 <body>
 <div class="symbolholder">
-	<div class="backsymbol" id="hide">
-		<div class="square2"></div>
+	<div class="backsymbol">
+		<div id="square2">
+			<div class="logohold">
+				<DefaultHead/>
+				<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="logo.png">
+			</div>
+			
+			<div class="data">
+			<h2 style="animation:fadeup 0.2s forwards;" id="release-name"><i style="animation: loadspin 5s linear forwards infinite; scale:80%; margin-right:10px;"><img style="transform:translate(0, -3px); filter: brightness(0);" src="loading.gif" width="30px"></i>Loading...</h2>
+			<div style="animation:fadeup 200ms forwards; opacity:0;" class="about"><d class="hide">Developed by <a href="https://github.com/PablosCorner">PablosCorner</d><img style="border-radius: 50%; margin-left:10px; transform:translate(0, -5px); filter:drop-shadow(0 0 10px #00000040)" src="pablo.webp" width="40px"></a></div>
+			<div style="animation:fadeup 0.1s 200ms forwards; opacity:0;" class="accordion" id="accordionExample">
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					  Release Notes
+					</button>
+				  </h2>
+				  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body" id="release-info"></div>
+				  </div>
+				</div>
+			  </div>
+			
+			  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">Download the latest release:</h2>
+			
+				<div class="download">
+				<a style="animation:fadeup 0.3s 200ms forwards; opacity:0;" class="download-button" id="download-link-linux" href="#">
+					<button id="linux" type="button" class="btn btn-secondary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
+				</a>
+			
+				<a style="animation:fadeup 0.4s 200ms forwards; opacity:0;" class="download-button" id="download-link-windows" href="#">
+					<button id="windows" type="button" class="btn btn-secondary"  data-bs-toggle="tooltip" data-bs-placement="bottom"
+					data-bs-title="You'll need windows 8 or higher!"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
+				</a>
+			
+				<a style="animation:fadeup 0.5s 200ms forwards; opacity:0;" class="download-button" id="download-link-macos" href="#">
+					<button id="macos" type="button" class="btn btn-secondary"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
+				</a>
+			
+				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="#">
+					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
+				</a>
+				</div>
+				<div class="slidedown" style="display: none;">
+					<i style="transform:scale(300%);" class="fa-solid fa-angle-down"></i>
+				</div>
+			</div>
+			<Services/>
+
+			<BuildInfo/>
+
+			<Donate/>
+
+			<Team/>
+
+		</div>			
+
 		<div class="square"></div>
 		<img class="bottomleftcorner" src="corner.png">
 	</div>
-</div>
 
-<div class="parallax">
-<div class="logohold">
-	<DefaultHead/>
-	<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="logo.png">
-</div>
-
-<div class="data">
-<h2 style="animation:fadeup 0.2s forwards;" id="release-name"><i style="animation: loadspin 5s linear forwards infinite; scale:80%; margin-right:10px;"><img style="transform:translate(0, -3px); filter: brightness(0);" src="loading.gif" width="30px"></i>Loading...</h2>
-<div class="about">Developed by <a href="https://github.com/PablosCorner">PablosCorner<img style="border-radius: 50%; margin-left:10px; transform:translate(0, -5px); filter:drop-shadow(0 0 10px #00000040)" src="pablo.webp" width="40px"></a></div>
-<div style="animation:fadeup 0.1s 200ms forwards; opacity:0;" class="accordion" id="accordionExample">
-	<div class="accordion-item">
-	  <h2 class="accordion-header">
-		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-controls="collapseOne">
-		  Release Notes
-		</button>
-	  </h2>
-	  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-		<div class="accordion-body" id="release-info"></div>
-	  </div>
-	</div>
+<!--
+<div class="alert alert-light" role="alert">
+	This is a temporary site whilst we're working on <b>BIG</b> changes. Join our discord to share your thoughts!
   </div>
-
-  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">Download the latest release:</h2>
-
-	<div class="download">
-	<a style="animation:fadeup 0.3s 200ms forwards; opacity:0;" class="download-button" id="download-link-linux" href="#">
-        <button id="linux" type="button" class="btn btn-primary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
-    </a>
-
-	<a style="animation:fadeup 0.4s 200ms forwards; opacity:0;" class="download-button" id="download-link-windows" href="#">
-		<button id="windows" type="button" class="btn btn-primary"  data-bs-toggle="tooltip" data-bs-placement="bottom"
-        data-bs-custom-class="custom-tooltip"
-        data-bs-title="You'll need windows 8 or higher!"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
-    </a>
-
-	<a style="animation:fadeup 0.5s 200ms forwards; opacity:0;" class="download-button" id="download-link-macos" href="#">
-		<button id="macos" type="button" class="btn btn-primary"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
-    </a>
-
-	<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" href="#">
-		<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
-    </a>
-	</div>
-	<div class="slidedown">
-		<i style="transform:scale(300%);" class="fa-solid fa-angle-down"></i>
-	</div>
-</div>
+-->
 
 
-</div>
-
-<div class="temp"></div>
 
 <script>
 
@@ -82,22 +94,31 @@ window.onload = osdetect;
 console.log(osdetect());
 
 if (osdetect() == "MacOS"){
-	document.getElementById("macos").style.boxShadow = " inset 0 0 0 1px #0e459e";
-	document.getElementById("macos").style.border = " var(--bs-btn-border-width) solid #0e459e";
+	document.getElementById("macos").className = "btn btn-primary";
 }
 
 if (osdetect() == "Windows"){
-	document.getElementById("windows").style.boxShadow = " inset 0 0 0 1px #0e459e";
-	document.getElementById("windows").style.border = " var(--bs-btn-border-width) solid #0e459e";
+	document.getElementById("windows").className = "btn btn-primary";
 }
 
 if (osdetect() == "Linux"){
-	document.getElementById("linux").style.boxShadow = " inset 0 0 0 1px #0e459e";
-	document.getElementById("linux").style.border = " var(--bs-btn-border-width) solid #0e459e";
+
+	document.getElementById("linux").className = "btn btn-primary";
+}
+
+if (osdetect() == "UNIX"){
+	document.getElementById("macos").className = "btn btn-primary";
+	document.getElementById("windows").className = "btn btn-primary";
+	document.getElementById("linux").className = "btn btn-primary";
+}
+
+if (osdetect() == "Unknown OS"){
+	document.getElementById("macos").className = "btn btn-primary";
+	document.getElementById("windows").className = "btn btn-primary";
+	document.getElementById("linux").className = "btn btn-primary";
 }
 
 </script>
-</body>
 
 </Layout>
 
@@ -109,7 +130,7 @@ import { Octokit } from "https://esm.sh/octokit";
 
 document.addEventListener("DOMContentLoaded", async function () {
     const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
     });
 
     const owner = 'WiiLink24';
@@ -137,7 +158,7 @@ document.addEventListener("DOMContentLoaded", async function () {
         if (releaseInfoDiv) {
             // Update the div
 			releaseNameDiv.innerHTML = `
-			<a style="color:black; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/tag/v1.2.1"><h2 class="release-name" style="animation:fadeup 0.2s forwards;"><o style="font-family:Rubik; font-weight:600;">WiiLink</o> Patcher <span style="scale:60%; transform:translate(-30px, -20px);" class="badge rounded-pill bg-secondary">${versionNumber}</span></h2></a>
+			<a style="color:black; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"><h2 class="release-name" style="animation:fadeup 0.2s forwards;"><o style="font-family:Rubik; font-weight:600;">WiiLink</o> Patcher <span style="scale:60%; transform:translate(-30px, -20px);" class="badge rounded-pill bg-secondary">${versionNumber}</span></h2></a>
 			`
 			;
             releaseInfoDiv.innerHTML = `
@@ -150,14 +171,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Update the download link if it exists
             if (release.assets.length > 0) {
-                const assetLin = release.assets[0]; // Assuming the first asset is the download file
+                const assetLin = release.assets[0];
                 downloadLinkLinux.href = assetLin.browser_download_url;
-				const assetWin = release.assets[3]; // Assuming the first asset is the download file
+				const assetWin = release.assets[3]; 
                 downloadLinkWindows.href = assetWin.browser_download_url;
-				const assetMac = release.assets[2]; // Assuming the first asset is the download file
+				const assetMac = release.assets[2];
                 downloadLinkMacos.href = assetMac.browser_download_url;
             } else {
-                downloadLink.style.display = "none"; // Hide the link if there are no assets
+                downloadLinkLinux.style.display = "none"; // Hide the link if there are no assets
+				downloadLinkWindows.style.display = "none";
+				downloadLinkMacos.style.display = "none";
             }
         } else {
             console.error("Element with id 'release-info' not found.");
@@ -169,17 +192,18 @@ document.addEventListener("DOMContentLoaded", async function () {
 
 </script>
 
-<script>
-	window.onscroll = function (e) {
-		if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    document.getElementById("hide").style.transform = "translate(-50%, -50%) scale(150%)";
-  } else {
-    document.getElementById("hide").style.transform = "translate(-50%, -50%) scale(100%)";
-  }
-	}
+
+<script is:inline>
+
+	window.onscroll = function () {
+		console.log("Page has been scrolled!");
+	};
+
 </script>
 
 <script is:inline src="/js/osdetect.js"></script>
+</body>
+</html>
 
 <style>
 	main {
@@ -199,6 +223,26 @@ document.addEventListener("DOMContentLoaded", async function () {
 		width: 220px;
 		height: auto;
 		z-index: -1;
+	}
+	.accordion-body{
+		background-color: #fff;
+    	max-height: 40vh;
+    	overflow: scroll;
+	}
+	.alert{
+		right:40px;
+		top:40px;
+		width:500px;
+		z-index: 1;
+		position: absolute;
+	}
+	.btn-secondary{
+		background-color: rgba(0, 0, 255, 0.469);
+		border: 1px solid rgba(0, 0, 255, 0.117);
+	}
+	.btn-secondary:hover{
+		background-color: rgba(0, 0, 255, 0.427);
+		border: 1px solid rgba(0, 0, 255, 0.117);
 	}
 	.slidedown{
 		left:50%;
@@ -279,10 +323,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		color:black;
 		box-shadow: inset 0 0 0 4px solid blue;
 	}
-	.collapse, .collapsing{
-		max-height:500px;
-		overflow: scroll;
-	}
 	.btn{
 		padding:15px;
 		margin:5px;
@@ -296,15 +336,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 		z-index: 1;
 		position: absolute;
 	}
-	.square2{
+	#square2{
 		width: calc(100% - 30px);
 		height: calc(100% - 30px);
 		left:50%;
-		top:50%;
+		bottom:15px;
 		background-color: white;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, 0%);
 		border-radius: 4px;
 		z-index: 1;
+		overflow-y: scroll;
+		overflow-x: hidden;
 		position: absolute;
 	}
 	.release-info{
@@ -325,9 +367,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 	.bottomleftcorner{
 		left:0;
-		bottom:0;
+		bottom:1.25px;
 		scale:32%;
 		transform: translate(-106.5%, 107.3%);
+		animation: changecolor 10s linear infinite;
 		z-index: 2;
 		position: absolute;
 	}
@@ -337,7 +380,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		top:50%;
 		left:50%;
 		transform: translate(-50%, -50%);
-		animation: changecolor 10s linear infinite;
 		z-index: 1;
 		position: absolute;
 	}
@@ -354,6 +396,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		height:100%;
 		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
 		z-index: 0;
+		animation: changecolor 10s linear infinite;
 		border-radius: 8px;
 		position: absolute;
 	}
@@ -402,12 +445,36 @@ document.addEventListener("DOMContentLoaded", async function () {
 		padding: 0;
 	}
 
-	@media only screen and (max-width: 1000px;) {
-		.data{
-			width:95%;
+	@media only screen and (max-width: 1150px) {
+		.logohold{
+			display: none;
 		}
-		.download{
-			display: grid;
+		.data{
+			position: absolute;
+			width:80%;
+			left:50%;
+			top:50%;
+			transform: translate(-50%, -50%);
+		}
+		.data{
+			top:180px;
+			transform: translate(-50%, 0);
+		}
+		.alert{
+			top:30px;
+			left:50%;
+			transform: translate(-50%, 0);
+			width: 80%;
+			position: absolute;
+		}
+		.hide{
+			display: none;
+		}
+		.download-button{
+			width:100%;
+		}
+		.btn{
+			width:100%;
 		}
 	}
 </style>

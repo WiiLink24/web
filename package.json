@@ -10,9 +10,11 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@xata.io/client": "^0.26.4",
     "astro": "^3.0.11",
     "astro-particles": "^2.10.0",
     "bootstrap-icons": "^1.10.5",
+    "scrollmagic": "^2.0.8",
     "tsparticles": "^2.12.0"
   }
 }
