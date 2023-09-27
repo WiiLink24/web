@@ -5,6 +5,7 @@ import Donate from '../components/Donate.astro';
 import Services from '../components/Services.astro';
 import BuildInfo from '../components/build.astro';
 import Team from '../components/team.astro';
+import Socials from '../components/Socials.astro';
 ---
 
 <Layout title="WiiLink - Temporary Site">
@@ -17,14 +18,15 @@ import Team from '../components/team.astro';
 <div class="symbolholder">
 	<div class="backsymbol">
 		<div id="square2">
+			<div class="top">
 			<div class="logohold">
 				<DefaultHead/>
-				<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="logo.png">
+				<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="img/logo.png">
 			</div>
 			
 			<div class="data">
-			<h2 style="animation:fadeup 0.2s forwards;" id="release-name"><i style="animation: loadspin 5s linear forwards infinite; scale:80%; margin-right:10px;"><img style="transform:translate(0, -3px); filter: brightness(0);" src="loading.gif" width="30px"></i>Loading...</h2>
-			<div style="animation:fadeup 200ms forwards; opacity:0;" class="about"><d class="hide">Developed by <a href="https://github.com/PablosCorner">PablosCorner</d><img style="border-radius: 50%; margin-left:10px; transform:translate(0, -5px); filter:drop-shadow(0 0 10px #00000040)" src="pablo.webp" width="40px"></a></div>
+			<h2 style="animation:fadeup 0.2s forwards;" id="release-name"><i style="animation: loadspin 5s linear forwards infinite; scale:80%; margin-right:10px;"><img style="transform:translate(0, -3px); filter: brightness(0);" src="img/loading.gif" width="30px"></i>Loading...</h2>
+			<div style="animation:fadeup 200ms forwards; opacity:0;" class="about"><d class="hide">Developed by <a href="https://github.com/PablosCorner">PablosCorner</d><img style="border-radius: 50%; margin-left:10px; transform:translate(0, -5px); filter:drop-shadow(0 0 10px #00000040)" src="img/pablo.webp" width="40px"></a></div>
 			<div style="animation:fadeup 0.1s 200ms forwards; opacity:0;" class="accordion" id="accordionExample">
 				<div class="accordion-item">
 				  <h2 class="accordion-header">
@@ -36,7 +38,7 @@ import Team from '../components/team.astro';
 					<div class="accordion-body" id="release-info"></div>
 				  </div>
 				</div>
-			  </div>
+			</div>
 			
 			  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">Download the latest release:</h2>
 			
@@ -62,6 +64,7 @@ import Team from '../components/team.astro';
 					<i style="transform:scale(300%);" class="fa-solid fa-angle-down"></i>
 				</div>
 			</div>
+		</div>
 			<Services/>
 
 			<BuildInfo/>
@@ -70,10 +73,37 @@ import Team from '../components/team.astro';
 
 			<Team/>
 
+			<Socials/>
+		</br>
+	</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+			<Donate/>
 		</div>			
 
 		<div class="square"></div>
-		<img class="bottomleftcorner" src="corner.png">
+		<img class="bottomleftcorner" src="img/corner.png">
 	</div>
 
 <!--
@@ -90,8 +120,6 @@ const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 window.onload = osdetect;
-
-console.log(osdetect());
 
 if (osdetect() == "MacOS"){
 	document.getElementById("macos").className = "btn btn-primary";
@@ -130,7 +158,7 @@ import { Octokit } from "https://esm.sh/octokit";
 
 document.addEventListener("DOMContentLoaded", async function () {
     const octokit = new Octokit({
-        auth: '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'
+        auth: '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'
     });
 
     const owner = 'WiiLink24';
@@ -214,6 +242,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 		width: 220px;
 		height: auto;
 		z-index: -1;
+	}
+	.top{
+		left:50%;
+		transform: translate(-50%, 0);
+		max-width: 1500px;
+		min-height: 100%;
+		position: relative;
 	}
 	@font-face {
     font-family: "Rubik";
@@ -447,13 +482,37 @@ document.addEventListener("DOMContentLoaded", async function () {
 		.data{
 			position: absolute;
 			width:80%;
+			height:600px;
 			left:50%;
 			top:50%;
 			transform: translate(-50%, -50%);
+			overflow-x:visible;
+			overflow-y: scroll;
+		}
+		.symbolholder{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.backsymbol{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		#square2{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.square{
+			display:none;
+		}
+		.bottomleftcorner{
+			display: none;
 		}
 		.data{
-			top:180px;
-			transform: translate(-50%, 0);
+			top:50%;
+			transform: translate(-50%, -50%);
 		}
 		.alert{
 			top:30px;

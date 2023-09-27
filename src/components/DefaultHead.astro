@@ -2,37 +2,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<img class="shadow" src="mask.png">
+<img class="shadow" src="img/mask.png">
 <div class="carouseltop">
 <div class="carouselhold">
 <div id="carousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
   <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="forecast.png" class="d-block blur h-100" alt="...">
+        <img src="img/forecast.png" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="food.jpg" class="d-block blur h-100" alt="...">
+        <img src="img/food.jpg" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="room.webp" class="d-block blur h-100" alt="...">
+        <img src="img/room.webp" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="digicamprints.png" class="d-block blur h-100" alt="...">
+        <img src="img/digicamprints.png" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="kirbytv.webp" class="d-block blur h-100" alt="...">
+        <img src="img/kirbytv.webp" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="checkmiiout.jpg" class="d-block blur h-100" alt="...">
+        <img src="img/checkmiiout.jpg" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="nintendo.webp" class="d-block blur h-100" alt="...">
+        <img src="img/nintendo.webp" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="politics.jpg" class="d-block blur h-100" alt="...">
+        <img src="img/politics.jpg" class="d-block blur h-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="tvnotomo.png" class="d-block blur h-100" alt="...">
+        <img src="img/tvnotomo.png" class="d-block blur h-100" alt="...">
       </div>
     </div>
 </div>
@@ -40,31 +40,31 @@
 <div id="carousel" class="carousellogos slide carousel-fade" data-bs-ride="carousel" data-bs-pause="false">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="forecastbanner.png" class="d-block w-100" alt="...">
+      <img src="img/forecastbanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="demaebanner.png" class="d-block w-100" alt="...">
+      <img src="img/demaebanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="wiinomabanner.png" class="d-block w-100" alt="...">
+      <img src="img/wiinomabanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="digicambanner.png" class="d-block w-100" alt="...">
+      <img src="img/digicambanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="kirbytvbanner.png" class="d-block w-100" alt="...">
+      <img src="img/kirbytvbanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="miioutbanner.png" class="d-block w-100" alt="...">
+      <img src="img/miioutbanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="nintendochannelbanner.png" class="d-block w-100" alt="...">
+      <img src="img/nintendochannelbanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="politicsbanner.png" class="d-block w-100" alt="...">
+      <img src="img/politicsbanner.png" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">
-      <img src="tvnotomobanner.png" class="d-block w-100" alt="...">
+      <img src="img/tvnotomobanner.png" class="d-block w-100" alt="...">
     </div>
   </div>
 </div>
@@ -106,7 +106,7 @@
                 let xRot = this.map(dx, 0, rectTransform.width, -this.xOffset, this.xOffset);
                 let yRot = this.map(dy, 0, rectTransform.height, this.yOffset, -this.yOffset);
                 let propXRot = "rotateX(" + yRot + "deg) ";
-                let propYRot = "rotateY(" + xRot + "deg)";
+                let propYRot = "rotateY(" + xRot + "deg) ";
 
                 element.style.setProperty("transform", perspective + propXRot + propYRot);
             })
@@ -131,9 +131,9 @@
   <style>
     .carousel{
       width: 100%;
-      height: 100%;
-        -webkit-mask-image: url(mask.png);
-  mask-image: url(mask.png);
+      height: 670px;
+        -webkit-mask-image: url(img/mask.png);
+  mask-image: url(img/mask.png);
   -webkit-mask-size: 70%;
   mask-size: 70%;
   -webkit-mask-repeat: no-repeat;

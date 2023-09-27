@@ -28,15 +28,13 @@
             let services2 = document.getElementById("slide-track_2");
             for(let i = 0; i < 2; i++){
             for(let i = 0; i < (data.services.service.length)/2; i++) {
-                services.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
-                console.log(data.services.service[i].name);
+                services.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
            }
         }
 
         for(let i = 0; i < 2; i++){
             for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
-                services2.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
-                console.log(data.services.service[i].name);
+                services2.innerHTML += "<div style='background-color:rgb(242,254,250); height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
            }
         }
            }
@@ -55,7 +53,7 @@
 .title{
     left:50px;
     width:calc(100% - 50px);
-    background: url(header_bg.png) 0 0;
+    background: url(img/header_bg.png) 0 0;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    filter:brightness(150%);
@@ -89,7 +87,10 @@
 }
 
 .svc-holder{
-    top: calc(100% + 50px);
+   
+    left:50%;
+    transform: translate(-50%, 0);
+    max-width: 1500px;
     z-index: 1;
     position: relative;
 }

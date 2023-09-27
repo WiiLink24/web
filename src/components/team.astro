@@ -1,3 +1,8 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
 <div class="build">
     <div class="build-holder">
         <h1 class="title">Meet our amazing <b class="color">team</b></h1>
@@ -10,11 +15,15 @@
 </div>
 
 <script>
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+
+<script>
     document.addEventListener("DOMContentLoaded", async function () {
 
-       
-
-            // Fetch the latest release information from the GitHub repository using Octokit
            fetch("json/team.json")
            .then(response => response.json())
            .then(data => showService(data));
@@ -22,16 +31,21 @@
            function showService(data) {
             let team = document.getElementById("members");
             let teamSmall = document.getElementById("members_small");
+            let r = Math.floor(Math.random() * 14 + 10);
             for(let i = 0; i < data.members.member.length; i++) {
                 if(i < 10) {
-                if (i == 0 || i > Math.floor(Math.random() * 20)){
-                    team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + " style='top:0; object-fit:contain; position:relative;' width='30px' height='20px'></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
-                }
-                else {
-                team.innerHTML += "<div class='member' style='background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + " style='top:0; object-fit:contain; position:relative;' width='30px' height='20px'></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
+                if (i == 0){
+                    team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img srcset='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
+                } else if (i == 4) {
+                    team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[r].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[r].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[r].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[r].name + " <img srcset='" + data.members.member[r].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[r].title + "</h3><span class='badge bg-warning' style='bottom:10px; right:-10px; font-size:15px; background-color:" + data.members.member[r].color + "; position:absolute;'><i class='fa-solid fa-star'></i> Featured dev</span></div> </div>";
+                } else {
+                    team.innerHTML += "<div class='member' style='background-color:rgb(242,254,250); height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></div> </div>";
             }
         } else {
-            teamSmall.innerHTML += "<div class='member' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></div>";
+            if (i == r) {}
+                else {
+                    teamSmall.innerHTML += "<div id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></div>";
+                }
         }
 
            }
@@ -61,10 +75,15 @@
   z-index: 10;
   scroll-snap-type: both mandatory;
     }
+    a:hover{
+        opacity: 0.5;
+    }
     .members_small{
         top:20px;
       width:100%;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: left;
   gap: 15px;
   left: 50%;
   transform: translate(-50%);
@@ -139,7 +158,7 @@
         position:relative;
     }
     .build{
-        top:calc(100% + 200px);
+        top:200px;
         position: relative;
     }
     .subtitle{
@@ -150,7 +169,7 @@
         font-size: 25px;
     }
     .color{
-        background: url(header_bg.png) 0 0;
+        background: url("img/header_bg.png");
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    filter:brightness(150%);
