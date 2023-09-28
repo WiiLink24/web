@@ -88,6 +88,18 @@ import Agreement from '../components/Agreement.astro';
 		</div>			
 
 		<div class="square"></div>
+		<div class="footer-holder">
+			<img src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
+		
+			<div class="socials">
+				<div>Discord <i class="fa-brands fa-discord"></i></div>
+				<div>Twitter <i class="fa-brands fa-twitter"></i></div>
+				<div>GitHub <i class="fa-brands fa-github"></i></div>
+				<div>Stripe <i class="fa-brands fa-stripe-s"></i></div>
+				<div>YouTube <i class="fa-brands fa-youtube"></i></div>
+			</div>
+		</div>
 		<img class="bottomleftcorner" src="img/corner.png">
 	</div>
 
@@ -240,6 +252,34 @@ document.addEventListener("DOMContentLoaded", async function () {
 		width: 220px;
 		height: auto;
 		z-index: -1;
+	}
+	.socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 25px;
+		width:150px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.slogan{
+		left:80px;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
 	}
 	.top{
 		left:50%;
