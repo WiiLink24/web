@@ -1,0 +1,207 @@
+@font-face {
+    font-family: Gilroy;
+    src: url(../../Fonts/Gilroy.otf);
+}
+
+@font-face {
+    font-family: Rodin;
+    src: url(../../Fonts/OpenSans.ttf);
+}
+
+@font-face {
+    font-family: Cafe;
+    src: url(../../Fonts/CafeKr.ttf);
+}
+
+@font-face {
+    font-family: RubikBold;
+    src: url(../../Fonts/Rubik-Bold.ttf);
+}
+
+@font-face {
+    font-family: RubikMedium;
+    src: url(../../Fonts/Rubik-Medium.ttf);
+}
+
+@font-face {
+    font-family: Stigmature;
+    src: url(../../Fonts/Stigmature.otf);
+}
+
+@font-face {
+    font-family: Cascadia;
+    src: url(../../Fonts/Cascadia.ttf);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #181818;
+}
+
+a{
+    color:rgb(102, 196, 102);
+}
+
+h1{
+    font-family:RubikMedium;
+    color:white;
+    font-size: 120px;
+    background: linear-gradient(150deg, rgba(27,143,161,1) 0%, rgba(32,213,136,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2{
+    font-family:Gilroy;
+    color:white;
+    font-size: 40px;
+}
+
+h3{
+    font-family: Cafe;
+    color:white;
+    font-size: 15px;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+h4{
+    font-family: Cafe;
+    color:white;
+    font-size: 20px;
+}
+
+iframe{
+    border-radius: 18px;
+}
+
+r.sticky{
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    height:80px;
+    background: rgba(18, 18, 18, 0.932);
+    transition: 0.5s;
+    right:2%;
+}
+  
+blockquote p {
+    padding: 15px;
+    background: #303030;
+    border:2px solid rgba(110, 110, 110, 0.211);
+    border-radius: 5px;
+}
+
+blockquote p::before {
+    padding: 15px;
+    width:20px;
+    height:50px;
+    background: #303030;
+    border:2px solid rgba(110, 110, 110, 0.211);
+    border-radius: 5px;
+}
+
+pre,
+code {
+	color: #d4d4d4;
+	font-size: 14px;
+	font-family: Cascadia;
+	line-height: 1.5;
+	direction: ltr;
+	white-space: pre;
+	text-align: left;
+	text-shadow: none;
+	word-break: normal;
+	word-spacing: normal;
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre::selection,
+code::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	pre,
+	code {
+		text-shadow: none;
+	}
+}
+
+pre {
+	margin: 0.5rem 0 16px;
+	padding: 0.8rem 1rem 0.9rem;
+	overflow: auto;
+	background: #282a36;
+	border-radius: 4px;
+}
+
+code {
+	padding: 0.1em 0.3em;
+	color: #ffffff;
+	background: #5b5b5b;
+	border-radius: 0.3em;
+	white-space: pre-wrap;
+}
+
+pre.astro-code > code {
+	all: unset;
+}
+
+pre[data-line] {
+	position: relative;
+}
+
+pre > code {
+	position: relative;
+	z-index: 1;
+}
+
+img{
+    border-radius: 8px;
+}
+
+.fa-solid{
+    left:50%;
+    transform: translate(-50%,0);
+}
+
+.ytvid{
+    box-shadow: 0px 0px 70px rgb(43, 43, 43);
+    top:50px;
+    left:50%;
+    transform: translate(-50%,0);
+    position: relative;
+    width:80%;
+}
+
+.fa-solid::before{
+    color:rgb(54, 172, 54);
+    margin-right:15px;
+}
+
+@keyframes downup {
+    0%{
+        transform: translate(0, -20px);
+    }
+    50%{
+        transform: translate(0,0px);
+    }
+    100%{
+        transform: translate(0,-20px);
+    }
+}
+
+::-webkit-scrollbar {
+    border-radius: 18px;
+    width: 0px;
+  }

@@ -31,7 +31,8 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
            function showService(data) {
             let team = document.getElementById("members");
             let teamSmall = document.getElementById("members_small");
-            let r = Math.floor(Math.random() * 14 + 10);
+            let r = Math.floor(Math.random() * 9 + 10);
+            console.log(r);
             for(let i = 0; i < data.members.member.length; i++) {
                 if(i < 10) {
                 if (i == 0){

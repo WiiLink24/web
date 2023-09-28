@@ -1,0 +1,22 @@
+<script>
+function visitCount() {
+  var visits = Number(localStorage.getItem('visitCount'));
+  var current = Boolean(sessionStorage.getItem('session'));
+
+  if (visits == 0) {
+    visits++;
+    console.log("First time");
+    console.log(visits);
+  } else {
+    console.log("Recurrent");
+    console.log(visits);
+  }
+
+  localStorage.setItem('visitCount', visits);
+  sessionStorage.setItem('session', true);
+  return visits;
+}
+
+visitCount();
+
+</script>

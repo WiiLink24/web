@@ -2,85 +2,49 @@
     <div class="build-holder">
         <h1 class="title">Check us out on our <b class="color">socials</b>!</h1>
         <h2 class="subtitle">Keep up to date on all service <b class="color">releases</b> and <b class="color">general announcements</b> via our social media.</h2>
-       
+       <div class="socials">
+        <div class="twitter">
+            <div class="follow">
+                <span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-primary">2.7k followers</span>
+                <img class="socials-logo" src="img/twitter_logo.png" height="40px">
+                <div class="buttons">
+                    <div class="btn"><img src="https://em-content.zobj.net/source/twitter/376/flag-spain_1f1ea-1f1f8.png" width="20px" height="20px"></div>
+                    <div class="btn"><img src="https://em-content.zobj.net/source/toss-face/381/flag-japan_1f1ef-1f1f5.png" width="20px" height="20px"></div>
+                    <div style="color:#289bff;" class="btn">Follow</div>
+                </div>
+            </div>
+            <div style="top:0; left:0; width:100%; z-index:1; position:absolute;"><a class="twitter-timeline" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">Tweets by WiiLink24</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
+            <img style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(0); position:absolute;" src="img/loading.gif" width="30px">
+        </div>
+        <div class="discord">
+            <div class="follow dsc">
+                <img class="socials-logo" src="img/discord_logo.png" height="30px">
+                <span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-info">6.2k members</span>
+                <div class="buttons">
+                    <div style="color:#004078;"class="btn">Join</div>
+                </div>
+            </div>
+            <div style="top:0; left:0; width:100%; z-index:1; position:absolute;"><a class="twitter-timeline" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">Tweets by WiiLink24</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
+            <img style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;" src="img/loading.gif" width="30px">
+        </div>
+        <div class="social github">
+            <div class="inner"><i class="fa-brands fa-github"></i><span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-dark">82 followers</span>
+                <div style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;" class="buttons">
+                    <div style="top:0; margin:0px; position:relative;"class="btn bg-dark text-white">Follow</div>
+                </div>
+        </div>
+    </div>
+        <div class="social youtube"><div class="inner"><i class="fa-brands fa-youtube"></i><span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-danger">2k subscribers</span>
+            <div style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;" class="buttons">
+                <div style="top:0; margin:0px; position:relative;"class="btn bg-danger text-white">Subscribe</div>
+            </div>
+    </div></div>
+       </div>
+       <div class="socials-small">
+
+       </div>
     </div>
 </div>
-
-<script>
-    class Hover3D 
-  {
-      constructor(id)
-      {
-          this.id = id;
-          this.xOffset = 2;
-          this.yOffset = 2;
-          this.attack = 0.1;
-          this.release = 0.5;
-          this.perspective = 1000;
-          this.create();
-      }
-  
-      create()
-      {
-          document.querySelectorAll(this.id).forEach(element => 
-          {
-              const rectTransform = element.getBoundingClientRect();
-              const perspective = "perspective(" + this.perspective + "px) ";
-              element.style.setProperty("transform-style", "preserve-3d");
-  
-              element.addEventListener("mouseenter", e =>
-              {
-                  element.style.setProperty("transform " + this.attack + "s");
-              })
-  
-              element.addEventListener("mousemove", e => 
-              {
-                  const rectTransform = element.getBoundingClientRect();
-                  let dy = e.clientY - rectTransform.top;
-                  let dx = e.clientX - rectTransform.left;
-                  let xRot = this.map(dx, 0, rectTransform.width, -this.xOffset, this.xOffset);
-                  let yRot = this.map(dy, 0, rectTransform.height, this.yOffset, -this.yOffset);
-                  let propXRot = "rotateX(" + yRot + "deg) ";
-                  let propYRot = "rotateY(" + xRot + "deg) scale(103%) translate(0, -5px)";
-  
-                  element.style.setProperty("transform", perspective + propXRot + propYRot);
-              })
-  
-              element.addEventListener("mouseleave", e => 
-              {
-                  element.style.setProperty("translate", "transform " + this.release + "s");
-                  element.style.setProperty("transform", perspective + "rotateX(0deg) rotateY(0deg)");
-              })
-          })
-      }
-      // Processing map() function
-      map(value, istart, istop, ostart, ostop) 
-      {
-          return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
-      }
-  }
-  
-    let myHover3D = new Hover3D(".move"); // Yep! That's it.
-  </script>
-
-<script is:inline>
-    document.addEventListener("DOMContentLoaded", async function () {
-
-           fetch("json/donators.json")
-           .then(response => response.json())
-           .then(data => showService(data));
-
-           function showService(data) {
-            let donators = document.getElementById("donators");
-            for(let i = 0; i < 2; i++){
-            for(let i = 0; i < (data.donators.donator.length); i++) {
-                donators.innerHTML += "<div style='top:20px; transform:translate(0, 0%); background-color:rgb(242,254,250); height:100px; width:450px; border-radius:16px; margin:15px; overflow:hidden; position:relative;'><h2 style='top:50%; transform:translate(0, -50%); text-align:center; left:20px; font-family:gilroy; position:relative;'>" + data.donators.donator[i].name + "</h2></div> </div></div>";
-           }
-        }
-           }
-    });
-    
-    </script>
 
 <style>
     .build-holder{
@@ -109,6 +73,93 @@
         transition: 0.1s;
         z-index: 1;
         position: relative;
+    }
+    .inner{
+        top:50%;
+        left:10px;
+        transform: translate(0, -50%);
+        position: relative;
+    }
+    .youtube{
+        border:2px solid #ff3f3f;
+        color:#ff3f3f;
+        box-shadow: 0px 5px 10px #ff3f3f40;
+    }
+    .github{
+        border:2px solid #121212;
+        color:#121212;
+        box-shadow: 0px 5px 10px #12121240;
+    }
+    
+    .social{
+        width: auto;
+        height:80px;
+        font-size: 40px;
+        border-radius: 8px;
+        line-height: 50px;
+
+    }
+    .socials-small{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        gap: 15px;
+        position: relative;
+    }
+    .btn{
+        padding:5px;
+        padding-left:10px;
+        padding-right:10px;
+        font-weight: 600;
+        margin-left:5px;
+        background-color: #ffffff;
+        border-radius: 8px;
+    }
+    .buttons{
+        top:50%;
+        right:10px;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+    .socials-logo{
+        top:50%;
+        left:10px;
+        transform: translate(0, -50%);
+        position: relative;
+    }
+    .socials{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        gap: 15px;
+    }
+    .follow{
+        top:0;
+        Left:0;
+        width:100%;
+        height:60px;
+        z-index: 2;
+        background-color: #289bff;
+        position: sticky;
+    }
+    .twitter{
+        height:500px;
+        border:2px solid #289bff;
+        background-color: #289bff;
+        box-shadow: 0px 5px 10px #289bff40;
+        border-radius:14px;
+        overflow: scroll;
+        position:relative;
+    }
+    .dsc{
+        background-color: #004078;
+    }
+    .discord{
+        height:500px;
+        border:2px solid #004078;
+        background-color: #004078;
+        box-shadow: 0px 5px 10px #00407840;
+        border-radius:14px;
+        overflow: scroll;
+        position:relative;
     }
     .slider::before{
 		background: linear-gradient(to right,  rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%);
@@ -214,11 +265,11 @@
         position:relative;
     }
     .build{
-        top: 200px;
+        top: 300px;
         position: relative;
     }
     .subtitle{
-        text-align:center;
+        text-align:left;
         margin-bottom:20px;
         font-size: 25px;
     }
@@ -229,11 +280,44 @@
    filter:brightness(150%);
     }
     .title{
-    text-align:center;
+    text-align:left;
     width:100%;
    margin-bottom:15px;
     font-size: 50px;
     font-family: Gilroy;
     position: relative;
     }
+    blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
 </style>

@@ -6,6 +6,7 @@ import Services from '../components/Services.astro';
 import BuildInfo from '../components/build.astro';
 import Team from '../components/team.astro';
 import Socials from '../components/Socials.astro';
+import Agreement from '../components/Agreement.astro';
 ---
 
 <Layout title="WiiLink - Temporary Site">
@@ -15,6 +16,9 @@ import Socials from '../components/Socials.astro';
 	</head>
 
 <body>
+
+	<Agreement/>
+
 <div class="symbolholder">
 	<div class="backsymbol">
 		<div id="square2">
@@ -41,7 +45,6 @@ import Socials from '../components/Socials.astro';
 			</div>
 			
 			  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">Download the latest release:</h2>
-			
 				<div class="download">
 				<a style="animation:fadeup 0.3s 200ms forwards; opacity:0;" class="download-button" id="download-link-linux" href="#">
 					<button id="linux" type="button" class="btn btn-secondary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
@@ -60,7 +63,13 @@ import Socials from '../components/Socials.astro';
 					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
 				</a>
 				</div>
-				<div class="slidedown" style="display: none;">
+				<div style="margin-top:5px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
+					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+					<label class="form-check-label" for="flexCheckDefault">
+					  I have read and accepted the <b class="color">Terms of Service</b> and <b class="color">Privacy Policy</b>.
+					</label>
+				  </div>
+				<div style="animation:fadeup 0.5s 200ms forwards; opacity:0;" class="slidedown">
 					<i style="transform:scale(300%);" class="fa-solid fa-angle-down"></i>
 				</div>
 			</div>
@@ -74,32 +83,8 @@ import Socials from '../components/Socials.astro';
 			<Team/>
 
 			<Socials/>
-		</br>
-	</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-			<Donate/>
+
+			<div style="top:350px; width:100%; height:300px; position:relative;"></div>
 		</div>			
 
 		<div class="square"></div>
@@ -115,6 +100,19 @@ import Socials from '../components/Socials.astro';
 
 
 <script>
+
+const scrollableDiv = document.getElementById('square2');
+
+scrollableDiv.addEventListener('scroll', function() {
+  // Check if the user has scrolled to the bottom
+  if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
+    // User has scrolled to the end
+    scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+  } else {
+	scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
+  }
+});
+
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -158,7 +156,7 @@ import { Octokit } from "https://esm.sh/octokit";
 
 document.addEventListener("DOMContentLoaded", async function () {
     const octokit = new Octokit({
-        auth: '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'
+        auth: ''
     });
 
     const owner = 'WiiLink24';
@@ -369,15 +367,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 	#square2{
 		width: calc(100% - 30px);
 		height: calc(100% - 30px);
-		left:50%;
-		bottom:15px;
+		left:15px;
+		top:15px;
 		background-color: white;
-		transform: translate(-50%, 0%);
+		transform: translate(0%, 0%);
 		border-radius: 4px;
 		z-index: 1;
+		transition:0.5s;
 		overflow-y: scroll;
 		overflow-x: hidden;
 		position: absolute;
+	}
+	.footer{
+		height: calc(80% - 30px);
 	}
 	.release-info{
 		width:95%;
@@ -396,9 +398,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position:relative;
 	}
 	.bottomleftcorner{
-		left:0;
-		bottom:1.25px;
-		scale:32%;
+		left:-2.5px;
+		bottom:-2px;
+		scale:31.6%;
 		transform: translate(-106.5%, 107.3%);
 		animation: changecolor 10s linear infinite;
 		z-index: 2;
