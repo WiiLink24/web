@@ -46,24 +46,30 @@ import Agreement from '../components/Agreement.astro';
 			
 			  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">Download the latest release:</h2>
 				<div class="download">
-				<a style="animation:fadeup 0.3s 200ms forwards; opacity:0;" class="download-button" id="download-link-linux" href="#">
+					<div id="disable-linux" style="animation:fadeup 0.3s 200ms forwards; opacity:0;">
+					<a class="download-button" id="download-link-linux" href="#">
 					<button id="linux" type="button" class="btn btn-secondary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
 				</a>
+				</div>
 			
-				<a style="animation:fadeup 0.4s 200ms forwards; opacity:0;" class="download-button" id="download-link-windows" href="#">
+				<div id="disable-windows" style="animation:fadeup 0.4s 200ms forwards; opacity:0;">
+				<a class="download-button" id="download-link-windows" href="#">
 					<button id="windows" type="button" class="btn btn-secondary"  data-bs-toggle="tooltip" data-bs-placement="bottom"
 					data-bs-title="You'll need windows 8 or higher!"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
 				</a>
+				</div>
 			
-				<a style="animation:fadeup 0.5s 200ms forwards; opacity:0;" class="download-button" id="download-link-macos" href="#">
+				<div id="disable-macos" style="animation:fadeup 0.5s 200ms forwards; opacity:0;">
+				<a class="download-button" id="download-link-macos" href="#">
 					<button id="macos" type="button" class="btn btn-secondary"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
 				</a>
-			
+				</div>
+
 				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="#">
 					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
 				</a>
 				</div>
-				<div style="margin-top:5px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
+				<div style="margin-top:10px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
 					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick="handleCheckbox()">
 <script is:inline>
     function handleCheckbox() {
@@ -73,11 +79,23 @@ import Agreement from '../components/Agreement.astro';
 			document.getElementById('windows').disabled = false;
 			document.getElementById('macos').disabled = false;
 			document.getElementById('linux').disabled = false;
+			document.getElementById('download-link-windows').style.pointerEvents = "";
+			document.getElementById('download-link-macos').style.pointerEvents = "";
+			document.getElementById('download-link-linux').style.pointerEvents = "";
+			document.getElementById('disable-windows').style.cursor = "pointer";
+			document.getElementById('disable-macos').style.cursor = "pointer";
+			document.getElementById('disable-linux').style.cursor = "pointer";
         } else {    
             console.log("Not Checked");
 			document.getElementById('windows').disabled = true;
 			document.getElementById('macos').disabled = true;
 			document.getElementById('linux').disabled = true;
+			document.getElementById('download-link-windows').style.pointerEvents = "none";
+			document.getElementById('download-link-macos').style.pointerEvents = "none";
+			document.getElementById('download-link-linux').style.pointerEvents = "none";
+			document.getElementById('disable-windows').style.cursor = "not-allowed";
+			document.getElementById('disable-macos').style.cursor = "not-allowed";
+			document.getElementById('disable-linux').style.cursor = "not-allowed";
         }
     }
 	handleCheckbox();
@@ -311,6 +329,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 	@font-face {
     font-family: "Rubik";
     src: url("fonts/Rubik.ttf");
+}
+@font-face {
+    font-family: "Gilroy";
+    src: url("fonts/Gilroy.otf");
 }
 	.accordion-body{
 		background-color: #fff;
