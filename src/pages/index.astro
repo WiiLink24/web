@@ -64,7 +64,25 @@ import Agreement from '../components/Agreement.astro';
 				</a>
 				</div>
 				<div style="margin-top:5px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick="handleCheckbox()">
+<script is:inline>
+    function handleCheckbox() {
+        var isChecked = document.getElementById('flexCheckDefault').checked;
+        if (isChecked == true){
+            console.log("Checked");
+			document.getElementById('windows').disabled = false;
+			document.getElementById('macos').disabled = false;
+			document.getElementById('linux').disabled = false;
+        } else {    
+            console.log("Not Checked");
+			document.getElementById('windows').disabled = true;
+			document.getElementById('macos').disabled = true;
+			document.getElementById('linux').disabled = true;
+        }
+    }
+	handleCheckbox();
+</script>
+
 					<label class="form-check-label" for="flexCheckDefault">
 					  I have read and accepted the <b class="color">Terms of Service</b> and <b class="color">Privacy Policy</b>.
 					</label>
@@ -108,7 +126,6 @@ import Agreement from '../components/Agreement.astro';
 	This is a temporary site whilst we're working on <b>BIG</b> changes. Join our discord to share your thoughts!
   </div>
 -->
-
 
 
 <script>
@@ -252,6 +269,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		width: 220px;
 		height: auto;
 		z-index: -1;
+	}
+	.disabled{
+		cursor: not-allowed;
 	}
 	.socials{
 		top:50%;
