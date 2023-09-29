@@ -70,7 +70,7 @@ import Agreement from '../components/Agreement.astro';
 				</a>
 				</div>
 				<div style="margin-top:10px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" onclick="handleCheckbox()">
+					<input class="form-check-input" type="checkbox" value="0" id="flexCheckDefault" onclick="handleCheckbox()">
 <script is:inline>
     function handleCheckbox() {
         var isChecked = document.getElementById('flexCheckDefault').checked;
@@ -129,11 +129,11 @@ import Agreement from '../components/Agreement.astro';
 			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
 		
 			<div class="socials">
-				<div>Discord <i class="fa-brands fa-discord"></i></div>
-				<div>Twitter <i class="fa-brands fa-twitter"></i></div>
-				<div>GitHub <i class="fa-brands fa-github"></i></div>
-				<div>Stripe <i class="fa-brands fa-stripe-s"></i></div>
-				<div>YouTube <i class="fa-brands fa-youtube"></i></div>
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
 			</div>
 		</div>
 		<img class="bottomleftcorner" src="img/corner.png">
@@ -288,6 +288,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 		height: auto;
 		z-index: -1;
 	}
+	.color{
+        background: url("img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
 	.disabled{
 		cursor: not-allowed;
 	}
