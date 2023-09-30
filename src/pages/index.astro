@@ -7,6 +7,7 @@ import BuildInfo from '../components/build.astro';
 import Team from '../components/team.astro';
 import Socials from '../components/Socials.astro';
 import Agreement from '../components/Agreement.astro';
+import Themes from 'astro-themes';
 ---
 
 <Layout title="WiiLink - Temporary Site">
@@ -17,11 +18,36 @@ import Agreement from '../components/Agreement.astro';
 
 <body>
 
-	<Agreement/>
+	<Themes defaultTheme="dark"/>
+
+	<button class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-4px, -5px);" class="fa-solid fa-bars"></i>  <span class="position-absolute top-50 end-50 translate-middle badge bg-danger">
+		New!
+		<span class="visually-hidden">Important news</span>
+	  </span>
+	</button>
+
+	<script is:inline>
+		var isDark = 0;
+		console.log(isDark);
+
+		function darkToggle() {
+			if (isDark === 0) {
+				document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }));
+				isDark = 1;
+				console.log(isDark);
+			} else {
+				document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }));
+				isDark = 0;
+				console.log(isDark);
+			}
+		}
+	</script>
 
 <div class="symbolholder">
 	<div class="backsymbol">
-		<div id="square2">
+		<div class="square2" id="square2">
+
+
 			<div class="top">
 			<div class="logohold">
 				<DefaultHead/>
@@ -120,7 +146,8 @@ import Agreement from '../components/Agreement.astro';
 
 			<Socials/>
 
-			<div style="top:350px; width:100%; height:300px; position:relative;"></div>
+			<Agreement/>
+
 		</div>			
 
 		<div class="square"></div>
@@ -138,6 +165,8 @@ import Agreement from '../components/Agreement.astro';
 		</div>
 		<img class="bottomleftcorner" src="img/corner.png">
 	</div>
+
+	
 
 <!--
 <div class="alert alert-light" role="alert">
@@ -270,6 +299,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 </html>
 
 <style>
+	[data-theme='dark'] {
+		--bs-body-color: #ffffff;
+		--bg-color: #121212;
+		--bg-text: #ffffff;
+		--img-invert: 1;
+	}
 	main {
 		margin: auto;
 		padding: 1rem;
@@ -288,7 +323,13 @@ document.addEventListener("DOMContentLoaded", async function () {
 		height: auto;
 		z-index: -1;
 	}
-	.color{
+	.toggle-dark {
+		bottom:30px;
+		right:30px;
+		z-index: 10;
+		position: fixed;
+	}
+	.color {
         background: url("img/header_bg.png");
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
@@ -326,6 +367,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position: absolute;
 	}
 	.top{
+		top:0;
 		left:50%;
 		transform: translate(-50%, 0);
 		max-width: 1500px;
@@ -380,6 +422,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		transition: 0.5s;
 	}
 	.symbolholder{
+		background-color: var(--bg-color);
 		top:0;
 		left:0;
 		width:100%;
@@ -457,7 +500,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		height: calc(100% - 30px);
 		left:15px;
 		top:15px;
-		background-color: white;
+		background-color: var(--bg-color);
 		transform: translate(0%, 0%);
 		border-radius: 4px;
 		z-index: 1;
@@ -486,6 +529,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position:relative;
 	}
 	.bottomleftcorner{
+		--img-invert: 0;
+
 		left:-2.5px;
 		bottom:-2px;
 		scale:31.6%;
@@ -505,13 +550,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 	@keyframes changecolor{
 		0%{
-			filter: hue-rotate(0deg);
+			filter:invert(var(--img-invert))  hue-rotate(0deg);
 		}
 		100%{
-			filter: hue-rotate(360deg);
+			filter:invert(var(--img-invert))  hue-rotate(360deg);
 		}
 	}
 	.square {
+		--img-invert: 0;
+
 		width:100%;
 		height:100%;
 		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
@@ -522,13 +569,19 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	h1 {
+		--bg-text: #000000;
+
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
+		color: var(--bg-text);
 		text-align: center;
 		margin-bottom: 1em;
 	}
 	h2{
+		--bg-text: #000000;
+
+		color: var(--bg-text);
 		text-align: left;
 		z-index: 1;
 		position: relative;

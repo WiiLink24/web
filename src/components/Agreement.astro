@@ -1,3 +1,30 @@
+
+
+<div class="position-sticky offcanvas offcanvas-top offcanvas-size-sm" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+  <div class="offcanvas-body">
+    <div style="top:20px; left:20px; position:absolute;" class="alert alert-primary" role="alert">
+      Welcome to the new site, share your thoughts on our  <i style="margin-left:5px;" class="fa-brands fa-discord"></i> Discord!
+    </div>
+    <div class="news">
+      <h1 style="font-family:Gilroy">Read up on the latest <b class="color">news</b> of the service</h1>
+      <div class="news-container">
+      </div>
+    </div>
+    <div class="elements">
+    <div class="main">
+      <a>Home</a>
+      <a>News</a>
+      <a>Guide</a>
+      <a>Status</a>
+      <a>FAQ</a>
+    </div>
+  </div>
+    <button class="toggle-dark" onclick="darkToggle()">
+      Dark mode
+    </button>
+  </div>
+</div>
+
 <script>
 function visitCount() {
   var visits = Number(localStorage.getItem('visitCount'));
@@ -20,3 +47,76 @@ function visitCount() {
 visitCount();
 
 </script>
+
+<style is:global>
+  .dropdownbtn{
+    top:30px;
+    right:35px;
+    width:50px;
+    height:50px;
+    font-size: 30px;
+    z-index: 10;
+    position: absolute;
+  }
+  .offcanvas-body{
+    width:100%;
+  }
+  .news{
+    top:50%;
+    left:20px;
+    transform: translate(0, -50%);
+    position: absolute;
+  }
+  .news-container{
+    width:50vw;
+    height:50vh;
+    border-radius: 8px;
+    border:2px solid rgb(231, 231, 231);
+    box-shadow: 0px 5px 20px #ffffff60;
+    background-color: rgb(253, 253, 255);
+  }
+  .main{
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    justify-content: right;
+    align-items: right;
+    text-align: right;
+    font-family: Gilroy;
+    font-size: 40px;
+  }
+  .services{
+    width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Gilroy;
+    font-size: 40px;
+  }
+  .elements{
+    top:50%;
+    right:50px;
+    transform: translate(0, -50%);
+    justify-content: space-evenly;
+    display:flex;
+    position: absolute;
+  }
+  .offcanvas{
+    background-color: rgba(0, 0, 0, 0.356);
+  }
+  .logohamburger{
+    bottom:50px;
+    left:50px;
+    width:300px;
+    position: absolute;
+  }
+  .color {
+        background: url("img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+  .offcanvas-size-sm {
+    --bs-offcanvas-height: 100% !important;
+}
+</style>

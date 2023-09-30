@@ -26,6 +26,14 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 
+
+[data-theme='dark'] {
+		--bs-body-color: #ffffff;
+		--bg-color: #121212;
+		--bg-text: #ffffff;
+		--img-invert: 1;
+	}
+
 @font-face {
   font-family: Rubik;
   src: url(fonts/Rubik.ttf);
@@ -48,10 +56,14 @@ const { title } = Astro.props;
 		);
 	}
 	html {
+		--bg-color: #ffffff;
+
+
 		font-family: system-ui, sans-serif;
-		background: white;
+		background-color: var(--bg-color);
 		background-size: 224px;
 	}
+
 	code {
 		font-family:
 			Menlo,

@@ -17,5 +17,8 @@
     "scrollmagic": "^2.0.8",
     "tsparticles": "^2.12.0",
     "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "astro-themes": "^0.2.4"
   }
 }

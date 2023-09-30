@@ -67,8 +67,24 @@
     width: 300px;
     position: absolute;
 }
+[data-theme='dark'] {
+		--bg-color: #121212;
+		--bg-text: #ffffff;
+		--img-invert: 1;
+	}
+
+    [data-theme='dark'] {
+		--bs-body-color: #ffffff;
+		--bg-color: #121212;
+		--bg-text: #ffffff;
+		--img-invert: 1;
+	}
 
 .subtitle{
+
+    --bg-text: ;
+
+    color: var(--bg-text);
     left:50px;
     width:70%;
     font-size: 25px;
@@ -96,7 +112,7 @@
 }
 
 .slider {
-	background: white;
+	background: var(--bg-color);
 	height: auto;
 	margin: auto;
     top:30px;
@@ -109,7 +125,7 @@
 	
 	.slider::before,
 	.slider::after {
-		background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+		background: linear-gradient(to right,  var(--bg-color) 0%,rgba(255,255,255,0) 100%);
 		content: "";
 		height: 100%;
 		position: absolute;
