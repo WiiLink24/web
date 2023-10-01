@@ -12,11 +12,11 @@
     </div>
     <div class="elements">
     <div class="main">
-      <a>Home</a>
-      <a>News</a>
-      <a>Guide</a>
-      <a>Status</a>
-      <a>FAQ</a>
+      <div class="link"><a style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
+      <div class="link"><a style="z-index: 1; postition:relative">News</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
+      <div class="link"><a style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
+      <div class="link"><a style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
+      <div class="link"><a style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
     </div>
   </div>
     <button class="toggle-dark" onclick="darkToggle()">
@@ -61,6 +61,22 @@ visitCount();
   .offcanvas-body{
     width:100%;
   }
+  .link:hover .underline{
+    width:100%;
+    transition: 0.5s;
+  }
+  .underline{
+    bottom:0;
+    left:0;
+    transform: translate(0, -25px);
+    width:0%;
+    height:15px;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: blue;
+    position: relative;
+
+  }
   .news{
     top:50%;
     left:20px;
@@ -79,7 +95,7 @@ visitCount();
     width: 100px;
     display: flex;
     flex-wrap: wrap;
-    gap:15px;
+    gap:0px;
     justify-content: right;
     align-items: right;
     text-align: right;
