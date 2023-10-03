@@ -41,6 +41,16 @@ import Themes from 'astro-themes';
 				console.log(isDark);
 			}
 		}
+
+		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',({ matches }) => {
+  if (matches) {
+	document.documentElement.classList.remove('dark');
+	isDark = 1;
+  } else {
+    document.documentElement.classList.add('dark');
+	isDark = 0;
+  }
+})
 	</script>
 
 <div class="symbolholder">
@@ -423,6 +433,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		left:0;
 		width:100%;
 		height:100%;
+		transition: 0.5s;
 		z-index: 1;
 		overflow: hidden;
 		position: fixed;
@@ -530,8 +541,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position: relative;
 	}
 	.bottomleftcornerholder{
-		left:-2.5px;
-		bottom:-2px;
+		left:-2.6px;
+		bottom:-2.5px;
 		scale:31.6%;
 		transform: translate(-106.5%, 107.3%);
 		z-index: 2;
@@ -581,12 +592,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 		line-height: 1;
 		text-align: center;
 		margin-bottom: 1em;
+		transition: 0.5s;
 	}
 	h2{
 		--bg-text: #000000;
 
 		color: var(--bg-text);
 		text-align: left;
+		transition: 0.5s;
 		z-index: 1;
 		position: relative;
 	}
