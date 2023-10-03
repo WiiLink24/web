@@ -33,24 +33,20 @@ import Themes from 'astro-themes';
 		function darkToggle() {
 			if (isDark === 0) {
 				document.documentElement.classList.remove('dark');
+				document.getElementById("toggle-dark").innerHTML = "<i style='color:#000000; font-size:50px;' class='fa-solid fa-moon'></i>";
 				isDark = 1;
 				console.log(isDark);
 			} else {
 				document.documentElement.classList.add('dark');
+				document.getElementById("toggle-dark").innerHTML = "<i style='color:#ffffff; font-size:50px;' class='fa-solid fa-circle'></i>";
 				isDark = 0;
 				console.log(isDark);
 			}
 		}
 
-		window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',({ matches }) => {
-  if (matches) {
-	document.documentElement.classList.remove('dark');
-	isDark = 1;
-  } else {
-    document.documentElement.classList.add('dark');
-	isDark = 0;
-  }
-})
+		document.addEventListener("DOMContentLoaded", function(){
+    darkToggle();
+});
 	</script>
 
 <div class="symbolholder">
