@@ -271,4 +271,63 @@
     font-family: Gilroy;
     position: relative;
     }
+
+    @media only screen and (max-width: 1150px) {
+
+        .build-square{
+        width:100%;
+        max-width:350px;
+        box-shadow: 0px 5px 10px #00000020;
+        border-radius: 16px;
+        perspective: 500px;
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap:5px;
+        padding:15px;
+        min-height:300px;
+        margin-bottom:5px;
+        transition: 0.1s;
+        z-index: 1;
+        position: relative;
+    }
+
+    .bg-danger{
+        display: none;
+    }
+
+    .donator-holder{
+        top:20px;
+        height: 100px;
+        background-color:rgb(242,254,250); 
+        max-width:1480px;
+        border-radius: 16px;
+        overflow: hidden;
+        position: relative;
+    }
+    .slider {
+    top:-35px;
+    height:150px;
+	margin: auto;
+    border-radius: 8px;
+    z-index: 0;
+	width: 1500px;
+	overflow:hidden;
+    position: absolute;
+    }
+
+    h3{
+       transform: translate(0, 50px);
+    }
+
+    h2:nth-child(1){
+        display: none;
+    }
+	
+	.slider::before {
+		opacity:0;
+	}
+
+    }
 </style>

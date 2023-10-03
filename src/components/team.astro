@@ -7,6 +7,8 @@
     <div class="build-holder">
         <h1 class="title">Meet our amazing <b class="color">team</b></h1>
         <h2 class="subtitle"><b style="font-family:Rubik;">WiiLink</b> is powered by <b class="color">100%</b> volunteer work. </br><b class="color">Here's some of the incredible people who help <b style="font-family:Rubik;">WiiLink</b> come to life!</b></h2>
+        <div id="members_mobile" class="members">
+        </div>
         <div id="members" class="members">
         </div>
         <div id="members_small" class="members_small">
@@ -31,9 +33,11 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
            function showService(data) {
             let team = document.getElementById("members");
             let teamSmall = document.getElementById("members_small");
+            let teamMobile = document.getElementById("members_mobile");
             let r = Math.floor(Math.random() * 10 + 10);
             console.log(r);
             for(let i = 0; i < data.members.member.length; i++) {
+                teamMobile.innerHTML += "<div id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
                 if(i < 10) {
                 if (i == 0){
                     team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" + data.members.member[i].name + " <img srcset='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></a></div> </div>";
@@ -75,6 +79,9 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
   border-radius: 8px;
   z-index: 10;
   scroll-snap-type: both mandatory;
+    }
+    #members_mobile{
+        display: none;
     }
     a:hover{
         opacity: 0.5;
@@ -182,5 +189,43 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
         font-size: 50px;
         font-family: Gilroy;
         position: relative;
+    }
+
+    @media only screen and (max-width: 1150px) {
+
+        .members{
+        top:20px;
+      width:100%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content:space-evenly;
+  gap: 15px;
+  left: 50%;
+  transform: translate(-50%);
+  position: relative;
+  border-radius: 8px;
+  z-index: 10;
+  scroll-snap-type: both mandatory;
+    } 
+
+    .subtitle{
+        width:90%;
+    }
+
+    .build{
+        top:300px;
+    }
+
+    #members{
+        display: none;
+    }
+    #members_small{
+        display: none;
+    }
+    #members_mobile{
+        display: flex;
+    }
+
     }
 </style>

@@ -55,7 +55,7 @@
 
 <style>
     html.dark .build { background-color: #1a1a1a; }
-    
+
     .build-holder{
         left:50%;
         transform: translate(-50%, 20px);
@@ -113,5 +113,19 @@ background: linear-gradient(135deg, rgba(255,255,255,1) 46%, rgb(222, 252, 255) 
     font-size: 50px;
     font-family: Gilroy;
     position: relative;
+    }
+
+    @media only screen and (max-width: 1150px) {
+
+        .title{
+            right:0px;
+            width:95%;
+        }
+
+        .vr{
+            opacity: 0;
+            display: none;
+        }
+
     }
 </style>

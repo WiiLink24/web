@@ -154,5 +154,30 @@
         position: absolute;
     }
 
+    @media only screen and (max-width: 1150px) {
+
+        .title{
+            left:20px;
+        }
+        .subtitle{
+            left:20px;
+            width:95%;
+        }
+        .slider{
+            left:50%;
+            transform: translate(-50%, 0);
+            width:110%;
+        }
+        .slider::before,
+	.slider::after {
+		background: linear-gradient(to right,  #ffffff80 0%,rgba(255,255,255,0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+
+    }
 
 </style>

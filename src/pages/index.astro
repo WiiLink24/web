@@ -162,7 +162,7 @@ import Themes from 'astro-themes';
 
 		<div class="square"></div>
 		<div class="footer-holder">
-			<img src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
 			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
 		
 			<div class="socials">
@@ -640,15 +640,32 @@ document.addEventListener("DOMContentLoaded", async function () {
 			display: none;
 		}
 		.data{
-			position: absolute;
-			width:80%;
-			height:600px;
 			left:50%;
-			top:50%;
-			transform: translate(-50%, -50%);
-			overflow-x:visible;
-			overflow-y: scroll;
+			transform: translate(-50%, 0);
+			width:95%;
+			height:600px;
+			top:150px;
+			position: absolute;
 		}
+
+		.socials{
+			right:20px;
+		}
+
+		.footer-logo{
+			width:150px;
+			height:auto;
+		}
+
+		.slogan{
+			display: none;
+		}
+
+		.accordion-body{
+		background-color: #fff;
+    	max-height: 20vh;
+    	overflow: scroll;
+	}
 		.symbolholder{
 			width:100%;
 			height:100%;
@@ -660,19 +677,17 @@ document.addEventListener("DOMContentLoaded", async function () {
 			border-radius: 0px;
 		}
 		#square2{
+			top:0;
+			left:0;
 			width:100%;
 			height:100%;
 			border-radius: 0px;
 		}
 		.square{
-			display:none;
+			display:;
 		}
 		.bottomleftcorner{
 			display: none;
-		}
-		.data{
-			top:50%;
-			transform: translate(-50%, -50%);
 		}
 		.alert{
 			top:30px;
@@ -684,11 +699,24 @@ document.addEventListener("DOMContentLoaded", async function () {
 		.hide{
 			display: none;
 		}
-		.download-button{
-			width:100%;
-		}
+		.download{
+		width:100%;
+		height: auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+		gap:5px;
+		position:relative;
+	}
 		.btn{
 			width:100%;
+		}
+		.dropdownbtn{
+			top:0;
+			right:0;
+			width:50px;
 		}
 	}
 </style>
