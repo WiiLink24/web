@@ -34,7 +34,7 @@
     </div>
 </div>
 
-    <h3 style="top:-15px; right:20px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;">Powered by <img src="img/stripe_logo.png" height="30px"></h3>
+    <h3 style="top:-15px; right:20px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;">Powered by <img class="stripe-logo" src="img/stripe_logo.png" height="30px"></h3>
     </div>
 </div>
 
@@ -106,7 +106,7 @@
             let donators = document.getElementById("donators");
             for(let i = 0; i < 2; i++){
             for(let i = 0; i < (data.donators.donator.length); i++) {
-                donators.innerHTML += "<div style='top:20px; transform:translate(0, 0%); background-color:rgb(242,254,250); height:100px; width:450px; border-radius:16px; margin:15px; overflow:hidden; position:relative;'><h2 style='top:50%; transform:translate(0, -50%); text-align:center; left:20px; font-family:Gilroy; position:relative;'>" + data.donators.donator[i].name + "</h2></div> </div></div>";
+                donators.innerHTML += "<div class='donator-holder' style='top:20px; transform:translate(0, 0%); height:100px; width:450px; border-radius:16px; margin:15px; overflow:hidden; position:relative;'><h2 style='top:50%; transform:translate(0, -50%); text-align:center; left:20px; font-family:Gilroy; position:relative;'>" + data.donators.donator[i].name + "</h2></div> </div></div>";
            }
         }
            }
@@ -150,9 +150,12 @@
 		width: 30%;
 		z-index: 2;
 	}
+
+    html.dark .donator-holder { background: #1b1b1b; }
     .donator-holder{
         top:-30px;
         height: 100px;
+        background-color:rgb(242,254,250); 
         max-width:1480px;
         border-radius: 16px;
         overflow: hidden;
@@ -161,7 +164,6 @@
     .slider {
     top:-35px;
     height:150px;
-	background: white;
 	margin: auto;
     border-radius: 8px;
     z-index: 0;
@@ -185,6 +187,7 @@
 		animation: scroll 80s linear infinite;
         display: flex;
 		width: calc(450px * 20);
+        background-color: #ffffff00;
 	}
     .build-square:hover{
         box-shadow: 0px 5px 15px #7d7d7d4b;

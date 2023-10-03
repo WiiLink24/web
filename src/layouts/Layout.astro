@@ -24,24 +24,42 @@ const { title } = Astro.props;
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 
+html.dark .offcanvas-body { background-color: #000000; }
+html.dark h1 { color: white; }
+html.dark h2 { color: white; }
+html.dark h3 { color: white; }
+html.dark h4 { color: white; }
+html.dark .subtitle { color: white; }
+html.dark .dropdownbtn { color: white; }
+html.dark .link { color: white; }
+html.dark .title { filter:brightness(200%); }
+html.dark .stripe-logo { filter:invert(1); }
+html.dark .form-check-label { color: rgb(255, 255, 255); }
+html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px; }
+html.dark .symbolholder { background-color: #121212; }
+html.dark .member { background-color: #1b1b1b; }
+html.dark .build-square { background: #242424; border:2px solid rgb(60, 60, 60); }
+html.dark .github { color:white; background: #24242400; border:2px solid rgb(60, 60, 60); }
+html.dark .service { background-color: #202020; box-shadow:0px 0px 20px #ffffff10 }
+html.dark .slider::before { background: linear-gradient(to right,  #121212 0%,#12121200 100%); }
+html.dark .slider::after { background: linear-gradient(to right,  #121212 0%,#12121200 100%); }
+html.dark .hide { color: rgba(255, 255, 255, 0.573); }
+html.dark .donator-holder { color: white; }
+html.dark .slidedown { color: white; }
+html.dark #square2 { background-color: #121212; }
 
-[data-theme='dark'] {
-		--bs-body-color: #ffffff;
-		--bg-color: #121212;
-		--bg-text: #ffffff;
-		--img-invert: 1;
-	}
 
 @font-face {
   font-family: Rubik;
-  src: url(fonts/Rubik.ttf);
+  src: url(/fonts/Rubik.ttf);
 }
 
 @font-face {
   font-family: gilroy;
-  src: url(fonts/Gilroy.otf);
+  src: url(/fonts/Gilroy.otf);
 }
 
 	:root {
@@ -62,6 +80,11 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		background-color: var(--bg-color);
 		background-size: 224px;
+	}
+
+	h1 {
+		--bg-text: #121212;
+		color:var(--bg-text);
 	}
 
 	code {

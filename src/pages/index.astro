@@ -32,11 +32,11 @@ import Themes from 'astro-themes';
 
 		function darkToggle() {
 			if (isDark === 0) {
-				document.dispatchEvent(new CustomEvent('set-theme', { detail: 'dark' }));
+				document.documentElement.classList.remove('dark');
 				isDark = 1;
 				console.log(isDark);
 			} else {
-				document.dispatchEvent(new CustomEvent('set-theme', { detail: 'light' }));
+				document.documentElement.classList.add('dark');
 				isDark = 0;
 				console.log(isDark);
 			}
@@ -163,7 +163,9 @@ import Themes from 'astro-themes';
 				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
 			</div>
 		</div>
-		<img class="bottomleftcorner" src="img/corner.png">
+		<div class="bottomleftcornerholder">
+			<img class="bottomleftcorner" src="img/corner.png">
+		</div>
 	</div>
 
 	
@@ -523,13 +525,15 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position:relative;
 	}
 	.bottomleftcorner{
-		--img-invert: 0;
-
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
 		left:-2.5px;
 		bottom:-2px;
 		scale:31.6%;
 		transform: translate(-106.5%, 107.3%);
-		animation: changecolor 10s linear infinite;
+		filter:invert(1);
 		z-index: 2;
 		position: absolute;
 	}
@@ -544,10 +548,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 	@keyframes changecolor{
 		0%{
-			filter:invert(var(--img-invert))  hue-rotate(0deg);
+			filter:hue-rotate(0deg);
 		}
 		100%{
-			filter:invert(var(--img-invert))  hue-rotate(360deg);
+			filter:hue-rotate(360deg);
 		}
 	}
 	.square {
@@ -563,12 +567,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	h1 {
-		--bg-text: #000000;
-
+		color: var(--bg-text);
+		--bg-text: #ffffff;
 		font-size: 4rem;
 		font-weight: 700;
 		line-height: 1;
-		color: var(--bg-text);
 		text-align: center;
 		margin-bottom: 1em;
 	}
