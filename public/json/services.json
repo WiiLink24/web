@@ -65,11 +65,11 @@
             "completed": "80"
           },
           {
-            "color": "#ed34d8",
-            "name": "Kirby TV Channel",
-            "desc": "Watch episodes of the Kirby: Right Back at Ya! anime on this channel previously only available in Europe!",
-            "icon": "kirby_icon.png",
-            "completed": "60"
+            "color": "#0C9228",
+            "name": "News Channel",
+            "desc": "Get up to date information on recent worldwide events right on your Wii thanks to the News Channel!",
+            "icon": "news_icon.png",
+            "completed": "10"
           }
       ]
     }
