@@ -21,7 +21,7 @@
     "blog": {
         "new": "This just in!",
         "other": "Older Posts",
-        "rss": "Bring Wii News anywhere with our RSS Feed!",
+        "rss": "Bring WiiLink News anywhere with our RSS Feed!",
         "rssbtn": "Check it out!"
     },
     "donate": {
@@ -60,7 +60,7 @@
         "itn5desc": "Find current and upcoming Weather from your local region or around the globe!",
         "itn6name": "Nintendo Channel",
         "itn6jpn": "みんなのニンテンドーチャンネル",
-        "itn6desc": "An Interactive guide to games for Wii, DS & 3DS, with Trailers, Demos and more!",
+        "itn6desc": "An Interactive guide for games in the Wii, DS & 3DS, with Trailers, Demos and more!",
         "itn7name": "TV Guide Channel",
         "itn7jpn": "テレビの友チャンネル",
         "itn7desc": "Check your local TV Programming Guide, find shows that interest you and control your TV with the Wii Remote!"
@@ -68,7 +68,7 @@
     "status": {
         "core": "Japanese Services",
         "coredesc": "Services originally available from Japan, now revived by WiiLink!",
-        "wc24": "WiiConnect24 Channels",
+        "wc24": "WiiConnect24 Services",
         "wc24desc": "Functionality initially provided by WiiConnect24, now revived by WiiLink!",
         "video": "Video Streaming Services",
         "videodesc": "Watch & Stream Video on your Wii with these Services!",
