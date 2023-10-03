@@ -500,6 +500,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		transform: translate(0%, 0%);
 		border-radius: 4px;
 		z-index: 1;
+
 		transition:0.5s;
 		overflow-y: scroll;
 		overflow-x: hidden;
@@ -533,7 +534,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		bottom:-2px;
 		scale:31.6%;
 		transform: translate(-106.5%, 107.3%);
-		filter:invert(1);
 		z-index: 2;
 		position: absolute;
 	}
@@ -546,6 +546,14 @@ document.addEventListener("DOMContentLoaded", async function () {
 		z-index: 1;
 		position: absolute;
 	}
+	@keyframes changecolordark{
+		0%{
+			filter:hue-rotate(0deg) invert(1);
+		}
+		100%{
+			filter:hue-rotate(360deg) invert(1);
+		}
+	}
 	@keyframes changecolor{
 		0%{
 			filter:hue-rotate(0deg);
@@ -556,7 +564,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 	.square {
 		--img-invert: 0;
-
 		width:100%;
 		height:100%;
 		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
