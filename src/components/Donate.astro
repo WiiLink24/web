@@ -6,23 +6,23 @@
         <div id="inner-data" class="build-square move tier-1">
             <span class="bdg badge bg-warning">$1</span>
             <h1 style="color:#8cb727;" class="tier-title">Coffee</h1>
-            <img src="img/tier_1.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <img class="donate-image" src="img/tier_1.png" style="transform:translateZ(40px); scale:80%;" width="200px">
         </div>
         <div id="inner-data" class="build-square move tier-2">
             <span class="bdg badge bg-info">$5</span>
             <h1 style="color:#278eb7;" class="tier-title">Sandwich</h1>
-            <img src="/img/tier_2.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <img class="donate-image" src="/img/tier_2.png" style="transform:translateZ(40px); scale:80%;" width="200px">
         </div>
         <div id="inner-data" class="build-square move tier-3">
             <span class="bdg badge bg-primary">$10</span>
             <span class="badge bg-danger" style=" bottom:80px; left:50%; transform:translate(-50%, 0); width:160px; font-size: 20px; position:absolute;">Most popular</span>
             <h1 style="color:#7627b7;" class="tier-title">Hamburger</h1>
-            <img src="img/tier_3.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <img class="donate-image" src="img/tier_3.png" style="transform:translateZ(40px); scale:80%;" width="200px">
         </div>
         <div id="inner-data" class="build-square move tier-4">
             <span class="bdg badge bg-success">$20</span>
             <h1 style="color:#49b727;" class="tier-title">Steak</h1>
-            <img src="img/tier_4.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <img class="donate-image" src="img/tier_4.png" style="transform:translateZ(40px); scale:80%;" width="200px">
         </div>
     </div>
     <div class="donator-holder">    
@@ -276,7 +276,7 @@
 
         .build-square{
         width:100%;
-        max-width:200px;
+        max-width:170px;
         box-shadow: 0px 5px 10px #00000020;
         border-radius: 16px;
         perspective: 500px;
@@ -295,6 +295,10 @@
 
     .bg-danger{
         display: none;
+    }
+
+    .donate-image{
+        width:150px;
     }
 
     .donator-holder{
