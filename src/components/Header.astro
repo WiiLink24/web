@@ -1,0 +1,422 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import HeaderSmall from "../components/HeaderSmall.astro";
+import { SITE_TITLE } from '../consts';
+import { LanguageSelector } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
+import i18next from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import HeaderMain from './HeaderMain.astro';
+---
+
+
+
+<r class="bannerholder">
+	<a href="/"><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px"></a>
+	<button class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-4px, -5px);" class="fa-solid fa-bars"></i>  <span class="position-absolute top-50 end-50 translate-middle badge bg-danger">
+		New!
+		<span class="visually-hidden">Important news</span>
+	  </span>
+	</button>
+	<ul>
+		<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
+		<a href={localizePath("/news")}><div class="banner">{t("header.news")}</div></a>
+		<a href={localizePath("/guide/1welcome")}><div class="banner">{t("header.guide")}</div></a>
+		<a href={localizePath("/status")}><div class="banner">{t("header.status")}</div></a>
+		<a href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}</div></a>
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div id="light" class="banner strong">{t("header.install")}</div></a>
+	</ul>
+		<HeaderSmall />
+<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px" style="border-radius:0px;"></a>
+<LanguageSelector showFlag={false} class="lang" />
+</r>
+
+<div id="fade" class="oschoose">
+	<div class="container">
+		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='none'" style="position:absolute; right:80px;"><img class="close" src="/Images/close.png"></a>
+		<h2 style="left:40px; margin-bottom:0px; position:absolute;">{t("download.welcome")}</h2>
+		<h3 style="left:40px; top:68px; margin-bottom:0px; position:absolute;">{t("download.oschoose")}</h3>
+		<div class="btns">
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Windows_v1.2.1.exe"><div class="btn win"> <img class="osimg" src="../Images/windowslogo.png"><h3 style="bottom:120px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Windows</h3> <h4 style="bottom:150px; left:15px; font-size:20px; position:relative;">{t("download.winreq")}</h4></div></a>
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_macOS_v1.2.1"><div class="btn mac"><img class="osimg" src="../Images/applelogo.png"><h3 style="bottom:110px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">MacOS</h3></div></a>
+			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Linux-x64_v1.2.1"><div class="btn lin"><img class="osimg" src="../Images/linuxlogo.png"><h3 style="bottom:80px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Linux</h3></div></a>
+		</div>
+		<a href="https://github.com/WiiLink24/DeliverooHelper/releases"><div class="demae">{t("download.deliveroo")}</div></a>
+		<a href="/guide/1welcome"><h3 class="docs" style="text-align: center; width:100%; position:absolute; bottom:5px;"><Trans i18nKey={"download.checkdocs"}>Check out the installation tutorial on our <bg style="padding:5px; background-color:green; border-radius: 8px;">brand new guide!</bg></Trans></h3></a>
+	</div>
+</div>
+
+
+<script>
+	window.addEventListener("scroll", function() {
+var r = document.querySelector("r");
+r.classList.toggle("sticky", window.scrollY > 0);
+	})
+</script>
+<script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+coll[i].addEventListener("click", function() {
+this.classList.toggle("active");
+var content = this.nextElementSibling;
+if (content.style.display === "block") {
+  content.style.display = "none";
+} else {
+  content.style.display = "block";
+}
+});
+}
+</script>
+
+<style>
+	
+	.demae{
+		width:88%;
+		height:50px;
+		bottom:80px;
+		font-family: Cafe;
+		font-size: 20px;
+		text-align: center;
+		line-height:50px;
+		color: white;
+		background-color: rgba(89, 86, 86, 0.175);
+	border-radius: 8px;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: absolute;
+		transition: 0.2s;
+	}
+	.demae:hover{
+		background-color: rgba(196, 196, 196, 0.175);
+		box-shadow: 0px 0px 58px rgba(255, 255, 255, 0.075);
+		transition: 0.2s;
+	}
+
+a:link{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.53);
+}
+
+a:visited{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 0.53);
+}
+
+.bannerholder{
+    top:0;
+    left:0;
+	width:100%;
+	height:128px;
+	background-color: rgba(255, 255, 255, 0);
+    z-index: 80;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.logo{
+	top:50%;
+	left:8%;
+	transform: translate(0,-50%);
+	position: absolute;
+}
+
+.donate{
+	top:50%;
+	right:12%;
+	transform: translate(0,-50%);
+	filter: invert(1) opacity(0.7);
+	position: absolute;
+	transition: 0.2s;
+}
+
+.donate:hover{
+	filter: invert(39%) sepia(54%) saturate(2336%) hue-rotate(332deg) brightness(82%) contrast(111%);
+	transition: 0.2s;
+}
+
+ul{
+	display: flex;
+	gap:30px;
+	width:auto;
+	left:50%;
+	top:40%;
+	transform: translate(-50%, -50%);
+	font-family: Cafe;
+	color:rgba(255, 255, 255, 0.53);
+	position: absolute;
+}
+
+.banner{
+    position:relative;
+    transition: 0.5s;
+}
+
+.banner:hover{
+	color:white;
+}
+
+.strong{
+	background: rgba(255, 0, 0, 0);
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+	border-radius: 18px;
+	border:2px solid rgb(62, 161, 85);
+	transform: translate(-8px, -7px);
+}
+
+.strong:hover{
+	background: rgb(62, 161, 85);
+}
+
+.bannername{
+    text-align: center;
+    font-family: Gilroy;
+    color:black;
+    opacity: 0;
+    transform: translate(0,-10);
+    transition: 0.5s;
+}
+
+.banner:hover .bannername{
+    opacity: 1;
+    transform: translate(0,0px);
+    transition: 0.5s;
+}
+
+.fade{
+    width:100%;
+    height:200px;
+    bottom:0;
+    left:0;
+    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
+    z-index: 1;
+    position: fixed;
+}
+
+t{
+    opacity: 0;
+    transition: 0.5s;
+}
+
+t.sticky{
+    opacity: 1;
+    transition: 0.5s;
+}
+
+img{
+	border-radius: 0px;
+}
+
+.lang{
+    top:50%;
+	right:8%;
+	transform: translate(0,-50%);
+    background-image: url("../../Images/langswitcher.png");
+    background-size: cover;
+    background-color: rgba(203, 203, 203, 0.768);
+    color:rgb(0, 0, 0);
+    font-family:Cafe;
+	filter: opacity(0.7);
+    border: 0px;
+    width:35px;
+    height:35px;
+	border-radius: 88px;
+    z-index: 100000000;
+    position: absolute;
+	transition:0.2s;
+}
+
+.lang:hover{
+	filter:opacity(1);
+	transition: 0.2s;
+}
+
+.oschoose{
+	width:100%;
+	height:100%;
+	background-color: rgba(29, 29, 29, 0.447);
+	backdrop-filter: blur(8px);
+	--webkit-backdrop-filter: blur(8px);
+	z-index: 10000;
+	position: fixed;
+	top:0;
+	left:0;
+	display: none;
+	animation: fade 0.2s linear;
+}
+
+@keyframes fade{
+	0%{
+		opacity: 0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+
+@keyframes sus{
+	0%{
+		opacity:0;
+		transform: translate(-50%, -45%);
+	}
+	100%{
+		opacity: 1;
+		transform: translate(-50%, -50%);
+	}
+}
+.btns{
+	display:flex;
+	bottom:148px;
+	left:50%;
+	transform:translate(-50%,0);
+	position: absolute;
+}
+
+.container{
+	width:750px;
+	height:450px;
+	border:2px solid rgba(255, 255, 255, 0.423);
+	background-color: rgb(35, 35, 35);
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+	border-radius: 8px;
+	position: absolute;
+	animation: sus 0.5s ease-in-out;
+}
+
+.osimg{
+	width:150px;
+	transform: translate(70px, 30px);
+	opacity: 0.3;
+	position: relative;
+}
+
+.close{
+	width:30px;
+	height:30px;
+	filter: invert(1);
+	top:40px;
+	left: 0;
+	padding:10px;
+	border-radius: 8px;
+	position: absolute;
+	transition: 0.5s;
+}
+
+.close:hover{
+	border:4px solid #0eecec;
+	transform: translate(-4px, -4px);
+}
+
+.win:hover{
+	background-color: rgb(118, 118, 204);
+}
+
+.mac:hover{
+	background-color: rgb(181, 177, 185);
+}
+.paper{
+	position: relative;
+	top:-300px;
+	right:-155px;
+	filter: invert(1);
+	padding: 5px;
+	border-radius: 8px;
+}
+.docs{
+	opacity: 0.5;
+	transition: 0.2s;
+}
+
+.docs:hover{
+	opacity: 1;
+	transition: 0.2s;
+}
+
+.paper:hover{
+	background-color: rgba(0, 0, 0, 0.575);
+}
+
+.paper:hover{
+	background-color: rgba(0, 0, 0, 0.575);
+}
+
+.lin:hover{
+	background-color: rgb(22, 22, 21);
+}
+
+@media (max-width:1000px){
+	.container{
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		transform: translate(0, 0);
+		border: 0px;
+		border-radius: 0px;
+		animation: none;
+		position: fixed;
+	}
+
+	.btns{
+		display:block;
+		width:100%;
+		height:70%;
+		left:0;
+		transform: translate(0, 0);
+		top:158px;
+		overflow: scroll;
+	}
+
+	.btn{
+		width:90%;
+		left:50%;
+		transform: translate(-50%, 0);
+		margin:0px;
+		margin-bottom:18px;
+		position: relative;
+	}
+
+	.btn:hover{
+		transform: translate(-50%, -5px);
+	}
+
+	.osimg{
+		left:90%;
+		transform: translate(-50%, 0);
+		position: relative;
+	}
+}
+
+@media (max-width:1000px){
+	ul{
+		display: none;
+	}
+
+	.lang{
+		display: none;
+	}
+
+	.donate{
+		display: none;
+	}
+}
+
+
+@media (min-width:2000px) {
+		.bannerholder{
+			width:2000px;
+			left:50%;
+			top:0px;
+			transform: translate(-50%, 0);
+			border-bottom-left-radius: 8px;
+			border-bottom-right-radius: 8px;
+			position: fixed;
+	}
+</style>

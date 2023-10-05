@@ -18,7 +18,20 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 			.hero-image {
 				width: 100%;
 			}
+			article{
+				display:flex;
+			}
 			.hero-image img {
+				-webkit-mask-image: url(/img/mask2.png);
+  mask-image: url(/img/mask2.png);
+  -webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+  mask-size: contain;
+  mask-position: center;
+				height:200px;
+				width:auto;
 				display: block;
 				margin: 0 auto;
 				border-radius: 12px;
