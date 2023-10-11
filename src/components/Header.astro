@@ -6,46 +6,18 @@ import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next from "i18next";
 import i18next, { t, changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
 ---
 
-
+<Layout/>
+<Agreement/>
 
 <r class="bannerholder">
 	<a href="/"><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px"></a>
-	<button class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-4px, -5px);" class="fa-solid fa-bars"></i>  <span class="position-absolute top-50 end-50 translate-middle badge bg-danger">
-		New!
-		<span class="visually-hidden">Important news</span>
-	  </span>
-	</button>
-	<ul>
-		<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
-		<a href={localizePath("/news")}><div class="banner">{t("header.news")}</div></a>
-		<a href={localizePath("/guide/1welcome")}><div class="banner">{t("header.guide")}</div></a>
-		<a href={localizePath("/status")}><div class="banner">{t("header.status")}</div></a>
-		<a href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}</div></a>
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div id="light" class="banner strong">{t("header.install")}</div></a>
-	</ul>
-		<HeaderSmall />
-<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px" style="border-radius:0px;"></a>
-<LanguageSelector showFlag={false} class="lang" />
 </r>
-
-<div id="fade" class="oschoose">
-	<div class="container">
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='none'" style="position:absolute; right:80px;"><img class="close" src="/Images/close.png"></a>
-		<h2 style="left:40px; margin-bottom:0px; position:absolute;">{t("download.welcome")}</h2>
-		<h3 style="left:40px; top:68px; margin-bottom:0px; position:absolute;">{t("download.oschoose")}</h3>
-		<div class="btns">
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Windows_v1.2.1.exe"><div class="btn win"> <img class="osimg" src="../Images/windowslogo.png"><h3 style="bottom:120px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Windows</h3> <h4 style="bottom:150px; left:15px; font-size:20px; position:relative;">{t("download.winreq")}</h4></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_macOS_v1.2.1"><div class="btn mac"><img class="osimg" src="../Images/applelogo.png"><h3 style="bottom:110px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">MacOS</h3></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Linux-x64_v1.2.1"><div class="btn lin"><img class="osimg" src="../Images/linuxlogo.png"><h3 style="bottom:80px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Linux</h3></div></a>
-		</div>
-		<a href="https://github.com/WiiLink24/DeliverooHelper/releases"><div class="demae">{t("download.deliveroo")}</div></a>
-		<a href="/guide/1welcome"><h3 class="docs" style="text-align: center; width:100%; position:absolute; bottom:5px;"><Trans i18nKey={"download.checkdocs"}>Check out the installation tutorial on our <bg style="padding:5px; background-color:green; border-radius: 8px;">brand new guide!</bg></Trans></h3></a>
-	</div>
-</div>
 
 
 <script>
@@ -78,7 +50,7 @@ if (content.style.display === "block") {
 		width:88%;
 		height:50px;
 		bottom:80px;
-		font-family: Cafe;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: 20px;
 		text-align: center;
 		line-height:50px;
@@ -121,6 +93,7 @@ a:visited{
 	top:50%;
 	left:8%;
 	transform: translate(0,-50%);
+	filter: invert(1);
 	position: absolute;
 }
 
@@ -145,12 +118,13 @@ ul{
 	left:50%;
 	top:40%;
 	transform: translate(-50%, -50%);
-	font-family: Cafe;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color:rgba(255, 255, 255, 0.53);
 	position: absolute;
 }
 
 .banner{
+	color:black;
     position:relative;
     transition: 0.5s;
 }
@@ -175,7 +149,7 @@ ul{
 
 .bannername{
     text-align: center;
-    font-family: Gilroy;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:black;
     opacity: 0;
     transform: translate(0,-10);
@@ -220,7 +194,7 @@ img{
     background-size: cover;
     background-color: rgba(203, 203, 203, 0.768);
     color:rgb(0, 0, 0);
-    font-family:Cafe;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	filter: opacity(0.7);
     border: 0px;
     width:35px;

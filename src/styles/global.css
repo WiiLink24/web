@@ -23,6 +23,15 @@
 	font-display: swap;
 }
 @font-face {
+	font-family: Rubik;
+	src: url(/fonts/Rubik.ttf);
+  }
+  
+  @font-face {
+	font-family: gilroy;
+	src: url(/fonts/Gilroy.otf);
+  }
+@font-face {
 	font-family: 'Atkinson';
 	src: url('/fonts/atkinson-bold.woff') format('woff');
 	font-weight: 700;
@@ -67,9 +76,6 @@ h2 {
 h3 {
 	font-size: 1.953em;
 }
-h4 {
-	font-size: 1.563em;
-}
 h5 {
 	font-size: 1.25em;
 }
@@ -98,11 +104,6 @@ input {
 }
 table {
 	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
 }
 code {
 	padding: 2px 5px;

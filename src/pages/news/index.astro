@@ -1,4 +1,5 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Base from "../../components/BaseHead.astro";
 import Header from "../../components/Header.astro";
@@ -6,6 +7,7 @@ import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
+import Agreement from "../../components/Agreement.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
@@ -14,20 +16,18 @@ changeLanguage("en");
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-
 <Base title="WiiLink - News" />
 <body>
+	<div class="symbolholder">
+		<div class="backsymbol">
+			<div class="square2" id="square2">
 
 			{
 				posts.map((post) => (
 					<div class="mainpost">
 						<a href={`/news/${post.slug}/`}>
+							<img style="left:50px; top:55%; transform:translate(0, -50%); height:200px; filter:opacity(0.1); position:absolute;" src="/img/newstop.png">
 							<div class="flexhead">
-							<img class="mainimgsmall" src={post.data.heroImage} width="200px">
-							<div>
-								<div class="maintitle">{post.data.title}</div>
-								<div class="maindesc">{post.data.description}</div>
-							</div>
 						</div>
 						<div class="fade"></div>
 						<img class="mainimg" src={post.data.heroImage} width="200px">
@@ -54,7 +54,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 				}
 			</div>
 
-			<h2 style="margin-top:60px; left:10%; position:relative; width:50%;">{t("blog.other")}</h2>
+			<h2 style="left:80px; font-family:Gilroy; position:relative; width:50%;">Here's some <b class="color">older</b> articles:</h2>
 
 			<div class="postholdermini">
 				<div class="polka-dot"></div>
@@ -62,25 +62,59 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 					posts.map((post) => (
 						<div class="postmini">
 							<a href={`/news/${post.slug}/`}>
-							<div class="fade"></div>
+							<div class="fade-small"></div>
 							<FormattedDate date={post.data.pubDate} />
-							<div class="title">{post.data.title}</div>
+							<div class="title-small">{post.data.title}</div>
 							</a>
 						</div>
 					))
 				}
 			</div>
-
 			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;">{t("blog.rss")}</h3>
 			<a href="https://www.wiilink24.com/rss.xml"><div class="rss">{t("blog.rssbtn")}</div></a>
-
+			<div class="downmargin"></div>
+<Header/>
+</div>
+<div class="square"></div>
+<div class="footer-holder">
+			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
+		
+			<div class="socials">
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+			</div>
+		</div>
+</div>
+</div>
 </body>
+
+<script>
+	
+	const scrollableDiv = document.getElementById('square2');
+
+scrollableDiv.addEventListener('scroll', function() {
+  // Check if the user has scrolled to the bottom
+  if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
+    // User has scrolled to the end
+    scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+  } else {
+	scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+  }
+});
+
+	
+</script>
 
 
 <style>
 	.flexhead{
 		left:50%;
-		top:100px;
+		top:130px;
+		width:90%;
 		transform: translate(-50%, 0);
 		align-items: center;
 		justify-content: center;
@@ -96,17 +130,147 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   mask-repeat: no-repeat;    
   mask-size: 100% 100%;
   mask-position: center;
-		height:150px;
+		height:180px;
 		width:auto;
+		transform: translate(0, 10px);
 		z-index:10;
 		position: relative;
 	}
 
+	.downmargin{
+		width:100%;
+		height:500px;
+		position: relative;
+	}
+
+	.socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 25px;
+		width:150px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.slogan{
+		left:80px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
+	}
+
+	html{
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
+		.symbolholder{
+		background-color: var(--bg-color);
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		transition: 0.5s;
+		z-index: 1;
+		overflow: hidden;
+		position: fixed;
+	}
+	.backsymbol {
+		width:100%;
+		height:100%;
+		top:0%;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		position: absolute;
+	}
+	.contentholder{
+		left:50%;
+		transform: translate(-50%,0);
+		max-width:1000px;
+		position: relative;
+	}
+	.bottomleftcorner{
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
+		left:-2.6px;
+		bottom:-3px;
+		scale:31.6%;
+		transform: translate(-106.5%, 107.3%);
+		z-index: 2;
+		position: absolute;
+	}
+	.square {
+		--img-invert: 0;
+		width:100%;
+		height:100%;
+		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
+		z-index: 0;
+		animation: changecolor 10s linear infinite;
+		position: absolute;
+	}
+	#square2{
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background-color: #ffffff;
+		transform: translate(0%, 0%);
+		border-radius: 4px;
+		z-index: 1;
+
+		transition:0.5s;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: absolute;
+	}
+
+	.color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+
 	.posthold{
 		transform: translate(0, 0px);
 		filter: drop-shadow(0px 0px 20px #70707056);
+		opacity: 0;
 		transition: 0.5s;
 		position: relative;
+	}
+
+	.posthold:nth-child(1) {
+		animation: fadeup 200ms 0.1s linear forwards;
+	}
+	.posthold:nth-child(2) {
+		animation: fadeup 200ms 0.15s linear forwards;
+	}
+	.posthold:nth-child(3) {
+		animation: fadeup 200ms 0.2s linear forwards;
+	}
+	.posthold:nth-child(4) {
+		animation: fadeup 200ms 0.25s linear forwards;
+	}
+	.posthold:nth-child(5) {
+		animation: fadeup 200ms 0.3s linear forwards;
+	}
+	.posthold:nth-child(6) {
+		animation: fadeup 200ms 0.35s linear forwards;
 	}
 
 	.posthold:hover{
@@ -116,13 +280,12 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 	}
 
 	.mainimg{
+		width:100%;
 		filter:blur(8px) opacity(0.3);
-		transition: 0.2s;
 	}
 
 	.mainpost:hover .mainimg{
 		filter: blur(7px) opacity(0.3) brightness(125%);
-		transition: 0.2s;
 	}
 
 	.mainpost{
@@ -132,6 +295,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		left:0;
 		opacity:0;
 		overflow: hidden;
+		z-index: 0;
 		translate:0.5s;
 		position: absolute;
 	}
@@ -160,11 +324,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
 		position: absolute;
 		gap: 20px;
-		top:400px;
+		top:250px;
 		left:50%;
 		transform: translate(-50%,0);
 		position: relative;
-		padding-bottom:500px;
+		padding-bottom:350px;
 		z-index: 10;
 	}
 
@@ -195,12 +359,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		font-family: Gilroy;
     	hyphens:auto;
     	overflow: hidden;
-		opacity:0;
     	transition: 0.5s;
-		animation-name: fadeup;
-		animation-duration:0.5s;
-		animation-fill-mode:forwards;
-		animation-delay:0.22s;
 	}
 
 	.posthold:nth-child(n+7){
@@ -233,16 +392,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
 
 	.postmini:hover{
-    	background-color:rgb(39, 39, 39);
     	transform: translate(0,-5px);
-    	box-shadow: 0px 0px 70px rgb(43, 43, 43);
-		border: 3px solid rgba(255, 255, 255, 0.252);
+    	box-shadow: 0px 0px 40px rgb(209, 209, 209);
+		border: 3px solid rgba(161, 159, 159, 0.252);
     	transition: 0.5s;
   	}
 
 	.heroImage{
-		height:auto;
 		width:100%;
+		height:auto;
+		background-size: cover;
+		transition: 0.3s;
 	}
 
 	.post:hover .heroImage{
@@ -250,15 +410,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		rotate: -3deg;
 		scale: 120%;
 		z-index:0;
-		transition: 0.5s;
+		transition: 0.3s;
   	}
-
-	img{
-		width: 100%;
-		left:0;
-		z-index: 0;
-		transition: 0.5s;
-	}
 
 	.maintitle{
 		left:80px;
@@ -268,6 +421,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		font-size: 60px;
 		text-align: left;
 		font-family: Gilroy;
+		display: -webkit-box;
+    	-webkit-line-clamp: 1;
+    	-webkit-box-orient: vertical;
+    	overflow: hidden;
+    	text-overflow: ellipsis;
 		transition: 0.5s;
 		position: relative;
 	}
@@ -277,11 +435,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		z-index: 11;
 		font-size: 30px;
 		left:80px;
-		text-align: left;
+		text-align: justify;
 		color:rgb(33, 36, 40);
-		width:100%;
+		width:90%;
 		font-family: system-ui;
-		transition: 0.5s;
 		display: -webkit-box;
     	-webkit-line-clamp: 2;
     	-webkit-box-orient: vertical;
@@ -297,9 +454,25 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		display: flex;
 		align-items: center;
 		flex-direction: row-reverse;
-		font-size: 30px;
+		font-size: max(20px, 30px);
 		bottom:20px;
 		right:10px;
+		line-height: 30px;
+		font-family: Gilroy;
+		transition: 0.5s;
+		position: absolute;
+	}
+
+	.title-small{
+		width:90%;
+		height:auto;
+		z-index: 11;
+		font-size: max(20px, 30px);
+		top:50%;
+		left:50%;
+		transform: translate(-50%, 0);
+		text-align: center;
+		color:#181818;
 		line-height: 30px;
 		font-family: Gilroy;
 		transition: 0.5s;
@@ -340,7 +513,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 	.fade{
 		width:100%;
 		height:100%;
-		background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgba(239, 239, 239, 0) 100%);
+		background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgb(239, 239, 239) 100%);
+		position: absolute;
+		z-index:2;
+		left:0;
+		transition: 0.5s;
+	}
+
+	.fade-small{
+		width:100%;
+		height:100%;
+		background: linear-gradient(0deg, rgb(203, 203, 203) 0%, rgba(244, 244, 244, 0) 100%);
 		position: absolute;
 		z-index:2;
 		bottom:-50px;
@@ -356,14 +539,14 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 	.polka-dot {
     	width: 240px;
     	height: 240px;
-    	background-image: radial-gradient(#fff 10%, transparent 11%),
-      	radial-gradient(#fff 10%, transparent 11%);
+    	background-image: radial-gradient(#484848 10%, transparent 11%),
+      	radial-gradient(#484848 10%, transparent 11%);
 		background-size:30px 30px;
     	background-position: 0 0, 30px 30px;
     	opacity: 0.3;
     	rotate: 30deg;
-    	left:-50px;
-    	top:-80px;
+    	left:-80px;
+    	top:-120px;
     	background-repeat: repeat;
 		animation: rotate 240s linear infinite;
     	position: absolute;
@@ -384,7 +567,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
 	a{
-		bottom:50px;
 		z-index:1;
 		color:white;
 	}

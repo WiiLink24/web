@@ -24,35 +24,6 @@ changeLanguage("en");
 
 	<Themes defaultTheme="dark"/>
 
-	<button class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-4px, -5px);" class="fa-solid fa-bars"></i>  <span class="position-absolute top-50 end-50 translate-middle badge bg-danger">
-		New!
-		<span class="visually-hidden">Important news</span>
-	  </span>
-	</button>
-
-	<script is:inline>
-		var isDark = 0;
-		console.log(isDark);
-
-		function darkToggle() {
-			if (isDark === 0) {
-				document.documentElement.classList.remove('dark');
-				document.getElementById("toggle-dark").innerHTML = "<i style='color:#000000; font-size:50px;' class='fa-solid fa-moon'></i>";
-				isDark = 1;
-				console.log(isDark);
-			} else {
-				document.documentElement.classList.add('dark');
-				document.getElementById("toggle-dark").innerHTML = "<i style='color:#ffffff; font-size:50px;' class='fa-solid fa-circle'></i>";
-				isDark = 0;
-				console.log(isDark);
-			}
-		}
-
-		document.addEventListener("DOMContentLoaded", function(){
-    darkToggle();
-});
-	</script>
-
 <div class="symbolholder">
 	<div class="backsymbol">
 		<div class="square2" id="square2">
