@@ -1,22 +1,63 @@
 ---
-interface Props {
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import '../styles/global.css';
+
+export interface Props {
 	title: string;
+	description: string;
+	image?: string;
 }
 
-const { title } = Astro.props;
+
+
+const { title, description, image = '/placeholder-social.jpg' } = Astro.props;
 ---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<link rel="icon" type="image/x-icon" href="../../Images/Favicon.png">
+<meta name="title" content="WiiLink" />
+<meta name="description" content="WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!">
+<meta content="WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!" property="og:description" />
+<meta content="https://cdn.discordapp.com/attachments/1090989036358864917/1095777287129026741/Screenshot_2023-04-12_at_20.22.39.png" property="og:image" />
+<meta name="keywords" content="wii,wiilink24,riiconnect24,wii online,wii,online,wii japan,japan,channel,japanese channel wii,wii japanese">
+<meta name="robots" content="index, follow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="English">
+<meta name="revisit-after" content="12 days">
+<meta name="author" content="WiiLink Devs">
+	
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/svg+xml" href="img/favicon.png" />
 		<script src="https://kit.fontawesome.com/e47ece3e74.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-		<meta name="generator" content={Astro.generator} />
 		<script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 		<title>{title}</title>
@@ -48,6 +89,7 @@ html.dark .github { color:white; background: #24242400; border:2px solid rgb(60,
 html.dark .service { background-color: #202020; box-shadow:0px 0px 20px #ffffff10; transition:0.5s; }
 html.dark .slider::before { background: linear-gradient(to right,  #121212 0%,#12121200 100%); transition:0.5s; }
 html.dark .slider::after { background: linear-gradient(to right,  #121212 0%,#12121200 100%); transition:0.5s; }
+html.dark .fade-main {background: linear-gradient(0deg, #121212 0%, #f4f4f400 100%); }
 html.dark .hide { color: rgba(255, 255, 255, 0.573); transition:0.5s; }
 html.dark .donator-holder { color: white; transition:0.5s; }
 html.dark .slidedown { color: white; transition:0.5s; }

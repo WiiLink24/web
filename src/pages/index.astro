@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import DefaultHead from "../components/DefaultHead.astro";
+import Base from "../components/BaseHead.astro";
 import Donate from "../components/Donate.astro";
 import Services from "../components/Services.astro";
 import BuildInfo from "../components/build.astro";
@@ -15,14 +16,11 @@ changeLanguage("en");
 ---
 
 <Layout title="WiiLink - Temporary Site">
+	
 <html lang={i18next.language}>
-	<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	</head>
-
 <body>
 
-	<Themes defaultTheme="dark"/>
+<Themes defaultTheme="dark"/>
 
 <div class="symbolholder">
 	<div class="backsymbol">

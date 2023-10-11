@@ -16,7 +16,7 @@ changeLanguage("en");
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<Base title="WiiLink - News" />
+<Layout title="WiiLink - News" />
 <body>
 	<div class="symbolholder">
 		<div class="backsymbol">
@@ -29,7 +29,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 							<img style="left:50px; top:55%; transform:translate(0, -50%); height:200px; filter:opacity(0.1); position:absolute;" src="/img/newstop.png">
 							<div class="flexhead">
 						</div>
-						<div class="fade"></div>
+						<div class="fade-main"></div>
 						<img class="mainimg" src={post.data.heroImage} width="200px">
 						</a>
 					</div>
@@ -43,7 +43,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 						<div class="post">
 							<a href={`/news/${post.slug}/`}>
 							<FormattedDate date={post.data.pubDate} />
-							<div class="fade"></div>
+							<div class="faded"></div>
 							<img class="heroImage" src={post.data.heroImage}>
 							<div class="title"><img class="authimage" src={post.data.authImage} alt="" /><b style="width:80%; margin-right:10px; text-align:right; position:relative;">{post.data.title}</b></div>
 							<div class="desc">{post.data.description}</div>
@@ -72,7 +72,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 			</div>
 			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;">{t("blog.rss")}</h3>
 			<a href="https://www.wiilink24.com/rss.xml"><div class="rss">{t("blog.rssbtn")}</div></a>
-			<div class="downmargin"></div>
 <Header/>
 </div>
 <div class="square"></div>
@@ -324,11 +323,11 @@ scrollableDiv.addEventListener('scroll', function() {
 		grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
 		position: absolute;
 		gap: 20px;
-		top:250px;
+		top:220px;
 		left:50%;
 		transform: translate(-50%,0);
 		position: relative;
-		padding-bottom:350px;
+		padding-bottom:300px;
 		z-index: 10;
 	}
 
@@ -510,12 +509,24 @@ scrollableDiv.addEventListener('scroll', function() {
 		transition: 0.5s;
 	}
 
-	.fade{
+	.faded{
+		bottom: 0;
+		left:0;
 		width:100%;
 		height:100%;
-		background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgb(239, 239, 239) 100%);
+		background: rgb(2,0,36);
+		background: linear-gradient(0deg, rgba(60, 60, 60, 0.337) 0%, rgba(244, 244, 244, 0) 100%);
+		position: absolute;
+		transition: 0.5s;
+	}
+
+	.fade-main{
+		width:100%;
+		height:50%;
+		background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(244, 244, 244, 0) 100%);
 		position: absolute;
 		z-index:2;
+		bottom:0px;
 		left:0;
 		transition: 0.5s;
 	}
@@ -528,11 +539,6 @@ scrollableDiv.addEventListener('scroll', function() {
 		z-index:2;
 		bottom:-50px;
 		left:0;
-		transition: 0.5s;
-	}
-
-	.post:hover .fade{
-		transform: translate(0, 50px);
 		transition: 0.5s;
 	}
 
@@ -574,7 +580,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	@keyframes fadeup{
 		0%{
 			opacity:0;
-			transform: translate(0, -20px);
+			transform: translate(0, 20px);
 		}
 		100%{
 			opacity:1;
