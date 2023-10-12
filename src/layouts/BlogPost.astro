@@ -1,90 +1,310 @@
 ---
 import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+const { title, description, pubDate, updatedDate, heroImage, author, authImage, authDesc, authTitle} = Astro.props;
 ---
 
 <html lang="en">
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<head>
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			article{
-				display:flex;
-			}
-			.hero-image img {
-				-webkit-mask-image: url(/img/mask2.png);
-  mask-image: url(/img/mask2.png);
-  -webkit-mask-size: 100%;
-  mask-size: 100%;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;    
-  mask-size: contain;
-  mask-position: center;
-				height:200px;
-				width:auto;
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
+		<BaseHead title={title}description={description} />
+
 	</head>
+
+	<Header />
 
 	<body>
 		<main>
-			<img src={heroImage} width="200px">
 			<article>
-				<div class="prose">
-					<div class="title">
-						<div class="date">
-							<FormattedDate date={pubDate} />
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
+			<div class="tophold">
+				<a href="../"><div class="exit"><img class="close" src="../../Images/close.png"></div></a>
+				<div class="fade"></div>
+				<div class="heroimg">
+				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}</div>
+				<h2 class="title">{title}</h2>
+				
+				<FormattedDate date={pubDate} />
+				{
+					updatedDate && (
+						<div class="last-updated-on">
+							Last updated on <FormattedDate date={updatedDate} />
 						</div>
-						<h1>{title}</h1>
-						<hr />
+					)
+				}
+			</div>
+
+
+			<div class="auths">
+				<img class="authimage" width={50} height={50} src={authImage} alt="" />
+				<div class="titles">
+					<div class="hold">
+						<div class="authtitle">{author}</div>
+						<div class="authtitle2">{authTitle}</div>
 					</div>
+					<div class="authdesc">{authDesc}</div>
+				</div>
+			</div>
+			
+				<div class="postexpand">
 					<slot />
 				</div>
 			</article>
+			<h2 style="margin-top:200px; left:10%; position:relative; width:50%;">Other posts</h2>
+			<News />
 		</main>
 	</body>
 </html>
+<Footer />
+
+<style>
+
+a:link{
+    color:rgba(32,213,136,1);  
+}
+
+a:hover{
+    color:rgb(22, 152, 96);
+}
+
+a:visited{
+    color:rgb(32, 180, 213);
+}
+
+.auths{
+	bottom:0;
+	width: 100%;
+	height:150px;
+	position: absolute;
+	border-top: 3px solid rgba(255, 255, 255, 0.066);
+	z-index: 10000;
+}
+
+.titles{
+	left:150px;
+	top:50%;
+	width:60%;
+	transform:translate(0, -50%);
+	position:absolute;
+}
+
+.authtitle{
+	font-family: Gilroy;
+	font-size: 30px;
+	position: relative;
+	float:left;
+	color:white;
+}
+
+.hold{
+	display:flex;
+	gap:10px;
+}
+
+.authtitle2{
+	position:relative;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	padding-right:10px;
+	border: 2px solid white;
+	border-radius:8px;
+	font-family: Gilroy;
+	font-size: 18px;
+	float:right;
+	top:0;
+	color:white;
+}
+
+.authdesc{
+	font-family: Cafe;
+	bottom:0px;
+	margin-top:5px;
+	font-size: 20px;
+	color:white;
+	position:relative;
+	top:0;
+}
+
+.authimage{
+	width:80px;
+	height:80px;
+	border-radius:8px;
+	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
+	top:50%;
+	left:40px;
+	transform: translate(0,-50%);
+	position: absolute;
+	filter:blur(0px);
+}
+
+	article{
+		top:0;
+		left:0;
+		width:100%;
+		height:auto;
+		padding-bottom:200px;
+		opacity:0;
+		position:relative;
+		animation-name: fadeup;
+		animation-duration:0.5s;
+		animation-fill-mode:forwards;
+	}
+	.title {
+		font-size: 50px;
+		font-family: Gilroy;
+		z-index: 100;
+		left:50%;
+		width:100%;
+		text-align: center;
+		transform: translate(-50%, 0);
+		top:150px;
+		position:absolute;
+	}
+	.last-updated-on {
+		font-style: italic;
+	}
+
+	.postexpand{
+		width:95%;
+		position:relative;
+		font-family: Cafe;
+		color:white;
+		margin-top:350px;
+		left:50%;
+		text-align: justify;
+		transform: translate(-50%, 0);
+	}
+
+	.heroimg{
+		height:100%;
+		width:100%;
+		position:absolute;
+		top:0;
+		left:0;
+		overflow: hidden;
+	}
+
+	.fade{
+width:100%;
+height:60%;
+background: linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%);
+position: absolute;
+z-index:2;
+bottom:0;
+left:0;
+transition: 0.5s;
+}
+
+	img{
+		width:100%;
+		height:auto;
+		top:0;
+		height:auto;
+		position: absolute;
+		filter:blur(8px) brightness(0.5);
+
+
+	}
+
+	hr{
+		width:0;
+	}
+
+	article{
+		width:80%;
+		left:50%;
+		top:150px;
+		transform: translate(-50%,0);
+		border: 3px solid rgba(255, 255, 255, 0.066);
+		background-color:rgba(255, 255, 255, 0.041);
+		border-radius: 15px;
+		overflow:hidden;
+
+	}
+
+	p{
+		font-family: Gilroy;
+		color:white;
+	}
+	h2{
+
+	}
+	h3{
+		font-family: Gilroy;
+	}
+	h4{
+		font-family: Gilroy;
+	}
+	.tophold{
+		height:500px;
+		width:100%;
+		top:0;
+		left:0;
+		position: absolute;
+		overflow:hidden;
+		z-index:0;
+	}
+
+	.exit{
+		top:20px;
+		right:20px;
+		width:50px;
+		height:50px;
+		border: 0px solid red;
+		border-radius:8px;
+		position: absolute;
+		z-index: 1000;
+		transition: 0.2s;
+	}
+
+	.exit:hover{
+		border:3px solid rgba(255, 0, 0, 0.651);
+		transform: translate(3px, -3px);
+		transition: 0.2s;
+	}
+	.close{
+		filter: blur(0px) invert(1);
+		transform: scale(50%);
+	}
+
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(-50%, 38px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(-50%, 0px);
+		}
+	}
+
+	@media (max-width:1000px) {
+		.postexpand{
+			width:100%;
+		}
+		.title{
+			font-size: 40px;
+		}
+		article{
+			top:100px;
+			width: 100%;
+		}
+	}
+
+	@media (min-width:2000px) {
+		main{
+			width:2000px;
+			left:50%;
+			top:10px;
+			transform: translate(-50%, 0);
+			border-radius: 8px;
+			position: relative;
+	}
+</style>

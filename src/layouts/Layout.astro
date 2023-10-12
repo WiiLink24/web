@@ -26,12 +26,12 @@ const { title, description, image} = Astro.props;
 <meta name="description" content={description}>
 <meta content={description} property="og:description" />
 <meta content={image} property="og:image" />
-<meta name="keywords" content="wii,wiilink24,riiconnect24,wii online,wii,online,wii japan,japan,channel,japanese channel wii,wii japanese">
+<meta name="keywords" content="food channel, riitag, riiTag, riiconnect, riiconnect24, rc24, wiiconnect, wiiconnect24, WC24, wii,wiilink24,riiconnect24,wii online,online,wii japan,japan,channel,japanese channel wii,wii japanese">
 <meta name="robots" content="index, follow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="language" content="English">
 <meta name="revisit-after" content="12 days">
-<meta name="author" content="WiiLink Devs">
+<meta name="author" content="The WiiLink Team">
 	
 
 <!-- Open Graph / Facebook -->
@@ -79,6 +79,13 @@ html.dark .dropdownbtn { color: white; transition:0.5s; }
 html.dark .link { color: white; transition:0.5s; }
 html.dark .title { filter:brightness(200%); transition:0.5s; }
 html.dark .stripe-logo { filter:invert(1); transition:0.5s; }
+html.dark .logo { filter:invert(0); transition:0.5s; }
+html.dark .newstop { filter:opacity(0.1) invert(1); transition:0.5s; }
+html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
+html.dark .postmini { color:white; background-color:rgb(38, 38, 38); }
+html.dark .title-small { color:white; }
+html.dark .fade-small { background: linear-gradient(0deg, rgba(103, 103, 103, 0.364) 0%, rgba(244, 244, 244, 0) 100%); }
+html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
 html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite; transition:0.5s; }
 html.dark .form-check-label { color: rgb(255, 255, 255); transition:0.5s; }
 html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px; transition:0.5s; }
