@@ -43,7 +43,6 @@ body {
 	margin: 0;
 	padding: 0;
 	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
@@ -56,6 +55,133 @@ main {
 	max-width: calc(100% - 2em);
 	margin: auto;
 	padding: 3em 1em;
+}
+.toc-post:before{
+	font-family: Gilroy;
+	left:-2px;
+	top:-40px;
+	width:calc(100% + 4px);
+	background-color: gray;
+	border: 2px solid gray;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Table of Contents";
+	position: absolute;
+}
+.toc-post{
+	top:50px;
+	right:0;
+	width:100%;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: rgb(144, 144, 144);
+	border: 2px solid gray;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	backdrop-filter: blur(8px);
+	position: relative;
+}
+.toc-link{
+	color:white;
+}
+.toc-item::marker{
+	font-family: Gilroy;
+	color:white;
+}
+.notice{
+	width:auto;
+	height:auto;
+	padding:5px;
+	padding-right:15px;
+	margin-bottom:5px;
+	border-radius: 8px;
+	color:rgb(255, 255, 255);
+	display: inline-block;
+	position: relative;
+}
+.warn{
+	background-color: rgb(232, 214, 49);
+	border: 2px solid rgb(182, 197, 14);
+}
+.warn::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f06a";
+  }
+.danger{
+	background-color: rgb(232, 49, 49);
+	border: 2px solid rgb(197, 14, 14);
+}
+.danger::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f071";
+  }
+  .success{
+	background-color: rgb(49, 232, 76);
+	border: 2px solid rgb(10, 190, 40);
+}
+.success::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f058";
+  }
+  .info{
+	background-color: rgb(49, 189, 232);
+	border: 2px solid rgb(14, 124, 197);
+}
+.info::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f059";
+  }
+
+  .generic{
+	background-color: rgb(120, 120, 120);
+	border: 2px solid rgb(64, 64, 64);
+}
+.generic::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0c6";
+  }
+
+  .fullwidth{
+	left:0;
+	width:100%;
+  }
+
+
+img[alt="img"] {
+	width:100%;
+	height: 250px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px #ffffff40;
+	object-fit: cover;
 }
 h1,
 h2,
@@ -76,8 +202,16 @@ h2 {
 h3 {
 	font-size: 1.953em;
 }
+h4{
+	font-family: Gilroy;
+}
 h5 {
 	font-size: 1.25em;
+}
+ol, ul{
+	margin-left:20px;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color:black;
 }
 strong,
 b {
@@ -90,6 +224,8 @@ a:hover {
 	color: var(--accent);
 }
 p {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color: black;
 	margin-bottom: 1em;
 }
 .prose p {
@@ -106,9 +242,10 @@ table {
 	width: 100%;
 }
 code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
+	padding: 4px 6px;
+	background-color: rgba(97, 97, 97, 0.148);
+	color:rgb(78, 78, 78);
+	border-radius: 8px;
 }
 pre {
 	padding: 1.5em;
@@ -118,10 +255,13 @@ pre > code {
 	all: unset;
 }
 blockquote {
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.096);
 	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 8px;
+	position: relative;
 }
 hr {
 	border: none;

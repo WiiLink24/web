@@ -2,7 +2,6 @@
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -19,25 +18,19 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 	</head>
 
 	<Header />
-
-	<body>
-		<main>
+<div class="article-holder">
 			<article>
 			<div class="tophold">
-				<a href="../"><div class="exit"><img class="close" src="../../Images/close.png"></div></a>
-				<div class="fade"></div>
+				<a href="../"><div class="exit"><img class="close" src="../../img/close.png"></div></a>
+				<div class="faded"></div>
 				<div class="heroimg">
-				{heroImage && <img width={720} height={360} src={heroImage} alt="" />}</div>
+				{heroImage && <img style="scale:105%" width={720} height={360} src={heroImage} alt="" />}</div>
+				<div style="top:70px; left:50%; width:100%; transform:translate(-50%, 0); display:flex; flex-wrap: wrap; gap:20px; justify-content: center; align-items: center; z-index:10; position:relative">
+				<img class="mainimg" src={heroImage} width="200px">
+				<FormattedDate color="top:-15px; right:48%; transform:translate(100%, 0); color:white; position:absolute;" date={pubDate} />
 				<h2 class="title">{title}</h2>
-				
-				<FormattedDate date={pubDate} />
-				{
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				}
+			</div>
+
 			</div>
 
 
@@ -56,12 +49,11 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 					<slot />
 				</div>
 			</article>
-			<h2 style="margin-top:200px; left:10%; position:relative; width:50%;">Other posts</h2>
+		</div>
+			<h2 style="margin-top:200px; left:10%; position:relative; width:50%;">Other <b class="color">posts</b></h2>
 			<News />
-		</main>
-	</body>
+
 </html>
-<Footer />
 
 <style>
 
@@ -82,7 +74,7 @@ a:visited{
 	width: 100%;
 	height:150px;
 	position: absolute;
-	border-top: 3px solid rgba(255, 255, 255, 0.066);
+	border-top: 6px solid rgba(59, 127, 236, 0.356);
 	z-index: 10000;
 }
 
@@ -94,12 +86,38 @@ a:visited{
 	position:absolute;
 }
 
+time{
+	color:white;
+}
+
+.mainimg{
+		-webkit-mask-image: url(/img/mask2.svg);
+  mask-image: url(/img/mask2.svg);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;    
+  mask-size: 100% 100%;
+  mask-position: center;
+		height:150px;
+		width:auto;
+		filter: blur(0px);
+		transform: translate(0, 10px);
+		z-index:10;
+		position: relative;
+	}
+
+.color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+
 .authtitle{
 	font-family: Gilroy;
 	font-size: 30px;
 	position: relative;
 	float:left;
-	color:white;
+	color:rgb(0, 0, 0);
 }
 
 .hold{
@@ -109,25 +127,21 @@ a:visited{
 
 .authtitle2{
 	position:relative;
-	padding-top:5px;
-	padding-bottom:5px;
-	padding-left:10px;
-	padding-right:10px;
-	border: 2px solid white;
+padding:5px;
+	border: 2px solid rgba(0, 0, 0, 0.496);
 	border-radius:8px;
 	font-family: Gilroy;
 	font-size: 18px;
+	line-height: 36px;
 	float:right;
-	top:0;
-	color:white;
+	color:rgba(0, 0, 0, 0.496);
 }
-
 .authdesc{
-	font-family: Cafe;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	bottom:0px;
 	margin-top:5px;
 	font-size: 20px;
-	color:white;
+	color:rgb(0, 0, 0);
 	position:relative;
 	top:0;
 }
@@ -158,25 +172,22 @@ a:visited{
 	}
 	.title {
 		font-size: 50px;
+		width:100%;
+		text-align:center;
 		font-family: Gilroy;
 		z-index: 100;
-		left:50%;
-		width:100%;
-		text-align: center;
-		transform: translate(-50%, 0);
-		top:150px;
-		position:absolute;
 	}
 	.last-updated-on {
 		font-style: italic;
 	}
 
 	.postexpand{
+		top:350px;
 		width:95%;
+		margin-bottom: 400px;
 		position:relative;
 		font-family: Cafe;
 		color:white;
-		margin-top:350px;
 		left:50%;
 		text-align: justify;
 		transform: translate(-50%, 0);
@@ -185,22 +196,23 @@ a:visited{
 	.heroimg{
 		height:100%;
 		width:100%;
+		opacity: 0.5;
 		position:absolute;
 		top:0;
 		left:0;
 		overflow: hidden;
 	}
 
-	.fade{
-width:100%;
-height:60%;
-background: linear-gradient(0deg, rgba(33,33,33,1) 0%, rgba(33,33,33,0) 100%);
-position: absolute;
-z-index:2;
-bottom:0;
-left:0;
-transition: 0.5s;
-}
+
+	.faded{
+		bottom: 0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: 10;
+		background: linear-gradient(0deg, rgb(248, 248, 248) 0%, rgba(244, 244, 244, 0) 100%);
+		position: absolute;
+	}
 
 	img{
 		width:100%;
@@ -217,16 +229,23 @@ transition: 0.5s;
 		width:0;
 	}
 
-	article{
+	.article-holder{
 		width:80%;
 		left:50%;
 		top:150px;
 		transform: translate(-50%,0);
-		border: 3px solid rgba(255, 255, 255, 0.066);
-		background-color:rgba(255, 255, 255, 0.041);
 		border-radius: 15px;
 		overflow:hidden;
+		position: relative;
+	}
 
+	article{
+		left:50%;
+		border-image: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%) 30;
+		border-width: 12px;
+		border-style: solid;
+		background-color:rgba(244, 244, 244, 0.602);
+		position: relative;
 	}
 
 	p{
@@ -253,10 +272,11 @@ transition: 0.5s;
 	}
 
 	.exit{
-		top:20px;
-		right:20px;
+		top:50px;
+		right:0;
 		width:50px;
 		height:50px;
+		transform:translate(-50%, -50%);
 		border: 0px solid red;
 		border-radius:8px;
 		position: absolute;
@@ -266,12 +286,16 @@ transition: 0.5s;
 
 	.exit:hover{
 		border:3px solid rgba(255, 0, 0, 0.651);
-		transform: translate(3px, -3px);
 		transition: 0.2s;
 	}
 	.close{
 		filter: blur(0px) invert(1);
 		transform: scale(50%);
+	}
+
+	.exit:hover .close{
+		filter: invert(16%) sepia(86%) saturate(7500%) hue-rotate(343deg) brightness(98%) contrast(108%);
+		opacity:0.7;
 	}
 
 	@keyframes fadeup{

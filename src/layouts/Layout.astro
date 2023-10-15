@@ -70,10 +70,18 @@ const { title, description, image} = Astro.props;
 <style is:global>
 
 html.dark .offcanvas-body { background-color: #121212; transition:0.5s; }
+html.dark body { background-color: #121212; transition:0.5s; }
 html.dark h1 { color: white; transition:0.5s; }
 html.dark h2 { color: white; transition:0.5s; }
 html.dark h3 { color: white; transition:0.5s; }
 html.dark h4 { color: white; transition:0.5s; }
+html.dark p { color: white; transition:0.5s; }
+html.dark ol{ color: white; transition:0.5s; }
+html.dark ul { color: white; transition:0.5s; }
+html.dark article { background-color:#202020; transition:0.5s; }
+html.dark .authtitle { color: white; transition:0.5s; }
+html.dark .authtitle2 { color: white; border:2px solid white; transition:0.5s; }
+html.dark .authdesc { color: white; transition:0.5s; }
 html.dark .subtitle { color: white; transition:0.5s; }
 html.dark .dropdownbtn { color: white; transition:0.5s; }
 html.dark .link { color: white; transition:0.5s; }
@@ -85,6 +93,7 @@ html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
 html.dark .postmini { color:white; background-color:rgb(38, 38, 38); }
 html.dark .title-small { color:white; }
 html.dark .fade-small { background: linear-gradient(0deg, rgba(103, 103, 103, 0.364) 0%, rgba(244, 244, 244, 0) 100%); }
+html.dark .faded { background: linear-gradient(0deg, #202020 0%, #ffffff00 100%); }
 html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
 html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite; transition:0.5s; }
 html.dark .form-check-label { color: rgb(255, 255, 255); transition:0.5s; }
