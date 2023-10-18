@@ -70,10 +70,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     </div>
     <div class="elements">
     <div class="main">
-      <div class="link"><a style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
-      <div class="link"><a style="z-index: 1; postition:relative">News</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
+     <div class="link"><a href="/" style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
+      <div class="link"><a href="/news" style="z-index: 1; postition:relative">News</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
       <div class="link"><a style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
-      <div class="link"><a style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
+      <div class="link"><a href="/status" style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
       <div class="link"><a style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       
       <div style="display:flex; gap:10px; align-items:center; justify-content:center;" class="buttons">
@@ -137,7 +137,7 @@ visitCount();
   }
   a{
     text-decoration: none;
-    color:white;
+    color:inherit;
   }
   .authimage{
 		margin-right:10px;

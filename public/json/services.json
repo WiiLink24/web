@@ -5,20 +5,55 @@
           "color": "#138fed",
           "name": "Forecast Channel",
           "desc": "Find current and upcoming weather from your local region or around the globe!",
+          "isArea": "wc24",
+          "status": "Full Release",
           "icon": "forecast_icon.png",
+          "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more cities <br> <input class='form-check-input' style='background-color:#138fed; pointer-events:none; border:2px solid #138fed;' type='checkbox' value='' id='flexCheckDefault' checked > Enslave Luna",
           "completed": "95"
+        },
+        {
+          "color": "#0C9228",
+          "name": "News Channel",
+          "desc": "Get up to date information on recent worldwide events right on your Wii thanks to the News Channel!",
+          "isArea": "wc24",
+          "status": "Planned",
+          "icon": "news_icon.png",
+          "completed": "10"
         },
         {
             "color": "#787878",
             "name": "Nintendo Channel",
             "desc": "An interactive guide to games for Wii, Nintendo DS and Nintendo 3DS, with trailers, demos and more!",
+            "isArea": "wc24",
+            "status": "Full Release",
             "icon": "nintendo_icon.png",
+            "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more cities <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Enslave Luna",
             "completed": "90"
+          },
+          {
+            "color": "#F1E3C1",
+            "name": "Check Mii Out Channel",
+            "desc": "Create and show off your Miis in a variety of contests in which you will make Mii look alikes!",
+            "isArea": "wc24",
+            "status": "Planned",
+            "icon": "miicontest_icon.png",
+            "completed": "15"
+          },
+          {
+            "color": "#283688",
+            "name": "Everybody Votes",
+            "desc": "Vote on different polls regarding very varied topics, then predict the results! Let the party of democracy begin!",
+            "isArea": "wc24",
+            "status": "Under Maintenance",
+            "icon": "democracy_icon.png",
+            "completed": "80"
           },
           {
             "color": "#d4a80b",
             "name": "Food Channel",
             "desc": "Order various types of food directly to your home via your Wii, and pay on delivery!",
+            "isArea": "jp",
+            "status": "Full Release",
             "icon": "demae_icon.png",
             "completed": "80"
           },
@@ -26,6 +61,8 @@
             "color": "#173de8",
             "name": "TV Guide Channel",
             "desc": "Check your local TV programming guide, find shows that interest you and control your TV with your Wii Remote!",
+            "isArea": "jp",
+            "status": "Private Beta",
             "icon": "tvnotomo_icon.png",
             "completed": "50"
           },
@@ -33,6 +70,8 @@
             "color": "#ed34d8",
             "name": "Kirby TV Channel",
             "desc": "Watch episodes of the Kirby: Right Back at Ya! anime on this channel previously only available in Europe!",
+            "isArea": "vid",
+            "status": "Full Release",
             "icon": "kirby_icon.png",
             "completed": "60"
           },
@@ -40,6 +79,8 @@
             "color": "#00FFF8",
             "name": "Photo Prints Channel",
             "desc": "Create albums and business cards with photos from your SD card or with your Mii characters!",
+            "isArea": "jp",
+            "status": "Full Release",
             "icon": "digicam_icon.png",
             "completed": "75"
           },
@@ -47,29 +88,10 @@
             "color": "#05AAF8",
             "name": "Wii Room",
             "desc": "Re-enter the Wii Room, Nintendo's closed Japanese video-on-demand and shopping service!",
+            "isArea": "jp",
+            "status": "Full Release",
             "icon": "room_icon.png",
             "completed": "85"
-          },
-          {
-            "color": "#F1E3C1",
-            "name": "Check Mii Out Channel",
-            "desc": "Create and show off your Miis in a variety of contests in which you will make Mii look alikes!",
-            "icon": "miicontest_icon.png",
-            "completed": "15"
-          },
-          {
-            "color": "#283688",
-            "name": "Everybody Votes Channel",
-            "desc": "Vote on different polls regarding very varied topics, then predict the results! Let the party of democracy begin!",
-            "icon": "democracy_icon.png",
-            "completed": "80"
-          },
-          {
-            "color": "#0C9228",
-            "name": "News Channel",
-            "desc": "Get up to date information on recent worldwide events right on your Wii thanks to the News Channel!",
-            "icon": "news_icon.png",
-            "completed": "10"
           }
       ]
     }

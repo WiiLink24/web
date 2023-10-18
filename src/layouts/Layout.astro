@@ -54,7 +54,6 @@ const { title, description, image} = Astro.props;
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="icon" type="image/svg+xml" href="img/favicon.png" />
 		<script src="https://kit.fontawesome.com/e47ece3e74.js" crossorigin="anonymous"></script>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
@@ -87,6 +86,7 @@ html.dark .dropdownbtn { color: white; transition:0.5s; }
 html.dark .link { color: white; transition:0.5s; }
 html.dark .title { filter:brightness(200%); transition:0.5s; }
 html.dark .stripe-logo { filter:invert(1); transition:0.5s; }
+html.dark .topimg { filter:invert(1); transition:0.5s; }
 html.dark .logo { filter:invert(0); transition:0.5s; }
 html.dark .newstop { filter:opacity(0.1) invert(1); transition:0.5s; }
 html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
@@ -98,6 +98,7 @@ html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
 html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite; transition:0.5s; }
 html.dark .form-check-label { color: rgb(255, 255, 255); transition:0.5s; }
 html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px; transition:0.5s; }
+html.dark .polka-dot { 	background-image:radial-gradient(rgba(255, 255, 255, 0.898)2px,transparent 2px); background-size:30px 30px; transition:0.5s; }
 html.dark .symbolholder { background-color: #000000; transition:0.5s; }
 html.dark .member { background-color: #1b1b1b; transition:0.5s; }
 html.dark .build-square { background: #242424; border:2px solid rgb(60, 60, 60); transition:0.5s; }

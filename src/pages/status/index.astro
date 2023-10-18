@@ -4,118 +4,164 @@ import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
-import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
-
-const core = (await getCollection("core"));
-const vid = (await getCollection("video"));
-const wii = (await getCollection("wiicon"));
 ---
 
 <Layout title="WiiLink - Status" description="Check our service status and its completion!" image="/img/Status_embed.png" />
 
 <body>
 		<Header />
-		<img class="topimg" src="../Images/statustop.png" style="">
-		
-		<a href="https://status.wiilink24.com/"><div class="status">{t("status.statuspage")}</div></a>
+		<img class="topimg" src="./img/statustop.png" style="">
 		
 		<section>
-			<h2 class="servicehead">{t("status.core")}</h2>
+			<h1 class="servicehead">Check out what we have to <b class="color">offer</b>!</h1>
 			<div class="polka-dot"></div>
-			<h4 class="servicedesc">{t("status.coredesc")}</h4>
-			<div class="postholder">
-				{
-					core.map((post) => (
-						<a href={post.data.serviceLink}>
-						<div class="post">
-							<img class="image" src={post.data.serviceImage} width="200px">
-							<div class="title">{post.data.serviceName}</div>
-							<div class="desc">{post.data.serviceDesc}</div>
-							<div class="work">
-								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
-								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
-								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
-							</div>
-						</div>
-					</a>
-					))
-				}
-				</div>
-
-				<h2 class="servicehead">{t("status.wc24")}</h2>
-			<h4 class="servicedesc">{t("status.wc24desc")}</h4>
-			<div class="postholder">
-				{
-					wii.map((post) => (
-					<a href={post.data.serviceLink}>
-						<div class="post">
-							<img class="image" src={post.data.serviceImage} width="200px">
-							<div class="title">{post.data.serviceName}</div>
-							<div class="desc">{post.data.serviceDesc}</div>
-							<div class="work">
-								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
-								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
-								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
-							</div>
-						</div>
-						</a>
-					))
-				}
+			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards reviving and/or imporving!</h2>
+			<div class="serviceshold">
+				<div id="postholder"> </div>
+				<div id="postholder2"></div>
 			</div>
 
-
-			<h2 class="servicehead">{t("status.video")}</h2>
-			<h4 class="servicedesc">{t("status.videodesc")}</h4>
-			<div class="postholder">
-				{
-					vid.map((post) => (
-					<a href={post.data.serviceLink}>
-						<div class="post">
-							<img class="image" src={post.data.serviceImage} width="200px">
-							<div class="title">{post.data.serviceName}</div>
-							<div class="desc">{post.data.serviceDesc}</div>
-							<div class="work">
-								<div class="chip" style="background-color: rgb(209, 56, 56);">{post.data.serviceHalted}</div>
-								<div class="chip" style="background-color: rgb(35, 115, 207);">{post.data.serviceWorking}</div>
-								<div class="chip" style="background-color: rgb(62, 161, 85);">{post.data.serviceCompleted}</div>
-							</div>
-						</div>
-						</a>
-					))
-				}
-			</div>
+			<a href="https://status.wiilink24.com/"><div class="status">{t("status.statuspage")}</div></a>
+			
 		</section>
 		<Footer />
 </body>
 
 
+<script is:inline>
+    document.addEventListener("DOMContentLoaded", async function () {
+
+           fetch("json/services.json")
+           .then(response => response.json())
+           .then(data => showService(data));
+
+           function showService(data) {
+            let services = document.getElementById("postholder");
+			let services2 = document.getElementById("postholder2");
+
+            for(let i = 0; i < (data.services.service.length)/2; i++) {
+                services.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+				if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
+				}
+				else if (data.services.service[i].status == "In development" || data.services.service[i].status == "Public Beta" || data.services.service[i].status == "Private Beta"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-blue)";
+				}
+				else if (data.services.service[i].status == "Halted" || data.services.service[i].status == "Planned"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-red)";
+				} else {
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-gray)";
+				}
+           }
+		   for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
+			services2.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10	px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+			if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
+				}
+				else if (data.services.service[i].status == "In development" || data.services.service[i].status == "Public Beta" || data.services.service[i].status == "Private Beta"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-blue)";
+				}
+				else if (data.services.service[i].status == "Halted" || data.services.service[i].status == "Planned"){
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-red)";
+				} else {
+					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-gray)";
+				}
+		}
+
+           }
+    });
+    
+	async function effect(i){
+			document.getElementsByClassName("service")[i].style.transform = "scale(105%) rotate(-1deg)";
+			document.getElementsByClassName("service")[i].style.transition = "0.3s";
+	}
+	async function noEffect(i){
+			document.getElementsByClassName("service")[i].style.transform = "scale(100%) rotate(0deg)";
+	}
+    </script>
+
 <style>
 	.servicehead{
-		position: relative;
 		top:230px;
-		left:8%;
-		width:80%;
+		font-family: Gilroy;
+		position: relative;
 	}
 	.servicedesc{
 		position:relative;
-		top:200px;
-		left:8%;
-		width:80%;
+		top:180px;
+		text-align: center;
 	}
 
-	.postholder{
-		width:80%;
-		display: grid;
-		grid-template-columns:repeat(auto-fit, minmax(640px, 1fr));
-		gap: 40px;
-		top:250px;
+	h1 {
+		color: var(--bg-text);
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+		transition: 0.5s;
+	}
+	h2{
+		--bg-text: #000000;
+
+		color: var(--bg-text);
+		text-align: center;
+		transition: 0.5s;
+		z-index: 1;
+		position: relative;
+	}
+
+	.color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+	
+	element {
+  background-color: #787878;
+
+  border: 2px solid #787878;
+
+}
+
+	.serviceshold{
 		left:50%;
 		transform: translate(-50%, 0);
+		width: 80%;
+		display: grid;
+		align-items: start;
+		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
+		position: relative;
+	}
+
+	.service:hover{
+		opacity: 0.5;
+	}
+
+	#postholder{
+		width:auto%;
+		display: grid;
+		align-items: start;
+		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
+		gap: 0px;
+		top:250px;
+		position: relative;
+		padding-bottom:50px;
+		z-index: 10;
+	}
+
+	#postholder2{
+		width:auto;
+		display: grid;
+		align-items: start;
+		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
+		gap: 20px;
+		top:250px;
 		position: relative;
 		padding-bottom:50px;
 		z-index: 10;
@@ -193,8 +239,7 @@ const wii = (await getCollection("wiicon"));
 	.polka-dot {
     	width: 240px;
     	height: 240px;
-    	background-image: radial-gradient(#fff 10%, transparent 11%),
-      	radial-gradient(#fff 10%, transparent 11%);
+		background-image:radial-gradient(#000000e5 2px,transparent 2px);
 		background-size:30px 30px;
     	background-position: 0 0, 30px 30px;
     	opacity: 0.1;
@@ -208,7 +253,7 @@ const wii = (await getCollection("wiicon"));
   	}
 
 	.topimg{
-		filter:invert(1); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+		filter:invert(0); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
 	}
 
 	@keyframes rotate{
@@ -240,7 +285,7 @@ const wii = (await getCollection("wiicon"));
 	.status{
 		top:0;
 		right:0;
-		position: absolute;
+		position: relative;
 	}
 
 	.work{
@@ -259,16 +304,16 @@ const wii = (await getCollection("wiicon"));
 	}
 
 	.status{
-		top:125px;
+		top:235px;
 		width:80%;
 		left:50%;
 		transform: translate(-50%, 0);
 		height:50px;
 		background-color: rgba(110, 110, 187, 0.452);
 		color: white;
-		font-family: Cafe;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: 20px;
-		position: absolute;
+		position: relative;
 		border-radius: 8px;
 		text-align: center;
 		padding-top: 25px;
