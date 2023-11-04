@@ -1,0 +1,166 @@
+---
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('guide')).sort(
+	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+import i18next, { t, changeLanguage } from "i18next";
+---
+
+<sidebar>
+      <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+         Button with data-bs-target
+       </button>
+       
+       <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+         <div class="offcanvas-header">
+           <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+         </div>
+         <div class="offcanvas-body">
+           <div>
+            <div class="sidebarcontent">
+               <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">{t("guide.msg1")}</div>
+               {
+                   posts.map((post) => (
+                       <div class="post">
+                           <a href={`/guide/${post.slug}/`}>
+                           <div class="title">{post.data.title}</div>
+                           </a>
+                       </div>
+                   ))
+               }
+           </div>
+   
+           <div class="sidebarcontent">
+               <div style="font-family: Gilroy; color:white; font-size:20px; margin-bottom:20px;">{t("guide.msg2")}</div>
+               {
+                   posts.map((post) => (
+                       <div class="post2">
+                           <a href={`/guide/${post.slug}/`}>
+                           <div class="title">{post.data.title}</div>
+                           </a>
+                       </div>
+                   ))
+               }
+           </div>
+   
+           <a href="https://wii.hacks.guide"><div class="wiiguide">{t("guide.wiiguide")}</div></a>
+           </div>
+         </div>
+       </div>
+      <h3 class="hover">{t("guide.hover")}</h3>
+</sidebar>
+<style>
+a{
+    color:rgba(205, 205, 205, 0.646);
+    text-decoration: none;
+}
+
+a:hover{
+    color: white;
+}
+
+.btn{
+   left:0;
+   z-index: 1000;
+   position: absolute;
+}
+
+ .sidebarholder{
+    width:17%;
+    height:87%;
+    bottom:0;
+    left:8%;
+    border-radius: 8px;
+    position: absolute;
+    overflow: scroll;
+ }
+
+ .sidebarcontent{
+    font-family: Cafe;
+    font-size: 15px;
+    margin-bottom: 60px;
+ }
+
+ .post{
+    margin-bottom: 30px;
+ }
+
+ .post2{
+    margin-bottom: 30px;
+ }
+
+ .post:nth-child(1){
+    display:block;
+ }
+
+ .post:nth-child(2){
+    display:block;
+ }
+
+ .post:nth-child(3){
+    display:block;
+ }
+
+ .post:nth-child(4){
+    display:block;
+ }
+
+ .post:nth-child(5){
+    display:block;
+ }
+
+ .post{
+    display: none;
+ }
+
+
+ .post2:nth-child(1){
+    display:none;
+ }
+
+ .post2:nth-child(2){
+    display:none;
+ }
+
+ .post2:nth-child(3){
+    display:none;
+ }
+
+ .post2:nth-child(4){
+    display:none;
+ }
+
+ .post2:nth-child(5){
+    display:none;
+ }
+
+ .post2{
+    display: block;
+ }
+ .wiiguide{
+    bottom:20px;
+    width:90%;
+    background-color:rgb(79, 79, 211);
+    border-radius: 8px;
+    font-family: Gilroy;
+    font-size: 25px;
+    text-align: center;
+    color:white;
+    padding-top:20px;
+    padding-bottom: 20px;
+    position: relative;
+    transition: 0.2s;
+ }
+
+ .hover{
+    display: none;
+ }
+
+ .wiiguide:hover{
+    background-color: rgb(58, 58, 197);
+    text-decoration: underline;
+    transition: 0.2s;
+ }
+
+</style>

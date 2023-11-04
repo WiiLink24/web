@@ -26,7 +26,7 @@ const { title, description, image} = Astro.props;
 <meta name="description" content={description}>
 <meta content={description} property="og:description" />
 <meta content={image} property="og:image" />
-<meta name="keywords" content="food channel, riitag, riiTag, riiconnect, riiconnect24, rc24, wiiconnect, wiiconnect24, WC24, wii,wiilink24,riiconnect24,wii online,online,wii japan,japan,channel,japanese channel wii,wii japanese">
+<meta name="keywords" content="food channel, wii homebrew, homebrew, wii hacking, wii modding, riitag, riiTag, riiconnect, riiconnect24, rc24, wiiconnect, wiiconnect24, WC24, wii,wiilink24,riiconnect24,wii online,online,wii japan,japan,channel,japanese channel wii,wii japanese">
 <meta name="robots" content="index, follow">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="language" content="English">
@@ -52,6 +52,17 @@ const { title, description, image} = Astro.props;
 <!doctype html>
 <html lang="en">
 	<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LWN8QCFT7S');
+</script>
+
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://kit.fontawesome.com/e47ece3e74.js" crossorigin="anonymous"></script>
@@ -70,6 +81,7 @@ const { title, description, image} = Astro.props;
 
 html.dark .offcanvas-body { background-color: #121212; transition:0.5s; }
 html.dark body { background-color: #121212; transition:0.5s; }
+html.dark { background-color: #121212; transition:0.5s; }
 html.dark h1 { color: white; transition:0.5s; }
 html.dark h2 { color: white; transition:0.5s; }
 html.dark h3 { color: white; transition:0.5s; }
@@ -87,11 +99,16 @@ html.dark .link { color: white; transition:0.5s; }
 html.dark .title { filter:brightness(200%); transition:0.5s; }
 html.dark .stripe-logo { filter:invert(1); transition:0.5s; }
 html.dark .topimg { filter:invert(1); transition:0.5s; }
+html.dark .accordion-body { background-color:#1e1e1e; }
+html.dark .accordion-button { color:white; background-color:#1e1e1e; }
+html.dark .accordion-button::after { color:white; background-color:#1e1e1e; }
+html.dark .svcicons { filter:invert(1); transition:0.5s; }
 html.dark .logo { filter:invert(0); transition:0.5s; }
 html.dark .newstop { filter:opacity(0.1) invert(1); transition:0.5s; }
 html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
 html.dark .postmini { color:white; background-color:rgb(38, 38, 38); }
 html.dark .title-small { color:white; }
+html.dark .spinner { filter:brightness(1000%) }
 html.dark .fade-small { background: linear-gradient(0deg, rgba(103, 103, 103, 0.364) 0%, rgba(244, 244, 244, 0) 100%); }
 html.dark .faded { background: linear-gradient(0deg, #202020 0%, #ffffff00 100%); }
 html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
@@ -137,8 +154,7 @@ html.dark #square2 { background-color: #121212; transition:0.5s; }
 	}
 	html {
 		--bg-color: #ffffff;
-
-
+		scroll-behavior: smooth;
 		font-family: system-ui, sans-serif;
 		background-color: var(--bg-color);
 		background-size: 224px;

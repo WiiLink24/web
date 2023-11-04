@@ -1,0 +1,146 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import '../styles/global.css';
+import Footer from '../.omponents/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Sidebar from '../components/GuideSidebar.astro'
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('guide'));
+type Props = CollectionEntry<'guide'>['data'];
+const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
+---
+
+<html lang="en">
+	<BaseHead title="WiiLink - Guide"/>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<body>
+	<main>
+		<Sidebar />
+		<div class="guideholder">
+			<div class="title">{title}</div>
+			<div class="guidecontent">
+				<slot />
+			</div>
+		</div>
+	</main>
+
+</body>
+
+<Header />
+</html>
+
+<style>
+
+a{
+	color: green;
+}
+
+a:link{
+    color:rgba(32,213,136,1);  
+}
+
+img{
+	width:500px;
+}
+
+a:hover{
+    color:rgb(22, 152, 96);
+}
+
+a:visited{
+    color:rgb(32, 180, 213);
+}
+
+	.title {
+		font-size: 45px;
+		font-family: Gilroy;
+		z-index: 100;
+		top:30px;
+		width:100%;
+		text-align: center;
+		color:white;
+		position:absolute;
+	}
+
+	.image{
+		width:100%;
+		height: 100%;
+		z-index: 0;
+		position: absolute;
+	}
+
+	.head{
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		position: fixed;
+	}
+
+	.fade2{
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		background: linear-gradient(0deg, rgba(24,24,24,1) 70%, rgba(0,212,255,0) 100%);
+		z-index: 1;
+		position: absolute;
+	}
+
+	.guidecontent{
+		width:90%;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: absolute;
+		width:95%;
+		position:relative;
+		font-family: Cafe;
+		color:white;
+		margin-top:120px;
+		left:50%;
+		text-align: justify;
+		transform: translate(-50%, 0);
+		animation-name: fadeup;
+		animation-duration: 0.5s;
+		animation-fill-mode: forwards;
+	}
+
+	.guideholder{
+		width:98%;
+		height:88%;
+		bottom:0;
+		right:0;
+		border-left:2px solid rgba(255, 255, 255, 0.1);
+		border-top:2px solid rgba(255, 255, 255, 0.1);
+		background-color: rgba(255, 255, 255, 0.04);
+		backdrop-filter: blur(8px);
+		border-top-left-radius: 18px;
+		z-index: 1;
+		overflow: scroll;
+		position: absolute;
+	}
+
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(-50%, 28px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(-50%, 0px);
+		}
+	}
+
+	a{
+		bottom:50px;
+		z-index:11;
+		color:green;
+	}
+	@media (max-width:1000px){
+		.guideholder{
+			width:95%;
+		}
+	}
+</style>
+

@@ -13,34 +13,35 @@ changeLanguage("en");
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<button style="z-index:100;" class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-4px, -5px);" class="fa-solid fa-bars"></i>  <span class="position-absolute top-50 end-50 translate-middle badge bg-danger">
-  New!
-  <span class="visually-hidden">Important news</span>
-  </span>
-</button>
+<button style="z-index:1000;" class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-1px, -5px);" class="fa-solid fa-bars"></i></button>
 
-	<script is:inline>
-		var isDark = 0;
-		console.log(isDark);
+    <script>
+        const colorSchemeInfo = document.getElementById("color-scheme-info");
 
-		function darkToggle() {
-			if (isDark === 0) {
-				document.documentElement.classList.remove('dark');
-				document.getElementById("toggle-dark").innerHTML = "<i style='color:#000000; font-size:50px;' class='fa-solid fa-moon'></i>";
-				isDark = 1;
-				console.log(isDark);
-			} else {
-				document.documentElement.classList.add('dark');
-				document.getElementById("toggle-dark").innerHTML = "<i style='color:#ffffff; font-size:50px;' class='fa-solid fa-circle'></i>";
-				isDark = 0;
-				console.log(isDark);
-			}
-		}
+        function updateColorSchemeInfo() {
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            const prefersNoPreference = window.matchMedia('(prefers-color-scheme: no-preference)').matches;
 
-		document.addEventListener("DOMContentLoaded", function(){
-    darkToggle();
-});
-	</script>
+            if (prefersDark) {
+              document.documentElement.classList.add('dark');
+            } else if (prefersLight) {
+              document.documentElement.classList.remove('dark');
+            } else if (prefersNoPreference) {
+              document.documentElement.classList.remove('dark');
+            } else {
+              document.documentElement.classList.remove('dark');
+            }
+        }
+
+        // Initial detection
+        updateColorSchemeInfo();
+
+        // Listen for changes in color scheme
+        window.matchMedia('(prefers-color-scheme: dark)').addListener(updateColorSchemeInfo);
+        window.matchMedia('(prefers-color-scheme: light)').addListener(updateColorSchemeInfo);
+        window.matchMedia('(prefers-color-scheme: no-preference)').addListener(updateColorSchemeInfo);
+    </script>
 
 
 <div class="position-sticky offcanvas offcanvas-top offcanvas-size-sm" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
@@ -72,9 +73,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     <div class="main">
      <div class="link"><a href="/" style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
       <div class="link"><a href="/news" style="z-index: 1; postition:relative">News</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
-      <div class="link"><a style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
+      <div class="link"><a href="/guide" style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       <div class="link"><a href="/status" style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
-      <div class="link"><a style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
+      <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       
       <div style="display:flex; gap:10px; align-items:center; justify-content:center;" class="buttons">
         <button id="toggle-dark" class="toggle-dark" onclick="darkToggle()"></button>
@@ -119,7 +120,7 @@ visitCount();
     height:50px;
     font-size: 30px;
     z-index: 10;
-    position: absolute;
+    position: fixed;
   }
   .fade{
 		width:100%;
@@ -146,7 +147,7 @@ visitCount();
 		border-radius: 8px;
 		border:1px solid #ffffff;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
-		z-index: 10000000000;
+		z-index: 1000;
 	}
 	.posthold:nth-child(n+7){
 		display:none;
@@ -316,6 +317,7 @@ visitCount();
   .offcanvas{
     background-color: rgb(255, 255, 255);
     backdrop-filter: blur(8px);
+    z-index: 100;
     transition: 0.5s;
   }
   .logohamburger{
@@ -332,5 +334,11 @@ visitCount();
     }
   .offcanvas-size-sm {
     --bs-offcanvas-height: 100% !important;
+}
+
+@media only screen and (max-width: 1150px) {
+  .news{
+    display:none;
+  }
 }
 </style>

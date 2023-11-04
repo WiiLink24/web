@@ -1,0 +1,90 @@
+<script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.485/build/spline-viewer.js"></script>
+
+<div class="promptholder">
+    <iframe style="top:0; position:absolute;" src='https://my.spline.design/planetcopy-db845b9b9d3a01b2e06afe75a7e6068f/' frameborder='0' width='100%' height='100%'></iframe>
+    <div class="dots"></div>
+    <div style="left:1030px; top:400px; rotate:350deg;" class="dots"></div>
+        <h1>Are you ready to <b class="color">jump</b>?</h1>
+        <h2>If you like all this stuff, why not join our thousands of worldwide users?</h2>
+        <a href="#top"><button type="button" class="btn btn-success btn-lg">Install now!</button></a>
+</div>
+
+<style>
+
+.promptholder{
+    top:480px;
+    left:50%;
+    transform:translate(-50%, 0);
+    width:70%;
+        width:95%;
+        max-width:1500px;
+        background: rgb(255,255,255); 
+        box-shadow: 0px 5px 10px #00000020;
+        border:2px solid rgb(255, 240, 240);
+        border-radius: 16px;
+        gap:50px;
+        padding:15px;
+        padding-top:150px;
+        padding-bottom:150px;
+        overflow: hidden;
+        z-index: 1;
+        position: relative;
+}
+
+h1 {
+		font-size: 4rem;
+        font-family: Gilroy;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+        mix-blend-mode: darken;
+        z-index: 10000;
+		margin-bottom: 20px;
+		transition: 0.5s;
+	}
+
+    .dots{
+        top:100px;
+        left:330px;
+        rotate: 25deg;
+        width:150px;
+        height:150px;
+        opacity:0.5;
+        background-image:radial-gradient(#00000040 2px,transparent 2px);
+        background-size: 15px 15px;
+        z-index: 0;
+        position:absolute;
+    }
+
+    .dots:nth-child(2) {
+        right:0;
+        top:-5px;
+    }
+
+    button{
+        left:50%;
+        transform: translate(-50%, 0);
+        padding-left: 50px;
+        padding-right:50px;
+        position: relative;
+    }
+
+	h2{
+		text-align: center;
+		transition: 0.5s;
+        margin-bottom: 20px;
+        mix-blend-mode: luminosity;
+		z-index: 1;
+		position: relative;
+	}
+
+    .color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+
+
+
+</style>

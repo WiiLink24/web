@@ -12,27 +12,64 @@ changeLanguage("en");
 
 <Layout title="WiiLink - Status" description="Check our service status and its completion!" image="/img/Status_embed.png" />
 
+<div class="symbolholder">
+	<div class="backsymbol">
+		<div class="square2" id="square2">
 <body>
-		<Header />
 		<img class="topimg" src="./img/statustop.png" style="">
 		
 		<section>
+			<div id="svcicons" class="svcicons"></div>
 			<h1 class="servicehead">Check out what we have to <b class="color">offer</b>!</h1>
 			<div class="polka-dot"></div>
-			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards reviving and/or imporving!</h2>
+			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards <o class="color">reviving</o> and/or <o class="color">improving</o>!</h2>
 			<div class="serviceshold">
 				<div id="postholder"> </div>
 				<div id="postholder2"></div>
 			</div>
 
-			<a href="https://status.wiilink24.com/"><div class="status">{t("status.statuspage")}</div></a>
+			<a href="https://status.wiilink24.com/"><div class="status">Check out the status of our servers.</div></a>
 			
 		</section>
-		<Footer />
+
+		<Header/>
+</div>
+<div class="square"></div>
+<div class="footer-holder">
+			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
+		
+			<div class="socials">
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+			</div>
+		</div>
+</div>
+</div>
 </body>
 
+<script>
+	
+	const scrollableDiv = document.getElementById('square2');
+
+scrollableDiv.addEventListener('scroll', function() {
+  // Check if the user has scrolled to the bottom
+  if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
+    // User has scrolled to the end
+    scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+  } else {
+	scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+  }
+});
+
+	
+</script>
 
 <script is:inline>
+			let rand =  [];
     document.addEventListener("DOMContentLoaded", async function () {
 
            fetch("json/services.json")
@@ -42,9 +79,16 @@ changeLanguage("en");
            function showService(data) {
             let services = document.getElementById("postholder");
 			let services2 = document.getElementById("postholder2");
+			let svcicons = document.getElementById("svcicons");
+
+			for(let i = 0; i < 5; i++) {
+				svcicons.innerHTML += "<img style='filter:brightness(0); object-fit:contain;' src='img/" + data.services.service[i].icon + "' height='50px'>"
+			}
 
             for(let i = 0; i < (data.services.service.length)/2; i++) {
-                services.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+				rand.push((Math.random() * 2)-1.5);
+				console.log(rand);
+                services.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
 				if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
 				}
@@ -58,7 +102,8 @@ changeLanguage("en");
 				}
            }
 		   for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
-			services2.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10	px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+			rand.push((Math.random() * 2)-1.5);
+			services2.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10	px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
 			if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
 				}
@@ -75,12 +120,16 @@ changeLanguage("en");
            }
     });
     
+	let canChange = 0;
+
 	async function effect(i){
-			document.getElementsByClassName("service")[i].style.transform = "scale(105%) rotate(-1deg)";
+			document.getElementsByClassName("service")[i].style.transform = "scale(105%) rotate(" + rand[i] + "deg)";
 			document.getElementsByClassName("service")[i].style.transition = "0.3s";
+			canChange=0;
 	}
 	async function noEffect(i){
-			document.getElementsByClassName("service")[i].style.transform = "scale(100%) rotate(0deg)";
+		document.getElementsByClassName("service")[i].style.transform = "scale(100%) rotate(0deg)";
+		canChange=1;
 	}
     </script>
 
@@ -94,6 +143,116 @@ changeLanguage("en");
 		position:relative;
 		top:180px;
 		text-align: center;
+	}
+
+
+	.socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 25px;
+		width:150px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.slogan{
+		left:80px;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
+	}
+
+	.symbolholder{
+		background-color: var(--bg-color);
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		transition: 0.5s;
+		z-index: 1;
+		overflow: hidden;
+		position: fixed;
+	}
+
+	.backsymbol {
+		width:100%;
+		height:100%;
+		top:0%;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		position: absolute;
+	}
+	.contentholder{
+		left:50%;
+		transform: translate(-50%,0);
+		max-width:1000px;
+		position: relative;
+	}
+	.bottomleftcorner{
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
+		left:-2.6px;
+		bottom:-3px;
+		scale:31.6%;
+		transform: translate(-106.5%, 107.3%);
+		z-index: 2;
+		position: absolute;
+	}
+	.square {
+		--img-invert: 0;
+		width:100%;
+		height:100%;
+		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
+		z-index: 0;
+		animation: changecolor 10s linear infinite;
+		position: absolute;
+	}
+	#square2{
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background-color: #ffffff;
+		transform: translate(0%, 0%);
+		border-radius: 4px;
+		z-index: 1;
+
+		transition:0.5s;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: absolute;
+	}
+
+
+	#svcicons{
+		top:160px;
+		left:50%;
+		transform: translate(-50%, 0);
+		mask-image: url("/img/header_bg.png");
+		-webkit-mask-size: 100%;
+  mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat; 
+		display:flex;
+		gap:15px;
+		position: absolute;
 	}
 
 	h1 {
@@ -317,6 +476,7 @@ changeLanguage("en");
 		border-radius: 8px;
 		text-align: center;
 		padding-top: 25px;
+		padding-bottom: 25px;
 		backdrop-filter:blur(8px);
 		-webkit-backdrop-filter: blur(8px);
 		z-index: 1;
