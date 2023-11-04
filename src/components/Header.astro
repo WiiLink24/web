@@ -10,6 +10,8 @@ import Layout from "../layouts/Layout.astro";
 import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
+
+const { isGuide } = Astro.props;
 ---
 
 <Layout/>
@@ -17,7 +19,15 @@ import HeaderMain from './HeaderMain.astro';
 
 <r class="bannerholder">
 	<a href="/"><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px"></a>
-	<a href="/"><button type="button" class="btn btn-success"><i style="margin-right:5px;" class="fa-solid fa-download"></i> Install now!</button></a>
+	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+		<i class="fa-solid fa-angle-right"></i>
+	  </button>
+	  <button style={isGuide} class="btn3 btn btn-secondary">
+		<a href="/guide">
+			<i class="fa-solid fa-house"></i>
+		</a>
+	  </button>
+	<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
 </r>
 
 
@@ -69,9 +79,30 @@ if (content.style.display === "block") {
 		transition: 0.2s;
 	}
 
-	.btn{
-		top:43%;
+	.btn1{
+		top:50%;
 		right:100px;
+		transform: translate(0, -50%);
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: absolute;
+	}
+
+	.btn2{
+		top:50%;
+		left:315px;
+		transform: translate(0, -50%);
+		opacity:0;
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: absolute;
+	}
+
+	.btn3{
+		top:50%;
+		left:260px;
 		transform: translate(0, -50%);
 		font-size: 20px;
 		margin:0px;
@@ -81,12 +112,12 @@ if (content.style.display === "block") {
 
 a:link{
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.53);
+	color: white;
 }
 
 a:visited{
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.53);
+	color: white;
 }
 
 .bannerholder{
@@ -325,6 +356,12 @@ img{
 .lin:hover{
 	background-color: rgb(22, 22, 21);
 }
+
+@media (max-width:1400px){
+		.btn2{
+			opacity:1;
+		}
+	}
 
 @media (max-width:1000px){
 	.container{

@@ -1,6 +1,7 @@
 ---
 title: Wii Room
 pubDate: 2023-02-30
+icon: fa-solid fa-house
 ---
 ## Access a fun Room for you Mii's to stay in, and enjoy other content as well!
 
@@ -11,7 +12,6 @@ ___
 ## Installation Guide
 
 ### What you need
-___
 - An SD Card or USB Drive
 - A Wii with an Internet Connection
 - A Windows, Mac, or Linux Computer

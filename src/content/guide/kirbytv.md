@@ -1,6 +1,7 @@
 ---
 title: Kirby TV Channel
 pubDate: 2023-09-23
+icon: fa-solid fa-circle
 ---
 ## Watch episodes of the "Kirby: Right Back at Ya!" Anime on your Wii!
 

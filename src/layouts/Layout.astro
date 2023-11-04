@@ -79,32 +79,38 @@ const { title, description, image} = Astro.props;
 
 <style is:global>
 
-html.dark .offcanvas-body { background-color: #121212; transition:0.5s; }
-html.dark body { background-color: #121212; transition:0.5s; }
-html.dark { background-color: #121212; transition:0.5s; }
-html.dark h1 { color: white; transition:0.5s; }
-html.dark h2 { color: white; transition:0.5s; }
-html.dark h3 { color: white; transition:0.5s; }
-html.dark h4 { color: white; transition:0.5s; }
-html.dark p { color: white; transition:0.5s; }
-html.dark ol{ color: white; transition:0.5s; }
-html.dark ul { color: white; transition:0.5s; }
-html.dark article { background-color:#202020; transition:0.5s; }
-html.dark .authtitle { color: white; transition:0.5s; }
-html.dark .authtitle2 { color: white; border:2px solid white; transition:0.5s; }
-html.dark .authdesc { color: white; transition:0.5s; }
-html.dark .subtitle { color: white; transition:0.5s; }
-html.dark .dropdownbtn { color: white; transition:0.5s; }
-html.dark .link { color: white; transition:0.5s; }
-html.dark .title { filter:brightness(200%); transition:0.5s; }
-html.dark .stripe-logo { filter:invert(1); transition:0.5s; }
-html.dark .topimg { filter:invert(1); transition:0.5s; }
+html.dark .offcanvas-body { background-color: #121212;   }
+html.dark body { background-color: #121212;   }
+html.dark { background-color: #121212;   }
+html.dark h1 { color: white;   }
+html.dark h2 { color: white;   }
+html.dark h3 { color: white;   }
+html.dark h4 { color: white;   }
+html.dark p { color: white;   }
+html.dark ol{ color: white;   }
+html.dark ul { color: white;   }
+html.dark article { background-color:#202020;   }
+html.dark .btn-close { filter:invert(1); }
+html.dark .title { color:#ffffff; }
+html.dark .title2 { color:#ffffffa2; }
+html.dark .title2:hover { color:white; }
+html.dark .guideholder { border:2px solid rgba(255, 255, 255, 0.1); background-color: rgba(255, 255, 255, 0.04); }
+html.dark .fade-sidebar {  background: linear-gradient(180deg, rgba(18,18,18,1) 20%, rgba(0,0,0,0) 100%); }
+html.dark .authtitle { color: white;   }
+html.dark .authtitle2 { color: white; border:2px solid white;   }
+html.dark .authdesc { color: white;   }
+html.dark .subtitle { color: white;   }
+html.dark .dropdownbtn { color: white;   }
+html.dark .link { color: white;   }
+html.dark .title { filter:brightness(200%);   }
+html.dark .stripe-logo { filter:invert(1);   }
+html.dark .topimg { filter:invert(1);   }
 html.dark .accordion-body { background-color:#1e1e1e; }
 html.dark .accordion-button { color:white; background-color:#1e1e1e; }
 html.dark .accordion-button::after { color:white; background-color:#1e1e1e; }
-html.dark .svcicons { filter:invert(1); transition:0.5s; }
-html.dark .logo { filter:invert(0); transition:0.5s; }
-html.dark .newstop { filter:opacity(0.1) invert(1); transition:0.5s; }
+html.dark .svcicons { filter:invert(1);   }
+html.dark .logo { filter:invert(0);   }
+html.dark .newstop { filter:opacity(0.1) invert(1);   }
 html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
 html.dark .postmini { color:white; background-color:rgb(38, 38, 38); }
 html.dark .title-small { color:white; }
@@ -112,23 +118,23 @@ html.dark .spinner { filter:brightness(1000%) }
 html.dark .fade-small { background: linear-gradient(0deg, rgba(103, 103, 103, 0.364) 0%, rgba(244, 244, 244, 0) 100%); }
 html.dark .faded { background: linear-gradient(0deg, #202020 0%, #ffffff00 100%); }
 html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
-html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite; transition:0.5s; }
-html.dark .form-check-label { color: rgb(255, 255, 255); transition:0.5s; }
-html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px; transition:0.5s; }
-html.dark .polka-dot { 	background-image:radial-gradient(rgba(255, 255, 255, 0.898)2px,transparent 2px); background-size:30px 30px; transition:0.5s; }
-html.dark .symbolholder { background-color: #000000; transition:0.5s; }
-html.dark .member { background-color: #1b1b1b; transition:0.5s; }
-html.dark .build-square { background: #242424; border:2px solid rgb(60, 60, 60); transition:0.5s; }
-html.dark .github { color:white; background: #24242400; border:2px solid rgb(60, 60, 60); transition:0.5s; }
-html.dark .service { background-color: #202020; box-shadow:0px 0px 20px #ffffff10; transition:0.5s; }
-html.dark .slider::before { background: linear-gradient(to right,  #121212 0%,#12121200 100%); transition:0.5s; }
-html.dark .slider::after { background: linear-gradient(to right,  #121212 0%,#12121200 100%); transition:0.5s; }
+html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite;   }
+html.dark .form-check-label { color: rgb(255, 255, 255);   }
+html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px;   }
+html.dark .polka-dot { 	background-image:radial-gradient(rgba(255, 255, 255, 0.898)2px,transparent 2px); background-size:30px 30px;   }
+html.dark .symbolholder { background-color: #000000;   }
+html.dark .member { background-color: #1b1b1b;   }
+html.dark .build-square { background: #242424; border:2px solid rgb(60, 60, 60);   }
+html.dark .github { color:white; background: #24242400; border:2px solid rgb(60, 60, 60);   }
+html.dark .service { background-color: #202020; box-shadow:0px 0px 20px #ffffff10;   }
+html.dark .slider::before { background: linear-gradient(to right,  #121212 0%,#12121200 100%);   }
+html.dark .slider::after { background: linear-gradient(to right,  #121212 0%,#12121200 100%);   }
 html.dark .fade-main {background: linear-gradient(0deg, #121212 0%, #f4f4f400 100%); }
-html.dark .hide { color: rgba(255, 255, 255, 0.573); transition:0.5s; }
-html.dark .donator-holder { color: white; transition:0.5s; }
-html.dark .slidedown { color: white; transition:0.5s; }
-html.dark .square { animation: changecolordark 10s linear infinite; transition:0.5s; }
-html.dark #square2 { background-color: #121212; transition:0.5s; }
+html.dark .hide { color: rgba(255, 255, 255, 0.573);   }
+html.dark .donator-holder { color: white;   }
+html.dark .slidedown { color: white;   }
+html.dark .square { animation: changecolordark 10s linear infinite;   }
+html.dark #square2 { background-color: #121212;   }
 
 
 @font-face {

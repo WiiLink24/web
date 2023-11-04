@@ -1,6 +1,7 @@
 ---
 title: Everybody Votes Channel
 pubDate: 2023-08-26
+icon: fa-solid fa-square-poll-vertical
 ---
 ## Enjoy Voting on Polls via your Wii again!
 

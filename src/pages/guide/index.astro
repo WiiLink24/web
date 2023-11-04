@@ -63,9 +63,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 			<div class="alert alert-danger" role="alert">
 				<h1>Can't seem to get it working? Why not ask for help on our Discord server!</h1>
 			</div>
-
-<Header/>
 </div>
+<Header isGuide="display:none;"/>
 <div class="square"></div>
 <div class="footer-holder">
 			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
@@ -240,10 +239,9 @@ scrollableDiv.addEventListener('scroll', function() {
 		transform: translate(0%, 0%);
 		border-radius: 4px;
 		z-index: 1;
-
-		transition:0.5s;
 		overflow-y: scroll;
 		overflow-x: hidden;
+		transition:0.5s;
 		position: absolute;
 	}
 
@@ -353,7 +351,7 @@ scrollableDiv.addEventListener('scroll', function() {
 		position: relative;
     	height:250px;
     	width:100%;
-		background-color: rgba(195, 195, 195, 0.44);
+		background-color: rgba(195, 195, 195, 0);
 		filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     	border-radius: 15px;
 		font-family: Gilroy;

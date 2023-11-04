@@ -7,14 +7,26 @@ heroImage: "../../img/guidebg-1.png"
 ---
 ## What you need
 
-- An SD Card or USB Drive
-- A Wii with an Internet Connection
-- A Windows, Mac, or Linux Computer
-- [WiiLink Patcher](https://github.com/WiiLink24/WiiLink24-Patcher)
+<div style="display:flex; gap:18px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4></div>
+
+<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
+<a href="/"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+</div>
+</br>
+</br>
 
 ## Instructions
+#### First of all, where are you planning to use WiiLink?
+</br>
+
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;"><a href="#wii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px;  background: rgb(18,18,18);
+background: linear-gradient(32deg, rgba(120,120,120,0.3) 0%, rgba(182,255,249,0.3) 100%); font-family:system-ui; padding:10px; border:0px solid #ffffff60; border-radius:8px;">Wii</h4></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center;  background: rgb(18,18,18);
+background: linear-gradient(147deg, rgba(0,0,70,0.3) 0%, rgba(85,115,255,0.3) 100%); line-height:70px; font-family:system-ui; padding:10px; border:0px solid #ffffff60; border-radius:8px;">Wii U</h4></a></div>
+
+<div id="vwii"></div>
 
 ### vWii (Wii U) ONLY
+
 > If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, skip to Section I.
 
 
@@ -26,6 +38,11 @@ heroImage: "../../img/guidebg-1.png"
 6. Follow the instructions on the page then copy the result.
 7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
 8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file and proceed to Section I.
+</br>
+</br>
+</br>
+
+<div id="wii"></div>
 
 ### Section I - Patching WADs
 
@@ -64,7 +81,7 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 
 16. Launch `Priiloader`.
 17. Follow the installation steps.
-18. Launch `Load Priiloader`
+17. Launch `Load Priiloader`
 19. Using your Wii Remote, go to `System Menu Hacks`.
 20. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. Feel free to enable others.
 21. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.

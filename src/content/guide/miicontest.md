@@ -1,6 +1,7 @@
 ---
 title: Check Mii Out Channel
 pubDate: 2023-09-09
+icon: fa-solid fa-angles-up
 ---
 ## Create & Share Mii's for the whole wide world!
 

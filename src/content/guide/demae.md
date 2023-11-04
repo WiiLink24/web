@@ -1,6 +1,7 @@
 ---
 title: Food Channel
 pubDate: 2021-01-29
+icon: fa-solid fa-utensils
 ---
 ## Have Food ordered to your house from a Wii!
 
