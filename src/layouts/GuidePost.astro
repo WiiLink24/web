@@ -6,22 +6,25 @@ import Footer from '../.omponents/Footer.astro';
 import News from '../components/News.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Sidebar from '../components/GuideSidebar.astro'
+import Loading from '../components/Loading.astro';
+import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from 'astro:content';
 const posts = (await getCollection('guide'));
 type Props = CollectionEntry<'guide'>['data'];
 const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.props;
 ---
-
 <html lang="en">
 	<BaseHead title="WiiLink - Guide"/>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<Loading msg={title} />
 <body>
 	<main>
 		<Sidebar />
 		<div class="flex">
 			<div class="holder">
-				<div class="offcanvas-body">
-						<h4 style="top:20px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">Where do you want to go?</h4>
+				<div id="container1"></div>
+				<div class="offcanvas-body" style="top:30px; position:relative;">
+					<h4 style="top:30px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">Where do you want to go?</h4>
 				   <div>
 					<div class="sidebarcontent">
 							   <div class="post">
@@ -62,15 +65,30 @@ const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.prop
 				 </div>
 			</div>
 			<div class="guideholder">
+				<FormattedDate pre="Last updated on: " date={pubDate} />
 				<img class="topImage" src={heroImage}>
 				<div class="title"><i class={icon} style="margin-right:18px;"></i> {title}</div>
-				<div class="guidecontent"><slot /></div>
+				<div class="guidecontent" id="container2"><slot /></div>
 			</div>
 		</div>
 	</main>
 	<Header isGuide="display:block;"/>
 </body>
 </html>
+
+<script is:inline>
+	 window.onload = function() {
+    const container1 = document.getElementById("container1");
+    const container2 = document.getElementById("container2");
+    const movableDiv = document.querySelector(".toc-post");
+
+      if (movableDiv.parentElement === container1) {
+        container2.appendChild(movableDiv);
+      } else {
+        container1.appendChild(movableDiv);
+      }
+    };
+  </script>
 
 <style>
 
@@ -185,13 +203,14 @@ a:visited{
 	.holder{
 		width:380px;
 		height:100%;
+		border-radius:8px;
 		overflow:scroll;
 	}
 
 	.guideholder{
 		width:1000px;
 		height:100%;
-		top:110px;
+		top:130px;
 		border:2px solid rgba(255, 000, 000, 0.1);
 		background-color: rgba(000, 000, 255, 0.04);
 		backdrop-filter: blur(8px);
@@ -282,7 +301,7 @@ a:visited{
  .fade-sidebar{
    top:0;
    left:0;
-   width:100%;
+   width:530px;
    height:80px;
    background: rgb(255, 255, 255);
    background: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgba(0,0,0,0) 100%);  
@@ -377,6 +396,12 @@ a:visited{
 		}
 		.holder{
 			display:none;
+		}
+		.guidecontent{
+			margin-top:150px;
+		}
+		.title{
+			font-size:35px;
 		}
 	}
 </style>

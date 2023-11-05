@@ -9,10 +9,10 @@ icon: fa-solid fa-square-poll-vertical
 
 - Propose your own polls and echo your questions to everyone!
 
-![EVC Banner](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
+![img](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
 </br>
 
-> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below.
+<l class="notice info fullwidth"> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below. </l>
 ___
 
 ## We're moving! - How to Transfer your Data
@@ -28,11 +28,11 @@ ___
 #### With any luck, you'll be up and running!
 ___
 ## Important Notices!
-> If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
-> 
-> If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!
->
-> To use custom regions, you must use AnyGlobeChanger.
+<l class="notice danger">If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!</l>
+
+<l class="notice danger">If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!</l>
+
+<l class="notice warn">To use custom regions, you must use AnyGlobeChanger.</l>
 ___
 ## Language Support
 
