@@ -26,12 +26,12 @@
           "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
         },
   {
-          "name": "dhtdht020",
-          "title": "Tooling Developer",
+          "name": "Palapeli",
+          "title": "Developer",
           "color": "#00AAAA",
-          "pfp": "https://github.com/dhtdht020.png",
-          "link": "https://twitter.com/dhtdht020",
-          "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+          "pfp": "https://cdn.discordapp.com/avatars/570592015704653824/ee8a799528a219a4d855e77a303b4587.webp?size=240",
+          "link": "https://github.com/mkwcat",
+          "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
         },
   {
           "name": "giustino",
@@ -53,7 +53,7 @@
           "name": "diego",
           "title": "Translator(CA,ES,ZH)",
           "color": "#fc5a4e",
-          "pfp": "https://yt3.googleusercontent.com/Sa19eMJLKRbYRc_i17ZqDm3FSItnjP0u6yuyaDRn9uD3X7y7G-qfZgFUtz1LMKjFPl1rvClGWQ",
+          "pfp": "https://cdn.discordapp.com/avatars/369858387803897857/1bdc245461b5e66f20b1b365a3236d13.webp?size=240",
           "link": "https://twitter.com/korewadiego",
           "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
         },
@@ -95,7 +95,7 @@
   "color": "#abc9ff",
   "pfp": "https://lh3.googleusercontent.com/a/ACg8ocI_OzmelcXabyC_3gEP1zV3EDTRRqCwgHKbu6AImFL2lNQ",
   "link": "https://www.youtube.com/@Deoku64",
-  "flag": "https://em-content.zobj.net/source/twitter/376/flag-netherlands_1f1f3-1f1f1.png"
+  "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
   },
 {
         "name": "Philemax",
@@ -165,10 +165,32 @@
       "name": "Jess Williamson",
       "title": "Translator (Japanese)",
       "color": "#66cdaa",
-      "pfp": "https://imgur.com/gallery/2MhlUo8",
+      "pfp": "https://cdn.discordapp.com/avatars/990391816186634340/16da8c56eb6ab6a2edc19dcbee480748.webp?size=240",
       "link": "https://instagram.com/jessdoesvids",
       "flag": "https://em-content.zobj.net/source/twitter/376/flag-japan_1f1ef-1f1f5.png"
-    }
+    },
+    {
+      "name": "GamerKGR",
+      "title": "Music Composer",
+      "color": "#40E0D0",
+      "pfp": "https://avatars.githubusercontent.com/u/84294269?v=4",
+      "link": "https://gamerkgr.neocities.org/"
+      },
+      {
+        "name": "ryaltheamazing",
+        "title": "Social Media",
+        "color": "#ed3939",
+        "pfp": "https://cdn.discordapp.com/avatars/696363690642898944/fbbf67f9f81d1ee06c0bb2f63c52e7c9.webp?size=240",
+        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"
+        },
+        {
+          "name": "dhtdht020",
+          "title": "Tooling Developer",
+          "color": "#00AAAA",
+          "pfp": "https://github.com/dhtdht020.png",
+          "link": "https://twitter.com/dhtdht020",
+          "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+        }
 
 
 ]

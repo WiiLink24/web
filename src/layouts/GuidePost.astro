@@ -1,5 +1,5 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
+import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import '../styles/global.css';
 import Footer from '../.omponents/Footer.astro';
@@ -14,7 +14,7 @@ type Props = CollectionEntry<'guide'>['data'];
 const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 <html lang="en">
-	<BaseHead title="WiiLink - Guide"/>
+	<Layout title={`WiiLink - Guide (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<Loading msg={title} />
 <body>
@@ -35,13 +35,13 @@ const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.prop
 							   </div>
 							   <div class="post">
 								<a href={`/guide/2problemsolving/`}>
-								   <img class="mainimg" src="../../img/guidebg-2.png">
+								   <img class="mainimg" src="../../img/guidebg-3.png">
 								<div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-exclamation" style="margin-right:5px;"></i>Problem solving</div>
 								</a>
 							</div>
 							<div class="post">
 							 <a href={`/guide/3faq/`}>
-								<img class="mainimg" src="../../img/guidebg-3.png">
+								<img class="mainimg" src="../../img/guidebg-2.png">
 							 <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-question" style="margin-right:5px;"></i>Frequently asked questions</div>
 							 </a>
 						 </div>
@@ -68,7 +68,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.prop
 				<FormattedDate pre="Last updated on: " date={pubDate} />
 				<img class="topImage" src={heroImage}>
 				<div class="title"><i class={icon} style="margin-right:18px;"></i> {title}</div>
-				<div class="guidecontent" id="container2"><slot /></div>
+				<div class="guidecontent" id="container2"><slot /><h4 class="slogan" style="text-align:right;">© 2020-2023 <b style="font-family:Rubik;">WiiLink<span class="badge bg-success" style="top:-10px; left:3px; font-size:10px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">guide</span></b> <b style="font-family:Gilroy;"> Team</b></h4></div>
 			</div>
 		</div>
 	</main>
@@ -92,15 +92,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.prop
 
 <style>
 
-a{
-	color: green;
-	text-decoration:none;
-}
-
-a:link{
-    color:rgba(32,213,136,1);  
-}
-
 html{
 	top:-150px;
 	left:0;
@@ -119,14 +110,6 @@ body{
 
 img{
 	width:500px;
-}
-
-a:hover{
-    color:rgb(22, 152, 96);
-}
-
-a:visited{
-    color:rgb(32, 180, 213);
 }
 
 	.title {
@@ -212,9 +195,10 @@ a:visited{
 		height:100%;
 		top:130px;
 		border:2px solid rgba(255, 000, 000, 0.1);
-		background-color: rgba(000, 000, 255, 0.04);
+		background-color: rgba(200, 200, 200, 0.18);
 		backdrop-filter: blur(8px);
-		border-radius: 14px;
+		scroll-behavior:smooth;
+		border-radius: 8px;
 		z-index: 1;
 		overflow: scroll;
 	}
@@ -230,13 +214,6 @@ a:visited{
 		}
 	}
 
-	a{
-		bottom:50px;
-		z-index:11;
-		color:green;
-	}
-
-
 .mainimg{
    transform: translate(-15px, -15px);
    width:100%;
@@ -244,6 +221,10 @@ a:visited{
    transition: 0.5s;
    background-size: cover;
    position: absolute;
+}
+
+a{
+	text-decoration:none;
 }
 
 .post:hover .mainimg{

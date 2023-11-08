@@ -3,12 +3,13 @@ interface Props {
 	msg: string;
 }
 
-const { msg } = Astro.props;
+const { msg, img } = Astro.props;
 ---
 
 <div class="cover" id="cover">
 <img src="../../img/logo.png" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); filter:invert(1); position:absolute;">
-<h3 style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); filter:invert(1); display:flex; flex-wrap:wrap; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 3px); margin-right:8px;" width="30px" height="30px">{msg}</h3>
+<img src={img} style="left:50%; top:42%; border-radius:8px; width:350px; transform:translate(-50%, -50%); position:absolute;">
+<l style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); font-size:30px; filter:invert(1); display:flex; flex-wrap:wrap; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 10px); margin-right:8px;" width="30px" height="30px">{msg}</l>
 </div>
 
 <script is:inline>
@@ -18,7 +19,7 @@ window.addEventListener('load', function () {
 }, 300);
 setTimeout(() => {
         document.getElementById("cover").style.display = "none";
-}, 500);
+}, 600);
     });
  </script>
 
@@ -28,7 +29,8 @@ setTimeout(() => {
         left:0;
         width:100%;
         height:100%;
-        background:#000000;
+        background:#00000090;
+        backdrop-filter:blur(38px);
         z-index:100000;
         position:fixed;
     }

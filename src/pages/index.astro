@@ -7,6 +7,7 @@ import Services from "../components/Services.astro";
 import BuildInfo from "../components/build.astro";
 import Team from "../components/team.astro";
 import Socials from "../components/Socials.astro";
+import Header from "../components/Header.astro";
 import Agreement from "../components/Agreement.astro";
 import JumpIn from "../components/JumpIn.astro";
 import Themes from "astro-themes";
@@ -27,7 +28,7 @@ changeLanguage("en");
 	<div class="backsymbol">
 		<div class="square2" id="square2">
 
-
+			<Header isGuide="display:none;" isMain="display:none;"/>
 			<div id="top" class="top">
 			<div class="logohold">
 				<DefaultHead/>
@@ -71,7 +72,7 @@ changeLanguage("en");
 				</a>
 				</div>
 
-				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="#">
+				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="/guide/1install">
 					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
 				</a>
 				</div>
@@ -350,7 +351,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		position: absolute;
 	}
 	.top{
-		top:0;
+		top:-130px;
 		left:50%;
 		transform: translate(-50%, 0);
 		max-width: 1500px;

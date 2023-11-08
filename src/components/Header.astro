@@ -11,49 +11,71 @@ import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
 
-const { isGuide } = Astro.props;
+const { isGuide, isMain } = Astro.props;
 ---
 
 <Layout/>
 <Agreement/>
 
 <r class="bannerholder">
-	<a href="/"><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px"></a>
+	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; z-index:0; position:absolute;"></t>
+	<a href="/"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">guide</span></a>
 	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
 		<i class="fa-solid fa-angle-right"></i>
 	  </button>
-	  <button style={isGuide} class="btn3 btn btn-secondary">
-		<a href="/guide">
-			<i class="fa-solid fa-house"></i>
-		</a>
-	  </button>
-	<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+	  <ul>
+		<a class="link" href={localizePath("/")}><div class="banner">Home<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/news")}><div class="banner">News<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/guide/")}><div class="banner">Guide<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/status")}><div class="banner">Status<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">FAQ<div class="underline"></div></div></a>
+		<button style={isGuide} class="btn3 btn btn-secondary">
+			<a href="/guide">
+				<i class="fa-solid fa-house"></i>
+			</a>
+		  </button>
+		<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+		<button type="button" class="btn1 btn btn-primary"><i class="fa-solid fa-certificate"></i> Welcome to the new site</button>
+		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
+	 </ul>
 </r>
 
+<script is:inline>
+	function darkToggle() {
+	  var isLight = localStorage.getItem('isLight');
+	  if (isLight === "1") { // Compare to the string "1"
+		document.documentElement.classList.remove('dark');
+		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-sun'></i>";
+		document.getElementById("themeColor").style.backgroundColor="black";
+		document.getElementById("themeColor").style.color="white";
+		localStorage.setItem('isLight', '0'); // Store 'false' as a string
+		console.log(isLight);
+	  } else {
+		document.documentElement.classList.add('dark');
+		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-moon'></i>";
+		document.getElementById("themeColor").style.backgroundColor="white";
+		document.getElementById("themeColor").style.color="black";
+		localStorage.setItem('isLight', '1'); // Store 'true' as a string
+		console.log(isLight);
+	  }
+	}
 
-<script>
-	window.addEventListener("scroll", function() {
-var r = document.querySelector("r");
-r.classList.toggle("sticky", window.scrollY > 0);
-	})
 </script>
-<script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
 
-for (i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.display === "block") {
-  content.style.display = "none";
-} else {
-  content.style.display = "block";
-}
+<script is:inline>
+var Div = document.getElementById("square2");
+var gradient = document.getElementById("grad");
+
+Div.addEventListener("scroll", function() {
+  if (Div.scrollTop > 0) {
+    gradient.style.opacity = 1;
+  } else {
+    gradient.style.opacity = 0;
+  }
 });
-}
-</script>
+
+  </script>
+  
 
 <style>
 	
@@ -78,20 +100,42 @@ if (content.style.display === "block") {
 		box-shadow: 0px 0px 58px rgba(255, 255, 255, 0.075);
 		transition: 0.2s;
 	}
+	.badge{
+		top:20px; left:230px; font-size:15px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:absolute;
+	}
+	#grad{
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
+	}
+
+.link:hover .underline{
+    height:15px;
+    transition: 0.5s;
+  }
+  .underline{
+    bottom:0;
+    left:0;
+    transform: translate(0, -18px);
+    width:100%;
+    height:0px;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: #00000020;
+    position: relative;
+
+  }
 
 	.btn1{
-		top:50%;
-		right:100px;
-		transform: translate(0, -50%);
+		transform: translate(0, 10px);
 		font-size: 20px;
 		margin:0px;
 		margin-bottom:18px;
-		position: absolute;
+		position: relative;
 	}
 
 	.btn2{
 		top:50%;
-		left:315px;
+		left:258px;
 		transform: translate(0, -50%);
 		opacity:0;
 		font-size: 20px;
@@ -101,13 +145,11 @@ if (content.style.display === "block") {
 	}
 
 	.btn3{
-		top:50%;
-		left:260px;
-		transform: translate(0, -50%);
+		transform: translate(0, 10px);
 		font-size: 20px;
 		margin:0px;
 		margin-bottom:18px;
-		position: absolute;
+		position: relative;
 	}
 
 a:link{
@@ -125,10 +167,11 @@ a:visited{
     left:0;
 	width:100%;
 	height:128px;
+	display:block;
 	background-color: rgba(255, 255, 255, 0);
     z-index: 80;
     transition: 0.5s;
-    position: fixed;
+    position: sticky;
 }
 
 .logo{
@@ -155,24 +198,27 @@ a:visited{
 
 ul{
 	display: flex;
-	gap:30px;
+	gap:10px;
 	width:auto;
-	left:50%;
-	top:40%;
-	transform: translate(-50%, -50%);
+	right:50px;
+	top:60px;
+	transform: translate(0, -50%);
+	align-items:center;
+	justify-content:center;
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color:rgba(255, 255, 255, 0.53);
 	position: absolute;
 }
 
 .banner{
+	font-size:20px;
+	margin-right:20px;
 	color:black;
     position:relative;
     transition: 0.5s;
 }
 
 .banner:hover{
-	color:white;
 }
 
 .strong{
@@ -201,16 +247,6 @@ ul{
 .banner:hover .bannername{
     opacity: 1;
     transform: translate(0,0px);
-    transition: 0.5s;
-}
-
-t{
-    opacity: 0;
-    transition: 0.5s;
-}
-
-t.sticky{
-    opacity: 1;
     transition: 0.5s;
 }
 
@@ -384,7 +420,7 @@ img{
 }
 
 @media (max-width:1000px){
-	ul{
+	.bannerholder{
 		display: none;
 	}
 

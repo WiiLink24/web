@@ -4,9 +4,9 @@ interface Props {
 	date: Date;
 }
 
-const { pre, date } = Astro.props;
+const { pre, date, precise } = Astro.props;
 ---
-<time datetime={date.toISOString()}>
+<time style={precise} datetime={date.toISOString()}>
 	<h3 style="font-size:15px; margin:3px;"><b>{pre}</b>
 	{
 		date.toLocaleDateString('en-uk', {

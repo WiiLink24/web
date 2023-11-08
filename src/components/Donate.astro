@@ -5,24 +5,28 @@
         <div class="tiers">
         <div id="inner-data" class="build-square move tier-1">
             <span class="bdg badge bg-warning">$1</span>
-            <h1 style="color:#8cb727;" class="tier-title">Coffee</h1>
-            <img class="donate-image" src="img/tier_1.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <h1 style="color:#8cb727;" class="tier-title">Violet</h1>
+            <h5 style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;"><span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #donators channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-globe"></i> Recognition on website</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-brands fa-discord"></i> Discord access</span></h5>
+            <img class="donate-image" src="img/tier_1.png">
         </div>
         <div id="inner-data" class="build-square move tier-2">
             <span class="bdg badge bg-info">$5</span>
-            <h1 style="color:#278eb7;" class="tier-title">Sandwich</h1>
-            <img class="donate-image" src="/img/tier_2.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <h1 style="color:#278eb7;" class="tier-title">Lilac</h1>
+            <h5 style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;"><span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #donators channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-globe"></i> Recognition on website</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-film"></i> Movie poster</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-brands fa-discord"></i> Discord access</span></h5>
+            <img class="donate-image" src="/img/tier_2.png">
         </div>
         <div id="inner-data" class="build-square move tier-3">
             <span class="bdg badge bg-primary">$10</span>
-            <span class="badge bg-danger" style=" bottom:80px; left:50%; transform:translate(-50%, 0); width:160px; font-size: 20px; position:absolute;">Most popular</span>
-            <h1 style="color:#7627b7;" class="tier-title">Hamburger</h1>
-            <img class="donate-image" src="img/tier_3.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <span class="badge bg-danger" style=" bottom:15px; left:50%; transform:translate(-50%, 0); width:160px; font-size: 20px; position:absolute;">Most popular</span>
+            <h1 style="color:#7627b7;" class="tier-title">Tulip</h1>
+            <h5 style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;"><span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #donators channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-user"></i> Concierge Mii</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #testing channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-globe"></i> Recognition on website</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-film"></i> Movie poster</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-brands fa-discord"></i> Discord access</span></h5>
+            <img class="donate-image" src="img/tier_3.png">
         </div>
         <div id="inner-data" class="build-square move tier-4">
             <span class="bdg badge bg-success">$20</span>
-            <h1 style="color:#49b727;" class="tier-title">Steak</h1>
-            <img class="donate-image" src="img/tier_4.png" style="transform:translateZ(40px); scale:80%;" width="200px">
+            <h1 style="color:#49b727;" class="tier-title">Rose</h1>
+            <h5 style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;"><span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #donators channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-user"></i> Concierge Mii</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #testing channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-globe"></i> Recognition on website</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-film"></i> Movie poster</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-sign-hanging"></i> Parade Room</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-brands fa-discord"></i> Discord access</span></h5>
+            <img class="donate-image" src="img/tier_4.png">
         </div>
     </div>
     <div class="donator-holder">    
@@ -106,7 +110,7 @@
             let donators = document.getElementById("donators");
             for(let i = 0; i < 2; i++){
             for(let i = 0; i < (data.donators.donator.length); i++) {
-                donators.innerHTML += "<div class='donator-holder' style='top:20px; transform:translate(0, 0%); height:100px; width:auto; border-radius:16px; margin:15px; position:relative;'><h2 style='top:50%; transform:translate(0, -50%); text-align:center; left:20px; font-family:Gilroy; position:relative;'>" + data.donators.donator[i].name + "</h2></div> </div></div>";
+                donators.innerHTML += "<div class='donator-holder' style='top:20px; transform:translate(0, 0); height:100px; min-width:300px; background-color:rgba(0,0,0,0.05); border-radius:16px; padding-right:30px; margin:15px; margin-right:0px; position:relative;'><h2 style='top:50%; transform:translate(0, -50%); text-align:center; left:20px; font-family:Gilroy; position:relative;'>" + data.donators.donator[i].name + "</h2></div> </div></div>";
            }
         }
            }
@@ -132,8 +136,6 @@
         perspective: 500px;
         display:flex;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
         gap:50px;
         padding:15px;
         min-height:500px;
@@ -141,6 +143,22 @@
         transition: 0.1s;
         z-index: 1;
         position: relative;
+    }
+    .donate-image{
+        top:60px;
+        left:50%;
+        width:auto;
+        height:130px;
+        transform:translate(-50%, 0) translateZ(40px) scale(80%);
+        position:absolute;
+    }
+    .build-square:nth-child(4) .donate-image{
+        top:40px;
+        left:50%;
+        width:auto;
+        height:180px;
+        transform:translate(-50%, 0) translateZ(40px) scale(80%);
+        position:absolute;
     }
     .slider::before{
 		background: linear-gradient(to right,  rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%);
@@ -151,11 +169,10 @@
 		z-index: 2;
 	}
 
-    html.dark .donator-holder { background: #1b1b1b; }
     .donator-holder{
         top:-30px;
         height: 100px;
-        background-color:rgb(242,254,250); 
+        background-color:#ffffff00; 
         max-width:1480px;
         border-radius: 16px;
         overflow: hidden;
@@ -204,9 +221,11 @@
         position: absolute;
     }
     .tier-title{
-        bottom:20px;
+        top:170px;
+        left:50%;
+        transform:translate(-50%, 0) translateZ(30px);
         font-family:Gilroy;
-        position: absolute;
+        position: relative;
     }
     .tier-1{
         background-image: url(/img/tier_1_bg.png);
@@ -286,11 +305,15 @@
         justify-content: center;
         gap:0px;
         padding:15px;
-        min-height:300px;
+        min-height:250px;
         margin-bottom:5px;
         transition: 0.1s;
         z-index: 1;
         position: relative;
+    }
+
+    .build-square h5{
+        display:none;
     }
 
     .bg-danger{
@@ -298,18 +321,10 @@
     }
 
     .donate-image{
+        top:90px;
         width:150px;
     }
 
-    .donator-holder{
-        top:20px;
-        height: 100px;
-        background-color:rgb(242,254,250); 
-        max-width:1480px;
-        border-radius: 16px;
-        overflow: hidden;
-        position: relative;
-    }
     .slider {
     top:-35px;
     height:150px;
@@ -319,6 +334,14 @@
 	width: 1500px;
 	overflow:hidden;
     position: absolute;
+    }
+
+    .tier-title{
+        top:60px;
+        left:50%;
+        transform:translate(-50%, 0);
+        font-family:Gilroy;
+        position: absolute;
     }
 
     h3{

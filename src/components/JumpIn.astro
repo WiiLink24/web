@@ -1,13 +1,15 @@
 <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.485/build/spline-viewer.js"></script>
 
 <div class="promptholder">
-    <iframe style="top:0; position:absolute;" src='https://my.spline.design/planetcopy-db845b9b9d3a01b2e06afe75a7e6068f/' frameborder='0' width='100%' height='100%'></iframe>
+    <iframe style="pointer-events:none; top:0; left:0; position:absolute;" src='https://my.spline.design/photorealearth-01c3b981bccc7bff8a09b8e10c41760f/' frameborder='0' width='100%' height='100%'></iframe>
     <div class="dots"></div>
     <div style="left:1030px; top:400px; rotate:350deg;" class="dots"></div>
         <h1>Are you ready to <b class="color">jump</b>?</h1>
         <h2>If you like all this stuff, why not join our thousands of worldwide users?</h2>
         <a href="#top"><button type="button" class="btn btn-success btn-lg">Install now!</button></a>
 </div>
+
+<div style="top:100%; width:100%; height:3px; position:relative;"></div>
 
 <style>
 
@@ -36,11 +38,13 @@ h1 {
         font-family: Gilroy;
 		font-weight: 700;
 		line-height: 1;
+        pointer-events:none;
 		text-align: center;
-        mix-blend-mode: darken;
+        color:white;
         z-index: 10000;
 		margin-bottom: 20px;
 		transition: 0.5s;
+        position:relative;
 	}
 
     .dots{
@@ -72,8 +76,9 @@ h1 {
 	h2{
 		text-align: center;
 		transition: 0.5s;
+        pointer-events:none;
         margin-bottom: 20px;
-        mix-blend-mode: luminosity;
+        color:white;
 		z-index: 1;
 		position: relative;
 	}

@@ -15,60 +15,12 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
 <button style="z-index:1000;" class="btn dropdownbtn btn-black-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasTop" aria-controls="offcanvasTop"><i style="font-size:30px; filter:opacity(0.9); transform:translate(-1px, -5px);" class="fa-solid fa-bars"></i></button>
 
-    <script>
-        const colorSchemeInfo = document.getElementById("color-scheme-info");
+ 
 
-        function updateColorSchemeInfo() {
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-            const prefersNoPreference = window.matchMedia('(prefers-color-scheme: no-preference)').matches;
-
-            if (prefersDark) {
-              document.documentElement.classList.add('dark');
-            } else if (prefersLight) {
-              document.documentElement.classList.remove('dark');
-            } else if (prefersNoPreference) {
-              document.documentElement.classList.remove('dark');
-            } else {
-              document.documentElement.classList.remove('dark');
-            }
-        }
-
-        // Initial detection
-        updateColorSchemeInfo();
-
-        // Listen for changes in color scheme
-        window.matchMedia('(prefers-color-scheme: dark)').addListener(updateColorSchemeInfo);
-        window.matchMedia('(prefers-color-scheme: light)').addListener(updateColorSchemeInfo);
-        window.matchMedia('(prefers-color-scheme: no-preference)').addListener(updateColorSchemeInfo);
-    </script>
-
-
-<div class="position-sticky offcanvas offcanvas-top offcanvas-size-sm" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
+<div class="offcanvas offcanvas-end" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
-    <div style="top:20px; left:20px; position:absolute;" class="alert alert-primary" role="alert">
-      Welcome to the new site, share your thoughts on our  <i style="margin-left:5px;" class="fa-brands fa-discord"></i> Discord!
-    </div>
-    <div class="news">
-      <h1 style="font-family:Gilroy">Read up on the latest <b class="color">news</b> of the service</h1>
-      <div class="news-container">
-          {
-            posts.map((post) => (
-              <div class="posthold">
-              <div class="post">
-                <a href={`/news/${post.slug}/`}>
-                <FormattedDate date={post.data.pubDate} />
-                <div class="fade"></div>
-                <img class="heroImage" src={post.data.heroImage}>
-                <div class="title"><img class="authimage" src={post.data.authImage} alt="" /><b style="width:80%; margin-right:10px; text-align:right; position:relative;">{post.data.title}</b></div>
-                <div class="desc">{post.data.description}</div>
-                </a>
-              </div>
-              </div>
-            ))
-          }
-      </div>
-    </div>
+   <button type="button" class="btn-close" style="top:23px; left:20px; z-index: 100; position:absolute;" data-bs-dismiss="offcanvas" aria-label="Close"></button><h4 style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;">Where do you want to go?</h4>
+    
     <div class="elements">
     <div class="main">
      <div class="link"><a href="/" style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
@@ -78,34 +30,39 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       
       <div style="display:flex; gap:10px; align-items:center; justify-content:center;" class="buttons">
-        <button id="toggle-dark" class="toggle-dark" onclick="darkToggle()"></button>
-        <button class="toggle-dark"><i style="transform:translate(0, -4px); color:#000000; font-size:40px;" class="fa-solid fa-globe"></i></button>
+        <button id="toggle-dark" class="toggle-dark" onclick="darkToggle()">dark</button>
       </div>
     </div>
   </div>
   </div>
 </div>
 
-<script>
-function visitCount() {
-  var visits = Number(localStorage.getItem('visitCount'));
-  var current = Boolean(sessionStorage.getItem('session'));
-
-  if (visits == 0) {
-    visits++;
-    console.log("First time");
-    console.log(visits);
+<script is:inline>
+function darkToggle() {
+  var isLight = localStorage.getItem('isLight');
+  if (isLight === "1") { // Compare to the string "1"
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('isLight', '0'); // Store 'false' as a string
+    console.log(isLight);
   } else {
-    console.log("Recurrent");
-    console.log(visits);
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('isLight', '1'); // Store 'true' as a string
+    console.log(isLight);
   }
-
-  localStorage.setItem('visitCount', visits);
-  sessionStorage.setItem('session', true);
-  return visits;
 }
 
-visitCount();
+function loadTheme() {
+  var isLight = localStorage.getItem('isLight');
+  if (isLight === "1") { // Compare to the string "1"
+    document.documentElement.classList.remove('dark');
+    console.log(isLight);
+  } else {
+    document.documentElement.classList.add('dark');
+    console.log(isLight);
+  }
+}
+
+loadTheme();
 
 </script>
 
@@ -149,6 +106,9 @@ visitCount();
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
 		z-index: 1000;
 	}
+  .btn{
+    display:none;
+  }
 	.posthold:nth-child(n+7){
 		display:none;
 	}
@@ -293,7 +253,7 @@ visitCount();
     display: flex;
     flex-wrap: wrap;
     gap:0px;
-    justify-content: right;
+    justify-content: center;
     align-items: right;
     text-align: right;
     font-family: Gilroy;
@@ -308,18 +268,19 @@ visitCount();
   }
   .elements{
     top:50%;
-    right:50px;
-    transform: translate(0, -50%);
+    left:50%;
+    transform: translate(-50%, -50%);
     justify-content: space-evenly;
     display:flex;
     position: absolute;
   }
   .offcanvas{
-    background-color: rgb(255, 255, 255);
-    backdrop-filter: blur(8px);
-    z-index: 100;
-    transition: 0.5s;
-  }
+   margin:8px;
+   border-radius: 18px;
+   box-shadow: 0px 0px 20px #00000040;
+   overflow: hidden;
+   height: calc(100% - 18px);
+}
   .logohamburger{
     bottom:50px;
     left:50px;
@@ -336,9 +297,9 @@ visitCount();
     --bs-offcanvas-height: 100% !important;
 }
 
-@media only screen and (max-width: 1150px) {
-  .news{
-    display:none;
+@media only screen and (max-width: 1000px) {
+  .btn{
+    display:block;
   }
 }
 </style>

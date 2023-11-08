@@ -3,6 +3,10 @@ title: Everybody Votes Channel
 pubDate: 2023-08-26
 icon: fa-solid fa-square-poll-vertical
 ---
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
 ## Enjoy Voting on Polls via your Wii again!
 
 - Partake in Worldwide polls alongside other users of the service!
@@ -37,6 +41,15 @@ ___
 ## Language Support
 
 #### Below you'll find a list of the languages supported by the Everybody Votes Channel depending on the country you have set:
+
+</br>
+
+<input oninput="w3.filterHTML('#countries', 'p', this.value)" placeholder="Search for your country here...">
+
+</br>
+</br>
+
+<div class="countries" id="countries" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); align-items:center; justify-content:center; gap:15px;">
 
 1	Japan (JA/EN)
 
@@ -519,3 +532,28 @@ ___
 253	Puerto Rico (EN/ES)
 
 254	Greenland (EN)
+
+</div>
+
+<style>
+    .countries p{
+        height:auto;
+        background-color:#a1a1a160;
+        padding:8px;
+        border-radius:8px;
+        position:relative;
+    }
+
+    input{
+        width:100%;
+        border:2px solid gray;
+        border-radius:8px;
+        padding:8px;
+        margin-bottom:8px;
+        position:relative;
+    }
+
+    #container2{
+         font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+</style>

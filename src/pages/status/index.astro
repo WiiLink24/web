@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import "../../styles/global.css";
+import Loading from '../../components/Loading.astro';
 import Footer from "../../components/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
@@ -11,28 +12,33 @@ changeLanguage("en");
 ---
 
 <Layout title="WiiLink - Status" description="Check our service status and its completion!" image="/img/Status_embed.png" />
+<Loading/>
 
 <div class="symbolholder">
 	<div class="backsymbol">
 		<div class="square2" id="square2">
 <body>
-		<img class="topimg" src="./img/statustop.png" style="">
+
+	<Header isGuide="display:none;"/>
 		
 		<section>
+			<div class="intro">
+			<img class="topimg" src="./img/statustop.png" style="">
 			<div id="svcicons" class="svcicons"></div>
 			<h1 class="servicehead">Check out what we have to <b class="color">offer</b>!</h1>
 			<div class="polka-dot"></div>
 			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards <o class="color">reviving</o> and/or <o class="color">improving</o>!</h2>
+			</div>
 			<div class="serviceshold">
 				<div id="postholder"> </div>
 				<div id="postholder2"></div>
 			</div>
 
 			<a href="https://status.wiilink24.com/"><div class="status">Check out the status of our servers.</div></a>
-			
+			<div style="width:100%; height:150px; margin-bottom:500px; position:relative;"></div>
+
 		</section>
 
-		<Header isGuide="display:none;"/>
 </div>
 <div class="square"></div>
 <div class="footer-holder">
@@ -135,14 +141,23 @@ scrollableDiv.addEventListener('scroll', function() {
 
 <style>
 	.servicehead{
-		top:230px;
+		text-align:left;
+		top:60px;
 		font-family: Gilroy;
 		position: relative;
 	}
 	.servicedesc{
 		position:relative;
-		top:180px;
-		text-align: center;
+		top:0px;
+		text-align: left;
+	}
+
+	.intro{
+		max-width:1500px;
+		left:50%;
+		top:30px;
+		transform:translate(-50%, 0);
+		position:relative;
 	}
 
 
@@ -242,9 +257,8 @@ scrollableDiv.addEventListener('scroll', function() {
 
 
 	#svcicons{
-		top:160px;
-		left:50%;
-		transform: translate(-50%, 0);
+		top:0px;
+		left:0;
 		mask-image: url("/img/header_bg.png");
 		-webkit-mask-size: 100%;
   mask-size: 100%;
@@ -290,8 +304,8 @@ scrollableDiv.addEventListener('scroll', function() {
 
 	.serviceshold{
 		left:50%;
-		transform: translate(-50%, 0);
-		width: 80%;
+		transform: translate(-50%, -170px);
+		max-width: 1500px;
 		display: grid;
 		align-items: start;
 		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
@@ -403,8 +417,8 @@ scrollableDiv.addEventListener('scroll', function() {
     	background-position: 0 0, 30px 30px;
     	opacity: 0.1;
     	rotate: 30deg;
-    	left:6%;
-    	top:178px;
+    	left:0px;
+    	top:150px;
     	background-repeat: repeat;
 		animation: rotate 240s linear infinite;
     	position: absolute;
@@ -412,7 +426,10 @@ scrollableDiv.addEventListener('scroll', function() {
   	}
 
 	.topimg{
-		filter:invert(0); transform:translate(-100px,-100px); opacity:0.03; position:absolute; width:100%;
+		left:50px; 
+		height:200px; 
+		filter:opacity(0.1) invert(0); 
+		position:absolute;
 	}
 
 	@keyframes rotate{

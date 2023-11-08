@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Loading from '../components/Loading.astro';
 import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 
@@ -14,6 +15,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 <html lang="en">
 
 <Layout title={`WiiLink - News (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
+<Loading msg={title} img={heroImage}/>
 
 	<head>
 
@@ -29,7 +31,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 				{heroImage && <img style="scale:105%" width={720} height={360} src={heroImage} alt="" />}</div>
 				<div style="top:70px; left:50%; width:100%; transform:translate(-50%, 0); display:flex; flex-wrap: wrap; gap:20px; justify-content: center; align-items: center; z-index:10; position:relative">
 				<img class="mainimg" src={heroImage} width="200px">
-				<FormattedDate color="top:-15px; right:48%; transform:translate(100%, 0); color:white; position:absolute;" date={pubDate} />
+				<FormattedDate color="top:-15px; right:48%; transform:translate(100%, 0); color:white; position:absolute;" date={pubDate} precise="right:calc(50% - 100px); transform:translate(50%, 0);"/>
 				<h2 class="title">{title}</h2>
 			</div>
 
@@ -52,7 +54,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 				</div>
 			</article>
 		</div>
-			<h2 style="margin-top:200px; font-family:Gilroy; left:10%; position:relative; width:50%;">Other <b class="color">posts</b></h2>
+			<h2 style="margin-top:50px; font-family:Gilroy; font-size:50px; left:10%; position:relative; width:50%;">Other <b class="color">posts</b></h2>
 			<News />
 
 </html>
@@ -76,7 +78,7 @@ a:visited{
 	width: 100%;
 	height:150px;
 	position: absolute;
-	border-top: 6px solid rgba(59, 127, 236, 0.356);
+	border-top: 2px solid #12121220;
 	z-index: 10000;
 }
 
@@ -234,18 +236,17 @@ padding:5px;
 	.article-holder{
 		width:80%;
 		left:50%;
-		top:150px;
+		top:0px;
+		border:2px solid #12121220;
 		transform: translate(-50%,0);
-		border-radius: 15px;
+		border-radius:16px;
 		overflow:hidden;
 		position: relative;
 	}
 
 	article{
 		left:50%;
-		border-image: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%) 30;
-		border-width: 12px;
-		border-style: solid;
+		border-radius:16px;
 		background-color:rgba(244, 244, 244, 0.602);
 		position: relative;
 	}
@@ -313,13 +314,29 @@ padding:5px;
 
 	@media (max-width:1000px) {
 		.postexpand{
+			top:450px;
 			width:100%;
+			border:0px;
 		}
 		.title{
-			font-size: 40px;
-		}
-		article{
 			top:100px;
+			font-size: 40px;
+			position:relative;
+		}
+		.auths{
+			display:none;
+		}
+		.mainimg{
+			top:100px;
+			position:relative;
+		}
+		.exit{
+			top:65px;
+			left:55px;
+			position:absolute;
+		}
+		.article-holder{
+			top:0px;
 			width: 100%;
 		}
 	}

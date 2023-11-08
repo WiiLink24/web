@@ -19,9 +19,8 @@ heroImage: "../../img/guidebg-1.png"
 #### First of all, where are you planning to use WiiLink?
 </br>
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;"><a href="#wii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px;  background: rgb(18,18,18);
-background: linear-gradient(32deg, rgba(120,120,120,0.3) 0%, rgba(182,255,249,0.3) 100%); font-family:system-ui; padding:10px; border:0px solid #ffffff60; border-radius:8px;">Wii</h4></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center;  background: rgb(18,18,18);
-background: linear-gradient(147deg, rgba(0,0,70,0.3) 0%, rgba(85,115,255,0.3) 100%); line-height:70px; font-family:system-ui; padding:10px; border:0px solid #ffffff60; border-radius:8px;">Wii U</h4></a></div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;"><a href="#wii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px;  color:rgba(138,138,138,1); background: rgb(18,18,18);
+background:#ffffff00; font-family:Gilroy, system-ui; padding:10px; border:4px solid rgba(138,138,138,1); border-radius:8px;"><img src="../../img/wiimote.png" style="rotate:30deg;" width="35px"> Wii</h4></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px; font-family:Gilroy, system-ui; padding:10px; color:rgba(85,115,255,1); border:4px solid rgba(85,115,255,1); border-radius:8px;"><img src="../../img/gamepad.png" width="45px"> Wii U</h4></a></div>
 
 <div id="vwii"></div>
 

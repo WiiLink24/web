@@ -8,6 +8,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Agreement from "../../components/Agreement.astro";
+import Loading from '../../components/Loading.astro';
 import FormattedDate from "../../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
@@ -15,8 +16,10 @@ changeLanguage("en");
 
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
-
+<Header isGuide="display:none;"/>
 <Layout title="WiiLink - News" description="Read up on WiiLink's latest improvements and releases!" image="/img/News_embed.png" />
+<Loading/>
+
 <body>
 	<div class="symbolholder">
 		<div class="backsymbol">
@@ -72,11 +75,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 			</div>
 			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;">{t("blog.rss")}</h3>
 			<a href="https://www.wiilink24.com/rss.xml"><div class="rss">{t("blog.rssbtn")}</div></a>
-<Header isGuide="display:none;"/>
+			<div style="left:50%; width:90%; transform:translate(-50%, 0); margin-top:50px; margin-bottom:380px;"></div>
 </div>
 <div class="square"></div>
 <div class="footer-holder">
-			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<img class="footer-logo" src="/img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
 			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
 		
 			<div class="socials">
@@ -263,22 +266,22 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	.posthold:nth-child(1) {
-		animation: fadeup 200ms 0.1s linear forwards;
-	}
-	.posthold:nth-child(2) {
-		animation: fadeup 200ms 0.15s linear forwards;
-	}
-	.posthold:nth-child(3) {
-		animation: fadeup 200ms 0.2s linear forwards;
-	}
-	.posthold:nth-child(4) {
-		animation: fadeup 200ms 0.25s linear forwards;
-	}
-	.posthold:nth-child(5) {
 		animation: fadeup 200ms 0.3s linear forwards;
 	}
-	.posthold:nth-child(6) {
+	.posthold:nth-child(2) {
 		animation: fadeup 200ms 0.35s linear forwards;
+	}
+	.posthold:nth-child(3) {
+		animation: fadeup 200ms 0.4s linear forwards;
+	}
+	.posthold:nth-child(4) {
+		animation: fadeup 200ms 0.45s linear forwards;
+	}
+	.posthold:nth-child(5) {
+		animation: fadeup 200ms 0.5s linear forwards;
+	}
+	.posthold:nth-child(6) {
+		animation: fadeup 200ms 0.55s linear forwards;
 	}
 
 	.posthold:hover{

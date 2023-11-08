@@ -28,7 +28,7 @@
             let services2 = document.getElementById("slide-track_2");
 
             for(let i = 0; i < 2; i++){
-                for(let i = 0; i < (data.services.service.length)/2; i++) {
+                for(let i = 0; i < (data.services.service.length-4)/2; i++) {
                 if(data.services.service[i].isArea == 'Video on-demand'){
 
                 } else{
@@ -38,7 +38,7 @@
         }
 
         for(let i = 0; i < 2; i++){
-            for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
+            for(let i = (data.services.service.length-4)/2; i < data.services.service.length-4; i++) {
                 if(data.services.service[i].isArea == "Video on-demand"){
 
 } else{

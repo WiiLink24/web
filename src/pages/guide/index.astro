@@ -8,6 +8,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Agreement from "../../components/Agreement.astro";
+import Loading from '../../components/Loading.astro';
 import FormattedDate from "../../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
@@ -17,6 +18,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 ---
 
 <Layout title="WiiLink - Guide" description="Get important info and help for our services!" image="/img/News_embed.png" />
+<Loading />
+
 <body>
 	<div class="symbolholder">
 		<div class="backsymbol">
@@ -60,8 +63,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 				}
 			</div>
 
-			<div class="alert alert-danger" role="alert">
-				<h1>Can't seem to get it working? Why not ask for help on our Discord server!</h1>
+			<div class="alert alert-primary" style="left:50%; width:90%; transform:translate(-50%, 0); margin-top:50px; margin-bottom:350px;">
+				<h3 style="text-align:center;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i>Can't seem to get it working? Why not ask for help on our Discord server!</h3>
 			</div>
 </div>
 <Header isGuide="display:none;"/>
@@ -261,13 +264,13 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	.posthold:nth-child(1) {
-		animation: fadeup 200ms 0.1s linear forwards;
+		animation: fadeup 200ms 0.3s linear forwards;
 	}
 	.posthold:nth-child(2) {
-		animation: fadeup 200ms 0.15s linear forwards;
+		animation: fadeup 200ms 0.35s linear forwards;
 	}
 	.posthold:nth-child(3) {
-		animation: fadeup 200ms 0.2s linear forwards;
+		animation: fadeup 200ms 0.4s linear forwards;
 	}
 
 	.posthold:hover{
