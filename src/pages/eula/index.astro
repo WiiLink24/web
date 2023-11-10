@@ -1,5 +1,6 @@
 ---
 import Base from "../../components/BaseHead.astro";
+import Layout from "../../layouts/Layout.astro";
 import Services from "../components/Services.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
@@ -13,8 +14,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
-<Base title="WiiLink - Privacy Policy"/>
-
+<Layout title="WiiLink - End User License Agreement" description="End User License Agreement for the WiiLink family of services." image="/img/news_post_welcome_back.png">
 <Header isGuide="display:none;"/>
 
 <section class="section">
@@ -299,4 +299,4 @@ scrollableDiv.addEventListener('scroll', function() {
 
   }
 
-</style>../../consts
+</style>
