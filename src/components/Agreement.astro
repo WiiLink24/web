@@ -30,7 +30,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       
       <div style="display:flex; gap:10px; align-items:center; justify-content:center;" class="buttons">
-        <button id="toggle-dark" class="toggle-dark" onclick="darkToggle()">dark</button>
+        <a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+        <button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
       </div>
     </div>
   </div>
@@ -63,6 +64,29 @@ function loadTheme() {
 }
 
 loadTheme();
+
+</script>
+
+
+<script is:inline>
+	function darkToggle() {
+	  var isLight = localStorage.getItem('isLight');
+	  if (isLight === "1") { // Compare to the string "1"
+		document.documentElement.classList.remove('dark');
+		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-sun'></i>";
+		document.getElementById("themeColor").style.backgroundColor="black";
+		document.getElementById("themeColor").style.color="white";
+		localStorage.setItem('isLight', '0'); // Store 'false' as a string
+		console.log(isLight);
+	  } else {
+		document.documentElement.classList.add('dark');
+		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-moon'></i>";
+		document.getElementById("themeColor").style.backgroundColor="white";
+		document.getElementById("themeColor").style.color="black";
+		localStorage.setItem('isLight', '1'); // Store 'true' as a string
+		console.log(isLight);
+	  }
+	}
 
 </script>
 

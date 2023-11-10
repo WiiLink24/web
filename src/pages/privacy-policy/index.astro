@@ -17,9 +17,14 @@ changeLanguage("en");
 
 <Header isGuide="display:none;"/>
 
+<div class="sectiontop">
 <section class="section">
     <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Privacy</h1>
+    <h3 class="update" style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:system-ui; background-color:#00000060; position:absolute;" class="updated" >Last updated: 03/12/2022</h3>
     <div class="polka-dot"></div>
+    <p class="title" style="filter:opacity(0.3); font-family:system-ui; transform:translate(0, -20px);">
+        Privacy policy for the WiiLink family of services
+    </p>
 <section class="section">
     <p class="title">
             Privacy Policy
@@ -37,7 +42,7 @@ changeLanguage("en");
     <br>
     <p>
         This Privacy Policy only applies to the Demae Domino's service of WiiLink. For information on our other
-        services, please read <a href="./eula.txt">this</a>. By using the Demae Domino's
+        services, please read <a href="/eula">this</a>. By using the Demae Domino's
         service, you consent to our practices stated in this document. If you do not consent, please exit this
         page and do not use our services. Since this service utilizes the Domino's Pizza API, you are also
         required to agree to their Terms of Use and Privacy Policy. In the United States that is
@@ -104,10 +109,8 @@ changeLanguage("en");
         Data Security and Transactions
     </p>
     <section class="section">
-     <div class="container">
-        <div class="notification is-warning">
+        <div class="alert alert-primary" style="font-family:system-ui;" role="alert">
             <strong>Important!</strong><br>Only the website handles transactions. The service on the Wii does not.
-        </div>
     </div>
     </section>
     <p>
@@ -129,11 +132,9 @@ changeLanguage("en");
         Children's Privacy
 </p>
 <section class="section">
-    <div class="container">
-        <div class="notification is-danger">
+        <div class="alert alert-danger" style="margin-top:0; font-family:system-ui;" role="alert">
             <strong>Important!</strong><br>This service is not intended for children under the age of 13.
         </div>
-    </div>
 </section>
 <p>
     This service is not intended for children under the age of 13. If you are under the age of 13, please exit
@@ -151,13 +152,8 @@ changeLanguage("en");
     at the bottom of the page.
 </p>
 <br>
-<p class="title">
-    Last Modified
-</p>
-<p>
-    Saturday, December 3rd, 2022
-</p>
 </section>
+</div>
 
 <Footer />
 
@@ -184,16 +180,15 @@ scrollableDiv.addEventListener('scroll', function() {
         padding-left:5px;
         padding-right:5px;
         left:50%;
-        transform: translate(-50%,50px);
+        transform: translate(-50%, 0);
         margin-bottom: 80px;
         position: relative;
-        color:white;
-        font-family: Cafe;
+        font-family: system-ui;
     }
     .title{
         font-family: Gilroy;
         font-size: 30px;
-    }
+    } 
 
     .socials{
 		top:50%;
@@ -294,10 +289,10 @@ scrollableDiv.addEventListener('scroll', function() {
     .polka-dot {
     width: 240px;
     height: 240px;
-    background-image: radial-gradient(#fff 10%, transparent 11%), radial-gradient(#fff 10%, transparent 11%);
+    background-image: radial-gradient(#000 10%, transparent 11%), radial-gradient(#000 10%, transparent 11%);
     background-size:30px 30px;
     background-position: 0 0, 30px 30px;
-    opacity: 0.05;
+    opacity: 0.1;
     rotate: 30deg;
     left:-50px;
     top:-38px;
@@ -342,12 +337,12 @@ scrollableDiv.addEventListener('scroll', function() {
   }
 
   @media (max-width:1000px) {
-    .section{
-        width:98%;
+    .sectiontop{
+        margin-top:130px;
     }
-    h1{
-        font-size: 100px;
+    .update{
+      display:none;
     }
   }
 
-</style>../../consts
+</style>

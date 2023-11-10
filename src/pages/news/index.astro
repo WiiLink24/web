@@ -61,7 +61,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 				}
 			</div>
 			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;"><b>Want to get <c class="color">WiiLink news</c> on your site o service? Just use our <c class="color">RSS feed</c>!</b></h3>
-			<a href="https://www.wiilink24.com/rss.xml"><div class="rss"><i class="fa-solid fa-square-rss"></i> Get our RSS feed</div></a>
+			<a href="/rss.xml"><div class="rss"><i class="fa-solid fa-square-rss"></i> Get our RSS feed</div></a>
 			<div class="dots"></div>
 </div>
 </div>
@@ -606,6 +606,14 @@ scrollableDiv.addEventListener('scroll', function() {
 		transform: translate(-50%, 10px) scale(103%);
 		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.12);
 		transition: 0.5s;
+	}
+
+	@media only screen and (max-width:1000px) {
+
+		.newstop{
+			display:none;
+		}
+
 	}
 
 	@media only screen and (min-width:2000px) {

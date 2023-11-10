@@ -17,7 +17,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 changeLanguage("en");
 ---
 
-<Layout title="WiiLink - Temporary Site" description="WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!" image="/img/news_post_welcome_back.png">
+<Layout title="WiiLink" description="WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!" image="/img/news_post_welcome_back.png">
 	
 <html lang={i18next.language}>
 <body>
@@ -109,7 +109,7 @@ changeLanguage("en");
 </script>
 
 					<label class="form-check-label" for="flexCheckDefault">
-					  I have read and accepted the <a href="/tos" class="color" style="text-decoration:none;">Terms of Service</a> and <a href="/privacy-policy" class="color" style="text-decoration:none;">Privacy Policy</a>.
+					  I have read and accepted the <a href="/tos" class="" style="text-decoration:underline;">Terms of Service</a> and <a href="/privacy-policy" class="" style="text-decoration:underline;">Privacy Policy</a>.
 					</label>
 				  </div>
 				  <a href="#intro" style="text-decoration: none;">
@@ -360,7 +360,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		left:50%;
 		transform: translate(-50%, 0);
 		max-width: 1500px;
-		min-height: 100%;
+		height: 100%;
 		position: relative;
 	}
 	@font-face {
@@ -397,6 +397,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		transform: translate(-50%, 0);
 		width:1px;
 		height:50px;
+		color:black;
 		z-index: 1;
 		position: relative;
 	}
@@ -463,7 +464,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 	.guide{
 		background-color: #ffffff00;
-		color:white;
+		color:#000000;
 		box-shadow: inset 0 0 0 4px solid blue;
 	}
 	.btn{
@@ -705,6 +706,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 	}
 
 	@media only screen and (min-width:2000px) {
+		.top{
+			height:1200px;
+		}
 		.footer-holder{
 			bottom:0;
 			left:50%;
