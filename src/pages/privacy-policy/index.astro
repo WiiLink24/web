@@ -17,10 +17,6 @@ changeLanguage("en");
 
 <Header isGuide="display:none;"/>
 
-<div class="symbolholder">
-	<div class="backsymbol">
-		<div class="square2" id="square2">
-
 <section class="section">
     <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Privacy</h1>
     <div class="polka-dot"></div>
@@ -163,23 +159,7 @@ changeLanguage("en");
 </p>
 </section>
 
-
-</div>
-<div class="square"></div>
-<div class="footer-holder">
-			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
-			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
-		
-			<div class="socials">
-				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
-				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
-				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
-				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
-				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
-			</div>
-		</div>
-</div>
-</div>
+<Footer />
 
 <script>
 	
@@ -200,7 +180,9 @@ scrollableDiv.addEventListener('scroll', function() {
 
 <style>
     .section{
-        width:1000px;
+        max-width:1500px;
+        padding-left:5px;
+        padding-right:5px;
         left:50%;
         transform: translate(-50%,50px);
         margin-bottom: 80px;
@@ -336,7 +318,9 @@ scrollableDiv.addEventListener('scroll', function() {
 
   .notification{
     background-color: #292929;
+    color:black;
     padding:20px;
+    font-family:Gilroy;
     border-radius:8px;
     border: 2px solid #ffffff20;
     text-align:center
@@ -366,4 +350,4 @@ scrollableDiv.addEventListener('scroll', function() {
     }
   }
 
-</style>
+</style>../../consts

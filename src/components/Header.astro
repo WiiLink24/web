@@ -35,7 +35,6 @@ const { isGuide, isMain } = Astro.props;
 			</a>
 		  </button>
 		<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
-		<button type="button" class="btn1 btn btn-primary"><i class="fa-solid fa-certificate"></i> Welcome to the new site</button>
 		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
 	 </ul>
 </r>
@@ -213,6 +212,7 @@ ul{
 .banner{
 	font-size:20px;
 	margin-right:20px;
+	mix-blend-mode: difference;
 	color:black;
     position:relative;
     transition: 0.5s;

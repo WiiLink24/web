@@ -73,7 +73,7 @@ changeLanguage("en");
 				</div>
 
 				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="/guide/1install">
-					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px;"></i>Open the Install Guide</button>
+					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="scale:130%; rotate:-45deg; margin-right:15px; background-color:#ffffff00; transition:0.3s;"></i>Open the Install Guide</button>
 				</a>
 				</div>
 				<div style="margin-top:10px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
@@ -146,6 +146,11 @@ changeLanguage("en");
 				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
 				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
 				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				<div style="margin-top:10px;">
+				<a href="/"><button type="button" class="btn1 btn btn-secondary" style="width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href="/"><button type="button" class="btn1 btn btn-primary" style="width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href="/"><button type="button" class="btn1 btn btn-success" style="width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				</div>
 			</div>
 		</div>
 		<div class="bottomleftcornerholder">
@@ -327,7 +332,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		right:50px;
 		transform: translate(0, -50%);
 		color:white;
-		font-size: 25px;
+		font-size: 23px;
 		width:150px;
 		justify-content:right;
 		display: flex;
@@ -368,7 +373,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 }
 	.accordion-body{
 		background-color: #fff;
-    	max-height: 40vh;
+    	max-height: 30vh;
     	overflow: scroll;
 	}
 	.alert{
@@ -457,8 +462,8 @@ document.addEventListener("DOMContentLoaded", async function () {
 		font-weight: bolder;
 	}
 	.guide{
-		background-color: #ffffff;
-		color:black;
+		background-color: #ffffff00;
+		color:white;
 		box-shadow: inset 0 0 0 4px solid blue;
 	}
 	.btn{
@@ -696,6 +701,16 @@ document.addEventListener("DOMContentLoaded", async function () {
 			top:0;
 			right:0;
 			width:50px;
+		}
+	}
+
+	@media only screen and (min-width:2000px) {
+		.footer-holder{
+			bottom:0;
+			left:50%;
+			transform:translate(-50%, -20px);
+			width:2000px;
+			position:absolute;
 		}
 	}
 </style>

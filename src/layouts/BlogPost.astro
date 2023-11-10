@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import type { CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 import Loading from '../components/Loading.astro';
 import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
@@ -16,10 +17,6 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 
 <Layout title={`WiiLink - News (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
 <Loading msg={title} img={heroImage}/>
-
-	<head>
-
-	</head>
 
 	<Header isGuide="display:none;"/>
 <div class="article-holder">
@@ -54,8 +51,10 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 				</div>
 			</article>
 		</div>
-			<h2 style="margin-top:50px; font-family:Gilroy; font-size:50px; left:10%; position:relative; width:50%;">Other <b class="color">posts</b></h2>
+			<h2 class="other">Other <b class="color">posts</b></h2>
 			<News />
+
+			<Footer />
 
 </html>
 
@@ -92,6 +91,15 @@ a:visited{
 
 time{
 	color:white;
+}
+
+.other{
+	left:10%; 
+	width:50%;
+	margin-top:50px; 
+	font-family:Gilroy; 
+	font-size:50px; 
+	position:relative; 
 }
 
 .mainimg{
@@ -349,5 +357,23 @@ padding:5px;
 			transform: translate(-50%, 0);
 			border-radius: 8px;
 			position: relative;
+	}
+
+		
+	@media only screen and (min-width:2000px) {
+		.article-holder{
+			top:150px;
+			left:50%;
+			transform:translate(-50%, 0);
+			width:2000px;
+			margin-bottom:230px;
+			position:relative;
+		}
+		.other{
+			left:50%;
+			transform:translate(-50%, 0);
+			width:2000px;
+			position:relative;
+		}
 	}
 </style>

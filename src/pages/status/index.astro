@@ -14,9 +14,6 @@ changeLanguage("en");
 <Layout title="WiiLink - Status" description="Check our service status and its completion!" image="/img/Status_embed.png" />
 <Loading/>
 
-<div class="symbolholder">
-	<div class="backsymbol">
-		<div class="square2" id="square2">
 <body>
 
 	<Header isGuide="display:none;"/>
@@ -30,32 +27,16 @@ changeLanguage("en");
 			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards <o class="color">reviving</o> and/or <o class="color">improving</o>!</h2>
 			</div>
 			<div class="serviceshold">
-				<div id="postholder"> </div>
-				<div id="postholder2"></div>
+				<div id="postholder"></div>
 			</div>
 
-			<a href="https://status.wiilink24.com/"><div class="status">Check out the status of our servers.</div></a>
-			<div style="width:100%; height:150px; margin-bottom:500px; position:relative;"></div>
+			<a href="https://status.wiilink24.com/"><button type="button" class="btn1 btn btn-success" style="width:300px; top:80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; z-index:100000000000 position:relative;"><i class="fa-solid fa-server"></i> Check out the status of our servers.</button></a>
 
 		</section>
 
-</div>
-<div class="square"></div>
-<div class="footer-holder">
-			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
-			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
-		
-			<div class="socials">
-				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
-				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
-				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
-				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
-				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
-			</div>
-		</div>
-</div>
-</div>
 </body>
+
+<Footer/>
 
 <script>
 	
@@ -91,10 +72,10 @@ scrollableDiv.addEventListener('scroll', function() {
 				svcicons.innerHTML += "<img style='filter:brightness(0); object-fit:contain;' src='img/" + data.services.service[i].icon + "' height='50px'>"
 			}
 
-            for(let i = 0; i < (data.services.service.length)/2; i++) {
+            for(let i = 0; i < (data.services.service.length); i++) {
 				rand.push((Math.random() * 2)-1.5);
 				console.log(rand);
-                services.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
+                services.innerHTML += "<a href='" + data.services.service[i].link + "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div></a>";
 				if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
 				}
@@ -107,22 +88,6 @@ scrollableDiv.addEventListener('scroll', function() {
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-gray)";
 				}
            }
-		   for(let i = (data.services.service.length)/2; i < data.services.service.length; i++) {
-			rand.push((Math.random() * 2)-1.5);
-			services2.innerHTML += "<div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10	px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div>";
-			if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
-					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
-				}
-				else if (data.services.service[i].status == "In development" || data.services.service[i].status == "Public Beta" || data.services.service[i].status == "Private Beta"){
-					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-blue)";
-				}
-				else if (data.services.service[i].status == "Halted" || data.services.service[i].status == "Planned"){
-					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-red)";
-				} else {
-					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-gray)";
-				}
-		}
-
            }
     });
     
@@ -317,10 +282,9 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	#postholder{
-		width:auto%;
+		width:auto;
 		display: grid;
-		align-items: start;
-		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
+		grid-template-columns:repeat(auto-fit, minmax(550px, 1fr));
 		gap: 0px;
 		top:250px;
 		position: relative;
@@ -417,7 +381,7 @@ scrollableDiv.addEventListener('scroll', function() {
     	background-position: 0 0, 30px 30px;
     	opacity: 0.1;
     	rotate: 30deg;
-    	left:0px;
+    	left:-80px;
     	top:150px;
     	background-repeat: repeat;
 		animation: rotate 240s linear infinite;
@@ -480,7 +444,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	.status{
-		top:235px;
+		top:85px;
 		width:80%;
 		left:50%;
 		transform: translate(-50%, 0);
@@ -492,6 +456,7 @@ scrollableDiv.addEventListener('scroll', function() {
 		position: relative;
 		border-radius: 8px;
 		text-align: center;
+		padding:20px;
 		padding-top: 25px;
 		padding-bottom: 25px;
 		backdrop-filter:blur(8px);
@@ -508,8 +473,9 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	@media (max-width:1000px) {
-		.postholder{
+		.serviceshold{
 			left:0;
+			display:block;
 			transform: translate(0, -50px);
 			width:100%;
 			display: block;
@@ -517,6 +483,16 @@ scrollableDiv.addEventListener('scroll', function() {
 		.work{
 			right:20px;
 		}
+		#postholder{
+		left:50%;
+		width:105%;
+		transform:translate(-50%, 0);
+		display: block;
+		top:100px;
+		position: relative;
+		padding-bottom:50px;
+		z-index: 10;
+	}
 		.desc{
 			display:none;
 		}
@@ -526,6 +502,7 @@ scrollableDiv.addEventListener('scroll', function() {
 		}
 		.post{
 			height:150px;
+			width:50px;
 			margin-bottom: 10px;
 		}
 		.post:hover .image{
@@ -545,22 +522,18 @@ scrollableDiv.addEventListener('scroll', function() {
 		}
 	}
 
-	@media (min-width:2500px) {
+	@media (min-width:2000px) {
 		section{
-			width:2500px;
+			width:2000px;
 			left:50%;
-			transform: translate(-50%, 0);
+			transform: translate(-50%, 150px);
+			margin-bottom:200px;
 			position: relative;
 		}
 		.status{
 			width:2000px;
 			left:50%;
 			transform: translate(-50%, 0);
-		}
-		.topimg{
-			width:2000px;
-			left:50%;
-			transform: translate(-50%, -158px);
 		}
 	}
 </style>

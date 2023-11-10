@@ -11,7 +11,6 @@ const posts = (await getCollection('blog')).sort(
 	<div class="postholder">
 		{
 			posts.map((post) => (
-				<div class="posthold">
 				<div class="post">
 					<a href={`/news/${post.slug}/`}>
 					<FormattedDate date={post.data.pubDate} />
@@ -21,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
 					<div class="desc">{post.data.description}</div>
 					</a>
 				</div>
-				</div>
+
 			))
 		}
 	</div>
@@ -29,26 +28,26 @@ const posts = (await getCollection('blog')).sort(
 
 
 <style>
-	.posthold:nth-child(2){
+	.post:nth-child(2){
 		display: block;
 	}
 
-	.posthold:nth-child(3){
+	.post:nth-child(3){
 		display: block;
 	}
 
-	.posthold:nth-child(4){
+	.post:nth-child(4){
 		display: block;
 	}
 
-	.posthold{
+	.post{
 		display:none;
 	}
 
 	.postholder{
 		max-width:80%;
 		display: grid;
-		grid-template-columns:repeat(auto-fit, minmax(350px, 1fr));
+		grid-template-columns:repeat(auto-fit, minmax(330px, 1fr));
 		position: absolute;
 		gap: 20px;
 		left:50%;
@@ -65,7 +64,7 @@ const posts = (await getCollection('blog')).sort(
   mask-size: 100% 100%;
   mask-position: center;
 		position: relative;
-    	height:250px;
+    	height:230px;
     	width:100%;
 		filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     	border-radius: 15px;
@@ -100,7 +99,7 @@ const posts = (await getCollection('blog')).sort(
 		transition: 0.3s;
   	}
 
-	.posthold:hover{
+	.post:hover{
     	background-color:rgba(206, 206, 206, 0.117);
     	transform: translate(0,-5px);
     	filter: drop-shadow(0px 0px 70px rgb(171, 171, 171));

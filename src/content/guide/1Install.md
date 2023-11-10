@@ -20,7 +20,7 @@ heroImage: "../../img/guidebg-1.png"
 </br>
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;"><a href="#wii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px;  color:rgba(138,138,138,1); background: rgb(18,18,18);
-background:#ffffff00; font-family:Gilroy, system-ui; padding:10px; border:4px solid rgba(138,138,138,1); border-radius:8px;"><img src="../../img/wiimote.png" style="rotate:30deg;" width="35px"> Wii</h4></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px; font-family:Gilroy, system-ui; padding:10px; color:rgba(85,115,255,1); border:4px solid rgba(85,115,255,1); border-radius:8px;"><img src="../../img/gamepad.png" width="45px"> Wii U</h4></a></div>
+background:#ffffff; font-family:Gilroy, system-ui; padding:10px; border:4px solid rgba(138,138,138,1); border-radius:8px;"><img src="../../img/wiimote.png" style="rotate:30deg;" width="60px"></h4><b style="color:rgba(138,138,138,1); font-family:system-ui;">Wii</b></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px; font-family:Gilroy, system-ui; background-color:#ffffff; padding:10px; color:rgba(85,115,255,1); border:4px solid rgba(85,115,255,1); border-radius:8px;"><img src="../../img/gamepad.png" height="80px"></h4><b style="color:rgba(85,115,255,1); font-family:system-ui;">Wii U</b></a></div>
 
 <div id="vwii"></div>
 

@@ -7,6 +7,7 @@ import astroRemark from "@astrojs/markdown-remark";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://wiilink24.com",
   integrations: [mdx()],
   markdown: markdownConfig,
   integrations: [
