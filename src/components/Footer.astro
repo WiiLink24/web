@@ -8,23 +8,33 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 	<div class="copyright">
         <div class="footer-holder">
 			<img class="footer-logo" src="../../img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
-			<h4 class="slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></h4>
+			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
 		
+			
 			<div class="socials">
-				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div>Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
-				<a href="https://twitter.com/WiiLink24" style="color:white;"><div>Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
-				<a href="https://github.com/WiiLink24" style="color:white;"><div>GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
-				<a href="" style="color:white;"><div>Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
-				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div>YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
-                <div style="margin-top:10px;">
-                    <a href="/"><button type="button" class="btn1 btn btn-secondary" style="background-color:white; color:black; border:0px; width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
-                    <a href="/"><button type="button" class="btn1 btn btn-primary" style="background-color:white; color:black; border:0px; width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
-                    <a href="/"><button type="button" class="btn1 btn btn-success" style="background-color:white; color:black; border:0px; width:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
-                </div>
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">GitHub <i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Donate!">Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				<div style="margin-top:15px;">
+				<a href="/"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href="/"><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href="/"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")}  style="background-color:white; color:black; animation: changecolor2 10s linear infinite; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
+				</div>
 			</div>
 		</div>
 	</div>
 </footer>
+
+<script>
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+</script>
+
 <style>
 .copyright{
     bottom:0;
@@ -81,7 +91,7 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		transform: translate(0, -50%);
 		color:white;
 		font-size: 25px;
-		width:150px;
+		width:200px;
 		justify-content:right;
 		display: flex;
 		flex-wrap: wrap;
@@ -282,20 +292,20 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 		z-index: 1;
 		position: absolute;
 	}
-	@keyframes changecolordark{
-		0%{
-			filter:hue-rotate(0deg) invert(1);
-		}
-		100%{
-			filter:hue-rotate(360deg) invert(1);
-		}
-	}
 	@keyframes changecolor{
 		0%{
 			filter:hue-rotate(0deg);
 		}
 		100%{
 			filter:hue-rotate(360deg);
+		}
+	}
+	@keyframes changecolor2{
+		0%{
+			filter:hue-rotate(360deg);
+		}
+		100%{
+			filter:hue-rotate(0deg);
 		}
 	}
 

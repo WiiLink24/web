@@ -1,3 +1,9 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
+---
+
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -5,8 +11,8 @@
 <body>
 <div class="build">
     <div class="build-holder">
-        <h1 class="title">Meet our amazing <b class="color">team</b></h1>
-        <h2 class="subtitle"><b style="font-family:Rubik;">WiiLink</b> is powered by <b class="color">100%</b> volunteer work. </br><b class="color">Here's some of the incredible people who help <b style="font-family:Rubik;">WiiLink</b> come to life!</b></h2>
+        <h1 class="title"><Trans i18nKey="team.title">Meet our amazing <b class="color">team</b></Trans></h1>
+        <h2 class="subtitle"><Trans i18nKey="team.subtitle"><b style="font-family:Rubik;">WiiLink</b> is powered by <b class="color">100%</b> volunteer work. </br><b class="color">Here's some of the incredible people who help <b style="font-family:Rubik;">WiiLink</b> come to life!</b></Trans></h2>
         <div id="members_mobile" class="members">
         </div>
         <div id="members" class="members">
@@ -15,6 +21,8 @@
         </div>
     </div>
 </div>
+
+<h1 id="fetcherTeam" style="display:none;">json{localizePath("/team.json")}</h1>
 
 <script>
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
@@ -25,8 +33,8 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 <script is:inline>
     document.addEventListener("DOMContentLoaded", async function () {
-
-           fetch("json/team.json")
+            let fetcher = document.getElementById("fetcherTeam").innerHTML;
+           fetch(fetcher)
            .then(response => response.json())
            .then(data => showService(data));
 

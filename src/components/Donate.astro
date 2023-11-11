@@ -1,7 +1,12 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+---
+
 <div class="build">
     <div class="build-holder">
-        <h1 class="title">Made possible by users like <b class="color">you</b></h1>
-        <h2 class="subtitle"><b style="font-family:Rubik;">WiiLink</b> is funded publicly by our <i class="color">users</i> and <i class="color">sponsors</i>. <b class="color">To help our running costs, please consider donating!</b></h2>
+        <h1 class="title"><Trans i18nKey="donate.title">Made possible by users like <b class="color">you</b></Trans></h1>
+        <h2 class="subtitle"><Trans i18nKey="donate.subtitle"><b style="font-family:Rubik;">WiiLink</b> is funded publicly by our <i class="color">users</i> and <i class="color">sponsors</i>. <b class="color">To help our running costs, please consider donating!</b></Trans></h2>
         <div class="tiers">
         <div id="inner-data" class="build-square move tier-1">
             <span class="bdg badge bg-warning">$1</span>
@@ -17,7 +22,7 @@
         </div>
         <div id="inner-data" class="build-square move tier-3">
             <span class="bdg badge bg-primary">$10</span>
-            <span class="badge bg-danger" style=" bottom:15px; left:50%; transform:translate(-50%, 0); width:160px; font-size: 20px; position:absolute;">Most popular</span>
+            <span class="badge bg-danger" style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; font-size: 20px; position:absolute;">{t("donate.popular")}</span>
             <h1 style="color:#7627b7;" class="tier-title">Tulip</h1>
             <h5 style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;"><span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #donators channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-user"></i> Concierge Mii</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-message"></i> #testing channel</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-globe"></i> Recognition on website</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-solid fa-film"></i> Movie poster</span> <span style="display:flex; align-items:center; justify-content:space-between;"><i class="fa-brands fa-discord"></i> Discord access</span></h5>
             <img class="donate-image" src="img/tier_3.png">
@@ -30,7 +35,7 @@
         </div>
     </div>
     <div class="donator-holder">    
-    <h2 style="top:50%; left:50px; width:250px; transform:translate(0, -50%); text-align:left; font-size: 30px; z-index: 1; position:relative;" class="subtitle">...and join all these <b class="color">cool people</b></h2>
+    <h2 style="top:50%; left:50px; width:250px; transform:translate(0, -50%); text-align:left; font-size: 30px; z-index: 1; position:relative;" class="subtitle"><Trans i18nKey="donate.donators">...and join all these <b class="color">cool people</b></Trans></h2>
     <div class="slider">
         <div id="donators" class="slide-track">
          
@@ -38,7 +43,7 @@
     </div>
 </div>
 
-    <h3 style="top:-15px; right:20px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;">Powered by <img class="stripe-logo" src="img/stripe_logo.png" height="30px"></h3>
+    <h3 style="top:-15px; right:20px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;"><Trans i18nKey="donate.powered">Powered by</Trans> <img class="stripe-logo" src="img/stripe_logo.png" height="30px"></h3>
     </div>
 </div>
 

@@ -10,6 +10,7 @@ import Layout from "../layouts/Layout.astro";
 import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
+import { LanguageSelector } from "astro-i18next/components";
 
 const { isGuide, isMain } = Astro.props;
 ---
@@ -17,18 +18,25 @@ const { isGuide, isMain } = Astro.props;
 <Layout/>
 <Agreement/>
 
-<r class="bannerholder">
-	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; z-index:0; position:absolute;"></t>
-	<a href="/"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">guide</span></a>
+<r lang={i18next.language} class="bannerholder">
+	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
+	<a href="/" class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
 	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
 		<i class="fa-solid fa-angle-right"></i>
 	  </button>
 	  <ul>
-		<a class="link" href={localizePath("/")}><div class="banner">Home<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/news")}><div class="banner">News<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/guide/")}><div class="banner">Guide<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/status")}><div class="banner">Status<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">FAQ<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/")}><div class="banner">{t("header.home")}<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/news")}><div class="banner">{t("header.news")}<div class="underline" style="background-color:#ffc10740;"></div></div></a>
+		<a class="link" href={localizePath("/guide/")}><div class="banner">{t("header.guide")}<div class="underline" style="background-color:#19875440;"></div></div></a>
+		<a class="link" href={localizePath("/status")}><div class="banner">{t("header.status")}<div class="underline" style="background-color:#0d6efd40;"></div></div></a>
+		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
+		<button class="btn btn-primary" style="padding:0px; transform:translate(0, 1px);">
+		<LanguageSelector showFlag={true} class="my-select-class" />
+	</button>
+		<a class="link" href={localizePath("/extras")}><div class="btn btn-danger" style="transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-box-open" style="margin-right:5px;"></i> {t("header.extras")}<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style="font-size:10px;">
+			{t("header.extrasNew")}
+		  </span>
+		</div></a>
 		<button style={isGuide} class="btn3 btn btn-secondary">
 			<a href="/guide">
 				<i class="fa-solid fa-house"></i>
@@ -62,16 +70,20 @@ const { isGuide, isMain } = Astro.props;
 </script>
 
 <script is:inline>
-var Div = document.getElementById("square2");
 var gradient = document.getElementById("grad");
 
-Div.addEventListener("scroll", function() {
-  if (Div.scrollTop > 0) {
+
+function checkPageScroll() {
+  var scrollPosition = window.scrollY || window.pageYOffset;
+
+  if (scrollPosition > 0) {
     gradient.style.opacity = 1;
   } else {
-    gradient.style.opacity = 0;
+	gradient.style.opacity = 0;
   }
-});
+}
+
+window.addEventListener('scroll', checkPageScroll);
 
   </script>
   
@@ -98,6 +110,16 @@ Div.addEventListener("scroll", function() {
 		background-color: rgba(196, 196, 196, 0.175);
 		box-shadow: 0px 0px 58px rgba(255, 255, 255, 0.075);
 		transition: 0.2s;
+	}
+	.my-select-class{
+		top:0;
+		left:0;
+		width:45px;
+		height:42px;
+		font-size:30px;
+		border:0px;
+		background-color:#ffffff00;
+		position:relative;
 	}
 	.badge{
 		top:20px; left:230px; font-size:15px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:absolute;
@@ -420,12 +442,16 @@ img{
 }
 
 @media (max-width:1000px){
-	.bannerholder{
+	ul{
 		display: none;
 	}
 
 	.lang{
 		display: none;
+	}
+
+	span{
+		display:none;
 	}
 
 	.btn1{

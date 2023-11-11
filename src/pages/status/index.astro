@@ -3,9 +3,10 @@ import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import "../../styles/global.css";
-import Loading from '../../components/Loading.astro';
+import Loading from "../../components/Loading.astro";
 import Footer from "../../components/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
@@ -19,20 +20,21 @@ changeLanguage("en");
 	<Header isGuide="display:none;"/>
 		
 		<section>
+			<img class="newstop" style="" src="/img/statustop.png">
+			<div class="welcome-msg">
+				<h2 style="font-size:40px; font-family:Gilroy;"><Trans i18nKey="status.title">Check out the <b style="font-family: Rubik;">WiiLink</b><span class="badge bg-primary" style="top:-20px; left:8px; font-size:15px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">status</span></Trans></h2>
+				<h3><Trans i18nKey="status.subtitle">Get a glimpse at our <b class="color">progress</b>, in addition to the status of our <b class="color">servers</b>!</Trans></h3>
+			</div>
 			<div class="intro">
-			<img class="topimg" src="./img/statustop.png" style="">
-			<div id="svcicons" class="svcicons"></div>
-			<h1 class="servicehead">Check out what we have to <b class="color">offer</b>!</h1>
 			<div class="polka-dot"></div>
-			<h2 class="servicedesc">Here's an up-to date list on all the projects we're working towards <o class="color">reviving</o> and/or <o class="color">improving</o>!</h2>
 			</div>
-			<div class="serviceshold">
 				<div id="postholder"></div>
-			</div>
 
-			<a href="https://status.wiilink24.com/"><button type="button" class="btn1 btn btn-success" style="width:400px; top:80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:relative;"><i class="fa-solid fa-server"></i> Check out the status of our servers.</button></a>
+			<a href="https://status.wiilink24.com/"><button type="button" class="btn1 btn btn-success" style="width:400px; top:80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:relative;"><i class="fa-solid fa-server" style="margin-right:5px;"></i> {t("status.serverStatus")}</button></a>
 
 		</section>
+
+		<h1 id="fetcherStatus" style="display:none;">json{localizePath("/services.json")}</h1>
 
 </body>
 
@@ -56,26 +58,18 @@ scrollableDiv.addEventListener('scroll', function() {
 </script>
 
 <script is:inline>
-			let rand =  [];
     document.addEventListener("DOMContentLoaded", async function () {
 
-           fetch("json/services.json")
+		   let fetcher = document.getElementById("fetcherStatus").innerHTML;
+           fetch(fetcher)
            .then(response => response.json())
            .then(data => showService(data));
 
            function showService(data) {
             let services = document.getElementById("postholder");
-			let services2 = document.getElementById("postholder2");
-			let svcicons = document.getElementById("svcicons");
-
-			for(let i = 0; i < 5; i++) {
-				svcicons.innerHTML += "<img style='filter:brightness(0); object-fit:contain;' src='img/" + data.services.service[i].icon + "' height='50px'>"
-			}
 
             for(let i = 0; i < (data.services.service.length); i++) {
-				rand.push((Math.random() * 2)-1.5);
-				console.log(rand);
-                services.innerHTML += "<a href='" + data.services.service[i].link + "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:calc(auto + 50px); border: 4px solid" + data.services.service[i].color + "; border-radius:16px; box-shadow:0px 0px 20px " + data.services.service[i].color + "40; margin:15px; overflow:;'><div style='top:25px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div> <h3 style='top:35px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:10px; margin:40px; position:relative;'>" + data.services.service[i].todo + "</h3><div class='barhold' style='margin-bottom:30px; left:50%; transform:translate(-50%, 0); width:85%; height:20px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div></a>";
+                services.innerHTML += "<a href='" + data.services.service[i].link + "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style=' height:calc(auto + 50px); border: 2px solid #12121240; border-radius:16px; box-shadow:0px 0px 20px #12121240; margin:15px; overflow:hidden;'><div style='bottom:10px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:0.3; position:absolute;'>" + data.services.service[i].isArea + "</h3><div class='stat' style=' top:50%; right:70px; width:auto; transform:translate(0, -50%); font-family:Gilroy; color:white; border-radius:80px; padding:5px; padding-left:15px; padding-right:15px; position:absolute;'>" + data.services.service[i].status + "</div></div><h3 style=' left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='bottom:0; left:50%; transform:translate(-50%, 0); width:100%; height:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:0px;'></div></div></div></a>";
 				if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
 				}
@@ -94,12 +88,12 @@ scrollableDiv.addEventListener('scroll', function() {
 	let canChange = 0;
 
 	async function effect(i){
-			document.getElementsByClassName("service")[i].style.transform = "scale(105%) rotate(" + rand[i] + "deg)";
+			document.getElementsByClassName("service")[i].style.transform = "scale(105%)";
 			document.getElementsByClassName("service")[i].style.transition = "0.3s";
 			canChange=0;
 	}
 	async function noEffect(i){
-		document.getElementsByClassName("service")[i].style.transform = "scale(100%) rotate(0deg)";
+		document.getElementsByClassName("service")[i].style.transform = "scale(100%)";
 		canChange=1;
 	}
     </script>
@@ -116,6 +110,21 @@ scrollableDiv.addEventListener('scroll', function() {
 		top:0px;
 		text-align: left;
 	}
+	.welcome-msg{
+		top:15px;
+		max-width: 90%;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: relative;
+	}
+	.newstop{
+		left:60px; 
+		top:200px; 
+		transform:translate(0, -50%); 
+		height:200px; 
+		filter:opacity(0.1) invert(0); 
+		position:absolute;
+	}
 
 	.intro{
 		max-width:1500px;
@@ -124,8 +133,6 @@ scrollableDiv.addEventListener('scroll', function() {
 		transform:translate(-50%, 0);
 		position:relative;
 	}
-
-
 	.socials{
 		top:50%;
 		right:50px;
@@ -245,9 +252,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 	h2{
 		--bg-text: #000000;
-
 		color: var(--bg-text);
-		text-align: center;
 		transition: 0.5s;
 		z-index: 1;
 		position: relative;
@@ -269,10 +274,9 @@ scrollableDiv.addEventListener('scroll', function() {
 
 	.serviceshold{
 		left:50%;
-		transform: translate(-50%, -170px);
+		transform: translate(-50%, -220px);
 		max-width: 1500px;
 		display: grid;
-		align-items: start;
 		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
 		position: relative;
 	}
@@ -282,44 +286,15 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	#postholder{
-		width:auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		max-width:1550px;
 		display: grid;
-		grid-template-columns:repeat(auto-fit, minmax(550px, 1fr));
+		grid-template-columns:repeat(auto-fit, minmax(500px, 1fr));
 		gap: 0px;
-		top:250px;
+		top:30px;
 		position: relative;
-		padding-bottom:50px;
 		z-index: 10;
-	}
-
-	#postholder2{
-		width:auto;
-		display: grid;
-		align-items: start;
-		grid-template-columns:repeat(auto-fit, minmax(540px, 1fr));
-		gap: 20px;
-		top:250px;
-		position: relative;
-		padding-bottom:50px;
-		z-index: 10;
-	}
-
-	.post{
-		position: relative;
-    	height:250px;
-    	width:100%;
-		margin-bottom:50px;
- 		background-color:rgba(255, 255, 255, 0.041);
-    	border-radius: 15px;
-		font-family: Gilroy;
-    	hyphens:auto;
-    	border: 3px solid rgba(255, 255, 255, 0.244);
-		opacity:0;
-    	transition: 0.5s;
-		animation-name: fadeup;
-		animation-duration:0.5s;
-		animation-fill-mode:forwards;
-		animation-delay:0.22s;
 	}
 
 	.post:hover{

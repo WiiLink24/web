@@ -1,0 +1,102 @@
+{
+    "site": {
+      "title": "WiiLink",
+      "description": "WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!",
+      "img": "/img/news_post_welcome_back.png",
+      "load": "Loading...",
+      "dev": "Developed by ",
+      "relNotes": "Release Notes",
+      "downloadPrompt": "Download the latest release:",
+      "installGuide": "Open the Install Guide",
+      "terms": "I have read and accepted the <0>Terms of Service</0> and <1>Privacy Policy</1>.",
+      "slogan": "<0>WiiLink</0> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",
+      "creator": "Website designed and coded by Alex",
+      "contact": "Contact us",
+      "assets": "Branding assets",
+      "install": "Install now"
+    },
+    "build": {
+      "title": "What's up with this <0>build</0>?",
+      "releaseAuthor": "Released by:"
+    },
+    "donate": {
+      "title": "Made possible by users like <0>you</0>",
+      "subtitle": "<0>WiiLink</0> is funded publicly by our <1>users</1> and <2>sponsors</2>. <3>To help our running costs, please consider donating!</3>",
+      "donators": "...and join all these <0>cool people</0>",
+      "popular": "Most popular",
+      "powered": "Powered by"
+    },
+    "header": {
+      "home": "Home",
+      "news": "News",
+      "guide": "Guide",
+      "status": "Status",
+      "faq": "FAQ",
+      "isGuide": "guide",
+      "extras": "Extras",
+      "extrasNew": "new"
+    },
+    "jumpin": {
+      "title": "Are you ready to <0>jump</0>?",
+      "slogan": "If you like all this stuff, why not join our thousands of worldwide users?",
+      "install": "Install now!"
+    },
+    "services": {
+      "title": "Welcome to <0>WiiLink</0>!",
+      "subtitle": "A community project for the Wii that works towards reviving and enhancing the discontinued WiiConnect24 channels and services, including the ones that were only available in Japan."
+    },
+    "socials": {
+      "title": "Check us out on our <0>socials</0>!",
+      "subtitle": "Keep up to date on all service <0>releases</0> and <1>general announcements</1> via our social media.",
+      "twFollowers": "2.7k followers",
+      "twFollow": "Follow",
+      "twTweets": "Tweets by WiiLink24",
+      "dcMembers": "6.2k members",
+      "dcJoin": "Join",
+      "ghFollowers": "82 followers",
+      "ghFollow": "Follow",
+      "ytSubscribers": "2k subscribers",
+      "ytSubscribe": "Subscribe"
+    },
+    "team": {
+      "title": "Meet our amazing <0>team</0>",
+      "subtitle": "<0>WiiLink</0> is powered by <1>100%</1> volunteer work. </2><3>Here's some of the incredible people who help <4>WiiLink</4> come to life!</3>"
+    },
+    "news": {
+      "title": "Here is the <0>WiiLink</0><1>news</1>",
+      "subtitle": "Catch up on all our <0>antics</0>, as well as <1>service updates</1>!",
+      "otherNews": "Here's some <0>older</0> articles:",
+      "rssTitle": "<0>Want to get <1>WiiLink news</1> on your site o service? Just use our <2>RSS feed</2>!</0>",
+      "rssButton": "Get our RSS feed",
+      "otherPosts": "Other <0>posts</0>"
+    },
+    "guide": {
+      "title": "Welcome to the <0>WiiLink</0><1>guide</1>",
+      "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to get you up and running in no time!",
+      "specificGuides": "What are you <0>looking for</0>?",
+      "helpTitle": "<0>Can't seem to get it <1>working</1>? Be sure to <2>get in touch</c2>!</0>",
+      "helpButton1": "Contact us",
+      "helpButton2": "Join our Discord"
+    },
+    "guidePost": {
+      "whereTo": "Where do you want to go?",
+      "installGuide": "Installation guide",
+      "problemSolving": "Problem solving",
+      "faq": "Frequently asked questions",
+      "lookingFor": "What are you <0>looking for</0>?",
+      "visitWiiHacks": "Visit wii.hacks.guide",
+      "copyright": "© 2020-2023 <0>WiiLink<1>guide</1></0> <2> Team</2>"
+    },
+    "status": {
+      "title": "Check out the <0>WiiLink</0><1>status</1>",
+      "subtitle": "Get a glimpse at our <0>progress</0>, in addition to the status of our <1>servers</1>!",
+      "serverStatus": "Check out the status of our servers."
+    },
+    "extras": {
+      "title": "This is <0>WiiLink</0><1>extras</1>",
+      "subtitle": "Here you'll find <0>some really cool stuff</0> we've been working on. We hope you <1>enjoy</1>!",
+      "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
+      "contact": "Contact us",
+      "joinDiscord": "Join our Discord"
+    }
+  }

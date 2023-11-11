@@ -1,6 +1,11 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+---
+
 <div class="build">
     <div class="build-holder">
-        <h1 class="title">What's up with this <b class="color">build</b>?</h1>
+        <h1 class="title"><Trans i18nKey="build.title">What's up with this <b class="color">build</b>?</Trans></h1>
         <div id="inner-data" class="build-square">
             <img style="transform:translate(0, -3px); filter: brightness(0);" src="img/loading.gif" width="30px">
         </div>
@@ -70,7 +75,6 @@
         width:95%;
         max-width:1500px;
         background: rgb(255,255,255);
-background: linear-gradient(135deg, rgba(255,255,255,1) 46%, rgb(222, 252, 255) 100%); 
         box-shadow: 0px 5px 10px #00000020;
         border:2px solid rgb(255, 240, 240);
         border-radius: 16px;
@@ -100,7 +104,7 @@ background: linear-gradient(135deg, rgba(255,255,255,1) 46%, rgb(222, 252, 255) 
         position: relative;
     }
     .color{
-        background: url(/img/header_bg.png) 0 0;
+    background: url(/img/header_bg.png) 0 0;
    -webkit-background-clip: text;
    -webkit-text-fill-color: transparent;
    filter:brightness(150%);

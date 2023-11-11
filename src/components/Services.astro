@@ -1,8 +1,14 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
+---
+
 <div id="intro" class="svc-holder">
-<h1 class="title">Welcome to <b style="font-family:Rubik;">WiiLink</b>!</h1>
-<h2 class="subtitle">A community project for the Wii that works towards reviving and enhancing the discontinued 
+<h1 class="title"><Trans i18nKey="services.title">Welcome to <b style="font-family:Rubik;">WiiLink</b>!</Trans></h1>
+<h2 class="subtitle"><Trans i18nKey="services.subtitle">A community project for the Wii that works towards reviving and enhancing the discontinued 
     WiiConnect24 channels and services, including the ones that were only available 
-    in Japan.</h2>
+    in Japan.</Trans></h2>
     <div class="slider">
         <div id="slide-track" class="slide-track">
          
@@ -13,13 +19,13 @@
     </div>
 </div>
 
+<h1 id="fetcherServices" style="display:none;">json{localizePath("/services.json")}</h1>
+
 <script is:inline>
     document.addEventListener("DOMContentLoaded", async function () {
 
-       
-
-            // Fetch the latest release information from the GitHub repository using Octokit
-           fetch("json/services.json")
+           let fetcher = document.getElementById("fetcherServices").innerHTML;
+           fetch(fetcher)
            .then(response => response.json())
            .then(data => showService(data));
 

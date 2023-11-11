@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro';
 import Loading from '../components/Loading.astro';
 import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 
 type Props = CollectionEntry<'blog'>['data'];
 
@@ -50,7 +52,7 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 				</div>
 			</article>
 		</div>
-			<h2 class="other">Other <b class="color">posts</b></h2>
+			<h2 class="other"><Trans i18nKey="news.otherPosts">Other <b class="color">posts</b></Trans></h2>
 			<News />
 
 			<Footer />

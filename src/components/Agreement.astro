@@ -1,14 +1,9 @@
 ---
 import { changeLanguage } from "i18next";
-import Base from "/components/BaseHead.astro";
-import Header from "/components/Header.astro";
-import Footer from "/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "/consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
-
-changeLanguage("en");
 
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
@@ -28,8 +23,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       <div class="link"><a href="/guide" style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       <div class="link"><a href="/status" style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
       <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
-      
-      <div style="display:flex; gap:10px; align-items:center; justify-content:center;" class="buttons">
+      <a class="link" href="/extras"><div class="btn btn-primary" style="width:150px; transform:translate(0, 1px); padding:9px; margin-right:25px;"><i class="fa-solid fa-box-open"></i> Extras<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+        New
+        </span>
+      </div></a>
+      <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:20px;" class="buttons">
         <a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
         <button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
       </div>
