@@ -36,58 +36,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   </div>
 </div>
 
-<script is:inline>
-function darkToggle() {
-  var isLight = localStorage.getItem('isLight');
-  if (isLight === "1") { // Compare to the string "1"
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('isLight', '0'); // Store 'false' as a string
-    console.log(isLight);
-  } else {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('isLight', '1'); // Store 'true' as a string
-    console.log(isLight);
-  }
-}
-
-function loadTheme() {
-  var isLight = localStorage.getItem('isLight');
-  if (isLight === "1") { // Compare to the string "1"
-    document.documentElement.classList.remove('dark');
-    console.log(isLight);
-  } else {
-    document.documentElement.classList.add('dark');
-    console.log(isLight);
-  }
-}
-
-loadTheme();
-
-</script>
-
-
-<script is:inline>
-	function darkToggle() {
-	  var isLight = localStorage.getItem('isLight');
-	  if (isLight === "1") { // Compare to the string "1"
-		document.documentElement.classList.remove('dark');
-		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-sun'></i>";
-		document.getElementById("themeColor").style.backgroundColor="black";
-		document.getElementById("themeColor").style.color="white";
-		localStorage.setItem('isLight', '0'); // Store 'false' as a string
-		console.log(isLight);
-	  } else {
-		document.documentElement.classList.add('dark');
-		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-moon'></i>";
-		document.getElementById("themeColor").style.backgroundColor="white";
-		document.getElementById("themeColor").style.color="black";
-		localStorage.setItem('isLight', '1'); // Store 'true' as a string
-		console.log(isLight);
-	  }
-	}
-
-</script>
-
 <style>
   html{
     transition: 0.5s;

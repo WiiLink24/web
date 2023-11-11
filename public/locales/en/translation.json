@@ -98,5 +98,8 @@
       "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
       "contact": "Contact us",
       "joinDiscord": "Join our Discord"
+    },
+    "404": {
+      "message": "The page could not be found..."
     }
   }

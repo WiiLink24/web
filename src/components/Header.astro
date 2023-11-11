@@ -48,24 +48,38 @@ const { isGuide, isMain } = Astro.props;
 </r>
 
 <script is:inline>
-	function darkToggle() {
-	  var isLight = localStorage.getItem('isLight');
-	  if (isLight === "1") { // Compare to the string "1"
-		document.documentElement.classList.remove('dark');
-		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-sun'></i>";
-		document.getElementById("themeColor").style.backgroundColor="black";
-		document.getElementById("themeColor").style.color="white";
-		localStorage.setItem('isLight', '0'); // Store 'false' as a string
-		console.log(isLight);
-	  } else {
-		document.documentElement.classList.add('dark');
-		document.getElementById("themeColor").innerHTML="<i class='fa-solid fa-moon'></i>";
-		document.getElementById("themeColor").style.backgroundColor="white";
-		document.getElementById("themeColor").style.color="black";
-		localStorage.setItem('isLight', '1'); // Store 'true' as a string
-		console.log(isLight);
-	  }
-	}
+
+document.addEventListener('DOMContentLoaded', function () {
+  const themeColorButton = document.getElementById('themeColor');
+  
+  // Check if the user has a preference stored
+  const savedMode = localStorage.getItem('color-mode');
+
+if (savedMode === 'dark') {
+    enableDarkMode();
+  } else {
+    enableLightMode();
+  }
+});
+
+function enableDarkMode() {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-mode', 'dark');
+  }
+
+  // Function to enable light mode
+  function enableLightMode() {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-mode', 'light');
+  }
+
+function darkToggle() {
+    if (document.documentElement.classList.contains('dark')) {
+      enableLightMode();
+    } else {
+      enableDarkMode();
+    }
+  }
 
 </script>
 

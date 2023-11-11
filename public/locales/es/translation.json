@@ -5,7 +5,7 @@
       "img": "/img/news_post_welcome_back.png",
       "load": "Cargando...",
       "dev": "Desarrollado por ",
-      "relNotes": "Release Notes",
+      "relNotes": "Notas de la Versión",
       "downloadPrompt": "Descarga la versión más reciente:",
       "installGuide": "Guía de Instalación",
       "terms": "He leido y aceptado los <0>Términos</0> y la <1>Política de Privacidad</1>.",
@@ -99,5 +99,8 @@
       "helpCall": "<0>¿Crees que hay algo que deberíamos <1>añadir</1> aquí? ¡No dudes en <2>decírnoslo</2>!</0>",
       "contact": "Contáctanos",
       "joinDiscord": "Únete a Discord"
+    },
+    "404": {
+      "message": "La página no se ha podido encontrar..."
     }
   }

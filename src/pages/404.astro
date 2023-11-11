@@ -1,8 +1,8 @@
 ---
-import { changeLanguage } from "i18next";
+import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
 import Layout from "../layouts/Layout.astro";
-
-changeLanguage("en");
 ---
 
 <head>
@@ -52,7 +52,7 @@ changeLanguage("en");
         404
       </h1>
       <h3 style="text-align:center; color:white;">
-        The page could not be found...
+        {t("404.message")}
       </h3>
     </div>
 
