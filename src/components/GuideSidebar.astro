@@ -4,36 +4,37 @@ const posts = (await getCollection('guide')).sort(
 	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 ---
 
 <sidebar>
        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
          <div class="offcanvas-body">
-            <div class="fade-sidebar"></div><button type="button" class="btn-close" style="top:23px; left:20px; z-index: 100; position:absolute;" data-bs-dismiss="offcanvas" aria-label="Close"></button><h4 style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;">Where do you want to go?</h4>
+            <div class="fade-sidebar"></div><button type="button" class="btn-close" style="top:23px; left:20px; z-index: 100; position:absolute;" data-bs-dismiss="offcanvas" aria-label="Close"></button><h4 style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;">{t("guidePost.whereTo")}</h4>
            <div>
             <div class="sidebarcontent">
                        <div class="post">
                            <a href={`/guide/1install/`}>
                               <img class="mainimg" src="../../img/guidebg-1.png">
-                           <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-download" style="margin-right:5px;"></i>Installation guide</div>
+                           <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-download" style="margin-right:5px;"></i>{t("guidePost.installGuide")}</div>
                            </a>
                        </div>
                        <div class="post">
                         <a href={`/guide/2problemsolving/`}>
                            <img class="mainimg" src="../../img/guidebg-3.png">
-                        <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-exclamation" style="margin-right:5px;"></i>Problem solving</div>
+                        <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-exclamation" style="margin-right:5px;"></i>{t("guidePost.problemSolving")}</div>
                         </a>
                     </div>
                     <div class="post">
                      <a href={`/guide/3faq/`}>
                         <img class="mainimg" src="../../img/guidebg-2.png">
-                     <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-question" style="margin-right:5px;"></i>Frequently asked questions</div>
+                     <div class="title-main" style="text-align: center; font-size:20px; font-family:Gilroy;"><i class="fa-solid fa-circle-question" style="margin-right:5px;"></i>{t("guidePost.faq")}</div>
                      </a>
                  </div>
            </div>
    
            <div class="sidebarcontent">
-               <h4 style="font-family: Gilroy; font-size:25px; margin-bottom:20px;">What are you <b class="color">looking for</b>?</h4>
+               <h4 style="font-family: Gilroy; font-size:25px; margin-bottom:20px;"><Trans i18nKey="guidePost.lookingFor">What are you <b class="color">looking for</b>?</Trans></h4>
                {
                    posts.map((post) => (
                        <div class="post2">
@@ -45,7 +46,7 @@ import i18next, { t, changeLanguage } from "i18next";
                }
            </div>
    
-           <a href="https://wii.hacks.guide"><div class="wiiguide">Visit wii.hacks.guide</div></a>ZZZZ
+           <a href="https://wii.hacks.guide"><div class="wiiguide"><Trans i18nKey="guidePost.visitWiiHacks">Visit wii.hacks.guide</Trans></div></a>ZZZZ
            </div>
          </div>
        </div>

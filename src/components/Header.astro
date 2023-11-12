@@ -58,8 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 if (savedMode === 'dark') {
     enableDarkMode();
+	themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	themeColorButton.style.filter = "invert(0)";
   } else {
     enableLightMode();
+	themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
+	themeColorButton.style.filter = "invert(1)";
   }
 });
 

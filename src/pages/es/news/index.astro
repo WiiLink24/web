@@ -27,7 +27,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		<h3><Trans i18nKey="news.subtitle">Catch up on all our <b class="color">antics</b>, as well as <b class="color">service updates</b>!</Trans></h3>
 	</div>
 
-
 			<div class="postholder">
 				{
 					posts.map((post) => (

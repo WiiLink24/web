@@ -15,17 +15,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
 <div class="offcanvas offcanvas-end" id="offcanvasTop" aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
-   <button type="button" class="btn-close" style="top:23px; left:20px; z-index: 100; position:absolute;" data-bs-dismiss="offcanvas" aria-label="Close"></button><h4 style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;">Where do you want to go?</h4>
+   <button type="button" class="btn-close" style="top:23px; left:20px; z-index: 100; position:absolute;" data-bs-dismiss="offcanvas" aria-label="Close"></button><h4 style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;"></h4>
     
     <div class="elements">
     <div class="main">
-     <div class="link"><a href="/" style="z-index: 1; postition:relative">Home</a><div style="background-color:cyan;" class="underline"></div></div>
-      <div class="link"><a href="/news" style="z-index: 1; postition:relative">News</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
-      <div class="link"><a href="/guide" style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
-      <div class="link"><a href="/status" style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
-      <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
-      <a class="link" href="/extras"><div class="btn btn-danger" style="width:150px; transform:translate(0, 1px); padding:9px; margin-top:50px;"><i class="fa-solid fa-box-open"></i> Extras<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
-        New
+     <div class="link"><a href="/" style="z-index: 1; postition:relative">{t("header.home")}</a><div style="background-color:cyan;" class="underline"></div></div>
+      <div class="link"><a href="/news" style="z-index: 1; postition:relative">{t("header.news")}</a><div style="background-color:rgb(213, 102, 74);" class="underline"></div></div>
+      <div class="link"><a href="/guide" style="z-index: 1; postition:relative">{t("header.guide")}</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
+      <div class="link"><a href="/status" style="z-index: 1; postition:relative">{t("header.status")}</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
+      <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">{t("header.faq")}</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
+      <a class="link" href="/extras"><div class="btn btn-danger" style="width:150px; transform:translate(0, 1px); padding:9px; margin-top:50px;"><i class="fa-solid fa-box-open" style="margin-right:5px;"></i> {t("header.extras")}<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
+        {t("header.extrasNew")}
         </span>
       </div></a>
       <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:20px;" class="buttons">
