@@ -32,11 +32,11 @@ ___
 5. Highlight the WAD with `Kirby TV Channel (WiiLink)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 <l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Kirby TV Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
-7. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
+6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
 <l class="notice success fullwidth">Congrats! You've installed the Kirby TV Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
-___
 
+___
 ## Troubleshooting & Questions
 ### "Im getting 'Error Code 372404'!"
 > This means that an error has occurred on the server side of things, Episodes may not be available at this time.

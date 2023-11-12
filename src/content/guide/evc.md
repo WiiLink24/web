@@ -21,7 +21,6 @@ ___
 
 ## We're moving! - How to Transfer your Data
 
-
 * Please ensure that the EVC Transfer Tool (obtained via our [patcher](https://github.com/WiiLink24/WiiLink24-Patcher)) is in the "apps" folder of your SD Card.
 
 1. Open the application inside the Homebrew Channel.
