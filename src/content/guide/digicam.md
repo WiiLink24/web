@@ -5,11 +5,11 @@ icon: fa-solid fa-camera
 ---
 ## The Photo Prints Channel arranges your beautiful Photos into a masterpiece!
 
-- Print your perfect Photos directly from your Wii!
+- Print your perfect photos directly from your Wii!
 
 - Create your own Business Card!
 
-- Photos are directly Emailed to you for the most convience.
+- Photos are directly emailed to you for the most conveniece.
 ___
 ## Installation Guide
 
