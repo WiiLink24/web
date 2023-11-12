@@ -9,7 +9,7 @@
       "downloadPrompt": "Descarga la versión más reciente:",
       "installGuide": "Guía de Instalación",
       "terms": "He leido y aceptado los <0>Términos</0> y la <1>Política de Privacidad</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. Cualquier brecha de copyright no es intencional.</1></2>© 2020-2023 <4>Equipo</4> <3>WiiLink</3>",
+      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. No está afiliado con Nintendo y todas las marcas registradas son propiedad de sus respectivos propietarios Cualquier brecha de copyright no es intencional.</1></2>© 2020-2023 <4>Equipo</4> <3>WiiLink</3>",
       "donate": "Dona!",
       "creator": "Página web diseñada y programada por Alex",
       "contact": "Contacta con nosotros",
@@ -18,7 +18,10 @@
     },
     "build": {
       "title": "¿Qué hay con esta <0>build</0>?",
-      "releaseAuthor": "Lanzado por:"
+      "releasedBy": "Lanzado por:",
+      "releaseBranch": "Rama: ",
+      "releaseDate": "Publicación: ",
+      "releaseTotal": "Total: "
     },
     "donate": {
       "title": "Hecho posible por usuarios como <0>tú</0>",

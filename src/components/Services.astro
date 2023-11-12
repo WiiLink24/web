@@ -120,7 +120,7 @@ import { Trans } from "astro-i18next/components";
 	height: auto;
 	margin: auto;
     top:30px;
-	overflow:hidden;
+	overflow-x:hidden;
 	position: relative;
     rotate: -2deg;
     z-index: 1;
@@ -130,6 +130,7 @@ import { Trans } from "astro-i18next/components";
 	.slider::before,
 	.slider::after {
 		background: linear-gradient(to right,  var(--bg-color) 0%,rgba(255,255,255,0) 100%);
+        pointer-events:none;
 		content: "";
 		height: 100%;
 		position: absolute;

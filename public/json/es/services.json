@@ -4,7 +4,7 @@
         {
           "color": "#138fed",
           "name": "Canal Tiempo",
-          "desc": "Find current and upcoming weather from your local region or around the globe!",
+          "desc": "¡Encuentra el tiempo actual y futuro de tu región local, o incluso de todo el mundo!",
           "link": "/guide/forecast",
           "isArea": "WiiConnect24",
           "status": "Full Release",
@@ -15,7 +15,7 @@
         {
           "color": "#0C9228",
           "name": "Canal Noticias",
-          "desc": "Get up to date information on recent worldwide events right on your Wii thanks to the News Channel!",
+          "desc": "¡Obtén información sobre eventos mundiales directamente en tu Wii gracias al Canal Noticias!",
           "link": "/guide/news",
           "isArea": "WiiConnect24",
           "status": "Planned",
@@ -25,8 +25,8 @@
         },
         {
             "color": "#787878",
-            "name": "Nintendo Channel",
-            "desc": "An interactive guide to games for Wii, Nintendo DS and Nintendo 3DS, with trailers, demos and more!",
+            "name": "Canal Nintendo",
+            "desc": "¡Una guía interactiva de juegos para Wii, Nintendo DS y Nintendo 3DS, con avances, demostraciones y más!",
             "link": "/guide/nintendochannel",
             "isArea": "WiiConnect24",
             "status": "Full Release",
@@ -36,8 +36,8 @@
           },
           {
             "color": "#F1E3C1",
-            "name": "Check Mii Out Channel",
-            "desc": "Create and show off your Miis in a variety of contests in which you will make Mii look alikes!",
+            "name": "Canal Miirame",
+            "desc": "¡Crea y presume de tus Miis en una variedad de concursos en los que harás que los Mii se parezcan!",
             "link": "/guide/cmoc",
             "isArea": "WiiConnect24",
             "status": "Planned",
@@ -47,8 +47,8 @@
           },
           {
             "color": "#283688",
-            "name": "Everybody Votes",
-            "desc": "Vote on different polls regarding very varied topics, then predict the results! Let the party of democracy begin!",
+            "name": "Canal Opiniones",
+            "desc": "¡Vota en encuestas sobre temas variados y predice los resultados! ¡Que comiencen las votaciones!",
             "link": "/guide/evc",
             "isArea": "WiiConnect24",
             "status": "Under Maintenance",
@@ -58,8 +58,8 @@
           },
           {
             "color": "#d4a80b",
-            "name": "Food Channel",
-            "desc": "Order various types of food directly to your home via your Wii, and pay on delivery!",
+            "name": "Canal Pedidos",
+            "desc": "¡Pide varios tipos de comida directamente en tu casa a través de tu Wii y paga contra entrega!",
             "link": "/guide/demae",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -68,8 +68,8 @@
           },
           {
             "color": "#173de8",
-            "name": "TV Guide Channel",
-            "desc": "Check your local TV programming guide, find shows that interest you and control your TV with your Wii Remote!",
+            "name": "Canal Guía de TV",
+            "desc": "¡Consulta tu guía de TV, encuentra programas interesantes, y controla tu TV con tu control remoto de Wii!",
             "link": "/guide/tvnotomo",
             "isArea": "Japan Exclusive",
             "status": "Private Beta",
@@ -78,8 +78,8 @@
           },
           {
             "color": "#ed34d8",
-            "name": "Kirby TV Channel",
-            "desc": "Watch episodes of the Kirby: Right Back at Ya! anime on this channel previously only available in Europe!",
+            "name": "Canal Kirby",
+            "desc": "Mira episodios de Kirby: ¡De vuelta en Ya! ¡El anime en este canal anteriormente solo estaba disponible en Europa!",
             "link": "/guide/kirbytv",
             "isArea": "Video on-demand",
             "status": "Full Release",
@@ -88,8 +88,8 @@
           },
           {
             "color": "#00FFF8",
-            "name": "Photo Prints Channel",
-            "desc": "Create albums and business cards with photos from your SD card or with your Mii characters!",
+            "name": "Canal Digicam",
+            "desc": "¡Crea álbumes y tarjetas de visita con fotos de tu tarjeta SD o con tus personajes Mii!",
             "link": "/guide/digicam",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -99,7 +99,7 @@
           {
             "color": "#05AAF8",
             "name": "Wii Room",
-            "desc": "Re-enter the Wii Room, Nintendo's closed Japanese Video-on-demand and shopping service!",
+            "desc": "¡Vuelve a entrar a WiiRoom, el servicio japonés cerrado de compras y vídeos a la carta de Nintendo!",
             "link": "/guide/wiinoma",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -108,8 +108,8 @@
           },
           {
             "color": "#05AAF8",
-            "name": "Set Personal Data (SPD)",
-            "desc": "Re-enter the Wii Room, Nintendo's closed Japanese Video-on-demand and shopping service!",
+            "name": "Introducir Datos Personales (SPD)",
+            "desc": "Descripción no encontrada...",
             "link": "/guide/spd",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -119,7 +119,7 @@
           {
             "color": "#05AAF8",
             "name": "Wii Message Board",
-            "desc": "Re-enter the Wii Room, Nintendo's closed Japanese Video-on-demand and shopping service!",
+            "desc": "Descripción no encontrada...",
             "link": "/guide/mail",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -129,7 +129,7 @@
           {
             "color": "#05AAF8",
             "name": "Metroid Prime Preview",
-            "desc": "Re-enter the Wii Room, Nintendo's closed Japanese Video-on-demand and shopping service!",
+            "desc": "Descripción no encontrada...",
             "link": "/guide/primepreview",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
@@ -138,8 +138,8 @@
           },
           {
             "color": "#05AAF8",
-            "name": "Wii Room Anywhere",
-            "desc": "Re-enter the Wii Room, Nintendo's closed Japanese Video-on-demand and shopping service!",
+            "name": "Wii Room Cualquiera",
+            "desc": "Descripción no encontrada...",
             "link": "/guide/dokodemo",
             "isArea": "Japan Exclusive",
             "status": "Full Release",

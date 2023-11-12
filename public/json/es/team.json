@@ -2,8 +2,8 @@
   "members": {
     "member": [
       {
-        "name": "El Sketchísimo",
-        "title": "Team Lead",
+        "name": "Sketch",
+        "title": "Líder del equipo",
         "color": "#5ef2b0",
         "pfp": "https://github.com/noahpistilli.png",
         "link": "https://github.com/noahpistilli",
@@ -11,7 +11,7 @@
       },
 {
           "name": "LunaValoäa",
-          "title": "Manager / Translator",
+          "title": "Coordinadora / Traductora",
           "color": "#FDB0C0",
           "pfp": "https://github.com/lunavaloaa.png",
           "link": "https://www.youtube.com/@LunaValoaa",
@@ -19,7 +19,7 @@
 },
       {
           "name": "Alex",
-          "title": "Web developer",
+          "title": "Desarrollador web",
           "color": "#5e97f2",
           "pfp": "https://github.com/humanoidear.png",
           "link": "",
@@ -27,7 +27,7 @@
         },
   {
           "name": "Palapeli",
-          "title": "Developer",
+          "title": "Desarrollador",
           "color": "#00AAAA",
           "pfp": "https://cdn.discordapp.com/avatars/570592015704653824/ee8a799528a219a4d855e77a303b4587.webp?size=240",
           "link": "https://github.com/mkwcat",
@@ -35,7 +35,7 @@
         },
   {
           "name": "giustino",
-          "title": "Developer",
+          "title": "Desarrollador",
           "color": "#05ffb8",
           "pfp": "https://i.imgur.com/tbPj3GA.png",
           "link": "https://github.com/ed0nkey",
@@ -43,7 +43,7 @@
         },
         {
           "name": "oscie",
-          "title": "Developer / Manager",
+          "title": "Desarrollador / Coordinador",
           "color": "#7289da",
           "pfp": "https://github.com/oscie57.png",
           "link": "https://github.com/oscie57",
@@ -51,7 +51,7 @@
         },
         {
           "name": "diego",
-          "title": "Translator(CA,ES,ZH)",
+          "title": "Traductor(CA,ES,ZH)",
           "color": "#fc5a4e",
           "pfp": "https://cdn.discordapp.com/avatars/369858387803897857/1bdc245461b5e66f20b1b365a3236d13.webp?size=240",
           "link": "https://twitter.com/korewadiego",
@@ -59,7 +59,7 @@
         },
         {
           "name": "Matthe815",
-          "title": "LinkTag dev",
+          "title": "Dev de LinkTag",
           "color": "#4858a8",
           "pfp": "https://media.discordapp.net/attachments/907021188721704962/1156260587815321640/7cce0e54168ee759a052262495b809f6.png?ex=65145316&is=65130196&hm=aa3c29136f3ff9fd490b41b8c12a084fba4beb6893ad3ff1146d0e0f66389fd5&=&width=438&height=438",
           "link": "https://matthe815.dev/",
@@ -67,7 +67,7 @@
     },
 {
           "name": "kouacc",
-          "title": "Translator (French)",
+          "title": "Traductor (Francés)",
           "color": "#1389a1",
           "pfp": "https://github.com/kouacc.png",
           "link": "https://github.com/kouacc",
@@ -75,7 +75,7 @@
         },
   {
 "name": "NecroNova",
-        "title": "Content Curator",
+        "title": "Mantenimiento de contenidos",
         "color": "#ff1dce",
         "pfp": "https://avatars.githubusercontent.com/u/137644876?s=96&v=4",
         "link": "https://github.com/NecroNovaVGitHub",
@@ -83,7 +83,7 @@
 },
 {
 "name": "ZAZiOs",
-"title": "Translator (Russian)",
+"title": "Traductor (Ruso)",
 "color": "#1c1c1c",
 "pfp": "https://github.com/ZAZiOs.png",
 "link": "https://www.youtube.com/@zazios",
@@ -91,7 +91,7 @@
 },
   {
   "name": "Deoku64",
-  "title": "Translator (JP/DEU)",
+  "title": "Traductor (JP/DEU)",
   "color": "#abc9ff",
   "pfp": "https://lh3.googleusercontent.com/a/ACg8ocI_OzmelcXabyC_3gEP1zV3EDTRRqCwgHKbu6AImFL2lNQ",
   "link": "https://www.youtube.com/@Deoku64",
@@ -99,7 +99,7 @@
   },
 {
         "name": "Philemax",
-        "title": "Translator (FR, JP)",
+        "title": "Traductor (FR, JP)",
         "color": "#45c40c",
         "pfp": "https://cdn.discordapp.com/attachments/854071808997982220/1156257879121215548/playan.png?ex=65145090&is=6512ff10&hm=7784bc6476a0af67314c1fb6db9e6dc1f6e2b75101902c7dea14304ce2263ad9&",
         "link": "https://www.youtube.com/@Philemax/",
@@ -107,7 +107,7 @@
       },
       {
         "name": "Jinjo",
-        "title": "Translator (BR. PT)",
+        "title": "Traductor (BR. PT)",
         "color": "#6a329f",
         "pfp": "https://media.discordapp.net/attachments/907021188721704962/1156260587815321640/7cce0e54168ee759a052262495b809f6.png?ex=65145316&is=65130196&hm=aa3c29136f3ff9fd490b41b8c12a084fba4beb6893ad3ff1146d0e0f66389fd5&=&width=438&height=438",
         "link": "https://twitter.com/JinjoGuy",
@@ -115,7 +115,7 @@
       },
       {
         "name": "rubinho146",
- "title": "Translator (PT. PT)",
+ "title": "Traductor (PT. PT)",
  "color": "#000000",
  "pfp": "https://cdn.discordapp.com/avatars/424214042475888641/ebbaa1b2b7dda7e3703bec0a9efa5594.png?size=2048",
  "link": "https://www.youtube.com/user/rubinho146",
@@ -123,7 +123,7 @@
      },
      {
       "name": "PablosCorner",
-      "title": "Developer",
+      "title": "Desarrollador",
     "color": "#efc86f",
     "pfp": "https://avatars.githubusercontent.com/u/20327900?v=4.png",
     "link": "https://github.com/PablosCorner",
@@ -131,7 +131,7 @@
        },
     {
             "name": "shoko",
-        "title": "Developer",
+        "title": "Desarrollador",
         "color": "#81f777",
         "pfp": "https://media.discordapp.net/attachments/699640199625441432/1156324482433175563/0cb0e8c44e34cc3ecc078a39423e31c6.png",
         "link": "https://youtube.com/@sh0ko64",
@@ -139,7 +139,7 @@
       },
     {
                 "name": "grunt22fox",
-                "title": "Staff and Manager",
+                "title": "Coordinador",
                 "color": "#34ebff",
                 "pfp": "https://cdn.discordapp.com/avatars/314142411247058946/640f256d86017411844cf4599318ac7f.png",
                 "link": "https://www.doesn0texist.tech/",
@@ -147,7 +147,7 @@
      },
     {
                 "name": "Snare-Hawk",
-                "title": "Staff",
+                "title": "Moderador",
                 "color": "#1bcf9a",
                 "pfp": "https://pbs.twimg.com/profile_images/1361050495205441540/XI-dmzVu_400x400.jpg",
                 "link": "https://snare-hawk.carrd.co/",
@@ -155,7 +155,7 @@
         },
     {
                 "name": "Citrus Wolf",
-                "title": "Head of Moderation / Content Curation",
+                "title": "Líder de moderación / Mantenimiento de contenidos",
                 "color": "#ffda76",
                 "pfp": "https://pbs.twimg.com/profile_images/1649388448027901954/0U_Xjbkh_400x400.jpg",
                 "link": "https://twitter.com/WolfCitrus",
@@ -163,7 +163,7 @@
     },
     {
       "name": "Jess Williamson",
-      "title": "Translator (Japanese)",
+      "title": "Traductora (Japonés)",
       "color": "#66cdaa",
       "pfp": "https://cdn.discordapp.com/avatars/990391816186634340/16da8c56eb6ab6a2edc19dcbee480748.webp?size=240",
       "link": "https://instagram.com/jessdoesvids",
@@ -171,21 +171,21 @@
     },
     {
       "name": "GamerKGR",
-      "title": "Music Composer",
+      "title": "Compositor",
       "color": "#40E0D0",
       "pfp": "https://avatars.githubusercontent.com/u/84294269?v=4",
       "link": "https://gamerkgr.neocities.org/"
       },
       {
         "name": "ryaltheamazing",
-        "title": "Social Media",
+        "title": "Redes Sociales",
         "color": "#ed3939",
         "pfp": "https://cdn.discordapp.com/avatars/696363690642898944/fbbf67f9f81d1ee06c0bb2f63c52e7c9.webp?size=240",
         "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"
         },
         {
           "name": "dhtdht020",
-          "title": "Tooling Developer",
+          "title": "Desarrollador de herramientas",
           "color": "#00AAAA",
           "pfp": "https://github.com/dhtdht020.png",
           "link": "https://twitter.com/dhtdht020",

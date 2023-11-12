@@ -18,7 +18,10 @@
     },
     "build": {
       "title": "What's up with this <0>build</0>?",
-      "releaseAuthor": "Released by:"
+      "releasedBy": "Released by:",
+      "releaseBranch": "Branch: ",
+      "releaseDate": "Publish date: ",
+      "releaseTotal": "Total: "
     },
     "donate": {
       "title": "Made possible by users like <0>you</0>",
