@@ -1,6 +1,7 @@
 ---
 title: Forecast Channel
-pubDate: "2021-01-29"
+pubDate: 2021-01-29
+icon: fa-solid fa-umbrella
 ---
 ## View full Weather Forecasts from around the World on your Wii!
 

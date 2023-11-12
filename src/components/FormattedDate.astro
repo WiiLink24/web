@@ -1,37 +1,39 @@
 ---
-import '../styles/global.css';
-export interface Props {
-date: Date;
+interface Props {
+	pre: string;
+	date: Date;
 }
 
-const { date } = Astro.props;
+const { pre, date, precise } = Astro.props;
 ---
-
-<time datetime={date.toISOString()}>
+<time style={precise} datetime={date.toISOString()}>
+	<h3 style="font-size:15px; margin:3px;"><b>{pre}</b>
 	{
 		date.toLocaleDateString('en-uk', {
 			year: 'numeric',
-			month: 'long',
+			month: 'short',
 			day: 'numeric',
 		})
 	}
-	
+	</h3>
 </time>
 
 <style>
-	time{
-		position: absolute;
-		font-family:Cafe;
-		color:white;
-		top:20px;
-		left:20px;
-		padding-left:10px;
-		padding-right:10px;
-		padding-top:5px;
-		padding-bottom:5px;
-		background-color: rgba(28, 28, 28, 0.153);
-		border-radius: 8px;
-		backdrop-filter: blur(8px);
-		z-index: 11;
-	}
+	
+time{
+	top:15px;
+	right:15px;
+	color:white;
+	transform: translate(0%, 0);
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+	background-color: #0000005c;
+	backdrop-filter: blur(8px);
+	border-radius: 8px;
+	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	z-index: 10;
+	position: absolute;
+}
+
 </style>

@@ -2,23 +2,40 @@
 const today = new Date();
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 ---
 
 <footer>
 	<div class="copyright">
-		<img class="copyimg" src="../../Images/wiimotes_logo.png">
-		<h3 class="copydesc">{t("footer.desc")}</h3>
-		<h2 class="copytext"> <b style="font-family:RubikBold">Wii</b><b style="font-family:RubikMedium">Link</b> Team </br><d style=" font-family:Gilroy; font-size:20px; text-align: right;">© 2020-{today.getFullYear()} </d></h2>
-		<div class="socials">
-			<a class="social" href="https://github.com/WiiLink24"><img src="../../Images/github.svg" width="30px"></a>
-			<a class="social" href="https://discord.gg/wiilink-750581992223146074"><img src="../../Images/discord.svg" width="30px"></a>
-			<a class="social" href="https://twitter.com/wiilink24?lang=es"><img src="../../Images/twitter.svg" width="30px"></a>
-			<a class="social" href="https://www.patreon.com/WiiLink24"><img src="../../Images/patreon.svg" width="30px"></a>
-			<a class="social" href="https://www.youtube.com/@WiiLink"><img src="../../Images/youtube.svg" width="30px"></a>
-		</div>
+        <div class="footer-holder">
+			<img class="footer-logo" src="../../img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
+		
+			
+			<div class="socials">
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="https://www.patreon.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}>Patreon<i style="margin-left:15px;" class="fa-brands fa-patreon"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				<div style="margin-top:15px;">
+				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href={localizePath("/404")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")}  style="background-color:white; color:black; animation: changecolor2 10s linear infinite; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
+				</div>
+			</div>
 		</div>
 	</div>
 </footer>
+
+<script>
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+</script>
+
 <style>
 .copyright{
     bottom:0;
@@ -26,114 +43,423 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 	left:0;
     width:100%;
     height:300px;
-    /* background-image:url("../../Images/copyrightbg.png"); */
+    background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
     background-color: rgb(28, 28, 28);
-    top:200px;
+    top:150px;
     z-index: 5;
     background-size: cover;
+    animation: changecolor 10s linear infinite;
 }
-
-.copytext{
-    transform: translate(-100%,0);
-	font-family:Gilroy;
-    bottom:0;
-    right:9%;
-    font-size: 30px;
-    position: absolute;
-    text-align: right;
-    color: white;
-}
-
-.copyimg{
-    bottom:0; right:8%; position: absolute; width: 200px;
-}
-
-.socials{
-    display: flex;
-    width:20%;
-    position: absolute;
-    gap:15px;
-    left:8%;
-    bottom:30px;
-    transform: translate(0%,0);
-}
-
-.social:nth-child(1):hover{
-    filter: invert(4%) sepia(15%) saturate(6007%) hue-rotate(188deg) brightness(95%) contrast(100%);
-}
-
-.social:nth-child(2):hover{
-    filter: invert(12%) sepia(89%) saturate(3850%) hue-rotate(236deg) brightness(109%) contrast(88%);
-}
-
-.social:nth-child(3):hover{
-    filter: invert(57%) sepia(15%) saturate(2103%) hue-rotate(170deg) brightness(91%) contrast(93%);
-}
-
-.social:nth-child(4):hover{
-    filter: invert(39%) sepia(54%) saturate(2336%) hue-rotate(332deg) brightness(82%) contrast(111%);
-}
-
-.social:nth-child(5):hover{
-    filter: invert(9%) sepia(98%) saturate(6969%) hue-rotate(1deg) brightness(102%) contrast(93%);
-}
-
-.social{
-    width:30px;
-    height:30px;
-    filter: invert(100%) sepia(8%) saturate(7493%) hue-rotate(284deg) brightness(114%) contrast(103%);
-}
-
-.copydesc{
-    width:500px;
-    line-height: 1.5;
-    text-align: justify;
-    bottom:80px;
-    left:8%;
-    position: absolute;
-}
-
-img{
-    border-radius: 0px;
-}
-
-
-@media (max-width:1000px) {
-    .copydesc{
-        display: none;
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.astro-a {
+		position: absolute;
+		top: -32px;
+		left: 50%;
+		transform: translatex(-50%);
+		width: 220px;
+		height: auto;
+		z-index: -1;
+	}
+	.spinner{
+		filter: brightness(0);
+	}
+	.toggle-dark {
+		bottom:30px;
+		right:30px;
+		z-index: 10;
+		position: fixed;
+	}
+	.color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
     }
-    .copytext{
-        left:20px;
-        bottom:80px;
-        transform: translate(0, 0);
-        text-align: left;
-    }
-    .socials{
-        left:20px;
-    }
-    .copyimg{
-        right:20px;
-    }
+	.disabled{
+		cursor: not-allowed;
+	}
+	.socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 25px;
+		width:200px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.slogan{
+		left:80px;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
+	}
+	.top{
+		top:-130px;
+		left:50%;
+		transform: translate(-50%, 0);
+		max-width: 1500px;
+		min-height: 100%;
+		position: relative;
+	}
+	@font-face {
+    font-family: "Rubik";
+    src: url("/fonts/Rubik.ttf");
 }
+@font-face {
+    font-family: "Gilroy";
+    src: url("/fonts/Gilroy.otf");
+}
+	.accordion-body{
+		background-color: #fff;
+    	max-height: 30vh;
+    	overflow: scroll;
+	}
+	.alert{
+		right:40px;
+		top:40px;
+		width:500px;
+		z-index: 1;
+		position: absolute;
+	}
+	.btn-secondary{
+		background-color: rgba(0, 0, 255, 0.469);
+		border: 1px solid rgba(0, 0, 255, 0.117);
+	}
+	.btn-secondary:hover{
+		background-color: rgba(0, 0, 255, 0.427);
+		border: 1px solid rgba(0, 0, 255, 0.117);
+	}
+	.slidedown{
+		left:50%;
+		top:40px;
+		transform: translate(-50%, 0);
+		width:1px;
+		height:50px;
+		z-index: 1;
+		position: relative;
+	}
+	.about{
+		top:0;
+		right:0;
+		color: #00000050;
+		z-index: 1;
+		position: absolute;
+	}
+	.symbolholder{
+		background-color: var(--bg-color);
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: 1;
+		overflow: hidden;
+		position: fixed;
+	}
+	.temp{
+		width: 100%;
+		height:3000px;
+		background-color: #ffffff;
+		position: relative;
+	}
+	.custom-tooltip {
+  --bs-tooltip-bg: var(--bd-green-bg);
+  --bs-tooltip-color: var(--bs-white);
+}
+	.guide:hover .fa{
+		transform: translate(0px, 0);
+	}
+	.guide:hover .fa{
+		transform: translate(3px, 0);
+	}
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(0, 10px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(0, 0px);
+		}
+	}
+	.logohold{
+		top:0;
+		left:-80px;
+		width:50%;
+		height:100%;
+		position: absolute;
+	}
+	@keyframes loadspin {
+		0%{
+			rotate: 0deg;
+		}
+		100%{
+			rotate: 360deg;
+		}
+	}
+	.release-name{
+		font-weight: bolder;
+	}
+	.guide{
+		background-color: #ffffff;
+		color:black;
+		box-shadow: inset 0 0 0 4px solid blue;
+	}
+	.btn{
+		padding:15px;
+		margin:5px;
+		margin-top: 10px;
+	}
+	.data{
+		width:615px;
+		right:5%;
+		top:50%;
+		transform: translate(0, -50%);
+		z-index: 1;
+		position: absolute;
+	}
+	#square2{
+		width: calc(100% - 30px);
+		height: calc(100% - 30px);
+		left:15px;
+		top:15px;
+		background-color: var(--bg-color);
+		transform: translate(0%, 0%);
+		border-radius: 4px;
+		z-index: 1;
+		scroll-behavior: smooth;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		transition:0.5s;
+		position: absolute;
+	}
+	.footer{
+		height: calc(80% - 30px);
+	}
+	.release-info{
+		width:95%;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: relative;
+	}
+	.download{
+		width:100%;
+		height: auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		display: flex;
+		flex-wrap: wrap;
+		position:relative;
+	}
+	.bottomleftcorner{
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
+		left:-2.6px;
+		bottom:-2.5px;
+		scale:31.6%;
+		transform: translate(-106.5%, 107.3%);
+		z-index: 2;
+		position: absolute;
+	}
+	.backsymbol {
+		width:calc(100% - 28px);
+		height:calc(100% - 28px);
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		position: absolute;
+	}
+	@keyframes changecolor{
+		0%{
+			filter:hue-rotate(0deg);
+		}
+		100%{
+			filter:hue-rotate(360deg);
+		}
+	}
+	@keyframes changecolor2{
+		0%{
+			filter:hue-rotate(360deg);
+		}
+		100%{
+			filter:hue-rotate(0deg);
+		}
+	}
 
-@media (min-width:2000px) {
-		.copyright{
-			width:2000px;
+	h1 {
+		color: var(--bg-text);
+		--bg-text: #ffffff;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	h2{
+		--bg-text: #000000;
+
+		color: var(--bg-text);
+		text-align: left;
+		z-index: 1;
+		position: relative;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+
+	@media only screen and (max-width: 1150px) {
+		.logohold{
+			display: none;
+		}
+		.data{
+			top:150px;
 			left:50%;
 			transform: translate(-50%, 0);
-            border-top-left-radius: 8px;
-            border-top-right-radius: 8px;
+			width:95%;
+			height:auto;
 			position: relative;
 		}
-		.status{
-			width:2000px;
+
+		.top{
+		top:0;
+		left:50%;
+		transform: translate(-50%, 0);
+		height:auto;
+		max-width: 1500px;
+		position: relative;
+	}
+
+		.socials{
+			right:20px;
+		}
+
+		.footer-logo{
+			width:150px;
+			height:auto;
+		}
+
+		.slogan{
+			display: none;
+		}
+
+		.accordion-body{
+		background-color: #fff;
+    	max-height: 20vh;
+    	overflow: scroll;
+	}
+		.symbolholder{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.backsymbol{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		#square2{
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.square{
+			display:;
+		}
+		.bottomleftcorner{
+			display: none;
+		}
+		.alert{
+			top:30px;
 			left:50%;
 			transform: translate(-50%, 0);
+			width: 80%;
+			position: absolute;
 		}
-		.topimg{
-			width:3000px;
+		.hide{
+			display: none;
+		}
+		.download{
+		width:100%;
+		height: auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+		gap:5px;
+		position:relative;
+	}
+		.btn{
+			width:100%;
+		}
+		.dropdownbtn{
+			top:0;
+			right:0;
+			width:50px;
+		}
+	}
+
+    	
+	@media only screen and (min-width:2000px) {
+		.footer-holder{
 			left:50%;
-			transform: translate(-50%, -158px);
+			transform:translate(-50%, 40px);
+			width:2000px;
+			position:relative;
 		}
 	}
 </style>

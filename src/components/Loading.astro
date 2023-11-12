@@ -1,0 +1,88 @@
+---
+import type { Code } from 'astro:components';
+interface Props {
+	msg: string;
+}
+
+const { msg, img } = Astro.props;
+---
+
+<div class="cover" id="cover">
+<img src="../../img/logo.png" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); filter:invert(1); position:absolute;">
+<img src={img} style="left:50%; top:42%; border-radius:8px; width:350px; transform:translate(-50%, -50%); position:absolute;">
+<l style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); font-size:30px; filter:invert(1); display:flex; flex-wrap:wrap; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 10px); margin-right:8px;" width="30px" height="30px">{msg}</l>
+
+<div class="closePrompt">
+    <h4 style="text-align:center;">Seems like it's taking </br> a fair bit to load...</h4>
+    <button class="btn btn-secondary" onclick="remove()">Remove loading screen</button>
+</div>
+</div>
+
+<script is:inline>
+
+function remove() {
+    setTimeout(() => {
+        document.getElementById("cover").style.animation = "fadeout 0.3s linear forwards";
+}, 300);
+setTimeout(() => {
+        document.getElementById("cover").style.display = "none";
+}, 600);
+}
+
+window.addEventListener('load', function () {
+    setTimeout(() => {
+        document.getElementById("cover").style.animation = "fadeout 0.3s linear forwards";
+}, 300);
+setTimeout(() => {
+        document.getElementById("cover").style.display = "none";
+}, 600);
+    });
+ </script>
+
+<style>
+    .cover{
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:#00000090;
+        backdrop-filter:blur(38px);
+        z-index:100000;
+        position:fixed;
+    }
+
+    .closePrompt{
+        bottom:20px;
+        width:250px;
+        left:50%;
+        transform: translate(-50%, 0);
+        animation:fadeupload 0.3s 3000ms linear forwards;
+        opacity:0;
+        display:flex;
+        gap:15px;
+        flex-wrap:wrap;
+        justify-content:center;
+        align-items:center;
+        position:absolute;
+    }
+
+    @keyframes fadeupload{
+        0%{
+            transform: translate(-50%, 5px);
+            opacity:0;
+        }
+        100%{
+            transform: translate(-50%, 0);
+            opacity:1;
+        }
+    }
+
+    @keyframes fadeout{
+        0%{
+            opacity:1;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+</style>

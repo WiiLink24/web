@@ -1,6 +1,7 @@
 ---
 title: Photo Prints Channel
-pubDate: "2021-01-29"
+pubDate: 2021-01-29
+icon: fa-solid fa-camera
 ---
 ## The Photo Prints Channel arranges your beautiful Photos into a masterpiece!
 

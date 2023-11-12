@@ -1,17 +1,22 @@
 ---
 title: Everybody Votes Channel
-pubDate: "2023-08-26"
+pubDate: 2023-08-26
+icon: fa-solid fa-square-poll-vertical
 ---
+
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
 ## Enjoy Voting on Polls via your Wii again!
 
 - Partake in Worldwide polls alongside other users of the service!
 
 - Propose your own polls and echo your questions to everyone!
 
-![EVC Banner](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
+![img](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
 </br>
 
-> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below.
+<l class="notice info fullwidth"> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below. </l>
 ___
 
 ## We're moving! - How to Transfer your Data
@@ -27,15 +32,24 @@ ___
 #### With any luck, you'll be up and running!
 ___
 ## Important Notices!
-> If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!
-> 
-> If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!
->
-> To use custom regions, you must use AnyGlobeChanger.
+<l class="notice danger">If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!</l>
+
+<l class="notice danger">If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!</l>
+
+<l class="notice warn">To use custom regions, you must use AnyGlobeChanger.</l>
 ___
 ## Language Support
 
 #### Below you'll find a list of the languages supported by the Everybody Votes Channel depending on the country you have set:
+
+</br>
+
+<input oninput="w3.filterHTML('#countries', 'p', this.value)" placeholder="Search for your country here...">
+
+</br>
+</br>
+
+<div class="countries" id="countries" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); align-items:center; justify-content:center; gap:15px;">
 
 1	Japan (JA/EN)
 
@@ -518,3 +532,28 @@ ___
 253	Puerto Rico (EN/ES)
 
 254	Greenland (EN)
+
+</div>
+
+<style>
+    .countries p{
+        height:auto;
+        background-color:#a1a1a160;
+        padding:8px;
+        border-radius:8px;
+        position:relative;
+    }
+
+    input{
+        width:100%;
+        border:2px solid gray;
+        border-radius:8px;
+        padding:8px;
+        margin-bottom:8px;
+        position:relative;
+    }
+
+    #container2{
+         font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+</style>

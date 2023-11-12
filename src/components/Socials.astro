@@ -1,0 +1,359 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+---
+
+<div class="build">
+    <div class="build-holder">
+        <h1 class="title"><Trans i18nKey="socials.title">Check us out on our <b class="color">socials</b>!</Trans></h1>
+        <h2 class="subtitle"><Trans i18nKey="socials.subtitle">Keep up to date on all service <b class="color">releases</b> and <b class="color">general announcements</b> via our social media.</Trans></h2>
+       <div class="socials">
+        <div class="twitter">
+            <div class="follow">
+                <span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-primary">{t("socials.twFollowers")}</span>
+                <img class="socials-logo" src="img/twitter_logo.png" height="40px">
+                <div class="buttons">
+                    <a href="https://twitter.com/WiiLink_es"><div class="btn"><img src="https://em-content.zobj.net/source/twitter/376/flag-spain_1f1ea-1f1f8.png" width="20px" height="20px"></div></a>
+                    <a href="https://twitter.com/WiiLink_jp"><div class="btn"><img src="https://em-content.zobj.net/source/toss-face/381/flag-japan_1f1ef-1f1f5.png" width="20px" height="20px"></div></a>
+                    <a href="https://twitter.com/WiiLink24"><div style="color:#289bff;" class="btn">{t("socials.twFollow")}</div></a>
+                </div>
+            </div>
+            <div style="top:0; left:0; width:100%; z-index:1; position:absolute;"><a class="twitter-timeline" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">{t("socials.twTweets")}</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
+            <img style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(0); position:absolute;" src="img/loading.gif" width="30px">
+        </div>
+        <div class="discord">
+            <div class="follow dsc">
+                <img class="socials-logo" src="img/discord_logo.png" height="30px">
+                <span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-info">{t("socials.dcMembers")}</span>
+                <div class="buttons">
+                    <a href="https://discord.gg/wiilink-750581992223146074"><div style="color:#004078;"class="btn">{t("socials.dcJoin")}</div></a>
+                </div>
+            </div>
+            <div style="top:0; left:0; width:100%; z-index:1; position:absolute;"><iframe src="https://discord.com/widget?id=750581992223146074&theme=dark" style="top:-20px; position:absolute;" width="100%" height="580px" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></div>
+            <img style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;" src="img/loading.gif" width="30px">
+        </div>
+       <div class="social github">
+            <div class="inner"><i class="fa-brands fa-github"></i> <a href="https://github.com/WiiLink24"><span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-dark">{t("socials.ghFollowers")}</span>
+                <div style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;" class="buttons">
+                    <div style="top:0; margin:0px; position:relative;"class="btn bg-dark text-white">{t("socials.ghFollow")}</div>
+                </div>
+            </a>
+        </div>
+    </div>
+        <div class="social youtube"><div class="inner"><i class="fa-brands fa-youtube"></i><a href="https://www.youtube.com/@wiilink"><span style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;" class="badge bg-danger">{t("socials.ytSubscribers")}</span>
+            <div style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;" class="buttons">
+                <div style="top:0; margin:0px; position:relative;"class="btn bg-danger text-white">{t("socials.ytSubscribe")}</div>
+            </div>
+        </a>
+    </div></div>
+       </div>
+       <div class="socials-small">
+
+       </div>
+    </div>
+</div>
+
+<style>
+    .build-holder{
+        left:50%;
+        transform: translate(-50%, 20px);
+        width:95%;
+        max-width:1500px;
+        padding-top:30px;
+        position:relative;
+    }
+    .build-square{
+        width:95%;
+        max-width:350px;
+        box-shadow: 0px 5px 10px #00000020;
+        border:2px solid rgb(255, 240, 240);
+        border-radius: 8px;
+        perspective: 500px;
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap:50px;
+        padding:15px;
+        min-height:500px;
+        margin-bottom:50px;
+        transition: 0.1s;
+        z-index: 1;
+        position: relative;
+    }
+    .inner{
+        top:50%;
+        left:10px;
+        transform: translate(0, -50%);
+        position: relative;
+    }
+    .youtube{
+        border:2px solid #ff3f3f;
+        color:#ff3f3f;
+        box-shadow: 0px 5px 10px #ff3f3f40;
+    }
+    .github{
+        border:2px solid #121212;
+        color:#121212;
+        box-shadow: 0px 5px 10px #12121240;
+    }
+    
+    .social{
+        width: auto;
+        height:80px;
+        font-size: 40px;
+        border-radius: 8px;
+        line-height: 50px;
+
+    }
+    .socials-small{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        gap: 15px;
+        position: relative;
+    }
+    .btn{
+        padding:5px;
+        padding-left:10px;
+        padding-right:10px;
+        font-weight: 600;
+        margin-left:5px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        transition: 0.5s;
+    }
+    .btn:hover{
+        background-color: #a8a8a8;
+        filter: brightness(120%);
+        transition: 0.5s;
+    }
+    .buttons{
+        top:50%;
+        right:10px;
+        transform: translate(0, -50%);
+        position: absolute;
+    }
+    .socials-logo{
+        top:50%;
+        left:10px;
+        transform: translate(0, -50%);
+        position: relative;
+    }
+    .socials{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(500px,1fr));
+        gap: 15px;
+    }
+    .follow{
+        top:0;
+        Left:0;
+        width:100%;
+        height:60px;
+        z-index: 2;
+        background-color: #289bff;
+        position: sticky;
+    }
+    .twitter{
+        height:500px;
+        border:2px solid #289bff;
+        background-color: #289bff;
+        box-shadow: 0px 5px 10px #289bff40;
+        border-radius:8px;
+        overflow: scroll;
+        position:relative;
+    }
+    .dsc{
+        background-color: #004078;
+    }
+    .discord{
+        height:500px;
+        border:2px solid #004078;
+        background-color: #004078;
+        box-shadow: 0px 5px 10px #00407840;
+        border-radius:8px;
+        overflow: hidden;
+        position:relative;
+    }
+    .slider::before{
+		background: linear-gradient(to right,  rgba(255,255,255,1) 40%,rgba(255,255,255,0) 100%);
+		content: "";
+		height: 100%;
+		position: absolute;
+		width: 30%;
+		z-index: 2;
+	}
+    .donator-holder{
+        top:-30px;
+        height: 100px;
+        max-width:1480px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+    }
+    .slider {
+    top:-35px;
+    height:150px;
+	background: white;
+	margin: auto;
+    border-radius: 8px;
+    z-index: 0;
+	width: 1500px;
+	overflow:hidden;
+    position: absolute;
+}
+	
+	.slider::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	.slider::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 80s linear infinite;
+        display: flex;
+		width: calc(450px * 20);
+	}
+    .build-square:hover{
+        box-shadow: 0px 5px 15px #7d7d7d4b;
+        border-width:4px;
+        transition: 0.1s;
+    }
+    .bdg{
+        top:20px;
+        right:10px;
+        border-radius: 8px;
+        transform: translateZ(20px);
+        scale:80%;
+        font-size: 25px;
+        position: absolute;
+    }
+    .tier-title{
+        bottom:20px;
+        font-family:Gilroy;
+        position: absolute;
+    }
+    .tier-1{
+        background-image: url(tier_1_bg.png);
+        background-size: cover;
+        border:2px solid rgb(228, 255, 169);
+    }
+    .tier-2{
+        background-image: url(tier_2_bg.png);
+        background-size: cover;
+        border:2px solid rgb(148, 248, 255);
+    }
+    .tier-3{
+        background-image: url(tier_3_bg.png);
+        background-size: cover;
+        border:2px solid rgb(238, 206, 252);
+    }
+    .tier-4{
+        background-image: url(tier_4_bg.png);
+        background-size: cover;
+        border:2px solid rgb(205, 213, 204);
+    }
+    .tiers{
+        left:50%;
+        transform: translate(-50%, 0);
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap:wrap;
+        gap:20px;
+        position:relative;
+    }
+    .dots{
+        top:-80px;
+        width:150px;
+        height:150px;
+        opacity:0.5;
+        background-image:radial-gradient(#00000040 2px,transparent 2px);
+        background-size: 15px 15px;
+        z-index: 0;
+        position:relative;
+    }
+    .build{
+        top: 300px;
+        position: relative;
+    }
+    .subtitle{
+        text-align:left;
+        margin-bottom:20px;
+        font-size: 25px;
+    }
+    .color{
+        background: url(/img/header_bg.png) 0 0;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+    .title{
+    text-align:left;
+    width:100%;
+   margin-bottom:15px;
+    font-size: 50px;
+    font-family: Gilroy;
+    position: relative;
+    }
+    blockquote.twitter-tweet {
+  display: inline-block;
+  font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 16px;
+  border-color: #eee #ddd #bbb;
+  border-radius: 8px;
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  margin: 10px 5px;
+  padding: 0 16px 16px 16px;
+  max-width: 468px;
+}
+
+blockquote.twitter-tweet p {
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+blockquote.twitter-tweet a {
+  color: inherit;
+  font-weight: normal;
+  text-decoration: none;
+  outline: 0 none;
+}
+
+blockquote.twitter-tweet a:hover,
+blockquote.twitter-tweet a:focus {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 1150px) {
+
+    .socials{
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+        gap: 15px;
+    }
+
+    .build{
+        top:400px;
+    }
+
+    .twitter{
+        height: 250px;
+    }
+
+    .discord{
+        height:250px;
+    }
+
+}
+
+</style>

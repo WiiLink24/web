@@ -1,207 +1,376 @@
+/*
+  The CSS in this style tag is based off of Bear Blog's default CSS.
+  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
+  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
+ */
+
+:root {
+	--accent: #2337ff;
+	--accent-dark: #000d8a;
+	--black: 15, 18, 25;
+	--gray: 96, 115, 159;
+	--gray-light: 229, 233, 240;
+	--gray-dark: 34, 41, 57;
+	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
+	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
+		0 16px 32px rgba(var(--gray), 33%);
+}
 @font-face {
-    font-family: Gilroy;
-    src: url(../../Fonts/Gilroy.otf);
+	font-family: 'Atkinson';
+	src: url('/fonts/atkinson-regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
-
 @font-face {
-    font-family: Rodin;
-    src: url(../../Fonts/OpenSans.ttf);
-}
+	font-family: Rubik;
+	src: url(/fonts/Rubik.ttf);
+  }
+  
+  @font-face {
+	font-family: gilroy;
+	src: url(/fonts/Gilroy.otf);
+  }
 
+  @font-face {
+	font-family: inter;
+	src: url(/fonts/sfpro.otf);
+  }
 @font-face {
-    font-family: Cafe;
-    src: url(../../Fonts/CafeKr.ttf);
+	font-family: 'Atkinson';
+	src: url('/fonts/atkinson-bold.woff') format('woff');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
-
-@font-face {
-    font-family: RubikBold;
-    src: url(../../Fonts/Rubik-Bold.ttf);
+body {
+	font-family: 'Atkinson', sans-serif;
+	margin: 0;
+	padding: 0;
+	text-align: left;
+	background-size: 100% 600px;
+	word-wrap: break-word;
+	overflow-wrap: break-word;
+	color: rgb(var(--gray-dark));
+	font-size: 20px;
+	line-height: 1.4;
 }
-
-@font-face {
-    font-family: RubikMedium;
-    src: url(../../Fonts/Rubik-Medium.ttf);
+main {
+	width: 720px;
+	max-width: calc(100% - 2em);
+	margin: auto;
+	padding: 3em 1em;
 }
-
-@font-face {
-    font-family: Stigmature;
-    src: url(../../Fonts/Stigmature.otf);
+.toc-post:before{
+	font-family: Gilroy;
+	left:-2px;
+	top:-45px;
+	width:calc(100% + 4px);
+	font-size: 18px;
+	padding-top:8px;
+	padding-bottom:8px;
+	background-color: rgba(101, 101, 101, 0.184);
+	border: 2px solid rgba(128, 128, 128, 0.168);
+	border-bottom:0px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Table of Contents";
+	position: absolute;
 }
-
-@font-face {
-    font-family: Cascadia;
-    src: url(../../Fonts/Cascadia.ttf);
+.toc-post{
+	top:46px;
+	right:0;
+	width:100%;
+	padding:10px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	background-color: rgba(88, 88, 88, 0.096);
+	border: 2px solid rgba(128, 128, 128, 0.168);
+	border-top:0px;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	backdrop-filter: blur(8px);
+	z-index: 1;
+	position: relative;
 }
-
-html {
-    scroll-behavior: smooth;
+.toc-link{
+	color:rgb(38, 38, 38);
 }
-
-body{
-    background-color: #181818;
+.toc-link:hover{
+	color:rgb(50, 168, 23);
 }
 
 a{
-    color:rgb(102, 196, 102);
+	text-decoration: none;
 }
 
-h1{
-    font-family:RubikMedium;
-    color:white;
-    font-size: 120px;
-    background: linear-gradient(150deg, rgba(27,143,161,1) 0%, rgba(32,213,136,1) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+.toc-item::marker{
+	font-family: Gilroy;
+}
+.notice{
+	width:auto;
+	height:auto;
+	padding:5px;
+	padding-right:15px;
+	margin-bottom:5px;
+	border-radius: 8px;
+	color:rgb(255, 255, 255);
+	display: inline-block;
+	position: relative;
+}
+.warn{
+	background-color: rgb(232, 214, 49);
+	border: 2px solid rgb(182, 197, 14);
+}
+.warn::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f06a";
+  }
+.danger{
+	background-color: rgb(232, 49, 49);
+	border: 2px solid rgb(197, 14, 14);
+}
+.danger::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f071";
+  }
+  .success{
+	background-color: rgb(49, 232, 76);
+	border: 2px solid rgb(10, 190, 40);
+}
+.success::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f058";
+  }
+  .info{
+	background-color: rgb(49, 189, 232);
+	border: 2px solid rgb(14, 124, 197);
+}
+.info::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f059";
+  }
+
+  .generic{
+	background-color: rgba(120, 120, 120, 0.522);
+	border: 2px solid rgba(64, 64, 64, 0.299);
+}
+.generic::before {
+	margin-left:5px;
+	margin-right:10px;
+	display: inline-block;
+	font-style: normal;
+	font-variant: normal;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f0c6";
+  }
+
+  .fullwidth{
+	left:0;
+	width:100%;
+  }
+
+  .center{
+	text-align: center;
+	padding:10px;
+  }
+
+
+img[alt="img"] {
+	width:100%;
+	height: 250px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px #ffffff40;
+	object-fit: cover;
 }
 
-h2{
-    font-family:Gilroy;
-    color:white;
-    font-size: 40px;
+img[alt="img2"] {
+	width:100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px #3a3a3a40;
+	object-fit: cover;
 }
 
-h3{
-    font-family: Cafe;
-    color:white;
-    font-size: 15px;
-    line-height: 1.2;
-    text-decoration: none;
+img[alt="imgcaroussel"] {
+	width:49%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0px 0px 20px #3a3a3a40;
+	object-fit: cover;
 }
 
-h4{
-    font-family: Cafe;
-    color:white;
-    font-size: 20px;
-}
-
-iframe{
-    border-radius: 18px;
-}
-
-r.sticky{
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    height:80px;
-    background: rgba(18, 18, 18, 0.932);
-    transition: 0.5s;
-    right:2%;
-}
-  
-blockquote p {
-    padding: 15px;
-    background: #303030;
-    border:2px solid rgba(110, 110, 110, 0.211);
-    border-radius: 5px;
-}
-
-blockquote p::before {
-    padding: 15px;
-    width:20px;
-    height:50px;
-    background: #303030;
-    border:2px solid rgba(110, 110, 110, 0.211);
-    border-radius: 5px;
-}
-
-pre,
-code {
-	color: #d4d4d4;
-	font-size: 14px;
-	font-family: Cascadia;
-	line-height: 1.5;
-	direction: ltr;
-	white-space: pre;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	text-align: left;
-	text-shadow: none;
-	word-break: normal;
-	word-spacing: normal;
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
+	margin: 0 0 0.5rem 0;
+	line-height: 1.2;
+}
+h1 {
+	font-size: 3.052em;
+}
+h2 {
+	font-size: 2.441em;
+	font-family: inter;
+}
+h3 {
+	font-size: 1.953em;
+	font-family: inter;
+}
+.guidecontent > h2 {
+	font-size: 35px;
+	font-family: Gilroy;
 }
 
-pre::selection,
-code::selection {
-	text-shadow: none;
-	background: #b3d4fc;
+.guidecontent > h3 {
+	font-size: 25px;
+	font-family: Gilroy;
 }
 
-@media print {
-	pre,
-	code {
-		text-shadow: none;
+.guidecontent > h4 {
+	font-size: 20px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.guidecontent > h5 {
+	font-size: 20px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.postexpand > h2 {
+	color:black;
+	font-size: 35px;
+	font-family: Gilroy;
+}
+
+.postexpand > h3 {
+	color:black;
+	font-size: 25px;
+	font-family: Gilroy;
+}
+
+.postexpand > h4 {
+	color:black;
+	font-size: 20px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.postexpand > h5 {
+	color:black;
+	font-size: 20px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h5 {
+	font-size: 1.25em;
+}
+ol, ul{
+	margin-left:20px;
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color:black;
+}
+strong,
+b {
+	font-weight: 700;
+}
+p {
+	font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	text-align: left;
+	color: black;
+	margin-bottom: 1em;
+}
+.prose p {
+	margin-bottom: 2em;
+}
+textarea {
+	width: 100%;
+	font-size: 16px;
+}
+input {
+	font-size: 16px;
+}
+table {
+	width: 100%;
+}
+code {
+	padding: 4px 6px;
+	background-color: rgba(97, 97, 97, 0.148);
+	color:rgb(78, 78, 78);
+	border-radius: 8px;
+}
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code {
+	all: unset;
+}
+blockquote {
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.096);
+	border-left: 4px solid var(--accent);
+	padding: 15px;
+	padding-bottom:3px;
+	margin: 5px;
+	border-radius: 8px;
+	position: relative;
+}
+hr {
+	border: none;
+	border-top: 1px solid rgb(var(--gray-light));
+}
+@media (max-width: 720px) {
+	body {
+		font-size: 18px;
+	}
+	main {
+		padding: 1em;
 	}
 }
 
-pre {
-	margin: 0.5rem 0 16px;
-	padding: 0.8rem 1rem 0.9rem;
-	overflow: auto;
-	background: #282a36;
-	border-radius: 4px;
+.sr-only {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
+	clip: rect(1px 1px 1px 1px);
+	/* maybe deprecated but we need to support legacy browsers */
+	clip: rect(1px, 1px, 1px, 1px);
+	/* modern browsers, clip-path works inwards from each corner */
+	clip-path: inset(50%);
+	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
+	white-space: nowrap;
 }
-
-code {
-	padding: 0.1em 0.3em;
-	color: #ffffff;
-	background: #5b5b5b;
-	border-radius: 0.3em;
-	white-space: pre-wrap;
-}
-
-pre.astro-code > code {
-	all: unset;
-}
-
-pre[data-line] {
-	position: relative;
-}
-
-pre > code {
-	position: relative;
-	z-index: 1;
-}
-
-img{
-    border-radius: 8px;
-}
-
-.fa-solid{
-    left:50%;
-    transform: translate(-50%,0);
-}
-
-.ytvid{
-    box-shadow: 0px 0px 70px rgb(43, 43, 43);
-    top:50px;
-    left:50%;
-    transform: translate(-50%,0);
-    position: relative;
-    width:80%;
-}
-
-.fa-solid::before{
-    color:rgb(54, 172, 54);
-    margin-right:15px;
-}
-
-@keyframes downup {
-    0%{
-        transform: translate(0, -20px);
-    }
-    50%{
-        transform: translate(0,0px);
-    }
-    100%{
-        transform: translate(0,-20px);
-    }
-}
-
-::-webkit-scrollbar {
-    border-radius: 18px;
-    width: 0px;
-  }

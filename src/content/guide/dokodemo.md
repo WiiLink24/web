@@ -1,6 +1,7 @@
 ---
 title: Wii Room Anywhere
-pubDate: "2021-01-29"
+pubDate: 2021-01-29
+icon: fa-solid fa-play
 ---
 ## Have Wii Room videos, Anywhere!
 

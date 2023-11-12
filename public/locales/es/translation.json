@@ -1,94 +1,136 @@
 {
-    "home": {
-      "subtitle": "Un nuevo servicio en línea para la Wii.",
-      "install": "Instalar ahora",
-      "docs": "Mira la guía",
-      "beta": "Esta página esta en fase de pruebas. ¿Qué opinas?",
-      "info": "<0><1>Wii</1><2>Link</2> resucita muchos canales de otras regiones. <br/> ¡Incluyendo canales solo lanzados en Japón!</0>",
-      "faq": " Preguntas frecuentes",
-      "faq1": "¿Por qué WiiLink?",
-      "faqres1": "WiiLink es el único servicio que devuelve la funcionalidad a los canales de Wii japoneses tras su cierre oficial. Hemos conseguido que WiiRoom, Food Channel, y Digicam Print Channel funcionen de nuevo. Con nuestro servicio podrás experimentarlos de nuevo - puede que por primera vez.",
-      "faq2": "¿Por qué existe WiiLink?",
-      "faqres2": "Sin un servicio de reemplazo para estos canales, se quedarían perdidos para siempre, sin posibilidad de volver a utilizarlos. Sin embargo, gracias al trabajo aportado por nuestro equipo, ¡futuras generaciones podrán utilizarlos de nuevo!",
-      "faq3": "¿Es legal utilizar WiiLink?",
-      "faqres3": "Desde luego. Desarrollamos todos nuestros canales sin infringir en los derechos de autor, y solo empleamos aquello que es código abierto o conocido de antemano. Todo nuestro código ha sido desarrollado 100% por nosotros. No podrás meterte en líos por usar nuestros servicios.",
-      "faq4": "¿Puede el Food Channel pedir comida real?",
-      "faqres4": "¡Sí!",
-      "morefaq": "¿Tienes más preguntas? ¡No dudes en visitar nuestra guía completa!",
-      "team": " Nuestro increíble equipo",
-      "teamdef": "¡Algunas de las personas que dan vida a WiiLink!",
-      "news": " Noticias",
-      "newsdef": "¡Mantente al día con las noticias más recientes del servicio!"
+    "site": {
+      "title": "WiiLink",
+      "description": "WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!",
+      "img": "/img/news_post_welcome_back.png",
+      "load": "Cargando...",
+      "dev": "Desarrollado por ",
+      "relNotes": "Notas de la Versión",
+      "downloadPrompt": "Descarga la versión más reciente:",
+      "installGuide": "Guía de Instalación",
+      "terms": "He leido y aceptado los <0>Términos</0> y la <1>Política de Privacidad</1>.",
+      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. No está afiliado con Nintendo y todas las marcas registradas son propiedad de sus respectivos propietarios Cualquier brecha de copyright no es intencional.</1></2>© 2020-2023 <4>Equipo</4> <3>WiiLink</3>",
+      "donate": "Dona!",
+      "creator": "Página web diseñada y programada por Alex",
+      "contact": "Contacta con nosotros",
+      "assets": "Elementos de marca",
+      "install": "Instalar ahora"
     },
-    "blog": {
-        "new": "¡Más nuevo!",
-        "other": "Noticias más antiguas",
-        "rss": "¡Lleva las noticias de la Wii a cualquier lado con nuestro RSS!",
-        "rssbtn": "¡Vamos allá!"
+    "build": {
+      "title": "¿Qué hay con esta <0>build</0>?",
+      "releasedBy": "Lanzado por:",
+      "releaseBranch": "Rama: ",
+      "releaseDate": "Publicación: ",
+      "releaseTotal": "Total: "
     },
     "donate": {
-        "title": "¡Que no pare la marcha!",
-        "join": "¡ADENTRO!",
-        "desc": "¡Mantente actualizado sobre todas las novedades de WiiLink en nuestro servidor de Discord!",
-        "donors": "¡Muchas gracias a todos los donantes!"
-    },
-    "footer": {
-        "desc": "WiiLink es un servicio que revive, entre muchas otras cosas, los canales exclusivos japoneses de la Wii. ¡Este servicio te permite darle una nueva vida a tu Wii, permitiéndote utilizar el canal Wii Room, Digicam Print Channel, canal Kirby TV, y el Food Channel!",
-        "team": ""
+      "title": "Hecho posible por usuarios como <0>tú</0>",
+      "subtitle": "<0>WiiLink</0> está financiado por los <1>usuarios</1> y <2>patrocinadores</2>. <3>Para ayudar con nuestros costes de funcionamiento, ¡Por favor considera donar!</3>",
+      "donators": "y únete a <0>gente guay</0> como...",
+      "popular": "Más popular",
+      "powered": "Servicio de"
     },
     "header": {
-        "home": "Inicio",
-        "news": "Noticias",
-        "guide": "Guía",
-        "status": "Estado",
-        "faq": "FAQ",
-        "install": "Instalar ahora"
+      "home": "Inicio",
+      "news": "Noticias",
+      "guide": "Guía",
+      "status": "Estado",
+      "faq": "FAQ",
+      "isGuide": "guía",
+      "extras": "Extras",
+      "extrasNew": "nuevo"
+    },
+    "jumpin": {
+      "title": "¿Estás listo para dar el <0>salto</0>?",
+      "slogan": "Si te gusta todo esto, ¿Por qué no unirte a nuestra comunidad?",
+      "install": "¡Instalar ahora!"
     },
     "services": {
-        "itn1name": "Wii Room",
-        "itn1jpn": "Wii no Ma",
-        "itn1desc": "Mira nuevos vídeos con Wii Room, una forma única de ver contenido a la carta.",
-        "itn2name": "Photo Print Channel",
-        "itn2jpn": "Digicam Print Channel",
-        "itn2desc": "Crea impresiones y ediciones perfectas con el Canal Digicam Print y diseña álbums únicos de la forma que tan solo tu sabes.",
-        "itn3name": "Kirby TV Channel",
-        "itn3jpn": "",
-        "itn3desc": "Mira el anime original de Kirby directamente desde tu Wii con el Canal Kirby TV.",
-        "itn4name": "Food Channel",
-        "itn4jpn": "Demae Channel",
-        "itn4desc": "Pide comida con el Food Channel y que te traigan comida deliciosa a la puerta de casa.",
-        "itn5name": "Forecast Channel",
-        "itn5jpn": "",
-        "itn5desc": "Mira que tiempo hará directamente desde tu Wii, nunca más te olvidarás el paraguas.",
-        "itn6name": "Nintendo Channel",
-        "itn6jpn": "",
-        "itn6desc": "Mira todo tipo de trailers, promos y series desde una única interfaz.",
-        "itn7name": "TV Guide Channel",
-        "itn7jpn": "Terebi no Tomo Channel",
-        "itn7desc": "¿Quieres saber que ponen en la tele? ¡Eso es fácil gracias al Canal TV Guide!"
+      "title": "Bienvenido a <0>WiiLink</0>!",
+      "subtitle": "Un proyecto comunitario para la Wii que revive y mejora los canales descontinuados de WiiConnect24, incluyendo aquellos solo lanzados en Japón."
     },
-    "status": {
-        "core": "Servicios Principales",
-        "coredesc": "Servicios principales de WiiLink, originalmente solo disponibles en Japón.",
-        "wc24": "Canales de WiiConnect24",
-        "wc24desc": "Funcionalidad de WiiConnect24, revivida gracias a WiiLink.",
-        "video": "Servicio de Vídeos en Streaming",
-        "videodesc": "Un montón de servicios para que disfrutes de vídeos online.",
-        "statuspage": "Ver el estado de los servidores"
+    "socials": {
+      "title": "¡Estate al loro de nuestras <0>redes sociales</0>!",
+      "subtitle": "Mantente al dia de <0>lanzamientos</0> y <1>noticias</1> desde nuestras redes sociales.",
+      "twFollowers": "2.7k seguidores",
+      "twFollow": "Seguir",
+      "twTweets": "Tweets de WiiLink24",
+      "dcMembers": "6.2k miembros",
+      "dcJoin": "Unirse",
+      "ghFollowers": "82 Seguidores",
+      "ghFollow": "Seguir",
+      "ytSubscribers": "2k suscriptores",
+      "ytSubscribe": "Suscribirse"
     },
-    "download": {
-        "welcome": "¡Bienvenido!",
-        "oschoose": "¡Elige tu Sistema Operativo para comenzar!",
-        "winreq": "10 o mayor",
-        "linreq": "Requiere de Brew",
-        "checkdocs": "¡Mira el tutorial de instalación en nuestra <0>nueva guía</0>!",
-        "deliveroo": "Instala el ayudante de instalación de Demae Deliveroo."
+    "team": {
+      "title": "Conoce a nuestro increíble <0>equipo</0>",
+      "subtitle": "<0>WiiLink</0> se basa al <1>100%</1> en el trabajo de nuestros contribuyentes. </2><3>¡Aquí tienes a algunas de las personas que hacen que <4>WiiLink</4> sea posible!</3>"
+    },
+    "news": {
+      "mainTitle": "WiiLink - Noticias",
+      "mainDesc": "¡Lee las noticias sobre las actualizaciónes del servicio!",
+      "title": "Mantente al dia con <0>WiiLink</0><1>noticias</1>",
+      "subtitle": "¡Estate al tanto de nuestras <0>actividades</0>, así como de las <1>actualizaciones del servicio</1>!",
+      "otherNews": "Aquí tienes algunos artículos <0>antiguos</0>:",
+      "rssTitle": "<0>¿Quieres recibir las <1>noticias de WiiLink</1> en tu página web o servicio? ¡Simplemente utilitza nuestro <2>feed RSS</2>!</0>",
+      "rssButton": "Obten nuestro feed RSS",
+      "otherPosts": "Otras <0>publicaciones</0>"
+      
     },
     "guide": {
-        "hover": "Pasa sobre mí",
-        "msg1": "Comencemos",
-        "msg2": "Nuestros servicios",
-        "wiiguide": "Ves a wii.guide"
+      "mainTitle": "WiiLink - Guía",
+      "mainDesc": "¡Obten información importante y ayuda para nuestros múltiples servicios!",
+      "title": "Resuelve tus dudas en <0>WiiLink</0><1>guía</1>",
+      "subtitle": "¡Aquí encontrarás <0>información importante</0> acerca de el servicio, así como útiles <1>guías</1> y <2>ayuda</2> para que puedas disfrutar de nuestros servicios lo antes posible!",
+      "specificGuides": "¿Qué estás <0>buscando</0>?",
+      "helpTitle": "<0>¿Algo no va <1>bién</1>? ¡No dudes en <2>contactarnos</c2>!</0>",
+      "helpButton1": "Contactar",
+      "helpButton2": "Unirse a Discord"
+    },
+    "guidePost": {
+      "name": "Guía",
+      "whereTo": "¿Dónde quieres ir?",
+      "installGuide": "Guía de instalación",
+      "problemSolving": "Solución de problemas",
+      "faq": "Preguntas frecuentes",
+      "lookingFor": "¿Qué es lo que estás <0>buscando</0>?",
+      "visitWiiHacks": "Visitar wii.hacks.guide",
+      "copyright": "© 2020-2023  <2>Equipo</2> <0>WiiLink<1>guía</1></0>"
+    },
+    "newsPost": {
+      "name": "Noticias"
+    },
+    "status": {
+      "mainTitle": "WiiLink - Estado",
+      "mainDesc": "¡Verifica el estado de nuestros servicios y su progreso!",
+      "title": "Verifica el <0>WiiLink</0><1>estado</1>",
+      "subtitle": "Mira nuestro <0>progreso</0> en los diversos servicios que ofrecemos, así como el estado de nuestros <1>servidores</1>!",
+      "serverStatus": "Mira el estado de nuestros servidores."
+    },
+    "extras": {
+      "mainTitle": "WiiLink - Extras",
+      "mainDesc": "¡Mira algunas cosas chulas que tenemos para tí!",
+      "title": "Esto es <0>WiiLink</0><1>extras</1>",
+      "subtitle": "Aquí encontrarás <0>cosas chulas</0> en las que hemos estado trabajando. ¡Esperamos que os <1>guste</1>!",
+      "helpCall": "<0>¿Crees que hay algo que deberíamos <1>añadir</1> aquí? ¡No dudes en <2>decírnoslo</2>!</0>",
+      "contact": "Contáctanos",
+      "joinDiscord": "Únete a Discord"
+    },
+    "404": {
+      "mainTitle": "WiiLink - 404",
+      "mainDesc": "404 - La página que buscas no se ha podido encontrar...",
+      "message": "La página no se ha podido encontrar..."
+    },
+    "tos": {
+      "mainTitle": "WiiLink - Términos del Servicio",
+      "mainDesc": "Términos del Servicio para los servicios de WiiLink."
+    },
+    "privacyPolicy": {
+      "mainTitle": "WiiLink - Politica de Privacidad",
+      "mainDesc": "Política de Privacidad para los servicios de WiiLink."
+    },
+    "eula": {
+      "mainTitle": "WiiLink - Acuerdo de Licencia para el Usuario",
+      "mainDesc": "Acuerdo de Licencia para el Usuario para los servicios de WiiLink."
     }
-
   }

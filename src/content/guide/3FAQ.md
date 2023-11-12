@@ -1,8 +1,10 @@
 ---
-title: Frequently Asked Questions
-pubDate: "2021-01-29"
+title: Frequently asked questions
+icon: fa-solid fa-circle-question
+pubDate: 2023-09-24
+description: Some frequently asked questions you might be interested in...
+heroImage: "../../img/guidebg-2.png"
 ---
-
 ## WiiLink
 #### Information about the service itself.
 

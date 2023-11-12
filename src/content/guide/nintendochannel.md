@@ -1,6 +1,7 @@
 ---
 title: Nintendo Channel
-pubDate: "2021-01-29"
+pubDate: 2021-01-29
+icon: fa-solid fa-tv
 ---
 ## Enjoy Nintendo Content and other features in one Channel!
 

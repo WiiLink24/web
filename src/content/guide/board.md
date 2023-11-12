@@ -1,6 +1,7 @@
 ---
 title: Wii Message Board
-pubDate: "2021-01-29"
+pubDate: 2021-01-29
+icon: fa-solid fa-chalkboard
 ---
 ## Send Messages to your Wii Friends at any time!
 

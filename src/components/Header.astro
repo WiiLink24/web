@@ -6,66 +6,111 @@ import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next from "i18next";
 import i18next, { t, changeLanguage } from "i18next";
+import Layout from "../layouts/Layout.astro";
+import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
+import { LanguageSelector } from "astro-i18next/components";
+
+const { isGuide, isMain } = Astro.props;
 ---
 
+<Layout/>
+<Agreement/>
 
-
-<r class="bannerholder">
-	<a href="/"><img class="logo" src=" ../../Images/Wii_Link_Logo.png" width="190px"></a>
-	<ul>
-		<a href={localizePath("/")}><div class="banner">{t("header.home")}</div></a>
-		<a href={localizePath("/news")}><div class="banner">{t("header.news")}</div></a>
-		<a href={localizePath("/guide/1welcome")}><div class="banner">{t("header.guide")}</div></a>
-		<a href={localizePath("/status")}><div class="banner">{t("header.status")}</div></a>
-		<a href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}</div></a>
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'"><div id="light" class="banner strong">{t("header.install")}</div></a>
-		</ul>
-		<HeaderSmall />
-<a href="https://www.patreon.com/WiiLink24"><img class="donate" src=" ../../Images/patreon.svg" width="30px" style="border-radius:0px;"></a>
-<LanguageSelector showFlag={false} class="lang" />
+<r lang={i18next.language} class="bannerholder">
+	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
+	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
+	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+		<i class="fa-solid fa-angle-right"></i>
+	  </button>
+	  <ul>
+		<a class="link" href={localizePath("/")}><div class="banner">{t("header.home")}<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/news")}><div class="banner">{t("header.news")}<div class="underline" style="background-color:#ffc10740;"></div></div></a>
+		<a class="link" href={localizePath("/guide/")}><div class="banner">{t("header.guide")}<div class="underline" style="background-color:#19875440;"></div></div></a>
+		<a class="link" href={localizePath("/status")}><div class="banner">{t("header.status")}<div class="underline" style="background-color:#0d6efd40;"></div></div></a>
+		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
+		<button class="btn btn-primary" style="padding:0px; transform:translate(0, 1px);">
+		<LanguageSelector showFlag={true} class="my-select-class" />
+	</button>
+		<a class="link" href={localizePath("/extras")}><div class="btn btn-danger" style="transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-box-open" style="margin-right:5px;"></i> {t("header.extras")}<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style="font-size:10px;">
+			{t("header.extrasNew")}
+		  </span>
+		</div></a>
+		<button style={isGuide} class="btn3 btn btn-secondary">
+			<a href={localizePath("/guide/")}>
+				<i class="fa-solid fa-house"></i>
+			</a>
+		  </button>
+		<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-moon"></i></button>
+	 </ul>
 </r>
 
-<div id="fade" class="oschoose">
-	<div class="container">
-		<a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='none'" style="position:absolute; right:80px;"><img class="close" src="/Images/close.png"></a>
-		<h2 style="left:40px; margin-bottom:0px; position:absolute;">{t("download.welcome")}</h2>
-		<h3 style="left:40px; top:68px; margin-bottom:0px; position:absolute;">{t("download.oschoose")}</h3>
-		<div class="btns">
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Windows_v1.2.1.exe"><div class="btn win"> <img class="osimg" src="../Images/windowslogo.png"><h3 style="bottom:120px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Windows</h3> <h4 style="bottom:150px; left:15px; font-size:20px; position:relative;">{t("download.winreq")}</h4></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_macOS_v1.2.1"><div class="btn mac"><img class="osimg" src="../Images/applelogo.png"><h3 style="bottom:110px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">MacOS</h3></div></a>
-			<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/download/v1.2.1/WiiLink_Patcher_Linux-x64_v1.2.1"><div class="btn lin"><img class="osimg" src="../Images/linuxlogo.png"><h3 style="bottom:80px; left:15px; font-family:Gilroy; font-size:30px; position:relative;">Linux</h3></div></a>
-		</div>
-		<a href="https://github.com/WiiLink24/DeliverooHelper/releases"><div class="demae">{t("download.deliveroo")}</div></a>
-		<a href="/guide/1welcome"><h3 class="docs" style="text-align: center; width:100%; position:absolute; bottom:5px;"><Trans i18nKey={"download.checkdocs"}>Check out the installation tutorial on our <bg style="padding:5px; background-color:green; border-radius: 8px;">brand new guide!</bg></Trans></h3></a>
-	</div>
-</div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
+<script is:inline>
 
-<script>
-	window.addEventListener("scroll", function() {
-var r = document.querySelector("r");
-r.classList.toggle("sticky", window.scrollY > 0);
-	})
-</script>
-<script src="https://kit.fontawesome.com/da19af22d7.js" crossorigin="anonymous"></script>
-<script>
-var coll = document.getElementsByClassName("collapsible");
-var i;
+document.addEventListener('DOMContentLoaded', function () {
+  
+  // Check if the user has a preference stored
+  const savedMode = localStorage.getItem('color-mode');
 
-for (i = 0; i < coll.length; i++) {
-coll[i].addEventListener("click", function() {
-this.classList.toggle("active");
-var content = this.nextElementSibling;
-if (content.style.display === "block") {
-  content.style.display = "none";
-} else {
-  content.style.display = "block";
-}
+if (savedMode === 'dark') {
+    enableDarkMode();
+	themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	themeColorButton.style.filter = "invert(0)";
+  } else {
+    enableLightMode();
+	themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
+	themeColorButton.style.filter = "invert(1)";
+  }
 });
-}
+
+function enableDarkMode() {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('color-mode', 'dark');
+  }
+
+  // Function to enable light mode
+  function enableLightMode() {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('color-mode', 'light');
+  }
+
+function darkToggle() {
+	const themeColorButton = document.getElementById('themeColor');
+    if (document.documentElement.classList.contains('dark')) {
+      enableLightMode();
+	  themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
+	  themeColorButton.style.filter = "invert(1)";
+    } else {
+      enableDarkMode();
+	  themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	  themeColorButton.style.filter = "invert(0)";
+    }
+  }
+
 </script>
+
+<script is:inline>
+var gradient = document.getElementById("grad");
+
+
+function checkPageScroll() {
+  var scrollPosition = window.scrollY || window.pageYOffset;
+
+  if (scrollPosition > 0) {
+    gradient.style.opacity = 1;
+  } else {
+	gradient.style.opacity = 0;
+  }
+}
+
+window.addEventListener('scroll', checkPageScroll);
+
+  </script>
+  
 
 <style>
 	
@@ -73,7 +118,7 @@ if (content.style.display === "block") {
 		width:88%;
 		height:50px;
 		bottom:80px;
-		font-family: Cafe;
+		font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: 20px;
 		text-align: center;
 		line-height:50px;
@@ -90,15 +135,76 @@ if (content.style.display === "block") {
 		box-shadow: 0px 0px 58px rgba(255, 255, 255, 0.075);
 		transition: 0.2s;
 	}
+	.my-select-class{
+		top:0;
+		left:0;
+		width:45px;
+		height:42px;
+		font-size:30px;
+		border:0px;
+		background-color:#ffffff00;
+		position:relative;
+	}
+	.badge{
+		top:20px; left:230px; font-size:15px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:absolute;
+	}
+	#grad{
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
+	}
+
+.link:hover .underline{
+    height:15px;
+    transition: 0.5s;
+  }
+  .underline{
+    bottom:0;
+    left:0;
+    transform: translate(0, -18px);
+    width:100%;
+    height:0px;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: #00000020;
+    position: relative;
+
+  }
+
+	.btn1{
+		transform: translate(0, 10px);
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: relative;
+	}
+
+	.btn2{
+		top:50%;
+		left:258px;
+		transform: translate(0, -50%);
+		opacity:0;
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: absolute;
+	}
+
+	.btn3{
+		transform: translate(0, 10px);
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: relative;
+	}
 
 a:link{
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.53);
+	color: white;
 }
 
 a:visited{
 	text-decoration: none;
-	color: rgba(255, 255, 255, 0.53);
+	color: white;
 }
 
 .bannerholder{
@@ -106,16 +212,18 @@ a:visited{
     left:0;
 	width:100%;
 	height:128px;
+	display:block;
 	background-color: rgba(255, 255, 255, 0);
     z-index: 80;
     transition: 0.5s;
-    position: fixed;
+    position: sticky;
 }
 
 .logo{
 	top:50%;
-	left:8%;
+	left:50px;
 	transform: translate(0,-50%);
+	filter: invert(1);
 	position: absolute;
 }
 
@@ -135,22 +243,28 @@ a:visited{
 
 ul{
 	display: flex;
-	gap:30px;
-	left:350px;
-	top:40%;
-	transform: translate(0%, -50%);
-	font-family: Cafe;
+	gap:10px;
+	width:auto;
+	right:50px;
+	top:60px;
+	transform: translate(0, -50%);
+	align-items:center;
+	justify-content:center;
+	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color:rgba(255, 255, 255, 0.53);
 	position: absolute;
 }
 
 .banner{
+	font-size:20px;
+	margin-right:20px;
+	mix-blend-mode: difference;
+	color:black;
     position:relative;
     transition: 0.5s;
 }
 
 .banner:hover{
-	color:white;
 }
 
 .strong{
@@ -169,7 +283,7 @@ ul{
 
 .bannername{
     text-align: center;
-    font-family: Gilroy;
+    font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:black;
     opacity: 0;
     transform: translate(0,-10);
@@ -179,26 +293,6 @@ ul{
 .banner:hover .bannername{
     opacity: 1;
     transform: translate(0,0px);
-    transition: 0.5s;
-}
-
-.fade{
-    width:100%;
-    height:200px;
-    bottom:0;
-    left:0;
-    background: linear-gradient(180deg, rgba(255,227,156,0) 0%, rgba(24,24,24,1) 100%);
-    z-index: 1;
-    position: fixed;
-}
-
-t{
-    opacity: 0;
-    transition: 0.5s;
-}
-
-t.sticky{
-    opacity: 1;
     transition: 0.5s;
 }
 
@@ -214,7 +308,7 @@ img{
     background-size: cover;
     background-color: rgba(203, 203, 203, 0.768);
     color:rgb(0, 0, 0);
-    font-family:Cafe;
+    font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	filter: opacity(0.7);
     border: 0px;
     width:35px;
@@ -271,16 +365,6 @@ img{
 	position: absolute;
 }
 
-.btn{
-	width:200px;
-	height:150px;
-	margin:15px;
-	background-color: rgba(135, 129, 129, 0.21);
-	border-radius: 8px;
-	overflow: hidden;
-	transition: 0.5s;
-}
-
 .container{
 	width:750px;
 	height:450px;
@@ -310,12 +394,6 @@ img{
 	padding:10px;
 	border-radius: 8px;
 	position: absolute;
-	transition: 0.5s;
-}
-
-.btn:hover{
-	transform: translate(0, -3px);
-	box-shadow: 0px 0px 28px rgba(255, 255, 255, 0.119);
 	transition: 0.5s;
 }
 
@@ -361,6 +439,12 @@ img{
 	background-color: rgb(22, 22, 21);
 }
 
+@media (max-width:1400px){
+		.btn2{
+			opacity:1;
+		}
+	}
+
 @media (max-width:1000px){
 	.container{
 		top:0;
@@ -372,29 +456,6 @@ img{
 		border-radius: 0px;
 		animation: none;
 		position: fixed;
-	}
-
-	.btns{
-		display:block;
-		width:100%;
-		height:70%;
-		left:0;
-		transform: translate(0, 0);
-		top:158px;
-		overflow: scroll;
-	}
-
-	.btn{
-		width:90%;
-		left:50%;
-		transform: translate(-50%, 0);
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
-
-	.btn:hover{
-		transform: translate(-50%, -5px);
 	}
 
 	.osimg{
@@ -411,6 +472,14 @@ img{
 
 	.lang{
 		display: none;
+	}
+
+	span{
+		display:none;
+	}
+
+	.btn1{
+		display:none;
 	}
 
 	.donate{
