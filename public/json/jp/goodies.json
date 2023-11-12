@@ -1,0 +1,55 @@
+{
+  "goodies": {
+    "goodie": [
+      {
+        "title": "<i class='fa-solid fa-palette'></i> ブランドデータ",
+        "desc": "アナウンスなどで使う画像やロゴ。",
+        "img": "/img/branding_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> 壁紙",
+        "desc": "パソコンやスマホをWiiLinkの壁紙でデコろう！",
+        "img": "/img/wallpaper_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-user-group'></i> チームメンバー",
+        "desc": "WiiLinkの開発者について知ろう！",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
+        "desc": "Wii・Wii Uのアカウントタグサービス",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-poll'></i> 投票チャンネルアンケート結果",
+        "desc": "みんなで投票チャンネルのアンケート結果を見てみよう！!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-house'></i> Wiiの間オリジナル",
+        "desc": "Wiiの間の動画のアーカイブ！",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLinkテーマ",
+        "desc": "WiiをWiiLinkのテーマで雰囲気を変えよう！",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "desc": "WiiLinkの新しいオンラインプレイサービス！",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      }
+
+]
+}
+}
