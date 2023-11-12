@@ -32,7 +32,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 	<div id="slide-track"></div>
 			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;"><Trans i18nKey="extras.helpCall"><b>Do you think there's something we should <c class="color">add</c> in here? Be sure to <c class="color">get in touch</c>!</b></Trans></h3>
 			<div class="btn-wrapper">
-			<a href="/rss.xml"><div class="btn btn-success" style="padding:10px;"><i class="fa-solid fa-envelope" style="margin-right:5px;"></i> {t("extras.contact")}</div></a>
+			<a href="mailto:contact@wiilink24.com"><div class="btn btn-success" style="padding:10px;"><i class="fa-solid fa-envelope" style="margin-right:5px;"></i> {t("extras.contact")}</div></a>
 			<a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> {t("extras.joinDiscord")}</div></a>
 		</div>
 			<div class="dots"></div>
