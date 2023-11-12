@@ -3,7 +3,7 @@ title: Wii Room
 pubDate: 2023-02-30
 icon: fa-solid fa-house
 ---
-## Access a fun Room for you Mii's to stay in, and enjoy other content as well!
+## Access a fun Room for you Miis to stay in, and enjoy other content as well!
 
 - Experience the intended "Everything Channel" on your Wii again!
 
