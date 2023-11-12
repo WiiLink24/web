@@ -17,7 +17,7 @@ changeLanguage("es");
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<Layout title="WiiLink - Extras" description="Check out some neat stuff we've got for you!" image="/img/News_embed.png" />
+<Layout title={t("extras.mainTitle")} description={t("extras.mainDesc")} image="/img/News_embed.png" />
 <Loading/>
 <Header isGuide="display:none;"/>
 
@@ -25,7 +25,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 	<div class="hold">
 		<img class="newstop" style="" src="/img/extrastop.png">
 			<div class="welcome-msg">
-				<h2 style="font-size:40px; font-family:Gilroy;"><Trans i18nKey="extras.title">This is <b style="font-family: Rubik;">WiiLink</b><span class="badge bg-danger" style="top:-20px; left:8px; font-size:15px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">extras</span></Trans></h2>
+				<h2 style="font-size:40px; font-family:Gilroy;"><Trans i18nKey="extras.title">This is <b style="font-family: Rubik;">WiiLink</b><span class="badge bg-danger" style="top:-20px; left:8px; font-size:15px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">extras</span></Trans></h2>
 				<h3><Trans i18nKey="extras.subtitle">Here you'll find <b class="color">some really cool stuff</b> we've been working on. We hope you <b class="color">enjoy</b>!</Trans></h3>
 			</div>
 
@@ -204,7 +204,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 	.slogan{
 		left:80px;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		color:white;
 		width:500px;
 		position: relative;
@@ -221,7 +221,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 	html{
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	}
 		.symbolholder{
 		background-color: var(--bg-color);
@@ -485,7 +485,7 @@ scrollableDiv.addEventListener('scroll', function() {
 		text-align: justify;
 		color:rgb(33, 36, 40);
 		width:90%;
-		font-family: system-ui;
+		font-family: systemui;
 		display: -webkit-box;
     	-webkit-line-clamp: 2;
     	-webkit-box-orient: vertical;
@@ -534,7 +534,7 @@ scrollableDiv.addEventListener('scroll', function() {
 
 	.desc{
 		position: absolute;
-		font-family: system-ui;
+		font-family: systemui;
 		width:90%;
 		font-size: 20px;
 		right:20px;

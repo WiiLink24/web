@@ -63,6 +63,8 @@
       "subtitle": "<0>WiiLink</0> is powered by <1>100%</1> volunteer work. </2><3>Here's some of the incredible people who help <4>WiiLink</4> come to life!</3>"
     },
     "news": {
+      "mainTitle": "WiiLink - News",
+      "mainDesc": "Read up on WiiLink's latest improvements and releases!",
       "title": "Here is the <0>WiiLink</0><1>news</1>",
       "subtitle": "Catch up on all our <0>antics</0>, as well as <1>service updates</1>!",
       "otherNews": "Here's some <0>older</0> articles:",
@@ -71,6 +73,8 @@
       "otherPosts": "Other <0>posts</0>"
     },
     "guide": {
+      "mainTitle": "WiiLink - Guide",
+      "mainDesc": "Get important info and help for our services!",
       "title": "Welcome to the <0>WiiLink</0><1>guide</1>",
       "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to get you up and running in no time!",
       "specificGuides": "What are you <0>looking for</0>?",
@@ -79,6 +83,7 @@
       "helpButton2": "Join our Discord"
     },
     "guidePost": {
+      "name": "Guide",
       "whereTo": "Where do you want to go?",
       "installGuide": "Installation guide",
       "problemSolving": "Problem solving",
@@ -87,12 +92,19 @@
       "visitWiiHacks": "Visit wii.hacks.guide",
       "copyright": "© 2020-2023 <0>WiiLink<1>guide</1></0> <2> Team</2>"
     },
+    "newsPost": {
+      "name": "News"
+    },
     "status": {
+      "mainTitle": "WiiLink - Status",
+      "mainDesc": "Check our service status and its completion!",
       "title": "Check out the <0>WiiLink</0><1>status</1>",
       "subtitle": "Get a glimpse at our <0>progress</0>, in addition to the status of our <1>servers</1>!",
       "serverStatus": "Check out the status of our servers."
     },
     "extras": {
+      "mainTitle": "WiiLink - Extras",
+      "mainDesc": "Check out some neat stuff we've got for you!",
       "title": "This is <0>WiiLink</0><1>extras</1>",
       "subtitle": "Here you'll find <0>some really cool stuff</0> we've been working on. We hope you <1>enjoy</1>!",
       "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
@@ -100,6 +112,20 @@
       "joinDiscord": "Join our Discord"
     },
     "404": {
+      "mainTitle": "WiiLink - 404",
+      "mainDesc": "404 - The page you were looking for could not be found...",
       "message": "The page could not be found..."
+    },
+    "tos": {
+      "mainTitle": "WiiLink - Terms of Service",
+      "mainDesc": "Terms of Service for the WiiLink family of services."
+    },
+    "privacyPolicy": {
+      "mainTitle": "WiiLink - Privacy Policy",
+      "mainDesc": "Privacy Policy for the WiiLink family of services."
+    },
+    "eula": {
+      "mainTitle": "WiiLink - End User License Agreement",
+      "mainDesc": "End User License Agreement for the WiiLink family of services."
     }
   }

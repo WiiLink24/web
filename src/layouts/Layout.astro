@@ -152,13 +152,19 @@ html.dark #square2 { background-color: #121212;   }
 
 @font-face {
   font-family: Rubik;
-  src: url(/fonts/Rubik.ttf);
+  src: url(./fonts/Rubik.ttf);
 }
 
 @font-face {
   font-family: gilroy;
-  src: url(/fonts/Gilroy.otf);
+  src: url(./fonts/Gilroy.otf);
 }
+
+@font-face {
+  font-family: systemui;
+  src: url(./fonts/sfpro.otf);
+}
+
 
 	:root {
 		--accent: 136, 58, 234;
@@ -174,7 +180,7 @@ html.dark #square2 { background-color: #121212;   }
 	html {
 		--bg-color: #ffffff;
 		scroll-behavior: smooth;
-		font-family: system-ui, sans-serif;
+		font-family: systemui, sans-serif;
 		background-color: var(--bg-color);
 		background-size: 224px;
 	}

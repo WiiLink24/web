@@ -12,6 +12,7 @@ import JumpIn from "../components/JumpIn.astro";
 import Themes from "astro-themes";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 
 changeLanguage("en");
 ---
@@ -106,7 +107,7 @@ changeLanguage("en");
 </script>
 
 					<label class="form-check-label" for="flexCheckDefault">
-						<Trans i18nKey="site.terms">I have read and accepted the <a href="/tos" style="text-decoration:underline;">Terms of Service</a> and <a href="/privacy-policy" style="text-decoration:underline;">Privacy Policy</a>.</Trans>
+						<Trans i18nKey="site.terms">I have read and accepted the <a href={localizePath("/tos")} style="text-decoration:underline;">Terms of Service</a> and <a href={localizePath("/privacy-policy")} style="text-decoration:underline;">Privacy Policy</a>.</Trans>
 					</label>
 				  </div>
 				  <a href="#intro" style="text-decoration: none;">
@@ -144,9 +145,9 @@ changeLanguage("en");
 				<a href="" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Donate!">Stripe<i style="margin-left:15px;" class="fa-brands fa-stripe-s"></i></div></a>
 				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
 				<div style="margin-top:15px;">
-				<a href="/"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
-				<a href="/"><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
-				<a href="/"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
 				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")} style="background-color:white; color:black; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
 				</div>
 			</div>

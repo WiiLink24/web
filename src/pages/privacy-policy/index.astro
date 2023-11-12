@@ -9,15 +9,15 @@ import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
-<Layout title="WiiLink - Privacy Policy" description="Privacy Policy for the WiiLink family of services." image="/img/news_post_welcome_back.png">
+<Layout title={t("privacyPolicy.mainTitle")} description={t("privacyPolicy.mainDesc")} image="/img/news_post_welcome_back.png">
 <Header isGuide="display:none;"/>
 
 <div class="sectiontop">
 <section class="section">
     <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Privacy</h1>
-    <h3 class="update" style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:system-ui; background-color:#00000060; position:absolute;" class="updated" >Last updated: 03/12/2022</h3>
+    <h3 class="update" style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:systemui; background-color:#00000060; position:absolute;" class="updated" >Last updated: 03/12/2022</h3>
     <div class="polka-dot"></div>
-    <p class="title" style="filter:opacity(0.3); font-family:system-ui; transform:translate(0, -20px);">
+    <p class="title" style="filter:opacity(0.3); font-family:systemui; transform:translate(0, -20px);">
         Privacy policy for the WiiLink family of services
     </p>
 <section class="section">
@@ -104,7 +104,7 @@ changeLanguage("en");
         Data Security and Transactions
     </p>
     <section class="section">
-        <div class="alert alert-primary" style="font-family:system-ui;" role="alert">
+        <div class="alert alert-primary" style="font-family:systemui;" role="alert">
             <strong>Important!</strong><br>Only the website handles transactions. The service on the Wii does not.
     </div>
     </section>
@@ -127,7 +127,7 @@ changeLanguage("en");
         Children's Privacy
 </p>
 <section class="section">
-        <div class="alert alert-danger" style="margin-top:0; font-family:system-ui;" role="alert">
+        <div class="alert alert-danger" style="margin-top:0; font-family:systemui;" role="alert">
             <strong>Important!</strong><br>This service is not intended for children under the age of 13.
         </div>
 </section>
@@ -178,7 +178,7 @@ scrollableDiv.addEventListener('scroll', function() {
         transform: translate(-50%, 0);
         margin-bottom: 80px;
         position: relative;
-        font-family: system-ui;
+        font-family: systemui;
     }
     .title{
         font-family: Gilroy;
@@ -199,7 +199,7 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 	.slogan{
 		left:80px;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		color:white;
 		width:500px;
 		position: relative;

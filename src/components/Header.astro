@@ -20,7 +20,7 @@ const { isGuide, isMain } = Astro.props;
 
 <r lang={i18next.language} class="bannerholder">
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href="/" class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
+	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
 	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
 		<i class="fa-solid fa-angle-right"></i>
 	  </button>
@@ -38,11 +38,11 @@ const { isGuide, isMain } = Astro.props;
 		  </span>
 		</div></a>
 		<button style={isGuide} class="btn3 btn btn-secondary">
-			<a href="/guide">
+			<a href={localizePath("/guide/")}>
 				<i class="fa-solid fa-house"></i>
 			</a>
 		  </button>
-		<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+		<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
 		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-moon"></i></button>
 	 </ul>
 </r>
@@ -118,7 +118,7 @@ window.addEventListener('scroll', checkPageScroll);
 		width:88%;
 		height:50px;
 		bottom:80px;
-		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		font-size: 20px;
 		text-align: center;
 		line-height:50px;
@@ -146,7 +146,7 @@ window.addEventListener('scroll', checkPageScroll);
 		position:relative;
 	}
 	.badge{
-		top:20px; left:230px; font-size:15px; font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:absolute;
+		top:20px; left:230px; font-size:15px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:absolute;
 	}
 	#grad{
 	background: rgb(255,255,255);
@@ -250,7 +250,7 @@ ul{
 	transform: translate(0, -50%);
 	align-items:center;
 	justify-content:center;
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color:rgba(255, 255, 255, 0.53);
 	position: absolute;
 }
@@ -283,7 +283,7 @@ ul{
 
 .bannername{
     text-align: center;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color:black;
     opacity: 0;
     transform: translate(0,-10);
@@ -308,7 +308,7 @@ img{
     background-size: cover;
     background-color: rgba(203, 203, 203, 0.768);
     color:rgb(0, 0, 0);
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	filter: opacity(0.7);
     border: 0px;
     width:35px;
