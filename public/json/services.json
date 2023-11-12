@@ -63,6 +63,7 @@
             "link": "/guide/demae",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "demae_icon.png",
             "completed": "80"
           },
@@ -73,6 +74,7 @@
             "link": "/guide/tvnotomo",
             "isArea": "Japan Exclusive",
             "status": "Private Beta",
+            "todo": "Check back later...",
             "icon": "tvnotomo_icon.png",
             "completed": "50"
           },
@@ -83,6 +85,7 @@
             "link": "/guide/kirbytv",
             "isArea": "Video on-demand",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "kirby_icon.png",
             "completed": "60"
           },
@@ -93,6 +96,7 @@
             "link": "/guide/digicam",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "digicam_icon.png",
             "completed": "75"
           },
@@ -103,6 +107,7 @@
             "link": "/guide/wiinoma",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "room_icon.png",
             "completed": "85"
           },
@@ -113,6 +118,7 @@
             "link": "/guide/spd",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "room_icon.png",
             "completed": "85"
           },
@@ -123,6 +129,7 @@
             "link": "/guide/mail",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "room_icon.png",
             "completed": "85"
           },
@@ -133,6 +140,7 @@
             "link": "/guide/primepreview",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "room_icon.png",
             "completed": "85"
           },
@@ -143,6 +151,7 @@
             "link": "/guide/dokodemo",
             "isArea": "Japan Exclusive",
             "status": "Full Release",
+            "todo": "Check back later...",
             "icon": "room_icon.png",
             "completed": "85"
           }
