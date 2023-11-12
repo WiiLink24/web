@@ -43,9 +43,11 @@ const { isGuide, isMain } = Astro.props;
 			</a>
 		  </button>
 		<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
-		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-circle"></i></button>
+		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-moon"></i></button>
 	 </ul>
 </r>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
 <script is:inline>
 
@@ -77,9 +79,11 @@ function darkToggle() {
     if (document.documentElement.classList.contains('dark')) {
       enableLightMode();
 	  themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
+	  themeColorButton.style.filter = "invert(1)";
     } else {
       enableDarkMode();
-	  themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
+	  themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	  themeColorButton.style.filter = "invert(0)";
     }
   }
 

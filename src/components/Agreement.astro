@@ -4,6 +4,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "/consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import { LanguageSelector } from "astro-i18next/components";
 
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
@@ -23,13 +24,16 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       <div class="link"><a href="/guide" style="z-index: 1; postition:relative">Guide</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
       <div class="link"><a href="/status" style="z-index: 1; postition:relative">Status</a><div style="background-color:rgb(191, 112, 228);" class="underline"></div></div>
       <div class="link"><a href="/guide/3faq" style="z-index: 1; postition:relative">FAQ</a><div style="background-color:rgb(203, 229, 124);" class="underline"></div></div>
-      <a class="link" href="/extras"><div class="btn btn-primary" style="width:150px; transform:translate(0, 1px); padding:9px; margin-right:25px;"><i class="fa-solid fa-box-open"></i> Extras<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+      <a class="link" href="/extras"><div class="btn btn-danger" style="width:150px; transform:translate(0, 1px); padding:9px; margin-top:50px;"><i class="fa-solid fa-box-open"></i> Extras<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
         New
         </span>
       </div></a>
       <div style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:20px;" class="buttons">
-        <a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
-        <button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
+        <button class="btn btn-primary" style="padding:0px; transform:translate(0, 1px);">
+          <LanguageSelector showFlag={true} class="my-select-class" />
+        </button>
+        <a href="/"><button type="button" class=" btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+        <button id="themeColorMobile" type="button" class=" btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
       </div>
     </div>
   </div>
@@ -76,11 +80,27 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
 		z-index: 1000;
 	}
+  .buttons{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(480px, 1fr));
+  }
   .btn{
     display:none;
+    width:100px;
+    height:40px;
   }
 	.posthold:nth-child(n+7){
 		display:none;
+	}
+  .my-select-class{
+		top:0;
+		left:0;
+		width:45px;
+		height:42px;
+		font-size:30px;
+		border:0px;
+		background-color:#ffffff00;
+		position:relative;
 	}
   .desc{
 		position: absolute;
