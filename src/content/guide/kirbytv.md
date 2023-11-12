@@ -38,7 +38,7 @@ ___
 ___
 
 ## Troubleshooting & Questions
-### "Im getting 'Error Code 372404'!"
+### "I'm getting 'Error Code 372404'!"
 > This means that an error has occurred on the server side of things, Episodes may not be available at this time.
 
 ### "Will the rest of the series be on this Channel?"
