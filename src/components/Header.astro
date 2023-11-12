@@ -43,14 +43,13 @@ const { isGuide, isMain } = Astro.props;
 			</a>
 		  </button>
 		<a href="/"><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
-		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-sun"></i></button>
+		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-circle"></i></button>
 	 </ul>
 </r>
 
 <script is:inline>
 
 document.addEventListener('DOMContentLoaded', function () {
-  const themeColorButton = document.getElementById('themeColor');
   
   // Check if the user has a preference stored
   const savedMode = localStorage.getItem('color-mode');
@@ -74,10 +73,13 @@ function enableDarkMode() {
   }
 
 function darkToggle() {
+	const themeColorButton = document.getElementById('themeColor');
     if (document.documentElement.classList.contains('dark')) {
       enableLightMode();
+	  themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
     } else {
       enableDarkMode();
+	  themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
     }
   }
 
