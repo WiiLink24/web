@@ -27,13 +27,16 @@ ___
 1. Download the latest version of the WiiLink Patcher for your operating system.
 
 2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
-> Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.
+
+<l class="notice info fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
+
 3. After the Patcher is done downloading the files, simply disconnect your SD Card/USB Drive from your Computer, and input it into your Wii/Wii U.
 
 4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
 
 5. Highlight the WAD with `Nintendo Channel (WiiLink)` or `Minna no Nintendo Channel (WiiLink)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
-> The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.
+
+<l class="notice info fullwidth"> The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
 <l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Nintendo Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
