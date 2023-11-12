@@ -5,7 +5,6 @@ icon: fa-solid fa-umbrella
 ---
 ## View full Weather Forecasts from around the World on your Wii!
 
-- 
 ___
 ## Installation Guide
 

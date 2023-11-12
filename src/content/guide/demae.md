@@ -229,8 +229,7 @@ The following countries used to be supported, but not anymore.
 
 #### Section V - Setting up Address Information
 
-<l class="notice info fullwidth"> WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](https://theoldnet.com/get?url=https%3A%2F%2Fdemae.wiilink24.com%2Fprivacypolicy&year=2022&scripts=false&decode=false). (Currently archived, as new page is being worked on) </l>
-
+<l class="notice info fullwidth"> WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](https://wiilink24.com/privacy-policy).
 For this particular version of Food Delivery Channel, you don’t have to have accurate address information, as that is needed to be set up on the Deliveroo app. However, you’ll still need to go to the menu first before you can use Food Delivery Channel.
 
 1. Launch the Food Delivery Channel from the Wii Menu.
