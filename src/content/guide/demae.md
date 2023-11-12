@@ -26,7 +26,7 @@ ___
 
 
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="/"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
 </div>
 </br>
 
