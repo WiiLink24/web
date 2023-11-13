@@ -8,7 +8,7 @@ import { Trans } from "astro-i18next/components";
         <h1 class="title"><Trans i18nKey="donate.title">Made possible by users like <b class="color">you</b></Trans></h1>
         <h2 class="subtitle"><Trans i18nKey="donate.subtitle"><b style="font-family:Rubik;">WiiLink</b> is funded publicly by our <i class="color">users</i> and <i class="color">sponsors</i>. <b class="color">To help our running costs, please consider donating!</b></Trans></h2>
         <div class="tiers">
-        <div id="inner-data" class="build-square move tier-1">
+        <div class="build-square tier-1">
             <a href="https://www.patreon.com/checkout/WiiLink24?rid=6879694" style="text-decoration:none;">
             <span class="bdg badge bg-warning">$1</span>
             <h1 style="color:#8cb727;" class="tier-title">Violet</h1>
@@ -16,7 +16,7 @@ import { Trans } from "astro-i18next/components";
             <img class="donate-image" src="img/tier_1.png">
             </a>
         </div>
-        <div id="inner-data" class="build-square move tier-2">
+        <div class="build-square tier-2">
             <a href="https://www.patreon.com/checkout/WiiLink24?rid=6879696" style="text-decoration:none;">
             <span class="bdg badge bg-info">$5</span>
             <h1 style="color:#278eb7;" class="tier-title">Lilac</h1>
@@ -24,7 +24,7 @@ import { Trans } from "astro-i18next/components";
             <img class="donate-image" src="/img/tier_2.png">
             </a>
         </div>
-        <div id="inner-data" class="build-square move tier-3">
+        <div class="build-square tier-3">
             <a href="https://www.patreon.com/checkout/WiiLink24?rid=6879695" style="text-decoration:none;">
             <span class="bdg badge bg-primary">$10</span>
             <span class="badge bg-danger" style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; font-size: 20px; position:absolute;">{t("donate.popular")}</span>
@@ -33,7 +33,7 @@ import { Trans } from "astro-i18next/components";
             <img class="donate-image" src="img/tier_3.png">
             </a>
         </div>
-        <div id="inner-data" class="build-square move tier-4">
+        <div class="build-square tier-4">
             <a href="https://www.patreon.com/checkout/WiiLink24?rid=6879876" style="text-decoration:none;">
             <span class="bdg badge bg-success">$20</span>
             <h1 style="color:#49b727;" class="tier-title">Rose</h1>
@@ -257,30 +257,54 @@ import { Trans } from "astro-i18next/components";
     @media only screen and (max-width: 800px) {
 
         .build-square{
-        width:100%;
-        max-width:170px;
+        left:50%;
+        width:95%;
+        max-width:100%;
+        transform:translate(-50%, 0);
         box-shadow: 0px 5px 10px #00000020;
         border-radius: 16px;
-        perspective: 500px;
-        display:flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
+        perspective: 0px;
+        display:block;
         gap:0px;
         padding:15px;
-        min-height:250px;
-        margin-bottom:5px;
+        min-height:150px;
+        margin-bottom:15px;
         transition: 0.1s;
         z-index: 1;
         position: relative;
     }
 
+    .build-square:hover{
+        transform:translate(-50%, -5px);
+        box-shadow: 0px 5px 15px #7d7d7d20;
+        border-width:4px;
+        transition: 0.1s;
+    }
+
+    .bdg{
+        top:20px;
+        left:10px;
+        border-radius: 8px;
+        transform: translateZ(0);
+        scale:100%;
+        font-size: 25px;
+        position: absolute;
+    }
+
+    .tiers{
+        left:0;
+        transform:translate(0, 0);
+        width:100%;
+        display:block;
+        position:relative;
+    }
+
     .build-square:nth-child(4) .donate-image{
-        top:80px;
-        left:50%;
+        top:50%;
+        right:0px;
         width:auto;
-        height:180px;
-        transform:translate(-50%, 0) translateZ(40px) scale(80%);
+        height:130px;
+        transform:translate(70px, -50%) translateZ(0) scale(100%);
         position:absolute;
     }
 
@@ -297,8 +321,12 @@ import { Trans } from "astro-i18next/components";
     }
 
     .donate-image{
-        top:90px;
-        width:150px;
+        top:50%;
+        right:-30px;
+        width:auto;
+        height:130px;
+        transform:translate(50px, -50%) translateZ(0) scale(80%);
+        position:absolute;
     }
 
     .slider {
@@ -313,12 +341,16 @@ import { Trans } from "astro-i18next/components";
     }
 
     .tier-title{
-        top:60px;
-        left:50%;
-        transform:translate(-50%, 0);
+        top:70%;
+        left:20px;
+        width:auto;
+        text-align:center;
+        transform:translate(0%, -50%);
+        color: black;
         font-family:Gilroy;
         position: absolute;
     }
+
 
     h3{
        transform: translate(0, 50px);
