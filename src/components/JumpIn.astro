@@ -17,6 +17,8 @@ import { Trans } from "astro-i18next/components";
         <a href="#top"><button type="button" class="btn btn-success btn-lg">{t("jumpin.install")}</button></a>
 </div>
 
+<div class="bottomHelper" style=" top:100%; width:100%; height:20px; position:relative;"></div>
+
 <style>
 
 .promptholder{
@@ -104,6 +106,10 @@ h1 {
     width:100%;
     border:0px;
     border-radius:0px;
+  }
+
+  .bottomHelper{
+    display:none;
   }
 }
 
