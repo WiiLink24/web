@@ -55,6 +55,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     z-index: 10;
     position: fixed;
   }
+  .logohold{
+    display:none;
+  }
   .fade{
 		width:100%;
 		height:100%;
@@ -289,6 +292,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
 
 @media only screen and (max-width: 1000px) {
+  .logohold{
+    display:block;
+  }
   .btn{
     display:block;
   }
