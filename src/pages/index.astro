@@ -7,6 +7,7 @@ import BuildInfo from "../components/build.astro";
 import Team from "../components/team.astro";
 import Socials from "../components/Socials.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import Agreement from "../components/Agreement.astro";
 import JumpIn from "../components/JumpIn.astro";
 import Themes from "astro-themes";
@@ -131,7 +132,11 @@ changeLanguage("en");
 
 			<Agreement/>
 
-		</div>			
+			<div class="mainFooter">
+				<Footer />
+			</div>
+
+		</div>	
 
 		<div class="square"></div>
 		<div class="footer-holder">
@@ -160,7 +165,9 @@ changeLanguage("en");
 <script>
 
 const scrollableDiv = document.getElementById('square2');
+const width = window.innerWidth;
 
+if (width >= 1000){
 scrollableDiv.addEventListener('scroll', function() {
   // Check if the user has scrolled to the bottom
   if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
@@ -170,6 +177,9 @@ scrollableDiv.addEventListener('scroll', function() {
 	scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
   }
 });
+} else {
+	scrollableDiv.style.setProperty("height", "100%");
+}
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
@@ -327,6 +337,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		display: flex;
 		flex-wrap: wrap;
 		position: absolute;
+	}
+	.mainFooter{
+		display:none;
 	}
 	.slogan{
 		left:80px;
@@ -613,6 +626,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 			position: relative;
 		}
 
+		.mainFooter{
+		top:37%;
+		display:block;
+		position:relative;
+	}
+
 		.top{
 		top:0;
 		left:50%;
@@ -684,6 +703,12 @@ document.addEventListener("DOMContentLoaded", async function () {
 		gap:5px;
 		position:relative;
 	}
+		.square{
+			display:none;
+		}
+		.footer-holder{
+			display:none;
+		}
 		.btn{
 			width:100%;
 		}
