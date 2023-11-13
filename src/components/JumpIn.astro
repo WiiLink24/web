@@ -6,7 +6,10 @@ import { Trans } from "astro-i18next/components";
 <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.485/build/spline-viewer.js"></script>
 
 <div class="promptholder">
-    <iframe style="pointer-events:none; top:0; left:0; position:absolute;" src='https://my.spline.design/photorealearth-01c3b981bccc7bff8a09b8e10c41760f/' frameborder='0' width='100%' height='100%'></iframe>
+    <video style="top:0; left:0; width:100%; height:100%; object-fit:cover; position:absolute" width="320" height="240" autoplay no-controls>
+        <source src="img/vid.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video> 
     <div class="dots"></div>
     <div style="left:1030px; top:400px; rotate:350deg;" class="dots"></div>
         <h1><Trans i18nKey="jumpin.title">Are you ready to <b class="color">jump</b>?</Trans></h1>
@@ -14,15 +17,12 @@ import { Trans } from "astro-i18next/components";
         <a href="#top"><button type="button" class="btn btn-success btn-lg">{t("jumpin.install")}</button></a>
 </div>
 
-<div style="top:100%; width:100%; height:3px; position:relative;"></div>
-
 <style>
 
 .promptholder{
     top:480px;
     left:50%;
     transform:translate(-50%, 0);
-    width:70%;
         width:95%;
         max-width:1500px;
         background: rgb(24, 24, 24); 
@@ -98,6 +98,12 @@ h1 {
     @media only screen and (max-width: 1000px) {
   iframe{
     display:none;
+  }
+
+  .promptholder{
+    width:100%;
+    border:0px;
+    border-radius:0px;
   }
 }
 
