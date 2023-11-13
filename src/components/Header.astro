@@ -30,9 +30,21 @@ const { isGuide, isMain } = Astro.props;
 		<a class="link" href={localizePath("/guide/")}><div class="banner">{t("header.guide")}<div class="underline" style="background-color:#19875440;"></div></div></a>
 		<a class="link" href={localizePath("/status")}><div class="banner">{t("header.status")}<div class="underline" style="background-color:#0d6efd40;"></div></div></a>
 		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
-		<button class="btn btn-primary" style="padding:0px; transform:translate(0, 1px);">
-		<LanguageSelector showFlag={true} class="my-select-class" />
-	</button>
+			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
+			<div class="dropdown">
+				<button class="btn dropdown-toggle" onclick="toggleTranslate()"  id="titleTranslate" style="transform:scale(130%);" type="button" data-bs-toggle="" aria-expanded="false">
+				</button>
+				<ul class="dropdown-menu" id="dropMenu" style="transform:translate(50px, -10px);">
+					<form>
+					<li><h6 class="dropdown-header">Choose your language</h6></li>
+					<div id="optionsDisplay"></div>
+				  <li><hr class="dropdown-divider"></li>
+				  <p style="left:50%; transform:translate(-50%, 0); width:90%; margin:0; position:relative;">
+					Do you want to contribute?</br> <i class="fa-brands fa-discord"></i> Join our Discord!
+				  </p>
+				</form>
+				</ul>
+			  </div>
 		<a class="link" href={localizePath("/extras")}><div class="btn btn-danger" style="transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-box-open" style="margin-right:5px;"></i> {t("header.extras")}<span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger" style="font-size:10px;">
 			{t("header.extrasNew")}
 		  </span>
@@ -48,6 +60,53 @@ const { isGuide, isMain } = Astro.props;
 </r>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+<script is:inline>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the dropdown element
+            var dropdown = document.getElementById("my-select-id");
+
+            // Get the div where options will be displayed
+            var optionsDisplayDiv = document.getElementById("optionsDisplay");
+			var titleTranslate = document.getElementById("titleTranslate");
+
+
+            // Clear the previous content
+            optionsDisplayDiv.innerHTML = "";
+
+            // Iterate through each option and display its name and link
+            for (var i = 0; i < dropdown.options.length; i++) {
+                var option = dropdown.options[i];
+                var optionName = option.value;
+                var optionLink = option.innerHTML;
+				optionLinkFlag = optionLink.substring(0,4);
+				if (i == 0) {
+					titleTranslate.innerHTML = optionLinkFlag;
+				}
+                optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink; + "</button></a></li>"
+
+            }
+
+			twemoji.parse(document.getElementById("optionsDisplay"));
+			twemoji.parse(document.getElementById("titleTranslate"));
+        });
+
+		let open = 0;
+		function toggleTranslate() {
+			if (open == 0) {
+				document.getElementById("dropMenu").style.opacity = "1";
+				document.getElementById("dropMenu").style.pointerEvents = "";
+				open = 1;
+			} else {
+				document.getElementById("dropMenu").style.opacity = "0";
+				document.getElementById("dropMenu").style.pointerEvents = "none";
+				open = 0;
+			}
+		}
+
+		document.getElementById("dropMenu").style.opacity = "0";
+		document.getElementById("dropMenu").style.pointerEvents = "none";
+    </script>
+
 
 <script is:inline>
 
@@ -120,6 +179,7 @@ window.addEventListener('scroll', checkPageScroll);
 		height:42px;
 		font-size:30px;
 		border:0px;
+		display:none;
 		background-color:#ffffff00;
 		position:relative;
 	}

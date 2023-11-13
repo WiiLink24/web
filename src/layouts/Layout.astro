@@ -69,6 +69,7 @@ const { title, description, image} = Astro.props;
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
 		<script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
+		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 		<title>{title}</title>
 	</head>
@@ -193,6 +194,10 @@ html.dark #square2 { background-color: #121212;   }
 	.service:hover{
 		transform:scale(105%);
 		transition: 0.3s;
+	}
+
+	.emoji{
+		width:24px;
 	}
 
 	h1 {
