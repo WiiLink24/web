@@ -30,7 +30,7 @@ changeLanguage("jp");
 			</div>
 				<div id="postholder"></div>
 
-			<a href="https://status.wiilink24.com/"><button type="button" class="btn1 btn btn-success" style="width:400px; top:80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:relative;"><i class="fa-solid fa-server" style="margin-right:5px;"></i> {t("status.serverStatus")}</button></a>
+			<a href="https://status.wiilink24.com/"><button type="button" class="btn1 btn btn-success" style="width:90%; top:50px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:relative;"><i class="fa-solid fa-server" style="margin-right:5px;"></i> {t("status.serverStatus")}</button></a>
 
 		</section>
 
@@ -461,6 +461,7 @@ scrollableDiv.addEventListener('scroll', function() {
 			display:block;
 			transform: translate(0, -50px);
 			width:100%;
+			overflow:hidden;
 			display: block;
 		}
 		.work{
@@ -474,10 +475,11 @@ scrollableDiv.addEventListener('scroll', function() {
 		}
 		#postholder{
 		left:50%;
-		width:105%;
+		width:100%;
 		transform:translate(-50%, 0);
 		display: block;
-		top:100px;
+		top:30px;
+		overflow:hidden;
 		position: relative;
 		padding-bottom:50px;
 		z-index: 10;

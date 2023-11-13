@@ -45,7 +45,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 				}
 			</div>
 
-			<h2 style="left:80px; font-family:Gilroy; font-size:50px; padding-bottom:20px; position:relative; width:50%;"><Trans i18nKey="guide.specificGuides">What are you <b class="color">looking for</b>?</Trans></h2>
+			<h2 class="subtitle"><Trans i18nKey="guide.specificGuides">What are you <b class="color">looking for</b>?</Trans></h2>
 
 			<div class="postholdermini">
 				<div class="polka-dot"></div>
@@ -163,6 +163,14 @@ scrollableDiv.addEventListener('scroll', function() {
 		display: flex;
 		flex-wrap: wrap;
 		position: absolute;
+	}
+	.subtitle{
+		left:80px; 
+		font-family:Gilroy; 
+		font-size:50px; 
+		padding-bottom:20px; 
+		position:relative; 
+		width:50%;
 	}
 	.slogan{
 		left:80px;
@@ -596,13 +604,92 @@ scrollableDiv.addEventListener('scroll', function() {
 	}
 
 
+
 	@media only screen and (max-width:1000px) {
+		.postholder{
+		width:100%;
+		display: grid;
+		grid-template-columns:repeat(auto-fit, minmax(400px, 1fr));
+		position: absolute;
+		gap: 0px;
+		top:50px;
+		left:0;
+		transform: translate(0, 0);
+		overflow:hidden;
+		position: relative;
+		padding-bottom:200px;
+		z-index: 10;
+	}
 
-.newstop{
-	display:none;
-}
+	.post{
+		margin-top:20px;
+		margin-bottom:0;
+		height:200px;
+	}
 
-}
+	.postholdermini{
+		width:100%;
+		gap:5px;
+		overflow:hidden;
+	}
+
+	.postmini{
+		position: relative;
+    	height:150px;
+    	width:100%;
+ 		background-color:rgb(247, 247, 247);
+    	border-radius: 15px;
+		font-family: Gilroy;
+    	hyphens:auto;
+    	overflow: hidden;
+    	border: 2px solid rgba(215, 215, 215, 0.066);
+    	transition: 0.5s;
+		display:none;
+	}
+
+	.desc{
+		bottom:0;
+	}
+
+	.subtitle{
+		width:100%;
+		left:0;
+		text-align:center;
+		font-size:50px;
+	}
+
+		.newstop{
+			display:none;
+		}
+
+		.post:hover{
+    	transform: translate(0, 0px) scale(105%);
+    	box-shadow: 0px 5px 20px rgb(187, 187, 187);
+    	transition: 0.5s;
+  	}
+
+	  .post:hover .heroImage{
+		filter: brightness(0.7);
+		rotate: 0deg;
+		scale: 110%;
+		z-index:0;
+		transition: 0.3s;
+  	}
+
+	  .post:hover .title{
+		bottom:60%;
+		transform: translate(0, 50%);
+		transition: 0.5s;
+	}
+
+	.post:hover .desc{
+		bottom:48%;
+		opacity: 1;
+		transform: translate(0, 100%);
+		transition: 0.5s;
+	}
+
+	}
 
 	
 	@media only screen and (min-width:2000px) {
