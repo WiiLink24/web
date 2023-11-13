@@ -43,9 +43,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 </div>
 
 <style>
-  html{
-    transition: 0.5s;
-  }
   .dropdownbtn{
     top:20px;
     right:15px;
@@ -76,15 +73,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     text-decoration: none;
     color:inherit;
   }
-  .authimage{
-		margin-right:10px;
-		width:40px;
-		height:40px;
-		border-radius: 8px;
-		border:1px solid #ffffff;
-		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
-		z-index: 1000;
-	}
   .buttons{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(480px, 1fr));
@@ -105,105 +93,12 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		background-color:#ffffff00;
 		position:relative;
 	}
-  .desc{
-		position: absolute;
-		font-family: systemui;
-		width:90%;
-		font-size: 20px;
-		right:20px;
-		bottom:0;
-		transform:translate(0,50px);
-		opacity: 0;
-		text-align: justify;
-		transition: 0.5s;
-    	display: -webkit-box;
-    	-webkit-line-clamp: 2;
-    	-webkit-box-orient: vertical;
-    	overflow: hidden;
-    	text-overflow: ellipsis;
-	}
-
 	.post:hover .desc{
 		bottom:48%;
 		opacity: 1;
 		transform: translate(0, 100%);
 		transition: 0.5s;
 	}
-	.title{
-		width:100%;
-		z-index: 11;
-		display: flex;
-		align-items: center;
-		flex-direction: row-reverse;
-		font-size: 30px;
-		bottom:20px;
-		right:10px;
-		line-height: 30px;
-		font-family: Gilroy;
-		transition: 0.5s;
-		position: absolute;
-	}
-
-	.post:hover .title{
-		bottom:60%;
-		transform: translate(0, 50%);
-		transition: 0.5s;
-	}
-
-  .heroImage{
-		width:100%;
-		height:auto;
-		background-size: cover;
-		transition: 0.3s;
-	}
-
-	.fade{
-		width:100%;
-		height:100%;
-		background: linear-gradient(0deg, rgb(61, 61, 61) 0%, rgba(239, 239, 239, 0) 100%);
-		position: absolute;
-		z-index:2;
-		bottom:-50px;
-		left:0;
-		transition: 0.5s;
-	}
-  .post{
-		-webkit-mask-image: url(/img/mask2.svg);
-  mask-image: url(/img/mask2.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;    
-  mask-size: 100% 100%;
-  mask-position: center;
-		position: relative;
-    	height:390px;
-    	width:700px;
-    	border-radius: 15px;
-		font-family: Gilroy;
-    	hyphens:auto;
-    	overflow: hidden;
-		opacity:0;
-    color:#ffffff;
-    	transition: 0.5s;
-		animation-name: fadeup;
-		animation-duration:0.5s;
-		animation-fill-mode:forwards;
-		animation-delay:0.22s;
-	}
-  .posthold{
-    scroll-snap-align: start;
-		transform: translate(0, 0px);
-		transition: 0.5s;
-		position: relative;
-	}
-	.posthold:hover{
-		transition: 0.5s;
-	}
-  .toggle-dark{
-    border:0px;
-    background-color: #ffffff00;
-    z-index:10;
-    position: relative;
-  }
   .link:hover .underline{
     width:100%;
     transition: 0.5s;
@@ -218,28 +113,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     transition: 0.5s;
     background-color: blue;
     position: relative;
-
-  }
-  .news{
-    top:50%;
-    left:20px;
-    transform: translate(0, -50%);
-    position: absolute;
-  }
-  .news-container{
-    width:700px;
-    height:400px;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    display:flex;
-		position: absolute;
-		gap: 20px;
-		top:0px;
-		left:0;
-		position: relative;
-		z-index: 10;
-    scroll-snap-type: both mandatory;
-    border-radius: 30px;
   }
   .main{
     width: 100px;
@@ -249,13 +122,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     justify-content: center;
     align-items: right;
     text-align: right;
-    font-family: Gilroy;
-    font-size: 40px;
-  }
-  .services{
-    width: 100px;
-    display: flex;
-    flex-wrap: wrap;
     font-family: Gilroy;
     font-size: 40px;
   }
@@ -274,12 +140,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
    overflow: hidden;
    height: calc(100% - 18px);
 }
-  .logohamburger{
-    bottom:50px;
-    left:50px;
-    width:300px;
-    position: absolute;
-  }
   .color {
         background: url("/img/header_bg.png");
    -webkit-background-clip: text;
