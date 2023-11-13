@@ -25,6 +25,14 @@
           "link": "",
           "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
         },
+      {
+        "name": "hytracer",
+        "title": "Développeur",
+        "color": "#5e97f2",
+        "pfp": "https://github.com/hytracer.png",
+        "link": "https://github.com/hytracer",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-france_1f1eb-1f1f7.png"
+      },
   {
           "name": "Palapeli",
           "title": "Développeur",
@@ -83,7 +91,7 @@
 },
 {
   "name": "bendevnull",
-  "title": "LinkTag Creator",
+  "title": "Créateur de LinkTag",
   "color": "#5ef2b0",
   "pfp": "https://github.com/bennyman123abc.png",
   "link": "https://github.com/bennyman123abc",
@@ -186,7 +194,7 @@
       },
       {
         "name": "ryaltheamazing",
-        "title": "Social Media",
+        "title": "Réseaux sociaux",
         "color": "#ed3939",
         "pfp": "https://cdn.discordapp.com/avatars/696363690642898944/fbbf67f9f81d1ee06c0bb2f63c52e7c9.webp?size=240",
         "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"

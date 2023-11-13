@@ -79,10 +79,10 @@
     "guide": {
       "mainTitle": "WiiLink - Guide",
       "mainDesc": "Accédez à des informations importantes et à de l'aide pour nos services !",
-      "title": "Bienvenue sur le <1>guide</1><0>WiiLink</0>",
+      "title": "Bienvenue sur le <0>guide</0><1>WiiLink</1>",
       "subtitle": "Vous trouverez ici des <0>informations importantes</0> concernant le service, ainsi que des <1>guides</1> utiles et des <2>solutions</2> pour vous permettre d'être opérationnel en un rien de temps !",
       "specificGuides": "Que <0>cherchez-vous</0> ?",
-      "helpTitle": "<0>Impossible à faire <1>fonctionner</1> ? N'hésitez pas à <2>nous contacter</c2>!</0>",
+      "helpTitle": "<0>Impossible à faire <1>fonctionner</1> ? N'hésitez pas à <2>nous contacter</c2> !</0>",
       "helpButton1": "Contactez-nous",
       "helpButton2": "Rejoignez-nous sur Discord"
     },
@@ -102,7 +102,7 @@
     "status": {
       "mainTitle": "WiiLink - Statut",
       "mainDesc": "Consultez l'état de nos services !",
-      "title": "Check out the <0>WiiLink</0><1>status</1>",
+      "title": "Consultez le <0>statut</0><1>WiiLink</1>",
       "subtitle": "Découvrez notre <0>progrès</0>, ainsi que l'état de nos <1>serveurs</1> !",
       "serverStatus": "Vérifiez l'état de nos serveurs."
     },
