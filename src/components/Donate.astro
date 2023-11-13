@@ -55,63 +55,6 @@ import { Trans } from "astro-i18next/components";
     </div>
 </div>
 
-<script>
-    class Hover3D 
-  {
-      constructor(id)
-      {
-          this.id = id;
-          this.xOffset = 2;
-          this.yOffset = 2;
-          this.attack = 0.1;
-          this.release = 0.5;
-          this.perspective = 1000;
-          this.create();
-      }
-  
-      create()
-      {
-          document.querySelectorAll(this.id).forEach(element => 
-          {
-              const rectTransform = element.getBoundingClientRect();
-              const perspective = "perspective(" + this.perspective + "px) ";
-              element.style.setProperty("transform-style", "preserve-3d");
-  
-              element.addEventListener("mouseenter", e =>
-              {
-                  element.style.setProperty("transform " + this.attack + "s");
-              })
-  
-              element.addEventListener("mousemove", e => 
-              {
-                  const rectTransform = element.getBoundingClientRect();
-                  let dy = e.clientY - rectTransform.top;
-                  let dx = e.clientX - rectTransform.left;
-                  let xRot = this.map(dx, 0, rectTransform.width, -this.xOffset, this.xOffset);
-                  let yRot = this.map(dy, 0, rectTransform.height, this.yOffset, -this.yOffset);
-                  let propXRot = "rotateX(" + yRot + "deg) ";
-                  let propYRot = "rotateY(" + xRot + "deg) scale(103%) translate(0, -5px)";
-  
-                  element.style.setProperty("transform", perspective + propXRot + propYRot);
-              })
-  
-              element.addEventListener("mouseleave", e => 
-              {
-                  element.style.setProperty("translate", "transform " + this.release + "s");
-                  element.style.setProperty("transform", perspective + "rotateX(0deg) rotateY(0deg)");
-              })
-          })
-      }
-      // Processing map() function
-      map(value, istart, istop, ostart, ostop) 
-      {
-          return ostart + (ostop - ostart) * ((value - istart) / (istop - istart));
-      }
-  }
-  
-    let myHover3D = new Hover3D(".move"); // Yep! That's it.
-  </script>
-
 <script is:inline>
     document.addEventListener("DOMContentLoaded", async function () {
 
@@ -223,7 +166,8 @@ import { Trans } from "astro-i18next/components";
         background-color: #ffffff00;
 	}
     .build-square:hover{
-        box-shadow: 0px 5px 15px #7d7d7d4b;
+        transform:translate(0, -5px);
+        box-shadow: 0px 5px 15px #7d7d7d20;
         border-width:4px;
         transition: 0.1s;
     }
@@ -329,6 +273,15 @@ import { Trans } from "astro-i18next/components";
         transition: 0.1s;
         z-index: 1;
         position: relative;
+    }
+
+    .build-square:nth-child(4) .donate-image{
+        top:80px;
+        left:50%;
+        width:auto;
+        height:180px;
+        transform:translate(-50%, 0) translateZ(40px) scale(80%);
+        position:absolute;
     }
 
     .build-square h5{
