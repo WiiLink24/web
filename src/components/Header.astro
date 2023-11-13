@@ -32,7 +32,7 @@ const { isGuide, isMain } = Astro.props;
 		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
 			<div class="dropdown">
-				<button class="btn dropdown-toggle" onclick="toggleTranslate()"  id="titleTranslate" style="transform:scale(130%);" type="button" data-bs-toggle="" aria-expanded="false">
+				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0) scale(150%);" type="button" data-bs-toggle="" aria-expanded="false">
 				</button>
 				<ul class="dropdown-menu" id="dropMenu" style="transform:translate(50px, -10px);">
 					<form>
@@ -95,10 +95,12 @@ const { isGuide, isMain } = Astro.props;
 			if (open == 0) {
 				document.getElementById("dropMenu").style.opacity = "1";
 				document.getElementById("dropMenu").style.pointerEvents = "";
+				document.getElementById("dropMenu").style.animation = "fadedown 0.3s linear forwards";
 				open = 1;
 			} else {
 				document.getElementById("dropMenu").style.opacity = "0";
 				document.getElementById("dropMenu").style.pointerEvents = "none";
+				document.getElementById("dropMenu").style.animation = "";
 				open = 0;
 			}
 		}
@@ -267,6 +269,17 @@ a:visited{
 	transform: translate(0,-50%);
 	filter: invert(1);
 	position: absolute;
+}
+
+@keyframes fadedown{
+	0%{
+		opacity:0;
+		transform: translate(50px, -15px);
+	}
+	100%{
+		opacity:1;
+		transform: translate(50px, -10px);
+	}
 }
 
 ul{
