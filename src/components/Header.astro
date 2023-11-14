@@ -34,7 +34,7 @@ const { isGuide, isMain } = Astro.props;
 			<div class="dropdown">
 				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0) scale(150%);" type="button" data-bs-toggle="" aria-expanded="false">
 				</button>
-				<ul class="dropdown-menu" id="dropMenu" style="transform:translate(50px, -10px);">
+				<ul class="dropdown-menu" id="dropMenu" style="transform:translate(50px, -10px); overflow:hidden;">
 					<form>
 					<li><h6 class="dropdown-header"><i class="fa fa-globe"></i> Choose your language</h6></li>
 					<div class="optDisplay" id="optionsDisplay" style="height:200px; width:200px; overflow-y:scroll; position:relative;"></div>
@@ -116,10 +116,10 @@ const { isGuide, isMain } = Astro.props;
 			if (open == 0) {
 				document.getElementById("dropMenu").style.opacity = "1";
 				document.getElementById("dropMenu").style.pointerEvents = "";
-				document.getElementById("dropMenu").style.animation = "fadedown 0.1s linear forwards";
+				document.getElementById("dropMenu").style.animation = "fadedown 0.2s ease-in-out forwards";
 				open = 1;
 			} else {
-				document.getElementById("dropMenu").style.animation = "fadeout 0.1s linear forwards";
+				document.getElementById("dropMenu").style.animation = "fadeout 0.2s ease-in-out forwards";
 				setTimeout(() => {
 				document.getElementById("dropMenu").style.opacity = "0";
 				document.getElementById("dropMenu").style.pointerEvents = "none";
@@ -350,10 +350,12 @@ a:visited{
 @keyframes fadedown{
 	0%{
 		opacity:0;
+		height:0px;
 		transform: translate(50px, -15px);
 	}
 	100%{
 		opacity:1;
+		height:320px;
 		transform: translate(50px, -10px);
 	}
 }
@@ -361,10 +363,12 @@ a:visited{
 @keyframes fadeout{
 	0%{
 		opacity:1;
+		height:320px;
 		transform: translate(50px, -10px);
 	}
 	100%{
 		opacity:0;
+		height:0px;
 		transform: translate(50px, -15px);
 	}
 }

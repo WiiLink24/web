@@ -1,7 +1,7 @@
 {
     "site": {
       "title": "WiiLink",
-      "description": "WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!",
+      "description": "An unofficial community homebrew project dedicated to restoring, translating and enhancing the now discontinued WiiConnect24 channels and services, including those that were not available in all regions.",
       "img": "/img/news_post_welcome_back.png",
       "load": "Loading...",
       "dev": "Developed by ",
@@ -17,16 +17,16 @@
       "install": "Install now"
     },
     "build": {
-      "title": "What's up with this <0>build</0>?",
+      "title": "Check out the latest <0>build</0>!",
       "releasedBy": "Released by:",
       "releaseBranch": "Branch: ",
-      "releaseDate": "Publish date: ",
+      "releaseDate": "Release date: ",
       "releaseTotal": "Total: "
     },
     "donate": {
-      "title": "Made possible by users like <0>you</0>",
-      "subtitle": "<0>WiiLink</0> is funded publicly by our <1>users</1> and <2>sponsors</2>. <3>To help our running costs, please consider donating!</3>",
-      "donators": "...and join all these <0>cool people</0>",
+      "title": "Powered by <0>your support</0>!",
+      "subtitle": "<0>WiiLink</0> is funded publicly by its <1>users</1> and <2>sponsors</2>. <3>To help our running costs, please consider donating!</3>",
+      "donators": "...and join all these <0>cool people</0>:",
       "popular": "Most popular",
       "powered": "Powered by"
     },
@@ -41,50 +41,50 @@
       "extrasNew": "new"
     },
     "jumpin": {
-      "title": "Are you ready to <0>jump</0>?",
-      "slogan": "If you like all this stuff, why not join our thousands of worldwide users?",
-      "install": "Install now!"
+      "title": "Come and <0>join in</0>!",
+      "slogan": "Bring your Wii back to life and try out all-new channels.",
+      "install": "Install!"
     },
     "services": {
       "title": "Welcome to <0>WiiLink</0>!",
-      "subtitle": "A community project for the Wii that works towards reviving and enhancing the discontinued WiiConnect24 channels and services, including the ones that were only available in Japan."
+      "subtitle": "An unofficial community homebrew project dedicated to restoring, translating and enhancing the now discontinued WiiConnect24 channels and services, including those that were not available in all regions."
     },
     "socials": {
-      "title": "Check us out on our <0>socials</0>!",
-      "subtitle": "Keep up to date on all service <0>releases</0> and <1>general announcements</1> via our social media.",
-      "twFollowers": "2.7k followers",
+      "title": "Check out the project's <0>socials</0>!",
+      "subtitle": "Keep up with all service <0>updates</0> and <1>general announcements</1> or come join the Discord server.",
+      "twFollowers": "2.7K followers",
       "twFollow": "Follow",
       "twTweets": "Tweets by WiiLink24",
-      "dcMembers": "6.2k members",
+      "dcMembers": "6.2K members",
       "dcJoin": "Join",
       "ghFollowers": "82 followers",
       "ghFollow": "Follow",
-      "ytSubscribers": "2k subscribers",
+      "ytSubscribers": "2K subscribers",
       "ytSubscribe": "Subscribe"
     },
     "team": {
-      "title": "Meet our amazing <0>team</0>",
-      "subtitle": "<0>WiiLink</0> is powered by <1>100%</1> volunteer work. </2><3>Here's some of the incredible people who help <4>WiiLink</4> come to life!</3>"
+      "title": "The project's <0>team</0>",
+      "subtitle": "<0>WiiLink</0> is powered by <1>volunteer work</1>. </2><3>Here are the main contributors working to run the project!</3>"
     },
     "news": {
       "mainTitle": "WiiLink - News",
       "mainDesc": "Read up on WiiLink's latest improvements and releases!",
-      "title": "Here is the <0></0> <1>WiiLink</1><2>news</2>",
-      "subtitle": "Catch up on all our <0>antics</0>, as well as <1>service updates</1>!",
-      "otherNews": "Here's some <0>older</0> articles:",
-      "rssTitle": "<0>Want to get <1>WiiLink news</1> on your site o service? Just use our <2>RSS feed</2>!</0>",
-      "rssButton": "Get our RSS feed",
+      "title": "Here are the <1>WiiLink</1> <2>news</2>",
+      "subtitle": "Catch up on <0>the project's progress</0>, as well as <1>service updates</1>!",
+      "otherNews": "Here are some <0>older</0> articles:",
+      "rssTitle": "<0>Want to get <1>WiiLink news</1> on your site o service? Use the <2>RSS feed</2>.</0>",
+      "rssButton": "Get the RSS feed",
       "otherPosts": "Other <0>posts</0>"
     },
     "guide": {
       "mainTitle": "WiiLink - Guide",
       "mainDesc": "Get important info and help for our services!",
-      "title": "Welcome to the <0>WiiLink</0><1>guide</1>",
-      "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to get you up and running in no time!",
+      "title": "Welcome to the <1>WiiLink</1> <2>guide</2>",
+      "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to help you out!",
       "specificGuides": "What are you <0>looking for</0>?",
-      "helpTitle": "<0>Can't seem to get it <1>working</1>? Be sure to <2>get in touch</c2>!</0>",
+      "helpTitle": "<0>Can't seem to get it <1>working</1>? Don't hesitate to <2>get in touch</c2>!</0>",
       "helpButton1": "Contact us",
-      "helpButton2": "Join our Discord"
+      "helpButton2": "Join the Discord"
     },
     "guidePost": {
       "name": "Guide",
@@ -101,19 +101,19 @@
     },
     "status": {
       "mainTitle": "WiiLink - Status",
-      "mainDesc": "Check our service status and its completion!",
-      "title": "Check out the <0>WiiLink</0><1>status</1>",
-      "subtitle": "Get a glimpse at our <0>progress</0>, in addition to the status of our <1>servers</1>!",
-      "serverStatus": "Check out the status of our servers."
+      "mainDesc": "Check service status and completion!",
+      "title": "Check out the <1>WiiLink</1> <2>status</2>",
+      "subtitle": "Get a glimpse at our <0>progress</0>, in addition to <1>server</1> status!",
+      "serverStatus": "Check the server's status."
     },
     "extras": {
       "mainTitle": "WiiLink - Extras",
-      "mainDesc": "Check out some neat stuff we've got for you!",
-      "title": "This is <0>WiiLink</0><1>extras</1>",
-      "subtitle": "Here you'll find <0>some really cool stuff</0> we've been working on. We hope you <1>enjoy</1>!",
+      "mainDesc": "Check out some special resources and content!",
+      "title": "Here are the <1>WiiLink</1> <2>extras</2>",
+      "subtitle": "In here you'll find <0>special content</0> we've been working on.",
       "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
-      "contact": "Contact us",
-      "joinDiscord": "Join our Discord"
+      "contact": "Contact",
+      "joinDiscord": "Join the Discord"
     },
     "404": {
       "mainTitle": "WiiLink - 404",
@@ -122,14 +122,14 @@
     },
     "tos": {
       "mainTitle": "WiiLink - Terms of Service",
-      "mainDesc": "Terms of Service for the WiiLink family of services."
+      "mainDesc": "Terms of Service for the WiiLink services."
     },
     "privacyPolicy": {
       "mainTitle": "WiiLink - Privacy Policy",
-      "mainDesc": "Privacy Policy for the WiiLink family of services."
+      "mainDesc": "Privacy Policy for the WiiLink services."
     },
     "eula": {
       "mainTitle": "WiiLink - End User License Agreement",
-      "mainDesc": "End User License Agreement for the WiiLink family of services."
+      "mainDesc": "End User License Agreement for the WiiLink services."
     }
   }

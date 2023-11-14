@@ -80,7 +80,7 @@
     "guide": {
       "mainTitle": "WiiLink - Guía",
       "mainDesc": "¡Obten información importante y ayuda para nuestros múltiples servicios!",
-      "title": "Resuelve tus dudas en <0>WiiLink</0><1>guía</1>",
+      "title": "Resuelve tus dudas en <0>guía</0> <1>WiiLink</1>",
       "subtitle": "¡Aquí encontrarás <0>información importante</0> acerca de el servicio, así como útiles <1>guías</1> y <2>ayuda</2> para que puedas disfrutar de nuestros servicios lo antes posible!",
       "specificGuides": "¿Qué estás <0>buscando</0>?",
       "helpTitle": "<0>¿Algo no va <1>bién</1>? ¡No dudes en <2>contactarnos</c2>!</0>",
@@ -103,14 +103,14 @@
     "status": {
       "mainTitle": "WiiLink - Estado",
       "mainDesc": "¡Verifica el estado de nuestros servicios y su progreso!",
-      "title": "Verifica el <0>WiiLink</0><1>estado</1>",
+      "title": "Verifica el <0>estado</0> <1>WiiLink</1>",
       "subtitle": "Mira nuestro <0>progreso</0> en los diversos servicios que ofrecemos, así como el estado de nuestros <1>servidores</1>!",
       "serverStatus": "Mira el estado de nuestros servidores."
     },
     "extras": {
       "mainTitle": "WiiLink - Extras",
       "mainDesc": "¡Mira algunas cosas chulas que tenemos para tí!",
-      "title": "Esto es <0>WiiLink</0><1>extras</1>",
+      "title": "Esto es <1>WiiLink</1> <2>extras</2>",
       "subtitle": "Aquí encontrarás <0>cosas chulas</0> en las que hemos estado trabajando. ¡Esperamos que os <1>guste</1>!",
       "helpCall": "<0>¿Crees que hay algo que deberíamos <1>añadir</1> aquí? ¡No dudes en <2>decírnoslo</2>!</0>",
       "contact": "Contáctanos",
