@@ -22,7 +22,7 @@ const { msg, img } = Astro.props;
 
 function remove() {
     setTimeout(() => {
-        document.getElementById("cover").style.animation = "fadeout 0.3s linear forwards";
+        document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
 }, 300);
 setTimeout(() => {
         document.getElementById("cover").style.display = "none";
@@ -31,7 +31,7 @@ setTimeout(() => {
 
 window.addEventListener('load', function () {
     setTimeout(() => {
-        document.getElementById("cover").style.animation = "fadeout 0.3s linear forwards";
+        document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
 }, 300);
 setTimeout(() => {
         document.getElementById("cover").style.display = "none";
@@ -77,7 +77,7 @@ setTimeout(() => {
         }
     }
 
-    @keyframes fadeout{
+    @keyframes fadeout2{
         0%{
             opacity:1;
         }
