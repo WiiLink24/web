@@ -16,7 +16,7 @@ changeLanguage("fr");
 const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
 
-<Layout title={t("guide.mainTitle")} description={t("guide.mainDesc")} image="/img/News_embed.png" />
+<Layout title={t("guide.mainTitle")} description={t("guide.mainDesc")} image="/img/Guide_embed.png" />
 <Loading />
 <Header isGuide="display:none;"/>
 

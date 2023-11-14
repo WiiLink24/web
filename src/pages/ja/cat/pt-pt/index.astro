@@ -1,0 +1,679 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import DefaultHead from "../../../../components/DefaultHead.astro";
+import Donate from "../../../../components/Donate.astro";
+import Services from "../../../../components/Services.astro";
+import BuildInfo from "../../../../components/build.astro";
+import Team from "../../../../components/team.astro";
+import Socials from "../../../../components/Socials.astro";
+import Header from "../../../../components/Header.astro";
+import Footer from "../../../../components/Footer.astro";
+import Agreement from "../../../../components/Agreement.astro";
+import JumpIn from "../../../../components/JumpIn.astro";
+import Themes from "astro-themes";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
+
+changeLanguage("ja");
+---
+
+<Layout title={t("site.title")} description={t("site.description")} image={t("site.img")}>
+	
+<html lang={i18next.language}>
+<body>
+
+<Themes defaultTheme="dark"/>
+
+<div class="symbolholder">
+	<div class="backsymbol">
+		<div class="square2" id="square2">
+
+			<Header isGuide="display:none;" isMain="display:none;"/>
+			<div id="top" class="top">
+			<div class="logohold">
+				<DefaultHead/>
+				<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="img/logo.png">
+			</div>
+			
+			<div class="data">
+			<h2 style="animation:fadeup 0.2s forwards;" id="release-name"><i style="animation: loadspin 5s linear forwards infinite; scale:80%; margin-right:10px;"><img class="spinner" style="transform:translate(0, -3px); filter:;" src="img/loading.gif" width="30px"></i>{t("site.load")}</h2>
+			<div style="animation:fadeup 200ms forwards; opacity:0;" class="about"><d class="hide">{t("site.dev")}<a href="https://github.com/PablosCorner">PablosCorner</d><img style="border-radius: 50%; margin-left:10px; transform:translate(0, -5px); filter:drop-shadow(0 0 10px #00000040)" src="img/pablo.webp" width="40px"></a></div>
+			<div style="animation:fadeup 0.1s 200ms forwards; opacity:0;" class="accordion" id="accordionExample">
+				<div class="accordion-item">
+				  <h2 class="accordion-header">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					{t("site.relNotes")}
+					</button>
+				  </h2>
+				  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+					<div class="accordion-body" id="release-info"></div>
+				  </div>
+				</div>
+			</div>
+			
+			  <h2 style="animation:fadeup 0.2s 200ms forwards; opacity:0; font-size:25px; margin-top:20px;">{t("site.downloadPrompt")}</h2>
+				<div class="download">
+					<div id="disable-linux" style="animation:fadeup 0.3s 200ms forwards; opacity:0;">
+					<a class="download-button" id="download-link-linux" href="#">
+					<button id="linux" type="button" class="btn btn-secondary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
+				</a>
+				</div>
+			
+				<div id="disable-windows" style="animation:fadeup 0.4s 200ms forwards; opacity:0;">
+				<a class="download-button" id="download-link-windows" href="#">
+					<button id="windows" type="button" class="btn btn-secondary"  data-bs-toggle="tooltip" data-bs-placement="bottom"
+					data-bs-title="You'll need windows 8 or higher!"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
+				</a>
+				</div>
+			
+				<div id="disable-macos" style="animation:fadeup 0.5s 200ms forwards; opacity:0;">
+				<a class="download-button" id="download-link-macos" href="#">
+					<button id="macos" type="button" class="btn btn-secondary"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
+				</a>
+				</div>
+
+				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="/guide/1install">
+					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="width:17px; scale:130%; rotate:-45deg; margin-right:15px; background-color:#ffffff00; transition:0.3s;"></i>{t("site.installGuide")}</button>
+				</a>
+				</div>
+				<div style="margin-top:10px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
+					<input class="form-check-input" type="checkbox" value="0" id="flexCheckDefault" onclick="handleCheckbox()">
+<script is:inline>
+    function handleCheckbox() {
+        var isChecked = document.getElementById('flexCheckDefault').checked;
+        if (isChecked == true){
+			document.getElementById('windows').disabled = false;
+			document.getElementById('macos').disabled = false;
+			document.getElementById('linux').disabled = false;
+			document.getElementById('download-link-windows').style.pointerEvents = "";
+			document.getElementById('download-link-macos').style.pointerEvents = "";
+			document.getElementById('download-link-linux').style.pointerEvents = "";
+			document.getElementById('disable-windows').style.cursor = "pointer";
+			document.getElementById('disable-macos').style.cursor = "pointer";
+			document.getElementById('disable-linux').style.cursor = "pointer";
+        } else {    
+			document.getElementById('windows').disabled = true;
+			document.getElementById('macos').disabled = true;
+			document.getElementById('linux').disabled = true;
+			document.getElementById('download-link-windows').style.pointerEvents = "none";
+			document.getElementById('download-link-macos').style.pointerEvents = "none";
+			document.getElementById('download-link-linux').style.pointerEvents = "none";
+			document.getElementById('disable-windows').style.cursor = "not-allowed";
+			document.getElementById('disable-macos').style.cursor = "not-allowed";
+			document.getElementById('disable-linux').style.cursor = "not-allowed";
+        }
+    }
+	handleCheckbox();
+</script>
+
+					<label class="form-check-label" for="flexCheckDefault">
+						<Trans i18nKey="site.terms">I have read and accepted the <a href={localizePath("/tos")} style="text-decoration:underline;">Terms of Service</a> and <a href={localizePath("/privacy-policy")} style="text-decoration:underline;">Privacy Policy</a>.</Trans>
+					</label>
+				  </div>
+				  <a href="#intro" style="text-decoration: none;">
+				<div style="animation:fadeup 0.5s 200ms forwards; opacity:0;" class="slidedown">
+					<i style="transform:scale(300%);" class="fa-solid fa-angle-down"></i>
+				</div>
+			</a>
+			</div>
+		</div>
+			<Services/>
+
+			<BuildInfo/>
+
+			<Donate/>
+
+			<Team/>
+
+			<Socials/>
+
+			<JumpIn/>
+
+			<Agreement/>
+
+			<div class="mainFooter">
+				<Footer />
+			</div>
+
+		</div>	
+
+		<div class="square"></div>
+		<div class="footer-holder">
+			<img class="footer-logo" src="img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
+		
+			<div class="socials">
+				<a href="https://discord.gg/wiilink-750581992223146074" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="https://www.patreon.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}>Patreon<i style="margin-left:15px;" class="fa-brands fa-patreon"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				<div style="margin-top:15px;">
+				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href={localizePath("/404")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")} style="background-color:white; color:black; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
+				</div>
+			</div>
+		</div>
+		<div class="bottomleftcornerholder">
+			<img class="bottomleftcorner" src="img/corner.png">
+		</div>
+	</div>
+
+<script>
+
+const scrollableDiv = document.getElementById('square2');
+const width = window.innerWidth;
+
+if (width >= 1000){
+scrollableDiv.addEventListener('scroll', function() {
+  // Check if the user has scrolled to the bottom
+  if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
+    // User has scrolled to the end
+    scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+  } else {
+	scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
+  }
+});
+} else {
+	scrollableDiv.style.setProperty("height", "100%");
+}
+
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+window.onload = osdetect;
+
+if (osdetect() == "MacOS"){
+	document.getElementById("macos").className = "btn btn-primary";
+}
+
+if (osdetect() == "Windows"){
+	document.getElementById("windows").className = "btn btn-primary";
+}
+
+if (osdetect() == "Linux"){
+
+	document.getElementById("linux").className = "btn btn-primary";
+}
+
+if (osdetect() == "UNIX"){
+	document.getElementById("macos").className = "btn btn-primary";
+	document.getElementById("windows").className = "btn btn-primary";
+	document.getElementById("linux").className = "btn btn-primary";
+}
+
+if (osdetect() == "Unknown OS"){
+	document.getElementById("macos").className = "btn btn-primary";
+	document.getElementById("windows").className = "btn btn-primary";
+	document.getElementById("linux").className = "btn btn-primary";
+}
+
+</script>
+
+</Layout>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+
+import { Octokit } from "https://esm.sh/octokit";
+
+
+document.addEventListener("DOMContentLoaded", async function () {
+    const octokit = new Octokit({
+        auth: ''
+    });
+
+    const owner = 'WiiLink24';
+    const repo = 'WiiLink24-Patcher';
+
+    try {
+        // Fetch the latest release information from the GitHub repository using Octokit
+        const { data: release } = await octokit.request('GET /repos/{owner}/{repo}/releases/latest', {
+            owner,
+            repo,
+            headers: {
+                'X-GitHub-Api-Version': '2022-11-28'
+            }
+        });
+
+		const releaseNameDiv = document.getElementById("release-name");
+        const releaseInfoDiv = document.getElementById("release-info");
+        const downloadLinkLinux = document.getElementById("download-link-linux");
+		const downloadLinkWindows = document.getElementById("download-link-windows");
+		const downloadLinkMacos = document.getElementById("download-link-macos");
+
+		const nameArray = release.name.split(" ");
+		let versionNumber = nameArray[2];
+
+        if (releaseInfoDiv) {
+            // Update the div
+			releaseNameDiv.innerHTML = `
+			<a style="color:black; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"><h2 class="release-name" style="animation:fadeup 0.2s forwards;"><o style="font-family:Rubik; font-weight:600;">WiiLink</o> Patcher <span style="scale:60%; transform:translate(-30px, -20px);" class="badge rounded-pill bg-secondary">${versionNumber}</span></h2></a>
+			`
+			;
+            releaseInfoDiv.innerHTML = `
+                <p id="releasedesc"></p>
+            `;
+
+			document.getElementById('releasedesc').innerHTML =
+      		marked.parse(release.body);
+
+
+            // Update the download link if it exists
+            if (release.assets.length > 0) {
+                const assetLin = release.assets[0];
+                downloadLinkLinux.href = assetLin.browser_download_url;
+				const assetWin = release.assets[3]; 
+                downloadLinkWindows.href = assetWin.browser_download_url;
+				const assetMac = release.assets[2];
+                downloadLinkMacos.href = assetMac.browser_download_url;
+            } else {
+                downloadLinkLinux.style.display = "none";
+				downloadLinkWindows.style.display = "none";
+				downloadLinkMacos.style.display = "none";
+            }
+        } else {
+            console.error("Element with id 'release-info' not found.");
+        }
+    } catch (error) {
+        console.error("Error fetching GitHub release:", error);
+    }
+});
+
+</script>
+
+<script is:inline src="/js/osdetect.js"></script>
+</body>
+</html>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	.spinner{
+		filter: brightness(0);
+	}
+	.color {
+        background: url("/img/header_bg.png");
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   filter:brightness(150%);
+    }
+	.disabled{
+		cursor: not-allowed;
+	}
+	.socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 23px;
+		width:200px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.mainFooter{
+		display:none;
+	}
+	.slogan{
+		left:80px;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
+	}
+	.top{
+		top:-130px;
+		left:50%;
+		transform: translate(-50%, 0);
+		max-width: 1500px;
+		height: 800px;
+		position: relative;
+	}
+	.accordion-body{
+		background-color: #fff;
+    	max-height: 30vh;
+    	overflow: scroll;
+	}
+	.btn-secondary{
+		background-color: rgba(0, 0, 255, 0.469);
+		border: 1px solid rgba(0, 0, 255, 0.117);
+	}
+	.btn-secondary:hover{
+		background-color: rgba(0, 0, 255, 0.427);
+		border: 1px solid rgba(0, 0, 255, 0.117);
+	}
+	.slidedown{
+		left:50%;
+		top:40px;
+		transform: translate(-50%, 0);
+		width:1px;
+		height:50px;
+		color:black;
+		z-index: 1;
+		position: relative;
+	}
+	.about{
+		top:0;
+		right:0;
+		color: #00000050;
+		z-index: 1;
+		position: absolute;
+	}
+	.symbolholder{
+		background-color: var(--bg-color);
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		z-index: 1;
+		overflow: hidden;
+		position: fixed;
+	}
+	.custom-tooltip {
+  --bs-tooltip-bg: var(--bd-green-bg);
+  --bs-tooltip-color: var(--bs-white);
+}
+	@keyframes fadeup{
+		0%{
+			opacity:0;
+			transform: translate(0, 10px);
+		}
+		100%{
+			opacity:1;
+			transform: translate(0, 0px);
+		}
+	}
+	.logohold{
+		top:0;
+		left:-80px;
+		width:50%;
+		height:100%;
+		position: absolute;
+	}
+	.release-name{
+		font-weight: bolder;
+	}
+	.guide{
+		background-color: #ffffff00;
+		color:#000000;
+		box-shadow: inset 0 0 0 4px solid blue;
+	}
+	.btn{
+		padding:15px;
+		margin:5px;
+		margin-top: 10px;
+	}
+	.data{
+		width:615px;
+		right:5%;
+		top:50%;
+		transform: translate(0, -50%);
+		z-index: 1;
+		position: absolute;
+	}
+	#square2{
+		width: calc(100% - 30px);
+		height: calc(100% - 30px);
+		left:15px;
+		top:15px;
+		background-color: var(--bg-color);
+		transform: translate(0%, 0%);
+		border-radius: 4px;
+		z-index: 1;
+		scroll-behavior: smooth;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		transition:0.5s;
+		position: absolute;
+	}
+	.footer{
+		height: calc(80% - 30px);
+	}
+	.release-info{
+		width:95%;
+		left:50%;
+		transform: translate(-50%, 0);
+		position: relative;
+	}
+	.download{
+		width:100%;
+		height: auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		display: flex;
+		flex-wrap: wrap;
+		position:relative;
+	}
+	.bottomleftcorner{
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
+		left:-2.6px;
+		bottom:-2.5px;
+		scale:31.6%;
+		transform: translate(-106.5%, 107.3%);
+		z-index: 2;
+		position: absolute;
+	}
+	.backsymbol {
+		width:calc(100% - 28px);
+		height:calc(100% - 28px);
+		top:50%;
+		left:50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		position: absolute;
+	}
+	@keyframes changecolordark{
+		0%{
+			filter:hue-rotate(0deg) invert(1);
+		}
+		100%{
+			filter:hue-rotate(360deg) invert(1);
+		}
+	}
+	@keyframes changecolor{
+		0%{
+			filter:hue-rotate(0deg);
+		}
+		100%{
+			filter:hue-rotate(360deg);
+		}
+	}
+	.square {
+		--img-invert: 0;
+		width:100%;
+		height:100%;
+		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
+		z-index: 0;
+		animation: changecolor 10s linear infinite;
+		border-radius: 8px;
+		position: absolute;
+	}
+
+	h1 {
+		color: var(--bg-text);
+		--bg-text: #ffffff;
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	h2{
+		--bg-text: #000000;
+
+		color: var(--bg-text);
+		text-align: left;
+		z-index: 1;
+		position: relative;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+
+	@media only screen and (max-width: 1150px) {
+		.logohold{
+			display: none;
+		}
+		.data{
+			top:0px;
+			left:50%;
+			transform: translate(-50%, 0);
+			width:95%;
+			height:auto;
+			position: relative;
+		}
+
+		.mainFooter{
+		top:37%;
+		display:block;
+		position:relative;
+	}
+
+		.top{
+		top:0;
+		left:50%;
+		transform: translate(-50%, 0);
+		height:auto;
+		max-width: 1500px;
+		position: relative;
+	}
+
+		.socials{
+			right:20px;
+		}
+
+		.footer-logo{
+			width:150px;
+			height:auto;
+		}
+
+		.slogan{
+			display: none;
+		}
+
+		.accordion-body{
+		background-color: #fff;
+    	max-height: 20vh;
+    	overflow: scroll;
+	}
+		.symbolholder{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.backsymbol{
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		#square2{
+			top:0;
+			left:0;
+			width:100%;
+			height:100%;
+			border-radius: 0px;
+		}
+		.square{
+			display:;
+		}
+		.bottomleftcorner{
+			display: none;
+		}
+		.alert{
+			top:30px;
+			left:50%;
+			transform: translate(-50%, 0);
+			width: 80%;
+			position: absolute;
+		}
+		.hide{
+			display: none;
+		}
+		.download{
+		width:100%;
+		height: auto;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+		gap:5px;
+		position:relative;
+	}
+		.square{
+			display:none;
+		}
+		.footer-holder{
+			display:none;
+		}
+		.btn{
+			width:100%;
+		}
+		.dropdownbtn{
+			top:0;
+			right:0;
+			width:50px;
+		}
+	}
+
+	@media only screen and (min-width:2000px) {
+		.top{
+			top:50px;
+			height:900px;
+		}
+		.footer-holder{
+			bottom:0;
+			left:50%;
+			transform:translate(-50%, -20px);
+			width:2000px;
+			position:absolute;
+		}
+	}
+</style>

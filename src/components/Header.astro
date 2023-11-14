@@ -40,7 +40,7 @@ const { isGuide, isMain } = Astro.props;
 					<div id="optionsDisplay"></div>
 				  <li><hr class="dropdown-divider"></li>
 				  <p style="left:50%; transform:translate(-50%, 0); width:90%; color:black; margin:0; position:relative;">
-					Do you want to contribute?</br> <i class="fa-brands fa-discord"></i> Join our Discord!
+					Do you want to contribute?</br> <a href="https://discord.gg/wiilink-750581992223146074" style="text-decoration:underline; color:#5685F2;"><i class="fa-brands fa-discord"></i> Join our Discord!</a>
 				  </p>
 				</form>
 				</ul>
@@ -80,9 +80,20 @@ const { isGuide, isMain } = Astro.props;
                 var optionLink = option.innerHTML;
 				optionLinkFlag = optionLink.substring(0,4);
 				if (i == 0) {
-					titleTranslate.innerHTML = optionLinkFlag;
+					if (optionLink.substring(5, 7).toLowerCase() === "ca") {
+						optionLink = "<img src='/img/cat.png' class='emoji'> Català";
+						titleTranslate.innerHTML = "<img src='/img/cat.png' class='emoji'>";
+						optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
+					} else {
+						titleTranslate.innerHTML = optionLinkFlag;
+						optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
+					}
+				} else if(optionLink.substring(5, 7).toLowerCase() === "ca") {
+					optionLink = "<img src='/img/cat.png' class='emoji'> Català";
+                	optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
+				} else {
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
 				}
-                optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink; + "</button></a></li>"
 
             }
 
@@ -95,13 +106,15 @@ const { isGuide, isMain } = Astro.props;
 			if (open == 0) {
 				document.getElementById("dropMenu").style.opacity = "1";
 				document.getElementById("dropMenu").style.pointerEvents = "";
-				document.getElementById("dropMenu").style.animation = "fadedown 0.3s linear forwards";
+				document.getElementById("dropMenu").style.animation = "fadedown 0.1s linear forwards";
 				open = 1;
 			} else {
+				document.getElementById("dropMenu").style.animation = "fadeout 0.1s linear forwards";
+				setTimeout(() => {
 				document.getElementById("dropMenu").style.opacity = "0";
 				document.getElementById("dropMenu").style.pointerEvents = "none";
 				document.getElementById("dropMenu").style.animation = "";
-				open = 0;
+				open = 0; }, "200")
 			}
 		}
 
@@ -279,6 +292,17 @@ a:visited{
 	100%{
 		opacity:1;
 		transform: translate(50px, -10px);
+	}
+}
+
+@keyframes fadeout{
+	0%{
+		opacity:1;
+		transform: translate(50px, -10px);
+	}
+	100%{
+		opacity:0;
+		transform: translate(50px, -15px);
 	}
 }
 

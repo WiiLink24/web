@@ -15,7 +15,7 @@ type Props = CollectionEntry<'guide'>['data'];
 const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 <html lang={i18next.language}">
-	<Layout title={`WiiLink - ${t("guidePost.name")} (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
+	<Layout title={`WiiLink - ${t("guidePost.name")} (${title})`} description={`${title} - ${description}`} image="/img/Guide_embed.png" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<Loading msg={title} />
 <body>
