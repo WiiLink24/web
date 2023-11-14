@@ -1,0 +1,441 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
+import Layout from "../../../layouts/Layout.astro";
+
+changeLanguage("ca");
+---
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-LWN8QCFT7S");
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script
+    src="https://kit.fontawesome.com/e47ece3e74.js"
+    crossorigin="anonymous"></script>
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <link
+    href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+    rel="stylesheet"
+  />
+  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+  <Layout
+    title={t("404.mainTitle")}
+    description={t("404.mainDesc")}
+    image="/img/news_post_welcome_back.png"
+  />
+</head>
+<body>
+  <div class="hold">
+    <div class="error">
+      <h1
+        style="font-family:Gilroy; font-size:150px; text-align:center; color:white;">
+        404
+      </h1>
+      <h3 style="text-align:center; color:white;">
+        {t("404.message")}
+      </h3>
+    </div>
+
+    <a href="/"
+      ><button
+        type="button"
+        class="btn1 btn btn-success"
+        style="width:300px; bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:absolute;"
+        ><i class="fa-solid fa-home"></i> Go home</button
+      ></a
+    >
+
+    <div class="carouseltop">
+      <img class="shadow" src="/img/mask.png" />
+      <div class="carouselhold">
+        <div
+          id="carousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-pause="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/img/forecast.png"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img src="/img/food.jpg" class="d-block blur h-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img src="/img/room.webp" class="d-block blur h-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/digicamprints.png"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/kirbytv.jpg"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/checkmiiout.jpg"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/nintendo.webp"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/politics.jpg"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/tvnotomo.png"
+                class="d-block blur h-100"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+
+        <div
+          id="carousel"
+          class="carousellogos slide carousel-fade"
+          data-bs-ride="carousel"
+          data-bs-pause="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="/img/forecastbanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img src="/img/demaebanner.png" class="d-block w-100" alt="..." />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/wiinomabanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/digicambanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/kirbytvbanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/miioutbanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/nintendochannelbanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/politicsbanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="/img/tvnotomobanner.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class Hover3D {
+      constructor(id) {
+        this.id = id;
+        this.xOffset = 5;
+        this.yOffset = 5;
+        this.attack = 0.1;
+        this.release = 0.5;
+        this.perspective = 2000;
+        this.create();
+      }
+
+      create() {
+        document.querySelectorAll(this.id).forEach(element => {
+          const rectTransform = element.getBoundingClientRect();
+          const perspective = "perspective(" + this.perspective + "px) ";
+          element.style.setProperty("transform-style", "preserve-3d");
+
+          element.addEventListener("mouseenter", e => {
+            element.style.setProperty(
+              "transition",
+              "transform " + this.attack + "s"
+            );
+          });
+
+          element.addEventListener("mousemove", e => {
+            const rectTransform = element.getBoundingClientRect();
+            let dy = e.clientY - rectTransform.top;
+            let dx = e.clientX - rectTransform.left;
+            let xRot = this.map(
+              dx,
+              0,
+              rectTransform.width,
+              -this.xOffset,
+              this.xOffset
+            );
+            let yRot = this.map(
+              dy,
+              0,
+              rectTransform.height,
+              this.yOffset,
+              -this.yOffset
+            );
+            let propXRot = "rotateX(" + yRot + "deg) ";
+            let propYRot = "rotateY(" + xRot + "deg) ";
+
+            element.style.setProperty(
+              "transform",
+              perspective + propXRot + propYRot
+            );
+          });
+
+          element.addEventListener("mouseleave", e => {
+            element.style.setProperty(
+              "transition",
+              "transform " + this.release + "s"
+            );
+            element.style.setProperty(
+              "transform",
+              perspective + "rotateX(0deg) rotateY(0deg)"
+            );
+          });
+        });
+      }
+      // Processing map() function
+      map(value, istart, istop, ostart, ostop) {
+        return (
+          ostart + (ostop - ostart) * ((value - istart) / (istop - istart))
+        );
+      }
+    }
+
+    let myHover3D = new Hover3D(".carouselhold"); // Yep! That's it.
+  </script>
+
+  <style>
+    .carousel {
+      width: 100%;
+      height: 670px;
+      -webkit-mask-image: url(/img/mask2.svg);
+      mask-image: url(/img/mask2.svg);
+      -webkit-mask-size: 100%;
+      mask-size: 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      background-color: blue;
+      z-index: 1;
+      position: absolute;
+    }
+    .carouselhold {
+      width: 100%;
+      height: 100%;
+      perspective: 500px;
+    }
+    .error {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 100000;
+      position: absolute;
+    }
+    canvas {
+      display: block;
+      vertical-align: bottom;
+    }
+    #particles-js {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: #b6192400;
+      background-image: url("");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 5;
+      background-position: 50% 50%;
+    }
+    .slide {
+      transform: translateZ(-20px);
+    }
+    .hold {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+    }
+    .carousellogos {
+      width: 200px;
+      filter: drop-shadow(-20px 20px 50px #00000060);
+      right: 4%;
+      top: 8%;
+      border-radius: 8px;
+      transform: translateZ(50px);
+      z-index: 1;
+      overflow: hidden;
+      position: absolute;
+    }
+    .carouseltop {
+      width: 1000px;
+      height: 650px;
+      left: 50%;
+      top: 50%;
+      border-radius: 8px;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+      position: absolute;
+    }
+    .blur {
+      width: 150%;
+      height: auto;
+      filter: blur(12px) brightness(70%);
+      left: 50%;
+      transform: translate(-50%, 0) scale(110%);
+      animation: toright 40s linear forwards;
+      position: absolute;
+    }
+    @keyframes toright {
+      0% {
+        left: 50%;
+      }
+      100% {
+        left: 20%;
+      }
+    }
+    .shadow {
+      width: 70%;
+      height: 80%;
+      left: calc(50% + 50px);
+      top: 50%;
+      transform: translate(-50%, -50%);
+      filter: blur(38px) opacity(0.2);
+      z-index: 0;
+      position: absolute;
+    }
+    h5 {
+      font-family: Rubik;
+      font-weight: 600;
+    }
+    .carousel-indicators [data-bs-target] {
+      height: 8px;
+      border-radius: 8px;
+    }
+    .carousel-inner {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      position: relative;
+    }
+    .carousel-item {
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    @media (max-width: 1000px) {
+      .carouseltop {
+        top: calc(50% + 50px);
+      }
+
+      .carousel {
+        width: 100%;
+        height: 530px;
+        -webkit-mask-image: url(/img/mask.png);
+        mask-image: url(/img/mask.png);
+        -webkit-mask-size: 100%;
+        mask-size: 100%;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        mask-size: contain;
+        mask-position: center;
+        background-color: blue;
+        z-index: 1;
+        position: absolute;
+      }
+
+      .carousellogos {
+        width: 150px;
+        filter: drop-shadow(-20px 20px 50px #00000060);
+        right: 28%;
+        top: 3%;
+        border-radius: 8px;
+        transform: translateZ(50px);
+        z-index: 1;
+        overflow: hidden;
+        position: absolute;
+      }
+    }
+  </style></body
+>

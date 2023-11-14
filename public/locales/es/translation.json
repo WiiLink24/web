@@ -69,7 +69,7 @@
     "news": {
       "mainTitle": "WiiLink - Noticias",
       "mainDesc": "¡Lee las noticias sobre las actualizaciónes del servicio!",
-      "title": "Mantente al dia con <0>WiiLink</0><1>noticias</1>",
+      "title": "Mantente al dia con <0>noticias</0> <1>WiiLink</1><2></2>",
       "subtitle": "¡Estate al tanto de nuestras <0>actividades</0>, así como de las <1>actualizaciones del servicio</1>!",
       "otherNews": "Aquí tienes algunos artículos <0>antiguos</0>:",
       "rssTitle": "<0>¿Quieres recibir las <1>noticias de WiiLink</1> en tu página web o servicio? ¡Simplemente utilitza nuestro <2>feed RSS</2>!</0>",
