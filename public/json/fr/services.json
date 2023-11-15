@@ -17,7 +17,7 @@
           "name": "Chaîne infos",
           "desc": "Suivez rapidement les dernières nouvelles du monde entier et voyez exactement où elles se produisent.",
           "link": "/guide/news",
-          "isArea": "WiiConnect24",
+          "isArea": "International",
           "status": "Prévu",
           "icon": "news_icon.png",
           "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Obtenir les données des fournisseurs anglais <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Obtenir les données des fournisseurs étrangers <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Lancer le service bêta",
