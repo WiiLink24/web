@@ -1,7 +1,7 @@
 {
     "site": {
       "title": "WiiLink",
-      "description": "WiiLink est un tout nouveau service pour faire revivre la Wii. Il permet de remettre en ligne certaines des chaînes les plus demandées &mdash; des chaînes diffusées uniquement au Japon !",
+      "description": "Un projet homebrew communautaire non officiel dédié à la restauration, à la traduction et à l'amélioration des chaînes et services WiiConnect24, désormais abandonnés, y compris ceux qui n'étaient pas disponibles dans toutes les régions.",
       "img": "/img/news_post_welcome_back.png",
       "load": "Chargement...",
       "dev": "Développé par ",
@@ -17,15 +17,15 @@
       "install": "Installer"
     },
     "build": {
-      "title": "Quoi de neuf avec ce <0>build</0> ?",
+      "title": "Découvrez la dernière <0>version</0> !",
       "releasedBy": "Publié par :",
       "releaseBranch": "Branche : ",
       "releaseDate": "Date de sortie : ",
       "releaseTotal": "Total : "
     },
     "donate": {
-      "title": "Possible grâce à des utiliseurs comme <0>vous</0>",
-      "subtitle": "<0>WiiLink</0> est financé publiquement par nos <1>utilisateurs</1> et nos <2>sponsors</2>. <3>Pour nous aider à couvrir nos frais de fonctionnement, envisagez de faire un don !</3>",
+      "title": "Possible grâce <0>votre support</0> !",
+      "subtitle": "<0>WiiLink</0> est financé publiquement par ses <1>utilisateurs</1> et <2>sponsors</2>. <3>Pour nous aider à couvrir nos frais de fonctionnement, envisagez de faire un don !</3>",
       "donators": "... et rejoignez tous ces <0>gens cool</0>",
       "popular": "Le plus populaire",
       "powered": "Service fourni par"
@@ -41,17 +41,17 @@
       "extrasNew": "nouv."
     },
     "jumpin": {
-      "title": "Prêt à vous <0>lancer</0> ?",
-      "slogan": "Si cela vous plaît, pourquoi ne pas rejoindre nos milliers d'utilisateurs dans le monde entier ?",
-      "install": "Installer maintenant !"
+      "title": "Venez nous <0>rejoindre</0> !",
+      "slogan": "Redonnez vie à votre Wii et essayez de nouvelles chaînes.",
+      "install": "Installer !"
     },
     "services": {
       "title": "Bienvenue sur <0>WiiLink</0> !",
-      "subtitle": "Un projet communautaire pour la Wii qui vise à faire revivre et à améliorer les chaînes et services WiiConnect24 qui ont été abandonnés, y compris ceux qui n'étaient disponibles qu'au Japon."
+      "subtitle": "Un projet homebrew communautaire non officiel dédié à la restauration, à la traduction et à l'amélioration des chaînes et services WiiConnect24, désormais abandonnés, y compris ceux qui n'étaient pas disponibles dans toutes les régions."
     },
     "socials": {
-      "title": "Retrouvez-nous sur nos <0>réseaux sociaux</0> !",
-      "subtitle": "Restez au courant de toutes les <0>annonces</0> de services et des <1>annonces générales</1> via nos réseaux sociaux.",  
+      "title": "Consultez les <0>réseaux sociaux</0> du projet !",
+      "subtitle": "Suivez les <0>évolutions</0> des services et les <1>annonces générales</1> ou rejoignez le serveur Discord.",  
       "twFollowers": "2.7k abonnés",
       "twFollow": "Suivre",
       "twTweets": "Tweets par WiiLink24",
@@ -63,24 +63,24 @@
       "ytSubscribe": "S'abonner"
     },
     "team": {
-      "title": "Découvrez notre incroyable <0>équipe</0>",
-      "subtitle": "<0>WiiLink</0> fonctionne grâce à un travail <1>100%</1> bénévole. </2><3>Voici quelques-unes des personnes incroyables qui aident <4>WiiLink</4> à prendre vie !</3>"
+      "title": "<0>L'équipe</0> du projet",
+      "subtitle": "<0>WiiLink</0> fonctionne grâce à un travail <1>100%</1> bénévole. </2><3>Voici les contributeurs principaux qui travaillent sur le projet !</3>"
     },
     "news": {
       "mainTitle": "WiiLink - Blog",
       "mainDesc": "Découvrez les dernières évolutions et nouveautés de WiiLink !",
       "title": "Voici le <0>blog</0> <1>WiiLink</1>",
-      "subtitle": "Rattrapez toutes nos <0>péripéties</0>, ainsi que les <1>mises à jour des services</1> !",
+      "subtitle": "Suivez <0>l'évolution du projet</0>, ainsi que les <1>mises à jour des services</1> !",
       "otherNews": "Voici <0>d'anciens</0> articles :",
-      "rssTitle": "<0>Vous voulez recevoir des <1>infos WiiLink</1> sur votre site ou votre service ? Utilisez notre <2>flux RSS</2> !</0>",
-      "rssButton": "Obtenir notre flux RSS",
+      "rssTitle": "<0>Vous voulez recevoir des <1>infos WiiLink</1> sur votre site ou votre service ? Utilisez le <2>flux RSS</2> !</0>",
+      "rssButton": "Obtenir le flux RSS",
       "otherPosts": "Autres <0>posts</0>"
     },
     "guide": {
       "mainTitle": "WiiLink - Guide",
       "mainDesc": "Accédez à des informations importantes et à de l'aide pour nos services !",
       "title": "Bienvenue sur le <0>guide</0> <1>WiiLink</1>",
-      "subtitle": "Vous trouverez ici des <0>informations importantes</0> concernant le service, ainsi que des <1>guides</1> utiles et des <2>solutions</2> pour vous permettre d'être opérationnel en un rien de temps !",
+      "subtitle": "Vous trouverez ici des <0>informations importantes</0> concernant le service, ainsi que des <1>guides</1> utiles et des <2>solutions</2> pour vous aider !",
       "specificGuides": "Que <0>cherchez-vous</0> ?",
       "helpTitle": "<0>Impossible à faire <1>fonctionner</1> ? N'hésitez pas à <2>nous contacter</c2> !</0>",
       "helpButton1": "Contactez-nous",
@@ -108,9 +108,9 @@
     },
     "extras": {
       "mainTitle": "WiiLink - Extras",
-      "mainDesc": "Jetez un coup d'œil à ce que nous avons à vous proposer !",
-      "title": "Voici les <0>WiiLink</0> <1>extras</1>",
-      "subtitle": "Vous trouverez ici des <0>choses très intéressantes</0> sur lesquelles nous avons travaillé. Nous espérons que vous <1>apprécierez</1> !",
+      "mainDesc": "Découvrez des ressources et des contenus spéciaux !",
+      "title": "Voici les <1>extras</1> <0>WiiLink</0> ",
+      "subtitle": "Vous trouverez ici du <0>contenu spécial</0> sur lequel nous avons travaillé.",
       "helpCall": "<0>Vous pensez qu'il y a quelque chose à <1>ajouter</1> ici ? N'hésitez pas à <2>nous contacter</2> !</0>",
       "contact": "Contactez-nous",
       "joinDiscord": "Rejoignez-nous sur Discord"
