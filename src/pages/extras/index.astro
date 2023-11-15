@@ -11,7 +11,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 
-changeLanguage("en");
+changeLanguage("en-US");
 
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
