@@ -59,19 +59,46 @@ const { isGuide, isMain } = Astro.props;
 </r>
 
 <script is:inline>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Get the dropdown element
-            var dropdown = document.getElementById("my-select-id");
 
-            // Get the div where options will be displayed
+        document.addEventListener('DOMContentLoaded', function () {
+
+            var dropdown = document.getElementById("my-select-id");
+			var option = dropdown.options[0];
+			var optionName = option.value;
+			var editLink = optionName.split('/');
+			editLink.splice(0,2);
+			var editLink = editLink.join('/');
+
+			if (languageOverride != 'yes') {
+
+			switch (navigator.language.toLowerCase.substring(0,2)) {
+				case "es":
+					localStorage.setItem('languageOverride', 'yes');
+					location.href = "es/" + editLink + "";
+					break;
+				case "fr":
+					localStorage.setItem('languageOverride', 'yes');
+					location.href = "fr/" + editLink + "";
+					break;
+				case "de":
+					localStorage.setItem('languageOverride', 'yes');
+					location.href = "fr/" + editLink + "";
+					break;
+				case "pt":
+					localStorage.setItem('languageOverride', 'yes');
+					location.href = "pt-PT/" + editLink + "";
+					break;
+				case "jp":
+					localStorage.setItem('languageOverride', 'yes');
+					location.href = "jp/" + editLink + "";
+					break;
+			}
+			}
+
             var optionsDisplayDiv = document.getElementById("optionsDisplay");
 			var titleTranslate = document.getElementById("titleTranslate");
 
-
-            // Clear the previous content
             optionsDisplayDiv.innerHTML = "";
-
-            // Iterate through each option and display its name and link
 
 			for (var i = 0; i < dropdown.options.length; i++) {
                 var option = dropdown.options[i];
@@ -106,9 +133,9 @@ const { isGuide, isMain } = Astro.props;
 
 				if (i == 0) {
 					titleTranslate.innerHTML = optionLinkFlag;
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li> <li><hr class='dropdown-divider'></li>"
 				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>"
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>"
 				}
             }
 
@@ -141,6 +168,14 @@ const { isGuide, isMain } = Astro.props;
 
 
 <script is:inline>
+
+
+const languageOverride = localStorage.getItem('languageOverride');
+
+	function override() {
+		console.log("Clicked!");
+		localStorage.setItem('languageOverride', 'yes');
+	}
 
 document.addEventListener('DOMContentLoaded', function () {
   
