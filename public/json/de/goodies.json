@@ -1,0 +1,55 @@
+{
+  "goodies": {
+    "goodie": [
+      {
+        "title": "<i class='fa-solid fa-palette'></i> Branding-Assets",
+        "desc": "Brand-Assets zur externen Nutzung!",
+        "img": "/img/branding_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Hintergrundbilder",
+        "desc": "WiiLink-Hintergrundbilder für deinen Computer!",
+        "img": "/img/wallpaper_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-user-group'></i> Vorstellung des Teams",
+        "desc": "Die wichtigsten Mitwirkenden am Projekt!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
+        "desc": "Ein Gamertag-Service für die Wii und die Wii U!",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-poll'></i> Umfrage-Viewer",
+        "desc": "Schau dir die Ergebnisse der Umfragen des Meinungskanals an!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
+        "desc": "Sieh dir die Übersetzungen der originalen Wii Room-Inhalte von Nintendo an!",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink-Themen",
+        "desc": "Wii-Themen von WiiLink!",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "desc": "Ein neuer Nintendo Wi-Fi Connection-Service!",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      }
+
+]
+}
+}

@@ -1,0 +1,55 @@
+{
+  "goodies": {
+    "goodie": [
+      {
+        "title": "<i class='fa-solid fa-palette'></i> Recursos de marca",
+        "desc": "Recursos de marca per utilitzar externament!",
+        "img": "/img/branding_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Fons de pantalla",
+        "desc": "Fons de pantalla del WiiLink per a l'ordinador!",
+        "img": "/img/wallpaper_bg.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-user-group'></i> Coneixeu l'equip",
+        "desc": "Els principals col·laboradors del projecte!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
+        "desc": "Un servei de gamertag per a Wii i Wii U!",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-poll'></i> Arxiu de preguntes",
+        "desc": "Consulteu els resultats de les preguntes del Canal Tothom Vota!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
+        "desc": "Mireu traduccions del contingut original de Nintendo del Wii Room!",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Themes",
+        "desc": "Temes per a Wii amb l'estil del WiiLink!",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "desc": "Un servei en curs per a la Connexió Wi-Fi de Nintendo!",
+        "img": "/img/guidebg-1.png",
+        "link": "404"
+      }
+
+]
+}
+}

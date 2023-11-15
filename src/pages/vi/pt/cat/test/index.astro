@@ -1,0 +1,30 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("vi");
+---
+
+
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function () {
+      // Get the dropdown element
+      var dropdown = document.getElementById("my-select-id");
+
+      // Get the div where options will be displayed
+      var optionsDisplayDiv = document.getElementById("optionsDisplay");
+
+      // Clear the previous content
+      optionsDisplayDiv.innerHTML = "";
+
+      // Iterate through each option and display its name and link
+      for (var i = 0; i < dropdown.options.length; i++) {
+          var option = dropdown.options[i];
+          var optionName = option.value;
+          var optionLink = option.innerHTML;
+
+          optionsDisplayDiv.innerHTML += "<a href='https://wiilink24.com" + optionName + "'> " + optionLink; + "</a>"
+
+      }
+  });
+</script>

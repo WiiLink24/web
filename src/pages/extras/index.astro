@@ -11,7 +11,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 
-changeLanguage("en");
+changeLanguage("en-US");
 
 const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
 ---
@@ -25,11 +25,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 		<img class="newstop" style="" src="/img/extrastop.png">
 			<div class="welcome-msg">
 				<h2 style="font-size:40px; font-family:Gilroy;"><Trans i18nKey="extras.title">This is <span class="badge bg-danger" style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"></span><b style="font-family: Rubik;">WiiLink</b><span class="badge bg-danger" style="top:-20px; left:-4px; font-size:15px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">extras</span></Trans></h2>
-				<h3><Trans i18nKey="extras.subtitle">Here you'll find <b class="color">some really cool stuff</b> we've been working on. We hope you <b class="color">enjoy</b>!</Trans></h3>
+				<h3 style="font-size: calc(1.3rem + .6vw);"><Trans i18nKey="extras.subtitle">Here you'll find <b class="color">some really cool stuff</b> we've been working on. We hope you <b class="color">enjoy</b>!</Trans></h3>
 			</div>
 
 	<div id="slide-track"></div>
-			<h3 style="margin-top:100px; text-align:center; position:relative; width:100%;"><Trans i18nKey="extras.helpCall"><b>Do you think there's something we should <c class="color">add</c> in here? Be sure to <c class="color">get in touch</c>!</b></Trans></h3>
+			<h3 style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;"><Trans i18nKey="extras.helpCall"><b>Do you think there's something we should <c class="color">add</c> in here? Be sure to <c class="color">get in touch</c>!</b></Trans></h3>
 			<div class="btn-wrapper">
 			<a href="mailto:contact@wiilink24.com"><div class="btn btn-success" style="padding:10px;"><i class="fa-solid fa-envelope" style="margin-right:5px;"></i> {t("extras.contact")}</div></a>
 			<a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> {t("extras.joinDiscord")}</div></a>
@@ -57,7 +57,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
             let services = document.getElementById("slide-track");
 
                 for(let i = 0; i < data.goodies.goodie.length; i++) {
-                    services.innerHTML += "<a style='color:rgb(34,37,41); text-decoration:none;' href='#'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:200px; width:auto; border-radius:16px; border:2px solid #70707040; background-color:#121212; box-shadow:0px 0px 20px #00000020; margin:15px; opacity:0; overflow:hidden; animation: 0.2s " + (30+i*5) + "0ms slideup linear forwards; z-index:10;'><h4 style='top:20px; left:20px; width:140px; padding:5px; padding-left:10px; padding-right:10px; color:white; border-radius:58px; font-size:15px; background-color:#12121220; backdrop-filter:blur(8px); z-index:10000; position:relative;'>Coming soon! <i class='fa-solid fa-box'></i></h4><div style='top:50px; width:auto; height:110px; backdrop-filter:blur(8px); background-color:#12121260; z-index:10000; position:relative;'><h2 style='top:20px; left:28px; color:white; font-family:Gilroy; z-index:1; position:relative;'>" + data.goodies.goodie[i].title + "</h2> <h3 style='top:15px; left:28px; width:90%; font-size:25px; color:white; font-weight:200; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; z-index:1; position:relative;'>" + data.goodies.goodie[i].desc + "</h3></div><img  class='img' src='" + data.goodies.goodie[i].img + "' style='bottom:146px; left:0; width:100%; height:100%; transform:scale(105%); object-fit:cover; z-index:0; position:relative;'></div></a>";
+                    services.innerHTML += "<a style='color:rgb(34,37,41); text-decoration:none;' href='#'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:200px; width:auto; border-radius:16px; border:2px solid #70707040; background-color:#121212; box-shadow:0px 0px 20px #00000020; margin:15px; opacity:0; overflow:hidden; animation: 0.2s " + (30+i*5) + "0ms slideup linear forwards; z-index:10;'><h4 style='top:20px; left:20px; width:140px; padding:5px; padding-left:10px; padding-right:10px; color:white; border-radius:58px; font-size:15px; background-color:#12121220; backdrop-filter:blur(8px); z-index:10000; position:relative;'>Coming soon! <i class='fa-solid fa-box'></i></h4><div style='top:50px; width:auto; height:110px; backdrop-filter:blur(8px); background-color:#12121260; z-index:10000; position:relative;'><h2 style='top:20px; left:28px; color:white; font-size:30px; font-family:Gilroy; z-index:1; position:relative;'>" + data.goodies.goodie[i].title + "</h2> <h3 style='top:15px; left:28px; width:90%; font-size:25px; color:white; font-weight:200; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; z-index:1; position:relative;'>" + data.goodies.goodie[i].desc + "</h3></div><img  class='img' src='" + data.goodies.goodie[i].img + "' style='bottom:146px; left:0; width:100%; height:100%; transform:scale(105%); object-fit:cover; z-index:0; position:relative;'></div></a>";
             }
            }
     });

@@ -9,7 +9,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("en");
+changeLanguage("en-US");
 ---
 
 <Layout title={t("status.mainTitle")} description={t("status.mainDesc")} image="/img/Status_embed.png" />
@@ -23,7 +23,7 @@ changeLanguage("en");
 			<img class="newstop" style="" src="/img/statustop.png">
 			<div class="welcome-msg">
 				<h2 style="font-size:40px; font-family:Gilroy;"><Trans i18nKey="status.title">Check out the <span class="badge bg-primary" style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"></span><b style="font-family: Rubik;">WiiLink</b><span class="badge bg-primary" style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;">status</span></Trans></h2>
-				<h3><Trans i18nKey="status.subtitle">Get a glimpse at our <b class="color">progress</b>, in addition to the status of our <b class="color">servers</b>!</Trans></h3>
+				<h3 style="font-size: calc(1.3rem + .6vw);"><Trans i18nKey="status.subtitle">Get a glimpse at our <b class="color">progress</b>, in addition to the status of our <b class="color">servers</b>!</Trans></h3>
 			</div>
 			<div class="intro">
 			<div class="polka-dot"></div>
@@ -69,7 +69,7 @@ scrollableDiv.addEventListener('scroll', function() {
             let services = document.getElementById("postholder");
 
             for(let i = 0; i < (data.services.service.length); i++) {
-                services.innerHTML += "<a href='" + data.services.service[i].link + "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:350px; border: 2px solid " + data.services.service[i].color + "20; border-radius:16px; animation: 0.2s " + (30+i*5) + "0ms slideup linear forwards; box-shadow:0px 0px 20px #12121240; opacity:0; margin:15px; overflow:hidden;'><div class='barhold' style='bottom:0; left:50%; transform:translate(-50%, 0); width:100%; height:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:0px;'></div></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='/img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:1; position:absolute;'> <span class='badge stat'>" + data.services.service[i].status + "</span> <l style='transform:translate(0, 5px); opacity:0.5;'>" + data.services.service[i].isArea + "</l></h3></div><h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:40px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].todo + "</h3></div></a>";
+                services.innerHTML += "<a href='" + data.services.service[i].link + "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect("+ i + ")'  onmouseout='noEffect("+ i + ")' class='service' style='height:350px; border: 2px solid " + data.services.service[i].color + "20; border-radius:16px; animation: 0.2s " + (30+i*5) + "0ms slideup linear forwards; box-shadow:0px 0px 20px #12121240; opacity:0; margin:15px; overflow:hidden;'><div class='barhold' style='bottom:0; left:50%; transform:translate(-50%, 0); width:100%; height:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:0px;'></div></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='/img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-size:30px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:1; position:absolute;'> <span class='badge stat'>" + data.services.service[i].status + "</span> <l style='transform:translate(0, 5px); opacity:0.5;'>" + data.services.service[i].isArea + "</l></h3></div><h3 style='top:30px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><h3 style='top:40px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].todo + "</h3></div></a>";
 				if (data.services.service[i].status == "Completed" || data.services.service[i].status == "Full Release"){
 					document.getElementsByClassName("stat")[i].style.backgroundColor = "var(--bs-green)";
 				}
@@ -110,6 +110,11 @@ scrollableDiv.addEventListener('scroll', function() {
 		top:0px;
 		text-align: left;
 	}
+
+	h2 {
+		font-size: calc(1.3rem + .6vw);
+	}
+
 	.welcome-msg{
 		top:15px;
 		max-width: 90%;
