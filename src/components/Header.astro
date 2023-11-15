@@ -2,6 +2,7 @@
 import HeaderLink from './HeaderLink.astro';
 import HeaderSmall from "../components/HeaderSmall.astro";
 import { SITE_TITLE } from '../consts';
+import Layout from "../layouts/Layout.astro";
 import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next from "i18next";
@@ -13,7 +14,6 @@ import { LanguageSelector } from "astro-i18next/components";
 
 const { isGuide, isMain } = Astro.props;
 ---
-
 
 <Agreement/>
 
@@ -72,42 +72,51 @@ const { isGuide, isMain } = Astro.props;
             optionsDisplayDiv.innerHTML = "";
 
             // Iterate through each option and display its name and link
-            for (var i = 0; i < dropdown.options.length; i++) {
+
+			for (var i = 0; i < dropdown.options.length; i++) {
                 var option = dropdown.options[i];
                 var optionName = option.value;
                 var optionLink = option.innerHTML;
-				optionLinkFlag = optionLink.substring(0,4);
-				if (i == 0) {
-					if (optionLink.substring(5, 7).toLowerCase() === "ca") {
-						optionLink = "<img src='/img/cat.png' class='emoji'> Català";
-						titleTranslate.innerHTML = "<img src='/img/cat.png' class='emoji'>";
-						optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6; z-index:0;'></i> " + optionLink + "</button></a></li>"
-					} else if (optionLink.substring(5, 7).toLowerCase() === "ti") {
-						optionLink = "<img src='/img/val.png' class='emoji'> Valencià";
-						titleTranslate.innerHTML = "<img src='/img/val.png' class='emoji'>";
-						optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6; z-index:0;'></i> " + optionLink + "</button></a></li>"
-					}
-					else {
-						titleTranslate.innerHTML = optionLinkFlag;
-						optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
-					}
-				} else if(optionLink.substring(5, 7).toLowerCase() === "ca") {
-					optionLink = "<img src='/img/cat.png' class='emoji'> Català";
-                	optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
-				} else if (optionLink.substring(5, 7).toLowerCase() === "ti") {
-					optionLink = "<img src='/img/val.png' class='emoji'> Valencià";
-                	optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
-				}
-				else {
-					console.log(optionLink.substring(5, 9).toLowerCase());
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
+				var optionLinkFlag = optionLink.substring(0,4);
+
+				switch (optionLink.substring(0, 4).toLowerCase()) {
+					case '🇺🇸':
+						optionLink = "🇺🇸 English (US)";
+						break;
+					case '🇬🇧':
+						optionLink = "🇬🇧 English (UK)";
+						break;
+					case '🇧🇷':
+						optionLink = "🇧🇷 Português (BR)";
+						break;
+					case '🇵🇹':
+						optionLink = "🇵🇹 Português (PT)";
 				}
 
+				switch (optionLink.substring(5, 7).toLowerCase()) {
+					case 'ca':
+						optionLinkFlag = "<img src='/img/cat.png' class='emoji'>";
+						optionLink = "<img src='/img/cat.png' class='emoji'> Català (CA)";
+						break;
+					case 'ti':
+					optionLinkFlag = "<img src='/img/val.png' class='emoji'>";
+						optionLink = "<img src='/img/val.png' class='emoji'> Català (VA)";
+						break;
+				}
+
+				if (i == 0) {
+					titleTranslate.innerHTML = optionLinkFlag;
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
+				} else {
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
+				}
             }
 
 			twemoji.parse(document.getElementById("optionsDisplay"));
 			twemoji.parse(document.getElementById("titleTranslate"));
         });
+
+
 
 		let open = 0;
 		function toggleTranslate() {
