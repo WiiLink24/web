@@ -3,25 +3,25 @@
     "goodie": [
       {
         "title": "<i class='fa-solid fa-palette'></i> Ressources de marque",
-        "desc": "Nos ressources de marque pour un usage externe.",
+        "desc": "Nos ressources de marque pour un usage externe !",
         "img": "/img/branding_bg.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Fond d'écrans",
-        "desc": "Des fonds d'écran WiiLink pour embellir votre PC !",
+        "desc": "Des fonds d'écran WiiLink pour votre PC !",
         "img": "/img/wallpaper_bg.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Présentation de l'équipe",
-        "desc": "Faites connaissance avec les personnes à l'origine de WiiLink !",
+        "desc": "Les contributeurs principaux au projet !",
         "img": "/img/guidebg-2.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-tag'></i> LinkTag",
-        "desc": "Notre serivce de gamertag pour Wii et Wii U !",
+        "desc": "Un serivce de gamertag pour Wii et Wii U !",
         "img": "/img/guidebg-1.png",
         "link": "404"
       },
@@ -33,19 +33,19 @@
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
-        "desc": "Des vidéos traduites de Wii Room !",
+        "desc": "Regardez des traductions du contenu Nintendo original de Wii Room !",
         "img": "/img/guidebg-3.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Thèmes WiiLink",
-        "desc": "Des thèmes aux couleurs de WiiLink pour la Wii !",
+        "desc": "Des thèmes WiiLink pour la Wii !",
         "img": "/img/guidebg-3.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "Notre nouveau service en ligne pour la Wii !",
+        "desc": "Un service de Connexion Wi-Fi Nintendo en développement !",
         "img": "/img/guidebg-1.png",
         "link": "404"
       }
