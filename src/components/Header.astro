@@ -62,41 +62,49 @@ const { isGuide, isMain } = Astro.props;
 
         document.addEventListener('DOMContentLoaded', function () {
 
+			localStorage.setItem('languageOverride', 'yes');
+
             var dropdown = document.getElementById("my-select-id");
 			var option = dropdown.options[0];
 			var optionName = option.value;
 			var editLink = optionName.split('/');
-			editLink.splice(0,2);
-			var editLink = editLink.join('/');
+			editlink = editLink.splice(0,2);
+			editLink = "/" + editLink.join('/') + "";
+			if (editLink == "/") {
+				editLink = "";
+			}
+			console.log(editLink);
 
 			if (languageOverride != 'yes') {
 
-			switch (navigator.language.toLowerCase.substring(0,2)) {
+			switch (navigator.language.substring(0,2)) {
 				case "en":
-					if(navigator.language.toLowerCase === "en-gb") {
+					if (navigator.language.substring(0,5) == "en-GB"){
 						localStorage.setItem('languageOverride', 'yes');
-						location.href = "en-GB/" + editLink + "";
+						location.href = "/en-GB" + editLink + "";
+						break;
 					}
+					location.href = "/en-GB" + editLink + "";
 					break;
 				case "es":
 					localStorage.setItem('languageOverride', 'yes');
-					location.href = "es/" + editLink + "";
+					location.href = "/es" + editLink + "";
 					break;
 				case "fr":
 					localStorage.setItem('languageOverride', 'yes');
-					location.href = "fr/" + editLink + "";
+					location.href = "/fr" + editLink + "";
 					break;
 				case "de":
 					localStorage.setItem('languageOverride', 'yes');
-					location.href = "fr/" + editLink + "";
+					location.href = "/fr" + editLink + "";
 					break;
 				case "pt":
 					localStorage.setItem('languageOverride', 'yes');
-					location.href = "pt-PT/" + editLink + "";
+					location.href = "/pt-PT" + editLink + "";
 					break;
 				case "jp":
 					localStorage.setItem('languageOverride', 'yes');
-					location.href = "jp/" + editLink + "";
+					location.href = "/jp" + editLink + "";
 					break;
 			}
 			}
