@@ -14,7 +14,7 @@
     "@astrojs/rss": "^3.0.0",
     "@popperjs/core": "^2.11.8",
     "@xata.io/client": "^0.26.4",
-    "astro": "^3.0.11",
+    "astro": "^3.5.4",
     "astro-i18next": "^1.0.0-beta.21",
     "astro-particles": "^2.10.0",
     "bootstrap-icons": "^1.11.1",
