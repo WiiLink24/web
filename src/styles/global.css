@@ -100,7 +100,8 @@ main {
 }
 
 a{
-	text-decoration: none;
+	color:rgb(131, 197, 223);
+	text-decoration: underline;
 }
 
 
@@ -324,7 +325,7 @@ table {
 code {
 	padding: 4px 6px;
 	background-color: rgba(97, 97, 97, 0.148);
-	color:rgb(78, 78, 78);
+	color:rgb(93, 154, 50);
 	border-radius: 8px;
 }
 pre {
