@@ -4,7 +4,7 @@
       {
         "color": "#138fed",
         "name": "Forecast Channel",
-        "desc": "Discover the weather for your region, your country or the whole world in a nice, cozy interface.",
+        "desc": "Discover the weather for your region, your country or the whole world.",
         "link": "/guide/forecast",
         "isArea": "International",
         "status": "Full Release",
@@ -15,7 +15,7 @@
       {
         "color": "#0C9228",
         "name": "News Channel",
-        "desc": "Get up to date information on recent worldwide events right on your Wii thanks to the News Channel!",
+        "desc": "Quickly catch up on the latest news from around the world and see exactly where it's happening.",
         "link": "/guide/news",
         "isArea": "WiiConnect24",
         "status": "Planned",
@@ -59,7 +59,7 @@
       {
         "color": "#d4a80b",
         "name": "Food Channel",
-        "desc": "Order different types of meals from home via your Wii console and pay on delivery.",
+        "desc": "Order different types of meals from home via your Wii console.",
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
@@ -92,7 +92,7 @@
       {
         "color": "#00FFF8",
         "name": "Photo Prints Channel",
-        "desc": "Create albums and business cards with your photos and Mii characters and have them delivered by email.",
+        "desc": "Create albums and business cards with your photos and Mii characters.",
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
@@ -103,7 +103,7 @@
       {
         "color": "#05AAF8",
         "name": "Wii Room",
-        "desc": "Discover shows and other video-on-demand content, or send messages to your friends from the Wii Room.",
+        "desc": "Discover shows and other video-on-demand content or send messages to your friends from the Wii Room.",
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",

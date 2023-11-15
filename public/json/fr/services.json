@@ -4,7 +4,7 @@
         {
           "color": "#138fed",
           "name": "Chaîne méteo",
-          "desc": "Découvrez la météo de votre région, de votre pays ou du monde entier dans une interface agréable et confortable.",
+          "desc": "Découvrez la météo de votre région, de votre pays ou du monde entier.",
           "link": "/guide/forecast",
           "isArea": "International",
           "status": "Sortie complète",
@@ -15,7 +15,7 @@
         {
           "color": "#0C9228",
           "name": "Chaîne infos",
-          "desc": "Obtenez des infos sur les événements du monde entier directement sur votre Wii grâce à la Chaîne infos !",
+          "desc": "Suivez rapidement les dernières nouvelles du monde entier et voyez exactement où elles se produisent.",
           "link": "/guide/news",
           "isArea": "WiiConnect24",
           "status": "Prévu",
@@ -59,7 +59,7 @@
           {
             "color": "#d4a80b",
             "name": "Chaîne cuisine",
-            "desc": "Commandez différents types de plats directement chez vous via votre Wii, et payez à la livraison.",
+            "desc": "Commandez différents types de plats directement chez vous via votre Wii.",
             "link": "/guide/demae",
             "isArea": "Exclusif Japon",
             "status": "Sortie complète",
@@ -92,7 +92,7 @@
           {
             "color": "#00FFF8",
             "name": "<l style='font-size:28px;'>Chaîne impression photo</l>",
-            "desc": "Créez des albums et des cartes de visite avec vos photos et vos Mii et recevez-les par e-mail.",
+            "desc": "Créez des albums et des cartes de visite avec vos photos et vos personnages Mii.",
             "link": "/guide/digicam",
             "isArea": "Exclusif Japon",
             "status": "Sortie complète",
