@@ -15,7 +15,7 @@
         {
           "color": "#0C9228",
           "name": "Chaîne infos",
-          "desc": "Obtenez des infos récentes sur les événements du monde entier directement sur votre Wii grâce à la Chaîne infos !",
+          "desc": "Obtenez des infos sur les événements du monde entier directement sur votre Wii grâce à la Chaîne infos !",
           "link": "/guide/news",
           "isArea": "WiiConnect24",
           "status": "Prévu",
@@ -37,7 +37,7 @@
           {
             "color": "#F1E3C1",
             "name": "Chaîne concours Mii",
-            "desc": "Devenez un Mii artisan et montrez au monde entier vos talents de créateur Mii en participant à de nombreux concours.",
+            "desc": "Devenez un Mii artisan et montrez au monde entier vos talents en participant à de nombreux concours.",
             "link": "/guide/cmoc",
             "isArea": "WiiConnect24",
             "status": "Prévu",
@@ -48,12 +48,12 @@
           {
             "color": "#283688",
             "name": "Chaînes votes",
-            "desc": "Découvrez à quel point le monde pense différemment de vous en participant à de tout nouveaux sondages.",
+            "desc": "Découvrez à comment le monde pense en participant à de tout nouveaux sondages.",
             "link": "/guide/evc",
             "isArea": "WiiConnect24",
             "status": "En maintenance",
             "icon": "democracy_icon.png",
-            "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Support des questions multilingues <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Corriger les codes erreur",
+            "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Support des questions multilingues <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Sondages custom <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Corriger les codes erreur",
             "completed": "80"
           },
           {
@@ -92,7 +92,7 @@
           {
             "color": "#00FFF8",
             "name": "<l style='font-size:28px;'>Chaîne impression photo</l>",
-            "desc": "Créez des albums et des cartes de visite avec vos photos et vos personnages Mii et recevez-les par e-mail.",
+            "desc": "Créez des albums et des cartes de visite avec vos photos et vos Mii et recevez-les par e-mail.",
             "link": "/guide/digicam",
             "isArea": "Exclusif Japon",
             "status": "Sortie complète",
@@ -103,7 +103,7 @@
           {
             "color": "#05AAF8",
             "name": "Wii Room",
-            "desc": "Découvrez des émissions et d'autres contenus vidéo à la demande, ou envoyez des messages à vos amis depuis Wii Room.",
+            "desc": "Découvrez des vidéos à la demande exclusives, ou envoyez des messages à vos amis depuis Wii Room.",
             "link": "/guide/wiinoma",
             "isArea": "Exclusif Japon",
             "status": "Sortie complète",
@@ -127,7 +127,7 @@
             "name": "Bureau Wii",
             "desc": "Envoyez des messages à vos amis Wii enregistrés et vers des adresses e-mail.",
             "link": "/guide/mail",
-            "isArea": "Toute région",
+            "isArea": "Toutes régions",
             "status": "Sortie complète",
             "todo": "Revenez plus tard...",
             "icon": "room_icon.png",
