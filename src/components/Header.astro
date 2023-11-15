@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 if (savedMode === 'dark') {
     enableDarkMode();
-	themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
 	themeColorButton.style.filter = "invert(0)";
   } else {
     enableLightMode();
@@ -168,7 +168,7 @@ function darkToggle() {
 	  themeColorButton.style.filter = "invert(1)";
     } else {
       enableDarkMode();
-	  themeColorButton.innerHTML = "<i class='bi bi-sun-fill'></i>";
+	  themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
 	  themeColorButton.style.filter = "invert(0)";
     }
   }
