@@ -6,7 +6,6 @@ import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next from "i18next";
 import i18next, { t, changeLanguage } from "i18next";
-import Layout from "../layouts/Layout.astro";
 import Agreement from "../components/Agreement.astro";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import HeaderMain from './HeaderMain.astro';
@@ -15,7 +14,7 @@ import { LanguageSelector } from "astro-i18next/components";
 const { isGuide, isMain } = Astro.props;
 ---
 
-<Layout/>
+
 <Agreement/>
 
 <r lang={i18next.language} class="bannerholder">
@@ -59,7 +58,6 @@ const { isGuide, isMain } = Astro.props;
 	 </ul>
 </r>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 <script is:inline>
         document.addEventListener('DOMContentLoaded', function () {
             // Get the dropdown element
