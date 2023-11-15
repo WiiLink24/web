@@ -108,7 +108,7 @@ const { isGuide, isMain } = Astro.props;
 					titleTranslate.innerHTML = optionLinkFlag;
 					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <i class='fa fa-arrow-right' style='margin-right:5px; opacity:0.6;'></i> " + optionLink + "</button></a></li>"
 				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> " + optionLink + "</button></a></li>"
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>"
 				}
             }
 

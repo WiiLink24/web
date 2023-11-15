@@ -2,5 +2,5 @@
 export default {
     defaultLocale: "en-US",
 
-    locales: ["en-US", "en-GB", "es", "fr", "ja", "pt-PT", "pt-BR", "ca", "vi"],
+    locales: ["en-US", "en-GB", "es", "fr", "ja", "pt-PT", "pt-BR", "ca", "vi", "de"],
   };
