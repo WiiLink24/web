@@ -80,12 +80,11 @@
       },
       {
         "color": "#ed34d8",
-        "name": "Chaîne Kirby TV",
-        "desc": "Regardez des épisodes à durée limitée de <i>Kirby: Right Back at Ya!</i>.",
+        "name": "Kirby TV Channel",
+        "desc": "Watch limited-time <i>Kirby: Right Back at Ya!</i> episodes.",
         "link": "/guide/kirbytv",
-        "isArea": "Exclusif à certains pays européens",
-        "status": "Sortie complète",
-        "todo": "Check back later...",
+        "isArea": "Originally certain European countries",
+        "status": "Full Release",
         "icon": "kirby_icon.png",
         "completed": "60"
       },
