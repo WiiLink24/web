@@ -286,31 +286,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 });
 
 
-// Function to check if the browser is Google Chrome
-function isGoogleChrome() {
-  const userAgent = navigator.userAgent;
-  return userAgent.includes('Chrome') && userAgent.includes('Safari') && !userAgent.includes('Edge') && !userAgent.includes('OPR') && !userAgent.includes('Firefox') && !userAgent.includes('Chromium');
-}
-
-// Check if the browser is Chrome and move content
-if (isGoogleChrome()) {
-  // Get references to the source and destination divs
-  const sourceDiv = document.getElementById('square2');
-  const destinationDiv = document.getElementById('chromeHolder');
-
-  // Check if both divs exist
-  if (sourceDiv && destinationDiv) {
-    // Move content from source to destination
-    const contentToMove = sourceDiv.innerHTML;
-    destinationDiv.innerHTML = contentToMove;
-	var rm = document.getElementById("removeOnChrome");
-	rm.remove();
-
-    // Clear the source div content
-    sourceDiv.innerHTML = '';
-  }
-}
-
 
 </script>
 
@@ -464,8 +439,8 @@ if (isGoogleChrome()) {
 	#square2{
 		width: calc(100% - 30px);
 		height: calc(100% - 30px);
-		left:15px;
-		top:15px;
+		left:15.5px;
+		top:15.5px;
 		background-color: var(--bg-color);
 		transform: translate(0%, 0%);
 		border-radius: 4px;
