@@ -25,8 +25,10 @@ changeLanguage("ja");
 
 <Themes defaultTheme="dark"/>
 
-<div class="symbolholder">
-	<div class="backsymbol">
+<div id="chromeHolder"></div>
+
+<div class="symbolholder" id="removeOnChrome">
+	<div class="backsymbol" id="movable">
 		<div class="square2" id="square2">
 
 			<Header isGuide="display:none;" isMain="display:none;"/>
@@ -282,6 +284,33 @@ document.addEventListener("DOMContentLoaded", async function () {
         console.error("Error fetching GitHub release:", error);
     }
 });
+
+
+// Function to check if the browser is Google Chrome
+function isGoogleChrome() {
+  const userAgent = navigator.userAgent;
+  return userAgent.includes('Chrome') && userAgent.includes('Safari') && !userAgent.includes('Edge') && !userAgent.includes('OPR') && !userAgent.includes('Firefox') && !userAgent.includes('Chromium');
+}
+
+// Check if the browser is Chrome and move content
+if (isGoogleChrome()) {
+  // Get references to the source and destination divs
+  const sourceDiv = document.getElementById('square2');
+  const destinationDiv = document.getElementById('chromeHolder');
+
+  // Check if both divs exist
+  if (sourceDiv && destinationDiv) {
+    // Move content from source to destination
+    const contentToMove = sourceDiv.innerHTML;
+    destinationDiv.innerHTML = contentToMove;
+	var rm = document.getElementById("removeOnChrome");
+	rm.remove();
+
+    // Clear the source div content
+    sourceDiv.innerHTML = '';
+  }
+}
+
 
 </script>
 
