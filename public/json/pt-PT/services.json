@@ -3,7 +3,7 @@
     "service": [
       {
           "color": "#138fed",
-          "name": "Canal de Metereologia",
+          "name": "Canal do Tempo",
           "desc": "Vê a meteorologia atual e futura da tua região local ou de todo o mundo!",
           "link": "/guide/forecast",
           "isArea": "Internacional",
@@ -36,7 +36,7 @@
       },
       {
             "color": "#F1E3C1",
-            "name": "Canal Vê-Mii",
+            "name": "Canal de Concursos Mii",
             "desc": "Torna-te um artesão de Miis e mostra ao mundo as tuas capacidades de design Mii numa vasta gama de concursos.",
             "link": "/guide/cmoc",
             "isArea": "Internacional",
@@ -91,7 +91,7 @@
       },
       {
             "color": "#00FFF8",
-            "name": "Canal de Impressão de Fotos",
+            "name": "Canal Impressões de Fotos",
             "desc": "Cria álbuns e cartões de visita com fotografias do teu cartão SD ou com as tuas personagens Mii!",
             "link": "/guide/digicam",
             "isArea": "Exclusivo do Japão",
@@ -135,7 +135,7 @@
       },
       {
         "color": "#05AAF8",
-            "name": "Antevisão de Metroid Prime 3",
+            "name": "Antevisão Metroid Prime 3",
             "desc": "Vê o conteúdo de <i>Metroid Prime 3: Corruption.</i>",
             "link": "/guide/primepreview",
             "isArea": "Originalmente na América e na Europa",
