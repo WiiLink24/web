@@ -85,13 +85,12 @@ import { Trans } from "astro-i18next/components";
     }
     .build-square{
         width:95%;
-        max-width:350px;
         box-shadow: 0px 5px 10px #00000020;
         border:2px solid rgb(255, 240, 240);
         border-radius: 16px;
         perspective: 500px;
-        display:flex;
-        flex-wrap: wrap;
+        display:grid;
+        grid-template-columns: repeat(auto-fit,minmax(345px,1fr));
         gap:50px;
         padding:15px;
         min-height:500px;
@@ -207,11 +206,11 @@ import { Trans } from "astro-i18next/components";
     .tiers{
         left:50%;
         transform: translate(-50%, 0);
-        display:flex;
+        display:grid;
         align-items: center;
         justify-content: center;
-        flex-wrap:wrap;
-        gap:20px;
+        grid-template-columns: repeat(auto-fill,minmax(350px,1fr));
+        gap:0px;
         position:relative;
     }
     .dots{
