@@ -189,6 +189,7 @@ img{
 		height:100%;
 		border-radius:8px;
 		overflow:scroll;
+		overflow-x:hidden;
 	}
 
 	.guideholder{
@@ -202,6 +203,15 @@ img{
 		border-radius: 8px;
 		z-index: 1;
 		overflow: scroll;
+		overflow-x:hidden;
+	}
+	
+	.guideholder::-webkit-scrollbar{
+		display:none;
+	}
+
+	.holder::-webkit-scrollbar{
+		display:none;
 	}
 
 	@keyframes fadeup{
