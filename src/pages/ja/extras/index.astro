@@ -48,7 +48,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     document.addEventListener("DOMContentLoaded", async function () {
 
 		let fetcher = document.getElementById("fetcherExtras").innerHTML;
-		console.log(fetcher);
            fetch(fetcher)
            .then(response => response.json())
            .then(data => showService(data));

@@ -83,7 +83,7 @@
       "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to help you out!",
       "specificGuides": "What are you <0>looking for</0>?",
       "helpTitle": "<0>Can't seem to get it <1>working</1>? Don't hesitate to <2>get in touch</c2>!</0>",
-      "helpButton1": "Contact us",
+      "helpButton1": "Get in touch!",
       "helpButton2": "Join the Discord"
     },
     "guidePost": {
@@ -112,7 +112,7 @@
       "title": "Here are the <1>WiiLink</1> <2>extras</2>",
       "subtitle": "In here you'll find <0>special content</0> we've been working on.",
       "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
-      "contact": "Contact",
+      "contact": "Get in touch!",
       "joinDiscord": "Join the Discord"
     },
     "404": {
