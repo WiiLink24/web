@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import DefaultHead from "../../components/DefaultHead.astro";
 import Donate from "../../components/Donate.astro";
+import Loading from "../../components/Loading.astro";
 import Services from "../../components/Services.astro";
 import BuildInfo from "../../components/build.astro";
 import Team from "../../components/team.astro";
@@ -19,7 +20,8 @@ changeLanguage("ja");
 ---
 
 <Layout title={t("site.title")} description={t("site.description")} image={t("site.img")}>
-	
+<Loading />
+
 <html lang={i18next.language}>
 <body>
 
