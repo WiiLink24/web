@@ -17,17 +17,17 @@
 }
 @font-face {
 	font-family: Rubik;
-	src: url(./fonts/Rubik.ttf);
+	src: url(/fonts/Rubik.ttf);
   }
   
   @font-face {
 	font-family: gilroy;
-	src: url(./fonts/Gilroy.otf);
+	src: url(/fonts/Gilroy.otf);
   }
 
   @font-face {
 	font-family: inter;
-	src: url(./fonts/sfpro.otf);
+	src: url(/fonts/sfpro.otf);
   }
 body {
 	margin: 0;
