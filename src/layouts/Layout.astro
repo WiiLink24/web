@@ -21,7 +21,6 @@ const { title, description, image} = Astro.props;
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
-<link rel="icon" type="image/x-icon" href="/img/favicon.png">
 <meta name="title" content="WiiLink" />
 <meta name="description" content={description}>
 <meta content={description} property="og:description" />
@@ -32,6 +31,17 @@ const { title, description, image} = Astro.props;
 <meta name="language" content="English">
 <meta name="revisit-after" content="12 days">
 <meta name="author" content="The WiiLink Team">
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="/img/site.webmanifest">
+<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="/img/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-config" content="/img/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+
 	
 
 <!-- Open Graph / Facebook -->

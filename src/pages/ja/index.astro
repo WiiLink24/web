@@ -169,9 +169,7 @@ const width = window.innerWidth;
 
 if (width >= 1000){
 scrollableDiv.addEventListener('scroll', function() {
-  // Check if the user has scrolled to the bottom
   if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
-    // User has scrolled to the end
     scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
   } else {
 	scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
@@ -216,6 +214,7 @@ if (osdetect() == "Unknown OS"){
 </Layout>
 
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
 <script>
 
 import { Octokit } from "https://esm.sh/octokit";
