@@ -7,6 +7,7 @@
       "dev": "Développé par ",
       "relNotes": "Notes de version",
       "downloadPrompt": "Téléchargez la dernière version :",
+      "winMinReq": "You'll need windows 8 or higher!",
       "installGuide": "Ouvrir le guide",
       "terms": "J'ai lu et accepté les <0>conditions d'utilisation</0> et la <1>politique de confidentialité</1>.",
       "slogan": "<0>WiiLink</0> est un projet homebrew non officiel et à but non lucratif. Il n'est pas affilié à Nintendo et toutes les marques déposées sont la propriété de leurs détenteurs respectifs. Aucune violation des droits d'auteur n'est envisagée.</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",

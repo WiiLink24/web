@@ -6,6 +6,7 @@
       "load": "S'està carregant…",
       "dev": "Desenvolupador/a:",
       "relNotes": "Notes del llançament",
+      "winMinReq": "Necessitaràs Windows 8 o superior!",
       "downloadPrompt": "Baixeu la darrera versió:",
       "installGuide": "Guia d'instal·lació",
       "terms": "He llegit i accepto els <0>termes d'ús</0> i la <1>política de privadesa</1>.",

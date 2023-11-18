@@ -58,25 +58,25 @@ changeLanguage("vi");
 				<div class="download">
 					<div id="disable-linux" style="animation:fadeup 0.3s 200ms forwards; opacity:0;">
 					<a class="download-button" id="download-link-linux" href="#">
-					<button id="linux" type="button" class="btn btn-secondary"><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
+					<button id="linux" type="button" class="btn btn-secondary" style="height:80%; "><i class="fa fa-linux" style="scale:150%; margin-right:15px;"></i>Linux</button>
 				</a>
 				</div>
 			
 				<div id="disable-windows" style="animation:fadeup 0.4s 200ms forwards; opacity:0;">
 				<a class="download-button" id="download-link-windows" href="#">
-					<button id="windows" type="button" class="btn btn-secondary"  data-bs-toggle="tooltip" data-bs-placement="bottom"
-					data-bs-title="You'll need windows 8 or higher!"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
+					<button id="windows" type="button" class="btn btn-secondary" style="height:80%;"  data-bs-toggle="tooltip" data-bs-placement="bottom"
+					data-bs-title={t("site.winMinReq")}><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Windows</button>
 				</a>
 				</div>
 			
 				<div id="disable-macos" style="animation:fadeup 0.5s 200ms forwards; opacity:0;">
 				<a class="download-button" id="download-link-macos" href="#">
-					<button id="macos" type="button" class="btn btn-secondary"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
+					<button id="macos" type="button" class="btn btn-secondary" style="height:80%;"><i class="fa fa-apple" style="scale:150%; margin-right:15px;"></i>macOS</button>
 				</a>
 				</div>
 
 				<a style="animation:fadeup 0.6s 200ms forwards; opacity:0;" class="download-button" href="/guide/1install">
-					<button type="button" class="btn guide btn-outline-primary"><i class="fa fa-arrow-right" style="width:17px; scale:130%; rotate:-45deg; margin-right:15px; background-color:#ffffff00; transition:0.3s;"></i>{t("site.installGuide")}</button>
+					<button type="button" class="btn guide btn-outline-primary" style="width:232px; height:80%;"><i class="fa fa-arrow-right" style="width:17px; scale:130%; rotate:-45deg; margin-right:15px; background-color:#ffffff00; transition:0.3s;"></i>{t("site.installGuide")}</button>
 				</a>
 				</div>
 				<div style="margin-top:10px; margin-left:5px; animation:fadeup 0.4s 200ms forwards; opacity:0;" class="form-check">
@@ -468,8 +468,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 		left:50%;
 		transform: translate(-50%, 0);
 		z-index: 1;
-		display: flex;
-		flex-wrap: wrap;
+		display: grid;
+		grid-auto-rows: 1fr;
+		grid-template-columns: 112px 140px 125px auto;
 		position:relative;
 	}
 	.bottomleftcorner{
