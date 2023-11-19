@@ -28,7 +28,7 @@ const { isGuide, isMain } = Astro.props;
 		<a class="link" href={localizePath("/news")}><div class="banner">{t("header.news")}<div class="underline" style="background-color:#ffc10740;"></div></div></a>
 		<a class="link" href={localizePath("/guide/")}><div class="banner">{t("header.guide")}<div class="underline" style="background-color:#19875440;"></div></div></a>
 		<a class="link" href={localizePath("/status")}><div class="banner">{t("header.status")}<div class="underline" style="background-color:#0d6efd40;"></div></div></a>
-		<a class="link" href={localizePath("/guide/3faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
+		<a class="link" href={localizePath("/guide/faq")}><div class="banner">{t("header.faq")}<div class="underline"></div></div></a>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
 			<div class="dropdown">
 				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0) scale(150%);" type="button" data-bs-toggle="" aria-expanded="false">
