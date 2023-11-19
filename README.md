@@ -6,6 +6,7 @@ A website where you can download our products, as well as getting up to date wit
 <a href = "https://github.com/WiiLink24/web/graphs/contributors">
   <img src = "https://contrib.rocks/image?repo=WiiLink24/web"/>
 </a>
+
 ## Want to self-host?
 Simply clone this repository and open a terminal in the folder:
 
