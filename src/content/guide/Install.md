@@ -20,10 +20,10 @@ heroImage: "../../img/guidebg-1.png"
 
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;">
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="/"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-secondary"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii</button></a>
+<a href="#wii"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-secondary"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii</button></a>
 </div>
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="/"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
+<a href="#vwii"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
 </div>
 </div>
 
