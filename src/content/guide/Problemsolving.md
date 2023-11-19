@@ -18,13 +18,15 @@ heroImage: "../../img/guidebg-3.png"
 
 <div class="errorCodes" id="error-codes">
 
-<div class="error">error -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled Demae.wad on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
+<div class="error">Error Code: -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled "Food Channel (English).wad" on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
 
-<div class="error">error -1022 <span class="badge bg-warning">Food Channel</span><h4>Using your favorite WAD manager, uninstall the Food Channel, and install again. For many, this means going to the location the Food Channel WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
+<div class="error">Error Code: -1022 <span class="badge bg-warning">Food Channel</span><h4>Using your favorite WAD manager, uninstall the Food Channel, and install again. For many, this means going to the location the Food Channel WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
 
-<div class="error">Adding food to basket <span class="badge bg-warning">Food Channel</span><h4>Please try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink-750581992223146074" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#demae-support</a> if you continue to experience issues.</h4><hr></div>
+<div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink-750581992223146074" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#demae-support</a> if you continue to experience issues.</h4><hr></div>
 
-<div class="error">error 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink-750581992223146074" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
+<div class="error">Error Code: -50031 <span class="badge bg-warning">WiiLink Mail Patcher</span><h4>Make sure that your Internet Connection to your Wii is working by doing a Connection Test. if it's Successful, run the Patcher again. If it Fails, Use a different Internet Connection.</h4><hr></div>
+
+<div class="error">Error Code: 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink-750581992223146074" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 
 <div class="error">PAL crashes <span class="badge bg-danger">Japanese channels</span><h4>Unfortunately, this is a known issue. We're aware of many crashes for PAL Region consoles. We continue to work on a solution for this, thank you for your patience.</h4><hr></div>
 
