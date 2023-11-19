@@ -6,4 +6,70 @@ description: Got any issues? Let's see if we can sort them out!
 heroImage: "../../img/guidebg-3.png"
 ---
 
-##WIP!
+### Get some info on common errors!
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+<script src="https://www.w3schools.com/lib/w3.js"></script>
+
+<input oninput="w3.filterHTML('#error-codes', 'div', this.value); displayErrorMessage()" placeholder="&#xF002; Search for your error here..." style="font-family:inter, FontAwesome">
+
+</br>
+</br>
+
+<div class="errorCodes" id="error-codes">
+
+<div>error -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled Demae.wad on the root of your SD card. Use your favorite WAD manager to install!</h4></div>
+
+<div>error -1022 <span class="badge bg-warning">Food Channel</span><h4>Using your favorite WAD manager, uninstall the Food Channel, and install again. For many, this means going to the location the Food Channel WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4></div>
+
+<div>Adding food to basket <span class="badge bg-warning">Food Channel</span><h4>Please try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-info" style="transform:translate(0, 8px);"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#demae-support</div></a> if you continue to experience issues.</h4></div>
+
+<div>error 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="transform:translate(0, 8px);"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4></div>
+
+<div>PAL crashes <span class="badge bg-danger">Japanese channels</span><h4>Unfortunately, this is a known issue. We're aware of many crashes for PAL Region consoles. We continue to work on a solution for this, thank you for your patience.</h4></div>
+
+</div>
+
+<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-bomb" style="font-size:100px;"></i>Hmm... We might've missed that error, why don't you let us know on our Discord server? </br> <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
+
+<script>
+    function displayErrorMessage() {
+        var errorDiv = document.getElementById('error-message');
+        var divs = document.querySelectorAll('.errorCodes div');
+        var matchingDivs = Array.from(divs).filter(div => div.style.display !== 'none');
+        
+        if (matchingDivs.length === 0) {
+            errorDiv.style.display = 'flex';
+        } else {
+            errorDiv.style.display = 'none';
+        }
+    }
+</script>
+
+
+<style>
+    .errorCodes p{
+        height:auto;
+        background-color:#a1a1a160;
+        padding:8px;
+        border-radius:8px;
+        position:relative;
+    }
+
+    input{
+        width:100%;
+        border:2px solid gray;
+        border-radius:8px;
+        padding:8px;
+        margin-bottom:8px;
+        position:relative;
+    }
+
+    #container2 div{
+        margin-bottom:20px;
+    }
+
+    #container2{
+         font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+    }
+</style>
