@@ -7,10 +7,9 @@
       "dev": "Desarrollado por ",
       "relNotes": "Notas de la versión",
       "downloadPrompt": "Descarga la última versión:",
-      "winMinReq": "¡Necesitarás Windows 8 o superior!",
       "installGuide": "Abrir la guía de instalación",
-      "terms": "He leído y acepto las <0>condiciones de servicio</0> y la <1>política de privacidad</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto no oficial de homebrew sin ánimo de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",
+      "terms": "He leído y acepto los <0>términos del servicio</0> y la <1>Política de privacidad</1>.",
+      "slogan": "<0>WiiLink</0> es un proyecto no oficial de <i>homebrew</i> sin ánimo de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2023 El <4>equipo</4> de <3>WiiLink</3>",
       "donate": "¡Dona!",
       "creator": "Página web diseñada y programada por Alex",
       "contact": "Contáctanos",
@@ -44,7 +43,7 @@
     "jumpin": {
       "title": "¡<0>Únete</0>!",
       "slogan": "Desempolva tu Wii y prueba los nuevos canales.",
-      "install": "¡Instala!"
+      "install": "¡A instalar!"
     },
     "services": {
       "title": "¡Te damos la bienvenida a <0>WiiLink</0>!",
@@ -65,7 +64,7 @@
     },
     "team": {
       "title": "El <0>equipo</0>",
-      "subtitle": "¡<0>WiiLink</0> es posible gracias a nuestros <1>voluntarios</1>! </2><3>Estos son los contribuidores principales:</3>"
+      "subtitle": "¡<0>WiiLink</0> es posible gracias a nuestros <1>voluntarios</1>! </2><3>Estas son las personas que han contribuido al proyecto:</3>"
     },
     "news": {
       "mainTitle": "WiiLink - Noticias",
@@ -122,15 +121,15 @@
       "message": "No se ha podido cargar la página..."
     },
     "tos": {
-      "mainTitle": "WiiLink - Condiciones de servicio",
-      "mainDesc": "Las condiciones de servicio de WiiLink."
+      "mainTitle": "WiiLink - Términos del servicio",
+      "mainDesc": "Los términos del servicio de WiiLink."
     },
     "privacyPolicy": {
       "mainTitle": "WiiLink - Política de privacidad",
-      "mainDesc": "La política de privacidad de WiiLink."
+      "mainDesc": "La Política de privacidad de WiiLink."
     },
     "eula": {
-      "mainTitle": "WiiLink - Acuerdo de licencia de usuario final",
-      "mainDesc": "El acuerdo de licencia de usuario final de WiiLink."
+      "mainTitle": "WiiLink - Acuerdo de licencia para el usuario final",
+      "mainDesc": "El acuerdo de licencia para el usuario final de WiiLink."
     }
   }
