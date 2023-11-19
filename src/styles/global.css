@@ -323,7 +323,6 @@ pre > code {
 blockquote {
 	width:100%;
 	background-color: rgba(0, 0, 0, 0.096);
-	border-left: 4px solid var(--accent);
 	padding: 15px;
 	padding-bottom:3px;
 	margin: 5px;
