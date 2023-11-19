@@ -196,10 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 if (savedMode === 'dark') {
     enableDarkMode();
+	const themeColorButton = document.getElementById('themeColor');
 	themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
 	themeColorButton.style.filter = "invert(0)";
   } else {
     enableLightMode();
+	const themeColorButton = document.getElementById('themeColor');
 	themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
 	themeColorButton.style.filter = "invert(1)";
   }
