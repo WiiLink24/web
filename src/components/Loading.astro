@@ -8,12 +8,12 @@ const { msg, img } = Astro.props;
 ---
 
 <div class="cover" id="cover">
-<img src="../../img/logo.png" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); filter:invert(1); position:absolute;">
-<img src={img} style="left:50%; top:42%; border-radius:8px; width:350px; transform:translate(-50%, -50%); position:absolute;">
-<l style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); font-size:30px; filter:invert(1); display:flex; flex-wrap:wrap; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 10px); margin-right:8px;" width="30px" height="30px">{msg}</l>
+<img src="../../img/logo.png" id="imgLoadLogo" style="left:50%; top:45%; width:180px; transform:translate(-50%, -50%); opacity:0; animation:fadeupload2 0.2s forwards; filter:invert(1); position:absolute;">
+<img src={img} style="left:50%; top:42%; border-radius:8px; width:350px; opacity:0; animation:fadeupload2 0.2s forwards; transform:translate(-50%, -50%); position:absolute;">
+<l id="imgLoadText" style="left:50%; top:58%; width:100%; transform:translate(-50%, -50%); font-size:30px; opacity:0; animation:fadeupload2 200ms 0.2s forwards; filter:invert(1); display:flex; flex-wrap:wrap; justify-content:center; filter:brightness(1000%); position:absolute;"><img class="spinner" src="../../img/loading.gif" style="transform:translate(0, 10px); margin-right:8px;" width="30px" height="30px">{msg}</l>
 
 <div class="closePrompt">
-    <h4 style="text-align:center; color:white;">Seems like it's taking </br> a fair bit to load...</h4>
+    <h5 style="text-align:center; color:white;">Seems like it's taking </br> a fair bit to load...</h5>
     <button class="btn btn-secondary" onclick="remove()">Remove loading screen</button>
 </div>
 </div>
@@ -21,6 +21,8 @@ const { msg, img } = Astro.props;
 <script is:inline>
 
 function remove() {
+    document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadText").style.animation = "fadeoutload 0.2s forwards";
     setTimeout(() => {
         document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
 }, 300);
@@ -30,6 +32,8 @@ setTimeout(() => {
 }
 
 window.addEventListener('load', function () {
+    document.getElementById("imgLoadLogo").style.animation = "fadeoutload 0.2s forwards";
+    document.getElementById("imgLoadText").style.animation = "fadeoutload 0.2s forwards";
     setTimeout(() => {
         document.getElementById("cover").style.animation = "fadeout2 0.3s linear forwards";
 }, 300);
@@ -59,7 +63,7 @@ setTimeout(() => {
         animation:fadeupload 0.3s 3000ms linear forwards;
         opacity:0;
         display:flex;
-        gap:15px;
+        gap:0px;
         flex-wrap:wrap;
         justify-content:center;
         align-items:center;
@@ -74,6 +78,28 @@ setTimeout(() => {
         100%{
             transform: translate(-50%, 0);
             opacity:1;
+        }
+    }
+
+    @keyframes fadeupload2{
+        0%{
+            transform: translate(-50%, 0%);
+            opacity:0;
+        }
+        100%{
+            transform: translate(-50%, -50%);
+            opacity:1;
+        }
+    }
+
+    @keyframes fadeoutload{
+        0%{
+            transform: translate(-50%, -50%);
+            opacity:1;
+        }
+        100%{
+            transform: translate(-50%, -100%);
+            opacity:0;
         }
     }
 
