@@ -1,0 +1,135 @@
+{
+    "site": {
+      "title": "WiiLink",
+      "description": "Um projeto homebrew da comunidade dedicado a restaurar, traduzir e melhorar os canais e serviços WiiConnect24 que foram descontinuados, incluindo os que eram de regiões específicas.",
+      "img": "/img/news_post_welcome_back.png",
+      "load": "Carregando...",
+      "dev": "Desenvolvido por ",
+      "relNotes": "Notas de lançamento",
+      "downloadPrompt": "Baixe o lançamento mais recente:",
+      "installGuide": "Abrir o guia de instalação",
+      "terms": "Eu li e concordei com os <0>termos de serviço</0> e <1>política de privacidade</1>.",
+      "slogan": "<0>WiiLink</0> é um projeto não oficial e sem fins lucrativos. Não está afiliado à Nintendo e todas as marcas registradas são propriadade de seus respectivos donos. Não se pretende infringir direitos autorais.</1></2>© 2020-2023 <3>Equipe</3><4> WiiLink</4>",
+      "donate": "Faça uma doação!",
+      "creator": "Página projetada e programada por Alex",
+      "contact": "Fale com a gente",
+      "assets": "Materiais de marca",
+      "install": "Instale já"
+    },
+    "build": {
+      "title": "Confira o <0>lançamento</0> mais recente!",
+      "releasedBy": "Lançado por:",
+      "releaseBranch": "Branch: ",
+      "releaseDate": "Data de lançamento: ",
+      "releaseTotal": "Total: "
+    },
+    "donate": {
+      "title": "Impusionado pelo <0>seu apoio</0>!",
+      "subtitle": "<0>WiiLink</0> é financiado publicamente pelos nossos <1>usuários</1> e <2>patrocinadores</2>. <3>Para ajudar com os nossos gastos, considere fazer uma doação!</3>",
+      "donators": "... e se junte a estas <0>pessoas legais</0>:",
+      "popular": "Mais popular",
+      "powered": "Impulsionado por"
+    },
+    "header": {
+      "home": "Início",
+      "news": "Novidades",
+      "guide": "Guia",
+      "status": "Estado",
+      "faq": "Perguntas frequentes",
+      "isGuide": "guia",
+      "extras": "Extra",
+      "extrasNew": "novo"
+    },
+    "jumpin": {
+      "title": "Faça parte da <0>comunidade</0>!",
+      "slogan": "Reviva o seu Wii e experimente novos canais.",
+      "install": "Instale!"
+    },
+    "services": {
+      "title": "Boas-vindas ao <0>WiiLink</0>!",
+      "subtitle": "Um projeto homebrew da comunidade dedicado a restaurar, traduzir e melhorar os canais e serviços WiiConnect24 que foram descontinuados, incluindo os que eram de regiões específicas."
+    },
+    "socials": {
+      "title": "Confira as nossas <0>redes sociais</0>!",
+      "subtitle": "Acompanhe todas as <0>atualizações</0> e <1>anúncios gerais</1>, ou entre no nosso servidor do Discord.",
+      "twFollowers": "2.7K seguidores",
+      "twFollow": "Seguir",
+      "twTweets": "Tuítes por WiiLink24",
+      "dcMembers": "6.2K membros",
+      "dcJoin": "Entrar",
+      "ghFollowers": "82 seguidores",
+      "ghFollow": "Seguir",
+      "ytSubscribers": "2K inscritos",
+      "ytSubscribe": "Inscrever-se"
+    },
+    "team": {
+      "title": "A nossa <0>equipe</0>",
+      "subtitle": "O <0>WiiLink</0> é desenvolvido por <1>trabalho voluntário</1>. </2><3>Aqui estão os principais contribuidores do projeto!</3>"
+    },
+    "news": {
+      "mainTitle": "WiiLink - Novidades",
+      "mainDesc": "Veja os lançamentos e melhorias mais recentes do WiiLink!",
+      "title": "Aqui estão as <1>notícias</1> do <2>WiiLink</2>",
+      "subtitle": "Confira o <0>progresso do projeto</0>, ou <1>atualizações do serviço</1>!",
+      "otherNews": "Aqui estão alguns artigos mais <0>antigos</0>:",
+      "rssTitle": "<0>Quer ter as <1>novidades do WiiLink</1> no seu site ou serviço? Use o <2>feed RSS</2>.</0>",
+      "rssButton": "Usar o feed RSS",
+      "otherPosts": "Outras <0>postagens</0>"
+    },
+    "guide": {
+      "mainTitle": "WiiLink - Guia",
+      "mainDesc": "Confira informações importantes e receba ajuda!",
+      "title": "Boas-vindas à <1>guia</1> do <2>WiiLink</2>",
+      "subtitle": "Aqui você encontrará <0>informações importantes</0> sobre o serviço, e também <1>guias</1> e <2>soluções</2> para os seus problemas!",
+      "specificGuides": "O que você <0>quer ver</0>?",
+      "helpTitle": "<0>Não consegue <1>solucionar os problemas</1>? <2>Fale com a gente</c2>!</0>",
+      "helpButton1": "Fale com a gente",
+      "helpButton2": "Entre no Discord"
+    },
+    "guidePost": {
+      "name": "Guia",
+      "whereTo": "O que você quer ver?",
+      "installGuide": "Guia de instalação",
+      "problemSolving": "Solução de problemas",
+      "faq": "Perguntas frequentes",
+      "lookingFor": "O que você quer <0>ver</0>?",
+      "visitWiiHacks": "Visite wii.hacks.guide",
+      "copyright": "© 2020-2023 <0>Equipe<1>guia</1></0> <2> WiiLink</2>"
+    },
+    "newsPost": {
+      "name": "Novidades"
+    },
+    "status": {
+      "mainTitle": "WiiLink - Estado",
+      "mainDesc": "Confira o estado e progresso do projeto!",
+      "title": "Confira o <1>estado</1> do <2>WiiLink</2>",
+      "subtitle": "Dê uma olhada no <0>progresso</0> e também no estado do <1>servidor</1>!",
+      "serverStatus": "Check the server's status."
+    },
+    "extras": {
+      "mainTitle": "WiiLink - Extra",
+      "mainDesc": "Confira conteúdos e recursos adicionais!",
+      "title": "Aqui está o conteúdo <1>extra</1> do <2>WiiLink</2>",
+      "subtitle": "Aqui você irá encontrar os nossos <0>conteúdos especiais</0>.",
+      "helpCall": "<0>Acha que devemos <1>adicionar</1> mais alguma coisa? <2>Fale com a gente</2>!</0>",
+      "contact": "Entrar em contato",
+      "joinDiscord": "Entrar no Discord"
+    },
+    "404": {
+      "mainTitle": "WiiLink - 404",
+      "mainDesc": "404 - Não foi possível encontrar a página que você pesquisou...",
+      "message": "Não foi possível encontrar a página..."
+    },
+    "tos": {
+      "mainTitle": "WiiLink - Termos de serviço",
+      "mainDesc": "Termos de serviço dos serviços do WiiLink."
+    },
+    "privacyPolicy": {
+      "mainTitle": "WiiLink - Política de privacidade",
+      "mainDesc": "Política de privacidade dos serviços do WiiLink."
+    },
+    "eula": {
+      "mainTitle": "WiiLink - End User License Agreement",
+      "mainDesc": "Acordo de licença de usuário final dos serviços do WiiLink."
+    }
+  }
