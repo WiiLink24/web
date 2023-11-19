@@ -191,17 +191,15 @@ const languageOverride = localStorage.getItem('languageOverride');
 
 document.addEventListener('DOMContentLoaded', function () {
   
-  // Check if the user has a preference stored
+  const themeColorButton = document.getElementById('themeColor');
   const savedMode = localStorage.getItem('color-mode');
 
 if (savedMode === 'dark') {
     enableDarkMode();
-	const themeColorButton = document.getElementById('themeColor');
 	themeColorButton.innerHTML = "<i class='fa-solid fa-circle'></i>";
 	themeColorButton.style.filter = "invert(0)";
   } else {
     enableLightMode();
-	const themeColorButton = document.getElementById('themeColor');
 	themeColorButton.innerHTML = "<i class='fa-solid fa-moon'></i>";
 	themeColorButton.style.filter = "invert(1)";
   }
