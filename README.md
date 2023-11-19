@@ -8,21 +8,27 @@ A website where you can download our products, as well as getting up to date wit
 </a>
 ## Want to self-host?
 Simply clone this repository and open a terminal in the folder:
+
 ```sh
-npm install astro
-npm install astro-i18next
+npm i
 npm run dev
 ```
+
 ### You will see a live preview of your changes inside your default web browser!
+
 ## Structure
 Inside the "public" folder you will see all static assets that astro will place at the root of the published site.
 Inside it, we store all the assets like images, locales, fonts, and discord integration.
 In the src folder you will find the components (used to be able to reuse code in different sites); the content, which includes all the markdown files used in the site; layouts, the design for our guide and news sections; and all of the pages in the site in all supported locales.
+
 In the styles folder you will find global css rules.
+
 ## I want to modify the languages or add more of them!
 That's amazing! But first please read up on the documentation for [Astro-i18next](https://github.com/yassinedoghri/astro-i18next), and don't forget to generate the website when you're done with ``` npx astro-i18next generate ```.
 You will also need to add the language code inside the ``` astro-i18next.config.mjs``` file located at the root of the folder!
+
 # That's about it, thanks for reading!!!
+
 # Also check out:
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
