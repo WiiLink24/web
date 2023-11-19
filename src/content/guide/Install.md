@@ -17,10 +17,15 @@ heroImage: "../../img/guidebg-1.png"
 
 ## Instructions
 #### First of all, where are you planning to use WiiLink?
-</br>
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;"><a href="#wii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px;  color:rgba(138,138,138,1); background: rgb(18,18,18);
-background:#ffffff00; font-family:Gilroy, system-ui; padding:10px; border:4px solid rgba(138,138,138,1); border-radius:8px;"><img src="../../img/wiimote.png" style="rotate:30deg; filter: invert(54%) sepia(0%) saturate(1%) hue-rotate(165deg) brightness(101%) contrast(85%);" width="60px"></h4><b style="color:rgba(138,138,138,1); font-family:system-ui;">Wii</b></a> <a href="#vwii" style="text-decoration:none;"><h4 style="height:100px; font-size:25px; text-align:center; line-height:70px; font-family:Gilroy, system-ui; background-color:#ffffff00; opacity:0.7; padding:10px; color:rgba(85,115,255,1); border:4px solid rgba(85,115,255,1); border-radius:8px;"><img src="../../img/gamepad.png" style="filter: invert(40%) sepia(36%) saturate(3335%) hue-rotate(216deg) brightness(100%) contrast(101%);" height="80px"></h4><b style="color:rgba(85,115,255,1); font-family:system-ui;">Wii U</b></a></div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;">
+<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
+<a href="/"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-secondary"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii</button></a>
+</div>
+<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
+<a href="/"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
+</div>
+</div>
 
 <div id="vwii"></div>
 
