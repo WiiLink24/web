@@ -99,7 +99,7 @@ a{
 	position: relative;
 }
 .warn{
-	background-color: rgb(232, 214, 49);
+	background-color: rgb(225, 211, 81);
 	border: 2px solid rgb(182, 197, 14);
 }
 .warn::before {
