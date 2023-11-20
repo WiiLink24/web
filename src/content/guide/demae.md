@@ -11,7 +11,7 @@ icon: fa-solid fa-utensils
 
 - Find something new you can enjoy!
 
-<l class="notice generic fullwidth"> This guide is for installing the Dominos version of the Food Channel. If you want to install the Standard (Fake Ordering) version, please read the regular [Installation Guide](/guide/1install/), and choose the Standard version in the patcher. </l>
+<l class="notice generic fullwidth"> This guide is for installing the Dominos version of the Food Channel. If you want to install the Standard (Fake Ordering) version, please read the regular [Installation Guide](/guide/install), and choose the Standard version in the patcher. </l>
 
 <l class="notice info fullwidth"> If you're having any issues installing the Food Channel, please read the [Troubleshooting & Questions](#troubleshooting--questions) section. </l>
 ___

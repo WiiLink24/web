@@ -10,7 +10,7 @@ heroImage: "../../img/guidebg-1.png"
 <div style="display:flex; gap:5px; justify-content:space-between; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4></div>
 
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="/"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
 </div>
 </br>
 </br>
@@ -31,7 +31,7 @@ heroImage: "../../img/guidebg-1.png"
 
 ### vWii (Wii U) ONLY
 
-> If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, skip to Section I.
+<l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise,skip to Section I.</l>
 
 
 1. Download `Priiloader_v0_10RC3.zip` from [here](https://github.com/DacoTaco/priiloader/releases/tag/0.10.0-RC3)

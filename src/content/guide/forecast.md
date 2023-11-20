@@ -14,8 +14,9 @@ ___
 
 ### PriiLoader Setup (For vWii ONLY)
 
-<l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, please skip to the next section.
-1. Download `Priiloader_v0_10.zip` from [here]([https://github.com/DacoTaco/priiloader/releases/tag/0.10.0-RC3](https://github.com/DacoTaco/priiloader/releases/tag/0.10.0))</l>
+<l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, please skip to the next section.</l>
+
+1. Download `Priiloader_v0_10.zip` from [here]([https://github.com/DacoTaco/priiloader/releases/tag/0.10.0-RC3](https://github.com/DacoTaco/priiloader/releases/tag/0.10.0))
 
 2. Unzip `Priiloader_v0_10.zip` and copy the apps folder to your SD Card or USB Drive.
 
