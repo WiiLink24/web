@@ -13,28 +13,69 @@ icon: fa-solid fa-square-poll-vertical
 
 - Propose your own polls and echo your questions to everyone!
 
-![img](https://raw.githubusercontent.com/nami1yt/web/main/public/Images/EVC_Banner.webp)
+![img](https://raw.githubusercontent.com/WiiLink24/web/main/public/img/EVC_Banner.webp)
 </br>
 
 <l class="notice info fullwidth"> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below. </l>
 ___
 
-## We're moving! - How to Transfer your Data
+## Installation Guide
 
+### What you need
+<div style="display:flex; gap:18px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4></div>
+
+<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+</div>
+</br>
+
+1. Download the latest version of the WiiLink Patcher for your operating system.
+
+2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
+
+<l class="notice generic fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
+
+3. After the Patcher is done downloading the files, simply disconnect your SD Card/USB Drive from your Computer, and input it into your Wii/Wii U.
+
+4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
+
+5. Highlight the WADs with `Everybody Votes Channel (WiiLink)` and `Region Select` as its name and press + to select it. When it is selected, press A twice to install the WADs.
+
+<l class="notice info fullwidth">Both WAD names might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
+
+<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Everybody Votes Channel (WiiLink)` or `Region Select`, uninstall the channels by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+
+6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
+
+<l class="notice success fullwidth">Congrats! You've installed the Everybody Votes Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
+
+<l class="notice info fullwidth">If you would like to migrate your poll data from RiiConnect24 over to WiiLink, please use the EVC Transfer Tool by following the instructions below.</l>
+___
+
+## We're moving! - How to Transfer your Data
 
 * Please ensure that the EVC Transfer Tool (obtained via our [patcher](https://github.com/WiiLink24/WiiLink24-Patcher)) is in the "apps" folder of your SD Card.
 
 1. Open the application inside the Homebrew Channel.
+
 2. Run the application and follow the on-screen instructions.
+
 3. Install the Everybody Votes Channel and Region Select channel using the provided WAD installer or the one of your choice.
-5. Return to the Wii Menu and open the Everybody Votes Channel.
+
+4. Return to the Wii Menu and open the Everybody Votes Channel.
 
 #### With any luck, you'll be up and running!
-___
-## Important Notices!
-<l class="notice danger">If you change the region of your Wii, any previous data WILL BE PERMANENTLY ERASED!</l>
 
-<l class="notice danger">If you want to take advantage of the new languages, you WILL NEED TO ERASE YOUR DATA!</l>
+* Here is an Infographic for people with reading issues, such as Dyslexia.
+
+<img src="https://raw.githubusercontent.com/nami1yt/web/main/public/img/Switch_Providers_Inforgraphic.png" data-canonical-src="https://raw.githubusercontent.com/nami1yt/web/main/public/img/Switch_Providers_Inforgraphic.png" width="517" height="297" />
+
+___
+
+## Important Notices!
+<l class="notice danger">If you change the region of your Wii, any previous data will be permanently erased.</l>
+
+<l class="notice danger">If you want to take advantage of the new languages, you will need to erase your data.</l>
 
 <l class="notice warn">To use custom regions, you must use AnyGlobeChanger.</l>
 ___
