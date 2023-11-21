@@ -43,7 +43,7 @@ main {
 .toc-post:before{
 	font-family: Gilroy;
 	left:-2px;
-	top:-45px;
+	top:-43px;
 	width:calc(100% + 4px);
 	font-size: 18px;
 	padding-top:8px;
@@ -57,7 +57,7 @@ main {
 	position: absolute;
 }
 .toc-post{
-	top:46px;
+	top:43px;
 	right:0;
 	width:100%;
 	padding:10px;
@@ -83,6 +83,12 @@ a{
 	text-decoration: underline;
 }
 
+code {
+	padding: 4px 6px;
+	background-color: rgba(97, 97, 97, 0.148);
+	color:#000000;
+	border-radius: 8px;
+}
 
 .toc-item::marker{
 	font-family: Gilroy;
@@ -92,7 +98,7 @@ a{
 	height:auto;
 	padding:5px;
 	padding-right:15px;
-	margin-bottom:5px;
+	margin-bottom:0px;
 	border-radius: 8px;
 	color:rgb(255, 255, 255);
 	display: inline-block;
@@ -100,7 +106,12 @@ a{
 }
 .warn{
 	background-color: rgba(225, 211, 81, 0);
+  color: rgb(182, 197, 14);
 	border: 2px solid rgb(182, 197, 14);
+}
+
+.warn a{
+	color: rgb(182, 197, 14);
 }
 .warn::before {
 	margin-left:5px;
@@ -114,7 +125,11 @@ a{
   }
 .danger{
 	background-color: rgba(232, 49, 49, 0);
+  color: rgb(197, 14, 14);
 	border: 2px solid rgb(197, 14, 14);
+}
+.danger a{
+  color: rgb(197, 14, 14);
 }
 .danger::before {
 	margin-left:5px;
@@ -128,7 +143,11 @@ a{
   }
   .success{
 	background-color: rgba(49, 232, 76, 0);
+  color: rgb(10, 190, 40);
 	border: 2px solid rgb(10, 190, 40);
+}
+.success a {
+  color: rgb(10, 190, 40);
 }
 .success::before {
 	margin-left:5px;
@@ -141,8 +160,12 @@ a{
 	font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f058";
   }
   .info{
-	background-color: rgb(49, 189, 232);
+	background-color: rgba(255, 255, 255, 0);
+  color: rgb(14, 124, 197);
 	border: 2px solid rgb(14, 124, 197);
+}
+.info a{
+  color: rgb(14, 124, 197);
 }
 .info::before {
 	margin-left:5px;
@@ -157,7 +180,27 @@ a{
 
   .generic{
 	background-color: rgba(120, 120, 120, 0);
-	border: 2px solid rgba(64, 64, 64, 0.299);
+  color: rgb(64, 64, 64);
+	border: 2px solid rgb(64, 64, 64);
+}
+.generic a{
+  color: rgb(64, 64, 64);
+}
+.generic code{
+  color: rgb(64, 64, 64);
+  background-color: rgba(0, 0, 0, 0);
+}
+.warn code{
+  color: rgb(182, 197, 14);
+  background-color: rgba(0, 0, 0, 0);
+}
+.danger code{
+  color: rgb(197, 14, 14);
+  background-color: rgba(0, 0, 0, 0);
+}
+.info code{
+  color: rgb(14, 124, 197);
+  background-color: rgba(0, 0, 0, 0);
 }
 .generic::before {
 	margin-left:5px;
@@ -300,12 +343,6 @@ input {
 }
 table {
 	width: 100%;
-}
-code {
-	padding: 4px 6px;
-	background-color: rgba(97, 97, 97, 0.148);
-	color:rgb(93, 154, 50);
-	border-radius: 8px;
 }
 pre {
 	padding: 1.5em;
