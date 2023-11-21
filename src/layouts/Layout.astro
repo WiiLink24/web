@@ -1,17 +1,15 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
 
 export interface Props {
-	title: string;
-	description: string;
-	image?: string;
+  title: string;
+  description: string;
+  image?: string;
 }
 
-
-
-const { title, description, image} = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <!-- Global Metadata -->
@@ -22,27 +20,27 @@ const { title, description, image} = Astro.props;
 <!-- Primary Meta Tags -->
 <title>{title}</title>
 <meta name="title" content="WiiLink" />
-<meta name="description" content={description}>
+<meta name="description" content={description} />
 <meta content={description} property="og:description" />
 <meta content={image} property="og:image" />
-<meta name="keywords" content="food channel, wii homebrew, homebrew, wii hacking, wii modding, riitag, riiTag, riiconnect, riiconnect24, rc24, wiiconnect, wiiconnect24, WC24, wii,wiilink24,riiconnect24,wii online,online,wii japan,japan,channel,japanese channel wii,wii japanese">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="language" content="English">
-<meta name="revisit-after" content="12 days">
-<meta name="author" content="The WiiLink Team">
-<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
-<link rel="manifest" href="/img/site.webmanifest">
-<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5">
-<link rel="shortcut icon" href="/img/favicon.ico">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-config" content="/img/browserconfig.xml">
-<meta name="theme-color" content="#ffffff">
-
-
-	
+<meta
+  name="keywords"
+  content="food channel, wii homebrew, homebrew, wii hacking, wii modding, riitag, riiTag, riiconnect, riiconnect24, rc24, wiiconnect, wiiconnect24, WC24, wii,wiilink24,riiconnect24,wii online,online,wii japan,japan,channel,japanese channel wii,wii japanese"
+/>
+<meta name="robots" content="index, follow" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="language" content="English" />
+<meta name="revisit-after" content="12 days" />
+<meta name="author" content="The WiiLink Team" />
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+<link rel="manifest" href="/img/site.webmanifest" />
+<link rel="mask-icon" href="/img/safari-pinned-tab.svg" color="#5bbad5" />
+<link rel="shortcut icon" href="/img/favicon.ico" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-config" content="/img/browserconfig.xml" />
+<meta name="theme-color" content="#ffffff" />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -58,187 +56,369 @@ const { title, description, image} = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-
-<!doctype html>
 <html lang="en">
-	<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-  gtag('config', 'G-LWN8QCFT7S');
-</script>
+      gtag("config", "G-LWN8QCFT7S");
+    </script>
 
-
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<script src="https://kit.fontawesome.com/e47ece3e74.js" crossorigin="anonymous"></script>
-		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-		<script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"></script>
-		<script src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e47ece3e74.js"
+      crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://twemoji.maxcdn.com/v/latest/twemoji.min.js"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"></script>
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
+  html.dark .offcanvas-body {
+    background-color: #121212;
+  }
+  html.dark body {
+    background-color: #121212;
+  }
+  html.dark {
+    background-color: #121212;
+  }
+  html.dark h1 {
+    color: white;
+  }
+  html.dark h2 {
+    color: white;
+  }
+  html.dark h3 {
+    color: white;
+  }
+  html.dark h4 {
+    color: white;
+  }
+  html.dark h5 {
+    color: white;
+  }
+  html.dark p {
+    color: white;
+  }
+  html.dark ol {
+    color: white;
+  }
+  html.dark ul {
+    color: white;
+  }
+  html.dark article {
+    background-color: #202020;
+  }
+  html.dark .btn-close {
+    filter: invert(1);
+  }
+  html.dark .title {
+    color: #ffffff;
+  }
+  html.dark .title2 {
+    color: #ffffffa2;
+  }
+  html.dark .title2:hover {
+    color: white;
+  }
+  html.dark .banner {
+    color: #ffffff;
+  }
+  html.dark .guide {
+    color: #ffffff;
+  }
+  html.dark .underline {
+    background-color: #ffffff20;
+  }
+  html.dark .guideholder {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.04);
+  }
+  html.dark .fade-sidebar {
+    background: linear-gradient(
+      180deg,
+      rgba(18, 18, 18, 1) 20%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+  html.dark .authtitle {
+    color: white;
+  }
+  html.dark #error-message {
+    color: white;
+  }
+  html.dark #container2 div {
+    color: white;
+  }
+  html.dark .authtitle2 {
+    color: white;
+    border: 2px solid white;
+  }
+  html.dark .authdesc {
+    color: white;
+  }
+  html.dark .subtitle {
+    color: white;
+  }
+  html.dark .dropdownbtn {
+    color: white;
+  }
+  html.dark .link {
+    color: white;
+  }
+  html.dark .title {
+    filter: brightness(200%);
+  }
+  html.dark .toc-post:before {
+    color: white;
+  }
+  html.dark .toc-link {
+    color: white;
+  }
+  html.dark .toc-link:hover {
+    color: rgb(50, 168, 23);
+  }
+  html.dark .stripe-logo {
+    filter: invert(1);
+  }
+  html.dark .topimg {
+    filter: invert(1) opacity(0.1);
+  }
+  html.dark .postexpand > h5 {
+    color: white;
+  }
+  html.dark .postexpand > h4 {
+    color: white;
+  }
+  html.dark .postexpand > h3 {
+    color: white;
+  }
+  html.dark .postexpand > h2 {
+    color: white;
+  }
+  html.dark .postexpand > h1 {
+    color: white;
+  }
+  html.dark #grad {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(250, 250, 250, 0.1) 100%
+    );
+  }
+  html.dark .accordion-body {
+    background-color: #1e1e1e;
+  }
+  html.dark .accordion-button {
+    color: white;
+    background-color: #1e1e1e;
+  }
+  html.dark .accordion-button::after {
+    color: white;
+    background-color: #00000000;
+    filter: invert(1);
+  }
+  html.dark .svcicons {
+    filter: invert(1);
+  }
+  html.dark .logo {
+    filter: invert(0);
+  }
+  html.dark .newstop {
+    filter: opacity(0.1) invert(1);
+  }
+  html.dark .posthold {
+    filter: drop-shadow(0px 0px 20px #d4d4d410);
+  }
+  html.dark .postmini {
+    color: white;
+    background-color: rgb(38, 38, 38);
+  }
+  html.dark .title-small {
+    color: white;
+  }
+  html.dark .spinner {
+    filter: brightness(1000%);
+  }
+  html.dark .fade-small {
+    background: linear-gradient(
+      0deg,
+      rgba(103, 103, 103, 0.364) 0%,
+      rgba(244, 244, 244, 0) 100%
+    );
+  }
+  html.dark .faded {
+    background: linear-gradient(0deg, #202020 0%, #ffffff00 100%);
+  }
+  html.dark .postmini:hover {
+    box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356);
+  }
+  html.dark .bottomleftcorner {
+    animation: changecolordark 10s linear infinite;
+  }
+  html.dark .form-check-label {
+    color: rgb(255, 255, 255);
+  }
+  html.dark .dots {
+    background-image: radial-gradient(#ffffff40 2px, transparent 2px);
+    background-size: 15px 15px;
+  }
+  html.dark .polka-dot {
+    background-image: radial-gradient(
+      rgba(255, 255, 255, 0.898) 2px,
+      transparent 2px
+    );
+    background-size: 30px 30px;
+  }
+  html.dark .symbolholder {
+    background-color: #000000;
+  }
+  html.dark .member {
+    background-color: #1b1b1b;
+  }
+  html.dark .build-square {
+    background: #242424;
+    border: 2px solid rgb(60, 60, 60);
+  }
+  html.dark .github {
+    color: white;
+    background: #24242400;
+    border: 2px solid rgb(60, 60, 60);
+  }
+  html.dark .service {
+    background-color: #20202060;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 0px 20px #ffffff10;
+  }
+  html.dark .slider::before {
+    background: linear-gradient(to right, #121212 0%, #12121200 100%);
+  }
+  html.dark .slider::after {
+    background: linear-gradient(to right, #121212 0%, #12121200 100%);
+  }
+  html.dark .fade-main {
+    background: linear-gradient(0deg, #121212 0%, #f4f4f400 100%);
+  }
+  html.dark .hide {
+    color: rgba(255, 255, 255, 0.573);
+  }
+  html.dark .donator-holder {
+    color: white;
+  }
+  html.dark .slidedown {
+    color: white;
+  }
+  html.dark .square {
+    animation: changecolordark 10s linear infinite;
+  }
+  html.dark #square2 {
+    background-color: #121212;
+  }
 
-html.dark .offcanvas-body { background-color: #121212;   }
-html.dark body { background-color: #121212;   }
-html.dark { background-color: #121212;   }
-html.dark h1 { color: white;   }
-html.dark h2 { color: white;   }
-html.dark h3 { color: white;   }
-html.dark h4 { color: white;   }
-html.dark h5 { color: white;   }
-html.dark p { color: white;   }
-html.dark ol{ color: white;   }
-html.dark ul { color: white;   }
-html.dark article { background-color:#202020;   }
-html.dark .btn-close { filter:invert(1); }
-html.dark .title { color:#ffffff; }
-html.dark .title2 { color:#ffffffa2; }
-html.dark .title2:hover { color:white; }
-html.dark .banner { color:#ffffff; }
-html.dark .guide { color:#ffffff; }
-html.dark .underline { background-color: #ffffff20; }
-html.dark .guideholder { border:2px solid rgba(255, 255, 255, 0.1); background-color: rgba(255, 255, 255, 0.04); }
-html.dark .fade-sidebar {  background: linear-gradient(180deg, rgba(18,18,18,1) 20%, rgba(0,0,0,0) 100%); }
-html.dark .authtitle { color: white;   }
-html.dark #error-message { color: white;   }
-html.dark #container2 div { color: white;   }
-html.dark .authtitle2 { color: white; border:2px solid white;   }
-html.dark .authdesc { color: white;   }
-html.dark .subtitle { color: white;   }
-html.dark .dropdownbtn { color: white;   }
-html.dark .link { color: white;   }
-html.dark .title { filter:brightness(200%);   }
-html.dark .toc-post:before { color:white; }
-html.dark .toc-link{ color:white; }
-html.dark .toc-link:hover{ color:rgb(50, 168, 23); }
-html.dark .stripe-logo { filter:invert(1);   }
-html.dark .topimg { filter:invert(1) opacity(0.1);   }
-html.dark .postexpand > h5 { color:white; }
-html.dark .postexpand > h4 { color:white; }
-html.dark .postexpand > h3 { color:white; }
-html.dark .postexpand > h2 { color:white; }
-html.dark .postexpand > h1 { color:white; }
-html.dark #grad { background: rgb(255,255,255); background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(250,250,250,0.1) 100%);   }
-html.dark .accordion-body { background-color:#1e1e1e; }
-html.dark .accordion-button { color:white; background-color:#1e1e1e; }
-html.dark .accordion-button::after { color:white; background-color:#00000000; filter:invert(1); }
-html.dark .svcicons { filter:invert(1);   }
-html.dark .logo { filter:invert(0);   }
-html.dark .newstop { filter:opacity(0.1) invert(1);   }
-html.dark .posthold { filter: drop-shadow(0px 0px 20px #d4d4d410); }
-html.dark .postmini { color:white; background-color:rgb(38, 38, 38); }
-html.dark .title-small { color:white; }
-html.dark .spinner { filter:brightness(1000%) }
-html.dark .fade-small { background: linear-gradient(0deg, rgba(103, 103, 103, 0.364) 0%, rgba(244, 244, 244, 0) 100%); }
-html.dark .faded { background: linear-gradient(0deg, #202020 0%, #ffffff00 100%); }
-html.dark .postmini:hover { box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356); }
-html.dark .bottomleftcorner { animation: changecolordark 10s linear infinite;   }
-html.dark .form-check-label { color: rgb(255, 255, 255);   }
-html.dark .dots {  background-image:radial-gradient(#ffffff40 2px,transparent 2px); background-size: 15px 15px;   }
-html.dark .polka-dot { 	background-image:radial-gradient(rgba(255, 255, 255, 0.898)2px,transparent 2px); background-size:30px 30px;   }
-html.dark .symbolholder { background-color: #000000;   }
-html.dark .member { background-color: #1b1b1b;   }
-html.dark .build-square { background: #242424; border:2px solid rgb(60, 60, 60);   }
-html.dark .github { color:white; background: #24242400; border:2px solid rgb(60, 60, 60);   }
-html.dark .service { background-color: #20202060; backdrop-filter: blur(8px); box-shadow:0px 0px 20px #ffffff10;   }
-html.dark .slider::before { background: linear-gradient(to right,  #121212 0%,#12121200 100%);   }
-html.dark .slider::after { background: linear-gradient(to right,  #121212 0%,#12121200 100%);   }
-html.dark .fade-main {background: linear-gradient(0deg, #121212 0%, #f4f4f400 100%); }
-html.dark .hide { color: rgba(255, 255, 255, 0.573);   }
-html.dark .donator-holder { color: white;   }
-html.dark .slidedown { color: white;   }
-html.dark .square { animation: changecolordark 10s linear infinite;   }
-html.dark #square2 { background-color: #121212;   }
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+  html {
+    --bg-color: #ffffff;
+    scroll-behavior: smooth;
+    font-family: systemui, sans-serif;
+    background-color: var(--bg-color);
+    background-size: 224px;
+  }
 
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		--bg-color: #ffffff;
-		scroll-behavior: smooth;
-		font-family: systemui, sans-serif;
-		background-color: var(--bg-color);
-		background-size: 224px;
-	}
+  .service {
+    background-color: #ffffff;
+    transition: 0.3s;
+  }
 
-	.service{
-		background-color:#ffffff;
-		transition: 0.3s;
-	}
+  .service:hover {
+    transform: scale(105%);
+    transition: 0.3s;
+  }
 
-	.service:hover{
-		transform:scale(105%);
-		transition: 0.3s;
-	}
+  .member:hover {
+    transform: scale(105%);
+    transition: 0.3s;
+  }
 
-	.member:hover{
-		transform:scale(105%);
-		transition: 0.3s;
-	}
+  .emoji {
+    width: 24px;
+  }
 
-	.emoji{
-		width:24px;
-	}
+  body > .skiptranslate {
+    height: 0px;
+    overflow: hidden;
+    display: none;
+  }
 
-	body > .skiptranslate {
-		height:0px;
-		overflow:hidden;
-		display:none;
-	}
+  .dropdown-item:hover .dropdown-text {
+    transform: translate(5px, 0);
+    transition: 0.2s;
+  }
 
-	.dropdown-item:hover .dropdown-text{
-		transform:translate(5px, 0);
-		transition:0.2s;
-	}
+  h1 {
+    --bg-text: #121212;
+    font-family: systemui;
+    color: var(--bg-text);
+  }
 
-	h1 {
-		--bg-text: #121212;
-		font-family: systemui;
-		color:var(--bg-text);
-	}
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
 
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  @media only screen and (max-width: 1150px) {
+    .vr {
+      opacity: 0;
+      display: none;
+    }
 
-	@media only screen and (max-width: 1150px) {
-
-.vr{
-	opacity: 0;
-	display: none;
-}
-
-.download{
-	display:none;
-}
-
-}
+    .download {
+      display: none;
+    }
+  }
 </style>

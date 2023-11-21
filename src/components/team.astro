@@ -19,6 +19,8 @@ import { Trans } from "astro-i18next/components";
         </div>
         <div id="members_small" class="members_small">
         </div>
+
+				<button id="windows" type="button" class="btn btn-secondary" style="height:80%;"><i class="fa-brands fa-microsoft" style="scale:140%; margin-right:15px;"></i>Tooltip</button>
     </div>
 </div>
 
@@ -53,13 +55,13 @@ import { Trans } from "astro-i18next/components";
                 teamSmall.innerHTML += "<div id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:none; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
             }
                 else {
-                    teamSmall.innerHTML += "<div id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
+                    teamSmall.innerHTML += "<div class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title={t('site.winMinReq')}><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
                 }
         }
 
            }
 
-           for(let i = 0; i < 10; i++) {
+           for(let i = 0; i < 20; i++) {
                 teamMobile.innerHTML += "<div   id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
            }
         }

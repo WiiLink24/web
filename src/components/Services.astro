@@ -5,210 +5,261 @@ import { Trans } from "astro-i18next/components";
 ---
 
 <div id="intro" class="svc-holder">
-<h1 class="title"><Trans i18nKey="services.title">Welcome to <b style="font-family:Rubik;">WiiLink</b>!</Trans></h1>
-<h2 class="subtitle"><Trans i18nKey="services.subtitle">A community project for the Wii that works towards reviving and enhancing the discontinued 
-    WiiConnect24 channels and services, including the ones that were only available 
-    in Japan.</Trans></h2>
-    <div class="slider">
-        <div id="slide-track" class="slide-track">
-         
-        </div>
-        <div id="slide-track_2" class="slide-track back">
-          
-        </div>
-    </div>
+  <h1 class="title">
+    <Trans i18nKey="services.title">
+      Welcome to <b style="font-family:Rubik;">WiiLink</b>!
+    </Trans>
+  </h1>
+  <h2 class="subtitle">
+    <Trans i18nKey="services.subtitle">
+      A community project for the Wii that works towards reviving and enhancing
+      the discontinued WiiConnect24 channels and services, including the ones
+      that were only available in Japan.
+    </Trans>
+  </h2>
+  <div class="slider">
+    <div id="slide-track" class="slide-track"></div>
+    <div id="slide-track_2" class="slide-track back"></div>
+  </div>
 </div>
 
-<h1 id="fetcherServices" style="display:none;">json{localizePath("/services.json")}</h1>
+<h1 id="fetcherServices" style="display:none;">
+  json{localizePath("/services.json")}
+</h1>
 
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", async function () {
+  document.addEventListener("DOMContentLoaded", async function () {
+    let fetcher = document.getElementById("fetcherServices").innerHTML;
+    fetch(fetcher)
+      .then(response => response.json())
+      .then(data => showService(data));
 
-           let fetcher = document.getElementById("fetcherServices").innerHTML;
-           fetch(fetcher)
-           .then(response => response.json())
-           .then(data => showService(data));
+    function showService(data) {
+      let services = document.getElementById("slide-track");
+      let services2 = document.getElementById("slide-track_2");
 
-           function showService(data) {
-            let services = document.getElementById("slide-track");
-            let services2 = document.getElementById("slide-track_2");
-
-            for(let i = 0; i < 2; i++){
-                for(let i = 0; i < (data.services.service.length-4)/2; i++) {
-                if(data.services.service[i].isArea == 'Video on-demand'){
-
-                } else{
-                    services.innerHTML += "<a style='color:rgb(34,37,41); text-decoration:none;' href='" + data.services.service[i].link + "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div></a>";
-                }
-            }
+      for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < (data.services.service.length - 4) / 2; i++) {
+          if (data.services.service[i].isArea == "Video on-demand") {
+          } else {
+            services.innerHTML +=
+              "<a style='color:rgb(34,37,41); text-decoration:none;' href='" +
+              data.services.service[i].link +
+              "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" +
+              data.services.service[i].color +
+              "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" +
+              data.services.service[i].icon +
+              "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" +
+              data.services.service[i].name +
+              "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
+              data.services.service[i].desc +
+              "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" +
+              data.services.service[i].color +
+              "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" +
+              data.services.service[i].completed +
+              "%; background-color:" +
+              data.services.service[i].color +
+              "; border-radius:80px;'></div></div></div></a>";
+          }
         }
+      }
 
-        for(let i = 0; i < 2; i++){
-            for(let i = (data.services.service.length-4)/2; i < data.services.service.length-4; i++) {
-                if(data.services.service[i].isArea == "Video on-demand"){
-
-} else{
-                services2.innerHTML += "<a style='color:rgb(34,37,41); text-decoration:none;' href='" + data.services.service[i].link + "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" + data.services.service[i].color + "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" + data.services.service[i].icon + "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" + data.services.service[i].name + "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" + data.services.service[i].desc + "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" + data.services.service[i].color + "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" + data.services.service[i].completed + "%; background-color:" + data.services.service[i].color + "; border-radius:80px;'></div></div></div></a>";
-}
+      for (let i = 0; i < 2; i++) {
+        for (
+          let i = (data.services.service.length - 4) / 2;
+          i < data.services.service.length - 4;
+          i++
+        ) {
+          if (data.services.service[i].isArea == "Video on-demand") {
+          } else {
+            services2.innerHTML +=
+              "<a style='color:rgb(34,37,41); text-decoration:none;' href='" +
+              data.services.service[i].link +
+              "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" +
+              data.services.service[i].color +
+              "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" +
+              data.services.service[i].icon +
+              "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" +
+              data.services.service[i].name +
+              "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
+              data.services.service[i].desc +
+              "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" +
+              data.services.service[i].color +
+              "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" +
+              data.services.service[i].completed +
+              "%; background-color:" +
+              data.services.service[i].color +
+              "; border-radius:80px;'></div></div></div></a>";
+          }
         }
-        }
-           }
-    });
-    
-    </script>
+      }
+    }
+  });
+</script>
 
 <style>
-
-.title{
-    left:50px;
-    width:calc(100% - 50px);
+  .title {
+    left: 50px;
+    width: calc(100% - 50px);
     background: url(/img/header_bg.png) 0 0;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   filter:brightness(150%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
     font-size: 60px;
     font-family: Gilroy;
     position: relative;
-}
+  }
 
-.slide{
-    height:400px;
+  .slide {
+    height: 400px;
     width: 300px;
     position: absolute;
-}
+  }
 
-.subtitle{
+  .subtitle {
     color: var(--bg-text);
-    left:50px;
-    width:70%;
+    left: 50px;
+    width: 70%;
     font-size: 25px;
     position: relative;
-}
+  }
 
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-450px * 5.35));
+    }
+  }
 
-@keyframes scroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(calc(-450px * 5.35))}
-}
+  @keyframes scrollback {
+    0% {
+      transform: translateX(calc(-450px * 5.35));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
 
-@keyframes scrollback {
-	0% { transform: translateX(calc(-450px * 5.35))}
-	100% { transform: translateX(0);}
-}
-
-.svc-holder{ 
-    left:50%;
+  .svc-holder {
+    left: 50%;
     transform: translate(-50%, 0);
     max-width: 1500px;
     z-index: 1;
     position: relative;
-}
+  }
 
-.slider {
-	height: auto;
-	margin: auto;
-    top:30px;
-	overflow-x:hidden;
-	position: relative;
+  .slider {
+    height: auto;
+    margin: auto;
+    top: 30px;
+    overflow-x: hidden;
+    position: relative;
     rotate: -2deg;
     z-index: 1;
-	width: 1500px;
-}
-	
-	.slider::before,
-	.slider::after {
-		background: linear-gradient(to right,  var(--bg-color) 0%,rgba(255,255,255,0) 100%);
-        pointer-events:none;
-		content: "";
-		height: 100%;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-	
-	.slider::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
+    width: 1500px;
+  }
 
-	.slider::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll 80s linear infinite;
-        display: flex;
-		width: calc(450px * 14);
-	}
+  .slider::before,
+  .slider::after {
+    background: linear-gradient(
+      to right,
+      var(--bg-color) 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    pointer-events: none;
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll 80s linear infinite;
+    display: flex;
+    width: calc(450px * 14);
+  }
+
+  .back {
+    animation: scrollback 80s linear infinite;
+    transform: translate(0, 100px);
+    display: flex;
+    flex-direction: row;
+    width: calc(450px * 14);
+  }
+
+  img {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    .title {
+      left: 20px;
+    }
+    .subtitle {
+      left: 20px;
+      width: 95%;
+    }
+
+    .slider {
+      display: none;
+    }
+
+    .slide-track {
+      animation: none;
+    }
 
     .back {
-		animation: scrollback 80s linear infinite;
-        transform: translate(0, 100px);
-        display: flex;
-        flex-direction: row;
-		width: calc(450px * 14);
-	}
-
-    img{
-        left:50%;
-        top:50%;
-        transform: translate(-50%, -50%);
-        position: absolute;
+      transform: translate(0, 0px);
+      animation: none;
     }
-
-    @media only screen and (max-width: 1150px) {
-
-        .title{
-            left:20px;
-        }
-        .subtitle{
-            left:20px;
-            width:95%;
-        }
-
-        .slider{
-            display:none;
-        }
-
-    .slide-track{
-        animation:none;
+    .svc-holder {
+      top: 100px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      max-width: 1500px;
+      z-index: 1;
+      position: relative;
     }
-
-    .back{
-        transform:translate(0, 0px);
-        animation:none;
+    .slider {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 110%;
     }
-        .svc-holder{
-   top:100px;
-   left:50%;
-   transform: translate(-50%, 0);
-   max-width: 1500px;
-   z-index: 1;
-   position: relative;
-}
-        .slider{
-            left:50%;
-            transform: translate(-50%, 0);
-            width:110%;
-        }
-        .slider::before,
-	.slider::after {
-		background: linear-gradient(to right,  #ffffff80 0%,rgba(255,255,255,0) 100%);
-		content: "";
-		height: 100%;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-
+    .slider::before,
+    .slider::after {
+      background: linear-gradient(
+        to right,
+        #ffffff80 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      content: "";
+      height: 100%;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
     }
+  }
 
-    @media only screen and (min-width:2000px) {
-        .svc-holder{
-            margin-top:100px;
-        }
+  @media only screen and (min-width: 2000px) {
+    .svc-holder {
+      margin-top: 100px;
     }
-
+  }
 </style>

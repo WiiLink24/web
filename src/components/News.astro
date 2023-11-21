@@ -1,203 +1,210 @@
 ---
-import { getCollection } from 'astro:content';
-import FormattedDate from '../components/FormattedDate.astro';
-const posts = (await getCollection('blog')).sort(
-	(b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+import { getCollection } from "astro:content";
+import FormattedDate from "../components/FormattedDate.astro";
+const posts = (await getCollection("blog")).sort(
+  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
 
 <body>
-
-	<div class="postholder">
-		{
-			posts.map((post) => (
-				<div class="post">
-					<a href={`/news/${post.slug}/`}>
-					<FormattedDate date={post.data.pubDate} />
-					<div class="faded"></div>
-					<img class="heroImage" src={post.data.heroImage}>
-					<div class="title"><img class="authimage" src={post.data.authImage} alt="" /><b style="width:80%; margin-right:10px; text-align:right; position:relative;">{post.data.title}</b></div>
-					<div class="desc">{post.data.description}</div>
-					</a>
-				</div>
-
-			))
-		}
-	</div>
+  <div class="postholder">
+    {
+      posts.map(post => (
+        <div class="post">
+          <a href={`/news/${post.slug}/`}>
+            <FormattedDate date={post.data.pubDate} />
+            <div class="faded" />
+            <img class="heroImage" src={post.data.heroImage} />
+            <div class="title">
+              <>
+                <img class="authimage" src={post.data.authImage} alt="" />
+                <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {post.data.title}
+                </b>
+              </>
+            </div>
+            <div class="desc">{post.data.description}</div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
 </body>
 
-
 <style>
-	.post:nth-child(2){
-		display: block;
-	}
+  .post:nth-child(2) {
+    display: block;
+  }
 
-	.post:nth-child(3){
-		display: block;
-	}
+  .post:nth-child(3) {
+    display: block;
+  }
 
-	.post:nth-child(4){
-		display: block;
-	}
+  .post:nth-child(4) {
+    display: block;
+  }
 
-	.post{
-		display:none;
-	}
+  .post {
+    display: none;
+  }
 
-	.postholder{
-		max-width:80%;
-		display: grid;
-		grid-template-columns:repeat(auto-fit, minmax(330px, 1fr));
-		position: absolute;
-		gap: 20px;
-		left:50%;
-		transform: translate(-50%,20px);
-		position: relative;
-		z-index: 10;
-	}
-	
-	.post{
-		-webkit-mask-image: url(/img/mask2.svg);
-  mask-image: url(/img/mask2.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;    
-  mask-size: 100% 100%;
-  mask-position: center;
-		position: relative;
-    	height:230px;
-    	width:100%;
-		filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
-    	border-radius: 15px;
-		font-family: Gilroy;
-    	hyphens:auto;
-    	overflow: hidden;
-    	transition: 0.5s;
-	}
+  .postholder {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    position: absolute;
+    gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 20px);
+    position: relative;
+    z-index: 10;
+  }
 
-	.authimage{
-		margin-right:10px;
-		width:40px;
-		height:40px;
-		border-radius: 8px;
-		border:1px solid #ffffff;
-		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
-		z-index: 10000000000;
-	}
+  .post {
+    -webkit-mask-image: url(/img/mask2.svg);
+    mask-image: url(/img/mask2.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: center;
+    position: relative;
+    height: 230px;
+    width: 100%;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    border-radius: 15px;
+    font-family: Gilroy;
+    hyphens: auto;
+    overflow: hidden;
+    transition: 0.5s;
+  }
 
-	.heroImage{
-		width:100%;
-		height:100%;
-		object-fit: cover;
-		transition: 0.3s;
-	}
+  .authimage {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
+    z-index: 10000000000;
+  }
 
-	.post:hover .heroImage{
-		filter: blur(8px) brightness(0.7);
-		rotate: -3deg;
-		scale: 120%;
-		z-index:0;
-		transition: 0.3s;
-  	}
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
 
-	.post:hover{
-    	background-color:rgba(206, 206, 206, 0.117);
-    	transform: translate(0,-5px);
-    	filter: drop-shadow(0px 0px 70px rgb(171, 171, 171));
-    	transition: 0.5s;
-  	}
+  .post:hover .heroImage {
+    filter: blur(8px) brightness(0.7);
+    rotate: -3deg;
+    scale: 120%;
+    z-index: 0;
+    transition: 0.3s;
+  }
 
-	.title{
-		width:110%;
-		z-index: 11;
-		display: flex;
-		align-items: center;
-		flex-direction: row-reverse;
-		font-size: max(20px, 30px);
-		bottom:20px;
-		right:10px;
-		line-height: 30px;
-		font-family: Gilroy;
-		transition: 0.5s;
-		position: absolute;
-	}
+  .post:hover {
+    background-color: rgba(206, 206, 206, 0.117);
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 70px rgb(171, 171, 171));
+    transition: 0.5s;
+  }
 
-	.post:hover .title{
-		bottom:60%;
-		transform: translate(0, 50%);
-		transition: 0.5s;
-	}
+  .title {
+    width: 110%;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: max(20px, 30px);
+    bottom: 20px;
+    right: 10px;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+    position: absolute;
+  }
 
-	.desc{
-		position: absolute;
-		font-family: inter;
-		width:90%;
-		font-size: 20px;
-		right:20px;
-		bottom:0;
-		transform:translate(0,50px);
-		opacity: 0;
-		text-align: justify;
-		transition: 0.5s;
-    	display: -webkit-box;
-    	-webkit-line-clamp: 2;
-    	-webkit-box-orient: vertical;
-    	overflow: hidden;
-    	text-overflow: ellipsis;
-	}
+  .post:hover .title {
+    bottom: 60%;
+    transform: translate(0, 50%);
+    transition: 0.5s;
+  }
 
-	.post:hover .desc{
-		bottom:48%;
-		opacity: 1;
-		transform: translate(0, 100%);
-		transition: 0.5s;
-	}
+  .desc {
+    position: absolute;
+    font-family: inter;
+    width: 90%;
+    font-size: 20px;
+    right: 20px;
+    bottom: 0;
+    transform: translate(0, 50px);
+    opacity: 0;
+    text-align: justify;
+    transition: 0.5s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-	.faded{
-		bottom: 0;
-		left:0;
-		width:100%;
-		height:100%;
-		background: rgb(2,0,36);
-		background: linear-gradient(0deg, rgba(60, 60, 60, 0.337) 0%, rgba(244, 244, 244, 0) 100%);
-		position: absolute;
-		transition: 0.5s;
-	}
+  .post:hover .desc {
+    bottom: 48%;
+    opacity: 1;
+    transform: translate(0, 100%);
+    transition: 0.5s;
+  }
 
-	.post:hover .fade{
-		transform: translate(0, 50px);
-		transition: 0.5s;
-	}
+  .faded {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(60, 60, 60, 0.337) 0%,
+      rgba(244, 244, 244, 0) 100%
+    );
+    position: absolute;
+    transition: 0.5s;
+  }
 
-	a{
-		bottom:50px;
-		z-index:11;
-		color:white;
-	}
+  .post:hover .fade {
+    transform: translate(0, 50px);
+    transition: 0.5s;
+  }
 
-	@keyframes fadeup{
-		0%{
-			opacity:0;
-		}
-		100%{
-			opacity:1;
-		}
-	}
+  a {
+    bottom: 50px;
+    z-index: 11;
+    color: white;
+  }
 
-@media (max-width:1000px) {
-	.postholder{
-		max-width:100%;
-		top:0;
-		left:0;
-		transform: translate(0, 50px);
-	}
-}
-
-@media (min-width:2000px) {
-    .postholder{
-        width:2000px;
-        left:50%;
-        transform: translate(-50%, 50px);
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
     }
-}
-</style>
+    100% {
+      opacity: 1;
+    }
+  }
 
+  @media (max-width: 1000px) {
+    .postholder {
+      max-width: 100%;
+      top: 0;
+      left: 0;
+      transform: translate(0, 50px);
+    }
+  }
+
+  @media (min-width: 2000px) {
+    .postholder {
+      width: 2000px;
+      left: 50%;
+      transform: translate(-50%, 50px);
+    }
+  }
+</style>
