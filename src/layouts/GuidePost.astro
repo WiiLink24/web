@@ -127,7 +127,7 @@ img{
 		font-size: 45px;
 		font-family: Gilroy;
 		z-index: 100;
-		top:30px;
+		top:60px;
 		text-align: center;
 		position:relative;
 	}
@@ -144,6 +144,8 @@ img{
 		left:0;
 		width:100%;
 		opacity:0.3;
+		scale: 250%;
+		transform: translateZ(-1px);
 		pointer-events: none;
 		-webkit-mask-image: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, transparent 58%);
 		position:absolute;
@@ -214,6 +216,7 @@ img{
 		border:2px solid rgba(255, 0, 0, 0.055);
 		background-color: rgba(200, 200, 200, 0.099);
 		backdrop-filter: blur(8px);
+		perspective: 1px;
 		scroll-behavior:smooth;
 		border-radius: 8px;
 		z-index: 1;

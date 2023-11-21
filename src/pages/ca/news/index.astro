@@ -58,12 +58,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
                 <div class="faded" />
                 <img class="heroImage" src={post.data.heroImage} />
                 <div class="title">
-                  <>
                     <img class="authimage" src={post.data.authImage} alt="" />
                     <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
                       {post.data.title}
                     </b>
-                  </>
                 </div>
                 <div class="desc">{post.data.description}</div>
               </a>
