@@ -476,8 +476,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover {
-    transform: translate(0, -20px) scale(105%);
-    box-shadow: 0px 5px 20px rgb(187, 187, 187);
+    transform: translate(0, -10px);
+    box-shadow: 0px 5px 30px rgb(187, 187, 187);
     transition: 0.5s;
   }
 
@@ -491,14 +491,13 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   .heroImage {
     width: 100%;
     height: 100%;
+	filter:  blur(0px) grayscale(0) brightness(0.8);
     object-fit: cover;
     transition: 0.3s;
   }
 
   .post:hover .heroImage {
-    filter: blur(8px) brightness(0.7);
-    rotate: -3deg;
-    scale: 120%;
+    filter: blur(4px) grayscale(0.5) brightness(0.5);
     z-index: 0;
     transition: 0.3s;
   }
