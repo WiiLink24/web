@@ -36,6 +36,9 @@ changeLanguage("vi");
 			<div class="logohold">
 				<DefaultHead/>
 				<img style="top:50%; left:calc(50% + 50px); transform:translate(-50%, -50%) scale(50%); filter:invert(1) drop-shadow(0px 0px 100px black); pointer-events: none;  z-index:1; position:absolute;" src="img/logo.png">
+				<span class="badge rounded-pill bg-danger" style="bottom:100px; left:calc(50% + 50px); transform:translate(-50%, 0); font-size:15px; padding:10px; z-index:10000; position:absolute;" data-bs-toggle="tooltip" data-bs-placement="top"
+				data-bs-custom-class="custom-tooltip"
+				data-bs-title="Because of changes to the Deliveroo API, which Demae Deliveroo relies on, our service is no longer able to operate. Thanks for your understanding!"> <i class="fas fa-exclamation-triangle"></i> Demae Deliveroo discontinuation </span>
 			</div>
 			
 			<div class="data">
@@ -399,10 +402,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		overflow: hidden;
 		position: fixed;
 	}
-	.custom-tooltip {
-  --bs-tooltip-bg: var(--bd-green-bg);
-  --bs-tooltip-color: var(--bs-white);
-}
 	@keyframes fadeup{
 		0%{
 			opacity:0;
