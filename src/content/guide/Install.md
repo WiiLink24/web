@@ -34,10 +34,10 @@ heroImage: "../../img/guidebg-1.png"
 <l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise,[skip to Section I.](#section-i---patching-wads)</l>
 
 
-1. Download `Priiloader_v0_10RC3.zip` from [here](https://github.com/DacoTaco/priiloader/releases/tag/0.10.0-RC3)
-2. Unzip `Priiloader_v0_10RC3.zip` and copy the apps folder to your SD Card or USB Drive.
-3. Download `LoadPriiloader.zip` from [here](https://cdn.discordapp.com/attachments/1078842520420765819/1131340628895219895/LoadPriiloader.zip).
-4. Unzip `LoadPriiloader.zip` and copy the apps folder to your SD Card or USB Drive.
+1. Download the Priiloader `.zip` file from [here](https://oscwii.org/library/app/priiloader)
+2. Unzip the Priiloader `.zip` file and copy the apps folder to your SD Card or USB Drive.
+3. Download the LoadPriiloader.zip from [here](https://oscwii.org/library/app/LoadPriiloader).
+4. Unzip the LoadPriiloader `.zip` file and copy the apps folder to your SD Card or USB Drive.
 5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
 6. Follow the instructions on the page then copy the result.
 7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
