@@ -189,29 +189,30 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 
 window.onload = osdetect;
 
-if (osdetect() == "MacOS"){
-	document.getElementById("macos").className = "btn btn-primary";
-}
-
-if (osdetect() == "Windows"){
-	document.getElementById("windows").className = "btn btn-primary";
-}
-
-if (osdetect() == "Linux"){
-
-	document.getElementById("linux").className = "btn btn-primary";
-}
-
-if (osdetect() == "UNIX"){
-	document.getElementById("macos").className = "btn btn-primary";
-	document.getElementById("windows").className = "btn btn-primary";
-	document.getElementById("linux").className = "btn btn-primary";
-}
-
-if (osdetect() == "Unknown OS"){
-	document.getElementById("macos").className = "btn btn-primary";
-	document.getElementById("windows").className = "btn btn-primary";
-	document.getElementById("linux").className = "btn btn-primary";
+switch (osdetect()) {
+    case "MacOS":
+        document.getElementById("macos").className = "btn btn-primary";
+        break;
+    case "Windows":
+        document.getElementById("windows").className = "btn btn-primary";
+        break;
+    case "Linux":
+        document.getElementById("linux").className = "btn btn-primary";
+        break;
+    case "UNIX":
+        document.getElementById("macos").className = "btn btn-primary";
+        document.getElementById("windows").className = "btn btn-primary";
+        document.getElementById("linux").className = "btn btn-primary";
+        break;
+    case "Nintendo Wii":
+		location.href = '/wii';
+        break;
+    case "Unknown OS":
+    default:
+        document.getElementById("macos").className = "btn btn-primary";
+        document.getElementById("windows").className = "btn btn-primary";
+        document.getElementById("linux").className = "btn btn-primary";
+        break;
 }
 
 </script>
