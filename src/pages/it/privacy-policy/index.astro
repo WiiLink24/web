@@ -1,0 +1,340 @@
+---
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Layout from "../../../layouts/Layout.astro";
+import "../../../styles/global.css";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("it");
+---
+<Layout title={t("privacyPolicy.mainTitle")} description={t("privacyPolicy.mainDesc")} image="/img/branding_bg.png">
+<Header isGuide="display:none;"/>
+
+<div class="sectiontop">
+<section class="section">
+    <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Privacy</h1>
+    <h3 class="update" style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;" class="updated" >Last updated: 03/12/2022</h3>
+    <div class="polka-dot"></div>
+    <p class="title" style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
+        Privacy policy for the WiiLink family of services
+    </p>
+<section class="section">
+    <p class="title">
+            Privacy Policy
+    </p>
+    <p>
+        The protection and confidentiality of personal data something WiiLink takes extremely seriously. We
+        believe in protecting the information accessed in the most secure way possible. We also believe that
+        being transparent on how we access your data leads to a bigger sense of trust with the consumer.
+    </p>
+    <br>
+    <p>
+        Please take your time and read through this Privacy Policy to the best of your ability to learn how
+        we access and store your data. You will be notified through our Discord server if this document changes.
+    </p>
+    <br>
+    <p>
+        This Privacy Policy only applies to the Demae Domino's service of WiiLink. For information on our other
+        services, please read <a href="/eula">this</a>. By using the Demae Domino's
+        service, you consent to our practices stated in this document. If you do not consent, please exit this
+        page and do not use our services. Since this service utilizes the Domino's Pizza API, you are also
+        required to agree to their Terms of Use and Privacy Policy. In the United States that is
+        <a href="https://dominos.com">here</a> and in Canada it is <a href="https://dominos.ca">here</a>.
+    </p>
+    <br>
+    <p>
+        If you do not live in the regions of the United States of America or Canada, you are not authorized to
+        use this service. Please exit this website and do not return.
+    </p>
+    <br>
+    <p>
+        If you have any questions or concerns about this Privacy Policy, do not hesitate to reach out to staff
+        in our Discord server.
+    </p>
+    <br>
+    <br>
+    <p class="title">
+        What do we access?
+    </p>
+    <p>
+        In order to use the Demae Domino's service, you must insert your correct personal information into
+        the Set Personal Data channel on your Wii. This data is encrypted with AES-256-CBC, and is only ever
+        on your Wii. Aside from this, there are other methods of data collection. Just by accessing this website,
+        your IP address is being logged by our web server, nginx. When you purchase access to
+        the Demae Domino's service, you enter payment information which is sent directly to Stripe, Inc.
+        We access this data only in the following scenarios:
+    </p>
+    <br>
+    <ul style="list-style-type: square">
+        <li>Requesting nearby restaurants from Domino's Pizza</li>
+        <li>Requesting the price of a basket from Domino's Pizza</li>
+        <li>Placing an order to Domino's Pizza</li>
+        <li>Purchasing access to the service on this website</li>
+    </ul>
+    <br>
+    <p class="subtitle">
+        Personal Data that is accessed
+    </p>
+    <ul style="list-style-type: square">
+        <li>Home Address</li>
+        <li>Apartment Number (If applicable)</li>
+        <li>Postal/Zip Code</li>
+        <li>City</li>
+        <li>Phone Number</li>
+        <li>Email Address</li>
+        <li>First Name</li>
+        <li>Last Name</li>
+        <li>IP Address</li>
+        <li>Discord User ID</li>
+        <li>Wii Console ID</li>
+        <li>Payment Information</li>
+    </ul>
+    <br>
+    <p>
+        WiiLink never stores any of this data except your IP Address, Discord User ID and Wii Console ID. Your IP Address is
+        used to identify if you are from either the United States of America or Canada. It is also stored in
+        our server logs. Your Discord User ID is used to link your Wii console to a user WiiLink can easily
+        contact. Your Wii Console ID is stored to validate you purchased access to this channel. All other data is not stored by WiiLink, however it is sent to Domino's Pizza in
+        your region. Please refer to the Privacy Policy in your region to see how they handle your data.
+    </p>
+    <br>
+    <p class="title">
+        Data Security and Transactions
+    </p>
+    <section class="section">
+        <div class="alert alert-primary" style="font-family:inter;" role="alert">
+            <strong>Important!</strong><br>Only the website handles transactions. The service on the Wii does not.
+    </div>
+    </section>
+    <p>
+        This website is secured by the latest version of the TLS protocol, TLSv1.3. Any transactions on this
+        website is also secured by TLSv1.3 while being sent to Stripe, Inc. Your payment information is never
+        stored by WiiLink.
+    </p>
+    <br>
+    <p>
+        On the other-hand, the Wii only supports TLSv1.0, which is an outdated and insecure protocol. This is
+        what the server on the Wii uses. As such the request is susceptible to MITM (Man-in-the-middle) attacks
+        on your local network, which is when an attacker on your local network intercepts
+        the request made by you to the server. However, this is much more secure than the alternative,
+        no security.
+    </p>
+</section>
+<br>
+<p class="title">
+        Children's Privacy
+</p>
+<section class="section">
+        <div class="alert alert-danger" style="margin-top:0; font-family:inter;" role="alert">
+            <strong>Important!</strong><br>This service is not intended for children under the age of 13.
+        </div>
+</section>
+<p>
+    This service is not intended for children under the age of 13. If you are under the age of 13, please exit
+    this website and do not access this service. WiiLink does not knowingly collect data from children under
+    the age of 13. Furthermore, if you are under the age of 13 and you are logged on to your Discord account,
+    you are also breaking Discord Inc.'s Terms of Service found <a href="https://discord.com/terms">here</a>.
+</p>
+<br>
+<p class="title">
+        Changes to this Privacy Policy
+</p>
+<p>
+    It is our policy to inform the consumers to any changes to this privacy policy. If there is a change, you
+    will be notified through our Discord server or News Server. The revision date of the privacy policy is
+    at the bottom of the page.
+</p>
+<br>
+</section>
+</div>
+
+<Footer />
+
+<script>
+	
+	const scrollableDiv = document.getElementById('square2');
+
+scrollableDiv.addEventListener('scroll', function() {
+  // Check if the user has scrolled to the bottom
+  if (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30) {
+    // User has scrolled to the end
+    scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+  } else {
+	scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+  }
+});
+
+	
+</script>
+
+<style>
+    .section{
+        max-width:1500px;
+        padding-left:5px;
+        padding-right:5px;
+        left:50%;
+        transform: translate(-50%, 0);
+        margin-bottom: 80px;
+        position: relative;
+        font-family: inter;
+    }
+    .title{
+        font-family: Gilroy;
+        font-size: 30px;
+    } 
+
+    .socials{
+		top:50%;
+		right:50px;
+		transform: translate(0, -50%);
+		color:white;
+		font-size: 25px;
+		width:150px;
+		justify-content:right;
+		display: flex;
+		flex-wrap: wrap;
+		position: absolute;
+	}
+	.slogan{
+		left:80px;
+		font-family: inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		color:white;
+		width:500px;
+		position: relative;
+	}
+	.footer-holder{
+		bottom:20px;
+		left:50%;
+		transform: translate(-50%, 0);
+		display:flex;
+		align-items: center;
+		width:98%;
+		height:250px;
+		position: absolute;
+	}
+
+    .symbolholder{
+		background-color: var(--bg-color);
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		transition: 0.5s;
+		z-index: 1;
+		overflow: hidden;
+		position: fixed;
+	}
+
+	.backsymbol {
+		width:100%;
+		height:100%;
+		top:0%;
+		left:50%;
+		transform: translate(-50%, 0);
+		z-index: 1;
+		position: absolute;
+	}
+	.contentholder{
+		left:50%;
+		transform: translate(-50%,0);
+		max-width:1000px;
+		position: relative;
+	}
+	.bottomleftcorner{
+		animation: changecolor 10s linear infinite;
+		position: relative;
+	}
+	.bottomleftcornerholder{
+		left:-2.6px;
+		bottom:-3px;
+		scale:31.6%;
+		transform: translate(-106.5%, 107.3%);
+		z-index: 2;
+		position: absolute;
+	}
+	.square {
+		--img-invert: 0;
+		width:100%;
+		height:100%;
+		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
+		z-index: 0;
+		animation: changecolor 10s linear infinite;
+		position: absolute;
+	}
+	#square2{
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		background-color: #ffffff;
+		transform: translate(0%, 0%);
+		border-radius: 4px;
+		z-index: 1;
+
+		transition:0.5s;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		position: absolute;
+	}
+
+
+
+    .polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#000 10%, transparent 11%), radial-gradient(#000 10%, transparent 11%);
+    background-size:30px 30px;
+    background-position: 0 0, 30px 30px;
+    opacity: 0.1;
+    rotate: 30deg;
+    left:-50px;
+    top:-38px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    position: absolute;
+    z-index: 0;
+  }
+
+  @keyframes rotate{
+    0%{
+        rotate:0deg;
+    }
+    100%{
+        rotate:360deg;
+    }
+  }
+
+  .notification{
+    background-color: #292929;
+    color:black;
+    padding:20px;
+    font-family:Gilroy;
+    border-radius:8px;
+    border: 2px solid #ffffff20;
+    text-align:center
+  }
+
+  .is-danger{
+    background-color: #db0f0f20;
+    border: 4px solid #db0f0f80;
+  }
+
+  .is-warning{
+    background-color: #c9b81620;
+    border: 4px solid #c9b81680;
+  }
+
+  strong{
+    font-family:Gilroy;
+    font-size:20px;
+  }
+
+  @media (max-width:1000px) {
+    .update{
+      display:none;
+    }
+  }
+
+</style>
