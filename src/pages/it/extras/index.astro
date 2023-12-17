@@ -1,0 +1,786 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { changeLanguage } from "i18next";
+import Header from "../../../components/Header.astro";
+import "../../../styles/global.css";
+import Footer from "../../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import { getCollection } from "astro:content";
+import Loading from "../../../components/Loading.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
+
+changeLanguage("it");
+
+const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+---
+
+<Layout
+  title={t("extras.mainTitle")}
+  description={t("extras.mainDesc")}
+  image="/img/Extras_embed.png"
+/>
+<Loading />
+<Header isGuide="display:none;" />
+
+<body>
+  <div class="hold">
+    <img class="newstop" style="" src="/img/extrastop.png" />
+    <div class="welcome-msg">
+      <h2 style="font-size:40px; font-family:Gilroy;">
+        <Trans i18nKey="extras.title">
+          This is <span
+            class="badge bg-danger"
+            style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+          ></span><b style="font-family: Rubik;">WiiLink</b><span
+            class="badge bg-danger"
+            style="top:-20px; left:-4px; font-size:15px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+            >extras</span>
+        </Trans>
+      </h2>
+      <h3 style="font-size: calc(1.3rem + .6vw);">
+        <Trans i18nKey="extras.subtitle">
+          Here you'll find <b class="color">some really cool stuff</b> we've
+          been working on. We hope you <b class="color">enjoy</b>!
+        </Trans>
+      </h3>
+    </div>
+
+    <div id="slide-track"></div>
+    <h3
+      style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
+      <Trans i18nKey="extras.helpCall">
+        <b
+          >Do you think there's something we should <c class="color">add</c> in
+          here? Be sure to <c class="color">get in touch</c>!</b>
+      </Trans>
+    </h3>
+    <div class="btn-wrapper">
+      <a href="mailto:contact@wiilink24.com"
+        ><div class="btn btn-success" style="padding:10px;">
+          <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
+          {t("extras.contact")}
+        </div></a
+      >
+      <a href="https://discord.gg/wiilink-750581992223146074"
+        ><div class="btn btn-primary" style="padding:10px;">
+          <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
+          {t("extras.joinDiscord")}
+        </div></a
+      >
+    </div>
+    <div class="dots"></div>
+  </div>
+</body>
+
+<h1 id="fetcherExtras" style="display:none;">
+  /json{localizePath("/goodies.json")}
+</h1>
+
+<Footer />
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", async function () {
+    let fetcher = document.getElementById("fetcherExtras").innerHTML;
+    fetch(fetcher)
+      .then(response => response.json())
+      .then(data => showService(data));
+
+    function showService(data) {
+      let services = document.getElementById("slide-track");
+
+      for (let i = 0; i < data.goodies.goodie.length; i++) {
+        services.innerHTML +=
+          "<a style='color:rgb(34,37,41); text-decoration:none;' href='#'><div onmouseover='effect(" +
+          i +
+          ")'  onmouseout='noEffect(" +
+          i +
+          ")' class='service' style='height:200px; width:auto; border-radius:16px; border:2px solid #70707040; background-color:#121212; box-shadow:0px 0px 20px #00000020; margin:15px; opacity:0; overflow:hidden; animation: 0.2s " +
+          (30 + i * 5) +
+          "0ms slideup linear forwards; z-index:10;'><h4 style='top:20px; left:20px; width:140px; padding:5px; padding-left:10px; padding-right:10px; color:white; border-radius:58px; font-size:15px; background-color:#12121220; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:10000; position:relative;'>Coming soon! <i class='fa-solid fa-box'></i></h4><div style='top:50px; width:auto; height:110px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); background-color:#12121260; z-index:10000; position:relative;'><h2 style='top:20px; left:28px; color:white; font-size:30px; font-family:Gilroy; z-index:1; position:relative;'>" +
+          data.goodies.goodie[i].title +
+          "</h2> <h3 style='top:15px; left:28px; width:90%; font-size:25px; color:white; font-weight:200; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; z-index:1; position:relative;'>" +
+          data.goodies.goodie[i].desc +
+          "</h3></div><img  class='img' src='" +
+          data.goodies.goodie[i].img +
+          "' style='bottom:146px; left:0; width:100%; height:100%; transform:scale(105%); object-fit:cover; z-index:0; position:relative;'></div></a>";
+      }
+    }
+  });
+
+  let canChange = 0;
+
+  async function effect(i) {
+    document.getElementsByClassName("service")[i].style.transform =
+      "translate(0, -5px) scale(105%)";
+    document.getElementsByClassName("service")[i].style.boxShadow =
+      "0px 0px 20px #12121220";
+    document.getElementsByClassName("img")[i].style.transform = "scale(100%)";
+    document.getElementsByClassName("service")[i].style.transition = "0.3s";
+    document.getElementsByClassName("img")[i].style.transition = "0.3s";
+    canChange = 0;
+  }
+  async function noEffect(i) {
+    document.getElementsByClassName("service")[i].style.transform =
+      "translate(0, 0px) scale(100%)";
+    document.getElementsByClassName("service")[i].style.boxShadow =
+      "0px 0px 0px #12121220";
+    document.getElementsByClassName("img")[i].style.transform = "scale(105%)";
+    canChange = 1;
+  }
+</script>
+
+<script>
+  const scrollableDiv = document.getElementById("square2");
+
+  scrollableDiv.addEventListener("scroll", function () {
+    // Check if the user has scrolled to the bottom
+    if (
+      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+      scrollableDiv.clientHeight + 30
+    ) {
+      // User has scrolled to the end
+      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+    } else {
+      scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+    }
+  });
+</script>
+
+<style>
+  .flexhead {
+    left: 50%;
+    top: 130px;
+    width: 90%;
+    transform: translate(-50%, 0);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 100;
+    position: absolute;
+  }
+
+  .mainimgsmall {
+    -webkit-mask-image: url(/img/mask2.svg);
+    mask-image: url(/img/mask2.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: center;
+    height: 180px;
+    width: auto;
+    transform: translate(0, 10px);
+    z-index: 10;
+    position: relative;
+  }
+  @keyframes slideup {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  .welcome-msg {
+    top: 15px;
+    max-width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-bottom: 30px;
+    position: relative;
+  }
+  .btn-wrapper {
+    width: 320px;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    position: relative;
+  }
+  #slide-track {
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, 0);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 0px;
+    position: relative;
+    padding-bottom: 50px;
+    z-index: 10;
+  }
+  .dots {
+    top: -50px;
+    left: 53%;
+    width: 150px;
+    height: 150px;
+    opacity: 0.5;
+    background-image: radial-gradient(#00000040 2px, transparent 2px);
+    background-size: 15px 15px;
+    z-index: 0;
+    position: relative;
+  }
+
+  .newstop {
+    left: 60px;
+    top: 200px;
+    transform: translate(0, -50%);
+    height: 200px;
+    filter: opacity(0.1) invert(0);
+    position: absolute;
+  }
+
+  .downmargin {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+
+  .socials {
+    top: 50%;
+    right: 50px;
+    transform: translate(0, -50%);
+    color: white;
+    font-size: 25px;
+    width: 150px;
+    justify-content: right;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+  }
+  .slogan {
+    left: 80px;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: white;
+    width: 500px;
+    position: relative;
+  }
+  .footer-holder {
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    align-items: center;
+    width: 98%;
+    height: 250px;
+    position: absolute;
+  }
+
+  html {
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+  .symbolholder {
+    background-color: var(--bg-color);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+  }
+  .backsymbol {
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 1;
+    position: absolute;
+  }
+  .contentholder {
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1000px;
+    position: relative;
+  }
+  .bottomleftcorner {
+    animation: changecolor 10s linear infinite;
+    position: relative;
+  }
+  .bottomleftcornerholder {
+    left: -2.6px;
+    bottom: -3px;
+    scale: 31.6%;
+    transform: translate(-106.5%, 107.3%);
+    z-index: 2;
+    position: absolute;
+  }
+  .square {
+    --img-invert: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      41deg,
+      rgba(0, 138, 255, 1) 0%,
+      rgba(255, 0, 59, 1) 100%
+    );
+    z-index: 0;
+    animation: changecolor 10s linear infinite;
+    position: absolute;
+  }
+  #square2 {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #ffffff;
+    transform: translate(0%, 0%);
+    border-radius: 4px;
+    z-index: 1;
+
+    transition: 0.5s;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: absolute;
+  }
+
+  .color {
+    background: url("/img/header_bg.png");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
+  }
+
+  .posthold {
+    transform: translate(0, 0px);
+    filter: drop-shadow(0px 0px 20px #70707056);
+    opacity: 0;
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .posthold:nth-child(1) {
+    animation: fadeup 200ms 0.3s linear forwards;
+  }
+  .posthold:nth-child(2) {
+    animation: fadeup 200ms 0.35s linear forwards;
+  }
+  .posthold:nth-child(3) {
+    animation: fadeup 200ms 0.4s linear forwards;
+  }
+  .posthold:nth-child(4) {
+    animation: fadeup 200ms 0.45s linear forwards;
+  }
+  .posthold:nth-child(5) {
+    animation: fadeup 200ms 0.5s linear forwards;
+  }
+  .posthold:nth-child(6) {
+    animation: fadeup 200ms 0.55s linear forwards;
+  }
+
+  .posthold:hover {
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 20px #37373756);
+    transition: 0.5s;
+  }
+
+  .mainimg {
+    width: 100%;
+    filter: blur(8px) opacity(0.3);
+  }
+
+  .mainpost:hover .mainimg {
+    filter: blur(7px) opacity(0.3) brightness(125%);
+  }
+
+  .mainpost {
+    width: 100%;
+    height: 400px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 0;
+    translate: 0.5s;
+    position: absolute;
+  }
+
+  .mainpost .fade {
+    background: linear-gradient(
+      0deg,
+      rgb(255, 255, 255) 0%,
+      rgba(239, 239, 239, 0) 100%
+    );
+  }
+
+  .authimage {
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
+    z-index: 10000000000;
+  }
+
+  .mainpost:nth-child(1) {
+    opacity: 1;
+  }
+
+  .postholder {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    position: absolute;
+    gap: 20px;
+    top: 120px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+    padding-bottom: 300px;
+    z-index: 10;
+  }
+
+  .postholdermini {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    position: absolute;
+    gap: 20px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    position: relative;
+    z-index: 10;
+  }
+
+  .post {
+    -webkit-mask-image: url(/img/mask2.svg);
+    mask-image: url(/img/mask2.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: center;
+    position: relative;
+    height: 250px;
+    width: 100%;
+    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
+    border-radius: 15px;
+    font-family: Gilroy;
+    hyphens: auto;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .posthold:nth-child(n + 7) {
+    display: none;
+  }
+
+  .postmini:nth-child(n + 8) {
+    display: block;
+  }
+
+  .postmini {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+    border-radius: 15px;
+    font-family: Gilroy;
+    hyphens: auto;
+    overflow: hidden;
+    border: 2px solid rgba(215, 215, 215, 0.066);
+    transition: 0.5s;
+    display: none;
+  }
+
+  .post:hover {
+    transform: translate(0, -20px) scale(105%);
+    box-shadow: 0px 5px 20px rgb(187, 187, 187);
+    transition: 0.5s;
+  }
+
+  .postmini:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px 0px 40px rgb(209, 209, 209);
+    border: 3px solid rgba(161, 159, 159, 0.252);
+    transition: 0.5s;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+  }
+
+  .post:hover .heroImage {
+    filter: blur(8px) brightness(0.7);
+    rotate: -3deg;
+    scale: 120%;
+    z-index: 0;
+    transition: 0.3s;
+  }
+
+  .maintitle {
+    left: 80px;
+    color: rgb(33, 36, 40);
+    z-index: 11;
+    scale: 100%;
+    font-size: 60px;
+    text-align: left;
+    font-family: Gilroy;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .maindesc {
+    position: relative;
+    z-index: 11;
+    font-size: 30px;
+    left: 80px;
+    text-align: justify;
+    color: rgb(33, 36, 40);
+    width: 90%;
+    font-family: systemui;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .title {
+    width: 110%;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: max(20px, 30px);
+    bottom: 20px;
+    right: 10px;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  .title-small {
+    width: 90%;
+    height: auto;
+    z-index: 11;
+    font-size: max(20px, 30px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #181818;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  .post:hover .title {
+    bottom: 60%;
+    transform: translate(0, 50%);
+    transition: 0.5s;
+  }
+
+  .desc {
+    position: absolute;
+    font-family: systemui;
+    width: 90%;
+    font-size: 20px;
+    right: 20px;
+    bottom: 0;
+    transform: translate(0, 50px);
+    opacity: 0;
+    text-align: justify;
+    transition: 0.5s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .post:hover .desc {
+    bottom: 48%;
+    opacity: 1;
+    transform: translate(0, 100%);
+    transition: 0.5s;
+  }
+
+  .faded {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+      0deg,
+      rgba(60, 60, 60, 0.337) 0%,
+      rgba(244, 244, 244, 0) 100%
+    );
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .fade-main {
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(
+      0deg,
+      rgb(255, 255, 255) 0%,
+      rgba(244, 244, 244, 0) 100%
+    );
+    position: absolute;
+    z-index: 2;
+    bottom: 0px;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  .fade-small {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgb(203, 203, 203) 0%,
+      rgba(244, 244, 244, 0) 100%
+    );
+    position: absolute;
+    z-index: 2;
+    bottom: -50px;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  .polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#484848 10%, transparent 11%),
+      radial-gradient(#484848 10%, transparent 11%);
+    background-size: 30px 30px;
+    background-position:
+      0 0,
+      30px 30px;
+    opacity: 0.3;
+    rotate: 30deg;
+    left: -80px;
+    top: -120px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .topimg {
+    filter: invert(1);
+    transform: translate(-100px, -100px);
+    opacity: 0.03;
+    position: absolute;
+    width: 100%;
+  }
+
+  @keyframes rotate {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+
+  a {
+    z-index: 1;
+    color: white;
+  }
+
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translate(0, 20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  .rss {
+    left: 50%;
+    transform: translate(-50%, 10px);
+    padding: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: rgb(98, 141, 98);
+    border-radius: 4px;
+    color: white;
+    z-index: 1;
+    font-family: Gilroy;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .rss:hover {
+    transform: translate(-50%, 10px) scale(103%);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.12);
+    transition: 0.5s;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .newstop {
+      display: none;
+    }
+
+    #slide-track {
+      width: 100%;
+      left: 0;
+      transform: translate(0, 0);
+      overflow: hidden;
+      display: block;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .hold {
+      left: 50%;
+      transform: translate(-50%, 150px);
+      width: 2000px;
+      margin-bottom: 80px;
+      position: relative;
+    }
+    .newstop {
+      left: 60px;
+      top: 130px;
+      transform: translate(0, -50%);
+      height: 200px;
+      filter: opacity(0.1) invert(0);
+      position: absolute;
+    }
+  }
+</style>

@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Canale Meteo",
+        "desc": "Scopri il meteo della tua regione, del tuo paese o del mondo intero.",
+        "link": "/guide/forecast",
+        "isArea": "Internazionale",
+        "status": "servizio completo",
+        "icon": "forecast_icon.png",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more Cities",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "Canale Notizie",
+        "desc": "Aggiornati rapidamente sulle ultime notizie da tutto il mondo e scopri esattamente dove stanno accadendo.",
+        "link": "/guide/news",
+        "isArea": "Internazionale",
+        "status": "Pianificato",
+        "icon": "news_icon.png",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Recupera dati del provider inglese <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Recupera i dati dei provider stranieri<br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Rilascio del servizio in fase beta",
+        "completed": "10"
+      },
+      {
+        "color": "#787878",
+        "name": "Canale Nintendo",
+        "desc": "Una guida ai titoli Wii, Nintendo DS e Nintendo 3DS, con recensioni, trailer, spettacoli speciali e demo.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Internazionale",
+        "status": "servizio completo",
+        "icon": "nintendo_icon.png",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' >Inclusione di contenuto Wiilink originale <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Inclusione di contenuto Nintendo originale",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Canale Concorsi Mii",
+        "desc": "Diventa un Artigiano Mii e mostra al mondo le tue abilità di designer Mii in un'ampia gamma di concorsi.",
+        "link": "/guide/cmoc",
+        "isArea": "Internazionale",
+        "status": "Pianificato",
+        "icon": "miicontest_icon.png",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > lancio di concorsi personalizzati <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load e fetch dati dei Concorsi </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Rilascio del servizio in fase beta",
+        "completed": "15"
+      },
+      {
+        "color": "#283688",
+        "name": "<l style='font-size:28px;'>Canale Vota Anche Tu</l>",
+        "desc": "Scopri quanto il mondo la pensa diversamente da te partecipando a nuovissimi sondaggi.",
+        "link": "/guide/evc",
+        "isArea": "Internazionale",
+        "status": "In manutenzione",
+        "icon": "democracy_icon.png",
+        "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Supporto di domande in molteplici lingue <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Sondaggi personalizzati <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > sistemati i codicidi errore",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Canale Consegne",
+        "desc": "Ordina diversi tipi di pasti da casa tramite la tua console Wii.",
+        "link": "/guide/demae",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "demae_icon.png",
+        "completed": "80"
+      },
+      {
+        "color": "#173de8",
+        "name": "Canale Guida TV",
+        "desc": "Consulta la guida dei programmi TV locali, imposta gli orari dei promemoria per gli spettacoli e controlla la TV con il telecomando Wii.",
+        "link": "/guide/tvnotomo",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Beta Privata",
+        "todo": "Controlla più tardi...",
+        "icon": "tvnotomo_icon.png",
+        "completed": "50"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Canale TV Kirby",
+        "desc": "Guarda con tempo limitato episodi di <i>Kirby: Right Back at Ya!</i>",
+        "link": "/guide/kirbytv",
+        "isArea": "Originally certain European countries",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "kirby_icon.png",
+        "completed": "60"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Canale Digicam Print",
+        "desc": "Crea album e carte da visita con le tue foto e i tuoi personaggi Mii.",
+        "link": "/guide/digicam",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room",
+        "desc": "Scopri show e altri contenuti video on demand o invia messaggi ai tuoi amici dalla Wii Room.",
+        "link": "/guide/wiinoma",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Address Settings",
+        "desc": "Inserisci le informazioni personali richieste per il Canale digicam print e il canale consegne.",
+        "link": "/guide/spd",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Message Board",
+        "desc": "Invia messaggi ad amici con una console Wii registrate e agli indirizzi e-mail.",
+        "link": "/guide/mail",
+        "isArea": "Region Free",
+        "status": "Servizio completo",
+        "todo": "Controlla più tardi...",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "Guarda contenuti di <i>Metroid Prime 3: Corruption</i>.",
+        "link": "/guide/primepreview",
+        "isArea": "Originariamente in America e in Europa",
+        "status": "Pianificato",
+        "todo": "Controlla più tardi...",
+        "icon": "room_icon.png",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "Un'applicazione DSiWare per visualizzare offline i contenuti scaricati da Wii Room.",
+        "link": "/guide/dokodemo",
+        "isArea": "Originariamente esclusivo al Giappone",
+        "status": "Pianificato",
+        "todo": "Controlla più tardi...",
+        "icon": "room_icon.png",
+        "completed": "15"
+      }
+    ]
+  }
+}
