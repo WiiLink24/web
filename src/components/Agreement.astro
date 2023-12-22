@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
 <a
   href={localizePath("/")}
   class="logohold"
-  style="top:15px; left:15px; position:absolute;"
+  style="top:60px; left:-20px; position:absolute;"
   ><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px" /></a
 >
 <button
@@ -31,7 +31,7 @@ const posts = (await getCollection("blog")).sort(
 >
 
 <div
-  class="offcanvas offcanvas-end"
+  class="offcanvas offcanvas-end" style="width:100%;"
   id="offcanvasTop"
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
@@ -40,9 +40,24 @@ const posts = (await getCollection("blog")).sort(
       class="btn-close"
       style="top:23px; left:20px; z-index: 100; position:absolute;"
       data-bs-dismiss="offcanvas"
-      aria-label="Close"></button><h4
-      style="top:20px; right:15px; font-family: Gilroy; z-index: 100; position:absolute;">
-    </h4>
+      aria-label="Close">
+    </button>
+
+    <div
+          class="buttons">
+          <a href="/"
+            ><button type="button" class="btn btn-success" style="width:100%; height:60px;"
+              ><i class="fa-solid fa-download"></i></button
+            ></a
+          >
+          <button
+            id="themeColorMobile"
+            type="button"
+            class="btn btn-light"
+            onclick="darkToggle()"
+            ><i class="fa-solid fa-sun"></i></button
+          >
+        </div>
 
     <div class="elements">
       <div class="main">
@@ -78,41 +93,196 @@ const posts = (await getCollection("blog")).sort(
         <a class="link" href="/extras"
           ><div
             class="btn btn-danger"
-            style="width:150px; transform:translate(0, 1px); padding:9px; margin-top:50px;">
+            style="right:20px; width:200px; transform:translate(0, 1px); padding:18px; position:absolute;">
             <i class="fa-solid fa-box-open" style="margin-right:5px;"></i>
-            {t("header.extras")}<span
-              class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-danger">
-              {t("header.extrasNew")}
-            </span>
+            {t("header.extras")}
           </div></a
         >
-        <div
-          style="display:flex; gap:10px; align-items:center; justify-content:center; margin-top:20px;"
-          class="buttons">
-          <button
-            class="btn btn-primary"
-            style="padding:0px; transform:translate(0, 1px);">
-            <LanguageSelector showFlag={true} class="my-select-class" />
-          </button>
-          <a href="/"
-            ><button type="button" class="btn btn-success"
-              ><i class="fa-solid fa-download"></i></button
-            ></a
-          >
-          <button
-            id="themeColorMobile"
-            type="button"
-            class="btn btn-light"
-            onclick="darkToggle()"
-            style="width:45px;"><i class="fa-solid fa-sun"></i></button
-          >
-        </div>
       </div>
     </div>
   </div>
 </div>
 
 <style>
+  .my-select-class{
+		top:0;
+		left:0;
+		width:45px;
+		height:42px;
+		font-size:30px;
+		border:0px;
+		display:none;
+		background-color:#ffffff00;
+		position:relative;
+	}
+	.badge{
+		top:20px; 
+		left:230px; 
+		font-size:15px; 
+		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
+		position:absolute;
+	}
+	.hide::before{
+  content: "";
+  position: fixed;
+  left: 0;
+  top: 41px;
+  background: linear-gradient(to bottom, #ffffff, transparent);
+  pointer-events: none;
+  width: 100%;
+  height: 50px;
+  animation: fadein 0.1s linear forwards;
+	}
+	.hide2::after{
+  content: "";
+  position: fixed;
+  left: 0;
+  bottom: 73px;
+  background: linear-gradient(to top, #ffffff, transparent);
+  pointer-events: none;
+  width: 100%;
+  height: 50px;
+  animation: fadein 0.1s linear forwards;
+	}
+	@keyframes fadein {
+		0%{
+			opacity:0;
+		}
+		100% {
+			opacity:1;
+		}
+	}
+	#grad{
+	background: rgb(255,255,255);
+	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
+	}
+
+.link:hover .underline{
+    height:15px;
+    transition: 0.5s;
+  }
+  .link{
+    width:100%;
+    padding-right:20px;
+  }
+  .underline{
+    bottom:0;
+    left:0;
+    transform: translate(0, -18px);
+    width:100%;
+    height:0px;
+    z-index: -1;
+    transition: 0.5s;
+    background-color: #00000020;
+    position: relative;
+
+  }
+
+  .optDisplay::-webkit-scrollbar{
+		display:none;
+	}
+
+  .btn{
+    width:auto;
+    position:relative;
+  }
+
+	.btn1{
+		transform: translate(0, 10px);
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: relative;
+	}
+
+	.btn2{
+		top:50%;
+		left:258px;
+		transform: translate(0, -50%);
+		opacity:0;
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: absolute;
+	}
+
+	.btn3{
+		transform: translate(0, 10px);
+		font-size: 20px;
+		margin:0px;
+		margin-bottom:18px;
+		position: relative;
+	}
+
+.bannerholder{
+    top:0;
+    left:0;
+	width:100%;
+	height:128px;
+	display:block;
+	background-color: rgba(255, 255, 255, 0);
+    z-index: 80;
+    transition: 0.5s;
+    position: sticky;
+}
+
+.logo{
+	top:50%;
+	left:50px;
+	transform: translate(0,-50%);
+	filter: invert(1);
+	position: absolute;
+}
+
+@keyframes fadedown{
+	0%{
+		opacity:0;
+		height:0px;
+		transform: translate(50px, -15px);
+	}
+	100%{
+		opacity:1;
+		height:320px;
+		transform: translate(50px, -10px);
+	}
+}
+
+@keyframes fadeout{
+	0%{
+		opacity:1;
+		height:320px;
+		transform: translate(50px, -10px);
+	}
+	100%{
+		opacity:0;
+		height:0px;
+		transform: translate(50px, -15px);
+	}
+}
+
+ul{
+	display: flex;
+	gap:10px;
+	width:auto;
+	right:50px;
+	top:60px;
+	transform: translate(0, -50%);
+	align-items:center;
+	justify-content:center;
+	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	color:rgba(255, 255, 255, 0.53);
+	position: absolute;
+}
+
+.banner{
+	font-size:20px;
+	margin-right:20px;
+	mix-blend-mode: difference;
+	color:black;
+    position:relative;
+    transition: 0.5s;
+}
+
   .dropdownbtn {
     top: 20px;
     right: 15px;
@@ -148,8 +318,12 @@ const posts = (await getCollection("blog")).sort(
     color: inherit;
   }
   .buttons {
+    top:50px;
+    width:100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap:20px;
+    position: relative;
   }
   .btn {
     display: none;
@@ -189,7 +363,7 @@ const posts = (await getCollection("blog")).sort(
     position: relative;
   }
   .main {
-    width: 100px;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 0px;
@@ -202,17 +376,15 @@ const posts = (await getCollection("blog")).sort(
   .elements {
     top: 50%;
     left: 50%;
+    width:100%;
     transform: translate(-50%, -50%);
     justify-content: space-evenly;
     display: flex;
     position: absolute;
   }
   .offcanvas {
-    margin: 8px;
-    border-radius: 18px;
-    box-shadow: 0px 0px 20px #00000040;
-    overflow: hidden;
-    height: calc(100% - 18px);
+    height: 100%;
+    width:100%;
   }
   .color {
     background: url("/img/header_bg.png");
@@ -222,6 +394,7 @@ const posts = (await getCollection("blog")).sort(
   }
   .offcanvas-size-sm {
     --bs-offcanvas-height: 100% !important;
+    --bs-offcanvas-width: 100% !important;
   }
 
   @media only screen and (max-width: 1000px) {
