@@ -128,13 +128,9 @@ ___
 
 ## Troubleshooting & Questions
 
-### "I got error -1017 when installing the Food Channel WAD! What do I do?"
+### "I got error -1022/-1029 when installing the Food Channel/SPD WAD! What do I do?"
 
-> This is a known issue with the patcher! In the meantime, you will find a file titled Demae.wad on the root of your SD card. Use your favorite WAD manager to install!
-
-### "I got error -1022 when installing the Food Channel WAD! What do I do?"
-
-> Using your favorite WAD manager, uninstall the Food Channel, and install again. For many, this means going to the location the Food Channel WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.
+> Using your favorite WAD manager, uninstall the Food Channel/SPD, and install again. For many, this means going to the location the WAD is located, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.
 
 ### "I'm getting an error message when adding food to my basket! What do I do?"
 
