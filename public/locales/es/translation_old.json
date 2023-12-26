@@ -1,4 +1,4 @@
-﻿{
+{
     "site": {
       "title": "WiiLink",
       "description": "Un proyecto comunitario no oficial de <i>homebrew</i> cuyo objetivo es restaurar, traducir y mejorar los canales y servicios del descontinuado WiiConnect24 y también aquellos que no estaban disponibles en algunas regiones.",
@@ -8,7 +8,7 @@
       "relNotes": "Notas de la versión",
       "downloadPrompt": "Descarga la última versión:",
       "installGuide": "Abrir la guía de instalación",
-      "terms": "He leído y acepto los <0>términos del servicio</0> y la <1>política de privacidad</1>.",
+      "terms": "He leído y acepto los <0>términos del servicio</0> y la <1>Política de privacidad</1>.",
       "slogan": "<0>WiiLink</0> es un proyecto no oficial de <i>homebrew</i> sin ánimo de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2023 El <4>equipo</4> de <3>WiiLink</3>",
       "donate": "¡Dona!",
       "creator": "Página web diseñada y programada por Alex",
@@ -52,14 +52,14 @@
     "socials": {
       "title": "¡Échale un vistazo a las <0>redes sociales</0> del proyecto!",
       "subtitle": "Estate al tanto de todas las <0>actualizaciones</0> del servicio y de los <1>anuncios generales</1> o únete a nuestro servidor de Discord.",
-      "twFollowers": "3000 seguidores",
+      "twFollowers": "2700 seguidores",
       "twFollow": "Seguir",
       "twTweets": "Tweets de WiiLink24",
-      "dcMembers": "6900 miembros",
+      "dcMembers": "6200 miembros",
       "dcJoin": "Unirse",
-      "ghFollowers": "103 seguidores",
+      "ghFollowers": "82 seguidores",
       "ghFollow": "Seguir",
-      "ytSubscribers": "2100 suscriptores",
+      "ytSubscribers": "2000 suscriptores",
       "ytSubscribe": "Suscribirse"
     },
     "team": {
@@ -67,7 +67,7 @@
       "subtitle": "¡<0>WiiLink</0> es posible gracias a nuestros <1>voluntarios</1>! </2><3>Estas son las personas que han contribuido al proyecto:</3>"
     },
     "news": {
-      "mainTitle": "WiiLink - Noticias",																
+      "mainTitle": "WiiLink - Noticias",
       "mainDesc": "¡Entérate de las últimas mejoras y lanzamientos de WiiLink!",
       "title": "Estas son las <2>noticias</2> de <1>WiiLink</1>",
       "subtitle": "¡Estate al tanto del <0>progreso del proyecto</0> y de las <1>actualizaciones del servicio</1>!",
@@ -94,7 +94,7 @@
       "faq": "Preguntas frecuentes",
       "lookingFor": "¿Qué <0>buscas</0>?",
       "visitWiiHacks": "Visita wii.hacks.guide",
-      "copyright": "© 2020-2023 El <2>equipo</2> de la <1>guía</1> de <0>WiiLink</0>"
+      "copyright": "© 2020-2023 El <2>equipo</2> de <0>WiiLink</0>"
     },
     "newsPost": {
       "name": "News"
@@ -109,7 +109,7 @@
     "extras": {
       "mainTitle": "WiiLink - Extras",
       "mainDesc": "¡Echa un vistazo a nuestro contenido especial!",
-      "title": "Estos son los <2>Extras</2> de <1>WiiLink</1>",
+      "title": "<2>Extras</2> de <1>WiiLink</1>",
       "subtitle": "Aquí encontrarás <0>contenido especial</0> en el que hemos trabajado.",
       "helpCall": "<0>¿Crees que deberíamos <1>añadir</1> algo? ¡<2>Ponte en contacto</c2> con nosotros!</0>",
       "contact": "Contactar",
@@ -126,7 +126,7 @@
     },
     "privacyPolicy": {
       "mainTitle": "WiiLink - Política de privacidad",
-      "mainDesc": "La política de privacidad de WiiLink."
+      "mainDesc": "La Política de privacidad de WiiLink."
     },
     "eula": {
       "mainTitle": "WiiLink - Acuerdo de licencia para el usuario final",
