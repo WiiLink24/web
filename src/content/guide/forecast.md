@@ -15,7 +15,7 @@ icon: fa-solid fa-umbrella
 ___
 ## Installation Guide
 
-### PriiLoader Setup (For vWii OY)
+### PriiLoader Setup (For vWii ONLY)
 
 <l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, please skip to the next section.</l>
 
