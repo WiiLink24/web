@@ -26,7 +26,7 @@
       {
         "color": "#787878",
         "name": "Canal Nintendo",
-        "desc": "Una guía sobre los títulos para Wii, Nintendo DS y Nintendo 3DS, con análisis, tráileres, programas especiales y versiones de prueba.",
+        "desc": "Una guía sobre títulos para Wii, Nintendo DS y 3DS con tráileres, versiones de prueba y más.",
         "link": "/guide/nintendochannel",
         "isArea": "Internacional",
         "status": "Versión completa",
@@ -37,7 +37,7 @@
       {
         "color": "#F1E3C1",
         "name": "Canal Miirame",
-        "desc": "Conviértete en Mii Artesano y muestra al mundo tu talento para diseñar Miis en una amplia variedad de concursos.",
+        "desc": "Conviértete en Mii Artesano y muestra tu talento para diseñar Miis en diversos concursos.",
         "link": "/guide/cmoc",
         "isArea": "Internacional",
         "status": "Previsto",
@@ -48,7 +48,7 @@
       {
         "color": "#283688",
         "name": "Canal Opiniones",
-        "desc": "Descubre si piensas de manera diferente al resto del mundo participando en sondeos completamente nuevos.",
+        "desc": "Descubre lo distinto que piensa el mundo en comparación contigo participando en sondeos nuevos.",
         "link": "/guide/evc",
         "isArea": "Internacional",
         "status": "En mantenimiento",
@@ -103,7 +103,7 @@
       {
         "color": "#05AAF8",
         "name": "Wii Room",
-        "desc": "Descubre programas y otros contenidos de vídeo a la carta o envía mensajes a tus amigos desde Wii Room.",
+        "desc": "Descubre programas y otros contenidos a la carta o escribe a amigos desde Wii Room.",
         "link": "/guide/wiinoma",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
