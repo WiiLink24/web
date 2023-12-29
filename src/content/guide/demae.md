@@ -53,6 +53,8 @@ ___
 
 4. Type the command `/dominos` in the chat, placing your **Console ID** that you got from the **Get Console ID** homebrew app, in the parameter box, otherwise the command will not work and will be posted publicly on the channel.
 
+    ![imgcaroussel](/img/guide/consoleID.png)
+
 5. Double-check that you've typed the correct Console ID, as it can't be re-registered. If you need to re-register, ask a staff member in the server for assistance.
 
 #### Section III - Installing WADs
