@@ -116,22 +116,22 @@ const { isGuide, isMain } = Astro.props;
                 var option = dropdown.options[i];
                 var optionName = option.value;
                 var optionLink = option.innerHTML;
-				var optionLinkFlag = optionLink.substring(0,5);
+				var optionLinkFlag = optionLink.substring(0,4);
 
-				switch (optionLink.substring(0, 5).toLowerCase()) {
-					case ' 🇺🇸':
+				switch (optionLink.substring(0, 4).toLowerCase()) {
+					case '🇺🇸':
 						optionLink = "🇺🇸 English (US)";
 						break;
-					case ' 🇬🇧':
+					case '🇬🇧':
 						optionLink = "🇬🇧 English (UK)";
 						break;
-					case ' 🇧🇷':
+					case '🇧🇷':
 						optionLink = "🇧🇷 Português (BR)";
 						break;
-					case ' 🇵🇹':
+					case '🇵🇹':
 						optionLink = "🇵🇹 Português (PT)";
 						break;
-					case ' 🇻🇳':
+					case '🇻🇳':
 						optionLinkFlag = "<img src='/img/val.png' class='emoji'>";
 						optionLink = "<img src='/img/val.png' class='emoji'> Català (VA)";
 						break;
