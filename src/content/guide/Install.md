@@ -75,7 +75,7 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
         2. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
 4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
 5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to `WiiLinkPatcher.bat` to your SD Card or USB Device.
+6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
 
 ### Section II - Installing WADs
 
