@@ -1,4 +1,4 @@
-{
+﻿{
   "services": {
     "service": [
       {
@@ -26,7 +26,7 @@
       {
         "color": "#787878",
         "name": "Canal Nintendo",
-        "desc": "Una guía sobre los títulos para Wii, Nintendo DS y Nintendo 3DS, con análisis, tráileres, programas especiales y versiones de prueba.",
+        "desc": "Una guía sobre títulos para Wii, Nintendo DS y 3DS con tráileres, versiones de prueba y más.",
         "link": "/guide/nintendochannel",
         "isArea": "Internacional",
         "status": "Versión completa",
@@ -37,7 +37,7 @@
       {
         "color": "#F1E3C1",
         "name": "Canal Concursos Mii",
-        "desc": "Conviértete en Artesano Mii y enséñale al mundo tu talento para diseñar Miis en una gran variedad de concursos.",
+        "desc": "Conviértete en Artesano Mii y muestra tu talento para diseñar Miis en diversos concursos.",
         "link": "/guide/cmoc",
         "isArea": "Internacional",
         "status": "Previsto",
@@ -47,8 +47,8 @@
       },
       {
         "color": "#283688",
-        "name": "<l style='font-size:28px;'>Canal Opiniones</l>",
-        "desc": "Descubre si piensas de forma distinta al resto del mundo participando en sondeos completamente nuevos.",
+        "name": "Canal Opiniones",
+        "desc": "Descubre lo distinto que piensa el mundo en comparación contigo participando en sondeos nuevos.",
         "link": "/guide/evc",
         "isArea": "Internacional",
         "status": "En mantenimiento",
@@ -91,7 +91,7 @@
       },
       {
         "color": "#00FFF8",
-        "name": "Canal Impresión de fotos",
+        "name": "<l style='font-size:28px;'>Canal Impresión de fotos</l>",
         "desc": "Crea álbumes y tarjetas de visita con tus fotos y personajes Mii.",
         "link": "/guide/digicam",
         "isArea": "Inicialmente exclusivo de Japón",
@@ -103,7 +103,7 @@
       {
         "color": "#05AAF8",
         "name": "Wii Room",
-        "desc": "Descubre programas y otros contenidos de vídeo a la carta o envía mensajes a tus amigos desde Wii Room.",
+        "desc": "Descubre programas y otros contenidos a la carta o escribe a amigos desde Wii Room.",
         "link": "/guide/wiinoma",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
