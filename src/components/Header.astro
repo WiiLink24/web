@@ -116,38 +116,35 @@ const { isGuide, isMain } = Astro.props;
                 var option = dropdown.options[i];
                 var optionName = option.value;
                 var optionLink = option.innerHTML;
-				var optionLinkFlag = optionLink.substring(0,4);
-				console.log(optionName.substring(0, 7).toLowerCase());
+				var optionLinkFlag = optionLink.substring(0,5);
 
-				switch (optionLink.substring(0, 4).toLowerCase()) {
-					case '🇺🇸':
+				switch (optionLink.substring(0, 5).toLowerCase()) {
+					case ' 🇺🇸':
 						optionLink = "🇺🇸 English (US)";
 						break;
-					case '🇬🇧':
+					case ' 🇬🇧':
 						optionLink = "🇬🇧 English (UK)";
 						break;
-					case '🇧🇷':
+					case ' 🇧🇷':
 						optionLink = "🇧🇷 Português (BR)";
 						break;
-					case '🇵🇹':
+					case ' 🇵🇹':
 						optionLink = "🇵🇹 Português (PT)";
-				}
-
-				switch (optionLink.substring(5, 7).toLowerCase()) {
-					case 'ca':
-						optionLinkFlag = "<img src='/img/cat.png' class='emoji'>";
-						optionLink = "<img src='/img/cat.png' class='emoji'> Català (CA)";
 						break;
-					case 'ti':
-					optionLinkFlag = "<img src='/img/val.png' class='emoji'>";
+					case ' 🇻🇳':
+						optionLinkFlag = "<img src='/img/val.png' class='emoji'>";
 						optionLink = "<img src='/img/val.png' class='emoji'> Català (VA)";
 						break;
 				}
 
 				switch (optionName.substring(0, 7).toLowerCase()) {
 					case '/es-lat':
-						optionLinkFlag = "🇲🇽";
+						optionLinkFlag = " 🇲🇽";
 						optionLink = "🇲🇽 Español (LATAM)";
+						break;
+					case '/ca':
+						optionLinkFlag = "<img src='/img/cat.png' class='emoji'>";
+						optionLink = "<img src='/img/cat.png' class='emoji'> Català (CA)";
 						break;
 				}
 
@@ -163,7 +160,21 @@ const { isGuide, isMain } = Astro.props;
 			twemoji.parse(document.getElementById("titleTranslate"));
         });
 
+		document.addEventListener('click', function(event) {
+    var dropdownButton = document.getElementById('titleTranslate');
+    var dropdownMenu = document.getElementById('dropMenu');
 
+    // Check if the click was outside the dropdown button or menu
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+      // Close the dropdown
+	  document.getElementById("dropMenu").style.animation = "fadeout 0.2s ease-in-out forwards";
+				setTimeout(() => {
+				document.getElementById("dropMenu").style.opacity = "0";
+				document.getElementById("dropMenu").style.pointerEvents = "none";
+				document.getElementById("dropMenu").style.animation = "";
+				open = 0; }, "200")
+    }
+  });
 
 		let open = 0;
 		function toggleTranslate() {
@@ -193,7 +204,6 @@ const { isGuide, isMain } = Astro.props;
 const languageOverride = localStorage.getItem('languageOverride');
 
 	function override() {
-		console.log("Clicked!");
 		localStorage.setItem('languageOverride', 'yes');
 	}
 
