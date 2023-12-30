@@ -165,7 +165,7 @@ const { isGuide, isMain } = Astro.props;
     var dropdownMenu = document.getElementById('dropMenu');
 
     // Check if the click was outside the dropdown button or menu
-    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open == 1) {
       // Close the dropdown
 	  document.getElementById("dropMenu").style.animation = "fadeout 0.2s ease-in-out forwards";
 				setTimeout(() => {
