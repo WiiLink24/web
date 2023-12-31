@@ -20,6 +20,8 @@ heroImage: "../../img/guidebg-3.png"
 
 <div class="error">Error Code: -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled "Food Channel (English).wad" on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
 
+<div class="error">Wii Update <span class="badge bg-warning">Food Channel/Photo Prints Channel</span><h4>If the system asks you to update. It means that you didn't install the "WiiLink SPD (Wii).wad" or the "WiiLink SPD (vWii).wad" (Depending on your Console) using YAWMME, go to the location where you put the WiiLink SPD.wad, then install it by pressing the + (plus) on your Wii remote.</h4><hr></div>
+
 <div class="error">Error Code: -1022 <span class="badge bg-warning">Any Channel</span><h4>Using your favorite WAD manager, Uninstall the Channel, and Install again. For many, this means going to the Location the Channel WAD, and Pressing the - (minus) button on your Wii remote, and Pressing A to Uninstall. Then, Install the WAD again.</h4><hr></div>
 <div class="error">Error Code -110211 <span class="badge bg-warning">WiiLink Mail Patcher</span><h4>If this happens when you run the Patcher for the first time, let us know in <a href="https://discord.gg/wiilink-750581992223146074" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support</a> and we'll happily try to resolve this issue.</h4><hr></div>
 
