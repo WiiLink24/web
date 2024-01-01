@@ -1,6 +1,6 @@
 ![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=wiilink24.com&fontSize=90&animation=fadeIn)
 ### _The front-facing website of the WiiLink project._
-<img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/WiiLink24/web" /> <img alt="" src="https://img.shields.io/github/repo-size/WiiLink24/web" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
+<img alt="GitHub Language Count" src="https://img.shields.io/badge/languages-10-blue" /> <img alt="Github Repo Size" src="https://img.shields.io/badge/repo_size-240_MB-blue" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
 A website where you can download our products, as well as getting up to date with our advancements, getting assistance with our products, and informing yourself in the status of them.
 #### All the fun people who've contributed:
 <a href = "https://github.com/WiiLink24/web/graphs/contributors">
@@ -33,4 +33,4 @@ You will also need to add the language code inside the ``` astro-i18next.config.
 # Also check out:
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)]([https://github.com/madushadhanushka/differ](https://github.com/WiiLink24/WiiLink24-Patcher))
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
