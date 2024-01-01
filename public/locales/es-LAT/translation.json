@@ -9,7 +9,7 @@
       "downloadPrompt": "Descarga la última versión:",
       "installGuide": "Abrir la guía de instalación",
       "terms": "He leído y acepto las <0>condiciones de servicio</0> y la <1>política de privacidad</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto no oficial de <i>homebrew</i> sin fines de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2023 El <4>equipo</4> de <3>WiiLink</3>",
+      "slogan": "<0>WiiLink</0> es un proyecto no oficial de <i>homebrew</i> sin fines de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2024 El <4>equipo</4> de <3>WiiLink</3>",
       "donate": "¡Dona!",
       "creator": "Página web diseñada y programada por Alex",
       "contact": "Contáctanos",
@@ -94,7 +94,7 @@
       "faq": "Preguntas frecuentes",
       "lookingFor": "¿Qué <0>buscas</0>?",
       "visitWiiHacks": "Visita wii.hacks.guide",
-      "copyright": "© 2020-2023 El <2>equipo</2> de la <1>guía</1> de <0>WiiLink</0>"
+      "copyright": "© 2020-2024 El <2>equipo</2> de la <1>guía</1> de <0>WiiLink</0>"
     },
     "newsPost": {
       "name": "News"

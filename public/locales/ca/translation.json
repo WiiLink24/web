@@ -10,7 +10,7 @@
       "downloadPrompt": "Baixeu la darrera versió:",
       "installGuide": "Guia d'instal·lació",
       "terms": "He llegit i accepto els <0>termes d'ús</0> i la <1>política de privadesa</1>.",
-      "slogan": "El <0>WiiLink</0> és un projecte homebrew no oficial i sense ànim de lucre. No està afiliat a Nintendo i totes les marques comercials són propietat dels seus respectius propietaris. No es pretén cap infracció dels drets d'autor.</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",
+      "slogan": "El <0>WiiLink</0> és un projecte homebrew no oficial i sense ànim de lucre. No està afiliat a Nintendo i totes les marques comercials són propietat dels seus respectius propietaris. No es pretén cap infracció dels drets d'autor.</1></2>© 2020-2024 <3>WiiLink</3><4> Team</4>",
       "donate": "Feu una donació!",
       "creator": "Web dissenyat i programat per Alex",
       "contact": "Contacta'ns",
@@ -95,7 +95,7 @@
       "faq": "Preguntes freqüents",
       "lookingFor": "Què <0>busques</0>?",
       "visitWiiHacks": "Visita wii.hacks.guide",
-      "copyright": "© 2020-2023 <0>WiiLink<1>guide</1></0> <2> Team</2>"
+      "copyright": "© 2020-2024 <0>WiiLink<1>guide</1></0> <2> Team</2>"
     },
     "newsPost": {
       "name": "Novetats"

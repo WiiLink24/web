@@ -10,7 +10,7 @@
       "winMinReq": "Necessitaràs Windows 10 o superior!",
       "installGuide": "Guía d'Instal·lació",
       "terms": "He llegit i acceptat els <0>Termes</0> i la <1>Política de Privacitat</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. No está afiliado con Nintendo y todas las marcas registradas son propiedad de sus respectivos propietarios Cualquier brecha de copyright no es intencional.</1></2>© 2020-2023 <4>Equipo</4> <3>WiiLink</3>",
+      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. No está afiliado con Nintendo y todas las marcas registradas son propiedad de sus respectivos propietarios Cualquier brecha de copyright no es intencional.</1></2>© 2020-2024 <4>Equipo</4> <3>WiiLink</3>",
       "donate": "Dona!",
       "creator": "Página web diseñada y programada por Alex",
       "contact": "Contacta con nosotros",
@@ -96,7 +96,7 @@
       "faq": "Preguntas frecuentes",
       "lookingFor": "¿Qué es lo que estás <0>buscando</0>?",
       "visitWiiHacks": "Visitar wii.hacks.guide",
-      "copyright": "© 2020-2023  <2>Equipo</2> <0>WiiLink<1>guía</1></0>"
+      "copyright": "© 2020-2024  <2>Equipo</2> <0>WiiLink<1>guía</1></0>"
     },
     "newsPost": {
       "name": "Noticias"
