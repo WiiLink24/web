@@ -10,7 +10,7 @@
       "winMinReq": "You'll need windows 8 or higher!",
       "installGuide": "ガイドを開く",
       "terms": "私は <0>利用規約</0>と<1>プライバシーポリシー</1>を読み、理解しました。",
-      "slogan": "<0>WiiLink</0>は非公式の非営利企画です。 任天堂を関係はなく、 著作権はすべて任天堂のものです。著作権侵害の意図はありません。</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",
+      "slogan": "<0>WiiLink</0>は非公式の非営利企画です。 任天堂を関係はなく、 著作権はすべて任天堂のものです。著作権侵害の意図はありません。</1></2>© 2020-2024 <3>WiiLink</3><4> Team</4>",
       "donate": "募金",
       "creator": "サイトデザイン・プログラム：アレックス",
       "contact": "連絡",
@@ -95,7 +95,7 @@
       "faq": "よくある質問",
       "lookingFor": "何を<0>お探しですか</0>？",
       "visitWiiHacks": "wii.hacks.guideに行く",
-      "copyright": "© 2020-2023 <0>WiiLink<1>ガイド</1></0> <2> Team</2>"
+      "copyright": "© 2020-2024 <0>WiiLink<1>ガイド</1></0> <2> Team</2>"
     },
     "newsPost": {
       "name": "ニュース"

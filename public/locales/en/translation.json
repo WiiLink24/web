@@ -10,7 +10,7 @@
       "winMinReq": "You'll need windows 8 or higher!",
       "installGuide": "Open the Install Guide",
       "terms": "I have read and accepted the <0>Terms of Service</0> and <1>Privacy Policy</1>.",
-      "slogan": "<0>WiiLink</0> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</1></2>© 2020-2023 <3>WiiLink</3><4> Team</4>",
+      "slogan": "<0>WiiLink</0> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</1></2>© 2020-2024 <3>WiiLink</3><4> Team</4>",
       "donate": "Donate!",
       "creator": "Website designed and coded by Alex",
       "contact": "Contact us",
@@ -95,7 +95,7 @@
       "faq": "Frequently asked questions",
       "lookingFor": "What are you <0>looking for</0>?",
       "visitWiiHacks": "Visit wii.hacks.guide",
-      "copyright": "© 2020-2023 <0>WiiLink<1>guide</1></0> <2> Team</2>"
+      "copyright": "© 2020-2024 <0>WiiLink<1>guide</1></0> <2> Team</2>"
     },
     "newsPost": {
       "name": "News"
