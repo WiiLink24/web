@@ -5,193 +5,303 @@ import { Trans } from "astro-i18next/components";
 ---
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+  />
 </head>
 
 <body>
-<div class="build">
+  <div class="build">
     <div class="build-holder">
-        <h1 class="title"><Trans i18nKey="team.title">Meet our amazing <b class="color">team</b></Trans></h1>
-        <h2 class="subtitle"><Trans i18nKey="team.subtitle"><b style="font-family:Rubik;">WiiLink</b> is powered by <b class="color">100%</b> volunteer work. </br><b class="color">Here's some of the incredible people who help <b style="font-family:Rubik;">WiiLink</b> come to life!</b></Trans></h2>
-        <div id="members_mobile" class="members">
-        </div>
-        <div id="members" class="members">
-        </div>
-        <div id="members_small" class="members_small">
-        </div>
-    </div>
-</div>
-
-<h1 id="fetcherTeam" style="display:none;">json{localizePath("/team.json")}</h1>
+      <h1 class="title">
+        <Trans i18nKey="team.title">
+          Meet our amazing <b class="color">team</b>
+        </Trans>
+      </h1>
+      <h2 class="subtitle">
+        <Trans i18nKey="team.subtitle">
+          <b style="font-family:Rubik;">WiiLink</b> is powered by <b
+            class="color">100%</b>
+            volunteer work.
+        </br>
+          <b class="color">
+            Here's some of the incredible people who help <b
+          style="font-family:Rubik;">WiiLink</b> come to life!</b>
+        </Trans>
+      </h2>
+    </>
+    <div id="members_mobile" class="members"></div>
+    <div id="members" class="members"></div>
+    <div id="members_small" class="members_small"></div>
+  </div>
 </body>
 
+<h1 id="fetcherTeam" style="display:none;">
+  json{localizePath("/team.json")}
+</h1>
+
 <script is:inline>
-    document.addEventListener("DOMContentLoaded", async function () {
-            let fetcher = document.getElementById("fetcherTeam").innerHTML;
-           fetch(fetcher)
-           .then(response => response.json())
-           .then(data => showService(data));
+  document.addEventListener("DOMContentLoaded", async function () {
+    let fetcher = document.getElementById("fetcherTeam").innerHTML;
+    fetch(fetcher)
+      .then(response => response.json())
+      .then(data => showService(data));
 
-           function showService(data) {
-            let team = document.getElementById("members");
-            let teamSmall = document.getElementById("members_small");
-            let teamMobile = document.getElementById("members_mobile");
-            let r = Math.floor(Math.random() * 15 + 10);
-        
-            for (let i = 0; i < data.members.member.length; i++) {
-                if (i < 9) {
-                    if (i == 0) {
-                        team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden; transition: 0.3s;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" + data.members.member[i].name + " <img srcset='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></a></div> </div>";
-                    } else if (i == 4) {
-                        team.innerHTML += "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[r].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[r].color + "40; display:flex; overflow:hidden; transition: 0.3s;'><a href='" + data.members.member[r].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[r].pfp + "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" + data.members.member[r].name + " <img srcset='" + data.members.member[r].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[r].title + "</h3></a></div> </div>";
-                        team.innerHTML += "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></a></div> </div>";
-                    } else {
-                        team.innerHTML += "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" + data.members.member[i].name + " <img src='" + data.members.member[i].flag + "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" + data.members.member[i].title + "</h3></a></div> </div>";
-                    }
-                } else {
-                    if (i == r) {
-                        teamSmall.innerHTML += "<div title='" + data.members.member[i].name + "\n" + data.members.member[i].title + "' id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:none; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "'style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
-                    }
-                    else {
-                        teamSmall.innerHTML += "<div title='" + data.members.member[i].name + "\n" + data.members.member[i].title + "' class='member' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title={t('site.winMinReq')}><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
-                    }
-                }
-            }
+    function showService(data) {
+      let team = document.getElementById("members");
+      let teamSmall = document.getElementById("members_small");
+      let teamMobile = document.getElementById("members_mobile");
+      let r = Math.floor(Math.random() * 15 + 10);
 
-           for (let i = 0; i < 20; i++) {
-                teamMobile.innerHTML += "<div id='tooltip_small' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " + data.members.member[i].color + "60; border-radius:16px; box-shadow:0px 5px 20px " + data.members.member[i].color + "40; display:flex; overflow:hidden;'><a href='" + data.members.member[i].link + "' style='text-decoration:none; color:#212529;'><img src='" + data.members.member[i].pfp + "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
-           }
+      for (let i = 0; i < data.members.member.length; i++) {
+        if (i < 9) {
+          if (i == 0) {
+            team.innerHTML +=
+              "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " +
+              data.members.member[i].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[i].color +
+              "40; display:flex; overflow:hidden; transition: 0.3s;'> <a href='" +
+              data.members.member[i].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[i].pfp +
+              "' style='background-image:url(/img/header_bg.png);" +
+              "background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
+              data.members.member[i].name +
+              " <img srcset='" +
+              data.members.member[i].flag +
+              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
+              data.members.member[i].title +
+              "</h3></a></div> </div>";
+          } else if (i == 4) {
+            team.innerHTML +=
+              "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " +
+              data.members.member[r].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[r].color +
+              "40; display:flex; overflow:hidden; transition: 0.3s;'><a href='" +
+              data.members.member[r].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[r].pfp +
+              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
+              data.members.member[r].name +
+              " <img srcset='" +
+              data.members.member[r].flag +
+              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
+              data.members.member[r].title +
+              "</h3></a></div> </div>";
+            team.innerHTML +=
+              "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " +
+              data.members.member[i].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[i].color +
+              "40; display:flex; overflow:hidden;'><a href='" +
+              data.members.member[i].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[i].pfp +
+              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
+              data.members.member[i].name +
+              " <img src='" +
+              data.members.member[i].flag +
+              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
+              data.members.member[i].title +
+              "</h3></a></div> </div>";
+          } else {
+            team.innerHTML +=
+              "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " +
+              data.members.member[i].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[i].color +
+              "40; display:flex; overflow:hidden;'><a href='" +
+              data.members.member[i].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[i].pfp +
+              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
+              data.members.member[i].name +
+              " <img src='" +
+              data.members.member[i].flag +
+              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
+              data.members.member[i].title +
+              "</h3></a></div> </div>";
+          }
+        } else {
+          if (i == r) {
+            teamSmall.innerHTML +=
+              "<div title='" +
+              data.members.member[i].name +
+              "\n" +
+              data.members.member[i].title +
+              "' id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " +
+              data.members.member[i].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[i].color +
+              "40; display:none; overflow:hidden;'><a href='" +
+              data.members.member[i].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[i].pfp +
+              "'style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
+          } else {
+            teamSmall.innerHTML +=
+              "<div title='" +
+              data.members.member[i].name +
+              "\n" +
+              data.members.member[i].title +
+              "' class='member' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; border:4px solid " +
+              data.members.member[i].color +
+              "60; border-radius:16px; box-shadow:0px 5px 20px " +
+              data.members.member[i].color +
+              "40; display:flex; overflow:hidden;' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title={t('site.winMinReq')}><a href='" +
+              data.members.member[i].link +
+              "' style='text-decoration:none; color:#212529;'><img src='" +
+              data.members.member[i].pfp +
+              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
+          }
         }
-    });
-    
-    </script>
+      }
+
+      for (let i = 0; i < 20; i++) {
+        teamMobile.innerHTML +=
+          "<div id='tooltip_small' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " +
+          data.members.member[i].color +
+          "60; border-radius:16px; box-shadow:0px 5px 20px " +
+          data.members.member[i].color +
+          "40; display:flex; overflow:hidden;'><a href='" +
+          data.members.member[i].link +
+          "' style='text-decoration:none; color:#212529;'><img src='" +
+          data.members.member[i].pfp +
+          "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
+      }
+    }
+  });
+</script>
 
 <style>
-    .build-holder{
-        left:50%;
-        transform: translate(-50%, 20px);
-        width:95%;
-        max-width:1500px;
-        padding-top:30px;
-        position:relative;
-    }
-    .members{
-      width:100%;
-      display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(345px,1fr));
-  gap: 15px;
-  left: 50%;
-  transform: translate(-50%);
-  position: relative;
-  border-radius: 8px;
-  z-index: 10;
-  scroll-snap-type: both mandatory;
-    }
-    #members_mobile{
-        display: none;
-    }
-    a:hover{
-        opacity: 0.5;
-    }
-    .members_small{
-        top:20px;
-      width:100%;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-  gap: 18px;
-  left: 50%;
-  transform: translate(-50%);
-  position: relative;
-  border-radius: 8px;
-  z-index: 10;
-  scroll-snap-type: both mandatory;
-    }
-    .large {
-  background: rgba(255, 0, 0, 0.25); 
-  grid-column: auto / span 2; 
-  grid-row: auto / span 2; 
-  height: 200px;
-}
-    .build-square:hover{
-        box-shadow: 0px 5px 15px #7d7d7d4b;
-        border-width:4px;
-        transition: 0.1s;
-    }
-    .bdg{
-        top:20px;
-        right:10px;
-        border-radius: 8px;
-        transform: translateZ(20px);
-        scale:80%;
-        font-size: 25px;
-        position: absolute;
-    }
-    .member{
-        display: none;
-    }
+  .build-holder {
+    left: 50%;
+    transform: translate(-50%, 20px);
+    width: 95%;
+    max-width: 1500px;
+    padding-top: 30px;
+    position: relative;
+  }
+  .members {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    gap: 15px;
+    left: 50%;
+    transform: translate(-50%);
+    position: relative;
+    border-radius: 8px;
+    z-index: 10;
+    scroll-snap-type: both mandatory;
+  }
+  #members_mobile {
+    display: none;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+  .members_small {
+    top: 20px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    left: 50%;
+    transform: translate(-50%);
+    position: relative;
+    border-radius: 8px;
+    z-index: 10;
+    scroll-snap-type: both mandatory;
+  }
+  .large {
+    background: rgba(255, 0, 0, 0.25);
+    grid-column: auto / span 2;
+    grid-row: auto / span 2;
+    height: 200px;
+  }
+  .build-square:hover {
+    box-shadow: 0px 5px 15px #7d7d7d4b;
+    border-width: 4px;
+    transition: 0.1s;
+  }
+  .bdg {
+    top: 20px;
+    right: 10px;
+    border-radius: 8px;
+    transform: translateZ(20px);
+    scale: 80%;
+    font-size: 25px;
+    position: absolute;
+  }
+  .member {
+    display: none;
+  }
 
-    .build{
-        top:200px;
-        position: relative;
-    }
-    .subtitle{
-        left:50px;
-        width:80%;
-        text-align:left;
-        margin-bottom:20px;
-        font-size: 25px;
-    }
-    .color{
-        background: url("/img/header_bg.png");
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   filter:brightness(150%);
-    }
-    .title{
-        text-align:left;
-        width:100%;
-        margin-bottom:15px;
-        font-size: 50px;
-        font-family: Gilroy;
-        position: relative;
-    }
+  .build {
+    top: 200px;
+    position: relative;
+  }
+  .subtitle {
+    left: 50px;
+    width: 80%;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .color {
+    background: url("/img/header_bg.png");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
+  }
+  .title {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 15px;
+    font-size: 50px;
+    font-family: Gilroy;
+    position: relative;
+  }
 
-    @media only screen and (max-width: 1150px) {
-
-        .members{
-        top:20px;
-      width:100%;
+  @media only screen and (max-width: 1150px) {
+    .members {
+      top: 20px;
+      width: 100%;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content:space-evenly;
-  gap: 15px;
-  left: 50%;
-  transform: translate(-50%);
-  position: relative;
-  border-radius: 8px;
-  z-index: 10;
-  scroll-snap-type: both mandatory;
-    } 
-
-    .subtitle{
-        width:90%;
+      justify-content: space-evenly;
+      gap: 15px;
+      left: 50%;
+      transform: translate(-50%);
+      position: relative;
+      border-radius: 8px;
+      z-index: 10;
+      scroll-snap-type: both mandatory;
     }
 
-    .build{
-        top:300px;
+    .subtitle {
+      width: 90%;
     }
 
-    #members{
-        display: none;
-    }
-    #members_small{
-        display: none;
-    }
-    #members_mobile{
-        display: flex;
+    .build {
+      top: 300px;
     }
 
+    #members {
+      display: none;
     }
+    #members_small {
+      display: none;
+    }
+    #members_mobile {
+      display: flex;
+    }
+  }
 </style>
