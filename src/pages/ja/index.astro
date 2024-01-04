@@ -268,11 +268,11 @@ document.addEventListener("DOMContentLoaded", async function () {
 
             // Update the download link if it exists
             if (release.assets.length > 0) {
-                const assetLin = release.assets[0];
+                const assetLin = release.assets[1];
                 downloadLinkLinux.href = assetLin.browser_download_url;
-				const assetWin = release.assets[3]; 
+				const assetWin = release.assets[4]; 
                 downloadLinkWindows.href = assetWin.browser_download_url;
-				const assetMac = release.assets[2];
+				const assetMac = release.assets[3];
                 downloadLinkMacos.href = assetMac.browser_download_url;
             } else {
                 downloadLinkLinux.style.display = "none";

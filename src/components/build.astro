@@ -101,11 +101,11 @@ import { Trans } from "astro-i18next/components";
           "</h2><div>";
         getData.innerHTML +=
           "<div style='width:300px; display:flex; flex-wrap:wrap; gap:5px; position:relative;' class='download'><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[0].browser_download_url +
+          release.assets[1].browser_download_url +
           "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa fa-linux' style='scale:150%; margin-right:15px;'></i>Linux</button></a><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[3].browser_download_url +
+          release.assets[4].browser_download_url +
           "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-microsoft' style='scale:150%; margin-right:15px;'></i>Windows</button></a><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[2].browser_download_url +
+          release.assets[3].browser_download_url +
           "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-apple' style='scale:150%; margin-right:15px;'></i>macOS</button></a></div>";
       } else {
         console.error("Element with id 'release-info' not found.");
