@@ -58,11 +58,10 @@ import { Trans } from "astro-i18next/components";
       const relDate = document.getElementById("relDate").innerHTML;
       const relTotal = document.getElementById("relTotal").innerHTML;
 
-      const nameArray = release.name.split(" ");
       let dateArray = release.published_at.split("T");
       let timeArray = dateArray[1].slice(0, -1);
       dateArray = dateArray[0];
-      let versionNumber = nameArray[2];
+      let versionNumber = release.tag_name;
 
       if (getData) {
         // Update the div
