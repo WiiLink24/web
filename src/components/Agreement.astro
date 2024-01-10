@@ -31,7 +31,8 @@ const posts = (await getCollection("blog")).sort(
 >
 
 <div
-  class="offcanvas offcanvas-end" style="width:100%;"
+  class="offcanvas offcanvas-end"
+  style="width:100%;"
   id="offcanvasTop"
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
@@ -43,21 +44,22 @@ const posts = (await getCollection("blog")).sort(
       aria-label="Close">
     </button>
 
-    <div
-          class="buttons">
-          <a href="/"
-            ><button type="button" class="btn btn-success" style="width:100%; height:60px;"
-              ><i class="fa-solid fa-download"></i></button
-            ></a
-          >
-          <button
-            id="themeColorMobile"
-            type="button"
-            class="btn btn-light"
-            onclick="darkToggle()"
-            ><i class="fa-solid fa-sun"></i></button
-          >
-        </div>
+    <div class="buttons">
+      <a href="/"
+        ><button
+          type="button"
+          class="btn btn-success"
+          style="width:100%; height:60px;"
+          ><i class="fa-solid fa-download"></i></button
+        ></a
+      >
+      <button
+        id="themeColorMobile"
+        type="button"
+        class="btn btn-light"
+        onclick="darkToggle()"><i class="fa-solid fa-sun"></i></button
+      >
+    </div>
 
     <div class="elements">
       <div class="main">
@@ -104,184 +106,209 @@ const posts = (await getCollection("blog")).sort(
 </div>
 
 <style>
-  .my-select-class{
-		top:0;
-		left:0;
-		width:45px;
-		height:42px;
-		font-size:30px;
-		border:0px;
-		display:none;
-		background-color:#ffffff00;
-		position:relative;
-	}
-	.badge{
-		top:20px; 
-		left:230px; 
-		font-size:15px; 
-		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-		position:absolute;
-	}
-	.hide::before{
-  content: "";
-  position: fixed;
-  left: 0;
-  top: 41px;
-  background: linear-gradient(to bottom, #ffffff, transparent);
-  pointer-events: none;
-  width: 100%;
-  height: 50px;
-  animation: fadein 0.1s linear forwards;
-	}
-	.hide2::after{
-  content: "";
-  position: fixed;
-  left: 0;
-  bottom: 73px;
-  background: linear-gradient(to top, #ffffff, transparent);
-  pointer-events: none;
-  width: 100%;
-  height: 50px;
-  animation: fadein 0.1s linear forwards;
-	}
-	@keyframes fadein {
-		0%{
-			opacity:0;
-		}
-		100% {
-			opacity:1;
-		}
-	}
-	#grad{
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
-	}
+  .my-select-class {
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 42px;
+    font-size: 30px;
+    border: 0px;
+    display: none;
+    background-color: #ffffff00;
+    position: relative;
+  }
+  .badge {
+    top: 20px;
+    left: 230px;
+    font-size: 15px;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    position: absolute;
+  }
+  .hide::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 41px;
+    background: linear-gradient(to bottom, #ffffff, transparent);
+    pointer-events: none;
+    width: 100%;
+    height: 50px;
+    animation: fadein 0.1s linear forwards;
+  }
+  .hide2::after {
+    content: "";
+    position: fixed;
+    left: 0;
+    bottom: 73px;
+    background: linear-gradient(to top, #ffffff, transparent);
+    pointer-events: none;
+    width: 100%;
+    height: 50px;
+    animation: fadein 0.1s linear forwards;
+  }
+  @keyframes fadein {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  #grad {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(32, 32, 32, 0.5) 100%
+    );
+  }
 
-.link:hover .underline{
-    height:15px;
+  .link:hover .underline {
+    height: 15px;
     transition: 0.5s;
   }
-  .link{
-    width:100%;
-    padding-right:20px;
+  .link {
+    width: 100%;
+    padding-right: 20px;
   }
-  .underline{
-    bottom:0;
-    left:0;
+  .underline {
+    bottom: 0;
+    left: 0;
     transform: translate(0, -18px);
-    width:100%;
-    height:0px;
+    width: 100%;
+    height: 0px;
     z-index: -1;
     transition: 0.5s;
     background-color: #00000020;
     position: relative;
-
   }
 
-  .optDisplay::-webkit-scrollbar{
-		display:none;
-	}
-
-  .btn{
-    width:auto;
-    position:relative;
+  .optDisplay::-webkit-scrollbar {
+    display: none;
   }
 
-	.btn1{
-		transform: translate(0, 10px);
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
+  .btn {
+    width: auto;
+    position: relative;
+  }
 
-	.btn2{
-		top:50%;
-		left:258px;
-		transform: translate(0, -50%);
-		opacity:0;
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: absolute;
-	}
+  .btn1 {
+    transform: translate(0, 10px);
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 18px;
+    position: relative;
+  }
 
-	.btn3{
-		transform: translate(0, 10px);
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
+  .btn2 {
+    top: 50%;
+    left: 258px;
+    transform: translate(0, -50%);
+    opacity: 0;
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 18px;
+    position: absolute;
+  }
 
-.bannerholder{
-    top:0;
-    left:0;
-	width:100%;
-	height:128px;
-	display:block;
-	background-color: rgba(255, 255, 255, 0);
+  .btn3 {
+    transform: translate(0, 10px);
+    font-size: 20px;
+    margin: 0px;
+    margin-bottom: 18px;
+    position: relative;
+  }
+
+  .bannerholder {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 80;
     transition: 0.5s;
     position: sticky;
-}
+  }
 
-.logo{
-	top:50%;
-	left:50px;
-	transform: translate(0,-50%);
-	filter: invert(1);
-	position: absolute;
-}
+  .logo {
+    top: 50%;
+    left: 50px;
+    transform: translate(0, -50%);
+    filter: invert(1);
+    position: absolute;
+  }
 
-@keyframes fadedown{
-	0%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-	100%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -10px);
-	}
-}
+  @keyframes fadedown {
+    0% {
+      opacity: 0;
+      height: 0px;
+      transform: translate(50px, -15px);
+    }
+    100% {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -10px);
+    }
+  }
 
-@keyframes fadeout{
-	0%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -10px);
-	}
-	100%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-}
+  @keyframes fadeout {
+    0% {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -10px);
+    }
+    100% {
+      opacity: 0;
+      height: 0px;
+      transform: translate(50px, -15px);
+    }
+  }
 
-ul{
-	display: flex;
-	gap:10px;
-	width:auto;
-	right:50px;
-	top:60px;
-	transform: translate(0, -50%);
-	align-items:center;
-	justify-content:center;
-	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	color:rgba(255, 255, 255, 0.53);
-	position: absolute;
-}
+  ul {
+    display: flex;
+    gap: 10px;
+    width: auto;
+    right: 50px;
+    top: 60px;
+    transform: translate(0, -50%);
+    align-items: center;
+    justify-content: center;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: rgba(255, 255, 255, 0.53);
+    position: absolute;
+  }
 
-.banner{
-	font-size:20px;
-	margin-right:20px;
-	mix-blend-mode: difference;
-	color:black;
-    position:relative;
+  .banner {
+    font-size: 20px;
+    margin-right: 20px;
+    mix-blend-mode: difference;
+    color: black;
+    position: relative;
     transition: 0.5s;
-}
+  }
 
   .dropdownbtn {
     top: 20px;
@@ -318,11 +345,11 @@ ul{
     color: inherit;
   }
   .buttons {
-    top:50px;
-    width:100%;
+    top: 50px;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap:20px;
+    gap: 20px;
     position: relative;
   }
   .btn {
@@ -376,7 +403,7 @@ ul{
   .elements {
     top: 50%;
     left: 50%;
-    width:100%;
+    width: 100%;
     transform: translate(-50%, -50%);
     justify-content: space-evenly;
     display: flex;
@@ -384,7 +411,7 @@ ul{
   }
   .offcanvas {
     height: 100%;
-    width:100%;
+    width: 100%;
   }
   .color {
     background: url("/img/header_bg.png");

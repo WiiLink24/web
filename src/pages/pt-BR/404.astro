@@ -47,128 +47,131 @@ changeLanguage("pt-BR");
   />
 </head>
 <body>
+  <div class="symbolholder">
+    <div class="backsymbol" id="movable">
+      <div class="square2" id="square2">
+        <div
+          class="logo"
+          style="height:150px; right:20px; top:20px; filter:invert(1); z-index:1000000000; position:absolute;">
+          <img src="img/logo.png" height="100px" />
+        </div>
 
-<div class="symbolholder">
-	<div class="backsymbol" id="movable">
-		<div class="square2" id="square2">
+        <div class="hold">
+          <div class="error">
+            <h1
+              style="font-family:Gilroy; font-size:150px; text-align:center; color:white;">
+              404
+            </h1>
+            <h3 style="text-align:center; color:white;">
+              {t("404.message")}
+            </h3>
 
-      <div class="logo" style="height:150px; right:20px; top:20px; filter:invert(1); z-index:1000000000; position:absolute;">
-        <img src="img/logo.png" height="100px"/>
+            <a href="/"
+              ><button
+                type="button"
+                class="btn1 btn btn-primary"
+                style="width:300px; bottom:-80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:absolute;"
+                ><i class="fa-solid fa-home"></i> Go home</button
+              ></a
+            >
+          </div>
+
+          <div class="square"></div>
+        </div>
       </div>
-
-  <div class="hold">
-    <div class="error">
-      <h1
-        style="font-family:Gilroy; font-size:150px; text-align:center; color:white;">
-        404
-      </h1>
-      <h3 style="text-align:center; color:white;">
-        {t("404.message")}
-      </h3>
-
-      <a href="/"
-      ><button
-        type="button"
-        class="btn1 btn btn-primary"
-        style="width:300px; bottom:-80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:absolute;"
-        ><i class="fa-solid fa-home"></i> Go home</button
-      ></a
-    >
+      <div class="bottomleftcornerholder">
+        <img class="bottomleftcorner" src="img/corner.png" />
+      </div>
     </div>
-
-    <div class="square"></div>
-    </div>
-  </div>
-  <div class="bottomleftcornerholder">
-    <img class="bottomleftcorner" src="img/corner.png">
-  </div>
-</div>
-
   </div>
 
   <style>
-   	.symbolholder{
-		background-color: var(--bg-color);
-		top:0;
-		left:0;
-		display:flex;
-		align-items:center;
-		justify-content:center;
-		width:100%;
-		height:100%;
-		z-index: 1;
-		overflow: hidden;
-		position: fixed;
-	}
+    .symbolholder {
+      background-color: var(--bg-color);
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      overflow: hidden;
+      position: fixed;
+    }
 
-  .backsymbol {
-		width:calc(100% - 28px);
-		height:calc(100% - 28px);
-		display:flex;
-		align-items:center;
-		justify-content:center;
-		z-index: 1;
-		position: absolute;
-	}
+    .backsymbol {
+      width: calc(100% - 28px);
+      height: calc(100% - 28px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+      position: absolute;
+    }
 
-  .square {
-		--img-invert: 0;
-		width:100%;
-		height:100%;
-		background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
-		z-index: 0;
-		animation: changecolor 10s linear infinite;
-		border-radius: 8px;
-		position: absolute;
-	}
+    .square {
+      --img-invert: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        41deg,
+        rgba(0, 138, 255, 1) 0%,
+        rgba(255, 0, 59, 1) 100%
+      );
+      z-index: 0;
+      animation: changecolor 10s linear infinite;
+      border-radius: 8px;
+      position: absolute;
+    }
 
-  .bottomleftcorner{
-		animation: changecolor 10s linear infinite;
-		position: relative;
-	}
-	.bottomleftcornerholder{
-		left:13px;
-		bottom:13px;
-		scale:31.6%;
-		transform: translate(-106.5%, 107.3%);
-		pointer-events: none;
-		z-index: 2;
-		position: absolute;
-	}
+    .bottomleftcorner {
+      animation: changecolor 10s linear infinite;
+      position: relative;
+    }
+    .bottomleftcornerholder {
+      left: 13px;
+      bottom: 13px;
+      scale: 31.6%;
+      transform: translate(-106.5%, 107.3%);
+      pointer-events: none;
+      z-index: 2;
+      position: absolute;
+    }
 
-  #square2{
-		width: calc(100% - 30px);
-		height: calc(100% - 30px);
-		left:15.5px;
-		top:15.5px;
-		background-color: var(--bg-color);
-		transform: translate(0%, 0%);
-		border-radius: 4px;
-		z-index: 1;
-		scroll-behavior: smooth;
-		overflow-y: scroll;
-		overflow-x: hidden;
-		transition:0.5s;
-		position: absolute;
-	}
+    #square2 {
+      width: calc(100% - 30px);
+      height: calc(100% - 30px);
+      left: 15.5px;
+      top: 15.5px;
+      background-color: var(--bg-color);
+      transform: translate(0%, 0%);
+      border-radius: 4px;
+      z-index: 1;
+      scroll-behavior: smooth;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      transition: 0.5s;
+      position: absolute;
+    }
 
-  @keyframes changecolordark{
-		0%{
-			filter:hue-rotate(0deg) invert(1);
-		}
-		100%{
-			filter:hue-rotate(360deg) invert(1);
-		}
-	}
-	@keyframes changecolor{
-		0%{
-			filter:hue-rotate(0deg);
-		}
-		100%{
-			filter:hue-rotate(360deg);
-		}
-	}
-  
+    @keyframes changecolordark {
+      0% {
+        filter: hue-rotate(0deg) invert(1);
+      }
+      100% {
+        filter: hue-rotate(360deg) invert(1);
+      }
+    }
+    @keyframes changecolor {
+      0% {
+        filter: hue-rotate(0deg);
+      }
+      100% {
+        filter: hue-rotate(360deg);
+      }
+    }
+
     .error {
       left: 50%;
       top: 50%;

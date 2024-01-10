@@ -150,11 +150,13 @@ changeLanguage("en-GB");
 			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
 		
 			<div class="socials">
+				<div style="width:200px; text-align:right;">
 				<a href="https://discord.gg/rc24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
 				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
 				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
 				<a href="https://www.patreon.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}>Patreon<i style="margin-left:10px;" class="fa-brands fa-patreon"></i></div></a>
 				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				</div>
 				<div style="margin-top:15px;">
 				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
 				<a href={localizePath("/404")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
@@ -323,7 +325,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 		transform: translate(0, -50%);
 		color:white;
 		font-size: 23px;
-		width:200px;
+		width:220px;
 		justify-content:right;
 		display: flex;
 		flex-wrap: wrap;
@@ -452,7 +454,6 @@ document.addEventListener("DOMContentLoaded", async function () {
 		scroll-behavior: smooth;
 		overflow-y: scroll;
 		overflow-x: hidden;
-		transition:0.5s;
 		position: absolute;
 	}
 	.footer{
