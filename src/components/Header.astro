@@ -201,16 +201,37 @@ const { isGuide, isMain } = Astro.props;
 <script is:inline>
 const themeColorButton = document.getElementById('themeColor');
 const languageOverride = localStorage.getItem('languageOverride');
-const savedMode = localStorage.getItem('color-mode');
 
+// Listener to check and set theme preference
 document.addEventListener('DOMContentLoaded', function () {
 
-	// Check user preference
-if (savedMode === 'dark') {
-    enableDarkMode();
-  } else {
-    enableLightMode();
-  }
+	// If color-mode has no setting, we will set it through localStorage
+	if (localStorage.getItem('color-mode') === null) {
+		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+			localStorage.setItem('color-mode', 'dark');
+		} else {
+			localStorage.setItem('color-mode', 'light');
+		}
+	}
+
+	const savedMode = localStorage.getItem('color-mode');
+
+	// Now we can get the savedMode and guarantee it, setting the theme accordingly (or if we couldn't check, fallback to light)
+	if (savedMode === 'dark') {
+		enableDarkMode();
+	} else {
+		enableLightMode();
+	}
+
+	// We will then add another listener that will listen for changes and update
+	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+		if (event.matches) {
+			enableDarkMode();
+		} else {
+			enableLightMode();
+		}
+	});
+
 });
 
   // Function to enable dark mode
