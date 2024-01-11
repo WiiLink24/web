@@ -577,7 +577,7 @@ ___
 </div>
 
 
-<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
+<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/rc24"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
 
 <script>
     function displayErrorMessage() {
