@@ -35,7 +35,7 @@ ___
 
 <l class="notice info fullwidth">The `WiiLink SPD` file should have either `(Wii)` or `(vWii)` in its name depending on the Console you're installing it on.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Kirby TV Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Kirby TV Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 

@@ -1,7 +1,7 @@
 ---
 title: TV Guide Channel
 pubDate: 2023-09-08
-icon: fa-solid fa-gamepad
+icon: fa-solid fa-tv
 ---
 ## A TV Guide Schedule, right on your Wii!
 
