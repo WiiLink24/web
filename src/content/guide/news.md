@@ -1,15 +1,13 @@
 ---
-title: Check Mii Out Channel
-pubDate: 2023-09-09
-icon: fa-solid fa-angles-up
+title: News Channel
+pubDate: 2021-01-29
+icon: fa-solid fa-newspaper
 ---
-## Create & Share Miis for the whole wide world!
+## Read News Articles on your Wii!
 
-- Explore Miis in a single convient place!
+- Get access to news headlines and current news events obtained from the Internet.
 
-- Import any Mii that you want to keep on your console!
-
-- Vote for your favorites, or send some Miis in yourself to share!
+- Have the location where the article takes place in on the Globe.
 ___
 ## Installation Guide
 
@@ -31,14 +29,23 @@ ___
 
 4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
 
-5. Highlight the WAD `Check Mii Out Channel (RiiConnect24)` or `Mii Contest Channel (RiiConnect24)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
+5. Highlight the WAD `News Channel (RiiConnect24)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 
 <l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Check Mii Out Channel (RiiConnect24)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `News Channel (RiiConnect24)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
-<l class="notice success fullwidth center">Congrats! You've installed the Check Mii Out Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
+<l class="notice success fullwidth center">Congrats! You've installed the News Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
 ___
 ## Troubleshooting & Questions
+
+"I'm getting `Error Code: NEWS000006` on vWii, What do I do?"
+> This could mean 1 out of 2 things.
+> 1. If you didn't install the TimeStamp Patch for your vWii, Please Read the [vWii Installation Guide.](/guide/install/#vwii)
+> 2. The News Channel is under mainteance, if so, please be patiant as it will take some time.
+
+
+"I'm getting Error Code: 107245, What do I do?"
+> You'll need to install a Patched IOS31 from the RiiConnect24 Patcher.

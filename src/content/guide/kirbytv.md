@@ -6,8 +6,11 @@ icon: fa-solid fa-circle
 ## Watch episodes of the "Kirby: Right Back at Ya!" Anime on your Wii!
 
 - Initially a European-Only Channel, now Region Free for the whole world!
+
 - Episodes 1 - 55 of the series are available on the Kirby TV Channel!
+
 - An Episode is regularly replaced after 3 days of showing.
+
 - Unlock Keys to view Locked Episodes for 24 Hours!
 ___
 ## Installation Guide
@@ -32,7 +35,7 @@ ___
 
 5. Highlight the WAD with `Kirby TV Channel (WiiLink)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Kirby TV Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Kirby TV Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
@@ -44,4 +47,4 @@ ___
 > This means that an error has occurred on the server side of things, Episodes may not be available at this time.
 
 ### "Will the rest of the series be on this Channel?"
-> Unfortunetly, we currently have no plans on showing the rest of the series on this Channel.
+> Unfortunately, we currently have no plans on showing the rest of the series on this Channel.

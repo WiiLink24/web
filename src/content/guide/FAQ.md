@@ -46,7 +46,7 @@ ___
 
    > Updating WiiLink channels is the exact same as installing! Simply run the WiiLink Patcher once more, and install the created WADs.
 
-"I’m recieving error -1022 when trying to install WiiLink WADs on my WAD Manager!"
+"I’m recieving Error -1022/Error -1029 when trying to install WiiLink WADs on my WAD Manager!"
 
    > Whenever this happens, just press - and then A on the Wii Remote to uninstall the channel(s). Afterwards, reinstall the channel(s) from your WAD directory.
     If the problem persists, please bring up the issue in support on our Discord server and we will try to help you.

@@ -57,7 +57,7 @@ ___
 
 <l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Forecast Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Forecast Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
@@ -65,7 +65,7 @@ ___
 ___
 ## Troubleshooting & Questions
 
-### "Im getting Error Code '00006' on my console!"
+### "Im getting Error Code 'FORE00006' on my console!"
 
 > This problem is caused by vWii users not properly generating a timestamp for their consoles PriiLoader hacks. Simply refollow the `PriiLoader Setup` part of the guide, and try again once you're finished.
 
