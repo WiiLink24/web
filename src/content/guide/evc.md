@@ -12,11 +12,6 @@ icon: fa-solid fa-square-poll-vertical
 - Partake in Worldwide polls alongside other users of the service!
 
 - Propose your own polls and echo your questions to everyone!
-
-![img](https://raw.githubusercontent.com/WiiLink24/web/main/public/img/EVC_Banner.webp)
-</br>
-
-<l class="notice info fullwidth"> This software is included with your regular WiiLink install, however, if you wish to migrate your poll data from RiiConnect24 over to WiiLink, you'll need to use the EVC Transfer Tool and follow the instructions below. </l>
 ___
 
 ## Installation Guide
@@ -39,45 +34,20 @@ ___
 
 4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
 
-5. Highlight the WADs with `Everybody Votes Channel (WiiLink)` and `Region Select` as its name and press + to select it. When it is selected, press A twice to install the WADs.
+5. Highlight the WADs with `Everybody Votes Channel (RiiConnect24)` and `Region Select` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 
 <l class="notice info fullwidth">Both WAD names might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Everybody Votes Channel (WiiLink)` or `Region Select`, uninstall the channels by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Everybody Votes Channel (RiiConnect24)` or `Region Select`, uninstall the channels by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
 <l class="notice success fullwidth">Congrats! You've installed the Everybody Votes Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
 
-<l class="notice info fullwidth">If you would like to migrate your poll data from RiiConnect24 over to WiiLink, please use the EVC Transfer Tool by following the instructions below.</l>
 ___
-
-## We're moving! - How to Transfer your Data
-
-* Please ensure that the EVC Transfer Tool (obtained via our [patcher](https://github.com/WiiLink24/WiiLink24-Patcher)) is in the "apps" folder of your SD Card.
-
-1. Open the application inside the Homebrew Channel.
-
-2. Run the application and follow the on-screen instructions.
-
-3. Install the Everybody Votes Channel and Region Select channel using the provided WAD installer or the one of your choice.
-
-4. Return to the Wii Menu and open the Everybody Votes Channel.
-
-#### With any luck, you'll be up and running!
-
-* Here is an Infographic for people with reading issues, such as Dyslexia.
-
-<img src="https://raw.githubusercontent.com/nami1yt/web/main/public/img/Switch_Providers_Inforgraphic.png" data-canonical-src="https://raw.githubusercontent.com/nami1yt/web/main/public/img/Switch_Providers_Inforgraphic.png" width="517" height="297" />
-
-___
-
-## Important Notices!
-<l class="notice danger">If you change the region of your Wii, any previous data will be permanently erased.</l>
-
-<l class="notice danger">If you want to take advantage of the new languages, you will need to erase your data.</l>
-
-<l class="notice warn">To use custom regions, you must use AnyGlobeChanger.</l>
+## Troubleshooting & Questions
+"I'm getting `Error Code: 239001`, what do i do?"
+>You'll need to install a Patched IOS31 from the RiiConnect24 Patcher.
 ___
 ## Language Support
 
@@ -577,7 +547,7 @@ ___
 </div>
 
 
-<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
+<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/rc24"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
 
 <script>
     function displayErrorMessage() {

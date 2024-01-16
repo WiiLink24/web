@@ -73,7 +73,7 @@ You will now install the Food Delivery Channel and Set Personal Data channels.
 
 6. Press `A` to install the selected WADs.
 
-<l class="notice info fullwidth"> If you happen to get `Error -1022` when installing `Food Channel (Domino's) (English).wad`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD. </l>
+<l class="notice info fullwidth"> If you happen to get `Error -1022/Error -1029` when installing `Food Channel (Domino's) (English).wad`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD. </l>
 
 #### Section IV - Setting your address information
 

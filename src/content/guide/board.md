@@ -20,11 +20,11 @@ ___
 </div>
 </br>
 
-<l class="notice info fullwidth"> This software is included with your regular WiiLink install, if you wish to switch from RiiConnect24's Mail Service over to WiiLink, you'll need to use the WiiLink Mail Patcer and follow the instructions below. </l>
+<l class="notice info fullwidth">This software is included with your regular WiiLink install, if you want to continue using the RiiConnect24's Mail Service, Please follow this guide.</l>
 
 <l class="notice generic fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
 
-1. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
+1. Open the RiiConnect24 Mail Patcher application inside the Homebrew Channel.
 
 2. Follow the on-screen instructions.
 
@@ -35,10 +35,5 @@ ___
 
 ## Troubleshooting & Questions
 
-### Im Getting `Error Code: -50130`, What should I do?
-
-> Run a Connection Test on your Wii, If it's Successful, Run the Patcher again. If it Fails, Use a Different Internet Connection.
-
-### I'm getting `Error Code: -110211` What should I do?
-
->If you ran the patcher for the first time and got that error. Open a Support Thread on our Discord Server and We'll happily help you resolve the issue. 
+"Can I just use the WiiLink Mail Patcher and follow this guide, if I can't, then why?"
+> The WiiLink Mail Patcher has been discontinued, so if you're using this app, Please delete the app, then use the RiiConnect24 Mail Patcher

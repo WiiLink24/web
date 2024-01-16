@@ -1,7 +1,7 @@
 ---
 title: Nintendo Channel
 pubDate: 2021-01-29
-icon: fa-solid fa-tv
+icon: fa-solid fa-gamepad
 ---
 ## Enjoy Nintendo Content and other features in one channel!
 
@@ -37,7 +37,7 @@ ___
 
 <l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Nintendo Channel (WiiLink)` or "Minna no Nintendo Channel (WiiLink)", uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Nintendo Channel (RiiConnect24)` or "Minna no Nintendo Channel (RiiConnect24)", uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 

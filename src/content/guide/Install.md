@@ -31,22 +31,22 @@ heroImage: "../../img/guidebg-1.png"
 
 ### vWii (Wii U) ONLY
 
-<l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise,[skip to Section I.](#section-i---patching-wads)</l>
+<l class="notice warn">If you're on vWii and are downloading the WiiConnect24 services, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
 
 
-1. Download the Priiloader `.zip` file from [here](https://oscwii.org/library/app/priiloader)
-2. Unzip the Priiloader `.zip` file and copy the apps folder to your SD Card or USB Drive.
-3. Download the LoadPriiloader.zip from [here](https://oscwii.org/library/app/LoadPriiloader).
-4. Unzip the LoadPriiloader `.zip` file and copy the apps folder to your SD Card or USB Drive.
+1. Download the `Priiloader.zip` file from [here](https://oscwii.org/library/app/priiloader)
+2. Unzip the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
+3. Download the `LoadPriiloader.zip` from [here](https://oscwii.org/library/app/LoadPriiloader).
+4. Unzip the `LoadPriiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
 5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
 6. Follow the instructions on the page then copy the result.
 7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file and proceed to `Step 9`
+8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
 9. Launch `Priiloader`.
 10. Follow the installation steps.
 11. Launch `Load Priiloader`
 12. Using your Wii Remote, go to `System Menu Hacks`.
-13. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. Feel free to enable others.
+13. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. (Feel free to enable others.)
 14. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
 15. Return to the system menu.
 

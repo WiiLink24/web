@@ -57,7 +57,7 @@ ___
 
 <l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
-<l class="notice generic fullwidth">If you happen to get `Error -1022` when installing `Forecast Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Forecast Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
 6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
@@ -65,7 +65,7 @@ ___
 ___
 ## Troubleshooting & Questions
 
-### "Im getting Error Code '00006' on my console!"
+### "Im getting Error Code 'FORE00006' on my console!"
 
 > This problem is caused by vWii users not properly generating a timestamp for their consoles PriiLoader hacks. Simply refollow the `PriiLoader Setup` part of the guide, and try again once you're finished.
 
@@ -545,7 +545,7 @@ ___
 </div>
 
 
-<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/wiilink-750581992223146074"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
+<div id="error-message" style="left:50%; width:500px; transform:translate(-50%, 0); margin-top:100px; margin-bottom:100px; text-align:center; display: none; flex-wrap:wrap; gap:15px; align-items:center; justify-content:center; position:relative;"><i class="fa-solid fa-heart-crack" style="font-size:100px;"></i>Well, this is odd... Your country isn't here. How about you ask about it on our Discord?</br> <a href="https://discord.gg/rc24"><div class="btn btn-primary" style="padding:10px;"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</div></a></div>
 
 <script>
     function displayErrorMessage() {
