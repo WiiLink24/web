@@ -121,7 +121,7 @@ If you have used the standard version of the Food Delivery Channel before, go to
 
 ***Happy ordering!***
 ___
-<l class="notice info fullwidth"> If you need help for anything regarding this tutorial, please join the [WiiLink Discord Server](https://discord.com/invite/reqUMqxu8D). </l>
+<l class="notice info fullwidth"> If you need help for anything regarding this tutorial, please join the [WiiLink Discord Server](https://discord.gg/rc24). </l>
 
 <l class="notice warn fullwidth"> Currently, only the USA and Canada are supported for Dominos on the Food Channel. </l>
 
