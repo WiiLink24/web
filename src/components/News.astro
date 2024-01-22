@@ -14,7 +14,7 @@ const posts = (await getCollection("blog")).sort(
           <a href={`/news/${post.slug}/`}>
             <FormattedDate date={post.data.pubDate} />
             <div class="faded" />
-            <img class="heroImage" src={post.data.heroImage} />
+            <img loading="lazy" class="heroImage" src={post.data.heroImage} />
             <div class="title">
               <>
                 <img class="authimage" src={post.data.authImage} alt="" />

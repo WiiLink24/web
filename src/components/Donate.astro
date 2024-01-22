@@ -41,7 +41,7 @@ import { Trans } from "astro-i18next/components";
               ><i class="fa-brands fa-discord"></i> Discord access</span
             >
           </h5>
-          <img class="donate-image" src="img/tier_1.png" />
+          <img loading="lazy" class="donate-image" src="img/tier_1.png" />
         </a>
       </div>
       <div class="build-square tier-2">
@@ -69,7 +69,7 @@ import { Trans } from "astro-i18next/components";
               ><i class="fa-brands fa-discord"></i> Discord access</span
             >
           </h5>
-          <img class="donate-image" src="/img/tier_2.png" />
+          <img loading="lazy" class="donate-image" src="/img/tier_2.png" />
         </a>
       </div>
       <div class="build-square tier-3">
@@ -110,7 +110,7 @@ import { Trans } from "astro-i18next/components";
               ><i class="fa-brands fa-discord"></i> Discord access</span
             >
           </h5>
-          <img class="donate-image" src="img/tier_3.png" />
+          <img loading="lazy" class="donate-image" src="img/tier_3.png" />
         </a>
       </div>
       <div class="build-square tier-4">
@@ -150,7 +150,7 @@ import { Trans } from "astro-i18next/components";
               ><i class="fa-brands fa-discord"></i> Discord access</span
             >
           </h5>
-          <img class="donate-image" src="img/tier_4.png" />
+          <img loading="lazy" class="donate-image" src="img/tier_4.png" />
         </a>
       </div>
     </div>
@@ -171,6 +171,7 @@ import { Trans } from "astro-i18next/components";
       style="top:-15px; right:20px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;">
       <Trans i18nKey="donate.powered">Powered by</Trans>
       <img
+        loading="lazy"
         class="stripe-logo"
         src="img/stripe_logo.png"
         style="transform:translate(0, -2px);"
