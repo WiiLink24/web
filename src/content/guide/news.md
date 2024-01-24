@@ -1,6 +1,6 @@
 ---
 title: News Channel
-pubDate: 2021-01-29
+pubDate: 2024-01-24
 icon: fa-solid fa-newspaper
 ---
 ## Read News Articles on your Wii!
@@ -15,13 +15,13 @@ ___
 <div style="display:flex; gap:18px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4></div>
 
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> RiiConnect24 + WiiLink Patcher</button></a>
 </div>
 </br>
 
-1. Download the latest version of the WiiLink Patcher for your operating system.
+1. Download the latest version of the RiiConnect24 + WiiLink Patcher for your operating system.
 
-2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
+2. Launch the patcher and go through the "Express Install Setup" to start the download process.
 
 <l class="notice generic fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
 

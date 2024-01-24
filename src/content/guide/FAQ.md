@@ -1,7 +1,7 @@
 ---
 title: Frequently asked questions
 icon: fa-solid fa-circle-question
-pubDate: 2023-09-24
+pubDate: 2024-01-24
 description: Some frequently asked questions you might be interested in...
 heroImage: "../../img/guidebg-2.png"
 ---
@@ -14,6 +14,7 @@ Why WiiLink?
         We’ve made Wii no Ma and the Digicam Print Channel functional once more.
         We’re hard at work on the Demae Channel, letting you order food directly from your Wii.
     With our service, you can experience all of these once more on your Nintendo Wii - possibly for the first time.
+    After our merger with RiiConnect24, we also offer the full suite of WiiConnect24 channels!
 
 Why does WiiLink exist?
 
@@ -58,24 +59,3 @@ ___
 
 </br>
 ___
-
-## WiiConnect24
-
-#### WiiLink’s plans for a WiiConnect24 service.
-
-"Is your service a replacement for services such as RiiConnect24?"
-
-   > No! This service is designed to be a companion to RiiConnect24, providing exclusive Japanese and streaming services, though some channels will be able to replace them (such as the Check Mii Out and Everybody Votes Channels)
-
-"Why is WiiLink developing WiiConnect24?"
-
-   > Having a fresh approach to existing methods is important. For example, doing our own research can lead to important developments.
-    Developing for WiiConnect24 channels allows a fresh look into its functionality, allowing important resources like WiiBrew to be updated.
-
-"WiiConnect24 services are already provided by other projects - why WiiLink?"
-
-   > We believe we can offer a fresh, new, and exciting spin on what WiiConnect24 channels can provide!
-
-"Will WiiLink’s offering conflict with existing services?"
-
-   > If you already have existing services (such as RiiConnect24) on your console, don’t fret! You won’t have to install our versions of the software offered by them, and you can continue using them as you already are. This is not directly meant to be a replacement (albeit you may use it as such), and as such we just ask you to look at this as yet another addition to the WiiLink services line.
