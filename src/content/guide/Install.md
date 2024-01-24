@@ -61,10 +61,10 @@ heroImage: "../../img/guidebg-1.png"
 
 1. Visit the [RiiConnect24 + WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
 2. On Windows, run `RC24_WiiLink_Patcher_Windows_v2.X.X.exe`. <br>
-On MacOS, right click the `RC24_WiiLink_Patcher_macOS_v2.X.X` file in Finder and click Open. <br>
+On MacOS, right click the `RC24_WiiLink_Patcher_macOS-<arch>_v2.X.X` file in Finder and click Open. <br>
 On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/RC24_WiiLink_Patcher_Linux-<arch>_v2.X.X`
 
-> **For Linux Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture.
+> **For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture.
 
 3. Choose your installation setup:
     - Press `1` for `Express Install Setup`. Follow the steps below:
@@ -79,7 +79,7 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
         3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
 4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
 5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
+6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `RiiConnect24 + WiiLink Patcher` file to your SD Card or USB Device.
 
 ### Section II - Installing WADs
 
@@ -114,12 +114,12 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 3. Replace the Placeholder info with the Following:
 
 * `Your First and Last Name`
-* `Your Phone Number`
+* `Your Phone Number (country code FIRST, phone number afterwards)`
 * `Your City`
 * `Your Home Address`
 * `Your Zip Code`
 
-(Make Sure you **Put it in Correctly** or it **Will not Work!**)
+(Make Sure you **Put it in Correctly** or it **Will not Work!** Use the example data in the settings as a template to put your information in correctly.)
 
 4. Press `Ok` and then `Done`
 5. Once you are in the SPD main menu, choose `Demae` in the `Choose Channel` menu.
