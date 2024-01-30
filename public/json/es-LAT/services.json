@@ -1,4 +1,4 @@
-{
+﻿{
   "services": {
     "service": [
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "demae_icon.png",
         "completed": "80"
       },
@@ -74,7 +74,7 @@
         "link": "/guide/tvnotomo",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Beta privada",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "tvnotomo_icon.png",
         "completed": "50"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Inicialmente en ciertos países de Europa",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "kirby_icon.png",
         "completed": "60"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "digicam_icon.png",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "room_icon.png",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/spd",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "room_icon.png",
         "completed": "85"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/mail",
         "isArea": "En todas las regiones",
         "status": "Versión completa",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "room_icon.png",
         "completed": "85"
       },
@@ -140,7 +140,7 @@
         "link": "/guide/primepreview",
         "isArea": "Inicialmente en América y Europa",
         "status": "Previsto",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "room_icon.png",
         "completed": "8"	
       },
@@ -151,7 +151,7 @@
         "link": "/guide/dokodemo",
         "isArea": "Inicialmente exclusivo de Japón",
         "status": "Previsto",
-        "todo": "Vuelve más tarde...",
+        "todo": "Regresa más tarde...",
         "icon": "room_icon.png",
         "completed": "15"
       }
