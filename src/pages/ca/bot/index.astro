@@ -1,0 +1,10 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("ca");
+---
+
+<script is:inline>
+    // Redirect user to bot authentication page
+    window.location.href = 'https://discord.com/api/oauth2/authorize?client_id=817845740154912768&permissions=2147485696&scope=applications.commands+bot';
+</script>
