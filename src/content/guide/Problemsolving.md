@@ -28,7 +28,7 @@ heroImage: "../../img/guidebg-3.png"
 
 <div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/rc24" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support</a> if you continue to experience issues.</h4><hr></div>
 
-<div class="error">Error Code: 50130 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your Internet Connection to your Wii is working by doing a Connection Test. if it's Successful, run the Patcher again. If it Fails, Use a different Internet Connection.</h4><hr></div>
+<div class="error">Error Code: 51330 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your Internet Connection to your Wii is working by doing a Connection Test. if it's Successful, run the Patcher again. If it Fails, Use a different Internet Connection.</h4><hr></div>
 
 <div class="error">Error Code: 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/rc24" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 
