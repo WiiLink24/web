@@ -33,10 +33,42 @@ ___
 <l class="notice success fullwidth">Congrats! You've installed the Wii Mail Service on your Console! You can use the service to your hearts content once again!</l>
 ___
 
+## Receiving Mail from the service
+
+<l class="notice info fullwidth">This step is optional, but it's recommended so you can get news about the service on your Wii. </l>
+
+1. Go to the Wii Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
+
+2. Make your way to the "Auto-Obtain DNS" setting.
+
+<l class="notice info fullwidth">Take note that the "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
+
+3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
+
+Set your Primary DNS to --> 167.86.108.126 <br>
+Set your Secondary DNS to --> 1.1.1.1
+
+4. After you get done setting up the DNS, Save the changes and let the system perform the Connection Test.
+
+5. If the Connection Test is successful, make your way back to the second page of the system settings.
+
+<l class="notice generic fullwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
+
+6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
+
+7. then go back to the "Internet" page, but select "User Agreements", then Select "Yes".
+
+8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service.
+
+9. Once you read the EULA, Click on "I Accept".
+
+<l class="notice success fullwidth">Congrats! You've getting news about the service on the Wii Message Borad! You can stay informed about the service once again!</l>
+___
+
 ## Troubleshooting & Questions
 
 "Can I just use the WiiLink Mail Patcher and follow this guide, if I can't, then why?"
-> The WiiLink Mail Patcher has been discontinued. If you're using this app, please delete the app, then use the RiiConnect24 Mail Patcher.
+> The WiiLink Mail Patcher has been discontinued. If you're using the app, please delete the app, then use the RiiConnect24 Mail Patcher.
 
 "I'm getting error -110211 or another error when trying to use the RiiConnect24 Mail Patcher, or I may have been a former user of the WiiLink Mail service.
 > Please join the RiiConnect24 Discord Server for support, you may need to have your Wii Number removed on the database side in order to remedy this issue.

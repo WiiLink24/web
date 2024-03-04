@@ -38,7 +38,7 @@ ___
 
 #### Section II - Registering your Console ID
 
-1. After completing the setup process, go to the [**WiiLink Discord server**](https://discord.com/invite/reqUMqxu8D) to register your Wii's console ID.
+1. After completing the setup process, go to the [**WiiLink Discord server**](https://discord.gg/wiilink) to register your Wii's console ID.
 
 2. Use the `Get Console ID` Homebrew App that was given by the patcher. This is used to retrieve your system's Console ID.
 
@@ -70,7 +70,7 @@ You will now install the Food Delivery Channel and Set Personal Data channels.
 
 #### Section IV - Setting your address information
 
-> WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](https://theoldnet.com/get?url=https%3A%2F%2Fdemae.wiilink24.com%2Fprivacypolicy&year=2022&scripts=false&decode=false). (Currently archived, as new page is being worked on)
+> WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).
 
 <l class="notice warn fullwidth"> You are responsible for entering your correct address information. Failure to do so may result in orders not succeeding. </l>
 
@@ -82,8 +82,8 @@ In this section you will be setting your address information. This is required f
 Otherwise, click the `Change Address Information` button in the main menu.
 
 3. Now you are in the Address Information menu. Press the arrows to traverse screens. Here you will enter your data. When you are finished, click the `Done` button and then `Demae`.<br><br>
-![imgcaroussel](/public/img/guide/spd-1.png)
-![imgcaroussel](/public/img/guide/spd-1.png)
+![imgcaroussel](/img/guide/spd-1.png)
+![imgcaroussel](/img/guide/spd-2.png)
 
 #### Section V - Placing an order
 
@@ -96,10 +96,10 @@ If you have used the standard version of the Food Delivery Channel before, go to
 1. Launch the Food Delivery Channel (aka. Food Channel) from the Wii Menu
 
 2. Follow the on-screen instructions, then click `Order` in the main menu.<br><br>
-![img2](/public/img/guide/success.png)<br><br>
+![img2](/img/guide/success.png)<br><br>
 
 3. You will now be prompted to select your region. Be sure to select your residing country correctly. Failure to do so will result in restaurants failing to load. You will then be prompted to select your state/province, then city. If your city is not on the list, you can select any one as it does not matter.<br><br>
-![img2](/public/img/guide/country-setup.png)<br><br>
+![img2](/img/guide/country-setup.png)<br><br>
 
 4. Click the `Pizza` button. This will load all the restaurants in your area. The first restaurant in the list is the one closest to you.
 
@@ -108,13 +108,13 @@ If you have used the standard version of the Food Delivery Channel before, go to
 6. After adding a food item, you will be brought to the basket. To add a food item, scroll to the bottom and select `Add Order`. To proceed to checkout, click `Next`.
 
 7. Review your order throughly before placing the order. When you are ready, click the big green `Order` button.<br><br>
-![img2](/public/img/guide/order.png)<br><br>
+![img2](/img/guide/order.png)<br><br>
 
 8. If no error appeared, your order was placed successfully! To track your order, simply visit the Domino's Tracker for your region and enter the phone number you entered in the Address Information menu.
 
 ***Happy ordering!***
 ___
-<l class="notice info fullwidth"> If you need help for anything regarding this tutorial, please join the [WiiLink Discord Server](https://discord.gg/rc24). </l>
+<l class="notice info fullwidth"> If you need help for anything regarding this tutorial, please join the [WiiLink Discord Server](https://discord.gg/wiilink). </l>
 
 <l class="notice warn fullwidth"> Currently, only the USA and Canada are supported for Dominos on the Food Channel. </l>
 
