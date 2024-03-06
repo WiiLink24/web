@@ -1,16 +1,8 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import HeaderSmall from "../components/HeaderSmall.astro";
-import { SITE_TITLE } from '../consts';
-import Layout from "../layouts/Layout.astro";
 import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
-import i18next from "i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
-import HeaderMain from './HeaderMain.astro';
-import { LanguageSelector } from "astro-i18next/components";
 
 const { isGuide, isMain } = Astro.props;
 ---
@@ -18,6 +10,9 @@ const { isGuide, isMain } = Astro.props;
 <Agreement/>
 
 <r lang={i18next.language} class="bannerholder">
+	<div id="loadingindicator" style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;"></div>
+	<img id="loadingspinner" src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
+
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
 	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
 	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
@@ -39,7 +34,7 @@ const { isGuide, isMain } = Astro.props;
 					<div class="optDisplay" id="optionsDisplay" style="height:200px; width:200px; overflow-y:scroll; position:relative;"></div>
 				  <li><hr class="dropdown-divider"></li>
 				  <p style="left:50%; transform:translate(-50%, 0); width:90%; color:black; margin:0; position:relative;">
-					Do you want to contribute?</br> <a href="https://discord.gg/rc24" style="text-decoration:underline; color:#5685F2;"><i class="fa-brands fa-discord"></i> Join our Discord!</a>
+					Do you want to contribute?</br> <a href="https://discord.gg/wiilink" style="text-decoration:underline; color:#5685F2;"><i class="fa-brands fa-discord"></i> Join our Discord!</a>
 				  </p>
 				</form>
 				</ul>
@@ -59,6 +54,29 @@ const { isGuide, isMain } = Astro.props;
 </r>
 
 <script is:inline>
+
+let loadingindicator = document.getElementById("loadingindicator");
+    loadingindicator.style.width = "0%";
+    loadingspinner = document.getElementById("loadingspinner");
+
+      loadingindicator.style.display = "block";
+	  loadingspinner.style.display = "block";
+
+    let increaseWidth = setInterval(() => {
+      let currentWidth = parseInt(loadingindicator.style.width);
+      if (currentWidth < 80) {
+        loadingindicator.style.width = currentWidth + 1 + "%";
+      }
+    }, 100);
+
+    window.addEventListener("load", () => {
+      clearInterval(increaseWidth);
+      loadingindicator.style.width = "100%";
+      setTimeout(() => {
+        loadingindicator.style.opacity = "0";
+        loadingspinner.style.display = "none";
+      }, 500);
+    });
 
         document.addEventListener('DOMContentLoaded', function () {
 

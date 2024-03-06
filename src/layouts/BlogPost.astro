@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import type { CollectionEntry } from 'astro:content';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Loading from '../components/Loading.astro';
 import News from '../components/News.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import i18next, { t, changeLanguage } from "i18next";
@@ -17,7 +16,6 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 <html lang="en">
 
 <Layout title={`WiiLink - ${t("newsPost.name")} (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
-<Loading msg={title} img={heroImage}/>
 
 	<Header isGuide="display:none;"/>
 <div class="article-holder">
