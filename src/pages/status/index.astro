@@ -90,8 +90,14 @@ changeLanguage("en-US");
 
     function showService(data) {
       let services = document.getElementById("postholder");
+      let display = "display:block;";
 
       for (let i = 0; i < data.services.service.length; i++) {
+        if (data.services.service[i].icon) {
+          data.services.service[i].icon = data.services.service[i].icon;
+        } else {
+          display = "display:none;";
+        }
         services.innerHTML +=
           "<a href='" +
           data.services.service[i].link +
@@ -99,27 +105,27 @@ changeLanguage("en-US");
           i +
           ")'  onmouseout='noEffect(" +
           i +
-          ")' class='service' style='height:350px; border: 2px solid " +
+          ")' class='service' style='height:100%; border: 2px solid " +
           data.services.service[i].color +
           "20; border-radius:16px; animation: 0.2s " +
           (30 + i * 5) +
-          "0ms slideup linear forwards; box-shadow:0px 0px 20px #12121240; opacity:0; margin:15px; overflow:hidden;'><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='/img/" +
+          "0ms slideup linear forwards; box-shadow:0px 0px 20px #12121240; opacity:0; overflow:hidden;'><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='/img/" +
           data.services.service[i].icon +
-          "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-size:30px; font-family:Gilroy; position:relative;'>" +
+          "' style='object-fit:contain; " + display + "' width='50px' height='50px'><h2 style='top:-3px; left:20px; font-size:30px; font-family:Gilroy; position:relative;'>" +
           data.services.service[i].name +
           "</h2><h3 style='left:72px; top:35px; font-size:15px; opacity:1; position:absolute;'> <span class='badge stat'>" +
           data.services.service[i].status +
           "</span> <l style='transform:translate(0, 5px); opacity:0.5;'>" +
           data.services.service[i].isArea +
-          "</l></h3></div><div class='barhold' style='top:35px; left:50%; transform:translate(-50%, 0); width:95%; height:20px; border-radius:18px; background-color:" +
+          "</l></h3></div><div class='barhold' style='top:35px; left:50%; transform:translate(-50%, 0); width:95%; height:15px; border-radius:18px; background-color:" +
           data.services.service[i].color +
-          "20; overflow:hidden; position:relative;'><div class='bar' style='height:20px; width:" +
+          "20; overflow:hidden; position:relative;'><div class='bar' style='height:15px; width:" +
           data.services.service[i].completed +
           "%; background-color:" +
           data.services.service[i].color +
           "; border-radius:0px;'></div></div><h3 style='top:50px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
           data.services.service[i].desc +
-          "</h3><h3 style='top:40px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
+          "</h3><h3 style='margin-top:60px; left:50%; width:90%; transform:translate(-50%, 0); background-color:#00000010; padding:15px; border-radius:8px; font-size:20px; font-weight:200; position:relative;'>" +
           data.services.service[i].todo +
           "</h3></div></a>";
         if (
@@ -382,8 +388,9 @@ changeLanguage("en-US");
     transform: translate(-50%, 0);
     max-width: 1550px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-rows: 1fr;
+    gap: 30px;
     top: 30px;
     position: relative;
     z-index: 10;

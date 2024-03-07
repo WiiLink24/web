@@ -18,9 +18,9 @@
         "desc": "Quickly catch up on the latest news from around the world and see exactly where it's happening.",
         "link": "/guide/news",
         "isArea": "International",
-        "status": "Planned",
+        "status": "Full Release",
         "icon": "news_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch english provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch foreign language provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more news sources",
         "completed": "100"
       },
       {
@@ -40,7 +40,7 @@
         "desc": "Become a Mii Artisan and show the world your Mii design skills in a wide range of contests.",
         "link": "/guide/cmoc",
         "isArea": "International",
-        "status": "Planned",
+        "status": "Full Release",
         "icon": "miicontest_icon.png",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > We are aware of an issue impacting contests and are workong on a fix.",
         "completed": "80"
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "Check back later...",
+        "todo": "",
         "icon": "demae_icon.png",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/guide/tvnotomo",
         "isArea": "Originally Japan exclusive",
         "status": "Private Beta",
-        "todo": "Check back later...",
+        "todo": "",
         "icon": "tvnotomo_icon.png",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originally certain European countries",
         "status": "Full Release",
-        "todo": "Check back later...",
+        "todo": "",
         "icon": "kirby_icon.png",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "Check back later...",
+        "todo": "",
         "icon": "digicam_icon.png",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "Check back later...",
+        "todo": "",
         "icon": "room_icon.png",
         "completed": "85"
       },
@@ -118,8 +118,8 @@
         "link": "/guide/spd",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
+        "todo": "",
+        "icon": "",
         "completed": "100"
       },
       {
@@ -130,7 +130,7 @@
         "isArea": "Region Free",
         "status": "Full Release",
         "todo": "Some messages may fail to send. We are aware of the issue and are working on a fix.",
-        "icon": "room_icon.png",
+        "icon": "",
         "completed": "100"
       },
       {
@@ -139,9 +139,9 @@
         "desc": "View <i>Metroid Prime 3: Corruption</i> content.",
         "link": "/guide/primepreview",
         "isArea": "Originally America and Europe",
-        "status": "Planned",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
+        "status": "Halted",
+        "todo": "",
+        "icon": "",
         "completed": "8"
       },
       {
@@ -150,9 +150,9 @@
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
         "link": "/guide/dokodemo",
         "isArea": "Originally Japan exclusive",
-        "status": "Planned",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
+        "status": "Halted",
+        "todo": "",
+        "icon": "",
         "completed": "15"
       }
     ]
