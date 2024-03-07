@@ -4,7 +4,6 @@ import Header from '../components/Header.astro';
 import '../styles/global.css';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import Sidebar from '../components/GuideSidebar.astro'
-import Loading from '../components/Loading.astro';
 import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from 'astro:content';
 import i18next, { t, changeLanguage } from "i18next";
@@ -17,7 +16,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } = Astro.prop
 <html lang={i18next.language}">
 	<Layout title={`WiiLink - ${t("guidePost.name")} (${title})`} description={`${title} - ${description}`} image="/img/Guide_embed.png" />
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<Loading msg={title} />
 <body>
 	<main>
 		<Sidebar />

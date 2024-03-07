@@ -15,8 +15,8 @@ const posts = (await getCollection("blog")).sort(
 <a
   href={localizePath("/")}
   class="logohold"
-  style="top:60px; left:-20px; position:absolute;"
-  ><img class="logo" src=" /img/Wii_Link_Logo.png" width="190px" /></a
+  style="top:50px; left:-25px; position:absolute;"
+  ><img class="logo" src=" /img/Wii_Link_Logo.png" width="140px" /></a
 >
 <button
   style="z-index:1000;"
@@ -92,14 +92,6 @@ const posts = (await getCollection("blog")).sort(
           ><div style="background-color:rgb(203, 229, 124);" class="underline">
           </div>
         </div>
-        <a class="link" href="/extras"
-          ><div
-            class="btn btn-danger"
-            style="right:20px; width:200px; transform:translate(0, 1px); padding:18px; position:absolute;">
-            <i class="fa-solid fa-box-open" style="margin-right:5px;"></i>
-            {t("header.extras")}
-          </div></a
-        >
       </div>
     </div>
   </div>

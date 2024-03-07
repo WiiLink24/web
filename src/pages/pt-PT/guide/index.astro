@@ -6,7 +6,6 @@ import "../../../styles/global.css";
 import Footer from "../../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
-import Loading from "../../../components/Loading.astro";
 import FormattedDate from "../../../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
@@ -21,7 +20,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   description={t("guide.mainDesc")}
   image="/img/Guide_embed.png"
 />
-<Loading />
 <Header isGuide="display:none;" />
 
 <body>
