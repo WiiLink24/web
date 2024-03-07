@@ -42,7 +42,7 @@
         "isArea": "International",
         "status": "Planned",
         "icon": "miicontest_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
+        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > We are aware of an issue impacting contests and are workong on a fix.",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "International",
         "status": "Under Maintenance",
         "icon": "democracy_icon.png",
-        "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > Fix Error Codes",
+        "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > We are aware of an issue regarding data transmission errors and are working on a fix.",
         "completed": "80"
       },
       {
@@ -129,7 +129,7 @@
         "link": "/guide/mail",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "Check back later...",
+        "todo": "Some messages may fail to send. We are aware of the issue and are working on a fix.",
         "icon": "room_icon.png",
         "completed": "100"
       },
