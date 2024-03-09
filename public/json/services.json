@@ -9,7 +9,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "forecast_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more Cities",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "news_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more news sources",
+        "todo": "<i class='fa fa-triangle-exclamation'></i> Some <b>foreign news sources</b> may not respond as expected. We are aware of the issue and are working on a fix.",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "nintendo_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Include WiiLink original content <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Include Nintendo original content",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "miicontest_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > We are aware of an issue impacting contests and are workong on a fix.",
+        "todo": "<i class='fa fa-triangle-exclamation'></i> We are aware of an issue <b>impacting contests</b> and are working on a fix.",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "International",
         "status": "Under Maintenance",
         "icon": "democracy_icon.png",
-        "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > We are aware of an issue regarding data transmission errors and are working on a fix.",
+        "todo": "<i class='fa fa-triangle-exclamation'></i> Some users may experience <b>Error Code 239001</b>, we are working on a backend fix. <br> To get it working right now, delete the save data.",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "demae_icon.png",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/guide/tvnotomo",
         "isArea": "Originally Japan exclusive",
         "status": "Private Beta",
-        "todo": "",
+        "todo": "<i class='fa fa-hard-hat'></i> This service is still under development",
         "icon": "tvnotomo_icon.png",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originally certain European countries",
         "status": "Full Release",
-        "todo": "",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "kirby_icon.png",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "digicam_icon.png",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "room_icon.png",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/spd",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/mail",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "Some messages may fail to send. We are aware of the issue and are working on a fix.",
+        "todo": "<i class='fa fa-triangle-exclamation'></i> Some messages may <b>fail to send</b>. We are aware of the issue and are working on a fix.",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/guide/primepreview",
         "isArea": "Originally America and Europe",
         "status": "Halted",
-        "todo": "",
+        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/guide/dokodemo",
         "isArea": "Originally Japan exclusive",
         "status": "Halted",
-        "todo": "",
+        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
         "icon": "",
         "completed": "15"
       }
