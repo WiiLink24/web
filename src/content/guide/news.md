@@ -42,10 +42,7 @@ ___
 ## Troubleshooting & Questions
 
 "I'm getting `Error Code: NEWS000006` on vWii, What do I do?"
-> This could mean 1 out of 2 things.
-> 1. If you didn't install the TimeStamp Patch for your vWii, Please Read the [vWii Installation Guide.](/guide/install/#vwii)
-> 2. The News Channel is under mainteance, if so, please be patiant as it will take some time.
-
+> This problem is caused by vWii users not properly generating a timestamp for their consoles PriiLoader hacks. Simply refollow the `PriiLoader Setup` part of the guide, and try again once you're finished.
 
 "I'm getting Error Code: 107245, What do I do?"
 > You'll need to install a Patched IOS31 from the RiiConnect24 Patcher.

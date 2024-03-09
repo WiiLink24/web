@@ -31,8 +31,7 @@ heroImage: "../../img/guidebg-1.png"
 
 ### vWii (Wii U) ONLY
 
-<l class="notice warn">If you're on vWii and are downloading the WiiConnect24 services, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
-
+<l class="notice warn">If you're on vWii and plan on installing the RiiConnect24 services, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
 
 1. Download the `Priiloader.zip` file from [here](https://oscwii.org/library/app/priiloader)
 2. Unzip the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
@@ -88,6 +87,7 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 3. Launch yawmME (YAWM ModMii Edition).
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
 5. If your Wii is not a Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
+
 6. Highlight all other WADs with `WiiLink` or `RiiConnect24` in the name and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 

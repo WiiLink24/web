@@ -26,31 +26,47 @@ import { Trans } from "astro-i18next/components";
           >
           <img loading="lazy" class="socials-logo" src="img/twitter_logo.png" height="40px" />
           <div class="buttons">
-            <a href="https://twitter.com/WiiLink_es"
-              ><div class="btn">
-                <img
-                  loading="lazy"
-                  src="https://em-content.zobj.net/source/twitter/376/flag-spain_1f1ea-1f1f8.png"
-                  width="20px"
-                  height="20px"
-                />
-              </div></a
-            >
-            <a href="https://twitter.com/WiiLink_jp"
-              ><div class="btn">
-                <img
-                  loading="lazy"
-                  src="https://em-content.zobj.net/source/toss-face/381/flag-japan_1f1ef-1f1f5.png"
-                  width="20px"
-                  height="20px"
-                />
-              </div></a
-            >
-            <a href="https://twitter.com/WiiLink24"
-              ><div style="color:#289bff;" class="btn">
+            <div class="dropdown" style="width:100%; position:relative; ">
+              <button
+                class="btn btn-primary dropdown-toggle"
+                style="margin-bottom:8px; width:100%; position:relative; color:#289bff"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              > 
                 {t("socials.twFollow")}
-              </div></a
-            >
+              </button>
+              <ul
+                class="dropdown-menu"
+                style="width:250%; padding:10px; background-color:rgb(31, 31, 31);"
+              >
+                <li>
+                  <a class="dropdown-item center" href="https://twitter.com/WiiLink24"
+                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" width="20" height="25"></i> English</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_es"
+                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg" width="20" height="25"></i> Español</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_fr"
+                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg" width="20" height="25"></i> Français</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_ptbr"
+                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg" width="20" height="25"></i> Português (Brasil)</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_jp"
+                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" width="20" height="25"></i> 日本語</a
+                  >
+                </li>
+              </ul>
+          </div>
           </div>
         </div>
         <div
@@ -81,7 +97,7 @@ import { Trans } from "astro-i18next/components";
         </div>
         <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
           <iframe
-            src="https://discord.com/widget?id=750581992223146074&theme=dark"
+            src="https://discord.com/widget?id=206934458954153984&theme=dark"
             style="top:-20px; position:absolute;"
             width="100%"
             height="580px"
@@ -169,6 +185,19 @@ import { Trans } from "astro-i18next/components";
     z-index: 1;
     position: relative;
   }
+  .dropdown-item {
+      color: white;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  .dropdown-item:hover {
+    background-color: #ffffff10;
+    color: white;
+     transition: 0.3s;
+  }
+  .dropdown-toggle::after {
+    display: none;
+   }
   .inner {
     top: 50%;
     left: 10px;
@@ -246,7 +275,7 @@ import { Trans } from "astro-i18next/components";
     background-color: #289bff;
     box-shadow: 0px 5px 10px #289bff40;
     border-radius: 8px;
-    overflow: scroll;
+    overflow: visible;
     position: relative;
   }
   .twitter::-webkit-scrollbar {
@@ -263,6 +292,7 @@ import { Trans } from "astro-i18next/components";
     border-radius: 8px;
     overflow: hidden;
     position: relative;
+    z-index:-1;
   }
   .slider::before {
     background: linear-gradient(
