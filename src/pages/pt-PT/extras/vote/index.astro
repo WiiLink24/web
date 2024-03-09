@@ -1,0 +1,75 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../../layouts/layout.astro";
+import Header from "../../../../components/header.astro";
+import Footer from "../../../../components/footer.astro";
+
+changeLanguage("pt-PT");
+---
+
+<Layout title="EVC Poll Results - WiiLink" />
+<Header isGuide="display:none;" />
+<div
+  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
+  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
+  the RiiConnect24 site
+</div>
+<div class="section no-pad-bot">
+  <div class="container">
+    <h1 class="header center">
+      <i class="fas fa-comments" aria-hidden="true"></i> Everybody Votes Channel
+    </h1>
+    <h2 class="header center">Poll Results</h2>
+    <div class="row center">
+      <h5 class="header col s12">
+        You can find poll results from all polls in the Everybody Votes Channel
+        here.
+      </h5>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <div class="row center">
+      <p>Whose results do you want to view?</p>
+      <div
+        class="collection"
+        style="left:50%; width:95%; max-width:1180px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
+        <a href="/goodies/vote/nintendo.html" class="collection-item"
+          ><h3 class="center">Nintendo</h3></a
+        >
+        <a href="https://vt.wii.rc24.xyz/" class="collection-item"
+          ><h3 class="center">RiiConnect24</h3></a
+        >
+      </div>
+      <p style="margin-top:30px;">You might be interested in seeing Miitomo questions too.</p>
+      <div
+        class="collection"
+        style="left:50%; width:95%; max-width:1180px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
+        <div class="collection-item">
+          <a
+            href="https://gist.github.com/jaames/1b14264e322855fb5a67d4d934e95e5f"
+            ><h3 class="center">Miitomo</h3></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<Footer />
+
+<style>
+  .collection-item {
+    border-radius: 8px;
+    border: 2px solid #ffffff20 !important;
+    box-shadow: 0px 0px 28px #ffffff00 !important;
+    transition: 0.3s;
+  }
+
+  .collection-item:hover {
+    transform: translate(0, -5px);
+    box-shadow: 0px 0px 28px #ffffff20;
+    transition: 0.3s;
+  }
+</style>
