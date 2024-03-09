@@ -8,13 +8,13 @@ heroImage: "https://i.ytimg.com/vi/6xwWYOo6E-k/maxresdefault.jpg?sqp=-oaymwEmCIA
 
 ### Check the local and international forecasts on your Wii.
 
-<p style="color:white;">The Forecast Channel works with WiiLink, and you can view the forecasts for several hundreds
+The Forecast Channel works with WiiLink, and you can view the forecasts for several hundreds
       of cities. You can also view your local forecast on the Wii Menu. We use <a
         href="https://accuweather.com/">AccuWeather</a> as the weather source, unlike <a
-        href="https://global.weathernews.com">Weathernews</a> that Nintendo used.</p>
+        href="https://global.weathernews.com">Weathernews</a> that Nintendo used.
 
-<p style="color:white;">Some games have compatibility with the Forecast Channel. To see
-          the status of which ones are working with WiiLink, <a href="/services/forecast-stats">click here.</a></p>
+Some games have compatibility with the Forecast Channel. To see
+          the status of which ones are working with WiiLink, <a href="/services/forecast-stats">click here.</a>
 <hr>
 <h4><i class="fab fa-youtube" aria-hidden="true"></i> Watch Video</h4>
 

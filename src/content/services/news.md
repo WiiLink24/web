@@ -8,7 +8,6 @@ heroImage: "https://i.ytimg.com/vi/vP70ioijK6U/maxresdefault.jpg"
 
 ### Read news on your Wii.
 
-<div style="font-family:system-ui; color:white;">
 The News Channel works with RiiConnect24, and you can read news in 7 different languages depending on what
 language your Wii is set to. They all have the location where the article takes place in on the Globe
 (location data comes from <a href="https://developers.google.com/maps/">Google Maps API</a>) and has
@@ -20,7 +19,6 @@ We have tried to pick the best news sources for each language, and especially lo
 included a location in the article. That's because we want the article to appear on the Globe! We've also
 searched for sources that send out enough news.
 <br>
-</div>
 <br>
 
 ### List of news sources

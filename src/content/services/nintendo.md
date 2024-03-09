@@ -7,9 +7,7 @@ heroImage: "https://nindb.net/wii/nintendo-channel/img/screenshot.jpg"
 ---
 ### Watch videos, get information about games, recommend titles, download DS software, and more.
 
-<p class="light" style="font-family:system-ui; color:white;">
-      The Nintendo Channel lets you view over 1000 videos, information on games, and send recommendations!
-    </p>
+The Nintendo Channel lets you view over 1000 videos, information on games, and send recommendations!
 
 
 
