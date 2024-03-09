@@ -25,7 +25,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   <Header isGuide="display:none;" />
   <body>
     <main>
-      <img class="topImage" src={heroImage} />
+      <img class="topImage" id="topImage" src={heroImage} />
       <div class="titlehold">
         <FormattedDate pre="Last updated on: " date={pubDate} />
         <div class="title">
@@ -51,6 +51,17 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     </main>
     <Footer />
     <script is:inline>
+      // On scroll down, hide the element with id "topImage"
+      window.onscroll = function () {
+        if (window.scrollY > 1) {
+          document.getElementById("topImage").style.opacity = "0.2";
+          document.getElementById("topImage").style.filter = "blur(16px)";
+        } else {
+          document.getElementById("topImage").style.opacity = "0.7";
+          document.getElementById("topImage").style.filter = "blur(8px)";
+        }
+      };
+
       window.onload = function () {
         const container1 = document.getElementById("container1");
         const container2 = document.getElementById("container2");
@@ -130,6 +141,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
           transparent 58%
         );
         position: fixed;
+        transition: 0.2s;
       }
 
       .head {
@@ -196,8 +208,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         left: 50%;
         transform: translate(-50%, 0);
         border: 2px solid rgba(255, 0, 0, 0.055);
-        background-color: rgba(200, 200, 200, 0.099);
-        backdrop-filter: blur(8px);
+        background-color: rgba(235, 224, 224, 0.453);
+        backdrop-filter: blur(16px);
         perspective: 1px;
         scroll-behavior: smooth;
         border-radius: 8px;
