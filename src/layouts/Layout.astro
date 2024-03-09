@@ -47,14 +47,14 @@ const { title, description, image } = Astro.props;
 <meta property="og:url" content={Astro.url} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
+<meta property="og:image" content={image} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={Astro.url} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={new URL(image, Astro.url)} />
+<meta property="twitter:image" content={image} />
 
 <html lang="en">
   <head>
@@ -125,7 +125,7 @@ const { title, description, image } = Astro.props;
   html.dark h5 {
     color: white;
   }
-  html.dark p {
+  html.dark p
     color: white;
   }
   html.dark ol {
@@ -142,6 +142,12 @@ const { title, description, image } = Astro.props;
   }
   html.dark .title {
     color: #ffffff;
+  }
+  html.dark .desc {
+    color: #ffffff;
+  }
+  html.dark .post {
+    background-color: #ffffff10;
   }
   html.dark .generic {
     color: #ffffff;

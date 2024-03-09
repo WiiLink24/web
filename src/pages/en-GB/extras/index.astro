@@ -46,7 +46,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       </h3>
     </div>
 
-    <div id="slide-track"></div>
+    <div id="slide-track" class="postholder"></div>
     <h3
       style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
       <Trans i18nKey="extras.helpCall">
@@ -91,20 +91,19 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       let services = document.getElementById("slide-track");
 
       for (let i = 0; i < data.goodies.goodie.length; i++) {
-        services.innerHTML +=
-          "<a style='color:rgb(34,37,41); text-decoration:none;' href='#'><div onmouseover='effect(" +
-          i +
-          ")'  onmouseout='noEffect(" +
-          i +
-          ")' class='service' style='height:200px; width:auto; border-radius:16px; border:2px solid #70707040; background-color:#121212; box-shadow:0px 0px 20px #00000020; margin:15px; opacity:0; overflow:hidden; animation: 0.2s " +
-          (30 + i * 5) +
-          "0ms slideup linear forwards; z-index:10;'><h4 style='top:20px; left:20px; width:140px; padding:5px; padding-left:10px; padding-right:10px; color:white; border-radius:58px; font-size:15px; background-color:#12121220; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:10000; position:relative;'>Coming soon! <i class='fa-solid fa-box'></i></h4><div style='top:50px; width:auto; height:110px; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); background-color:#12121260; z-index:10000; position:relative;'><h2 style='top:20px; left:28px; color:white; font-size:30px; font-family:Gilroy; z-index:1; position:relative;'>" +
-          data.goodies.goodie[i].title +
-          "</h2> <h3 style='top:15px; left:28px; width:90%; font-size:25px; color:white; font-weight:200; display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; text-overflow:ellipsis; z-index:1; position:relative;'>" +
-          data.goodies.goodie[i].desc +
-          "</h3></div><img  class='img' src='" +
-          data.goodies.goodie[i].img +
-          "' style='bottom:146px; left:0; width:100%; height:100%; transform:scale(105%); object-fit:cover; z-index:0; position:relative;'></div></a>";
+        services.innerHTML += `<div class="posthold">
+            <div class="post">
+              <a href="${data.goodies.goodie[i].link}">
+                <img class="heroImage" src="${data.goodies.goodie[i].img}" />
+                <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                  <div class="title">
+                    ${data.goodies.goodie[i].title}
+                  </div>
+                  <div class="desc">${data.goodies.goodie[i].desc}</div>
+                </div>
+              </a>
+            </div>
+          </div>`;
       }
     }
   });
@@ -199,17 +198,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     gap: 10px;
     z-index: 1000;
     position: relative;
-  }
-  #slide-track {
-    left: 50%;
-    width: 90%;
-    transform: translate(-50%, 0);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
-    gap: 0px;
-    position: relative;
-    padding-bottom: 50px;
-    z-index: 10;
   }
   .dots {
     top: -50px;
@@ -449,23 +437,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     position: absolute;
     gap: 20px;
-    top: 120px;
+    top: 40px;
     left: 50%;
     transform: translate(-50%, 0);
     position: relative;
-    padding-bottom: 300px;
-    z-index: 10;
-  }
-
-  .postholdermini {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    position: absolute;
-    gap: 20px;
-    left: 50%;
-    transform: translate(-50%, 0px);
-    position: relative;
+    padding-bottom: 30px;
     z-index: 10;
   }
 
@@ -782,5 +758,110 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       filter: opacity(0.1) invert(0);
       position: absolute;
     }
+  }
+</style>
+
+<style is:global>
+  .posthold {
+    transform: translate(0, 0px);
+    filter: drop-shadow(0px 0px 20px #70707056);
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .posthold:hover {
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 20px #37373756);
+    transition: 0.5s;
+  }
+
+  .post {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: #00000010;
+    border-radius: 8px;
+    font-family: Gilroy;
+    display: inline-block;
+    hyphens: auto;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .post:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    z-index: 1;
+    border-radius: 18px;
+    border: solid 10px transparent;
+  }
+
+  .post:hover .title {
+    color: white;
+  }
+
+  .post:hover .desc {
+    color: white;
+  }
+
+  .post:hover {
+    box-shadow: 0px 5px 20px #ffffff05;
+    transition: 0.5s;
+  }
+
+  .post:hover .heroImage {
+    filter: blur(4px) brightness(0.5) grayscale(0);
+    scale: 110%;
+    opacity: 1;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    scale: 120%;
+    filter: blur(4px) brightness(0.7) grayscale(0.7);
+    opacity: 0;
+    object-fit: cover;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .title {
+    width: auto;
+    z-index: 11;
+    font-size: max(20px, 30px);
+    text-align: right;
+    margin-bottom: 15px;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+  }
+
+  .desc {
+    font-family: inter;
+    font-size: 20px;
+    text-align: right;
+    transition: 0.5s;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+
+  .title {
+    color: black;
+  }
+
+  .desc {
+    color: black;
   }
 </style>

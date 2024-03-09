@@ -1,0 +1,37 @@
+---
+title: Everybody Votes Channel - Guatemala Spanish Results
+---
+	<div class="section no-pad-bot">
+		<div class="container">
+			<br><br>
+			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/2.8.0/css/flag-icon.min.css" />
+			<h1 class="header center"><i class="fas fa-comments" aria-hidden="true"></i> Everybody Votes Channel</h1>
+			<h2 class="header center"><span class="flag-icon flag-icon-gt"></span> Guatemala Spanish Results</h2>
+			<br><br>
+		</div>
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<h3 class="center">Results</h3>
+
+		  {% for poll in site.data.votes.results_030 %}
+			<h5>{{ poll.date }}:</h5>
+			<br>
+			<p>{{ poll.poll.question.spanish }}</p>
+			<br>
+			<font color="#FD5AFC">{{ poll.poll.response_1.spanish }}</font>: {{ poll.results.total_response_1 }}%<br>
+			<font color="#2DE155">{{ poll.poll.response_2.spanish }}</font>: {{ poll.results.total_response_2 }}%<br>
+			<br>
+			Detailed Results:<br>
+			<br>
+			Results by Gender:<br>
+			<br>
+			Male: <font color="#FD5AFC">{{ poll.results.male_response_1 }}%</font> <font color="#2DE155">{{ poll.results.male_response_2 }}%</font><br>
+			Female: <font color="#FD5AFC">{{ poll.results.female_response_1 }}%</font> <font color="#2DE155">{{ poll.results.female_response_2 }}%</font><br>
+			<br>
+			National Prediction Accuracy: <font color="#006E7D">{{ poll.results.accurate_predict }}%</font><br>
+			<br>
+			{% endfor %}
+		</div>
+	</div>

@@ -1,0 +1,155 @@
+<script>
+function round2(v) { return Math.round(v*100)/100; }
+function isHold(h, v, c) { return (h & v) ? c : ""; }
+
+function UpdateWiiRemote()
+{
+	for (i=0; i<4; i++)
+	{
+		var pad = opera.wiiremote.update(i);
+		var mes = "";
+		if (pad.isDataValid && pad.isDataValid)
+		{
+			mes += "Coordinates ";
+			if (pad.dpdScreenX == undefined || pad.dpdScreenY == undefined)
+			{
+				mes += "( --- , --- )<br>";
+			}
+			else
+			{
+				mes += "( " + pad.dpdScreenX + " , " + pad.dpdScreenY + " )<br>";
+			}
+			var hold = pad.hold;
+            var rad = Math.atan2(pad.dpdRollY, pad.dpdRollX);
+            mes += "Slant : " + round2(rad * 180 / Math.PI) + "Degree<br>";
+            mes += "Distance : " + round2(pad.dpdDistance) + "<br>";
+			mes += "Button : " +
+					isHold(hold, 1, "&larr;") +
+            		isHold(hold, 2, "&rarr;") +
+                	isHold(hold, 4, "&darr;") +
+                    isHold(hold, 8, "&uarr;") +
+                    isHold(hold, 4096, "+") +
+                    isHold(hold, 16, "+") +
+                    isHold(hold, 256, "2") +
+                    isHold(hold, 512, "1") +
+                    isHold(hold, 1024, "B") +
+                    isHold(hold, 2048, "A");
+        }
+        else
+        {
+        	mes = "Not connected";
+        }
+        document.getElementById("p"+i).innerHTML = mes;
+    }
+}
+
+function StartTimer()
+{
+	if (window.opera && window.opera.wiiremote)
+	{
+		setInterval('UpdateWiiRemote()', 100);
+	}
+	else
+	{
+		document.getElementById("message").innerHTML = "This sample runs correctly only when viewed on the Internet Channel.";
+	}
+}
+</script>
+<style type="text/css">
+.linecolor {
+	background-color: #999999;
+}
+.spec_1 {
+	padding: 6px 10px 6px;
+	font-size: 12px;
+	line-height: 1.3;
+	color: #555555;
+	background-color: #F0FBFF;
+	white-space: nowrap;
+}
+.spec_2 {
+	padding: 6px 10px 6px;
+	font-size: 12px;
+	line-height: 1.3;
+	color: #555555;
+	background-color: #FFFFFF;
+	white-space: nowrap;
+}
+a{
+	color: #63697b;
+}
+a:hover{
+	color:#00c1ed;
+	text-decoration:underline;
+}
+</style>
+</head>
+<body onLoad="StartTimer();">
+<h1 class="center">Sample Page Using the Advanced Features of the Internet Channel</h1>
+<div align="center">
+  <div style="width:525px; text-align:left; padding:35px 0 0;">
+  This is a sample page that obtains and displays the Wii remote status every 0.1 seconds.<br>
+  <span class="actually-red"><span id="message"></span></span><br>
+  <br>
+  <table cellpadding="0" cellspacing="0" border="0" width="525">
+    <tr>
+      <td width="525" class="linecolor">
+        <table width="100%" border="0" cellspacing="1" cellpading="2">
+          <tr>
+            <th class="spec_1">1P</th><th class="spec_1">2P</th>
+          </tr>
+          <tr>
+            <td id="p0" style="background-color: #CCCCFF;" width="25%" class="spec_2">----</td>
+            <td id="p1" style="background-color: #FFCCCC;" width="25%" class="spec_2">----</td>
+          </tr>
+          <tr>
+            <th class="spec_1">3P</th><th class="spec_1">4P</th>
+          </tr>
+          <tr>
+            <td id="p2" style="background-color: #CCFFCC;" width="25%" class="spec_2">----</td>
+            <td id="p3" style="background-color: #FFFFCC;" width="25%" class="spec_2">----</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  </DIV>
+
+</DIV>
+</div>
+<!---->
+</div></td>
+    </tr>
+  </table></td>
+</tr>
+</table>
+</div>
+</div>
+
+<div id="global_footer">
+
+(Disclaimer)
+<ul>
+	<li>
+	This company will give absolutely no legal guarantee regarding this expanded function, including ownership of fixed marketability, ownership of compatibility for specific purpose, no damage to 3rd party intellectual property (patent, copyright, trademark, etc).
+	</li>
+	<li>
+	This company will take absolutely no responsibility for any kind of damages sustained due to use of this expanded function.
+	</li>
+	<li>
+	This company does not grant any kind of rights for parties using this expanded function.
+	</li>
+	<li>
+	This company will provide no support whatsoever for this expanded function.
+	</li>
+</ul>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top"><table width="913" border="0" align="center" cellpadding="0" cellspacing="0">
+<tr>
+<div class="copyright_text_footer">&copy; 2007 Nintendo. &trade;, &reg; &amp; the Wii logo are trademarks of Nintendo. Games are property of their respective owners.</div>
+</tr>
+</table></td>
+</tr>
+</table>
