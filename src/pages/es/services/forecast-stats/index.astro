@@ -1,0 +1,66 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../../layouts/layout.astro";
+import Header from "../../../../components/header.astro";
+import Footer from "../../../../components/footer.astro";
+
+changeLanguage("es");
+---
+
+<Layout title="EVC Poll Results - WiiLink" />
+<Header isGuide="display:none;" />
+<div
+  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
+  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
+  the RiiConnect24 site
+</div>
+	<div class="section no-pad-bot">
+		<div class="container">
+			<h1 class="header center"><i class="fas fa-chart-bar" aria-hidden="true"></i> List of Games that work with the Forecast Channel</h1>
+			<div class="row center">
+				<h5 class="header center col s12">This tells you which games are currently working with the Forecast Channel. If it's working, the game will make use of the latest forecast in-game.</h5>
+			</div>
+			<audio autoplay>
+				<source src="/sounds/wiimenureserved.wav" type="audio/wav">
+				Your browser does not support the audio element.
+			</audio>
+			<br><br>
+		</div>
+	</div>
+	<div class="section">
+		<div class="container">
+			<div class="row center">
+				<ul class="collection">
+					<li class="collection-item">
+						<h5>Mario & Sonic at the Olympic Winter Games</h5>
+					</li>
+					<li class="collection-item">
+						<h5>My Aquarium</h5>
+					</li>
+					<li class="collection-item">
+						<h5>My Aquarium 2</h5>
+					</li>
+					<li class="collection-item">
+						<h5>NiGHTS: Journey of Dreams</h5>
+					</li>
+					<li class="collection-item">
+						<h5>Rilakkuma: Minna de Goyururi Seikatsu</h5>
+					</li>
+					<li class="collection-item">
+						<h5>Tiger Woods PGA Tour 10</h5>
+					</li>
+					<li class="collection-item">
+						<h5>Tiger Woods PGA Tour 11</h5>
+					</li>
+					<li class="collection-item">
+						<h5>Tiger Woods PGA Tour 12: The Masters</h5>
+					</li>
+					<li class="collection-item">
+						<h5>Wii no Ma</h5>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<Footer />
