@@ -12,7 +12,7 @@ import { Trans } from "astro-i18next/components";
 
 changeLanguage("es");
 
-const posts = (await getCollection("services")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const posts = (await getCollection("services")).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <Layout
