@@ -47,10 +47,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
           <div class="posthold">
             <div class="post">
               <a href={`/services/${post.slug}/`}>
-                <FormattedDate
-                  pre="Last updated on: "
-                  date={post.data.pubDate}
-                />
                 <img class="heroImage" src={post.data.heroImage} />
                 <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
                   <div class="title">
