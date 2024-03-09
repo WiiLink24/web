@@ -38,7 +38,7 @@
         "color": "#F1E3C1",
         "name": "Check Mii Out Channel",
         "desc": "Become a Mii Artisan and show the world your Mii design skills in a wide range of contests.",
-        "link": "/guide/cmoc",
+        "link": "/guide/miicontest",
         "isArea": "International",
         "status": "Full Release",
         "icon": "miicontest_icon.png",
