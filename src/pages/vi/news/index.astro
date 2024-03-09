@@ -640,24 +640,51 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   @media only screen and (max-width: 1000px) {
     .postholder {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      position: absolute;
+      width: 95%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: column;
       gap: 0px;
-      top: 50px;
-      left: 0;
-      transform: translate(0, 0);
-      overflow: hidden;
+      top: 20px;
       position: relative;
-      padding-bottom: 200px;
+      padding-bottom: 60px;
       z-index: 10;
     }
 
     .post {
+      -webkit-mask-image: none;
+      mask-image: none;
       margin-top: 20px;
       margin-bottom: 0;
+      filter: drop-shadow(0px 0px 0px rgba(50, 50, 0, 0.5));
+      border-radius: 8px;
       height: 200px;
+    }
+
+    .post:hover .heroImage {
+      filter: blur(8px) brightness(0.3) !important;
+      rotate: 0deg;
+      scale: 110%;
+      z-index: 0;
+      transition: 0.3s;
+    }
+
+    .title-small {
+      width: auto;
+      height: auto;
+      z-index: 11;
+      font-size: max(20px, 30px);
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      text-align: center;
+      text-decoration: none;
+      color: #181818;
+      line-height: 30px;
+      font-family: Gilroy;
+      transition: 0.5s;
+      position: relative;
     }
 
     .postholdermini {
@@ -668,15 +695,32 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
     .postmini {
       position: relative;
-      height: 150px;
+      height: 100px;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      background-color: rgb(247, 247, 247);
-      border-radius: 15px;
+      background-color: rgba(247, 247, 247, 0.019) !important;
+      border-radius: 0px;
       font-family: Gilroy;
       hyphens: auto;
       overflow: hidden;
-      border: 2px solid rgba(215, 215, 215, 0.066);
+      border: 0px solid rgba(215, 215, 215, 0.066);
       transition: 0.5s;
+      display: none;
+    }
+
+    .postmini:hover {
+      transform: translate(0, 0px);
+      box-shadow: 0px 0px 0px rgb(209, 209, 209);
+      border: 0px solid rgba(161, 159, 159, 0.252);
+      transition: 0.5s;
+    }
+
+    .postmini:nth-child(n + 5) {
+      display: flex;
+    }
+
+    .dateRemove {
       display: none;
     }
 
@@ -695,10 +739,14 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       display: none;
     }
 
+    .fade-small {
+      display: none;
+    }
+
     .post:hover {
-      transform: translate(0, 0px) scale(105%);
-      box-shadow: 0px 5px 20px rgb(187, 187, 187);
-      transition: 0.2s;
+      transform: translate(0, 0px) scale(102%);
+      box-shadow: 0px 0px 0px rgb(187, 187, 187);
+      transition: 0.5s;
     }
 
     .post:hover .heroImage {
@@ -706,20 +754,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       rotate: 0deg;
       scale: 110%;
       z-index: 0;
-      transition: 0.2s;
-    }
-
-    .post:hover .title {
-      bottom: 60%;
-      transform: translate(0, 50%);
-      transition: 0.2s;
-    }
-
-    .post:hover .desc {
-      bottom: 48%;
-      opacity: 1;
-      transform: translate(0, 100%);
-      transition: 0.2s;
+      transition: 0.3s;
     }
   }
 

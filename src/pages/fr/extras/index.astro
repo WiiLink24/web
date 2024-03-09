@@ -729,16 +729,32 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   @media only screen and (max-width: 1000px) {
+    .postholder {
+      width: 95%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      position: absolute;
+      gap: 10px;
+      top: 20px;
+      padding-bottom: 0px;
+      overflow: visible;
+      position: relative;
+      z-index: 10;
+    }
+
+    .post {
+      margin-bottom: 0;
+      height: 200px;
+    }
+
     .newstop {
       display: none;
     }
 
-    #slide-track {
-      width: 100%;
-      left: 0;
-      transform: translate(0, 0);
-      overflow: hidden;
-      display: block;
+    .post:hover {
+      transform: scale(102%);
     }
   }
 

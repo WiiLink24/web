@@ -43,8 +43,10 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 					</div>
 				</div>
 		</div>
+		<div class="removeOther">
 			<h2 class="other"><Trans i18nKey="news.otherPosts">Other <b class="color">posts</b></Trans></h2>
 			<News />
+		</div>
 
 			<Footer />
 
@@ -311,26 +313,44 @@ padding:5px;
 
 	@media (max-width:1000px) {
 		.postexpand{
-			top:450px;
-			width:100%;
+			top:400px;
+			width:95%;
 			border:0px;
 		}
 		.title{
-			top:100px;
+			top:40px;
 			font-size: 40px;
 			position:relative;
 		}
+
+	.article-holder{
+		width:80%;
+		height:auto;
+		left:50%;
+		top:0px;
+		perspective: 1px;
+		border:2px solid #12121200;
+		background-color: rgba(80, 80, 80, 0);
+		transform: translate(-50%,-130px);
+		border-radius:0px;
+		overflow:visible;
+		padding-bottom:0px;
+		opacity:1;
+		position:relative;
+		animation-name: none;
+	}
+	.removeOther {
+		display:none;
+	}
 		.auths{
 			display:none;
 		}
 		.mainimg{
-			top:100px;
+			top:20px;
 			position:relative;
 		}
 		.exit{
-			top:65px;
-			left:55px;
-			position:absolute;
+			display: none;
 		}
 		.article-holder{
 			top:0px;

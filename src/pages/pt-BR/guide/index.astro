@@ -34,13 +34,14 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
           ></span><b style="font-family: Rubik;">WiiLink</b><span
             class="badge bg-success"
             style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-            >guide</span>
+            >guide</span
+          >
         </Trans>
       </h2>
       <h3 style="font-size: calc(1.3rem + .6vw);">
         <Trans i18nKey="guide.subtitle">
-          Here you'll find <b class="color">important information</b> regarding
-          the service, as well as helpful <b class="color">guides</b> and <b
+          Here you'll find <b class="color">important information</b> regarding the
+          service, as well as helpful <b class="color">guides</b> and <b
             class="color">troubleshooters</b
           > to get you up and running in no time!
         </Trans>
@@ -82,7 +83,9 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
         posts.map(post => (
           <div class="postmini">
             <a href={`/guide/${post.slug}/`}>
-              <FormattedDate date={post.data.pubDate} />
+              <div class="dateRemove">
+                <FormattedDate date={post.data.pubDate} />
+              </div>
               <div class="title-small">{post.data.title}</div>
             </a>
           </div>
@@ -96,7 +99,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
         <b
           >Can't seem to get it <c class="color">working</c>? Be sure to <c
             class="color">get in touch</c
-          >!</b>
+          >!</b
+        >
       </Trans>
     </h3>
     <div class="btn-wrapper">
@@ -700,24 +704,41 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   @media only screen and (max-width: 1000px) {
     .postholder {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-      position: absolute;
+      width: 95%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: column;
       gap: 0px;
-      top: 50px;
-      left: 0;
-      transform: translate(0, 0);
-      overflow: hidden;
+      top: 20px;
       position: relative;
-      padding-bottom: 200px;
+      padding-bottom: 60px;
       z-index: 10;
     }
 
     .post {
+      -webkit-mask-image: none;
+      mask-image: none;
       margin-top: 20px;
       margin-bottom: 0;
+      border-radius: 8px;
       height: 200px;
+    }
+
+    .title-small {
+      width: auto;
+      height: auto;
+      z-index: 11;
+      font-size: max(20px, 30px);
+      top: 0;
+      left: 0;
+      transform: translate(0, 0);
+      text-align: center;
+      color: #181818;
+      line-height: 30px;
+      font-family: Gilroy;
+      transition: 0.5s;
+      position: relative;
     }
 
     .postholdermini {
@@ -728,15 +749,32 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
     .postmini {
       position: relative;
-      height: 150px;
+      height: 100px;
+      align-items: center;
+      justify-content: center;
       width: 100%;
-      background-color: rgb(247, 247, 247);
-      border-radius: 15px;
+      background-color: rgba(247, 247, 247, 0.019) !important;
+      border-radius: 0px;
       font-family: Gilroy;
       hyphens: auto;
       overflow: hidden;
-      border: 2px solid rgba(215, 215, 215, 0.066);
+      border: 0px solid rgba(215, 215, 215, 0.066);
       transition: 0.5s;
+      display: none;
+    }
+
+    .postmini:hover {
+      transform: translate(0, 0px);
+      box-shadow: 0px 0px 0px rgb(209, 209, 209);
+      border: 0px solid rgba(161, 159, 159, 0.252);
+      transition: 0.5s;
+    }
+
+    .postmini:nth-child(n + 5) {
+      display: flex;
+    }
+
+    .dateRemove {
       display: none;
     }
 
@@ -756,8 +794,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     }
 
     .post:hover {
-      transform: translate(0, 0px) scale(105%);
-      box-shadow: 0px 5px 20px rgb(187, 187, 187);
+      transform: translate(0, 0px) scale(102%);
+      box-shadow: 0px 0px 0px rgb(187, 187, 187);
       transition: 0.5s;
     }
 
@@ -767,19 +805,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       scale: 110%;
       z-index: 0;
       transition: 0.3s;
-    }
-
-    .post:hover .title {
-      bottom: 60%;
-      transform: translate(0, 50%);
-      transition: 0.5s;
-    }
-
-    .post:hover .desc {
-      bottom: 48%;
-      opacity: 1;
-      transform: translate(0, 100%);
-      transition: 0.5s;
     }
   }
 
