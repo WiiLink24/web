@@ -153,12 +153,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .mainimgsmall {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     height: 180px;
     width: auto;
     transform: translate(0, 10px);
@@ -342,7 +336,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .posthold {
     transform: translate(0, 0px);
-    filter: drop-shadow(0px 0px 20px #70707056);
     opacity: 0;
     transition: 0.5s;
     position: relative;
@@ -360,7 +353,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .posthold:hover {
     transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 20px #37373756);
     transition: 0.5s;
   }
 
@@ -434,17 +426,10 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .post {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     position: relative;
     height: 250px;
     width: 100%;
     background-color: rgba(195, 195, 195, 0);
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     border-radius: 15px;
     font-family: Gilroy;
     hyphens: auto;
@@ -475,8 +460,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .post:hover {
-    transform: translate(0, -20px) scale(105%);
-    box-shadow: 0px 5px 20px rgb(187, 187, 187);
+    transform: translate(0, -5px) scale(102%);
     transition: 0.5s;
   }
 
@@ -717,8 +701,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     }
 
     .post {
-      -webkit-mask-image: none;
-      mask-image: none;
       margin-top: 20px;
       margin-bottom: 0;
       border-radius: 8px;
@@ -795,7 +777,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
     .post:hover {
       transform: translate(0, 0px) scale(102%);
-      box-shadow: 0px 0px 0px rgb(187, 187, 187);
       transition: 0.5s;
     }
 

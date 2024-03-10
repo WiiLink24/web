@@ -169,12 +169,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .mainimgsmall {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     height: 180px;
     width: auto;
     transform: translate(0, 10px);
@@ -349,7 +343,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   .posthold {
     transform: translate(0, 0px);
-    filter: drop-shadow(0px 0px 20px #70707056);
     opacity: 0;
     transition: 0.5s;
     position: relative;
@@ -438,16 +431,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     position: relative;
     height: 250px;
     width: 100%;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     border-radius: 15px;
     font-family: Gilroy;
     hyphens: auto;
@@ -479,13 +465,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   .post:hover {
     transform: translate(0, -10px);
-    box-shadow: 0px 5px 30px rgb(187, 187, 187);
     transition: 0.2s;
   }
 
   .postmini:hover {
     transform: translate(0, -5px);
-    box-shadow: 0px 0px 40px rgb(209, 209, 209);
     border: 3px solid rgba(161, 159, 159, 0.252);
     transition: 0.2s;
   }
@@ -573,8 +557,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     height: auto;
     padding: 70px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translateX(-50%);
     border-radius: 16px;
+    animation: fadein 0.2s linear forwards;
     overflow: hidden;
     position: relative;
     transition: 0.2s;
@@ -698,11 +683,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   @keyframes fadeup {
     0% {
       opacity: 0;
-      transform: translate(0, 20px);
+      transform: translateY(20px);
     }
     100% {
       opacity: 1;
-      transform: translate(0, 0px);
+      transform: translateY(0px);
     }
   }
 
@@ -742,11 +727,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     }
 
     .post {
-      -webkit-mask-image: none;
-      mask-image: none;
       margin-top: 20px;
       margin-bottom: 0;
-      filter: drop-shadow(0px 0px 0px rgba(50, 50, 0, 0.5));
       border-radius: 8px;
       height: 200px;
     }
