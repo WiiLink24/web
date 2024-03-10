@@ -24,7 +24,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
 <body>
   <div class="hold">
-    <img class="newstop" style="" src="/img/newstop.png" />
+    <img class="newstop" src="/img/newstop.png" />
     <div class="welcome-msg">
       <h2 style="font-size:40px; font-family:Gilroy;">
         <Trans i18nKey="news.title">
@@ -46,10 +46,37 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
         </Trans>
       </h3>
     </div>
-
+    <div class="newsHero">
+      <a href={`/news/${posts[0].slug}/`} style="text-decoration: none;">
+        <img src={posts[0].data.heroImage} class="heroimg" />
+        <FormattedDate date={posts[0].data.pubDate} />
+        <div class="herodatahold">
+          <img
+            src={posts[0].data.heroImage}
+            style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
+            class="mobileimg"
+            height="200px"
+          />
+          <div class="innerdata">
+            <h1 style="font-family: Gilroy; font-size:50px;">
+              {posts[0].data.title}
+            </h1>
+            <h5>
+              <img
+                src={posts[0].data.authImage}
+                style="margin-right:5px; border-radius:8px;"
+                height="40px"
+              />
+              {posts[0].data.author} | {posts[0].data.authTitle}
+            </h5>
+            <p>{posts[0].data.description}</p>
+          </div>
+        </div>
+      </a>
+    </div>
     <div class="postholder">
       {
-        posts.map(post => (
+        posts.slice(1, 7).map(post => (
           <div class="posthold">
             <div class="post">
               <a href={`/news/${post.slug}/`}>
@@ -200,6 +227,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     width: 100%;
     height: 500px;
     position: relative;
+  }
+
+  .innerdata {
+    width: 65%;
   }
 
   .socials {
@@ -388,7 +419,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     gap: 20px;
     top: 50px;
     left: 50%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0px);
     position: relative;
     padding-bottom: 200px;
     z-index: 10;
@@ -428,7 +459,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     display: none;
   }
 
-  .postmini:nth-child(n + 8) {
+  .postmini:nth-child(n + 9) {
     display: block;
   }
 
@@ -533,6 +564,64 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     opacity: 1;
     transform: translate(0, 100%);
     transition: 0.2s;
+  }
+
+  .newsHero {
+    top: 30px;
+    width: 90%;
+    max-width: 1800px;
+    height: auto;
+    padding: 70px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.2s;
+  }
+
+  .newsHero .heroimg {
+    transition: 0.2s;
+  }
+
+  .newsHero:hover {
+    transform: translate(-50%, -5px);
+    box-shadow: 0px 0px 50px rgba(255, 255, 255, 0.03);
+    transition: 0.2s;
+  }
+
+  .newsHero:hover .heroimg {
+    filter: blur(16px) brightness(0.7);
+    rotate: 0deg;
+    scale: 90%;
+    z-index: 0;
+    transition: 0.2s;
+  }
+
+  .heroimg {
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(120%);
+    filter: blur(8px) brightness(0.3) grayscale(0.7);
+    z-index: 0;
+    position: absolute;
+  }
+
+  .herodatahold {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    z-index: 1;
+    position: relative;
   }
 
   .faded {
@@ -720,6 +809,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       display: flex;
     }
 
+    .innerdata {
+      width: 100%;
+    }
+
     .dateRemove {
       display: none;
     }
@@ -741,6 +834,35 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
     .fade-small {
       display: none;
+    }
+
+    .newsHero {
+      top: 30px;
+      width: 95%;
+      max-width: 1800px;
+      height: auto;
+      padding: 20px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .mobileimg {
+      width: 100%;
+      max-width: 400px;
+      height: auto !important;
+      object-fit: cover;
+    }
+
+    .heroimg {
+      height: 100%;
+    }
+
+    .herodatahold {
+      display: flex;
     }
 
     .post:hover {
