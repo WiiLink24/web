@@ -102,11 +102,7 @@ changeLanguage("es");
         services.innerHTML +=
           "<a href='" +
           data.services.service[i].link +
-          "' style='color:rgb(34,37,41); text-decoration:none;'><div onmouseover='effect(" +
-          i +
-          ")'  onmouseout='noEffect(" +
-          i +
-          ")' class='service' style='height:100%; border: 3px solid " +
+          "' style='color:rgb(34,37,41); text-decoration:none;' class='hover'><div class='service' style='height:100%; border: 3px solid " +
           data.services.service[i].color +
           "20; border-radius:16px; animation: 0.2s " +
           i * 50 +
@@ -157,21 +153,23 @@ changeLanguage("es");
       }
     }
   });
-
-  let canChange = 0;
-
-  async function effect(i) {
-    document.getElementsByClassName("service")[i].style.transform =
-      "scale(102%)";
-    document.getElementsByClassName("service")[i].style.transition = "0.3s";
-    canChange = 0;
-  }
-  async function noEffect(i) {
-    document.getElementsByClassName("service")[i].style.transform =
-      "scale(100%)";
-    canChange = 1;
-  }
 </script>
+
+<style is:global>
+  .hover {
+    transform: scale(1) !important;
+    transition: 0.2s !important;
+  }
+  .hover:hover {
+    transform: scale(1.02) !important;
+    transition: 0.2s !important;
+  }
+
+  .hover:hover .service {
+    box-shadow: 0px 0px 30px #ffffff05 !important;
+    transition: 0.2s !important;
+  }
+</style>
 
 <style>
   .servicehead {
@@ -383,10 +381,6 @@ changeLanguage("es");
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
     position: relative;
-  }
-
-  .service:hover {
-    opacity: 0.5;
   }
 
   #postholder {
