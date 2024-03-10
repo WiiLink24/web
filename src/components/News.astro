@@ -61,16 +61,9 @@ const posts = (await getCollection("blog")).sort(
   }
 
   .post {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     position: relative;
     height: 230px;
     width: 100%;
-    filter: drop-shadow(-1px 6px 3px rgba(50, 50, 0, 0.5));
     border-radius: 15px;
     font-family: Gilroy;
     hyphens: auto;
@@ -106,7 +99,6 @@ const posts = (await getCollection("blog")).sort(
   .post:hover {
     background-color: rgba(206, 206, 206, 0.117);
     transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 70px rgb(171, 171, 171));
     transition: 0.5s;
   }
 
@@ -129,6 +121,27 @@ const posts = (await getCollection("blog")).sort(
     bottom: 60%;
     transform: translate(0, 50%);
     transition: 0.5s;
+  }
+
+  .post:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff65;
+    border-radius: 16px;
+    border: solid 0px transparent;
+    transition: 0.2s;
+  }
+
+  .post:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    z-index: 1;
+    border-radius: 18px;
+    border: solid 6px transparent;
+    transition: 0.2s;
   }
 
   .desc {

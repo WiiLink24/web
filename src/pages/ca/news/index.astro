@@ -441,6 +441,27 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     transition: 0.2s;
   }
 
+  .post:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff65;
+    border-radius: 16px;
+    border: solid 0px transparent;
+    transition: 0.2s;
+  }
+
+  .post:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    z-index: 1;
+    border-radius: 18px;
+    border: solid 6px transparent;
+    transition: 0.2s;
+  }
+
   .posthold:nth-child(n + 7) {
     display: none;
   }
@@ -477,15 +498,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   .heroImage {
     width: 100%;
     height: 100%;
-    filter: blur(0px) grayscale(0) brightness(0.8);
+    transform: scale(110%);
+    filter: blur(0px) brightness(0.8);
     object-fit: cover;
     transition: 0.2s;
   }
 
   .post:hover .heroImage {
-    filter: blur(4px) grayscale(0.5) brightness(0.5);
+    transform: scale(100%);
+    filter: blur(8px) brightness(0.5);
     z-index: 0;
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   .title {
@@ -520,9 +543,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover .title {
-    bottom: 60%;
+    bottom: 50%;
     transform: translate(0, 50%);
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   .desc {
@@ -544,10 +567,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover .desc {
-    bottom: 48%;
+    bottom: 38%;
     opacity: 1;
     transform: translate(0, 100%);
-    transition: 0.2s;
+    transition: 0.3s;
   }
 
   .newsHero {
@@ -735,6 +758,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
     .post:hover .heroImage {
       filter: blur(8px) brightness(0.3) !important;
+      transform: scale(100%);
       rotate: 0deg;
       scale: 110%;
       z-index: 0;
