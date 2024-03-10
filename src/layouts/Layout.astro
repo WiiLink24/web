@@ -134,6 +134,16 @@ const { title, description, image } = Astro.props;
   html.dark ul {
     color: white;
   }
+
+  html.dark a {
+    color: white;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline;
+  }
+
   html.dark article {
     background-color: #202020;
   }
@@ -150,8 +160,9 @@ const { title, description, image } = Astro.props;
     background-color: #ffffff10;
   }
   html.dark .generic {
+    background-color: #ffffff10;
     color: #ffffff;
-    border: 2px solid white;
+    border: 0px solid white;
   }
   html.dark .generic a {
     color: #ffffff;

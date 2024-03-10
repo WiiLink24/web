@@ -80,39 +80,36 @@ main {
 }
 
 a {
-  color: rgb(50, 168, 23);
+  color: white;
   text-decoration: underline;
 }
-
 code {
   padding: 4px 6px;
   background-color: rgba(97, 97, 97, 0.148);
   color: #000000;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .toc-item::marker {
   font-family: Gilroy;
 }
 .notice {
-  width: auto;
+  width:auto;
   height: auto;
-  padding: 5px;
-  padding-right: 15px;
+  padding: 18px;
   margin-bottom: 0px;
-  border-radius: 8px;
+  border-radius: 4px;
   color: rgb(255, 255, 255);
   display: inline-block;
   position: relative;
 }
 .warn {
-  background-color: rgba(225, 211, 81, 0);
-  color: rgb(182, 197, 14);
-  border: 2px solid rgb(182, 197, 14);
+  background-color: rgba(182, 197, 14, 0.6);
+  color: white;
+  border: 0px solid rgb(182, 197, 14);
 }
-
 .warn a {
-  color: rgb(182, 197, 14);
+  color: white;
 }
 .warn::before {
   margin-left: 5px;
@@ -127,12 +124,9 @@ code {
   content: "\f06a";
 }
 .danger {
-  background-color: rgba(232, 49, 49, 0);
-  color: rgb(197, 14, 14);
-  border: 2px solid rgb(197, 14, 14);
-}
-.danger a {
-  color: rgb(197, 14, 14);
+  background-color: rgba(197, 14, 14, 0.6);
+  color: white;
+  border: 0px solid rgb(197, 14, 14);
 }
 .danger::before {
   margin-left: 5px;
@@ -147,12 +141,9 @@ code {
   content: "\f071";
 }
 .success {
-  background-color: rgba(49, 232, 76, 0);
-  color: rgb(10, 190, 40);
-  border: 2px solid rgb(10, 190, 40);
-}
-.success a {
-  color: rgb(10, 190, 40);
+  background-color: rgba(10, 190, 40, 0.6);
+  color: white;
+  border: 0px solid rgb(10, 190, 40);
 }
 .success::before {
   margin-left: 5px;
@@ -167,12 +158,29 @@ code {
   content: "\f058";
 }
 .info {
-  background-color: rgba(255, 255, 255, 0);
-  color: rgb(14, 124, 197);
-  border: 2px solid rgb(14, 124, 197);
+  background-color: rgba(14, 124, 197, 0.6);
+  color: white;
+  border: 0px solid rgb(14, 124, 197);
 }
-.info a {
-  color: rgb(14, 124, 197);
+.info code {
+  background-color: rgba(14, 124, 197, 0.6);
+  color: white;
+  border-radius: 4px;
+}
+.warn code {
+  background-color: rgba(182, 197, 14, 0.6);
+  color: white;
+  border-radius: 4px;
+}
+.danger code {
+  background-color: rgba(197, 14, 14, 0.6);
+  color: white;
+  border-radius: 4px;
+}
+.success code {
+  background-color: rgba(10, 190, 40, 0.6);
+  color: white;
+  border-radius: 4px;
 }
 .info::before {
   margin-left: 5px;
@@ -186,30 +194,10 @@ code {
   font-weight: 900;
   content: "\f059";
 }
-
 .generic {
-  background-color: rgba(120, 120, 120, 0);
-  color: rgb(64, 64, 64);
-  border: 2px solid rgb(64, 64, 64);
-}
-.generic a {
-  color: rgb(64, 64, 64);
-}
-.generic code {
-  color: rgb(64, 64, 64);
-  background-color: rgba(0, 0, 0, 0);
-}
-.warn code {
-  color: rgb(182, 197, 14);
-  background-color: rgba(0, 0, 0, 0);
-}
-.danger code {
-  color: rgb(197, 14, 14);
-  background-color: rgba(0, 0, 0, 0);
-}
-.info code {
-  color: rgb(14, 124, 197);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(97, 97, 97, 0.062);
+  color: #000000;
+  border: 0px solid rgb(64, 64, 64);
 }
 .generic::before {
   margin-left: 5px;
@@ -363,7 +351,7 @@ table {
 }
 pre {
   padding: 1.5em;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 pre > code {
   all: unset;
@@ -374,7 +362,7 @@ blockquote {
   padding: 15px;
   padding-bottom: 3px;
   margin: 5px;
-  border-radius: 8px;
+  border-radius: 4px;
   position: relative;
 }
 hr {

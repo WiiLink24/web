@@ -111,10 +111,17 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       </div>
     </div>
     <div class="guideholder">
+      <button
+        onclick="toggleScroll()"
+        id="togglebtn"
+        class="btn btn-secondary"
+        style="top:20px; left:20px; background-color:#00000020; backdrop-filter:blur(8px); z-index: 10000; position:relative;"
+        ><i class="fa-solid fa-angle-left"></i></button
+      >
       <div class="dateRemove">
         <FormattedDate pre="Last updated on: " date={pubDate} />
       </div>
-      <img class="topImage" src={heroImage} />
+      <img class="topImage" id="parallax" src={heroImage} />
       <div class="title">
         <i class={icon} style="margin-right:18px;"></i>
         {title}
@@ -153,6 +160,35 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         container1.appendChild(movableDiv);
       }
     };
+
+    function toggleScroll() {
+      let holder = document.querySelector(".holder");
+      let guideholder = document.querySelector(".guideholder");
+      if (holder.style.display === "none") {
+        holder.style.display = "block";
+        guideholder.style.width = "1100px";
+        document.getElementById("togglebtn").innerHTML =
+          '<i class="fa-solid fa-angle-left"></i>';
+      } else {
+        holder.style.display = "none";
+        guideholder.style.width = "95%";
+        document.getElementById("togglebtn").innerHTML =
+          '<i class="fa-solid fa-angle-right"></i>';
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let guideholder = document.querySelector(".guideholder");
+      if (guideholder) {
+        guideholder.addEventListener("scroll", function () {
+          let parallax = document.getElementById("parallax");
+          if (parallax) {
+            let offset = guideholder.scrollTop;
+            parallax.style.transform = "translateY(" + offset * 0.5 + "px)";
+          }
+        });
+      }
+    });
   </script>
 
   <script is:inline type="text/javascript">
@@ -209,8 +245,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       left: 0;
       width: 100%;
       opacity: 0.3;
-      scale: 250%;
-      transform: translateZ(-1px);
       pointer-events: none;
       -webkit-mask-image: linear-gradient(
         180deg,
@@ -261,16 +295,16 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     .flex {
-      top: 230px;
+      bottom: 0;
       left: 0;
       width: 100%;
-      height: calc(100% - 130px);
+      height: calc(100% - 120px);
       display: flex;
       align-items: flex-end;
       gap: 18px;
       justify-content: center;
       flex-wrap: wrap;
-      position: absolute;
+      position: fixed;
     }
 
     .holder {
@@ -290,7 +324,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       backdrop-filter: blur(8px);
       perspective: 1px;
       scroll-behavior: smooth;
-      border-radius: 8px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
       z-index: 1;
       overflow: scroll;
       overflow-x: hidden;
@@ -538,6 +573,9 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       .holder {
         display: none;
       }
+	  #togglebtn {
+		display: none;
+	  }
       .guidecontent {
         margin-top: 168px;
       }
