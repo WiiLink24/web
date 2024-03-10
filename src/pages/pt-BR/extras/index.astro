@@ -92,7 +92,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
       for (let i = 0; i < data.goodies.goodie.length; i++) {
         services.innerHTML += `<div class="posthold">
-            <div class="post">
+            <div class="post" style="opacity:0; animation: fadeup 0.1s ${i * 50}ms linear forwards;">
               <a href="${data.goodies.goodie[i].link}">
                 <img class="heroImage" src="${data.goodies.goodie[i].img}" />
                 <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">

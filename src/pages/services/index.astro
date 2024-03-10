@@ -44,8 +44,10 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     <div class="polka-dot"></div>
     <div class="postholder">
       {
-        posts.map(post => (
-          <div class="posthold">
+        posts.map((post, index) => (
+          <div
+            class="posthold"
+            style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
             <div class="post">
               <a href={`/services/${post.slug}/`}>
                 <img class="heroImage" src={post.data.heroImage} />
