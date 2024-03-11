@@ -59,11 +59,16 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
                   date={post.data.pubDate}
                 />
                 <img class="heroImage" src={post.data.heroImage} />
-                <div class="title">
-                  <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                  {post.data.title}
+                <div class="icon">
+                  <i
+                    class={post.data.icon}
+                    style="top:50%; left:50%; transform:translate(-50%, -50%); font-size:80px; position:absolute;"
+                  />
                 </div>
-                <div class="desc">{post.data.description}</div>
+                <div class="innerData">
+                  <div class="title">{post.data.title}</div>
+                  <div class="desc">{post.data.description}</div>
+                </div>
               </a>
             </div>
           </div>
@@ -402,7 +407,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   .postholder {
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     position: absolute;
     gap: 20px;
     top: 40px;
@@ -427,7 +432,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .post {
     position: relative;
-    height: 250px;
+    height: 500px;
     width: 100%;
     background-color: rgba(195, 195, 195, 0);
     border-radius: 15px;
@@ -547,14 +552,18 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     width: auto;
     z-index: 11;
     font-size: max(20px, 30px);
-    top: 40%;
-    right: 20px;
-    transform: translate(0, -50%);
-    text-align: right;
+    right: 0px;
+    text-align: center;
     margin-bottom: 15px;
     line-height: 30px;
     font-family: Gilroy;
     transition: 0.5s;
+    position: relative;
+  }
+
+  .innerData {
+    width: 100%;
+    bottom: 30px;
     position: absolute;
   }
 
@@ -575,13 +584,14 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .desc {
-    position: absolute;
+    position: relative;
     font-family: inter;
-    width: 80%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, 0);
     font-size: 20px;
-    right: 20px;
-    top: 50%;
-    text-align: right;
+    right: 0;
+    text-align: center;
     transition: 0.5s;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -763,6 +773,10 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       overflow: hidden;
       border: 0px solid rgba(215, 215, 215, 0.066);
       transition: 0.5s;
+      display: none;
+    }
+
+    .icon {
       display: none;
     }
 
