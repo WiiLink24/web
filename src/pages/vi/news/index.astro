@@ -108,6 +108,15 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       {
         posts.map(post => (
           <div class="postmini">
+            {post.data.heroImage && (
+              <img
+                style="scale:105%; opacity:0.2; filter:blur(8px) brightness(0.5); z-index:0; position:absolute;"
+                width="100%"
+                height="100%"
+                src={post.data.heroImage}
+                alt=""
+              />
+            )}
             <a href={`/news/${post.slug}/`}>
               <div class="fade-small" />
               <FormattedDate date={post.data.pubDate} />
@@ -127,10 +136,12 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       </Trans>
     </h3>
     <a href="/rss.xml"
-      ><div class="rss">
+      ><buton
+        class="btn center btn-success"
+        style="left:50%; transform:translate(-50%, 0); margin-top:8px; z-index:1000; position:relative;">
         <i class="fa-solid fa-square-rss" style="margin-right:5px;"></i>
         {t("news.rssButton")}
-      </div></a
+      </buton></a
     >
     <div class="dots"></div>
   </div>
@@ -197,7 +208,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     position: relative;
   }
   .dots {
-    top: -30px;
+    top: -80px;
     left: 50%;
     width: 150px;
     height: 150px;
@@ -442,8 +453,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover:before {
-    box-shadow: inset 0 0 0px 3px #ffffff65;
-    border-radius: 16px;
+    box-shadow: inset 0 0 0px 3px #ffffff80;
+    border-radius: 14px;
     border: solid 0px transparent;
     transition: 0.2s;
   }
@@ -457,8 +468,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     right: 0;
     box-shadow: inset 0 0 0px 3px #ffffff20;
     z-index: 1;
-    border-radius: 18px;
-    border: solid 6px transparent;
+    border-radius: 14px;
+    border: solid 0px transparent;
     transition: 0.2s;
   }
 
@@ -479,7 +490,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
-    border: 2px solid rgba(215, 215, 215, 0.066);
+    border: 3px solid #ffffff0a;
     transition: 0.2s;
     display: none;
   }
@@ -491,21 +502,21 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   .postmini:hover {
     transform: translate(0, -5px);
-    border: 3px solid rgba(161, 159, 159, 0.252);
+    border: 3px solid #ffffff98;
     transition: 0.2s;
   }
 
   .heroImage {
     width: 100%;
     height: 100%;
-    transform: scale(110%);
+    transform: scale(120%);
     filter: blur(0px) brightness(0.8);
     object-fit: cover;
     transition: 0.2s;
   }
 
   .post:hover .heroImage {
-    transform: scale(100%);
+    transform: scale(110%);
     filter: blur(8px) brightness(0.5);
     z-index: 0;
     transition: 0.3s;
@@ -588,6 +599,27 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     transition: 0.2s;
   }
 
+  .newsHero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    z-index: 1;
+    border-radius: 18px;
+    border: solid 0px transparent;
+    transition: 0.2s;
+  }
+
+  .newsHero:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff80;
+    border-radius: 16px;
+    border: solid 0px transparent;
+    transition: 0.2s;
+  }
+
   .newsHero .heroimg {
     transition: 0.2s;
   }
@@ -637,6 +669,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0.5;
     background: rgb(2, 0, 36);
     background: linear-gradient(
       0deg,
@@ -712,27 +745,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       opacity: 1;
       transform: translateY(0px);
     }
-  }
-
-  .rss {
-    left: 50%;
-    transform: translate(-50%, 10px);
-    padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(98, 141, 98);
-    border-radius: 4px;
-    color: white;
-    z-index: 1;
-    font-family: Gilroy;
-    position: absolute;
-    transition: 0.5s;
-  }
-
-  .rss:hover {
-    transform: translate(-50%, 10px) scale(103%);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.12);
-    transition: 0.5s;
   }
 
   @media only screen and (max-width: 1000px) {

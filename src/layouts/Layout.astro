@@ -134,9 +134,11 @@ const { title, description, image } = Astro.props;
   html.dark ul {
     color: white;
   }
-
   html.dark a {
     color: white;
+  }
+  html.dark .auths {
+    border-top: 2px solid #ffffff20;
   }
 
   a {
@@ -173,6 +175,13 @@ const { title, description, image } = Astro.props;
   }
   html.dark code {
     color: #ffffff;
+  }
+  html.dark .post:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff98;
+  }
+
+  html.dark .post:before {
+    box-shadow: inset 0 0 0px 3px #ffffff0a;
   }
   html.dark .title2 {
     color: #ffffffa2;

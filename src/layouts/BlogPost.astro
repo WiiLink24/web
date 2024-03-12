@@ -32,8 +32,9 @@ const { title, description, pubDate, updatedDate, heroImage, author, authImage, 
 				<div class="postexpand">
 					<slot />
 				</div>
+				<hr>
 				<div class="auths">
-					<img class="authimage" width={50} height={50} src={authImage} alt="" />
+					{authImage && <img class="authimage" width={50} height={50} src={authImage} alt="" />}
 					<div class="titles">
 						<div class="hold">
 							<div class="authtitle">{author}</div>
@@ -77,20 +78,19 @@ a:visited{
 }
 
 .auths{
-	bottom:-20px;
-	width: 100%;
-	height:150px;
+	left: 50%;
+	width: 95%;
+	transform: translate(-50%, 0);
+	padding-top:30px;
+	display:flex;
+	gap:30px;
 	position: relative;
 	border-top: 2px solid #12121220;
 	z-index: 10000;
 }
 
 .titles{
-	left:150px;
-	top:50%;
-	width:60%;
-	transform:translate(0, -50%);
-	position:absolute;
+	position:relative;
 }
 
 time{
@@ -138,17 +138,18 @@ time{
 
 .hold{
 	display:flex;
+	align-items: center;
 	gap:10px;
 }
 
 .authtitle2{
 	position:relative;
-padding:5px;
+padding:2px 10px 2px 10px;
 	border: 2px solid rgba(0, 0, 0, 0.496);
 	border-radius:8px;
 	font-family: Gilroy;
 	font-size: 18px;
-	line-height: 36px;
+	line-height: 32px;
 	float:right;
 	color:rgba(0, 0, 0, 0.496);
 }
@@ -167,11 +168,9 @@ padding:5px;
 	height:80px;
 	border-radius:8px;
 	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
-	top:50%;
-	left:40px;
-	transform: translate(0,-50%);
-	position: absolute;
-	filter:blur(0px);
+	opacity: 1 !important;
+	position:relative;
+	filter:blur(0px) brightness(1) !important;
 }
 	.title {
 		font-size: 50px;
