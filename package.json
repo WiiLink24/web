@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^1.1.5",
+    "@astrojs/partytown": "^2.0.4",
     "@astrojs/rss": "^3.0.0",
     "@popperjs/core": "^2.11.8",
     "@xata.io/client": "^0.26.9",
