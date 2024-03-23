@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
-import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
@@ -110,13 +109,17 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     </h3>
     <div class="btn-wrapper">
       <a href="mailto:contact@wiilink24.com"
-        ><div class="btn btn-success" style="padding:10px;">
+        ><div
+          class="btn btn-success"
+          style="color:white !important; padding:10px;">
           <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
           {t("guide.helpButton1")}
         </div></a
       >
       <a href="https://discord.gg/wiilink"
-        ><div class="btn btn-primary" style="padding:10px;">
+        ><div
+          class="btn btn-primary"
+          style="color:white !important; padding:10px;">
           <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
           {t("guide.helpButton2")}
         </div></a
@@ -317,20 +320,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     animation: changecolor 10s linear infinite;
     position: absolute;
   }
-  #square2 {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: #ffffff;
-    transform: translate(0%, 0%);
-    border-radius: 0px;
-    z-index: 1;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    transition: 0.5s;
-    position: absolute;
-  }
 
   .color {
     background: url("/img/header_bg.png");
@@ -454,12 +443,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     position: relative;
     height: 150px;
     width: 100%;
-    background-color: rgb(247, 247, 247);
-    border-radius: 15px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
-    border: 2px solid rgba(215, 215, 215, 0.066);
+    border: 2px solid var(--border-color);
     transition: 0.5s;
     display: none;
   }
@@ -470,7 +459,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .post:hover:before {
-    box-shadow: inset 0 0 0px 3px #ffffff65;
+    box-shadow: inset 0 0 0px 3px var(--shadow-color);
     border-radius: 16px;
     border: solid 0px transparent;
     transition: 0.2s;
@@ -492,7 +481,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .postmini:hover {
     transform: translate(0, -5px);
-    box-shadow: 0px 0px 40px rgb(209, 209, 209);
+    box-shadow: 0px 0px 40px var(--shadow-color);
     border: 3px solid rgba(161, 159, 159, 0.252);
     transition: 0.5s;
   }
@@ -554,6 +543,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     font-size: max(20px, 30px);
     right: 0px;
     text-align: center;
+    color: white !important;
     margin-bottom: 15px;
     line-height: 30px;
     font-family: Gilroy;
@@ -583,11 +573,16 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     position: absolute;
   }
 
+  .icon {
+    color: white !important;
+  }
+
   .desc {
     position: relative;
     font-family: inter;
     left: 50%;
     width: 70%;
+    color: white !important;
     transform: translate(-50%, 0);
     font-size: 20px;
     right: 0;
@@ -766,12 +761,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       align-items: center;
       justify-content: center;
       width: 100%;
-      background-color: rgba(247, 247, 247, 0.019) !important;
+      background-color: var(--bg-color-secondary);
       border-radius: 0px;
       font-family: Gilroy;
       hyphens: auto;
       overflow: hidden;
-      border: 0px solid rgba(215, 215, 215, 0.066);
+      border: 0px solid var(--border-color);
       transition: 0.5s;
       display: none;
     }

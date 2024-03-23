@@ -29,7 +29,7 @@ import { Trans } from "astro-i18next/components";
             <div class="dropdown" style="width:100%; position:relative; ">
               <button
                 class="btn btn-primary dropdown-toggle"
-                style="margin-bottom:8px; width:100%; position:relative; color:#289bff"
+                style="background-color:var(--bg-color-secondary); margin-bottom:8px; width:100%; position:relative; color:#289bff;"
                 type="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
@@ -89,7 +89,7 @@ import { Trans } from "astro-i18next/components";
           >
           <div class="buttons">
             <a href="https://discord.gg/wiilink"
-              ><div style="color:#004078;" class="btn">
+              ><div style="background-color:var(--bg-color-secondary); color:#004078;" class="btn">
                 {t("socials.dcJoin")}
               </div></a
             >
@@ -134,7 +134,7 @@ import { Trans } from "astro-i18next/components";
       </div>
       <div class="social youtube">
         <div class="inner">
-          <i class="fa-brands fa-youtube"></i><a
+          <i class="fa-brands fa-youtube" style="color:rgb(206, 47, 47);"></i><a
             href="https://www.youtube.com/@wiilink"
             ><span
               style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
@@ -210,7 +210,7 @@ import { Trans } from "astro-i18next/components";
     box-shadow: 0px 5px 10px #ff3f3f40;
   }
   .github {
-    border: 2px solid #121212;
+    border: 2px solid var(--color);
     color: #121212;
     box-shadow: 0px 5px 10px #12121240;
   }

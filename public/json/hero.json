@@ -1,0 +1,76 @@
+{
+  "hero": {
+    "element": [
+      {
+        "name": "Forecast Channel",
+        "desc": "Check out up-to-date weather forecasts from around the world",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "News Channel",
+        "desc": "Stay informed with the latest news from around the world",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Nintendo Channel",
+        "desc": "Watch trailers, read reviews and download demos of the latest games for your Wii console",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Check Mii Out Channel",
+        "desc": "Participate in contests and vote for your favorite Miis",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Everybody Votes Channel",
+        "desc": "Answer polls and see how your opinions compare to others",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Food Channel",
+        "desc": "Order different types of meals from home via your Wii console",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV Guide Channel",
+        "desc": "Check out the TV schedule and watch trailers of upcoming shows",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV Channel",
+        "desc": "Watch episodes of the Kirby: Right Back at Ya! TV show",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints Channel",
+        "desc": "Order prints of your favorite photos from your Wii console",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Discover shows and other video-on-demand content or send messages to your friends",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

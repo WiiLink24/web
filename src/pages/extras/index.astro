@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
-import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
@@ -58,13 +57,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     </h3>
     <div class="btn-wrapper">
       <a href="mailto:contact@wiilink24.com"
-        ><div class="btn btn-success" style="padding:10px;">
+        ><div
+          class="btn btn-success"
+          style="color:white !important; padding:10px;">
           <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
           {t("extras.contact")}
         </div></a
       >
       <a href="https://discord.gg/wiilink"
-        ><div class="btn btn-primary" style="padding:10px;">
+        ><div
+          class="btn btn-primary"
+          style="color:white !important; padding:10px;">
           <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
           {t("extras.joinDiscord")}
         </div></a
@@ -839,11 +842,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover .title {
-    color: white;
+    color: white !important;
   }
 
   .post:hover .desc {
-    color: white;
+    color: white !important;
   }
 
   .post:hover {

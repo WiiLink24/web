@@ -1,0 +1,512 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="darkreader-lock" />
+</head>
+
+<div class="holder">
+  <div class="left">
+    <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
+    <h2
+      id="tagline"
+      style="width:auto; margin-top:18px; font-weight:700;"
+      data-bs-toggle="tooltip"
+      data-bs-title="Tagline made by users like you!">
+      Party on like it's 2006!
+    </h2>
+    <p style="font-size:20px; opacity:0.7;">
+      WiiLink is an open source replacement for Nintendo's servers for both
+      WiiConnect24 and NWFC, allowing online connectivity for all, even after
+      the original servers were discontinued!
+    </p>
+    <br />
+    <div class="line-container">
+      <p style="opacity:0.5;">
+        <i class="fa fa-circle-info" style="margin-right:5px;"></i>
+        <a
+          href="https://github.com/WiiLink24/WiiLink24-Patcher"
+          style="text-decoration: none;"
+          >WiiLink Patcher
+          <l id="verno"></l></a
+        > | Developed by
+        <a href="https://github.com/PablosCorner">PablosCorner</a>
+      </p>
+      <div class="horizontal-line"></div>
+    </div>
+    <div class="btn-container">
+      <div class="btn-group" id="extra-btn">
+        <button
+          type="button"
+          id="download-btn"
+          onclick="downloadPatcher();"
+          class="btn btn-primary btn-lg"
+          style="text-align:left; color:white !important; margin-right:2px; font-size:18px;"
+          ><img
+            src="img/loading.gif"
+            style="transform:translate(0, -2px); filter:brightness(1000);"
+            width="20px"
+          /> Loading...</button
+        >
+        <button
+          id="extra-btn-2"
+          type="button"
+          class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
+          style="color:white !important;"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <a id="download-windows" class="dropdown-item" href="#"
+              ><i class="fa-brands fa-microsoft" style="margin-right:5px;"></i> Download
+              for Windows</a
+            >
+          </li>
+          <li>
+            <p style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+              <i class="fa-brands fa-apple" style="margin-right:5px;"></i> Download
+              for macOS
+            </p>
+            <div style="display:flex; flex-direction: row; text-align: center;">
+              <a class="dropdown-item" id="download-macos-arm">Apple Silicon</a>
+              <a class="dropdown-item" id="download-macos-x64">64 bits</a>
+            </div>
+          </li>
+          <li>
+            <p style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+              <i class="fa fa-linux" style="margin-right:5px;"></i> Download for
+              Linux
+            </p>
+            <div style="display:flex; flex-direction: row; text-align: center;">
+              <a class="dropdown-item" id="download-linux-arm">ARM64</a>
+              <a class="dropdown-item" id="download-linux-x64">64 bits</a>
+            </div>
+          </li>
+          <hr class="dropdown-divider" />
+          <li>
+            <a class="dropdown-item" href="#"
+              ><i class="fa fa-book" style="margin-right:5px;"></i> Changelog</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <button
+        class="btn btn-outline-primary btn-lg"
+        style="padding-top:11px; padding-bottom:11px; font-size:18px;"
+        onclick="window.location.href = '/guide/install';">
+        <i
+          class="fa-solid fa-arrow-up fa-rotate-by"
+          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i> Installation guide
+      </button>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault"
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        I have read and accepted the <a href="/tos">terms of service</a> and the
+        <a href="/privacy-policy">privacy policy</a>.
+      </label>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="holder-svc" id="hero-services">
+      <img
+        src="/img/loading.gif"
+        style="top:50%; left:50%; filter:brightness(1000); transform:translate(-50%, -50%); position:absolute;"
+        width="40px"
+      />
+    </div>
+    <div class="bottom-cta">
+      <div class="bar-holder">
+        <div id="bar" class="bar"></div>
+      </div>
+      <a href="#intro" class="more">
+        See what else WiiLink can do for you <i
+          class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <script is:inline>
+    let assets = [];
+    let changelog = [];
+    function downloadPatcher() {
+      if (document.getElementById("flexCheckDefault").checked) {
+        switch (osdetect()) {
+          case "MacOS":
+            window.location.href = assets[3].browser_download_url;
+            break;
+          case "Windows":
+            window.location.href = assets[4].browser_download_url;
+            break;
+          case "Linux":
+            window.location.href = assets[1].browser_download_url;
+            break;
+          default:
+            window.location.href = assets[3].browser_download_url;
+            break;
+        }
+      } else {
+        alert("Please accept the terms of service and the privacy policy.");
+      }
+    }
+  </script>
+
+  <script is:inline src="/js/osdetect.js"></script>
+  <script>
+    function updateButtons() {
+      var checkbox = document.getElementById("flexCheckDefault");
+      if (checkbox.checked) {
+        document.getElementById("download-btn").classList.remove("disabled");
+        document.getElementById("extra-btn").classList.remove("disabled");
+        document.getElementById("extra-btn-2").classList.remove("disabled");
+        document.getElementById("download-btn").style.transition = "0.2s";
+        document.getElementById("extra-btn").style.transition = "0.2s";
+        document.getElementById("extra-btn-2").style.transition = "0.2s";
+      } else {
+        document.getElementById("download-btn").classList.add("disabled");
+        document.getElementById("extra-btn").classList.add("disabled");
+        document.getElementById("extra-btn-2").classList.add("disabled");
+      }
+    }
+
+    function updateOS() {
+      switch (osdetect()) {
+        case "MacOS":
+          console.log("MacOS");
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> Download for macOS";
+          break;
+        case "Windows":
+          console.log("Windows");
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> Download for Windows";
+          break;
+        case "Linux":
+          console.log("Linux");
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> Download for Linux";
+          break;
+        case "UNIX":
+          console.log("UNIX");
+          break;
+        case "Nintendo Wii":
+          location.href = "/wii";
+          break;
+        case "Unknown OS":
+        default:
+          console.log("Unknown OS");
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-download' style='margin-right:5px;'></i> Download";
+          break;
+      }
+    }
+
+    function updateTagline() {
+      let tagline = document.getElementById("tagline");
+      let taglines = [
+        "Party on like it's 2006!",
+        "Ah frickin sweet, I can check the weather from here Lois!",
+        "Wii are here to Link.",
+        "Did you know you can connect your Wii console to the Internet?",
+        "As seen on Scott The Woz!",
+        "The Return of the Legendary WiiConnect24",
+        "Are you sure you wanna do this?",
+        "Rediscover your Wii",
+        "Link back to Nintendo's golden age",
+        "Get Connected back to the Wii's past once again!",
+        "Wii play. Do you?",
+        "You can do more with a Wii than just losing in Mario Kart!",
+        "The realest wii network revival service",
+        "If you don't like Wiilink, Wii are gonna have a problem!"
+      ];
+      tagline.innerHTML = taglines[Math.floor(Math.random() * taglines.length)];
+    }
+
+    window.onload = function () {
+      osdetect();
+      updateButtons();
+      updateOS();
+      updateTagline();
+    };
+
+    document
+      .getElementById("flexCheckDefault")
+      .addEventListener("change", updateButtons);
+
+    function updateHero() {
+      fetch("/json/hero.json")
+        .then(res => res.json())
+        .then(data => {
+          let services = data.hero.element;
+          services.sort(() => Math.random() - 0.5);
+          let randomServices = services.slice(0, 3);
+          let html = "";
+          randomServices.forEach((service, index) => {
+            html += `
+            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:8px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
+              <img src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
+              <div style="z-index: 1; position:relative;">
+                <h4>${service.desc}</h4>
+                <p style="opacity:0.7;">with the
+                <a href="${service.link}">${service.name}</a>
+                </p>
+              </div>
+              <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
+                <img src="/img/${service.bg}" style="filter:blur(8px); opacity:0.3; height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 25%, black 75%); z-index:0; position:absolute;" alt="${service.name}" />
+              </div>
+            </div>
+          `;
+          });
+          document.getElementById("hero-services").innerHTML = html;
+          document.getElementById("bar").style.animation =
+            "bar 10s linear infinite";
+          setTimeout(() => {
+            document
+              .querySelectorAll(".element")
+              .forEach(el => el.classList.add("fadeOut"));
+          }, 9500);
+        });
+    }
+
+    import { Octokit } from "https://esm.sh/octokit";
+
+    document.addEventListener("DOMContentLoaded", async function () {
+      updateHero();
+      setInterval(updateHero, 10000);
+      const octokit = new Octokit({
+        auth: ""
+      });
+
+      const owner = "WiiLink24";
+      const repo = "WiiLink24-Patcher";
+
+      try {
+        const { data: release } = await octokit.request(
+          "GET /repos/{owner}/{repo}/releases/latest",
+          {
+            owner,
+            repo,
+            headers: {
+              "X-GitHub-Api-Version": "2022-11-28"
+            }
+          }
+        );
+        assets = release.assets;
+        changelog = release.body;
+
+        let dateArray = release.published_at.split("T");
+        let timeArray = dateArray[1].slice(0, -1);
+        dateArray = dateArray[0];
+        let versionNumber = release.tag_name;
+        document.getElementById("verno").innerHTML = `${versionNumber}`;
+        document.getElementById("download-windows").href =
+          assets[4].browser_download_url;
+        document.getElementById("download-macos-arm").href =
+          assets[2].browser_download_url;
+        document.getElementById("download-macos-x64").href =
+          assets[3].browser_download_url;
+        document.getElementById("download-linux-arm").href =
+          assets[0].browser_download_url;
+        document.getElementById("download-linux-x64").href =
+          assets[1].browser_download_url;
+
+        console.log("Latest release:", release);
+      } catch (error) {
+        console.error("Error fetching GitHub release:", error);
+      }
+    });
+  </script>
+
+  <style>
+    .holder {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 30px;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .left {
+      width: 95%;
+      max-width: 650px;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeup 500ms 0.5s ease forwards;
+    }
+
+    .logo {
+      filter: invert(1);
+    }
+
+    html.dark .logo {
+      filter: invert(0);
+    }
+
+    .btn-container {
+      display: grid;
+      grid-template-columns: 4fr 2fr;
+      gap: 10px;
+    }
+
+    .btn-group {
+      display: grid;
+      grid-template-columns: 8fr 1fr;
+    }
+
+    .form-check {
+      margin-top: 15px;
+    }
+
+    li {
+      padding: 5px;
+      border-radius: 8px;
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      background-color: var(--bg-color-secondary);
+      border-radius: 8px;
+    }
+
+    .dropdown-item {
+      border-radius: 4px;
+    }
+
+    .disabled {
+      opacity: 0.5;
+      cursor: not-allowed !important;
+      transition: 0.2s;
+    }
+
+    .bottom-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 150px;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .holder-svc {
+      max-width: 600px;
+      height: 500px;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 30px;
+      position: relative;
+    }
+
+    .more {
+      opacity: 0.7;
+      transform: translate(0, -5px);
+      font-size: 20px;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .more:hover {
+      opacity: 1;
+      transition: 0.2s;
+    }
+
+    .more i {
+      transition: 0.2s;
+    }
+
+    .more:hover i {
+      transform: translate(5px, 0);
+      transition: 0.2s;
+    }
+
+    .bar-holder {
+      width: 150px;
+      height: 10px;
+      transform: translate(0, -10px);
+      border-radius: 80px;
+      background-color: var(--bg-opaque-1);
+    }
+
+    .bar {
+      width: 50%;
+      height: 100%;
+      background-color: var(--bg-opaque-2);
+      border-radius: 80px;
+      animation: bar 1s infinite;
+      overflow: hidden;
+    }
+
+    .line-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .line-container .horizontal-line {
+      flex-grow: 1;
+      height: 1px;
+      background-color: var(--color);
+      opacity: 0.5;
+      margin-left: 10px;
+      transform: translate(0, -5px);
+    }
+
+    @keyframes fadeup {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media only screen and (max-width: 1000px) {
+      .right {
+        display: none;
+      }
+      .btn-container {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+
+  <style is:global>
+    @keyframes bar {
+      0% {
+        width: 0%;
+      }
+      100% {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeOut {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
+
+    .element.fadeOut {
+      animation-name: fadeOut !important;
+      animation-duration: 0.5s !important;
+      animation-fill-mode: both !important;
+    }
+  </style>
+</div>

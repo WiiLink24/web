@@ -29,71 +29,41 @@ import { Trans } from "astro-i18next/components";
 
 <script is:inline>
   document.addEventListener("DOMContentLoaded", async function () {
-    let fetcher = document.getElementById("fetcherServices").innerHTML;
-    fetch(fetcher)
-      .then(response => response.json())
-      .then(data => showService(data));
+    const fetcher = document.getElementById("fetcherServices").innerHTML;
+    const services = document.getElementById("slide-track");
+    const services2 = document.getElementById("slide-track_2");
 
-    function showService(data) {
-      let services = document.getElementById("slide-track");
-      let services2 = document.getElementById("slide-track_2");
+    const response = await fetch(fetcher);
+    const data = await response.json();
 
-      for (let i = 0; i < 2; i++) {
-        for (let i = 0; i < (data.services.service.length - 4) / 2; i++) {
-          if (data.services.service[i].isArea == "Video on-demand") {
-          } else {
-            services.innerHTML +=
-              "<a style='color:rgb(34,37,41); text-decoration:none;' href='" +
-              data.services.service[i].link +
-              "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" +
-              data.services.service[i].color +
-              "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img src='img/" +
-              data.services.service[i].icon +
-              "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" +
-              data.services.service[i].name +
-              "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
-              data.services.service[i].desc +
-              "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" +
-              data.services.service[i].color +
-              "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" +
-              data.services.service[i].completed +
-              "%; background-color:" +
-              data.services.service[i].color +
-              "; border-radius:80px;'></div></div></div></a>";
-          }
-        }
-      }
+    const createServiceHTML = service => {
+      if (service.isArea === "Video on-demand") return "";
+      return `<a style='color:rgb(34,37,41); text-decoration:none;' href='${service.link}'>
+        <div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'>
+          <div style='background-color:${service.color}; width:100%; height:25px; top:0; left:0; position:relative;'></div>
+          <div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'>
+            <img loading='lazy' src='img/${service.icon}' style='object-fit:contain;' width='50px' height='50px'>
+            <h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>${service.name}</h2>
+          </div>
+          <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>${service.desc}</h3>
+          <div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:${service.color}20; overflow:hidden; position:relative;'>
+            <div class='bar' style='height:18px; width:${service.completed}%; background-color:${service.color}; border-radius:80px;'></div>
+          </div>
+        </div>
+      </a>`;
+    };
 
-      for (let i = 0; i < 2; i++) {
-        for (
-          let i = (data.services.service.length - 4) / 2;
-          i < data.services.service.length - 4;
-          i++
-        ) {
-          if (data.services.service[i].isArea == "Video on-demand") {
-          } else {
-            services2.innerHTML +=
-              "<a style='color:rgb(34,37,41); text-decoration:none;' href='" +
-              data.services.service[i].link +
-              "'><div class='service' style='height:250px; width:450px; border-radius:16px; box-shadow:0px 0px 20px #00000020; margin:15px; overflow:hidden;'><div style='background-color:" +
-              data.services.service[i].color +
-              "; width:100%; height:25px; top:0; left:0; position:relative;'></div><div style='top:15px; align-self:center; display:flex; position:relative; left:5%;'><img loading='lazy' src='img/" +
-              data.services.service[i].icon +
-              "' style='object-fit:contain;' width='50px' height='50px'><h2 style='top:8px; left:20px; font-family:Gilroy; position:relative;'>" +
-              data.services.service[i].name +
-              "</h2></div> <h3 style='top:20px; left:50%; width:90%; transform:translate(-50%, 0); font-size:25px; font-weight:200; position:relative;'>" +
-              data.services.service[i].desc +
-              "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:350px; height:18px; border-radius:20px; background-color:" +
-              data.services.service[i].color +
-              "20; overflow:hidden; position:relative;'><div class='bar' style='height:18px; width:" +
-              data.services.service[i].completed +
-              "%; background-color:" +
-              data.services.service[i].color +
-              "; border-radius:80px;'></div></div></div></a>";
-          }
-        }
-      }
+    const halfLength = (data.services.service.length - 4) / 2;
+    for (let j = 0; j < 2; j++) {
+    for (let i = 0; i < halfLength; i++) {
+      services.innerHTML += createServiceHTML(data.services.service[i]);
     }
+  }
+  for (let j = 0; j < 2; j++) {
+    for (let i = halfLength; i < data.services.service.length - 4; i++) {
+      services2.innerHTML += createServiceHTML(data.services.service[i]);
+    }
+  }
   });
 </script>
 
@@ -260,6 +230,16 @@ import { Trans } from "astro-i18next/components";
   @media only screen and (min-width: 2000px) {
     .svc-holder {
       margin-top: 100px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide-track {
+      animation: none !important;
+      transform: translate(0, 0);
+    }
+    .slide-track:nth-child(2) {
+      transform: translate(-200px, 0);
     }
   }
 </style>

@@ -8,23 +8,23 @@ import { localizePath } from "astro-i18next";
 <footer>
 	<div class="copyright">
         <div class="footer-holder">
-			<img loading="lazy" class="footer-logo" src="../../img/logo.png" style="left:50px; filter:invert(1); position:relative;" height="150px">
+			<img loading="lazy" class="footer-logo" src="../../img/logo.png" style="left:50px; position:relative;" height="150px">
 			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
 		
 			
 			<div class="socials">
 				<div style="width:200px; text-align:right;">
-				<a href="https://discord.gg/wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
-				<a href="https://twitter.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
-				<a href="https://github.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
-				<a href="https://www.patreon.com/WiiLink24" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}>Patreon<i style="margin-left:10px;" class="fa-brands fa-patreon"></i></div></a>
-				<a href="https://www.youtube.com/@wiilink" style="color:white;"><div  data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
+				<a href="https://discord.gg/wiilink" style="text-decoration:none;"><div style="color:white !important;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink">Discord<i style="margin-left:5px;" class="fa-brands fa-discord"></i></div></a>
+				<a href="https://twitter.com/WiiLink24" style="text-decoration:none;"><div style="color:white !important;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="@WiiLink24">Twitter<i style="margin-left:10px;" class="fa-brands fa-twitter"></i></div></a>
+				<a href="https://github.com/WiiLink24" style="text-decoration:none;"><div style="color:white !important;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"> GitHub<i style="margin-left:10px;" class="fa-brands fa-github"></i></div></a>
+				<a href="https://www.patreon.com/WiiLink24" style="text-decoration:none;"><div style="color:white !important;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}>Patreon<i style="margin-left:10px;" class="fa-brands fa-patreon"></i></div></a>
+				<a href="https://www.youtube.com/@wiilink" style="text-decoration:none;"><div style="color:white !important;" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24">YouTube<i style="margin-left:5px;" class="fa-brands fa-youtube"></i></div></a>
 				</div>
 				<div style="margin-top:15px;">
-				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
-				<a href={localizePath("/extras/branding")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
-				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
-				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")}  style="background-color:white; color:black; animation: changecolor2 10s linear infinite; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img loading="lazy" src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
+				<a href="mailto:contact@wiilink24.com"><button type="button" class="btn1 btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.contact")} style="background-color:white; color:black !important; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-envelope-open"></i></button></a>
+				<a href={localizePath("/extras/branding")}><button type="button" class="btn1 btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.assets")} style="background-color:white; color:black !important; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-palette"></i></button></a>
+				<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title={t("site.install")} style="background-color:white; color:black !important; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"><i class="fa-solid fa-download"></i></button></a>
+				<a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.creator")}  style="background-color:white; color:black !important; animation: changecolor2 10s linear infinite; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"><img loading="lazy" src="https://github.com/humanoidear.png" style="transform:translate(-10px, -10px); position:relative;" width="45px" height="45px"></button></a>
 				</div>
 			</div>
 		</div>
@@ -81,7 +81,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	}
 	.slogan{
 		left:80px;
-		color:white;
+		color:white !important;
 		width:500px;
 		position: relative;
 	}

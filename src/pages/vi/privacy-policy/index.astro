@@ -2,7 +2,6 @@
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
-import "../../../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
@@ -104,7 +103,7 @@ changeLanguage("vi");
         Data Security and Transactions
     </p>
     <section class="section">
-        <div class="alert alert-primary" style="font-family:inter;" role="alert">
+        <div class="alert alert-primary" style="color:black !important; font-family:inter;" role="alert">
             <strong>Important!</strong><br>Only the website handles transactions. The service on the Wii does not.
     </div>
     </section>
@@ -127,7 +126,7 @@ changeLanguage("vi");
         Children's Privacy
 </p>
 <section class="section">
-        <div class="alert alert-danger" style="margin-top:0; font-family:inter;" role="alert">
+        <div class="alert alert-danger" style="color:black !important; margin-top:0; font-family:inter;" role="alert">
             <strong>Important!</strong><br>This service is not intended for children under the age of 13.
         </div>
 </section>

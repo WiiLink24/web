@@ -1,9 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
-import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Sidebar from "../components/GuideSidebar.astro";
 import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
@@ -22,7 +20,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     image="/img/Guide_embed.png"
   />
   <Header isGuide="display:block;" />
-  <Sidebar />
   <div class="flex">
     <div class="holder">
       <div id="container1"></div>
@@ -45,7 +42,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-1.png" />
                 <div
                   class="title-main"
-                  style="text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
                   <i class="fa-solid fa-download" style="margin-right:5px;"
                   ></i>{t("guidePost.installGuide")}
                 </div>
@@ -56,7 +53,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-3.png" />
                 <div
                   class="title-main"
-                  style="text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
                   <i
                     class="fa-solid fa-circle-exclamation"
                     style="margin-right:5px;"></i>{
@@ -70,7 +67,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-2.png" />
                 <div
                   class="title-main"
-                  style="text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
                   <i
                     class="fa-solid fa-circle-question"
                     style="margin-right:5px;"></i>{t("guidePost.faq")}
@@ -475,6 +472,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       margin-bottom: 30px;
     }
 
+    .post2:hover {
+      text-decoration: underline;
+    }
+
     .post2:nth-child(1) {
       display: none;
     }
@@ -491,9 +492,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       display: none;
     }
 
-    .post2 {
-      display: block;
-    }
     .wiiguide {
       top: 60px;
       width: 100%;
@@ -502,7 +500,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       font-family: Gilroy;
       font-size: 25px;
       text-align: center;
-      color: white;
+      color: white !important;
       padding-top: 20px;
       padding-bottom: 20px;
       position: relative;
@@ -573,9 +571,9 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       .holder {
         display: none;
       }
-	  #togglebtn {
-		display: none;
-	  }
+      #togglebtn {
+        display: none;
+      }
       .guidecontent {
         margin-top: 168px;
       }

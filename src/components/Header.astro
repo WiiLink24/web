@@ -29,7 +29,7 @@ const { isGuide, isMain } = Astro.props;
 			<div class="dropdown">
 				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0) scale(150%);" type="button" data-bs-toggle="" aria-expanded="false">
 				</button>
-				<ul class="dropdown-menu" id="dropMenu" style="transform:translate(50px, -10px); overflow:hidden;">
+				<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); transform:translate(50px, -10px); overflow:hidden;">
 					<form>
 					<li><h6 class="dropdown-header"><i class="fa fa-globe"></i> Choose your language</h6></li>
 					<div class="optDisplay" id="optionsDisplay" style="height:200px; width:200px; overflow-y:scroll; position:relative;"></div>
@@ -40,9 +40,9 @@ const { isGuide, isMain } = Astro.props;
 				</form>
 				</ul>
 			  </div>
-		<a class="link" href="https://wfc.wiilink24.com"><div class="btn btn-dark" style="transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-wifi" style="margin-right:5px;"></i> WiiLink WFC
+		<a class="link" href="https://wfc.wiilink24.com"><div class="btn btn-dark" style="color:white !important; transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-wifi" style="margin-right:5px;"></i> WiiLink WFC
 		</div></a>
-		<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i></button></a>
+		<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
 		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-moon"></i></button>
 	 </ul>
 </r>
@@ -344,7 +344,7 @@ checkScrollPosition();
   position: fixed;
   left: 0;
   top: 41px;
-  background: linear-gradient(to bottom, #ffffff, transparent);
+  background: linear-gradient(to bottom, var(--bg-color-light), transparent);
   pointer-events: none;
   width: 100%;
   height: 50px;
@@ -355,7 +355,7 @@ checkScrollPosition();
   position: fixed;
   left: 0;
   bottom: 73px;
-  background: linear-gradient(to top, #ffffff, transparent);
+  background: linear-gradient(to top, var(--bg-color-light), transparent);
   pointer-events: none;
   width: 100%;
   height: 50px;

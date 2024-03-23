@@ -3,7 +3,6 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
-import "../../../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
@@ -26,7 +25,7 @@ changeLanguage("de");
       </p>
     </h1>
     <div class="polka-dot"></div>
-    <h5 style="font-size:18px; font-weight:400;"></h5>
+    <h5 style="font-size:18px; font-weight:400;">
     <br />
     <b
       >This Agreement is between you (the End User) and WiiLink (the Licensor)
@@ -218,6 +217,7 @@ changeLanguage("de");
     WiiLink to the Wii Message Board from time to time. If you wish to continue
     to use the WiiLink service but would prefer not to receive these messages,
     please do not use our DNS code.<br />
+  </h5>
   </section>
 
   <Footer />

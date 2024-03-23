@@ -2,7 +2,6 @@
 import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
-import "../../styles/global.css";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
@@ -21,131 +20,127 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   image="/img/News_embed.png"
 />
 <Header isGuide="display:none;" />
-
-<body>
-  <div class="hold">
-    <img class="newstop" src="/img/newstop.png" />
-    <div class="welcome-msg">
-      <h2 style="font-size:40px; font-family:Gilroy;">
-        <Trans i18nKey="news.title">
-          Here is the <span
-            class="badge bg-warning"
-            style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-          ></span><b style="font-family: Rubik;">WiiLink</b><span
-            class="badge bg-warning"
-            style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-            >news</span
-          >
-        </Trans>
-      </h2>
-      <h3 style="font-size: calc(1.3rem + .6vw);">
-        <Trans i18nKey="news.subtitle">
-          Catch up on all our <b class="color">antics</b>, as well as <b
-            class="color">service updates</b
-          >!
-        </Trans>
-      </h3>
-    </div>
-    <div class="newsHero">
-      <a href={`/news/${posts[0].slug}/`} style="text-decoration: none;">
-        <img src={posts[0].data.heroImage} class="heroimg" />
-        <FormattedDate date={posts[0].data.pubDate} />
-        <div class="herodatahold">
-          <img
-            src={posts[0].data.heroImage}
-            style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
-            class="mobileimg"
-            height="200px"
-          />
-          <div class="innerdata">
-            <h1 style="font-family: Gilroy; color:white; font-size:50px;">
-              {posts[0].data.title}
-            </h1>
-            <h5>
-              <img
-                src={posts[0].data.authImage}
-                style="margin-right:5px; border-radius:8px;"
-                height="40px"
-              />
-              {posts[0].data.author} | {posts[0].data.authTitle}
-            </h5>
-            <p style="color:white;">{posts[0].data.description}</p>
-          </div>
-        </div>
-      </a>
-    </div>
-    <div class="postholder">
-      {
-        posts.slice(1, 7).map(post => (
-          <div class="posthold">
-            <div class="post">
-              <a href={`/news/${post.slug}/`}>
-                <FormattedDate date={post.data.pubDate} />
-                <div class="faded" />
-                <img class="heroImage" src={post.data.heroImage} />
-                <div class="title">
-                  <img class="authimage" src={post.data.authImage} alt="" />
-                  <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-                    {post.data.title}
-                  </b>
-                </div>
-                <div class="desc">{post.data.description}</div>
-              </a>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    <h2 class="subtitle">
-      <Trans i18nKey="news.otherNews">
-        Here's some <b class="color">older</b> articles:
-      </Trans>
-    </h2>
-
-    <div class="postholdermini">
-      <div class="polka-dot"></div>
-      {
-        posts.map(post => (
-          <div class="postmini">
-            {post.data.heroImage && (
-              <img
-                style="scale:105%; opacity:0.2; filter:blur(8px) brightness(0.5); z-index:0; position:absolute;"
-                width="100%"
-                height="100%"
-                src={post.data.heroImage}
-                alt=""
-              />
-            )}
-            <a href={`/news/${post.slug}/`}>
-              <div class="fade-small" />
-              <FormattedDate date={post.data.pubDate} />
-              <div class="title-small">{post.data.title}</div>
-            </a>
-          </div>
-        ))
-      }
-    </div>
-    <h3
-      style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
-      <Trans i18nKey="news.rssTitle">
-        <b
-          >Want to get <c class="color">WiiLink news</c> on your site o service?
-          Just use our <c class="color">RSS feed</c>!</b
+<div class="hold">
+  <img class="newstop" src="/img/newstop.png" />
+  <div class="welcome-msg">
+    <h2 style="font-size:40px; font-family:Gilroy;">
+      <Trans i18nKey="news.title">
+        Here is the <span
+          class="badge bg-warning"
+          style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+        ></span><b style="font-family: Rubik;">WiiLink</b><span
+          class="badge bg-warning"
+          style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+          >news</span
         >
       </Trans>
+    </h2>
+    <h3 style="font-size: calc(1.3rem + .6vw);">
+      <Trans i18nKey="news.subtitle">
+        Catch up on all our <b class="color">antics</b>, as well as <b
+          class="color">service updates</b
+        >!
+      </Trans>
     </h3>
-    <a href="/rss.xml"
-      ><buton
-        class="btn center btn-success"
-        style="left:50%; transform:translate(-50%, 0); margin-top:8px; z-index:1000; position:relative;">
-        <i class="fa-solid fa-square-rss" style="margin-right:5px;"></i>
-        {t("news.rssButton")}
-      </buton></a
-    >
-    <div class="dots"></div>
   </div>
-</body>
+  <div class="newsHero">
+    <a href={`/news/${posts[0].slug}/`} style="text-decoration: none;">
+      <img src={posts[0].data.heroImage} class="heroimg" />
+      <FormattedDate date={posts[0].data.pubDate} />
+      <div class="herodatahold">
+        <img
+          src={posts[0].data.heroImage}
+          style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
+          class="mobileimg"
+          height="200px"
+        />
+        <div class="innerdata">
+          <h1 style="font-family: Gilroy; color:white !important; font-size:50px;">
+            {posts[0].data.title}
+          </h1>
+          <h5 style="color:white !important;">
+            <img
+              src={posts[0].data.authImage}
+              style="margin-right:5px; border-radius:8px;"
+              height="40px"
+            />
+            {posts[0].data.author} | {posts[0].data.authTitle}
+          </h5>
+          <p style="color:white !important;">{posts[0].data.description}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="postholder">
+    {
+      posts.slice(1, 7).map(post => (
+        <div class="posthold">
+          <div class="post">
+            <a href={`/news/${post.slug}/`}>
+              <FormattedDate date={post.data.pubDate} />
+              <img class="heroImage" src={post.data.heroImage} />
+              <div class="title">
+                <img class="authimage" src={post.data.authImage} alt="" />
+                <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {post.data.title}
+                </b>
+              </div>
+              <div class="desc">{post.data.description}</div>
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <h2 class="subtitle">
+    <Trans i18nKey="news.otherNews">
+      Here's some <b class="color">older</b> articles:
+    </Trans>
+  </h2>
+
+  <div class="postholdermini">
+    <div class="polka-dot"></div>
+    {
+      posts.map(post => (
+        <div class="postmini">
+          {post.data.heroImage && (
+            <img
+              style="scale:105%; opacity:0.2; filter:blur(8px) brightness(0.5); z-index:0; position:absolute;"
+              width="100%"
+              height="100%"
+              src={post.data.heroImage}
+              alt=""
+            />
+          )}
+          <a href={`/news/${post.slug}/`}>
+            <div class="fade-small" />
+            <FormattedDate date={post.data.pubDate} />
+            <div class="title-small">{post.data.title}</div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <h3
+    style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
+    <Trans i18nKey="news.rssTitle">
+      <b
+        >Want to get <c class="color">WiiLink news</c> on your site o service? Just
+        use our <c class="color">RSS feed</c>!</b
+      >
+    </Trans>
+  </h3>
+  <a href="/rss.xml"
+    ><buton
+      class="btn center btn-success"
+      style="left:50%; transform:translate(-50%, 0); margin-top:8px; z-index:1000; position:relative;">
+      <i class="fa-solid fa-square-rss" style="margin-right:5px;"></i>
+      {t("news.rssButton")}
+    </buton></a
+  >
+  <div class="dots"></div>
+</div>
 
 <Footer />
 
@@ -177,6 +172,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     display: flex;
     z-index: 100;
     position: absolute;
+  }
+
+  div {
+    color: white !important;
   }
 
   .mainimgsmall {
@@ -213,7 +212,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     width: 150px;
     height: 150px;
     opacity: 0.5;
-    background-image: radial-gradient(#00000040 2px, transparent 2px);
+    background-image: radial-gradient(var(--border-color) 2px, transparent 2px);
     background-size: 15px 15px;
     z-index: 0;
     position: relative;
@@ -242,7 +241,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     top: 50%;
     right: 50px;
     transform: translate(0, -50%);
-    color: white;
+    color: white !important;
     font-size: 25px;
     width: 150px;
     justify-content: right;
@@ -485,8 +484,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     position: relative;
     height: 200px;
     width: 100%;
-    background-color: rgb(247, 247, 247);
-    border-radius: 15px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
@@ -544,6 +543,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     font-size: max(20px, 30px);
     top: 50%;
     left: 50%;
+    color: var(--color) !important;
     transform: translate(-50%, 0);
     text-align: center;
     color: #181818;
@@ -664,28 +664,12 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     position: relative;
   }
 
-  .faded {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.5;
-    background: rgb(2, 0, 36);
-    background: linear-gradient(
-      0deg,
-      rgba(60, 60, 60, 0.337) 0%,
-      rgba(244, 244, 244, 0) 100%
-    );
-    position: absolute;
-    transition: 0.2s;
-  }
-
   .fade-small {
     width: 100%;
     height: 100%;
     background: linear-gradient(
       0deg,
-      rgb(203, 203, 203) 0%,
+      var(--bg-color-secondary) 0%,
       rgba(244, 244, 244, 0) 100%
     );
     position: absolute;

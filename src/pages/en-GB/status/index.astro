@@ -2,7 +2,6 @@
 import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
-import "../../../styles/global.css";
 import Footer from "../../../components/Footer.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
@@ -46,7 +45,7 @@ changeLanguage("en-GB");
         ><button
           type="button"
           class="btn1 btn btn-success"
-          style="padding:10px; margin:0px; position:relative;"
+          style="color:white !important; padding:10px; margin:0px; position:relative;"
           ><i class="fa-solid fa-server" style="margin-right:5px;"></i>
           {t("status.serverStatus")}</button
         ></a
@@ -106,7 +105,7 @@ changeLanguage("en-GB");
           data.services.service[i].color +
           "20; border-radius:16px; animation: 0.2s " +
           i * 50 +
-          "ms fadeup linear forwards; box-shadow:0px 0px 20px #12121220; opacity:0; overflow:hidden;'><div style='top:0px; left:0; padding:20px 30px 10px 30px; background-color:#00000005; display:flex; flex-direction: row; align-items:center; gap:15px; position:relative;'><img src='/img/" +
+          "ms fadeup linear forwards; box-shadow:0px 0px 20px #12121220; opacity:0; overflow:hidden;'><div style='top:0px; left:0; padding:20px 30px 10px 30px; background-color:var(--bg-color-tertiary); display:flex; flex-direction: row; align-items:center; gap:15px; position:relative;'><img src='/img/" +
           data.services.service[i].icon +
           "' style='object-fit:contain; " +
           display +
@@ -124,7 +123,7 @@ changeLanguage("en-GB");
           data.services.service[i].completed +
           "%; background-color:" +
           data.services.service[i].color +
-          "; border-radius:0px;'></div></div><h3 style='margin-top:30px; margin-bottom:20px; left:50%; width:90%; transform:translate(-50%, 0); background-color:#00000005; padding:15px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; font-size:20px; font-weight:200; position:relative;'>" +
+          "; border-radius:0px;'></div></div><h3 style='margin-top:30px; margin-bottom:20px; left:50%; width:90%; transform:translate(-50%, 0); background-color:var(--bg-color-tertiary); padding:15px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; font-size:20px; font-weight:200; position:relative;'>" +
           data.services.service[i].todo +
           "</h3></div></a>";
         if (

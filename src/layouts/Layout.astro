@@ -1,8 +1,4 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import "../styles/global.css";
-
 export interface Props {
   title: string;
   description: string;
@@ -14,7 +10,6 @@ const { title, description, image } = Astro.props;
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
 
 <!-- Primary Meta Tags -->
@@ -58,8 +53,10 @@ const { title, description, image } = Astro.props;
 
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="darkreader-lock" />
     <!-- Google tag (gtag.js) -->
-    <script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
     ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -99,175 +96,73 @@ const { title, description, image } = Astro.props;
 </html>
 
 <style is:global>
-  html.dark .offcanvas-body {
-    background-color: #121212;
+  @font-face {
+    font-family: Rubik;
+    src: url(/fonts/Rubik.ttf);
   }
-  html.dark body {
-    background-color: #121212;
+
+  @font-face {
+    font-family: gilroy;
+    src: url(/fonts/Gilroy.otf);
   }
+
+  @font-face {
+    font-family: inter;
+    src: url(/fonts/sfpro.otf);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  label,
+  button,
+  li,
+  a,
+  div {
+    color: var(--color) !important;
+  }
+
+  .dropdown-item:hover {
+    background-color: var(--bg-select) !important;
+  }
+
+  html {
+    --color: black;
+    --bg-color: white;
+    --bg-color-light: #ffffff;
+    --bg-color-secondary: #f8f9fa;
+    --bg-color-tertiary: #f1f3f5;
+    --bg-color-absolute: #ffffff;
+    --border-color: #00000020;
+    --shadow-color: #00000020;
+    --bg-select: #eaeaea;
+    --bg-opaque-1: #00000010;
+    --bg-opaque-2: #00000020;
+  }
+
   html.dark {
-    background-color: #121212;
-  }
-  html.dark h1 {
-    color: white;
-  }
-  html.dark h2 {
-    color: white;
-  }
-  html.dark h3 {
-    color: white;
-  }
-  html.dark h4 {
-    color: white;
-  }
-  html.dark h5 {
-    color: white;
-  }
-  html.dark p {
-    color: white;
-  }
-  html.dark ol {
-    color: white;
-  }
-  html.dark ul {
-    color: white;
-  }
-  html.dark a {
-    color: white;
-  }
-  html.dark .auths {
-    border-top: 2px solid #ffffff20;
+    --color: white;
+    --bg-color: #161515;
+    --bg-color-light: #202020;
+    --bg-color-secondary: #1a1a1a;
+    --bg-color-tertiary: #1e1e1e;
+    --bg-color-absolute: #000000;
+    --border-color: #ffffff20;
+    --shadow-color: #ffffff05;
+    --bg-select: #0a0a0a30;
+    --bg-opaque-1: #ffffff10;
+    --bg-opaque-2: #ffffff20;
   }
 
-  a {
-    color: black;
-    text-decoration: underline;
-  }
-
-  html.dark article {
-    background-color: #202020;
-  }
-  html.dark .btn-close {
-    filter: invert(1);
-  }
-  html.dark .title {
-    color: #ffffff;
-  }
-  html.dark .desc {
-    color: #ffffff;
-  }
-  html.dark .post {
-    background-color: #ffffff10;
-  }
-  html.dark .generic {
-    background-color: #ffffff10;
-    color: #ffffff;
-    border: 0px solid white;
-  }
-  html.dark .generic a {
-    color: #ffffff;
-  }
-  html.dark .generic code {
-    color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0);
-  }
-  html.dark code {
-    color: #ffffff;
-  }
-  html.dark .post:hover:before {
-    box-shadow: inset 0 0 0px 3px #ffffff98;
-  }
-
-  html.dark .post:before {
-    box-shadow: inset 0 0 0px 3px #ffffff0a;
-  }
-  html.dark .title2 {
-    color: #ffffffa2;
-  }
-  html.dark .title2:hover {
-    color: white;
-  }
-  html.dark .banner {
-    color: #ffffff;
-  }
-  html.dark .guide {
-    color: #ffffff;
-  }
-  html.dark .underline {
-    background-color: #ffffff20;
-  }
-  html.dark .guideholder {
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    background-color: rgba(200, 200, 200, 0.022);
-  }
-  html.dark .fade-sidebar {
-    background: linear-gradient(
-      180deg,
-      rgba(18, 18, 18, 1) 20%,
-      rgba(0, 0, 0, 0) 100%
-    );
-  }
-  html.dark .authtitle {
-    color: white;
-  }
-  html.dark #error-message {
-    color: white;
-  }
-  html.dark #container2 div {
-    color: white;
-  }
-  html.dark .authtitle2 {
-    color: white;
-    border: 2px solid white;
-  }
-  html.dark .authdesc {
-    color: white;
-  }
-  html.dark .subtitle {
-    color: white;
-  }
-  html.dark .dropdownbtn {
-    color: white;
-  }
-  html.dark .link {
-    color: white;
-  }
-  html.dark .title {
-    filter: brightness(200%);
-  }
-  html.dark .authimage {
-    filter: brightness(50%);
-  }
-  html.dark .toc-post:before {
-    color: white;
-  }
-  html.dark .toc-link {
-    color: white;
-  }
-  html.dark .toc-link:hover {
-    color: rgb(50, 168, 23);
-  }
+  html.dark .btn-close,
   html.dark .stripe-logo {
     filter: invert(1);
   }
-  html.dark .topimg {
-    filter: invert(1) opacity(0.1);
-  }
-  html.dark .postexpand > h5 {
-    color: white;
-  }
-  html.dark .postexpand > h4 {
-    color: white;
-  }
-  html.dark .postexpand > h3 {
-    color: white;
-  }
-  html.dark .postexpand > h2 {
-    color: white;
-  }
-  html.dark .postexpand > h1 {
-    color: white;
-  }
+
   html.dark #grad {
     background: rgb(255, 255, 255);
     background: linear-gradient(
@@ -275,13 +170,6 @@ const { title, description, image } = Astro.props;
       rgba(255, 255, 255, 0) 0%,
       rgba(250, 250, 250, 0.1) 100%
     );
-  }
-  html.dark .accordion-body {
-    background-color: #1e1e1e;
-  }
-  html.dark .accordion-button {
-    color: white;
-    background-color: #1e1e1e;
   }
   html.dark .accordion-button::after {
     color: white;
@@ -297,92 +185,12 @@ const { title, description, image } = Astro.props;
   html.dark .newstop {
     filter: opacity(0.1) invert(1);
   }
-  html.dark .posthold {
-    filter: drop-shadow(0px 0px 20px #d4d4d410);
-  }
-  html.dark .postmini {
-    color: white;
-    background-color: rgb(38, 38, 38);
-  }
-  html.dark .title-small {
-    color: white;
-  }
-  html.dark .spinner {
-    filter: brightness(1000%);
-  }
-  html.dark .fade-small {
-    background: linear-gradient(
-      0deg,
-      rgba(103, 103, 103, 0.364) 0%,
-      rgba(244, 244, 244, 0) 100%
-    );
-  }
-  html.dark .faded {
-    background: linear-gradient(0deg, #202020 0%, #ffffff00 100%);
-  }
-  html.dark .postmini:hover {
-    box-shadow: 0px 0px 40px rgba(66, 66, 66, 0.356);
-  }
   html.dark .bottomleftcorner {
     animation: changecolordark 10s linear infinite;
   }
-  html.dark .form-check-label {
-    color: rgb(255, 255, 255);
-  }
-  html.dark .dots {
-    background-image: radial-gradient(#ffffff40 2px, transparent 2px);
-    background-size: 15px 15px;
-  }
-  html.dark .polka-dot {
-    background-image: radial-gradient(
-      rgba(255, 255, 255, 0.898) 2px,
-      transparent 2px
-    );
-    background-size: 30px 30px;
-  }
-  html.dark .symbolholder {
-    background-color: #000000;
-  }
-  html.dark .member {
-    background-color: #1b1b1b;
-  }
-  html.dark .build-square {
-    background: #242424;
-    border: 2px solid rgb(60, 60, 60);
-  }
-  html.dark .github {
-    color: white;
-    background: #24242400;
-    border: 2px solid rgb(60, 60, 60);
-  }
-  html.dark .service {
-    background-color: #20202060;
-    backdrop-filter: blur(8px);
-    box-shadow: 0px 0px 20px #ffffff10;
-  }
-  html.dark .slider::before {
-    background: linear-gradient(to right, #121212 0%, #12121200 100%);
-  }
-  html.dark .slider::after {
-    background: linear-gradient(to right, #121212 0%, #12121200 100%);
-  }
-  html.dark .fade-main {
-    background: linear-gradient(0deg, #121212 0%, #f4f4f400 100%);
-  }
-  html.dark .hide {
-    color: rgba(255, 255, 255, 0.573);
-  }
-  html.dark .donator-holder {
-    color: white;
-  }
-  html.dark .slidedown {
-    color: white;
-  }
+
   html.dark .square {
     animation: changecolordark 10s linear infinite;
-  }
-  html.dark #square2 {
-    background-color: #121212;
   }
 
   :root {
@@ -397,15 +205,81 @@ const { title, description, image } = Astro.props;
     );
   }
   html {
-    --bg-color: #ffffff;
     scroll-behavior: smooth;
     font-family: systemui, sans-serif;
     background-color: var(--bg-color);
     background-size: 224px;
   }
 
+  body {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    background-size: 100% 600px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: rgb(var(--gray-dark));
+    background-color: var(--bg-color);
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  main {
+    width: 720px;
+    max-width: calc(100% - 2em);
+    margin: auto;
+    padding: 3em 1em;
+  }
+  .toc-post:before {
+    font-family: Gilroy;
+    left: -2px;
+    top: -43px;
+    width: calc(100% + 4px);
+    font-size: 18px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: rgba(101, 101, 101, 0.184);
+    border: 2px solid rgba(128, 128, 128, 0.168);
+    border-bottom: 0px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Table of Contents";
+    position: absolute;
+  }
+  .toc-post {
+    top: 43px;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    background-color: rgba(88, 88, 88, 0.096);
+    border: 2px solid rgba(128, 128, 128, 0.168);
+    border-top: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    backdrop-filter: blur(8px);
+    z-index: 1;
+    position: relative;
+  }
+  .toc-link {
+    color: rgb(38, 38, 38);
+  }
+  .toc-link:hover {
+    color: rgb(50, 168, 23);
+  }
+
   .service {
-    background-color: #ffffff;
+    background-color: var(--bg-color-secondary);
     transition: 0.3s;
   }
 
@@ -455,6 +329,352 @@ const { title, description, image } = Astro.props;
       Bitstream Vera Sans Mono,
       Courier New,
       monospace;
+  }
+
+  code {
+    padding: 4px 6px;
+    background-color: rgba(97, 97, 97, 0.148);
+    color: var(--color);
+    border-radius: 4px;
+  }
+
+  .toc-item::marker {
+    font-family: Gilroy;
+  }
+  .notice {
+    width: auto;
+    height: auto;
+    padding: 18px;
+    margin-bottom: 0px;
+    border-radius: 4px;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    position: relative;
+  }
+  .warn {
+    background-color: rgba(182, 197, 14, 0.6);
+    color: white;
+    border: 0px solid rgb(182, 197, 14);
+  }
+  .warn a {
+    color: white;
+  }
+  .warn::before {
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f06a";
+  }
+  .danger {
+    background-color: rgba(197, 14, 14, 0.6);
+    color: white;
+    border: 0px solid rgb(197, 14, 14);
+  }
+  .danger::before {
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f071";
+  }
+  .success {
+    background-color: rgba(10, 190, 40, 0.6);
+    color: white;
+    border: 0px solid rgb(10, 190, 40);
+  }
+  .success::before {
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f058";
+  }
+  .info {
+    background-color: rgba(14, 124, 197, 0.6);
+    color: white;
+    border: 0px solid rgb(14, 124, 197);
+  }
+  .info code {
+    background-color: rgba(14, 124, 197, 0.6);
+    color: white;
+    border-radius: 4px;
+  }
+  .warn code {
+    background-color: rgba(182, 197, 14, 0.6);
+    color: white;
+    border-radius: 4px;
+  }
+  .danger code {
+    background-color: rgba(197, 14, 14, 0.6);
+    color: white;
+    border-radius: 4px;
+  }
+  .success code {
+    background-color: rgba(10, 190, 40, 0.6);
+    color: white;
+    border-radius: 4px;
+  }
+  .info::before {
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f059";
+  }
+  .generic {
+    background-color: rgba(97, 97, 97, 0.062);
+    border: 0px solid rgb(64, 64, 64);
+  }
+  .generic::before {
+    margin-left: 5px;
+    margin-right: 10px;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f0c6";
+  }
+
+  .fullwidth {
+    left: 0;
+    width: 100%;
+  }
+
+  .center {
+    text-align: center;
+    padding: 10px;
+  }
+
+  img[alt="img"] {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #ffffff10;
+    object-fit: cover;
+  }
+
+  img[alt="img2"] {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #3a3a3a40;
+    object-fit: cover;
+  }
+
+  img[alt="imgcaroussel"] {
+    width: 49%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px #3a3a3a40;
+    object-fit: cover;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: left;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.2;
+  }
+  h1 {
+    font-size: 3.052em;
+  }
+  h2 {
+    font-size: 2.441em;
+    font-family: inter;
+  }
+  h3 {
+    font-size: 1.953em;
+    font-family: inter;
+  }
+  .guidecontent > h2 {
+    font-size: 35px;
+    font-family: Gilroy;
+  }
+
+  .guidecontent > h3 {
+    font-size: 25px;
+    font-family: Gilroy;
+  }
+
+  .guidecontent > h4 {
+    font-size: 20px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  .guidecontent > h5 {
+    font-size: 20px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  .postexpand > h2 {
+    color: black;
+    font-size: 35px;
+    font-family: Gilroy;
+  }
+
+  .postexpand > h3 {
+    color: black;
+    font-size: 25px;
+    font-family: Gilroy;
+  }
+
+  .postexpand > h4 {
+    color: black;
+    font-size: 20px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  .postexpand > h5 {
+    color: black;
+    font-size: 20px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+  }
+
+  h5 {
+    font-size: 1.25em;
+  }
+  ol,
+  ul {
+    margin-left: 20px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: black;
+  }
+  strong,
+  b {
+    font-weight: 700;
+  }
+  p {
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    text-align: left;
+    color: black;
+    margin-bottom: 1em;
+  }
+  .prose p {
+    margin-bottom: 2em;
+  }
+  textarea {
+    width: 100%;
+    font-size: 16px;
+  }
+  input {
+    font-size: 16px;
+  }
+  table {
+    width: 100%;
+  }
+  pre {
+    padding: 1.5em;
+    border-radius: 4px;
+  }
+  pre > code {
+    all: unset;
+  }
+  blockquote {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.096);
+    padding: 15px;
+    padding-bottom: 3px;
+    margin: 5px;
+    border-radius: 4px;
+    position: relative;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid rgb(var(--gray-light));
   }
 
   @media only screen and (max-width: 1150px) {

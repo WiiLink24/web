@@ -2,7 +2,6 @@
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
-import "../../../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIpTION } from "../../consts";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
@@ -35,7 +34,10 @@ changeLanguage("pt-PT");
         This agreement is for usage of WiiLink, a replacement WiiConnect24
         service, as well as services we provide via our DNS
       </p>
-      <div class="alert alert-warning" style="font-family:inter;" role="alert">
+      <div
+        class="alert alert-warning"
+        style="color:black !important; font-family:inter;"
+        role="alert">
         By using this service you automatically agree to these terms and
         conditions.
       </div>
@@ -332,8 +334,6 @@ changeLanguage("pt-PT");
                   </p>
                 </li>
 
-                <Footer />
-
                 <style>
                   .section {
                     max-width: 1500px;
@@ -421,4 +421,5 @@ changeLanguage("pt-PT");
       </ul>
     </section>
   </div>
+  <Footer />
 </Layout>

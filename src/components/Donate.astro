@@ -213,6 +213,7 @@ import { Trans } from "astro-i18next/components";
   .build-square {
     width: 95%;
     box-shadow: 0px 5px 10px #00000020;
+    background-color: var(--bg-color-secondary);
     border: 2px solid rgb(255, 240, 240);
     border-radius: 16px;
     perspective: 500px;
@@ -245,7 +246,7 @@ import { Trans } from "astro-i18next/components";
   .slider::before {
     background: linear-gradient(
       to right,
-      rgba(255, 255, 255, 1) 40%,
+      var(--bg-color) 40%,
       rgba(255, 255, 255, 0) 100%
     );
     content: "";
@@ -315,22 +316,18 @@ import { Trans } from "astro-i18next/components";
     position: absolute;
   }
   .tier-1 {
-    background-image: url(/img/tier_1_bg.png);
     background-size: cover;
     border: 2px solid rgb(228, 255, 169);
   }
   .tier-2 {
-    background-image: url(/img/tier_2_bg.png);
     background-size: cover;
     border: 2px solid rgb(148, 248, 255);
   }
   .tier-3 {
-    background-image: url(/img/tier_3_bg.png);
     background-size: cover;
     border: 2px solid rgb(238, 206, 252);
   }
   .tier-4 {
-    background-image: url(/img/tier_4_bg.png);
     background-size: cover;
     border: 2px solid rgb(205, 213, 204);
   }
@@ -476,6 +473,16 @@ import { Trans } from "astro-i18next/components";
 
     h3 {
       transform: translate(0, 50px);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slide-track {
+      width:100%;
+      animation: none !important;
+      transform: translate(0, 0);
+      overflow: hidden;
+      overflow-x: scroll;
     }
   }
 </style>

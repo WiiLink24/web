@@ -39,7 +39,6 @@ import { Trans } from "astro-i18next/components";
     const repo = "WiiLink24-Patcher";
 
     try {
-      // Fetch the latest release information from the GitHub repository using Octokit
       const { data: release } = await octokit.request(
         "GET /repos/{owner}/{repo}/releases/latest",
         {
@@ -64,49 +63,43 @@ import { Trans } from "astro-i18next/components";
       let versionNumber = release.tag_name;
 
       if (getData) {
-        // Update the div
-        getData.innerHTML =
-          "<img src='img/WiiLink_pack.png' style='filter:drop-shadow(0 0 20px #138aa820);' width=150px' height='150px'><a style='color:black; text-decoration:none;' href='https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest'><h2 class='release-name' style='animation:fadeup 0.2s forwards;''><o style='font-family:Rubik; font-weight:600;'>WiiLink</o> Patcher <span style='scale:60%; transform:translate(-30px, -20px);' class='badge rounded-pill bg-secondary'>" +
-          versionNumber +
-          "</span></h2><h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'><i class='fa-solid fa-code-branch'></i> <b>" +
-          relBranch +
-          "</b><span style='top:-2px; box-shadow:0px 0px 10px #4c97ed60; position:relative;' class='badge pill bg-primary'>" +
-          release.target_commitish +
-          "</span></h2><h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'><i class='fa-solid fa-calendar-days'></i> <b>" +
-          relDate +
-          "</b> " +
-          dateArray +
-          "<span style='top:-2px; left:5px; box-shadow:0px 0px 20px #4ced9a60; position:relative;' class='badge pill bg-success'>@ " +
-          timeArray +
-          "</span></h2>";
-        getData.innerHTML +=
-          "<div style='width:300px; transform:translate(0, -15px); display:flex; flex-wrap:wrap; align-items:center; justify-content:left; gap:10px; position:relative;'><img src='" +
-          release.author.avatar_url +
-          "' width='60px' height='60px' style='border-radius:8px;'> <h2 style='width:220px;'><span style='font-size:14px;' class='badge rounded bg-success'>" +
-          relBy +
-          "</span></br>" +
-          release.author.login +
-          "</h2><h2 style='font-size:23px;'><span style='transform:translate(0, -2px); font-size:14px;' class='badge rounded bg-secondary'>" +
-          relTotal +
-          "" +
-          release.reactions.total_count +
-          "</span></h2><h2 style='font-size:23px;'><i class='fa-solid fa-star'></i> " +
-          release.reactions.hooray +
-          "</h2><h2 style='font-size:23px;'><i class='fa-solid fa-heart'></i> " +
-          release.reactions.heart +
-          "</h2><h2 style='font-size:23px;'><i class='fa-solid fa-rocket'></i> " +
-          release.reactions.rocket +
-          "</h2><h2 style='font-size:23px;'><i class='fa-solid fa-eye'></i> " +
-          release.reactions.eyes +
-          "</h2><div>";
-        getData.innerHTML +=
-          "<div style='width:300px; display:flex; flex-wrap:wrap; gap:5px; position:relative;' class='download'><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[1].browser_download_url +
-          "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa fa-linux' style='scale:150%; margin-right:15px;'></i>Linux</button></a><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[4].browser_download_url +
-          "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-microsoft' style='scale:150%; margin-right:15px;'></i>Windows</button></a><a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='" +
-          release.assets[3].browser_download_url +
-          "'><button style='width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-apple' style='scale:150%; margin-right:15px;'></i>macOS</button></a></div>";
+        getData.innerHTML = `
+          <img src='img/WiiLink_pack.png' style='filter:drop-shadow(0 0 20px #138aa820);' width=150px' height='150px'>
+          <a style='color:black; text-decoration:none;' href='https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest'>
+            <h2 class='release-name' style='animation:fadeup 0.2s forwards;'>
+              <o style='font-family:Rubik; font-weight:600;'>WiiLink</o> Patcher 
+              <span style='scale:60%; transform:translate(-30px, -20px);' class='badge rounded-pill bg-secondary'>${versionNumber}</span>
+            </h2>
+            <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
+              <i class='fa-solid fa-code-branch'></i> <b>${relBranch}</b>
+              <span style='top:-2px; box-shadow:0px 0px 10px #4c97ed60; position:relative;' class='badge pill bg-primary'>${release.target_commitish}</span>
+            </h2>
+            <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
+              <i class='fa-solid fa-calendar-days'></i> <b>${relDate}</b> ${dateArray}
+              <span style='top:-2px; left:5px; box-shadow:0px 0px 20px #4ced9a60; position:relative;' class='badge pill bg-success'>@ ${timeArray}</span>
+            </h2>
+          </a>
+          <div style='width:300px; display:flex; flex-wrap:wrap; align-items:center; justify-content:left; gap:10px; position:relative;'>
+            <img src='${release.author.avatar_url}' width='60px' height='60px' style='border-radius:8px;'> 
+            <h2 style='width:220px;'><p style="font-size:15px; margin:0px;">${relBy}</p>${release.author.login}</h2>
+            <h2 style='font-size:23px;'><span style='transform:translate(0, -2px); font-size:14px;' class='badge rounded bg-secondary'>${relTotal}${release.reactions.total_count}</span></h2>
+            <h2 style='font-size:23px;'><i class='fa-solid fa-star'></i> ${release.reactions.hooray}</h2>
+            <h2 style='font-size:23px;'><i class='fa-solid fa-heart'></i> ${release.reactions.heart}</h2>
+            <h2 style='font-size:23px;'><i class='fa-solid fa-rocket'></i> ${release.reactions.rocket}</h2>
+            <h2 style='font-size:23px;'><i class='fa-solid fa-eye'></i> ${release.reactions.eyes}</h2>
+          </div>
+          <div style='width:300px; display:flex; flex-wrap:wrap; gap:5px; position:relative;' class='download'>
+            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='${release.assets[1].browser_download_url}'>
+              <button style='color:white !important; width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa fa-linux' style='scale:150%; margin-right:15px;'></i>Linux</button>
+            </a>
+            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='${release.assets[4].browser_download_url}'>
+              <button style='color:white !important; width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-microsoft' style='scale:150%; margin-right:15px;'></i>Windows</button>
+            </a>
+            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='${release.assets[3].browser_download_url}'>
+              <button style='color:white !important; width:300px; position:relative;' id='linux' type='button' class='btn btn-primary'><i class='fa-brands fa-apple' style='scale:150%; margin-right:15px;'></i>macOS</button>
+            </a>
+          </div>
+        `;
       } else {
         console.error("Element with id 'release-info' not found.");
       }
@@ -117,10 +110,6 @@ import { Trans } from "astro-i18next/components";
 </script>
 
 <style>
-  html.dark .build {
-    background-color: #1a1a1a;
-  }
-
   .build-holder {
     left: 50%;
     transform: translate(-50%, 20px);
@@ -134,9 +123,9 @@ import { Trans } from "astro-i18next/components";
     transform: translate(-50%, 0);
     width: 95%;
     max-width: 1500px;
-    background: rgb(255, 255, 255);
+    background-color: var(--bg-color-tertiary);
     box-shadow: 0px 5px 10px #00000020;
-    border: 2px solid rgb(255, 240, 240);
+    border: 2px solid var(--border-color);
     border-radius: 16px;
     display: flex;
     flex-wrap: wrap;
@@ -153,14 +142,14 @@ import { Trans } from "astro-i18next/components";
     width: 150px;
     height: 150px;
     opacity: 0.5;
-    background-image: radial-gradient(#00000040 2px, transparent 2px);
+    background-image: radial-gradient(var(--border-color) 2px, transparent 2px);
     background-size: 15px 15px;
     z-index: 0;
     position: relative;
   }
   .build {
     top: 200px;
-    background-color: rgb(244, 254, 250);
+    background-color: var(--bg-color-secondary);
     position: relative;
   }
   .color {
@@ -177,17 +166,5 @@ import { Trans } from "astro-i18next/components";
     font-size: 50px;
     font-family: Gilroy;
     position: relative;
-  }
-
-  @media only screen and (max-width: 1150px) {
-    .title {
-      right: 0px;
-      width: 95%;
-    }
-
-    .vr {
-      opacity: 0;
-      display: none;
-    }
   }
 </style>
