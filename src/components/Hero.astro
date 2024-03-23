@@ -226,6 +226,7 @@
       osdetect();
       updateButtons();
       updateOS();
+      console.log("Loaded");
       updateTagline();
     };
 
@@ -294,9 +295,6 @@
         assets = release.assets;
         changelog = release.body;
 
-        let dateArray = release.published_at.split("T");
-        let timeArray = dateArray[1].slice(0, -1);
-        dateArray = dateArray[0];
         let versionNumber = release.tag_name;
         document.getElementById("verno").innerHTML = `${versionNumber}`;
         document.getElementById("download-windows").href =
