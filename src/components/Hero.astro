@@ -134,25 +134,21 @@
   </div>
 
   <script is:inline>
-function osdetect() {
-
-let userAgent = window.navigator.userAgent;
-let os = "Unknown OS";
-
-if (userAgent.indexOf("Win") != -1) os = "Windows";
-if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-if (userAgent.indexOf("X11") != -1) os = "UNIX";
-if (userAgent.indexOf("Linux") != -1) os = "Linux";
-if (userAgent.indexOf("Wii") != -1) os = "Nintendo Wii";
-
-return os;
-}
-
     let assets = [];
     let changelog = [];
+
     function downloadPatcher() {
       if (document.getElementById("flexCheckDefault").checked) {
-        switch (osdetect()) {
+        let userAgent = window.navigator.userAgent;
+        let os = "Unknown OS";
+
+        if (userAgent.indexOf("Win") != -1) os = "Windows";
+        if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+        if (userAgent.indexOf("X11") != -1) os = "UNIX";
+        if (userAgent.indexOf("Linux") != -1) os = "Linux";
+        if (userAgent.indexOf("Wii") != -1) os = "Nintendo Wii";
+
+        switch (os) {
           case "MacOS":
             window.location.href = assets[3].browser_download_url;
             break;
