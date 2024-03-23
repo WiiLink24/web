@@ -179,29 +179,22 @@
     function updateOS() {
       switch (osdetect()) {
         case "MacOS":
-          console.log("MacOS");
           document.getElementById("download-btn").innerHTML =
             "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> Download for macOS";
           break;
         case "Windows":
-          console.log("Windows");
           document.getElementById("download-btn").innerHTML =
             "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> Download for Windows";
           break;
         case "Linux":
-          console.log("Linux");
           document.getElementById("download-btn").innerHTML =
             "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> Download for Linux";
-          break;
-        case "UNIX":
-          console.log("UNIX");
           break;
         case "Nintendo Wii":
           location.href = "/wii";
           break;
         case "Unknown OS":
         default:
-          console.log("Unknown OS");
           document.getElementById("download-btn").innerHTML =
             "<i class='fa-brands fa-download' style='margin-right:5px;'></i> Download";
           break;
@@ -316,8 +309,6 @@
           assets[0].browser_download_url;
         document.getElementById("download-linux-x64").href =
           assets[1].browser_download_url;
-
-        console.log("Latest release:", release);
       } catch (error) {
         console.error("Error fetching GitHub release:", error);
       }
