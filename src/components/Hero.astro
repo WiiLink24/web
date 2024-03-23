@@ -158,8 +158,21 @@
     }
   </script>
 
-  <script is:inline src="/js/osdetect.js"></script>
   <script>
+    function osdetect() {
+
+let userAgent = window.navigator.userAgent;
+let os = "Unknown OS";
+
+if (userAgent.indexOf("Win") != -1) os = "Windows";
+if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+if (userAgent.indexOf("X11") != -1) os = "UNIX";
+if (userAgent.indexOf("Linux") != -1) os = "Linux";
+if (userAgent.indexOf("Wii") != -1) os = "Nintendo Wii";
+
+return os;
+}
+
     function updateButtons() {
       var checkbox = document.getElementById("flexCheckDefault");
       if (checkbox.checked) {
@@ -173,31 +186,6 @@
         document.getElementById("download-btn").classList.add("disabled");
         document.getElementById("extra-btn").classList.add("disabled");
         document.getElementById("extra-btn-2").classList.add("disabled");
-      }
-    }
-
-    function updateOS() {
-      switch (osdetect()) {
-        case "MacOS":
-          document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> Download for macOS";
-          break;
-        case "Windows":
-          document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> Download for Windows";
-          break;
-        case "Linux":
-          document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> Download for Linux";
-          break;
-        case "Nintendo Wii":
-          location.href = "/wii";
-          break;
-        case "Unknown OS":
-        default:
-          document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-download' style='margin-right:5px;'></i> Download";
-          break;
       }
     }
 
@@ -223,9 +211,29 @@
     }
 
     window.onload = function () {
-      osdetect();
       updateButtons();
-      updateOS();
+      switch (osdetect()) {
+        case "MacOS":
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> Download for macOS";
+          break;
+        case "Windows":
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> Download for Windows";
+          break;
+        case "Linux":
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> Download for Linux";
+          break;
+        case "Nintendo Wii":
+          location.href = "/wii";
+          break;
+        case "Unknown OS":
+        default:
+          document.getElementById("download-btn").innerHTML =
+            "<i class='fa-brands fa-download' style='margin-right:5px;'></i> Download";
+          break;
+      }
       console.log("Loaded");
       updateTagline();
     };
