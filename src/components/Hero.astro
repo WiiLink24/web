@@ -135,7 +135,6 @@
 
   <script is:inline>
     let assets = [];
-    let changelog = [];
 
     function downloadPatcher() {
       if (document.getElementById("flexCheckDefault").checked) {
@@ -312,8 +311,7 @@ return os;
         );
 
         if (release) {
-          let assets = release.assets;
-          let changelog = release.body;
+          assets = release.assets;
 
           if (assets) {
             let versionNumber = release.tag_name;
