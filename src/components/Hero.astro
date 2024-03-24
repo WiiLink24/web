@@ -158,7 +158,8 @@
             window.location.href = assets[1].browser_download_url;
             break;
           default:
-            window.location.href = 'https://github.com/WiiLink24/WiiLink24-Patcher/releases';
+            window.location.href =
+              "https://github.com/WiiLink24/WiiLink24-Patcher/releases";
             break;
         }
       } else {
@@ -169,18 +170,17 @@
 
   <script>
     function osdetect() {
+      let userAgent = window.navigator.userAgent;
+      let os = "Unknown OS";
 
-let userAgent = window.navigator.userAgent;
-let os = "Unknown OS";
+      if (userAgent.indexOf("Win") != -1) os = "Windows";
+      if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+      if (userAgent.indexOf("X11") != -1) os = "UNIX";
+      if (userAgent.indexOf("Linux") != -1) os = "Linux";
+      if (userAgent.indexOf("Wii") != -1) os = "Nintendo Wii";
 
-if (userAgent.indexOf("Win") != -1) os = "Windows";
-if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-if (userAgent.indexOf("X11") != -1) os = "UNIX";
-if (userAgent.indexOf("Linux") != -1) os = "Linux";
-if (userAgent.indexOf("Wii") != -1) os = "Nintendo Wii";
-
-return os;
-}
+      return os;
+    }
 
     function updateButtons() {
       var checkbox = document.getElementById("flexCheckDefault");
@@ -214,7 +214,21 @@ return os;
         "Wii play. Do you?",
         "You can do more with a Wii than just losing in Mario Kart!",
         "The realest wii network revival service",
-        "If you don't like Wiilink, Wii are gonna have a problem!"
+        "If you don't like Wiilink, Wii are gonna have a problem!",
+        "Play as if you were back in your childhood!",
+        "Wii would like to play, again",
+        "Wii Link to you",
+        "Install WiiLink or face the consequences",
+        "Your childhood memories, connected to our servers",
+        "WiiLink is like breathing. you can't live without it",
+        "WiiLink, Wii Software beyond things",
+        "Fans do what Nintendon't",
+        "Now supports Wii Menu Ver. 4.4!",
+        "Link like a pro!",
+        "WiiLink24 definetly gives the 2006 vibes!",
+        "Linking the world, one Wii at a time",
+        "A Link to the Past!",
+        "One of Nintendo's biggest steps in multiplayer gaming, Riivived!"
       ];
       tagline.innerHTML = taglines[Math.floor(Math.random() * taglines.length)];
     }
@@ -375,7 +389,7 @@ return os;
     }
 
     .btn-outline-primary:hover {
-      color:white !important;
+      color: white !important;
     }
 
     .form-check {
