@@ -418,11 +418,12 @@
     }
 
     .bottom-cta {
+      max-width: 600px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 150px;
-      margin-top: 20px;
+      gap: 30px;
+      margin-top: 30px;
       cursor: pointer;
       transition: 0.2s;
     }
@@ -440,6 +441,7 @@
       opacity: 0.7;
       transform: translate(0, -5px);
       font-size: 20px;
+      text-align: right;
       text-decoration: none;
       transition: 0.2s;
     }
@@ -536,7 +538,7 @@
       animation-fill-mode: both !important;
     }
 
-    @supports (-webkit-appearance: none) {
+    @supports (width: -webkit-fill-available) {
       .webkit-hide {
         display: none;
       }
