@@ -343,7 +343,6 @@
       } catch (error) {
         console.error("Error fetching GitHub release:", error);
       }
-
     });
   </script>
 
@@ -536,6 +535,15 @@
       animation-name: fadeOut !important;
       animation-duration: 0.5s !important;
       animation-fill-mode: both !important;
+    }
+
+    @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+      .webkit-hide {
+        display: none;
+      }
+      .element {
+        background-color: var(--bg-color-tertiary);
+      }
     }
   </style>
 </div>
