@@ -50,14 +50,18 @@ const posts = (await getCollection("blog")).sort(
           type="button"
           class="btn btn-success"
           style="width:100%; height:60px;"
-          ><i class="fa-solid fa-download"></i></button
+          ><i class="fa-solid fa-download" style="color: white !important;"
+          ></i></button
         ></a
       >
       <button
         id="themeColorMobile"
         type="button"
         class="btn btn-light"
-        onclick="darkToggle()"><i class="fa-solid fa-sun"></i></button
+        style="background-color: var(--color);"
+        onclick="darkToggle()"
+        ><i class="fa-solid fa-sun" style="color: var(--bg-color-absolute);"
+        ></i></button
       >
     </div>
 
@@ -87,14 +91,12 @@ const posts = (await getCollection("blog")).sort(
           </div>
         </div>
         <div class="link">
-          <a href="/services" style="z-index: 1; postition:relative"
-            >Services</a
+          <a href="/services" style="z-index: 1; postition:relative">Services</a
           ><div style="background-color:rgb(203, 229, 124);" class="underline">
           </div>
         </div>
         <div class="link">
-          <a href="/extras" style="z-index: 1; postition:relative"
-            >Extras</a
+          <a href="/extras" style="z-index: 1; postition:relative">Extras</a
           ><div style="background-color:rgb(226, 65, 65);" class="underline">
           </div>
         </div>
@@ -410,6 +412,9 @@ const posts = (await getCollection("blog")).sort(
   .offcanvas {
     height: 100%;
     width: 100%;
+  }
+  .offcanvas-body {
+    background-color: var(--bg-color-secondary);
   }
   .color {
     background: url("/img/header_bg.png");
