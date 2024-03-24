@@ -158,7 +158,7 @@
             window.location.href = assets[1].browser_download_url;
             break;
           default:
-            window.location.href = assets[3].browser_download_url;
+            window.location.href = 'https://github.com/WiiLink24/WiiLink24-Patcher/releases';
             break;
         }
       } else {
@@ -237,10 +237,9 @@ return os;
         case "Nintendo Wii":
           location.href = "/wii";
           break;
-        case "Unknown OS":
         default:
           document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-download' style='margin-right:5px;'></i> Download";
+            "<i class='fa fa-download' style='margin-right:5px;'></i> Download";
           break;
       }
       console.log("Loaded");
