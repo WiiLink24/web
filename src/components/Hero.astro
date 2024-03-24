@@ -256,7 +256,6 @@
             "<i class='fa fa-download' style='margin-right:5px;'></i> Download";
           break;
       }
-      console.log("Loaded");
       updateTagline();
     };
 
@@ -344,6 +343,7 @@
       } catch (error) {
         console.error("Error fetching GitHub release:", error);
       }
+
     });
   </script>
 
@@ -536,16 +536,6 @@
       animation-name: fadeOut !important;
       animation-duration: 0.5s !important;
       animation-fill-mode: both !important;
-    }
-
-    @supports (width: -webkit-fill-available) {
-      .webkit-hide {
-        display: none;
-      }
-
-      .element {
-        background-color: var(--bg-color-tertiary);
-      }
     }
   </style>
 </div>
