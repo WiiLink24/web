@@ -283,7 +283,7 @@
                 </p>
               </div>
               <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
-                <img src="/img/${service.bg}" style="filter:blur(8px); opacity:0.3; height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 25%, black 75%); z-index:0; position:absolute;" alt="${service.name}" />
+                <img src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px); opacity:0.3; height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 25%, black 75%); z-index:0; position:absolute;" alt="${service.name}" />
               </div>
             </div>
           `;
@@ -534,6 +534,16 @@
       animation-name: fadeOut !important;
       animation-duration: 0.5s !important;
       animation-fill-mode: both !important;
+    }
+
+    @supports (-webkit-appearance: none) {
+      .webkit-hide {
+        display: none;
+      }
+
+      .element {
+        background-color: var(--bg-color-tertiary);
+      }
     }
   </style>
 </div>
