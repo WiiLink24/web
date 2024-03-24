@@ -382,13 +382,13 @@ changeLanguage("vi");
     display: none;
   }
   .top {
-    top: -80px;
+    top: calc(50% - 90px);
     left: 50%;
-    transform: translate(-50%, 0);
-	width:95%;
+    transform: translate(-50%, -50%);
+    width: 95%;
     max-width: 1500px;
     height: 100%;
-    max-height: 800px;
+    min-height: 800px;
     position: relative;
   }
   .accordion-body {
@@ -628,7 +628,7 @@ changeLanguage("vi");
     }
 
     .top {
-      top: 0;
+      top: 50px;
       left: 50%;
       transform: translate(-50%, 0);
       height: auto;
@@ -713,7 +713,14 @@ changeLanguage("vi");
 
   @media only screen and (min-width: 2000px) {
     .top {
+      top: 50%;
+    }
+  }
+
+  @media only screen and (min-width: 3000px) {
+    .top {
       top: 50px;
+      transform: translate(-50%, 0);
       height: 900px;
     }
     .footer-holder {
