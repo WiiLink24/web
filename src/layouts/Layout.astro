@@ -179,8 +179,9 @@ const { title, description, image } = Astro.props;
   html.dark .svcicons {
     filter: invert(1);
   }
-  html.dark .logo {
-    filter: invert(0);
+  html.dark .logo,
+  html.dark .invert {
+    filter: invert(0) !important;
   }
   html.dark .newstop {
     filter: opacity(0.1) invert(1);
