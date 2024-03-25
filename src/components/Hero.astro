@@ -57,34 +57,77 @@
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
-            <a id="download-windows" class="dropdown-item" href="#"
-              ><i class="fa-brands fa-microsoft" style="margin-right:5px;"></i> Download
-              for Windows</a
+            <a
+              id="download-windows"
+              class="dropdown-item"
+              style="display:flex; align-items:center; justify-content:space-between;"
+              href="#"
+              ><div>
+                <i class="fa-brands fa-microsoft" style="margin-right:5px;"></i>
+                Download for Windows
+              </div>
+              <p style="margin-bottom:0;">64bit</p></a
             >
           </li>
           <li>
-            <p style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-              <i class="fa-brands fa-apple" style="margin-right:5px;"></i> Download
-              for macOS
-            </p>
-            <div style="display:flex; flex-direction: row; text-align: center;">
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+                <i class="fa-brands fa-apple" style="margin-right:5px;"></i> Download
+                for macOS
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
+            </div>
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
               <a class="dropdown-item" id="download-macos-arm">Apple Silicon</a>
               <a class="dropdown-item" id="download-macos-x64">64 bits</a>
             </div>
           </li>
           <li>
-            <p style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-              <i class="fa fa-linux" style="margin-right:5px;"></i> Download for
-              Linux
-            </p>
-            <div style="display:flex; flex-direction: row; text-align: center;">
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+                <i class="fa fa-linux" style="margin-right:5px;"></i> Download for
+                Linux
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
+            </div>
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
               <a class="dropdown-item" id="download-linux-arm">ARM64</a>
               <a class="dropdown-item" id="download-linux-x64">64 bits</a>
             </div>
           </li>
-          <hr class="dropdown-divider" />
+          <div class="line-container" style="gap: 8px; margin-top: 8px;">
+            <p style="padding:0px 0px 0px 17px; margin-bottom:0; opacity:0.7;">
+              Other
+              <div
+                class="horizontal-line"
+                style="transform:translate(0, 0); opacity:0.5;">
+              </div>
+            </p>
+          </div>
           <li>
-            <a class="dropdown-item" href="#"
+            <a
+              class="dropdown-item"
+              href="https://github.com/riiconnect24/RiiConnect24-Patcher/releases"
+              ><img
+                src="https://rc24.xyz/images/logo_small_white.png"
+                width="25px"
+              /> Download legacy patcher</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
               ><i class="fa fa-book" style="margin-right:5px;"></i> Changelog</a
             >
           </li>
@@ -402,11 +445,15 @@
 
     .dropdown-menu {
       width: 100%;
+      padding: 8px !important;
       background-color: var(--bg-color-secondary);
       border-radius: 8px;
     }
 
     .dropdown-item {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      background-color: var(--bg-color-tertiary);
       border-radius: 4px;
     }
 
