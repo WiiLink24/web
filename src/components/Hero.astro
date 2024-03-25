@@ -342,8 +342,11 @@
           `;
           });
           document.getElementById("hero-services").innerHTML = html;
-          document.getElementById("bar").style.animation =
-            "bar 10s linear infinite";
+
+          const bar = document.getElementById("bar");
+          bar.style.animation = "none";
+          void bar.offsetWidth;
+          bar.style.animation = "bar 10s linear forwards";
           setTimeout(() => {
             document
               .querySelectorAll(".element")
