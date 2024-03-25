@@ -31,6 +31,13 @@ changeLanguage("ca");
           <div class="square2" id="square2">
             <Header isGuide="display:none;" isMain="display:none;" />
             <div id="top" class="top">
+              <div
+                id="warn"
+                class="alert"
+                style="width:400px; background-color:var(--bg-color-tertiary); animation:fadeout2 500ms 8s linear forwards; display:none; position:absolute;"
+                role="alert">
+              </div>
+
               <Hero />
             </div>
             <Services />
@@ -194,133 +201,61 @@ changeLanguage("ca");
         <img class="bottomleftcorner" src="img/corner.png" />
       </div>
     </body>
-
-    <script>
-      const scrollableDiv = document.getElementById("square2");
-      const width = window.innerWidth;
-
-      if (width >= 1000) {
-        scrollableDiv.addEventListener("scroll", function () {
-          if (
-            scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-            scrollableDiv.clientHeight + 30
-          ) {
-            scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-          } else {
-            scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
-          }
-        });
-      } else {
-        scrollableDiv.style.setProperty("height", "100%");
-      }
-
-      const tooltipTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="tooltip"]'
-      );
-      const tooltipList = [...tooltipTriggerList].map(
-        tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
-      );
-
-      window.onload = osdetect;
-
-      switch (osdetect()) {
-        case "MacOS":
-          document.getElementById("macos").className = "btn btn-primary";
-          break;
-        case "Windows":
-          document.getElementById("windows").className = "btn btn-primary";
-          break;
-        case "Linux":
-          document.getElementById("linux").className = "btn btn-primary";
-          break;
-        case "UNIX":
-          document.getElementById("macos").className = "btn btn-primary";
-          document.getElementById("windows").className = "btn btn-primary";
-          document.getElementById("linux").className = "btn btn-primary";
-          break;
-        case "Nintendo Wii":
-          location.href = "/wii";
-          break;
-        case "Unknown OS":
-        default:
-          document.getElementById("macos").className = "btn btn-primary";
-          document.getElementById("windows").className = "btn btn-primary";
-          document.getElementById("linux").className = "btn btn-primary";
-          break;
-      }
-    </script>
   </html>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
   <script>
-    import { Octokit } from "https://esm.sh/octokit";
-
     document.addEventListener("DOMContentLoaded", async function () {
-      const octokit = new Octokit({
-        auth: ""
-      });
-
-      const owner = "WiiLink24";
-      const repo = "WiiLink24-Patcher";
-
-      try {
-        // Fetch the latest release information from the GitHub repository using Octokit
-        const { data: release } = await octokit.request(
-          "GET /repos/{owner}/{repo}/releases/latest",
-          {
-            owner,
-            repo,
-            headers: {
-              "X-GitHub-Api-Version": "2022-11-28"
-            }
-          }
-        );
-
-        const releaseNameDiv = document.getElementById("release-name");
-        const releaseInfoDiv = document.getElementById("release-info");
-        const downloadLinkLinux = document.getElementById(
-          "download-link-linux"
-        );
-        const downloadLinkWindows = document.getElementById(
-          "download-link-windows"
-        );
-        const downloadLinkMacos = document.getElementById(
-          "download-link-macos"
-        );
-        let versionNumber = release.tag_name;
-        // Update the div
-        releaseNameDiv.innerHTML = `
-			<a style="color:black; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"><h2 class="release-name" style="animation:fadeup 0.2s forwards;"><o style="font-family:Rubik; font-weight:600;">WiiLink</o> Patcher <span style="scale:60%; transform:translate(-30px, -20px);" class="badge rounded-pill bg-secondary">${versionNumber}</span></h2></a>
-			`;
-        releaseInfoDiv.innerHTML = `
-                <p id="releasedesc"></p>
-            `;
-
-        document.getElementById("releasedesc").innerHTML = marked.parse(
-          release.body
-        );
-
-        // Update the download link if it exists
-        if (release.assets.length > 0) {
-          const assetLin = release.assets[1];
-          downloadLinkLinux.href = assetLin.browser_download_url;
-          const assetWin = release.assets[4];
-          downloadLinkWindows.href = assetWin.browser_download_url;
-          const assetMac = release.assets[3];
-          downloadLinkMacos.href = assetMac.browser_download_url;
-        } else {
-          downloadLinkLinux.style.display = "none";
-          downloadLinkWindows.style.display = "none";
-          downloadLinkMacos.style.display = "none";
-        }
-      } catch (error) {
-        console.error("Error fetching GitHub release:", error);
+      console.log("Test");
+      function getUrlParameter(name) {
+        name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
+        var results = regex.exec(location.hash);
+        return results === null
+          ? ""
+          : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
-    });
-  </script>
 
-  <script is:inline src="/js/osdetect.js"></script>
+      // Get the value of "/#from-riiconnect24" parameter
+      var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
+
+      if (fromRiiConnect24 == "true") {
+        document.getElementById("warn").style.display = "block";
+        document.getElementById("warn").innerHTML =
+          "<i class='fa fa-triangle-exclamation'></i> <b>You were redirected from RC24.xyz!</b><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>";
+      }
+      // Log the value to the console
+      console.log(fromRiiConnect24);
+    });
+
+    const scrollableDiv = document.getElementById("square2");
+    const width = window.innerWidth;
+
+    if (width >= 1000) {
+      scrollableDiv.addEventListener("scroll", function () {
+        if (
+          scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+          scrollableDiv.clientHeight + 30
+        ) {
+          scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+        } else {
+          scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
+        }
+      });
+    } else {
+      scrollableDiv.style.setProperty("height", "100%");
+    }
+
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+    const toastElList = document.querySelectorAll(".toast");
+    const toastList = [...toastElList].map(
+      toastEl => new bootstrap.Toast(toastEl, option)
+    );
+  </script>
 </Layout>
 
 <style>
@@ -543,6 +478,14 @@ changeLanguage("ca");
     }
     100% {
       filter: hue-rotate(360deg) invert(1);
+    }
+  }
+  @keyframes fadeout2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
   .square {
