@@ -24,18 +24,19 @@ import { Trans } from "astro-i18next/components";
       <h2 class="subtitle">
         <Trans i18nKey="team.subtitle">
           <b style="font-family:Rubik;">WiiLink</b> is powered by <b
-            class="color">100%</b>
-            volunteer work.
-        </br>
-          <b class="color">
-            Here's some of the incredible people who help <b
-          style="font-family:Rubik;">WiiLink</b> come to life!</b>
+            class="color">100%</b
+          > volunteer work.<br />
+          <b class="color"
+            >Here's some of the incredible people who help <b
+              style="font-family:Rubik;">WiiLink</b
+            > come to life!</b
+          >
         </Trans>
       </h2>
-    </>
-    <div id="members_mobile" class="members"></div>
-    <div id="members" class="members"></div>
-    <div id="members_small" class="members_small"></div>
+      <div id="members_mobile" class="members"></div>
+      <div id="members" class="members"></div>
+      <div id="members_small" class="members_small"></div>
+    </div>
   </div>
 </body>
 
@@ -50,6 +51,21 @@ import { Trans } from "astro-i18next/components";
       .then(response => response.json())
       .then(data => showService(data));
 
+    function createMemberHTML(member) {
+      return `
+        <div class='member' style='border:4px solid ${member.color}60; box-shadow:0px 5px 20px ${member.color}20;'>
+          <a href='${member.link}' style='text-decoration:none; color:#212529;'>
+            <img loading='lazy' src='${member.pfp}' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
+          </a>
+            <div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'>
+              <a href='${member.link}' style='text-decoration:none; color:#212529;'>
+              <h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>${member.name} <img loading='lazy' srcset='${member.flag}' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2>
+              <h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>${member.title}</h3>
+              </a>
+            </div>
+        </div>`;
+    }
+
     function showService(data) {
       let team = document.getElementById("members");
       let teamSmall = document.getElementById("members_small");
@@ -57,126 +73,59 @@ import { Trans } from "astro-i18next/components";
       let r = Math.floor(Math.random() * 15 + 10);
 
       for (let i = 0; i < data.members.member.length; i++) {
-        if (i < 9) {
-          if (i == 0) {
-            team.innerHTML +=
-              "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " +
-              data.members.member[i].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[i].color +
-              "40; display:flex; overflow:hidden; transition: 0.3s;'> <a href='" +
-              data.members.member[i].link +
-              "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-              data.members.member[i].pfp +
-              "' style='background-image:url(/img/header_bg.png);" +
-              "background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
-              data.members.member[i].name +
-              " <img loading='lazy' srcset='" +
-              data.members.member[i].flag +
-              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
-              data.members.member[i].title +
-              "</h3></a></div> </div>";
-          } else if (i == 4) {
-            team.innerHTML +=
-              "<div class='member' style='grid-column: auto / span 1; grid-row: auto / span 2; height:auto; width:auto; align-self:stretch; border:4px solid " +
-              data.members.member[r].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[r].color +
-              "40; display:flex; overflow:hidden; transition: 0.3s;'><a href='" +
-              data.members.member[r].link +
-              "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-              data.members.member[r].pfp +
-              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
-              data.members.member[r].name +
-              " <img loading='lazy' srcset='" +
-              data.members.member[r].flag +
-              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
-              data.members.member[r].title +
-              "</h3></a></div> </div>";
-            team.innerHTML +=
-              "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " +
-              data.members.member[i].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[i].color +
-              "40; display:flex; overflow:hidden;'><a href='" +
-              data.members.member[i].link +
-              "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-              data.members.member[i].pfp +
-              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
-              data.members.member[i].name +
-              " <img loading='lazy' src='" +
-              data.members.member[i].flag +
-              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
-              data.members.member[i].title +
-              "</h3></a></div> </div>";
-          } else {
-            team.innerHTML +=
-              "<div class='member' style='transition: 0.3s; height:auto; width:auto; align-self:stretch; border:4px solid " +
-              data.members.member[i].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[i].color +
-              "40; display:flex; overflow:hidden;'><a href='" +
-              data.members.member[i].link +
-              "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-              data.members.member[i].pfp +
-              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'><div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'><h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>" +
-              data.members.member[i].name +
-              " <img loading='lazy' src='" +
-              data.members.member[i].flag +
-              "' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2><h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>" +
-              data.members.member[i].title +
-              "</h3></a></div> </div>";
+        let member = data.members.member[i];
+        if (i < 10) {
+          if (i == 4) {
+            r = Math.floor(Math.random() * 15 + 10);
+            member = data.members.member[r];
           }
+          team.innerHTML += createMemberHTML(member);
         } else {
-          if (i == r) {
-            teamSmall.innerHTML +=
-              "<div title='" +
-              data.members.member[i].name +
-              "\n" +
-              data.members.member[i].title +
-              "' id='tooltip_small'  data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='member' style='transition: 0.3s; background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " +
-              data.members.member[i].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[i].color +
-              "40; display:none; overflow:hidden;'><a href='" +
-              data.members.member[i].link +
-              "' style='text-decoration:none; color:#212529;'>< loading='lazy' src='" +
-              data.members.member[i].pfp +
-              "'style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
-          } else {
-            teamSmall.innerHTML +=
-              "<div title='" +
-              data.members.member[i].name +
-              "\n" +
-              data.members.member[i].title +
-              "' class='member' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; border:4px solid " +
-              data.members.member[i].color +
-              "60; border-radius:16px; box-shadow:0px 5px 20px " +
-              data.members.member[i].color +
-              "40; display:flex; overflow:hidden;' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title={t('site.winMinReq')}><a href='" +
-              data.members.member[i].link +
-              "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-              data.members.member[i].pfp +
-              "' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
-          }
+          let memberHTML = `
+            <div class='membersmall' title='${member.name}\n${member.title}' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; border:4px solid ${member.color}60; border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
+              <a href='${member.link}' style='text-decoration:none; color:#212529;'>
+                <img loading='lazy' src='${member.pfp}' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
+              </a>
+            </div>`;
+          teamSmall.innerHTML += memberHTML;
         }
       }
 
       for (let i = 0; i < 20; i++) {
-        teamMobile.innerHTML +=
-          "<div id='tooltip_small' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " +
-          data.members.member[i].color +
-          "60; border-radius:16px; box-shadow:0px 5px 20px " +
-          data.members.member[i].color +
-          "40; display:flex; overflow:hidden;'><a href='" +
-          data.members.member[i].link +
-          "' style='text-decoration:none; color:#212529;'><img loading='lazy' src='" +
-          data.members.member[i].pfp +
-          "' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'></a></div>";
+        let member = data.members.member[i];
+        let memberHTML = `
+          <div class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid ${member.color}60; border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
+            <a href='${member.link}' style='text-decoration:none; color:#212529;'>
+              <img loading='lazy' src='${member.pfp}' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
+            </a>
+          </div>`;
+        teamMobile.innerHTML += memberHTML;
       }
     }
   });
 </script>
+
+<style is:global>
+  .member {
+    transition: 0.3s;
+    height: auto;
+    width: auto;
+    align-self: stretch;
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+  }
+  .member:nth-child(1) {
+    grid-row: auto / span 2;
+  }
+  .member:nth-child(5) {
+    grid-row: auto / span 2;
+  }
+  .member:hover,
+  .membersmall:hover {
+    transform: scale(1.02);
+  }
+</style>
 
 <style>
   .build-holder {
@@ -219,26 +168,7 @@ import { Trans } from "astro-i18next/components";
     z-index: 10;
     scroll-snap-type: both mandatory;
   }
-  .large {
-    background: rgba(255, 0, 0, 0.25);
-    grid-column: auto / span 2;
-    grid-row: auto / span 2;
-    height: 200px;
-  }
-  .build-square:hover {
-    box-shadow: 0px 5px 15px #7d7d7d4b;
-    border-width: 4px;
-    transition: 0.1s;
-  }
-  .bdg {
-    top: 20px;
-    right: 10px;
-    border-radius: 8px;
-    transform: translateZ(20px);
-    scale: 80%;
-    font-size: 25px;
-    position: absolute;
-  }
+
   .member {
     display: none;
   }
@@ -300,9 +230,9 @@ import { Trans } from "astro-i18next/components";
     #members_small {
       display: none;
     }
-        #members_mobile {
-          display: flex;
-          mask-image: linear-gradient(to bottom, black, transparent);
-        }
+    #members_mobile {
+      display: flex;
+      mask-image: linear-gradient(to bottom, black, transparent);
+    }
   }
 </style>
