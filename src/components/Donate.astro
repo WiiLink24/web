@@ -10,7 +10,7 @@ import { Trans } from "astro-i18next/components";
         Made possible by users like <b class="color">you</b>
       </Trans>
     </h1>
-    <h2 class="subtitle">
+    <h2 class="subtitle-main">
       <Trans i18nKey="donate.subtitle">
         <b style="font-family:Rubik;">WiiLink</b> is funded publicly by our <i
           class="color">users</i
@@ -19,139 +19,141 @@ import { Trans } from "astro-i18next/components";
         >
       </Trans>
     </h2>
-    <div class="tiers">
-      <div class="build-square tier-1">
-        <a
-          href="https://www.patreon.com/checkout/WiiLink24?rid=6879694"
-          style="text-decoration:none;">
-          <span class="bdg badge bg-warning">$1</span>
-          <h1 style="color:#8cb727;" class="tier-title">Violet</h1>
-          <h5
-            style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
+    <div class="tiers-holder">
+      <div class="tiers">
+        <div class="build-square tier-1">
+          <a
+            href="https://www.patreon.com/checkout/WiiLink24?rid=6879694"
+            style="text-decoration:none;">
+            <span class="bdg badge bg-warning">$1</span>
+            <h1 style="color:#8cb727;" class="tier-title">Violet</h1>
+            <h5
+              style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #donators channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-globe"></i> Recognition on website</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-brands fa-discord"></i> Discord access</span
+              >
+            </h5>
+            <img loading="lazy" class="donate-image" src="img/tier_1.png" />
+          </a>
+        </div>
+        <div class="build-square tier-2">
+          <a
+            href="https://www.patreon.com/checkout/WiiLink24?rid=6879696"
+            style="text-decoration:none;">
+            <span class="bdg badge bg-info">$5</span>
+            <h1 style="color:#278eb7;" class="tier-title">Lilac</h1>
+            <h5
+              style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #donators channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-globe"></i> Recognition on website</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-film"></i> Movie poster</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-brands fa-discord"></i> Discord access</span
+              >
+            </h5>
+            <img loading="lazy" class="donate-image" src="/img/tier_2.png" />
+          </a>
+        </div>
+        <div class="build-square tier-3">
+          <a
+            href="https://www.patreon.com/checkout/WiiLink24?rid=6879695"
+            style="text-decoration:none;">
+            <span class="bdg badge bg-primary">$10</span>
             <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #donators channel</span
+              class="badge bg-danger"
+              style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; font-size: 20px; position:absolute;"
+              >{t("donate.popular")}</span
             >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-globe"></i> Recognition on website</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-brands fa-discord"></i> Discord access</span
-            >
-          </h5>
-          <img loading="lazy" class="donate-image" src="img/tier_1.png" />
-        </a>
-      </div>
-      <div class="build-square tier-2">
-        <a
-          href="https://www.patreon.com/checkout/WiiLink24?rid=6879696"
-          style="text-decoration:none;">
-          <span class="bdg badge bg-info">$5</span>
-          <h1 style="color:#278eb7;" class="tier-title">Lilac</h1>
-          <h5
-            style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #donators channel</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-globe"></i> Recognition on website</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-film"></i> Movie poster</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-brands fa-discord"></i> Discord access</span
-            >
-          </h5>
-          <img loading="lazy" class="donate-image" src="/img/tier_2.png" />
-        </a>
-      </div>
-      <div class="build-square tier-3">
-        <a
-          href="https://www.patreon.com/checkout/WiiLink24?rid=6879695"
-          style="text-decoration:none;">
-          <span class="bdg badge bg-primary">$10</span>
-          <span
-            class="badge bg-danger"
-            style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; font-size: 20px; position:absolute;"
-            >{t("donate.popular")}</span
-          >
-          <h1 style="color:#7627b7;" class="tier-title">Tulip</h1>
-          <h5
-            style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #donators channel</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-user"></i> Concierge Mii</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #testing channel</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-globe"></i> Recognition on website</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-film"></i> Movie poster</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-brands fa-discord"></i> Discord access</span
-            >
-          </h5>
-          <img loading="lazy" class="donate-image" src="img/tier_3.png" />
-        </a>
-      </div>
-      <div class="build-square tier-4">
-        <a
-          href="https://www.patreon.com/checkout/WiiLink24?rid=6879876"
-          style="text-decoration:none;">
-          <span class="bdg badge bg-success">$20</span>
-          <h1 style="color:#49b727;" class="tier-title">Rose</h1>
-          <h5
-            style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #donators channel</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-user"></i> Concierge Mii</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-message"></i> #testing channel</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-globe"></i> Recognition on website</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-film"></i> Movie poster</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-solid fa-sign-hanging"></i> Parade Room</span
-            >
-            <span
-              style="display:flex; align-items:center; justify-content:space-between;"
-              ><i class="fa-brands fa-discord"></i> Discord access</span
-            >
-          </h5>
-          <img loading="lazy" class="donate-image" src="img/tier_4.png" />
-        </a>
+            <h1 style="color:#7627b7;" class="tier-title">Tulip</h1>
+            <h5
+              style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #donators channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-user"></i> Concierge Mii</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #testing channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-globe"></i> Recognition on website</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-film"></i> Movie poster</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-brands fa-discord"></i> Discord access</span
+              >
+            </h5>
+            <img loading="lazy" class="donate-image" src="img/tier_3.png" />
+          </a>
+        </div>
+        <div class="build-square tier-4">
+          <a
+            href="https://www.patreon.com/checkout/WiiLink24?rid=6879876"
+            style="text-decoration:none;">
+            <span class="bdg badge bg-success">$20</span>
+            <h1 style="color:#49b727;" class="tier-title">Rose</h1>
+            <h5
+              style="bottom:50px; left:50%; width:75%; transform:translate(-50%, 0); margin-top:30px; position:absolute;">
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #donators channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-user"></i> Concierge Mii</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-message"></i> #testing channel</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-globe"></i> Recognition on website</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-film"></i> Movie poster</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-solid fa-sign-hanging"></i> Parade Room</span
+              >
+              <span
+                style="display:flex; align-items:center; justify-content:space-between;"
+                ><i class="fa-brands fa-discord"></i> Discord access</span
+              >
+            </h5>
+            <img loading="lazy" class="donate-image" src="img/tier_4.png" />
+          </a>
+        </div>
       </div>
     </div>
     <div class="donator-holder">
@@ -222,7 +224,6 @@ import { Trans } from "astro-i18next/components";
     gap: 50px;
     padding: 15px;
     min-height: 500px;
-    margin-bottom: 50px;
     transition: 0.1s;
     z-index: 1;
     position: relative;
@@ -291,9 +292,8 @@ import { Trans } from "astro-i18next/components";
     background-color: #ffffff00;
   }
   .build-square:hover {
-    transform: translate(0, -5px);
     box-shadow: 0px 5px 15px #7d7d7d20;
-    border-width: 4px;
+    background-color: var(--bg-color-tertiary);
     transition: 0.1s;
   }
   .bdg {
@@ -331,15 +331,27 @@ import { Trans } from "astro-i18next/components";
     background-size: cover;
     border: 2px solid rgb(205, 213, 204);
   }
+  .tiers-holder {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
   .tiers {
     left: 50%;
     transform: translate(-50%, 0);
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 0px;
+    display: flex;
+    flex-direction: row;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    gap: 16px;
+    margin-bottom: 50px;
+    overflow-x: scroll;
     position: relative;
+  }
+  .tiers > * {
+    scroll-snap-align: start;
   }
   .dots {
     top: -80px;
@@ -356,6 +368,11 @@ import { Trans } from "astro-i18next/components";
     position: relative;
   }
   .subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  .subtitle-main {
     text-align: center;
     margin-bottom: 20px;
     font-size: 25px;
@@ -377,108 +394,24 @@ import { Trans } from "astro-i18next/components";
 
   @media only screen and (max-width: 1000px) {
     .build-square {
-      left: 50%;
-      width: 95%;
-      max-width: 100%;
-      transform: translate(-50%, 0);
-      box-shadow: 0px 5px 10px #00000020;
-      border-radius: 16px;
-      perspective: 0px;
-      display: block;
-      gap: 0px;
-      padding: 15px;
-      min-height: 150px;
-      margin-bottom: 15px;
-      transition: 0.1s;
-      z-index: 1;
-      position: relative;
-    }
-
-    .build-square:hover {
-      transform: translate(-50%, -5px);
-      box-shadow: 0px 5px 15px #7d7d7d20;
-      border-width: 4px;
-      transition: 0.1s;
-    }
-
-    .bdg {
-      top: 20px;
-      left: 10px;
-      border-radius: 8px;
-      transform: translateZ(0);
-      scale: 100%;
-      font-size: 25px;
-      position: absolute;
-    }
-
-    .tiers {
-      left: 0;
-      transform: translate(0, 0);
       width: 100%;
-      display: block;
-      position: relative;
     }
-
-    .build-square:nth-child(4) .donate-image {
-      top: 50%;
-      right: 0px;
-      width: auto;
-      height: 130px;
-      transform: translate(70px, -50%) translateZ(0) scale(100%);
-      position: absolute;
+    .tiers-holder {
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 90%;
     }
-
-    .build-square h5 {
+    .slider::before {
+      background: none;
+    }
+    .subtitle {
       display: none;
-    }
-
-    .donator-holder {
-      top: 20px;
-    }
-
-    .bg-danger {
-      display: none;
-    }
-
-    .donate-image {
-      top: 50%;
-      right: -30px;
-      width: auto;
-      height: 130px;
-      transform: translate(50px, -50%) translateZ(0) scale(80%);
-      position: absolute;
-    }
-
-    .slider {
-      top: -35px;
-      height: 150px;
-      margin: auto;
-      border-radius: 8px;
-      z-index: 0;
-      width: 1500px;
-      overflow: hidden;
-      position: absolute;
-    }
-
-    .tier-title {
-      top: 70%;
-      left: 20px;
-      width: auto;
-      text-align: center;
-      transform: translate(0%, -50%);
-      color: black;
-      font-family: Gilroy;
-      position: absolute;
-    }
-
-    h3 {
-      transform: translate(0, 50px);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .slide-track {
-      width:100%;
+      width: 100%;
       animation: none !important;
       transform: translate(0, 0);
       overflow: hidden;

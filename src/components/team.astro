@@ -162,7 +162,7 @@ import { Trans } from "astro-i18next/components";
         }
       }
 
-      for (let i = 0; i < 30; i++) {
+      for (let i = 0; i < 20; i++) {
         teamMobile.innerHTML +=
           "<div id='tooltip_small' data-bs-toggle='tooltip' data-bs-placement='bottom' data-bs-title='This top tooltip is themed via CSS variables.' class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid " +
           data.members.member[i].color +
@@ -300,8 +300,9 @@ import { Trans } from "astro-i18next/components";
     #members_small {
       display: none;
     }
-    #members_mobile {
-      display: flex;
-    }
+        #members_mobile {
+          display: flex;
+          mask-image: linear-gradient(to bottom, black, transparent);
+        }
   }
 </style>

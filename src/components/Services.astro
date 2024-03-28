@@ -55,15 +55,15 @@ import { Trans } from "astro-i18next/components";
 
     const halfLength = (data.services.service.length - 4) / 2;
     for (let j = 0; j < 2; j++) {
-    for (let i = 0; i < halfLength; i++) {
-      services.innerHTML += createServiceHTML(data.services.service[i]);
+      for (let i = 0; i < halfLength; i++) {
+        services.innerHTML += createServiceHTML(data.services.service[i]);
+      }
     }
-  }
-  for (let j = 0; j < 2; j++) {
-    for (let i = halfLength; i < data.services.service.length - 4; i++) {
-      services2.innerHTML += createServiceHTML(data.services.service[i]);
+    for (let j = 0; j < 2; j++) {
+      for (let i = halfLength; i < data.services.service.length - 4; i++) {
+        services2.innerHTML += createServiceHTML(data.services.service[i]);
+      }
     }
-  }
   });
 </script>
 
@@ -187,18 +187,23 @@ import { Trans } from "astro-i18next/components";
       width: 95%;
     }
 
-    .slider {
-      display: none;
-    }
-
-    .slide-track {
-      animation: none;
+    .svc-holder {
+      margin-bottom: 50px;
     }
 
     .back {
       transform: translate(0, 0px);
       animation: none;
     }
+
+    .slide-track {
+      pointer-events: none;
+    }
+
+    .slide-track:nth-child(2) {
+      display: none;
+    }
+
     .svc-holder {
       top: 100px;
       left: 50%;
@@ -214,15 +219,10 @@ import { Trans } from "astro-i18next/components";
     }
     .slider::before,
     .slider::after {
-      background: linear-gradient(
-        to right,
-        #ffffff80 0%,
-        rgba(255, 255, 255, 0) 100%
-      );
       content: "";
       height: 100%;
       position: absolute;
-      width: 200px;
+      width: 50px;
       z-index: 2;
     }
   }
