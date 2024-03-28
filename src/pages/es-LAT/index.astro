@@ -608,11 +608,10 @@ changeLanguage("es-LAT");
       border-radius: 0px;
     }
     #square2 {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 0px;
+      left: 5px;
+      top: 5px;
+      width: calc(100% - 10px) !important;
+      height: calc(100% - 10px) !important;
     }
     .bottomleftcorner {
       display: none;
@@ -637,9 +636,6 @@ changeLanguage("es-LAT");
       grid-template-columns: repeat(auto-fill, minmax(300px, auto));
       gap: 5px;
       position: relative;
-    }
-    .square {
-      display: none;
     }
     .footer-holder {
       display: none;
