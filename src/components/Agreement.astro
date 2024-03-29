@@ -15,7 +15,7 @@ const posts = (await getCollection("blog")).sort(
 <a
   href={localizePath("/")}
   class="logohold"
-  style="top:50px; left:-25px; position:absolute;"
+  style="top:50px; left:-25px; z-index: 100; position:absolute;"
   ><img class="logo" src=" /img/Wii_Link_Logo.png" width="140px" /></a
 >
 <button
@@ -96,7 +96,9 @@ const posts = (await getCollection("blog")).sort(
     </div>
     <br />
     <li>
-      <a href="https://wfc.wiilink24.com"><i class="fa-solid fa-globe"></i> WiiLink WFC</a>
+      <a href="https://wfc.wiilink24.com"
+        ><i class="fa-solid fa-globe"></i> WiiLink WFC</a
+      >
     </li>
     <li>
       <a href="/privacy-policy"
@@ -104,9 +106,7 @@ const posts = (await getCollection("blog")).sort(
       >
     </li>
     <li>
-      <a href="/tos"
-        ><i class="fa-solid fa-feather"></i> Terms of Service</a
-      >
+      <a href="/tos"><i class="fa-solid fa-feather"></i> Terms of Service</a>
     </li>
   </div>
 </div>
@@ -200,12 +200,14 @@ const posts = (await getCollection("blog")).sort(
     position: absolute;
   }
 
-  .dropdownbtn, .logohold {
+  .dropdownbtn,
+  .logohold {
     display: none;
   }
 
-  @media only screen and (max-width:1000px) {
-    .dropdownbtn, .logohold {
+  @media only screen and (max-width: 1000px) {
+    .dropdownbtn,
+    .logohold {
       display: block;
     }
   }
