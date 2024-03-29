@@ -218,9 +218,8 @@ import { Trans } from "astro-i18next/components";
     background-color: var(--bg-color-secondary);
     border: 2px solid rgb(255, 240, 240);
     border-radius: 16px;
-    perspective: 500px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(345px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
     gap: 50px;
     padding: 15px;
     min-height: 500px;
@@ -233,7 +232,7 @@ import { Trans } from "astro-i18next/components";
     left: 50%;
     width: auto;
     height: 130px;
-    transform: translate(-50%, 0) translateZ(40px) scale(80%);
+    transform: translate(-50%, 0) scale(80%);
     position: absolute;
   }
   .build-square:nth-child(4) .donate-image {
@@ -241,7 +240,7 @@ import { Trans } from "astro-i18next/components";
     left: 50%;
     width: auto;
     height: 180px;
-    transform: translate(-50%, 0) translateZ(40px) scale(80%);
+    transform: translate(-50%, 0) scale(80%);
     position: absolute;
   }
   .slider::before {
@@ -399,7 +398,7 @@ import { Trans } from "astro-i18next/components";
     .tiers-holder {
       left: 50%;
       transform: translate(-50%, 0);
-      width: 90%;
+      width: 80%;
     }
     .slider::before {
       background: none;
