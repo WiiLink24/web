@@ -8,7 +8,7 @@ heroImage: "../../img/guidebg-1.png"
 
 ### Look up error codes and exchange friend codes with other users.
 
-<a href="https://bot.rc24.xyz/" style="margin-top:8px; width:100%;" class="btn btn-primary"><i class="fa-brands fa-discord"></i> Invite to Server</a>
+<a href="https://wiilink24.com/bot/" style="margin-top:8px; width:100%;" class="btn btn-primary"><i class="fa-brands fa-discord"></i> Invite to Server</a>
 
 The WiiLink Bot is a Discord bot that's written in Java that allows you to look up error codes for Wiimmfi, WiiLink, or WiiLink WFC. It's powered by the <a href="https://wiimmfi.de/error/">error API from Wiimmfi</a>, and the WiiLink Violet API. You can also exchange codes with other users for the Wii (U), Switch, 3DS, and game-specific codes.
 

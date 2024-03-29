@@ -8,7 +8,7 @@ heroImage: "https://i.ytimg.com/vi/vP70ioijK6U/maxresdefault.jpg"
 
 ### Read news on your Wii.
 
-The News Channel works with RiiConnect24, and you can read news in 7 different languages depending on what
+The News Channel works with WiiLink, and you can read news in 7 different languages depending on what
 language your Wii is set to. They all have the location where the article takes place in on the Globe
 (location data comes from <a href="https://developers.google.com/maps/">Google Maps API</a>) and has
 pictures associated with the article. Plus, you can view the headlines on the Wii Menu. See below to see

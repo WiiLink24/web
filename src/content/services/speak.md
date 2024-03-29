@@ -7,10 +7,10 @@ heroImage: "https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/WiiSpeakChannel
 ---
 ### Voice chat with people on your Wii!
 
-The Wii Speak Channel can be used again, thanks to combined efforts with RiiConnect24 and <a
-        href="https://wiimmfi.de/">Wiimmfi</a>. If you have a Wii Speak, you can register Wii Friends with RiiConnect24
+The Wii Speak Channel can be used again, thanks to combined efforts with WiiLink and <a
+        href="https://wiimmfi.de/">Wiimmfi</a>. If you have a Wii Speak, you can register Wii Friends with WiiLink
       and chat over Wiimmfi. You can also send voice messages to other users via Wii Mail, even if they don't have a Wii
       Speak.
       <br>
-Clicking the blue button above will take you to the download page of RiiConnect24-Patcher. The Windows version of
+Clicking the blue button above will take you to the download page of WiiLink Patcher. The Windows version of
       the tool has an option to download and patch the Wii Speak Channel.
