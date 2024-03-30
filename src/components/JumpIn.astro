@@ -13,7 +13,7 @@ import { Trans } from "astro-i18next/components";
   </h1>
   <h2>{t("jumpin.slogan")}</h2>
   <div
-    style="width:340px; left:50%; transform:translate(-50%, 0); position:relative;">
+    style="display:flex; flex-wrap:wrap; gap:8px; align-items: center; justify-content: center;">
     <a href="#top"
       ><button type="button" class="btn btn-success btn-lg"
         >{t("jumpin.install")}</button
@@ -39,10 +39,13 @@ import { Trans } from "astro-i18next/components";
     transform: translate(-50%, 0);
     width: 100%;
     background: var(--bg-color-secondary);
-    gap: 50px;
     padding: 15px;
     padding-top: 150px;
     padding-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
     z-index: 1;
     position: relative;
@@ -62,7 +65,7 @@ import { Trans } from "astro-i18next/components";
   }
 
   button {
-    color:white !important;
+    color: white !important;
   }
 
   .dots {
