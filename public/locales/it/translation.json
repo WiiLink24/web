@@ -15,7 +15,16 @@
       "creator": "Website progettato e codificato da Alex",
       "contact": "contattaci",
       "assets": "Branding assets",
-      "install": "Installa ora"
+      "install": "Installa ora",
+      "wfcPrompt": "Check out WiiLink WFC!",
+      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
+      "heroDev": "Developed by",
+      "downloadFor": "Download for",
+      "other": "Other",
+      "legacyPatcher": "Download legacy patcher",
+      "changelog": "Changelog",
+      "withThe": "with the",
+      "heroMorePrompt": "See what else WiiLink can do for you"
     },
     "build": {
       "title": "dai un'occhiata all'ultima <0>versione</0>!",
@@ -39,7 +48,11 @@
       "faq": "Domande frequenti",
       "isGuide": "guida",
       "extras": "Extra",
-      "extrasNew": "Novità"
+      "extrasNew": "Novità",
+      "services": "Services",
+      "chooseLang": "Choose your language",
+      "privacyPolicy": "Privacy Policy",
+      "tos": "Terms of Service"
     },
     "jumpin": {
       "title": "vieni e <0>Unisciti</0>!",

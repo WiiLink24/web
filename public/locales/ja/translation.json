@@ -15,7 +15,16 @@
       "creator": "サイトデザイン・プログラム：アレックス",
       "contact": "連絡",
       "assets": "ブランドデータ",
-      "install": "インストール"
+      "install": "インストール",
+      "wfcPrompt": "Check out WiiLink WFC!",
+      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
+      "heroDev": "Developed by",
+      "downloadFor": "Download for",
+      "other": "Other",
+      "legacyPatcher": "Download legacy patcher",
+      "changelog": "Changelog",
+      "withThe": "with the",
+      "heroMorePrompt": "See what else WiiLink can do for you"
     },
     "build": {
       "title": "この<0>ビルド</0>について?",
@@ -39,7 +48,11 @@
       "faq": "よくある質問",
       "isGuide": "guide",
       "extras": "追加コンテンツ",
-      "extrasNew": "new"
+      "extrasNew": "new",
+      "services": "Services",
+      "chooseLang": "Choose your language",
+      "privacyPolicy": "Privacy Policy",
+      "tos": "Terms of Service"
     },
     "jumpin": {
       "title": "Wiiを世界中に<0>リンク</0>する準備はできましたか？",

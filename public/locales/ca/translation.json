@@ -15,7 +15,16 @@
       "creator": "Web dissenyat i programat per Alex",
       "contact": "Contacta'ns",
       "assets": "Recursos de marca",
-      "install": "Instal·la'l ara"
+      "install": "Instal·la'l ara",
+      "wfcPrompt": "Check out WiiLink WFC!",
+      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
+      "heroDev": "Developed by",
+      "downloadFor": "Download for",
+      "other": "Other",
+      "legacyPatcher": "Download legacy patcher",
+      "changelog": "Changelog",
+      "withThe": "with the",
+      "heroMorePrompt": "See what else WiiLink can do for you"
     },
     "build": {
       "title": "Consulteu la darrera <0>versió</0>!",
@@ -39,7 +48,11 @@
       "faq": "Preguntes freqüents",
       "isGuide": "guide",
       "extras": "Extres",
-      "extrasNew": "nou"
+      "extrasNew": "nou",
+      "services": "Services",
+      "chooseLang": "Choose your language",
+      "privacyPolicy": "Privacy Policy",
+      "tos": "Terms of Service"
     },
     "jumpin": {
       "title": "Uniu-vos-hi i <0>participeu</0>!",
