@@ -1,0 +1,100 @@
+{
+  "taglines": [
+    "Nintendo ci sta tracciando! Stacca! Stacca!",
+    "Sapevi che è possibile collegare la console Wii a Internet??",
+    "Signora, la Wii sigNORAAAAAAAAAAAAAAAAAAAHHH!",
+    "Ragazzi, sono veramente euforico",
+    "probabilmente non hai mai usato l'online sulla wii apparte per lo shop però fai finta",
+    "Lo sapevi che Miiverse era un successore spirituale di Wii Room? Ora lo sai",
+    "Get Connected back to the Wii's past once again!",
+    "collegati Online sulla tua console Wii! cosi potrai perdere a Mario kart non solo in locale!",
+    "Non riportiamo soltanto i canali Wii, li rendiamo meglio di come erano prima",
+    "Non ti piace WiiLink? Allora levati dal ca-",
+    "Come quando non dovevi fare niente tutto il giorno!",
+    "WiiLink è il nome del eroe, il nome della principessa è DSZelda",
+    "Installare WiiLink è semplice, ti basta una schedina SD e nostalgia",
+    "Dovrai dinuovo chiedere aiuto a tuo zio per installarlo, come ai vecchi tempi",
+    "Hai presente i canali che utilizzavano l'Internet? Bene perchè li abbiamo",
+    "WiiLink, c'è di tutto per tutti",
+    "Possono prenderci la vita, ma non possono prendere le nostre Wii!!",
+    "era suporta il menù Wii Ver. 4.4!",
+    "io c'è l'ho profumato. La Wii, e tu che avevi capito?",
+    "Cambia il calendario perchè siamo tornati nel 2006!",
+    "Il mondo intero direttamente sulla tua console wii",
+    "Uno dei passi più grandi di Nintendo nel campo dei giochi multiplayer, Riiportato in vita!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Canale Meteo",
+        "desc": "Scopri le previsioni meteo più recenti da tutto il mondo",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Canale Notizie",
+        "desc": "Rimani informato con le ultime notizie da tutto il mondo",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Canale Nintendo",
+        "desc": "Guarda i trailer, leggi le recensioni e scarica demo per giochi Nintendo DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Canale Concorsi Mii",
+        "desc": "Partecipa a concorsi e vota i tuoi Mii preferiti",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Canale Vota Anche Tu",
+        "desc": "Rispondi ai sondaggi e confronta le tue opinioni con quelle degli altri",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Canale consegne",
+        "desc": "Ordina diversi tipi di pasti da casa tramite la tua console Wii (disponibile solo in Inglese e Giapponese)",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Canale Guida TV",
+        "desc": "controlla gli orari televisivi e guarda trailer per dei prossimi programmi televisivi (disponibile solo in Inglese e Giapponese)",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Canale TV Kirby",
+        "desc": "Guarda episodi della serie animata di Kirby!",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Canale Digicam Print",
+        "desc": "Ordina stampe delle tue foto preferite dalla tua console Wii o scheda SD (disponibile solo in Inglese e Giapponese)",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Scopri Programmi e contenuti video on demand in un modo più innovativo (disponibile solo in Inglese e Giapponese)",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

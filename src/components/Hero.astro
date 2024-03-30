@@ -11,11 +11,12 @@ import { Trans } from "astro-i18next/components";
 
 <div class="holder">
   <div class="left">
+    <div class="polka-dot promotional-video"></div>
     <iframe
       width="100%"
       height="250"
       class="promotional-video"
-      style="border-radius: 8px; margin-bottom: 8px; box-shadow:0px 0px 38px #ed5d234b; display:none;"
+      style="border-radius: 8px; margin-bottom: 8px; box-shadow:0px 0px 38px #ed5d234b; display:none; z-index: 1;"
       src="https://www.youtube.com/embed/i5c4ShKd704?controls=0"
       allow="autoplay;"></iframe>
     <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
@@ -55,7 +56,8 @@ import { Trans } from "astro-i18next/components";
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
             width="20px"
-          /> {t("site.load")}</button
+          />
+          {t("site.load")}</button
         >
         <button
           id="extra-btn-2"
@@ -84,7 +86,8 @@ import { Trans } from "astro-i18next/components";
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa-brands fa-apple" style="margin-right:5px;"></i> {t("site.downloadFor")} macOS
+                <i class="fa-brands fa-apple" style="margin-right:5px;"></i>
+                {t("site.downloadFor")} macOS
                 <div
                   class="horizontal-line"
                   style="transform:translate(0, 0); opacity:0.5;">
@@ -101,7 +104,8 @@ import { Trans } from "astro-i18next/components";
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa fa-linux" style="margin-right:5px;"></i> {t("site.downloadFor")}
+                <i class="fa fa-linux" style="margin-right:5px;"></i>
+                {t("site.downloadFor")}
                 Linux
                 <div
                   class="horizontal-line"
@@ -149,7 +153,8 @@ import { Trans } from "astro-i18next/components";
             <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
-              ><i class="fa fa-book" style="margin-right:5px;"></i> {t("site.changelog")}</a
+              ><i class="fa fa-book" style="margin-right:5px;"></i>
+              {t("site.changelog")}</a
             >
           </li>
         </ul>
@@ -161,7 +166,8 @@ import { Trans } from "astro-i18next/components";
         onclick="window.location.href = '/guide/install';">
         <i
           class="fa-solid fa-arrow-up fa-rotate-by"
-          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i> {t("site.installGuide")}
+          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i>
+        {t("site.installGuide")}
       </button>
     </div>
     <div class="form-check">
@@ -193,13 +199,22 @@ import { Trans } from "astro-i18next/components";
         <div id="bar" class="bar"></div>
       </div>
       <a href="#intro" class="more">
-        {t("site.heroMorePrompt")} <i
-          class="fa-solid fa-chevron-right"></i>
+        {t("site.heroMorePrompt")}
+        <i class="fa-solid fa-chevron-right"></i>
       </a>
     </div>
   </div>
 
   <div id="withThe" style="display:none;">{t("site.withThe")}</div>
+  <div id="downloadFor" style="display:none;">{t("site.downloadFor")}</div>
+  <div id="downloadPrompt" style="display:none;">
+    {t("site.downloadPrompt")}
+  </div>
+
+  <h1 id="fetcherHero" style="display:none;">
+    json{localizePath("/hero.json")}
+  </h1>
+
   <script is:inline>
     let assets = [];
 
@@ -236,6 +251,8 @@ import { Trans } from "astro-i18next/components";
   </script>
 
   <script>
+    let fetcher = document.getElementById("fetcherHero").innerHTML;
+
     function osdetect() {
       let userAgent = window.navigator.userAgent;
       let os = "Unknown OS";
@@ -267,35 +284,46 @@ import { Trans } from "astro-i18next/components";
 
     function updateTagline() {
       let tagline = document.getElementById("tagline");
-      fetch("/json/hero.json")
+      fetch(fetcher)
         .then(res => res.json())
         .then(data => {
           let taglines = data.taglines;
-          tagline.innerHTML = taglines[Math.floor(Math.random() * taglines.length)];
+          tagline.innerHTML =
+            taglines[Math.floor(Math.random() * taglines.length)];
         });
     }
 
     window.onload = function () {
+      let downloadFor = document.getElementById("downloadFor").innerHTML;
+      let downloadPrompt = document.getElementById("downloadPrompt").innerHTML;
       updateButtons();
       switch (osdetect()) {
         case "MacOS":
           document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> Download for macOS";
+            "<i class='fa-brands fa-apple' style='font-size:20px; margin-right:5px;'></i> " +
+            downloadFor +
+            " macOS";
           break;
         case "Windows":
           document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> Download for Windows";
+            "<i class='fa-brands fa-microsoft' style='font-size:20px; margin-right:5px;'></i> " +
+            downloadFor +
+            " Windows";
           break;
         case "Linux":
           document.getElementById("download-btn").innerHTML =
-            "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> Download for Linux";
+            "<i class='fa-brands fa-linux' style='font-size:20px; margin-right:5px;'></i> " +
+            downloadFor +
+            " Linux";
           break;
         case "Nintendo Wii":
           location.href = "/wii";
           break;
         default:
           document.getElementById("download-btn").innerHTML =
-            "<i class='fa fa-download' style='margin-right:5px;'></i> Download";
+            "<i class='fa fa-download' style='margin-right:5px;'></i> " +
+            downloadPrompt +
+            "";
           break;
       }
       updateTagline();
@@ -306,11 +334,31 @@ import { Trans } from "astro-i18next/components";
       .addEventListener("change", updateButtons);
 
     function updateHero() {
-      fetch("/json/hero.json")
+      fetch(fetcher)
         .then(res => res.json())
         .then(data => {
           let services = data.hero.element;
-          services.sort(() => Math.random() - 0.5);
+          function shuffle(array) {
+            let currentIndex = array.length,
+              temporaryValue,
+              randomIndex;
+
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+              // Pick a remaining element...
+              randomIndex = Math.floor(Math.random() * currentIndex);
+              currentIndex -= 1;
+
+              // And swap it with the current element.
+              temporaryValue = array[currentIndex];
+              array[currentIndex] = array[randomIndex];
+              array[randomIndex] = temporaryValue;
+            }
+
+            return array;
+          }
+
+          services = shuffle(services);
           let randomServices = services.slice(0, 3);
           let withThe = document.getElementById("withThe").innerHTML;
           let html = "";
@@ -446,6 +494,26 @@ import { Trans } from "astro-i18next/components";
       border-radius: 8px;
     }
 
+    .polka-dot {
+      width: 240px;
+      height: 240px;
+      background-image: radial-gradient(var(--color) 10%, transparent 11%),
+        radial-gradient(var(--color) 10%, transparent 11%);
+      background-size: 30px 30px;
+      background-position:
+        0 0,
+        30px 30px;
+      opacity: 0.3;
+      rotate: 30deg;
+      left: -30px;
+      top: -30px;
+      background-repeat: repeat;
+      animation: rotate 240s linear infinite;
+      display:none;
+      position: absolute;
+      z-index: 0;
+    }
+
     .dropdown-menu {
       width: 100%;
       padding: 8px !important;
@@ -557,6 +625,11 @@ import { Trans } from "astro-i18next/components";
       }
       .logo {
         display: none;
+      }
+      .left {
+        left: 50%;
+        transform: translate(-50%, 0) !important;
+        position: relative;
       }
       .promotional-video {
         display: block !important;

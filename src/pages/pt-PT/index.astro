@@ -205,7 +205,6 @@ changeLanguage("pt-PT");
 
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
-      console.log("Test");
       function getUrlParameter(name) {
         name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
         var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
@@ -215,7 +214,6 @@ changeLanguage("pt-PT");
           : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
 
-      // Get the value of "/#from-riiconnect24" parameter
       var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
 
       if (fromRiiConnect24 == "true") {
@@ -223,8 +221,6 @@ changeLanguage("pt-PT");
         document.getElementById("warn").innerHTML =
           "<i class='fa fa-triangle-exclamation'></i> <b>You were redirected from RC24.xyz!</b><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>";
       }
-      // Log the value to the console
-      console.log(fromRiiConnect24);
     });
 
     const scrollableDiv = document.getElementById("square2");

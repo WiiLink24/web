@@ -1,0 +1,103 @@
+{
+  "taglines": [
+    "¡Juega como si estuvieras en 2006!",
+    "Es una pasada... ¡que puedo ver desde aquí el tiempo Fran!",
+    "La Wii está aquí para quedarse.",
+    "¿Sabías que puedes conectar tu Wii a internet?",
+    "Como se ve en Ray Bacon",
+    "El legendario regreso del WiiConnect24",
+    "Redescubre tu Wii",
+    "Conéctate de nuevo a la era de oro de Nintendo",
+    "Conéctate de vuelta al pasado de tu Wii una vez más",
+    "Nosotros le damos. ¿Y tú?",
+    "Puedes hacer más cosas aparte de solo perder en el Mario Kart",
+    "El renacimiento del Wii Network más parecido al original",
+    "Si no te gusta Wiilink, vamos a tener problemas (y no de conexión)",
+    "Juega como si estuvieras de vuelta a tu infancia",
+    "Instala WiiLink o tendrás que afrontar las consecuencias",
+    "Tus recuerdos de pequeño conectados a nuestros servidores",
+    "WiiLink es como respirar...¡no puedes vivir sin él!",
+    "WiiLink, un software más allá de las demás",
+    "Los fans hacen lo que Nintendo no",
+    "Ahora compatible con la versión 4.4 del menú de Wii",
+    "¡Conéctate como un pro!",
+    "WiiLink definitivamente tiene ese rollito del 2006",
+    "Linkeando el mundo con una Wii",
+    "Uno de los pasos más grandes de Nintendo en el multijugador, ¡Riivivido!"
+  ],
+  
+  "hero": {
+    "element": [
+      {
+        "name": "Canal Tiempo",
+        "desc": "Echa un vistazo a las previsiones meteorológicas en todo el mundo",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Canal Noticias",
+        "desc": "Estate informado de las últimas noticias en todo el mundo",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Canal Nintendo",
+        "desc": "Mira trailers, lee reseñas y descarga demos de juegos de DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Canal Concursos Mii",
+        "desc": "Participa en concursos y vota por tus Miis favoritos",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Canal Opiniones",
+        "desc": "Contesta encuestas y compara tus opiniones con la de los demás",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Canal Comida",
+        "desc": "Pide diferentes tipos de platos desde casa a través de tu consola Wii",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Canal Guía de TV",
+        "desc": "Echa un vistazo a la programación televisiva y mira los avances de los próximos programas",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Canal Kirby TV",
+        "desc": "Mira episodios de la serie Kirby: Right Back at Ya!",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Canal Impresión de fotos",
+        "desc": "Envía impresiones de tus fotos favoritas desde tu consola Wii",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Descubre programas y su contenido <i>streaming</i> de una forma más novedosa",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

@@ -26,6 +26,7 @@
     "remark-toc": "^9.0.0",
     "scrollmagic": "^2.0.8",
     "tsparticles": "^2.12.0",
+    "twemoji": "^14.0.2",
     "twit": "^2.2.11"
   },
   "devDependencies": {

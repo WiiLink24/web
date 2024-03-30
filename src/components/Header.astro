@@ -27,7 +27,7 @@ const { isGuide, isMain } = Astro.props;
 		<a class="link" href={localizePath("/extras")}><div class="banner">{t("header.extras")}<div class="underline" style="background-color:#aa251b40;"></div></div></a>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
 			<div class="dropdown">
-				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0) scale(150%);" type="button" data-bs-toggle="" aria-expanded="false">
+				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0); font-size:30px; padding:0px 10px;" type="button" data-bs-toggle="" aria-expanded="false">
 				</button>
 				<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); transform:translate(50px, -10px); overflow:hidden;">
 					<form>
@@ -168,8 +168,11 @@ let loadingindicator = document.getElementById("loadingindicator");
 				}
             }
 
-			twemoji.parse(document.getElementById("optionsDisplay"));
+			import('https://unpkg.com/twemoji@latest/dist/twemoji.min.js')
+    .then(twemoji => {
+		twemoji.parse(document.getElementById("optionsDisplay"));
 			twemoji.parse(document.getElementById("titleTranslate"));
+    });	
         });
 
 		document.addEventListener('click', function(event) {
