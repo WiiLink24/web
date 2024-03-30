@@ -1,3 +1,9 @@
+---
+import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
+---
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="darkreader-lock" />
@@ -21,9 +27,7 @@
       Party on like it's 2006!
     </h2>
     <p style="font-size:20px; opacity:0.7;">
-      WiiLink is an open source replacement for Nintendo's servers for both
-      WiiConnect24 and NWFC, allowing online connectivity for all, even after
-      the original servers were discontinued!
+      {t("site.heroDesc")}
     </p>
     <br />
     <div class="line-container">
@@ -34,7 +38,7 @@
           style="text-decoration: none;"
           >WiiLink Patcher
           <l id="verno"></l></a
-        > | Developed by
+        > | {t("site.heroDev")}
         <a href="https://github.com/PablosCorner">PablosCorner</a>
       </p>
       <div class="horizontal-line"></div>
@@ -51,7 +55,7 @@
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
             width="20px"
-          /> Loading...</button
+          /> {t("site.load")}</button
         >
         <button
           id="extra-btn-2"
@@ -71,7 +75,7 @@
               href="#"
               ><div>
                 <i class="fa-brands fa-microsoft" style="margin-right:5px;"></i>
-                Download for Windows
+                {t("site.downloadFor")} Windows
               </div>
               <p style="margin-bottom:0;">64bit</p></a
             >
@@ -80,8 +84,7 @@
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa-brands fa-apple" style="margin-right:5px;"></i> Download
-                for macOS
+                <i class="fa-brands fa-apple" style="margin-right:5px;"></i> {t("site.downloadFor")} macOS
                 <div
                   class="horizontal-line"
                   style="transform:translate(0, 0); opacity:0.5;">
@@ -98,7 +101,7 @@
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa fa-linux" style="margin-right:5px;"></i> Download for
+                <i class="fa fa-linux" style="margin-right:5px;"></i> {t("site.downloadFor")}
                 Linux
                 <div
                   class="horizontal-line"
@@ -114,7 +117,7 @@
           </li>
           <div class="line-container" style="gap: 8px; margin-top: 8px;">
             <p style="padding:0px 0px 0px 17px; margin-bottom:0; opacity:0.7;">
-              Other
+              {t("site.other")}
               <div
                 class="horizontal-line"
                 style="transform:translate(0, 0); opacity:0.5;">
@@ -134,7 +137,7 @@
                   style="filter: invert(1);"
                   width="25px"
                 />
-                Download legacy patcher
+                {t("site.legacyPatcher")}
               </div>
               <p style="margin-bottom:0;">
                 64bit <i class="fa-brands fa-microsoft" style="margin-left:8px;"
@@ -146,7 +149,7 @@
             <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
-              ><i class="fa fa-book" style="margin-right:5px;"></i> Changelog</a
+              ><i class="fa fa-book" style="margin-right:5px;"></i> {t("site.changelog")}</a
             >
           </li>
         </ul>
@@ -158,7 +161,7 @@
         onclick="window.location.href = '/guide/install';">
         <i
           class="fa-solid fa-arrow-up fa-rotate-by"
-          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i> Installation guide
+          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i> {t("site.installGuide")}
       </button>
     </div>
     <div class="form-check">
@@ -169,8 +172,10 @@
         id="flexCheckDefault"
       />
       <label class="form-check-label" for="flexCheckDefault">
-        I have read and accepted the <a href="/tos">terms of service</a> and the
-        <a href="/privacy-policy">privacy policy</a>.
+        <Trans i18nKey="site.terms">
+          I have read and accepted the <a href="/tos">terms of service</a> and the
+          <a href="/privacy-policy">privacy policy</a>.
+        </Trans>
       </label>
     </div>
   </div>
@@ -188,12 +193,13 @@
         <div id="bar" class="bar"></div>
       </div>
       <a href="#intro" class="more">
-        See what else WiiLink can do for you <i
+        {t("site.heroMorePrompt")} <i
           class="fa-solid fa-chevron-right"></i>
       </a>
     </div>
   </div>
 
+  <div id="withThe" style="display:none;">{t("site.withThe")}</div>
   <script is:inline>
     let assets = [];
 
@@ -261,37 +267,12 @@
 
     function updateTagline() {
       let tagline = document.getElementById("tagline");
-      let taglines = [
-        "Party on like it's 2006!",
-        "Ah frickin sweet, I can check the weather from here Lois!",
-        "Wii are here to Link.",
-        "Did you know you can connect your Wii console to the Internet?",
-        "As seen on Scott The Woz!",
-        "The Return of the Legendary WiiConnect24",
-        "Are you sure you wanna do this?",
-        "Rediscover your Wii",
-        "Link back to Nintendo's golden age",
-        "Get Connected back to the Wii's past once again!",
-        "Wii play. Do you?",
-        "You can do more with a Wii than just losing in Mario Kart!",
-        "The realest wii network revival service",
-        "If you don't like Wiilink, Wii are gonna have a problem!",
-        "Play as if you were back in your childhood!",
-        "Wii would like to play, again",
-        "Wii Link to you",
-        "Install WiiLink or face the consequences",
-        "Your childhood memories, connected to our servers",
-        "WiiLink is like breathing. you can't live without it",
-        "WiiLink, Wii Software beyond things",
-        "Fans do what Nintendon't",
-        "Now supports Wii Menu Ver. 4.4!",
-        "Link like a pro!",
-        "WiiLink definetly gives the 2006 vibes!",
-        "Linking the world, one Wii at a time",
-        "A Link to the Past!",
-        "One of Nintendo's biggest steps in multiplayer gaming, Riivived!"
-      ];
-      tagline.innerHTML = taglines[Math.floor(Math.random() * taglines.length)];
+      fetch("/json/hero.json")
+        .then(res => res.json())
+        .then(data => {
+          let taglines = data.taglines;
+          tagline.innerHTML = taglines[Math.floor(Math.random() * taglines.length)];
+        });
     }
 
     window.onload = function () {
@@ -331,6 +312,7 @@
           let services = data.hero.element;
           services.sort(() => Math.random() - 0.5);
           let randomServices = services.slice(0, 3);
+          let withThe = document.getElementById("withThe").innerHTML;
           let html = "";
           randomServices.forEach((service, index) => {
             html += `
@@ -338,7 +320,7 @@
               <img src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
               <div style="z-index: 1; position:relative;">
                 <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
-                <p style="opacity:0.7;">with the
+                <p style="opacity:0.7;">${withThe}
                 <a href="${service.link}">${service.name}</a>
                 </p>
               </div>

@@ -88,10 +88,12 @@ const posts = (await getCollection("blog")).sort(
         {t("header.status")}
       </a>
       <a class="link" href="/services" style="z-index: 1; position:relative">
-        <i class="fas fa-cogs"></i> Services
+        <i class="fas fa-cogs"></i> 
+        {t("header.services")}
       </a>
       <a class="link" href="/extras" style="z-index: 1; position:relative">
-        <i class="fas fa-gift"></i> Extras
+        <i class="fas fa-gift"></i> 
+        {t("header.extras")}
       </a>
     </div>
     <br />
@@ -102,11 +104,11 @@ const posts = (await getCollection("blog")).sort(
     </li>
     <li>
       <a href="/privacy-policy"
-        ><i class="fa-solid fa-shield"></i> Privacy Policy</a
+        ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
       >
     </li>
     <li>
-      <a href="/tos"><i class="fa-solid fa-feather"></i> Terms of Service</a>
+      <a href="/tos"><i class="fa-solid fa-feather"></i> {t("header.tos")}</a>
     </li>
   </div>
 </div>
