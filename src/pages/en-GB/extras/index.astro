@@ -736,8 +736,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       width: 95%;
       left: 50%;
       transform: translate(-50%, 0);
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       position: absolute;
       gap: 10px;
       top: 20px;
