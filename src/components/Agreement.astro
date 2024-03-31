@@ -12,23 +12,24 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<a
-  href={localizePath("/")}
-  class="logohold"
-  style="top:50px; left:-25px; z-index: 100; position:absolute;"
-  ><img class="logo" src=" /img/Wii_Link_Logo.png" width="140px" /></a
->
-<button
-  style="z-index:1000;"
-  class="btn dropdownbtn btn-black-50"
-  type="button"
-  data-bs-toggle="offcanvas"
-  data-bs-target="#offcanvasTop"
-  aria-controls="offcanvasTop"
-  ><i
-    style="font-size:30px; filter:opacity(0.9); transform:translate(-1px, -5px);"
-    class="fa-solid fa-bars"></i></button
->
+<div class="holder">
+  <a
+    href={localizePath("/")}
+    class="logohold"
+    style="transform:translate(-50px,0);"
+    ><img class="logo" src=" /img/Wii_Link_Logo.png" width="140px" /></a
+  >
+  <button
+    style="z-index:1000;"
+    class="btn dropdownbtn btn-black-50"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasTop"
+    aria-controls="offcanvasTop"
+    ><i style="font-size:30px; filter:opacity(0.9);" class="fa-solid fa-bars"
+    ></i></button
+  >
+</div>
 
 <div
   class="offcanvas offcanvas-end"
@@ -88,11 +89,11 @@ const posts = (await getCollection("blog")).sort(
         {t("header.status")}
       </a>
       <a class="link" href="/services" style="z-index: 1; position:relative">
-        <i class="fas fa-cogs"></i> 
+        <i class="fas fa-cogs"></i>
         {t("header.services")}
       </a>
       <a class="link" href="/extras" style="z-index: 1; position:relative">
-        <i class="fas fa-gift"></i> 
+        <i class="fas fa-gift"></i>
         {t("header.extras")}
       </a>
     </div>
@@ -188,9 +189,13 @@ const posts = (await getCollection("blog")).sort(
     background-color: var(--bg-color-tertiary);
   }
 
-  .dropdownbtn {
-    top: 30px;
-    right: 15px;
+  .holder {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    z-index: 1000;
     position: fixed;
   }
 
