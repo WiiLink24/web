@@ -1,71 +1,71 @@
 {
     "site": {
       "title": "WiiLink",
-      "description": "An unofficial public housing project dedicated to restoring, translating and improving WiiConnect24 channels and services that are unavailable, including those not available elsewhere.",
+      "description": "An unofficial community homebrew project dedicated to restoring, translating and enhancing the now discontinued WiiConnect24 channels and services, including those that were not available in all regions.",
       "img": "/img/news_post_welcome_back.png",
-      "load": "work...",
-      "dev": "develop ",
-      "relNotes": "A cautionary note",
-      "downloadPrompt": "Put him down",
-      "winMinReq": "You need Windows 8 or later.",
-      "installGuide": "Download the instructions",
-      "terms": "I have read and accept <0>Terms of Use</0> and <1>Privacy Statement</1>.",
-      "slogan": "<0>WiiLink</0> is a service that does not include games. We are not affiliated with Nintendo and all trademarks are the property of their respective owners. Without breaking the law. </1></2>© 2020-2024 <3>The WiiLink Team</3><4></4>",
-      "donate": "do your part!",
-      "creator": "This page was created and coded by X.",
-      "contact": "line",
-      "assets": "Brand Ownership",
-      "install": "Get dressed",
-      "wfcPrompt": "Consume ViiLink VFC!",
-      "heroDesc": "WiLink is an open source software for Nintendo WiConnect24 and NWFC servers that allows people to connect to the Internet even when the servers are unavailable.",
-      "heroDev": "you understand",
-      "downloadFor": "Download tamil songs",
-      "other": "the military",
-      "legacyPatcher": "Last downloaded",
-      "changelog": "Change the entry",
-      "withThe": "i",
-      "heroMorePrompt": "See what else ViiLink can do."
+      "load": "Loading...",
+      "dev": "Developed by ",
+      "relNotes": "Release Notes",
+      "downloadPrompt": "Download",
+      "winMinReq": "You'll need windows 8 or higher!",
+      "installGuide": "Installation guide",
+      "terms": "I have read and accepted the <0>Terms of Service</0> and <1>Privacy Policy</1>.",
+      "slogan": "<0>WiiLink</0> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</1></2>© 2020-2024 <3>WiiLink</3><4> Team</4>",
+      "donate": "Donate!",
+      "creator": "Website designed and coded by Alex",
+      "contact": "Contact us",
+      "assets": "Branding assets",
+      "install": "Install now",
+      "wfcPrompt": "Check out WiiLink WFC!",
+      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
+      "heroDev": "Developed by",
+      "downloadFor": "Download for",
+      "other": "Other",
+      "legacyPatcher": "Download legacy patcher",
+      "changelog": "Changelog",
+      "withThe": "with the",
+      "heroMorePrompt": "See what else WiiLink can do for you"
     },
     "build": {
-      "title": "<0>Looking for a new home</0>!",
-      "releasedBy": "Construction.",
-      "releaseBranch": "ID: ",
-      "releaseDate": "Departure date: ",
-      "releaseTotal": "Money "
+      "title": "Check out the latest <0>build</0>!",
+      "releasedBy": "Released by:",
+      "releaseBranch": "Branch: ",
+      "releaseDate": "Release date: ",
+      "releaseTotal": "Total: "
     },
     "donate": {
-      "title": "<0>Use your senses </0>.",
-      "subtitle": "<0> WiiLink </0> <1> Users </1> and <2> Support </2> <3> if you want to pay this fee. Please consider making a donation. </3>",
-      "donators": "Connect with <0>smart people</0>.",
-      "popular": "the most famous",
-      "powered": "the creator"
+      "title": "Powered by <0>your support</0>!",
+      "subtitle": "<0>WiiLink</0> is funded publicly by its <1>users</1> and <2>sponsors</2>. <3>To help our running costs, please consider donating!</3>",
+      "donators": "...and join all these <0>cool people</0>:",
+      "popular": "Most popular",
+      "powered": "Powered by"
     },
     "header": {
-      "home": "This is home.",
-      "news": "answer",
-      "guide": "This is something special",
-      "status": "i am the one",
-      "faq": "Do you want to know something?",
-      "isGuide": "This is something special",
-      "extras": "get out",
-      "extrasNew": "pay attention",
-      "services": "It works",
-      "chooseLang": "Choose a language",
+      "home": "Home",
+      "news": "News",
+      "guide": "Guide",
+      "status": "Status",
+      "faq": "FAQ",
+      "isGuide": "guide",
+      "extras": "Extras",
+      "extrasNew": "new",
+      "services": "Services",
+      "chooseLang": "Choose your language",
       "privacyPolicy": "Privacy Policy",
-      "tos": "Terms of use"
+      "tos": "Terms of Service"
     },
     "jumpin": {
-      "title": "<0>Login</0>.",
-      "slogan": "Buy Wii and enjoy new opportunities.",
-      "install": "come in"
+      "title": "Come and <0>join in</0>!",
+      "slogan": "Bring your Wii back to life and try out all-new channels.",
+      "install": "Install!"
     },
     "services": {
-      "title": "Welcome to <0>Viiilinc</0>!",
-      "subtitle": "Informal regional projects to maintain, repair and maintain services for people with disabilities, such as the ViiConnect24 system, are not available in all regions."
+      "title": "Welcome to <0>WiiLink</0>!",
+      "subtitle": "An unofficial community homebrew project dedicated to restoring, translating and enhancing the now discontinued WiiConnect24 channels and services, including those that were not available in all regions."
     },
     "socials": {
-      "title": "<0> Advertisement </0> Display application",
-      "subtitle": "Read <0>Comments</0> <1>Public</1> or ask Discord users.",
+      "title": "Check out the project's <0>socials</0>!",
+      "subtitle": "Keep up with all service <0>updates</0> and <1>general announcements</1> or come join the Discord server.",
       "twFollowers": "3.3K followers",
       "twFollow": "Follow",
       "twTweets": "Tweets by WiiLink24",
@@ -77,8 +77,8 @@
       "ytSubscribe": "Subscribe"
     },
     "team": {
-      "title": "To do this, use the <0></0> section.",
-      "subtitle": "<0>WiiLink</0> <1>Options</1>. </2><3>Key partner in project management</3>"
+      "title": "The project's <0>team</0>",
+      "subtitle": "<0>WiiLink</0> is powered by <1>volunteer work</1>. </2><3>Here are the main contributors working to run the project!</3>"
     },
     "svc-site": {
       "mainTitle": "WiiLink - Services",

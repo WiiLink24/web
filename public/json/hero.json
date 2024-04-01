@@ -1,92 +1,75 @@
 {
   "taglines": [
-    "Party on like it's 2006!",
-    "Did you know you can connect your Wii console to the Internet?",
-    "As seen on Scott The Woz!",
-    "The Return of the Legendary WiiConnect24",
-    "Rediscover your Wii",
-    "Link back to Nintendo's golden age",
-    "Get Connected back to the Wii's past once again!",
-    "Wii Play. Do you?",
-    "You can do more with a Wii than just losing in Mario Kart!",
-    "The realest wii network revival service",
-    "Play as if you were back in your childhood!",
-    "Wii would like to play, again",
-    "Your childhood memories, connected to our servers",
-    "WiiLink, Wii Software beyond things",
-    "Fans do what Nintendon't",
-    "WiiLink definitely gives the 2006 vibes!",
-    "Linking the world, one Wii at a time",
-    "One of Nintendo's biggest steps in multiplayer gaming, Revived!"
+    "We fired the localization team!"
   ],
   "hero": {
     "element": [
       {
         "name": "Forecast Channel",
-        "desc": "Check out up-to-date weather forecasts from around the world",
+        "desc": "View the latest weather information from around the world",
         "link": "/guide/forecast",
         "icon": "forecastbanner.png",
         "bg": "forecast.png"
       },
       {
         "name": "News Channel",
-        "desc": "Stay informed with the latest news from around the world",
+        "desc": "Download international news",
         "link": "/guide/news",
         "icon": "newsbanner.png",
         "bg": "news.jpg"
       },
       {
         "name": "Nintendo Channel",
-        "desc": "Watch trailers, read reviews and download demos of DS games",
+        "desc": "See pictures, read reviews and download DS games",
         "link": "/guide/nintendochannel",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
       {
         "name": "Check Mii Out Channel",
-        "desc": "Participate in contests and vote for your favorite Miis",
+        "desc": "Enter the bonus game and choose your favorite table",
         "link": "/guide/miicontest",
         "icon": "miioutbanner.png",
         "bg": "checkmiiout.png"
       },
       {
         "name": "Everybody Votes Channel",
-        "desc": "Answer polls and see how your opinions compare to others",
+        "desc": "Participate in the survey and compare your opinion with others",
         "link": "/guide/evc",
         "icon": "politicsbanner.png",
         "bg": "politics.jpg"
       },
       {
         "name": "Food Channel",
-        "desc": "Order different types of meals from home via your Wii console",
+        "desc": "Use the Wii to prepare a variety of meals at home",
         "link": "/guide/demae",
         "icon": "demaebanner.png",
         "bg": "food.png"
       },
       {
         "name": "TV Guide Channel",
-        "desc": "Check out the TV schedule and watch trailers of upcoming shows",
+        "desc": "Check the TV schedule for past and future shows",
         "link": "/guide/tvnotomo",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },
       {
         "name": "Kirby TV Channel",
-        "desc": "Watch episodes of the Kirby: Right Back at Ya! TV show",
+        "desc": "Be sure to check it out and Kirby is back! It's part of a TV show",
         "link": "/guide/kirbytv",
         "icon": "kirbytvbanner.png",
         "bg": "kirbytv.png"
       },
       {
         "name": "Photo Prints Channel",
-        "desc": "Order prints of your favorite photos from your Wii console",
+        "desc": "Get your favorite Wii movies",
         "link": "/guide/digicam",
         "icon": "digicambanner.png",
         "bg": "digicamprints.png"
       },
       {
         "name": "Wii Room",
-        "desc": "Discover shows and video-on-demand content in a more novel way",
+        "desc": "Smartly search for the tools and videos you need",
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.png",
         "bg": "room.webp"
