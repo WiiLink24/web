@@ -1,0 +1,439 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { changeLanguage } from "i18next";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import { getCollection } from "astro:content";
+import FormattedDate from "../../../components/FormattedDate.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+
+changeLanguage("fi");
+
+const posts = (await getCollection("services")).sort((a, b) => a.data.title.localeCompare(b.data.title));
+---
+
+<Layout
+  title={t("svc-site.mainTitle")}
+  description={t("svc-site.mainDesc")}
+  image="/img/default.png"
+/>
+<Header isGuide="display:none;" />
+
+<body>
+  <div class="hold">
+    <div class="welcome-msg">
+      <h2 style="font-size:40px; font-family:Gilroy;">
+        <Trans i18nKey="svc-site.title">
+          Everything we offer! <span
+            class="badge bg-success"
+            style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+          ></span><b style="font-family: Rubik;">WiiLink</b><span
+            class="badge bg-info"
+            style="top:-20px; left:5px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+            >services</span
+          >
+        </Trans>
+      </h2>
+      <h3 style="font-size: calc(1.3rem + .6vw);">
+        <Trans i18nKey="svc-site.subtitle">
+          Here you'll can see <b class="color">everything we offer</b>! Read up
+          and download them for yourself!
+        </Trans>
+      </h3>
+    </div>
+
+    <div class="polka-dot"></div>
+    <div class="postholder">
+      {
+        posts.map((post, index) => (
+          <div
+            class="posthold"
+            style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+            <div class="post">
+              <a href={`/services/${post.slug}/`}>
+                <img class="heroImage" src={post.data.heroImage} />
+                <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                  <div class="title">
+                    <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                    {post.data.title}
+                  </div>
+                  <div class="desc">{post.data.description}</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <h3
+      style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
+      <Trans i18nKey="services.helpTitle">
+        <b
+          >Did we miss <c class="color">anything</c>? Be sure to <c
+            class="color">get in touch</c
+          >!</b
+        >
+      </Trans>
+    </h3>
+    <div class="btn-wrapper">
+      <a href="mailto:contact@wiilink24.com"
+        ><div class="btn btn-success" style="padding:10px;">
+          <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
+          {t("guide.helpButton1")}
+        </div></a
+      >
+      <a href="https://discord.gg/wiilink"
+        ><div class="btn btn-primary" style="padding:10px;">
+          <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
+          {t("guide.helpButton2")}
+        </div></a
+      >
+    </div>
+  </div>
+</body>
+
+<Footer />
+
+<script>
+  const scrollableDiv = document.getElementById("square2");
+
+  scrollableDiv.addEventListener("scroll", function () {
+    // Check if the user has scrolled to the bottom
+    if (
+      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+      scrollableDiv.clientHeight + 30
+    ) {
+      // User has scrolled to the end
+      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+    } else {
+      scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+    }
+  });
+</script>
+
+<style>
+  .flexhead {
+    left: 50%;
+    top: 130px;
+    width: 90%;
+    transform: translate(-50%, 0);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    z-index: 100;
+    position: absolute;
+  }
+
+  .mainimgsmall {
+    -webkit-mask-image: url(/img/mask2.svg);
+    mask-image: url(/img/mask2.svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    mask-position: center;
+    height: 180px;
+    width: auto;
+    transform: translate(0, 10px);
+    z-index: 10;
+    position: relative;
+  }
+
+  h2 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+
+  .btn-wrapper {
+    width: 320px;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .welcome-msg {
+    top: 15px;
+    max-width: 90%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+  }
+
+  .newstop {
+    left: 50px;
+    top: 200px;
+    transform: translate(0, -50%);
+    height: 200px;
+    filter: opacity(0.1) invert(0);
+    position: absolute;
+  }
+
+  .downmargin {
+    width: 100%;
+    height: 500px;
+    position: relative;
+  }
+  .subtitle {
+    left: 80px;
+    font-family: Gilroy;
+    font-size: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    width: 50%;
+  }
+  .slogan {
+    left: 80px;
+    font-family:
+      inter,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: white;
+    width: 500px;
+    position: relative;
+  }
+  .color {
+    background: url("/img/header_bg.png");
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
+  }
+
+  .posthold {
+    transform: translate(0, 0px);
+    filter: drop-shadow(0px 0px 20px var(--shadow-color));
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .posthold:hover {
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 20px var(--bg-color-tertiary));
+    transition: 0.5s;
+  }
+
+  .postholder {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    position: absolute;
+    gap: 20px;
+    top: 40px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+    padding-bottom: 130px;
+    z-index: 10;
+  }
+
+  .post {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px;
+    font-family: Gilroy;
+    display: inline-block;
+    hyphens: auto;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+
+  .post:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    border-radius: 8px;
+    border: solid 0px transparent;
+    transition: 0.2s;
+  }
+
+  .post:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: inset 0 0 0px 3px #ffffff20;
+    z-index: 1;
+    border-radius: 18px;
+    border: solid 6px transparent;
+    transition: 0.2s;
+  }
+
+  .title {
+    color: black;
+  }
+
+  .desc {
+    color: black;
+  }
+
+  .post:hover .title {
+    color: white !important;
+  }
+
+  .post:hover .desc {
+    color: white !important;
+  }
+
+  .post:hover {
+    box-shadow: 0px 5px 20px var(--shadow-color);
+    transition: 0.5s;
+  }
+  .heroImage {
+    width: 100%;
+    height: 100%;
+    scale: 120%;
+    filter: blur(4px) brightness(0.7) grayscale(0.7);
+    opacity: 0;
+    object-fit: cover;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .post:hover .heroImage {
+    filter: blur(4px) brightness(0.5) grayscale(0);
+    scale: 110%;
+    opacity: 1;
+    z-index: 10;
+    transition: 0.3s;
+  }
+
+  .title {
+    width: auto;
+    z-index: 11;
+    font-size: max(20px, 30px);
+    text-align: right;
+    margin-bottom: 15px;
+    margin-left:40px;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+  }
+
+  .title-small {
+    width: 90%;
+    height: auto;
+    z-index: 11;
+    font-size: max(20px, 30px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #181818;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+    position: absolute;
+  }
+
+  .desc {
+    font-family: inter;
+    font-size: 20px;
+    text-align: right;
+    transition: 0.5s;
+    margin-left:40px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+  }
+
+  .polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(#484848 10%, transparent 11%),
+      radial-gradient(#484848 10%, transparent 11%);
+    background-size: 30px 30px;
+    background-position:
+      0 0,
+      30px 30px;
+    opacity: 0.3;
+    rotate: 30deg;
+    left: 20px;
+    top: 50px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    position: absolute;
+    z-index: 0;
+  }
+
+  @keyframes rotate {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+
+  a {
+    z-index: 1;
+    color: white;
+  }
+
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translate(0, 20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .postholder {
+      width: 95%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 10px;
+      top: 20px;
+      padding-bottom: 0px;
+      overflow: visible;
+      position: relative;
+      z-index: 10;
+    }
+
+    .post {
+      margin-bottom: 0;
+      height: 200px;
+    }
+
+    .newstop {
+      display: none;
+    }
+
+    .post:hover {
+      transform: scale(102%);
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .hold {
+      left: 50%;
+      transform: translate(-50%, 150px);
+      width: 2000px;
+      margin-bottom: 80px;
+      position: relative;
+    }
+  }
+</style>
