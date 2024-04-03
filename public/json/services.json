@@ -9,7 +9,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "forecast_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br><br> <b>RiiConnect24 users</b> will need to update using the latest version of the WiiLink Patcher to resume service.",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "news_icon.png",
-        "todo": "<i class='fa fa-triangle-exclamation'></i> Some <b>foreign news sources</b> may not respond as expected. We are aware of the issue and are working on a fix.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "100"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "miicontest_icon.png",
-        "todo": "<i class='fa fa-triangle-exclamation'></i> We are aware of an issue <b>impacting contests</b> and are working on a fix.",
+        "todo": "<i class='fa fa-triangle-exclamation'></i> <b>No contetst are running</b>, once we come out of our creative block, new ones will show!",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "International",
         "status": "Under Maintenance",
         "icon": "democracy_icon.png",
-        "todo": "<i class='fa fa-triangle-exclamation'></i> Some users may experience <b>Error Code 239001</b>, we are working on a backend fix. <br> To get it working right now, delete the save data.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "80"
       },
       {
