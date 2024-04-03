@@ -1,0 +1,149 @@
+{
+    "site": {
+      "title": "WiiLink",
+      "description": "Epävirallinen, yhteisön kehittämä homebrew-projekti, jonka tarkoituksena on entisöidä, kääntää ja parantaa pois käytöstä otettuja WiiConnect24 kanavia ja palveluita, mukaan lukien kanavia joita ei julkaistu kaikilla alueilla.",
+      "img": "/img/news_post_welcome_back.png",
+      "load": "Ladataan...",
+      "dev": "Koodannut ",
+      "relNotes": "Versio tiedot",
+      "downloadPrompt": "Lataa uusin versio:",
+      "winMinReq": "Tarvitset Windows 8:n, tai uudemman!",
+      "installGuide": "Asennus ohje",
+      "terms": "Olen lukenut ja hyväksyn <0>käyttöehdot</0> ja <1>tietoturvaselosteen</1>.",
+      "slogan": "<0>WiiLink</0> on epävirallinen, voittoa tavoittelematon homebrew-projekti. Se ei ole millään tavalla sidoksissa Nintendoon, ja kaikki tavaramerkit ovat vastaavien omistajiensa omaisuutta. WiiLink:illä ei ole tarkoitus loukata tekijänoikeuksia.</1></2>© 2020-2024 <3>WiiLink</3><4> Tiimi</4>",
+      "donate": "Lahjoita!",
+      "creator": "Nettisivun suunnitellut ja koodannut Alex",
+      "contact": "Ota yhteyttä",
+      "assets": "Brändi-resurssit",
+      "install": "Asenna nyt",
+      "wfcPrompt": "Katso myös WiiLink WFC!",
+      "heroDesc": "WiiLink on avoimen lähdekoodin korvaus Nintendon palvelimille WiiConnect24:ssä ja NWFC:ssä, mahdollistaen palvelinyhteyden kaikille, vaikka alkuperäiset palvelimet ovatkin sammutettu!",
+      "heroDev": "Koodannut",
+      "downloadFor": "Lataa järjestelmälle",
+      "other": "Muu",
+      "legacyPatcher": "Lataa legacy patcher",
+      "changelog": "Muutosloki",
+      "withThe": "with the",
+      "heroMorePrompt": "Katso mitä muuta WiiLink voi sinulle tehdä"
+    },
+    "build": {
+      "title": "Katso uusin <0>versio</0>!",
+      "releasedBy": "Julkaissut:",
+      "releaseBranch": "Haara: ",
+      "releaseDate": "Julkaistu: ",
+      "releaseTotal": "Yhteensä: "
+    },
+    "donate": {
+      "title": "Olemassa <0>teidän takia</0>!",
+      "subtitle": "<0>WiiLink</0> on julkisesti rahoitettu <1>käyttäjien</1> ja <2>sponsorien</2> kautta. <3>Harkitsethan lahjoitusta käyttökulujemme kattamiseksi!</3>",
+      "donators": "...ja liity kaikkien näitten <0>kivojen tyyppien</0> joukkoon:",
+      "popular": "Suosituin",
+      "powered": "Powered by"
+    },
+    "header": {
+      "home": "Koti",
+      "news": "Uutiset",
+      "guide": "Ohje",
+      "status": "Status",
+      "faq": "UKK",
+      "isGuide": "ohje",
+      "extras": "Extroja",
+      "extrasNew": "uusi",
+      "services": "Palvelut",
+      "chooseLang": "Valitse kieli",
+      "privacyPolicy": "Tietosuojaseloste",
+      "tos": "Käyttöehdot"
+    },
+    "jumpin": {
+      "title": "Tule ja <0>liity mukaan</0>!",
+      "slogan": "Herätä Wii-konsolisi henkiin ja kokeile uusittuja kanavia.",
+      "install": "Asenna nyt!"
+    },
+    "services": {
+      "title": "Tervetuloa <0>WiiLink</0>:iin!",
+      "subtitle": "Epävirallinen, yhteisön kehittämä homebrew-projekti, jonka tarkoituksena on entisöidä, kääntää ja parantaa pois käytöstä otettuja WiiConnect24 kanavia ja palveluita, mukaan lukien kanavia joita ei julkaistu kaikilla alueilla."
+    },
+    "socials": {
+      "title": "Katso projektin <0>sosiaalisen median kanavat</0>!",
+      "subtitle": "Pysy ajan tasalla kaikista palvelun <0>päivityksistä</0> ja <1>yleisistä ilmoituksista</1> tai liity meidän Discord-palvelimelle.",
+      "twFollowers": "3 tuhatta seuraajaa",
+      "twFollow": "Seuraa",
+      "twTweets": "Twiittejä käyttäjältä WiiLink24",
+      "dcMembers": "26 tuhatta jäsentä",
+      "dcJoin": "Liity",
+      "ghFollowers": "103 seuraajaa",
+      "ghFollow": "Seuraa",
+      "ytSubscribers": "2.1 tuhatta tilaajaa",
+      "ytSubscribe": "Tilaa"
+    },
+    "team": {
+      "title": "Projektin <0>tiimi</0>",
+      "subtitle": "<0>WiiLink</0> toimii <1>vapaaehtoistyöllä</1>. </2><3>Tässä ovat tärkeimmät osallistujat, jotka auttavat projektia sen toteuttamisessa!</3>"
+    },
+    "news": {
+      "mainTitle": "WiiLink - Uutiset",
+      "mainDesc": "Lue WiiLink:in uusimmista uudistuksista ja julkaisuista!",
+      "title": "Tässä on <1>WiiLink</1> <2>uutiset</2>",
+      "subtitle": "Seuraa <0>projektin edistymistä</0> sekä <1>päivityksiä</1>!",
+      "otherNews": "Tässä on <0>vahnempia</0> artikkeleita:",
+      "rssTitle": "<0>Haluaisitko saada <1>WiiLink uutisia</1> sinun nettisivulla tai palvelulla? Käytä meidän <2>RSS-syötettä</2>.</0>",
+      "rssButton": "RSS Syöte",
+      "otherPosts": "Muut <0>postaukset</0>"
+    },
+    "guide": {
+      "mainTitle": "WiiLink - Ohje",
+      "mainDesc": "Saa palveluihimme tärkeää tietoa ja apua!",
+      "title": "Tervetuloa <1>WiiLink</1> <2>ohjeeseen</2>",
+      "subtitle": "Täällä voit löytää <0>tärkeää tietoa</0> littyen meidän palveluihin, sekä hyödyllisiä <1>ohjeita</1> ja <2>vianetsijiä</2>, jotka auttavat sinua!",
+      "specificGuides": "Mitä sinä olet <0>etsimässä</0>?",
+      "helpTitle": "<0>Eikö joku millään <1>toimi</1>? Älä pelkää <2>ottaa yhteyttä</c2>!</0>",
+      "helpButton1": "Ota yhteyttä",
+      "helpButton2": "Liity discord palvelimelle"
+    },
+    "guidePost": {
+      "name": "Ohje",
+      "whereTo": "Minne sinä haluaisit mennä?",
+      "installGuide": "Asennus ohje",
+      "problemSolving": "Vianmääritys",
+      "faq": "Usein kysytyt kysymykset",
+      "lookingFor": "Mitä sinä olet <0>etsimässä</0>?",
+      "visitWiiHacks": "Katso wii.hacks.guide",
+      "copyright": "© 2020-2024 <0>WiiLink<1>ohje</1></0> <2> Tiimi</2>"
+    },
+    "newsPost": {
+      "name": "Uutiset"
+    },
+    "status": {
+      "mainTitle": "WiiLink - Status",
+      "mainDesc": "Tarkista palvelun tila ja valmistumis tilanne!",
+      "title": "Katso <1>WiiLink</1> <2>status</2>",
+      "subtitle": "Saat yleiskatsauksen <0>edistymisestämme</0> <1>palvelimen</1> statuksen lisäksi!",
+      "serverStatus": "Katso palvelimen status."
+    },
+    "extras": {
+      "mainTitle": "WiiLink - Extrat",
+      "mainDesc": "Tutustu erikoisiin resursseihin ja sisältöön!",
+      "title": "Tässä on <1>WiiLink</1> <2>extrat</2>",
+      "subtitle": "Täältä voit löytää <0>erityistä sisältöä</0> mitä olemme työstäneet.",
+      "helpCall": "<0>Onko jotain mikä tuntuu <1>puuttuvan</1> täältä? Ota vain toki <2>yhteyttä</2>!</0>",
+      "contact": "Ota yhteyttä",
+      "joinDiscord": "Liity discord palvelimelle"
+    },
+    "404": {
+      "mainTitle": "WiiLink - 404",
+      "mainDesc": "404 - Sitä sivua mitä etsit ei voitu löytää...",
+      "message": "Sivua ei löydetty..."
+    },
+    "tos": {
+      "mainTitle": "WiiLink - Käyttöehdot",
+      "mainDesc": "Käyttöehdot WiiLink:in palveluille."
+    },
+    "privacyPolicy": {
+      "mainTitle": "WiiLink - Tietosuojaseloste",
+      "mainDesc": "Tietosuojaseloste WiiLink:in palveluille."
+    },
+    "eula": {
+      "mainTitle": "WiiLink - Loppukäyttäjän lisenssisopimus",
+      "mainDesc": "Loppukäyttäjän lisenssisopimus WiiLink:in palveluille."
+    }
+  }
