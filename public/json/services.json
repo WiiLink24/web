@@ -9,7 +9,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "forecast_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> <b>RiiConnect24 users will need to update using the latest version of the <a href='https://www.wiilink24.com'>WiiLink Patcher</a></b>",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <hr> <b>RiiConnect24 users</u> will need to update using the latest version of the <a href='https://www.wiilink24.com'>WiiLink Patcher</a>",
         "completed": "95"
       },
       {
