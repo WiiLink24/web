@@ -8,7 +8,6 @@ import Team from "../../components/team.astro";
 import Socials from "../../components/Socials.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
-import Agreement from "../../components/Agreement.astro";
 import JumpIn from "../../components/JumpIn.astro";
 import Themes from "astro-themes";
 import i18next, { t, changeLanguage } from "i18next";
@@ -34,7 +33,7 @@ changeLanguage("es");
               <div
                 id="warn"
                 class="alert"
-                style="width:400px; background-color:var(--bg-color-tertiary); animation:fadeout2 500ms 8s linear forwards; display:none; position:absolute;"
+                style="width:400px; background-color:var(--bg-color-tertiary); animation:fadeout2 500ms 8s linear forwards; display:none; z-index:1000000; position:absolute;"
                 role="alert">
               </div>
 
@@ -51,8 +50,6 @@ changeLanguage("es");
             <Socials />
 
             <JumpIn />
-
-            <Agreement />
 
             <div class="mainFooter">
               <Footer />
