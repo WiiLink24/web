@@ -129,7 +129,7 @@
         "link": "/guide/mail",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<i class='fa fa-triangle-exclamation'></i> Some messages may <b>fail to send</b>. We are aware of the issue and are working on a fix.",
+        "todo": "<i class='fa fa-circle-check'></i> Wii <-> Wii service fully operational<br><i class='fa fa-triangle-exclamation'></i> Wii <-> Mail service is down",
         "icon": "",
         "completed": "100"
       },
