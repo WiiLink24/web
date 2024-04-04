@@ -115,7 +115,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
           )}
           <a href={`/news/${post.slug}/`}>
             <div class="fade-small" />
+            <div class="hide">
             <FormattedDate date={post.data.pubDate} />
+            </div>
             <div class="title-small">{post.data.title}</div>
           </a>
         </div>
@@ -453,7 +455,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   .post:hover:before {
     box-shadow: inset 0 0 0px 3px #ffffff80;
-    border-radius: 14px;
+    border-radius: 10px;
     border: solid 0px transparent;
     transition: 0.2s;
   }
@@ -467,7 +469,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     right: 0;
     box-shadow: inset 0 0 0px 3px #ffffff20;
     z-index: 1;
-    border-radius: 14px;
+    border-radius: 10px;
     border: solid 0px transparent;
     transition: 0.2s;
   }
@@ -752,6 +754,18 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       height: 200px;
     }
 
+    .herodatahold h1 {
+      font-size:45px !important;
+    }
+
+    .herodatahold h5 {
+      font-size:20px !important;
+    }
+
+    .herodatahold p {
+      display: none;
+    }
+
     .post:hover .heroImage {
       filter: blur(8px) brightness(0.3) !important;
       transform: scale(100%);
@@ -759,6 +773,10 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       scale: 110%;
       z-index: 0;
       transition: 0.3s;
+    }
+
+    .hide {
+      display: none;
     }
 
     .title-small {
