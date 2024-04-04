@@ -129,7 +129,7 @@
         "link": "/guide/mail",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> Wii <i class='fa-solid fa-arrows-left-right'></i> Wii service fully operational<hr><i class='fa fa-triangle-exclamation'></i> Wii <i class='fa-solid fa-arrows-left-right'></i> Mail service is down",
+        "todo": "<i class='fa fa-circle-check'></i> <b>Wii <i class='fa-solid fa-arrows-left-right'></i> Wii</b> service fully operational<hr style='margin:0;'><i class='fa fa-triangle-exclamation'></i> <b>Wii <i class='fa-solid fa-arrows-left-right'></i> Mail</b> service is down",
         "icon": "",
         "completed": "100"
       },
