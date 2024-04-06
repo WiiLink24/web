@@ -57,7 +57,7 @@ changeLanguage("es");
           </div>
 
           <div class="square"></div>
-          <div class="footer-holder">
+          <div class="footer-holder" id="footer">
             <img
               loading="lazy"
               class="footer-logo"
@@ -225,13 +225,24 @@ changeLanguage("es");
 
     if (width >= 1000) {
       scrollableDiv.addEventListener("scroll", function () {
+        // Change the bg color in #square2 to var(--bg-color) if scrolled
+        if (scrollableDiv.scrollTop > 0) {
+          scrollableDiv.style.setProperty("background-color", "var(--bg-color)");
+        } else {
+          scrollableDiv.style.setProperty(
+            "background-color",
+            "var(--bg-color-hero)"
+          );
+        }
         if (
           scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
           scrollableDiv.clientHeight + 30
         ) {
           scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+          document.getElementById("footer").style.opacity = "1";
         } else {
           scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
+          document.getElementById("footer").style.opacity = "0";
         }
       });
     } else {
@@ -301,8 +312,10 @@ changeLanguage("es");
     transform: translate(-50%, 0);
     display: flex;
     align-items: center;
+    opacity:0;
     width: 98%;
     height: 250px;
+    transition:0.2;
     position: absolute;
   }
   .accordion-body::-webkit-scrollbar {
@@ -404,7 +417,7 @@ changeLanguage("es");
     height: calc(100% - 30px);
     left: 15.5px;
     top: 15.5px;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-hero);
     transform: translate(0%, 0%);
     border-radius: 4px;
     z-index: 10;
