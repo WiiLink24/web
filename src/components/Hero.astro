@@ -29,10 +29,7 @@ import { Trans } from "astro-i18next/components";
         >!</span
       >
     </div>
-    <h2
-      id="tagline"
-      style="width:auto; margin-top:18px; font-weight:700;">
-    </h2>
+    <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
     <p style="font-size:20px; opacity:0.7;">
       {t("site.heroDesc")}
     </p>
@@ -386,7 +383,7 @@ import { Trans } from "astro-i18next/components";
                 </p>
               </div>
               <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
-                <img src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px); opacity:0.3; height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 25%, black 75%); z-index:0; position:absolute;" alt="${service.name}" />
+                <img src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
               </div>
             </div>
           `;

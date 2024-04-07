@@ -81,7 +81,9 @@ const { title, description, image } = Astro.props;
       href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -131,7 +133,7 @@ const { title, description, image } = Astro.props;
   html {
     --color: black;
     --bg-color: white;
-    --bg-color-hero: #ffffffe8;
+    --bg-color-hero: #ffffffde;
     --bg-color-light: #ffffff;
     --bg-color-secondary: #f8f9fa;
     --bg-color-tertiary: #f1f3f5;
@@ -141,6 +143,7 @@ const { title, description, image } = Astro.props;
     --bg-select: #eaeaea;
     --bg-opaque-1: #00000010;
     --bg-opaque-2: #00000020;
+    --opacity: 0.6;
   }
 
   html.dark {
@@ -156,6 +159,7 @@ const { title, description, image } = Astro.props;
     --bg-select: #0a0a0a30;
     --bg-opaque-1: #ffffff10;
     --bg-opaque-2: #ffffff20;
+    --opacity: 0.3;
   }
 
   html.dark .btn-close,
