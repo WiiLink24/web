@@ -273,7 +273,7 @@ import { Trans } from "astro-i18next/components";
           tagline.innerHTML = letters
             .map(
               (letter, index) =>
-                `<span style="--delay: ${index * 0.02}s">${letter === " " ? "&nbsp;" : letter}</span>`
+                `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
             )
             .join("");
         });
@@ -665,6 +665,26 @@ import { Trans } from "astro-i18next/components";
       display: inline-block;
       animation: fadeUpLetter 0.2s forwards;
       animation-delay: var(--delay);
+      transition: 0.1s;
+    }
+
+    #tagline:hover span {
+      opacity: 1;
+      transform: translateY(0px);
+      animation: bob 3s infinite;
+      animation-delay: var(--bob-delay);
+    }
+
+    @keyframes bob {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(8px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
     }
 
     @keyframes fadeUpLetter {
