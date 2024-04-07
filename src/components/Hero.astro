@@ -19,13 +19,21 @@ import { Trans } from "astro-i18next/components";
       style="border-radius: 8px; margin-bottom: 8px; box-shadow:0px 0px 38px #ed5d234b; display:none; z-index: 1;"
       src="https://www.youtube.com/embed/i5c4ShKd704?controls=0"
       allow="autoplay;"></iframe>
-    <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
+    <div style="display:flex; align-items:center; gap:18px;">
+      <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
+      <span
+        class="badge notice-mobile bg-danger"
+        style="font-size: 18px; background: linear-gradient(-120deg, rgba(255,0,0,0.6) 0%, rgba(255,154,0,0.6) 10%, rgba(208,222,33,0.6) 20%, rgba(79,220,74,0.6) 30%, rgba(63,218,216,0.6) 40%, rgba(47,201,226,0.6) 50%, rgba(28,127,238,0.6) 60%, rgba(95,21,242,0.6) 70%, rgba(186,12,248,0.6) 80%, rgba(251,7,217,0.6) 90%, rgba(255,0,0,0.6) 100%); text-align: left;margin: 10px 0px;padding: 15px;font-weight: 500; display:none;"
+        ><i class="fa fa-rainbow" aria-hidden="true"></i> Live and love freely, <b
+          >happy pride month</b
+        >!</span
+      >
+    </div>
     <h2
       id="tagline"
       style="width:auto; margin-top:18px; font-weight:700;"
       data-bs-toggle="tooltip"
       data-bs-title="Tagline made by users like you!">
-      <div style="margin:38px;"></div>
     </h2>
     <p style="font-size:20px; opacity:0.7;">
       {t("site.heroDesc")}
@@ -170,12 +178,6 @@ import { Trans } from "astro-i18next/components";
         {t("site.installGuide")}
       </button>
     </div>
-    <span
-      class="badge bg-danger"
-      style="font-size: 18px;text-align: left;margin: 10px 0px;padding: 15px;font-weight: 500; display:none;"
-      ><i class="fa fa-triangle-exclamation" aria-hidden="true"></i> This is an example
-      warning message</span
-    >
     <div class="form-check">
       <input
         class="form-check-input"
@@ -637,6 +639,9 @@ import { Trans } from "astro-i18next/components";
       }
       .logo {
         display: none;
+      }
+      .notice-mobile {
+        width: 100%;
       }
       .left {
         left: 50%;
