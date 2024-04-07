@@ -163,7 +163,8 @@ const { title, description, image } = Astro.props;
   }
 
   html.dark .btn-close,
-  html.dark .stripe-logo {
+  html.dark .stripe-logo,
+  html.dark .svcicons {
     filter: invert(1);
   }
 
@@ -180,9 +181,6 @@ const { title, description, image } = Astro.props;
     background-color: #00000000;
     filter: invert(1);
   }
-  html.dark .svcicons {
-    filter: invert(1);
-  }
   html.dark .logo,
   html.dark .invert {
     filter: invert(0) !important;
@@ -190,10 +188,7 @@ const { title, description, image } = Astro.props;
   html.dark .newstop {
     filter: opacity(0.1) invert(1);
   }
-  html.dark .bottomleftcorner {
-    animation: changecolordark 10s linear infinite;
-  }
-
+  html.dark .bottomleftcorner,
   html.dark .square {
     animation: changecolordark 10s linear infinite;
   }
