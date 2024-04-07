@@ -9,6 +9,12 @@ import { Trans } from "astro-i18next/components";
   <meta name="darkreader-lock" />
 </head>
 
+<span
+  class="badge"
+  id="siteVer"
+  style="background-color:var(--bg-color-secondary); color:var(--color); font-size:20px; opacity:0; transition:0.2; position:absolute;"
+  >2.3.1</span
+>
 <div class="holder">
   <div class="left">
     <div class="polka-dot promotional-video"></div>
@@ -21,12 +27,15 @@ import { Trans } from "astro-i18next/components";
       allow="autoplay;"></iframe>
     <div style="display:flex; align-items:center; gap:18px;">
       <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
-      <span
+      <marquee
+        scrollamount="1"
+        scrolldelay="20"
+        truespeed
         class="badge notice-mobile bg-danger"
         style="font-size: 18px; background: linear-gradient(-120deg, rgba(255,0,0,0.6) 0%, rgba(255,154,0,0.6) 10%, rgba(208,222,33,0.6) 20%, rgba(79,220,74,0.6) 30%, rgba(63,218,216,0.6) 40%, rgba(47,201,226,0.6) 50%, rgba(28,127,238,0.6) 60%, rgba(95,21,242,0.6) 70%, rgba(186,12,248,0.6) 80%, rgba(251,7,217,0.6) 90%, rgba(255,0,0,0.6) 100%); text-align: left;margin: 10px 0px;padding: 15px;font-weight: 500; white-space: wrap; line-height: 25px; display:none;"
         ><i class="fa fa-rainbow" aria-hidden="true"></i> Live and love freely, <b
           >happy pride month</b
-        >!</span
+        >!</marquee
       >
     </div>
     <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
@@ -304,6 +313,16 @@ import { Trans } from "astro-i18next/components";
     }
 
     window.onload = function () {
+      window.addEventListener("keydown", function (event) {
+        let sitever = document.getElementById("siteVer");
+        if (event.key === "Shift") {
+          sitever.style.opacity = "1";
+          this.setTimeout(() => {
+            sitever.style.opacity = "0";
+          }, 2000);
+        }
+      });
+
       let downloadFor = document.getElementById("downloadFor").innerHTML;
       let downloadPrompt = document.getElementById("downloadPrompt").innerHTML;
       updateButtons();
