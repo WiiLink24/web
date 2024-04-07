@@ -221,6 +221,9 @@ changeLanguage("es");
           "<i class='fa fa-triangle-exclamation'></i> <b>You were redirected from RC24.xyz!</b><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>";
       }
       if (isLowSpec == "true") {
+        document.getElementById("warn").style.display = "block";
+        document.getElementById("warn").innerHTML =
+          "<i class='fa fa-bolt'></i> <b>Low spec mode active!</b><hr style='margin:8px 0;'/>Some animations have been disabled in order to make the site feel snappier on your device.";
         document.querySelector(".square").style.animation =
           "changecolorbasic 10s linear infinite";
         document.querySelector(".bottomleftcorner").style.display = "none";
