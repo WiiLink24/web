@@ -34,6 +34,9 @@ changeLanguage("fr");
               id="animatedNumber2">50</m
             >px.
           </li>
+            <li>
+                Use <b>/#noWarning=true</b> to disable this message.
+            </li>
         </ul>
       </div>
       <div class="symbolholder">
@@ -55,6 +58,7 @@ changeLanguage("fr");
 
 <script>
   document.addEventListener("DOMContentLoaded", async function () {
+    document.getElementById("popup").style.display = "block";
     setTimeout(function () {
       var popup = document.getElementById("popup");
       if (popup) {
@@ -85,6 +89,7 @@ changeLanguage("fr");
     var light = getUrlParameter("light");
     var dock = getUrlParameter("dock");
     var dockSize = getUrlParameter("dockSize");
+    var noWarning = getUrlParameter("noWarning");
 
     if (dark == "true") {
       document.documentElement.classList.add("dark");
@@ -119,6 +124,9 @@ changeLanguage("fr");
           "calc(100% - " + dockSize + "px)";
       }
       document.getElementById("movable").classList.add("bottom");
+    }
+    if (noWarning == "true") {
+      document.getElementById("popup").style.display = "none";
     }
   });
 </script>
@@ -205,6 +213,7 @@ changeLanguage("fr");
     opacity: 1;
     z-index: 1000000000;
     transition: opacity 2s;
+    display: none;
   }
 
   .popup.hide {
