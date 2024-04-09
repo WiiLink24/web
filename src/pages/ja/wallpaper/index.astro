@@ -14,10 +14,14 @@ changeLanguage("ja");
         <div class="backsymbol" id="movable">
           <div class="square2" id="square2"></div>
           <div class="square"></div>
+          <div class="bottomleftcornerholder">
+            <img
+              class="bottomleftcorner"
+              id="moveCorner"
+              src="../img/corner.png"
+            />
+          </div>
         </div>
-      </div>
-      <div class="bottomleftcornerholder">
-        <img class="bottomleftcorner" src="../img/corner.png" />
       </div>
     </body>
   </html>
@@ -36,12 +40,38 @@ changeLanguage("ja");
 
     var dark = getUrlParameter("dark");
     var light = getUrlParameter("light");
+    var dock = getUrlParameter("dock");
+    var dockSize = getUrlParameter("dockSize");
 
     if (dark == "true") {
       document.documentElement.classList.add("dark");
     }
     if (light == "true") {
       document.documentElement.classList.remove("dark");
+    }
+    if (dock == "left") {
+        if(dockSize) {
+            document.getElementById("movable").style.width = "calc(100% - " + dockSize + "px)";
+        }
+      document.getElementById("movable").classList.add("left");
+    }
+    if (dock == "right") {
+        if(dockSize) {
+            document.getElementById("movable").style.width = "calc(100% - " + dockSize + "px)";
+        }
+      document.getElementById("movable").classList.add("right");
+    }
+    if (dock == "top") {
+        if (dockSize) {
+            document.getElementById("movable").style.height = "calc(100% - " + dockSize + "px)";
+        }
+      document.getElementById("movable").classList.add("top");
+    }
+    if (dock == "bottom") {
+        if (dockSize) {
+            document.getElementById("movable").style.height = "calc(100% - " + dockSize + "px)";
+        }
+      document.getElementById("movable").classList.add("bottom");
     }
   });
 </script>
@@ -113,6 +143,22 @@ changeLanguage("ja");
     position: fixed;
   }
 
+  .bottom {
+    top: 14px !important;
+  }
+
+  .left {
+    right: 14px !important;
+  }
+
+  .right {
+    left: 14px !important;
+  }
+
+  .top {
+    bottom: 14px !important;
+  }
+
   #square2 {
     width: calc(100% - 30px);
     height: calc(100% - 30px);
@@ -128,17 +174,16 @@ changeLanguage("ja");
   }
 
   .bottomleftcorner {
+    width: 120px;
     animation: changecolor 10s linear infinite;
     position: relative;
   }
 
   .bottomleftcornerholder {
-    left: 3.3px;
-    bottom: 3.3px;
-    scale: 31.6%;
-    transform: translate(-100%, 100%);
+    left: -0.3px;
+    bottom: -0.8px;
     pointer-events: none;
-    z-index: 2;
+    z-index: 2000;
     position: absolute;
   }
 
