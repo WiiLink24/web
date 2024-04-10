@@ -252,10 +252,12 @@ changeLanguage("ja");
           scrollableDiv.clientHeight + 30
         ) {
           scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-          document.getElementById("footer").style.opacity = "1";
+          document.getElementById("footer").style.animation =
+            "fadein 0.2s linear forwards";
         } else {
           scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
-          document.getElementById("footer").style.opacity = "0";
+          document.getElementById("footer").style.animation =
+            "fadeout 0.2s linear forwards";
         }
       });
     } else {
@@ -519,6 +521,26 @@ changeLanguage("ja");
       opacity: 1;
     }
     100% {
+      opacity: 0;
+    }
+  }
+  @keyframes fadein {
+    0% {
+      transform: translate(-50%, 20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translate(-50%, 0px);
+      opacity: 1;
+    }
+  }
+  @keyframes fadeout {
+    0% {
+      transform: translate(-50%, 0px);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, 20px);
       opacity: 0;
     }
   }
