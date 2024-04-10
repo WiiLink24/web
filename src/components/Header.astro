@@ -35,8 +35,7 @@ const { isGuide, isMain } = Astro.props;
 				<a class="dropdown-item" href="https://wiilink24.com/tos"
 				  ><i class="fa-solid fa-feather"></i> Terms of Service</a
 				>
-				<hr />
-				<div style="display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+				<div style="margin:6px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
 				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
 				<a href={localizePath("/")}><button type="button" class="btn btn-success dropdown-element"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
 				<a href="https://www.discord.gg/wiilink"><button type="button" class="btn btn-primary dropdown-element"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
@@ -367,6 +366,9 @@ checkScrollPosition();
 		font-size:15px; 
 		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 		position:absolute;
+	}
+	a {
+		font-size:17px;
 	}
 	.hide::before{
   content: "";
