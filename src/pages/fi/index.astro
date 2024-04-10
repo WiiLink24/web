@@ -234,6 +234,8 @@ changeLanguage("fi");
     const width = window.innerWidth;
 
     if (width >= 1000) {
+      document.getElementById("footer").style.animation =
+            "fadeout 0.2s linear forwards";
       scrollableDiv.addEventListener("scroll", function () {
         // Change the bg color in #square2 to var(--bg-color) if scrolled
         if (scrollableDiv.scrollTop > 0) {
