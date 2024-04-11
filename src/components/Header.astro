@@ -3,6 +3,10 @@ import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 
 const { isGuide, isMain } = Astro.props;
 ---
@@ -17,8 +21,75 @@ const { isGuide, isMain } = Astro.props;
 	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
 	  <ul>
 		<a class="header-link" href={localizePath("/")}><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
-		<a class="header-link" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
-		<a class="header-link" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
+		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
+		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
+			{
+				posts.slice(0,3).map(post => (
+				  <div class="post" style="padding:8px; border-radius:4px;">
+					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`}>
+					  <img loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
+					  <div>
+					  <div class="title">
+						<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+						  {post.data.title}
+						</b>
+					  </div>
+					  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{post.data.description}</div>
+					</div>
+					</a>
+				  </div>
+				))
+			  }
+			  <hr style="border-top: 1px solid var(--border-color);"/>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the news page for more news posts.</div>
+		</div>
+		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
+		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
+			<div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install'>
+					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Installation guide
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">A step-by-step guide on how to install WiiLink on your console.</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving'>
+					<i class="fa fa-circle-exclamation" style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Troubleshooting
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Got any issues? Let's see if we can sort them out!</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq'>
+					<i class="fa fa-circle-question" style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Frequently asked questions
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Some frequently asked questions you might be interested in...</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <hr style="border-top: 1px solid var(--border-color);"/>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the guide page for guides and explanations to all our services.</div>
+		</div>
 		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
 		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
 		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
@@ -296,7 +367,7 @@ function darkToggle() {
 
 function toggle(id) {
 	  var element = document.getElementById(id);
-  if (element.style.display === "block") {
+  if (element.style.display === 'block' && !element.matches(':hover')) {
 	element.style.display = "none";
   } else {
 	element.style.display = "block";
@@ -403,6 +474,33 @@ checkScrollPosition();
 	#grad{
 	background: rgb(255,255,255);
 	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
+	}
+
+	#newsheader {
+		width:500px;
+		transform:translate(-150px, 0);
+	}
+
+	#guideheader {
+		width:400px;
+		transform:translate(-50px, 0);
+	}
+
+	.popover-header {
+		display: none;
+		position: absolute;
+		top: 100%;
+		padding:8px;
+		border-radius:4px;
+		background-color: var(--bg-color-light);
+		border: 1px solid var(--border-color);
+		animation: opin 0.2s ease-in-out forwards;
+		z-index: 1;
+	}
+
+	.post:hover {
+		background-color: var(--bg-color-secondary);
+		transition: 0.2s;
 	}
 
 	#dropdownMore {
@@ -544,6 +642,24 @@ a:visited{
 	transform: translate(0,-50%);
 	filter: invert(1);
 	position: absolute;
+}
+
+@keyframes opin{
+	0%{
+		opacity:0;
+	}
+	100%{
+		opacity:1;
+	}
+}
+
+@keyframes opout{
+	0%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
 }
 
 @keyframes fadedown{
