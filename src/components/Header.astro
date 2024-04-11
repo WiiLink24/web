@@ -3,6 +3,10 @@ import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 
 const { isGuide, isMain } = Astro.props;
 ---
@@ -14,20 +18,107 @@ const { isGuide, isMain } = Astro.props;
 	<img id="loadingspinner" src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
 
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"><span style={isGuide} class="badge bg-success">{t("header.isGuide")}</span></a>
-	<button style={isGuide} class="btn2 btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-		<i class="fa-solid fa-angle-right"></i>
-	  </button>
+	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
 	  <ul>
-		<a class="link" href={localizePath("/")}><div class="banner">{t("header.home")}<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/news")}><div class="banner">{t("header.news")}<div class="underline" style="background-color:#ffc10740;"></div></div></a>
-		<a class="link" href={localizePath("/guide/")}><div class="banner">{t("header.guide")}<div class="underline" style="background-color:#19875440;"></div></div></a>
-		<a class="link" href={localizePath("/status")}><div class="banner">{t("header.status")}<div class="underline" style="background-color:#0d6efd40;"></div></div></a>
-		<a class="link" href={localizePath("/services")}><div class="banner">{t("header.services")}<div class="underline"></div></div></a>
-		<a class="link" href={localizePath("/extras")}><div class="banner">{t("header.extras")}<div class="underline" style="background-color:#aa251b40;"></div></div></a>
+		<a class="header-link" href={localizePath("/")}><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
+		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
+		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
+			<div class="holder">
+			{
+				posts.slice(0,3).map(post => (
+				  <div class="post" style="padding:8px; border-radius:4px;">
+					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`}>
+					  <img loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
+					  <div>
+					  <div class="title">
+						<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+						  {post.data.title}
+						</b>
+					  </div>
+					  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{post.data.description}</div>
+					</div>
+					</a>
+				  </div>
+				))
+			  }
+			  <hr style="border-top: 1px solid var(--border-color);"/>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the news page for more news posts.</div>
+			</div>
+		</div>
+		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
+		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
+			<div class="holder">
+			<div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install'>
+					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Installation guide
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">A step-by-step guide on how to install WiiLink on your console.</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving'>
+					<i class="fa fa-circle-exclamation" style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Troubleshooting
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Got any issues? Let's see if we can sort them out!</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <div class="post" style="padding:8px; border-radius:4px;">
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq'>
+					<i class="fa fa-circle-question" style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
+				<div>
+				  <div class="title">
+					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+					  Frequently asked questions
+					</b>
+				  </div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Some frequently asked questions you might be interested in...</div>
+				</div>
+				<i class="fa fa-arrow-right"></i>
+				</a>
+			  </div>
+			  <hr style="border-top: 1px solid var(--border-color);"/>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the guide page for guides and explanations to all our services.</div>
+			</div>
+		</div>
+		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
+		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
+		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
+			class="fa-solid fa-ellipsis-vertical"
+			style="font-size:20px;"></i></button>
+		<div id="dropdownMore">
+		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
+			<a class="dropdown-item" href="https://wfc.wiilink24.com"><i class="fa-solid fa-wifi"></i> WiiLink WFC</a>
+				<a
+				  class="dropdown-item"
+				  href="https://wiilink24.com/privacy-policy"
+				  ><i class="fa-solid fa-shield"></i> Privacy Policy</a
+				>
+				<a class="dropdown-item" href="https://wiilink24.com/tos"
+				  ><i class="fa-solid fa-feather"></i> Terms of Service</a
+				>
+				<div style="margin:6px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
+				<a href={localizePath("/")}><button type="button" class="btn btn-success dropdown-element"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
+				<a href="https://www.discord.gg/wiilink"><button type="button" class="btn btn-primary dropdown-element"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
+			</div>
+		</div>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
 			<div class="dropdown">
-				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="transform:translate(-5px, 0); font-size:30px; padding:0px 10px;" type="button" data-bs-toggle="" aria-expanded="false">
+				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="font-size:30px; padding:0px 10px;" type="button" data-bs-toggle="" aria-expanded="false">
 				</button>
 				<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); transform:translate(50px, -10px); overflow:hidden;">
 					<form>
@@ -40,10 +131,6 @@ const { isGuide, isMain } = Astro.props;
 				</form>
 				</ul>
 			  </div>
-		<a class="link" href="https://wfc.wiilink24.com"><div class="btn btn-dark" style="color:white !important; transform:translate(0, 1px); padding:9px;"><i class="fa-solid fa-wifi" style="margin-right:5px;"></i> WiiLink WFC
-		</div></a>
-		<a href={localizePath("/")}><button type="button" class="btn1 btn btn-success"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
-		<button id="themeColor" type="button" class="btn1 btn btn-light"  onclick="darkToggle()" style="width:45px;"><i class="fa-solid fa-moon"></i></button>
 	 </ul>
 </r>
 
@@ -178,11 +265,19 @@ let loadingindicator = document.getElementById("loadingindicator");
 		document.addEventListener('click', function(event) {
     var dropdownButton = document.getElementById('titleTranslate');
     var dropdownMenu = document.getElementById('dropMenu');
+	var dropdownMore = document.getElementById('dropdownMore');
+    var moreHeader = document.getElementById('moreHeader');
+
+    // Check if the click event's target is inside the dropdownMore element
+    if (!dropdownMore.contains(event.target) && event.target !== moreHeader) {
+      // If it's not, hide the dropdownMore element
+      dropdownMore.style.display = 'none';
+    }
 
     // Check if the click was outside the dropdown button or menu
     if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open == 1) {
       // Close the dropdown
-	  document.getElementById("dropMenu").style.animation = "fadeout 0.2s ease-in-out forwards";
+	  document.getElementById("dropMenu").style.animation = "fadeout2 0.2s ease-in-out forwards";
 				setTimeout(() => {
 				document.getElementById("dropMenu").style.opacity = "0";
 				document.getElementById("dropMenu").style.pointerEvents = "none";
@@ -199,7 +294,7 @@ let loadingindicator = document.getElementById("loadingindicator");
 				document.getElementById("dropMenu").style.animation = "fadedown 0.2s ease-in-out forwards";
 				open = 1;
 			} else {
-				document.getElementById("dropMenu").style.animation = "fadeout 0.2s ease-in-out forwards";
+				document.getElementById("dropMenu").style.animation = "fadeout2 0.2s ease-in-out forwards";
 				setTimeout(() => {
 				document.getElementById("dropMenu").style.opacity = "0";
 				document.getElementById("dropMenu").style.pointerEvents = "none";
@@ -225,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			localStorage.setItem('color-mode', 'dark');
 		} else {
-			localStorage.setItem('color-mode', 'light');
+			localStorage.setItem('color-mode', 'dark');
 		}
 	}
 
@@ -253,7 +348,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function enableDarkMode() {
     document.documentElement.classList.add('dark');
     localStorage.setItem('color-mode', 'dark');
-	themeColorButton.innerHTML = "<svg style='transform:translate(-2px, -2px);' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sun'><circle cx='12' cy='12' r='4'/><path d='M12 2v2'/><path d='M12 20v2'/><path d='m4.93 4.93 1.41 1.41'/><path d='m17.66 17.66 1.41 1.41'/><path d='M2 12h2'/><path d='M20 12h2'/><path d='m6.34 17.66-1.41 1.41'/><path d='m19.07 4.93-1.41 1.41'/></svg>";
+	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sun'><circle cx='12' cy='12' r='4'/><path d='M12 2v2'/><path d='M12 20v2'/><path d='m4.93 4.93 1.41 1.41'/><path d='m17.66 17.66 1.41 1.41'/><path d='M2 12h2'/><path d='M20 12h2'/><path d='m6.34 17.66-1.41 1.41'/><path d='m19.07 4.93-1.41 1.41'/></svg>";
 	themeColorButton.style.filter = "invert(0)";
   }
 
@@ -261,7 +356,7 @@ function enableDarkMode() {
   function enableLightMode() {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('color-mode', 'light');
-	themeColorButton.innerHTML = "<svg style='transform:translate(-2px, -2px);' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-moon'><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/></svg>";
+	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-moon'><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/></svg>";
 	themeColorButton.style.filter = "invert(1)";
   }
 
@@ -272,6 +367,15 @@ function darkToggle() {
     } else {
       enableDarkMode();
     }
+}
+
+function toggle(id) {
+	  var element = document.getElementById(id);
+  if (element.style.display === 'block' && !element.matches(':hover')) {
+	element.style.display = "none";
+  } else {
+	element.style.display = "block";
+}
 }
 
 	// Set the transition of the background in the index 1 second after page load to make the transiton more seamless
@@ -338,6 +442,9 @@ checkScrollPosition();
 		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
 		position:absolute;
 	}
+	a {
+		font-size:17px;
+	}
 	.hide::before{
   content: "";
   position: fixed;
@@ -345,7 +452,7 @@ checkScrollPosition();
   top: 41px;
   background: linear-gradient(to bottom, var(--bg-color-light), transparent);
   pointer-events: none;
-  width: 100%;
+  width: 200%;
   height: 50px;
   animation: fadein 0.1s linear forwards;
 	}
@@ -356,7 +463,7 @@ checkScrollPosition();
   bottom: 73px;
   background: linear-gradient(to top, var(--bg-color-light), transparent);
   pointer-events: none;
-  width: 100%;
+  width: 200%;
   height: 50px;
   animation: fadein 0.1s linear forwards;
 	}
@@ -373,22 +480,145 @@ checkScrollPosition();
 	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
 	}
 
-.link:hover .underline{
-    height:15px;
-    transition: 0.5s;
-  }
-  .underline{
-    bottom:0;
-    left:0;
-    transform: translate(0, -18px);
-    width:100%;
-    height:0px;
-    z-index: -1;
-    transition: 0.5s;
-    background-color: #00000020;
-    position: relative;
+	#newsheader {
+		width:500px;
+		transform:translate(-153px, 0);
+	}
 
-  }
+	#guideheader {
+		width:400px;
+		transform:translate(-60px, 0);
+	}
+
+	.popover-header {
+		display: none;
+		position: absolute;
+		top: 100%;
+		animation: opin 0.2s ease-in-out forwards;
+		z-index: 1;
+	}
+
+	.holder {
+		margin-top:18px;
+		padding:8px;
+		border-radius:4px;
+		background-color:var(--bg-color-light);
+		border: 1px solid var(--border-color);
+	}
+
+	.holder::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-bottom: 20px solid var(--border-color);
+		top: -2px;
+		left: 50%;
+		z-index: 10000;
+		transform: translateX(-50%);
+	}
+
+	.holder::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 14px solid transparent;
+		border-right: 14px solid transparent;
+		border-bottom: 18px solid var(--bg-color-light);
+		top: 1px;
+		left: 50%;
+		z-index: 10000;
+		transform: translateX(-50%);
+	}
+
+	.post:hover {
+		background-color: var(--bg-color-secondary);
+		transition: 0.2s;
+	}
+
+	#dropdownMore {
+		right:0;
+		top:100%;
+		width: 200px;
+		display:flex;
+		flex-direction: column;
+		gap:5px;
+		padding:8px;
+		background-color: var(--bg-color-light);
+		border: 1px solid var(--border-color);
+		border-radius:4px;
+		z-index: 1;
+		display: none;
+		position: absolute;
+	}
+
+	.dropdown-element {
+		width:100%;
+		position:relative;
+	}
+
+	.dropdown-item {
+		padding:8px;
+		border-radius:4px;
+	}
+
+	.header-link {
+	height:50px;
+	font-size:18px;
+	margin-left:8px;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+      transition: 0.3s;
+      padding-left: 5px;
+      padding-right: 5px;
+      border-radius: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-link:hover {
+      transform: scale(1.02);
+      background-color: var(--bg-opaque-1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding-left: 15px;
+      padding-right: 15px;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+
+    .header-link:active {
+      transform: scale(0.97);
+      background-color: #ffffff40;
+      transition: 0.1s;
+    }
+
+    .header-link::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 4px;
+	  opacity:0.3;
+      background: var(--color);
+      transition: 0.2s;
+    }
+
+    .header-link:hover::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--color);
+      transition: 0.2s;
+    }
 
   .optDisplay::-webkit-scrollbar{
 		display:none;
@@ -450,6 +680,26 @@ a:visited{
 	position: absolute;
 }
 
+@keyframes opin{
+	0%{
+		opacity:0;
+		top:110%;
+	}
+	100%{
+		opacity:1;
+		top:100%;
+	}
+}
+
+@keyframes opout{
+	0%{
+		opacity:1;
+	}
+	100%{
+		opacity:0;
+	}
+}
+
 @keyframes fadedown{
 	0%{
 		opacity:0;
@@ -463,7 +713,7 @@ a:visited{
 	}
 }
 
-@keyframes fadeout{
+@keyframes fadeout2{
 	0%{
 		opacity:1;
 		height:320px;
@@ -488,14 +738,6 @@ ul{
 	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	color:rgba(255, 255, 255, 0.53);
 	position: absolute;
-}
-
-.banner{
-	font-size:20px;
-	margin-right:20px;
-	mix-blend-mode: difference;
-	color:black;
-    position:relative;
 }
 
 @media (max-width:1400px){

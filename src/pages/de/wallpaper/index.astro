@@ -1,0 +1,297 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../layouts/Layout.astro";
+
+changeLanguage("de");
+---
+
+<Layout
+  title="WiiLink - Animated wallpaper"
+  description="WiiLink Animated Wallpaper for use in applications like 'Lively Wallpaper' (Windows) and 'Plash' (macOS). \n\n Use /#dark=true for dark mode and /#light=true (or leave blank) for light mode.">
+  <html>
+    <body>
+      <div id="popup" class="popup">
+        <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
+        <h4><b>
+          <i class="fa fa-brush" style="margin-right:8px;"></i> Thanks for using
+          the WiiLink Animated Wallpaper
+        </b>
+        </h4>
+        <p style="font-size:15px; opacity:0.5;">Closing in <b id="sec">5</b>.</p>
+        </div>
+        <hr style="border-top: 2px solid var(--border-color);" />
+        <ul style="margin-left:0px;">
+          <li>
+            Use <b>/#dark=true</b> for dark mode and <b></b>/#light=true</b> (or leave blank) for
+            light mode.
+          </li>
+          <li>
+            Use <b>/#dock=left</b> for left dock, <b>/#dock=right</b> for right dock,
+            <b>/#dock=top</b> for top dock, <b>/#dock=bottom</b> for bottom dock.
+          </li>
+          <li>
+            Use <b>/#dockSize=<m id="animatedNumber">50</m></b> for to adjust for a dock size of <m
+              id="animatedNumber2">50</m
+            >px.
+          </li>
+            <li>
+                Use <b>/#noWarning=true</b> to disable this message.
+            </li>
+        </ul>
+      </div>
+      <div class="symbolholder">
+        <div class="backsymbol" id="movable">
+          <div class="square2" id="square2"></div>
+          <div class="square"></div>
+          <div class="bottomleftcornerholder">
+            <img
+              class="bottomleftcorner"
+              id="moveCorner"
+              src="../img/corner.png"
+            />
+          </div>
+        </div>
+      </div>
+    </body>
+  </html>
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", async function () {
+    document.getElementById("popup").style.display = "block";
+    setTimeout(function () {
+      var popup = document.getElementById("popup");
+      if (popup) {
+        popup.classList.add("hide");
+      }
+    }, 5000);
+    var secInit = 5;
+    setInterval(function () {
+      var animatedNumber = document.getElementById("animatedNumber");
+      var animatedNumber2 = document.getElementById("animatedNumber2");
+      var sec = document.getElementById("sec"); 
+      var number = Math.floor(Math.random() * 100);
+      animatedNumber.innerHTML = number;
+      animatedNumber2.innerHTML = number;
+      sec.innerHTML = secInit--;
+    }, 1000);
+
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
+      var results = regex.exec(location.hash);
+      return results === null
+        ? ""
+        : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    var dark = getUrlParameter("dark");
+    var light = getUrlParameter("light");
+    var dock = getUrlParameter("dock");
+    var dockSize = getUrlParameter("dockSize");
+    var noWarning = getUrlParameter("noWarning");
+
+    if (dark == "true") {
+      document.documentElement.classList.add("dark");
+    }
+    if (light == "true") {
+      document.documentElement.classList.remove("dark");
+    }
+    if (dock == "left") {
+      if (dockSize) {
+        document.getElementById("movable").style.width =
+          "calc(100% - " + dockSize + "px)";
+      }
+      document.getElementById("movable").classList.add("left");
+    }
+    if (dock == "right") {
+      if (dockSize) {
+        document.getElementById("movable").style.width =
+          "calc(100% - " + dockSize + "px)";
+      }
+      document.getElementById("movable").classList.add("right");
+    }
+    if (dock == "top") {
+      if (dockSize) {
+        document.getElementById("movable").style.height =
+          "calc(100% - " + dockSize + "px)";
+      }
+      document.getElementById("movable").classList.add("top");
+    }
+    if (dock == "bottom") {
+      if (dockSize) {
+        document.getElementById("movable").style.height =
+          "calc(100% - " + dockSize + "px)";
+      }
+      document.getElementById("movable").classList.add("bottom");
+    }
+    if (noWarning == "true") {
+      document.getElementById("popup").style.display = "none";
+    }
+  });
+</script>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+
+  html {
+    --color: black;
+    --bg-color: white;
+    --bg-color-hero: #ffffffde;
+    --bg-color-light: #ffffff;
+    --bg-color-secondary: #f8f9fa;
+    --bg-color-tertiary: #f1f3f5;
+    --bg-color-absolute: #ffffff;
+    --border-color: #00000020;
+    --shadow-color: #00000020;
+    --bg-select: #eaeaea;
+    --bg-opaque-1: #00000010;
+    --bg-opaque-2: #00000020;
+    --opacity: 0.6;
+  }
+
+  html.dark {
+    --color: white;
+    --bg-color: #161515;
+    --bg-color-hero: #161515ee;
+    --bg-color-light: #202020;
+    --bg-color-secondary: #1a1a1a;
+    --bg-color-tertiary: #1e1e1e;
+    --bg-color-absolute: #000000;
+    --border-color: #ffffff20;
+    --shadow-color: #ffffff05;
+    --bg-select: #0a0a0a30;
+    --bg-opaque-1: #ffffff10;
+    --bg-opaque-2: #ffffff20;
+    --opacity: 0.3;
+  }
+
+  .backsymbol {
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+  }
+
+  .symbolholder {
+    background-color: var(--bg-color-absolute);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+  }
+
+  .popup {
+    position: fixed;
+    width:95%;
+    max-width: 1000px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: var(--bg-color-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    z-index: 1000000000;
+    transition: opacity 2s;
+    display: none;
+  }
+
+  .popup.hide {
+    opacity: 0;
+  }
+
+  .bottom {
+    top: 14px !important;
+  }
+
+  .left {
+    right: 14px !important;
+  }
+
+  .right {
+    left: 14px !important;
+  }
+
+  .top {
+    bottom: 14px !important;
+  }
+
+  #square2 {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    left: 15.5px;
+    top: 15.5px;
+    background-color: var(--bg-color-hero);
+    transform: translate(0%, 0%);
+    border-radius: 4px;
+    z-index: 10;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .bottomleftcorner {
+    width: 120px;
+    animation: changecolor 10s linear infinite;
+    position: relative;
+  }
+
+  .bottomleftcornerholder {
+    left: -1px;
+    bottom: -1px;
+    pointer-events: none;
+    z-index: 2000;
+    position: absolute;
+  }
+
+  @keyframes changecolor {
+    0% {
+      filter: hue-rotate(0deg);
+    }
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  @keyframes changecolordark {
+    0% {
+      filter: hue-rotate(0deg) invert(1);
+    }
+    100% {
+      filter: hue-rotate(360deg) invert(1);
+    }
+  }
+
+  .square {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      41deg,
+      rgba(0, 138, 255, 1) 0%,
+      rgba(255, 0, 59, 1) 100%
+    );
+    z-index: 0;
+    animation: changecolor 10s linear infinite;
+    border-radius: 8px;
+    position: absolute;
+  }
+</style>

@@ -81,7 +81,9 @@ const { title, description, image } = Astro.props;
       href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
       rel="stylesheet"
     />
-    <script src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script
+      src="https://unpkg.com/twemoji@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -131,6 +133,7 @@ const { title, description, image } = Astro.props;
   html {
     --color: black;
     --bg-color: white;
+    --bg-color-hero: #ffffffde;
     --bg-color-light: #ffffff;
     --bg-color-secondary: #f8f9fa;
     --bg-color-tertiary: #f1f3f5;
@@ -140,11 +143,13 @@ const { title, description, image } = Astro.props;
     --bg-select: #eaeaea;
     --bg-opaque-1: #00000010;
     --bg-opaque-2: #00000020;
+    --opacity: 0.6;
   }
 
   html.dark {
     --color: white;
     --bg-color: #161515;
+    --bg-color-hero: #161515ee;
     --bg-color-light: #202020;
     --bg-color-secondary: #1a1a1a;
     --bg-color-tertiary: #1e1e1e;
@@ -154,10 +159,12 @@ const { title, description, image } = Astro.props;
     --bg-select: #0a0a0a30;
     --bg-opaque-1: #ffffff10;
     --bg-opaque-2: #ffffff20;
+    --opacity: 0.3;
   }
 
   html.dark .btn-close,
-  html.dark .stripe-logo {
+  html.dark .stripe-logo,
+  html.dark .svcicons {
     filter: invert(1);
   }
 
@@ -174,9 +181,6 @@ const { title, description, image } = Astro.props;
     background-color: #00000000;
     filter: invert(1);
   }
-  html.dark .svcicons {
-    filter: invert(1);
-  }
   html.dark .logo,
   html.dark .invert {
     filter: invert(0) !important;
@@ -184,10 +188,7 @@ const { title, description, image } = Astro.props;
   html.dark .newstop {
     filter: opacity(0.1) invert(1);
   }
-  html.dark .bottomleftcorner {
-    animation: changecolordark 10s linear infinite;
-  }
-
+  html.dark .bottomleftcorner,
   html.dark .square {
     animation: changecolordark 10s linear infinite;
   }

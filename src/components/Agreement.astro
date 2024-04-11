@@ -104,6 +104,11 @@ const posts = (await getCollection("blog")).sort(
       >
     </li>
     <li>
+      <a href="https://www.discord.com/wiilink"
+        ><i class="fa-brands fa-discord"></i> Join our Discord server!</a
+      >
+    </li>
+    <li>
       <a href="/privacy-policy"
         ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
       >
@@ -137,6 +142,10 @@ const posts = (await getCollection("blog")).sort(
     z-index: 80;
     transition: 0.5s;
     position: sticky;
+  }
+
+  a {
+    font-size: 16px;
   }
 
   .offcanvas {
