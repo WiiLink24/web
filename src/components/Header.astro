@@ -23,6 +23,7 @@ const { isGuide, isMain } = Astro.props;
 		<a class="header-link" href={localizePath("/")}><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
 		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
 		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
+			<div class="holder">
 			{
 				posts.slice(0,3).map(post => (
 				  <div class="post" style="padding:8px; border-radius:4px;">
@@ -42,9 +43,11 @@ const { isGuide, isMain } = Astro.props;
 			  }
 			  <hr style="border-top: 1px solid var(--border-color);"/>
 			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the news page for more news posts.</div>
+			</div>
 		</div>
 		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
 		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
+			<div class="holder">
 			<div class="post" style="padding:8px; border-radius:4px;">
 				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install'>
 					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
@@ -89,6 +92,7 @@ const { isGuide, isMain } = Astro.props;
 			  </div>
 			  <hr style="border-top: 1px solid var(--border-color);"/>
 			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the guide page for guides and explanations to all our services.</div>
+			</div>
 		</div>
 		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
 		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
@@ -490,12 +494,44 @@ checkScrollPosition();
 		display: none;
 		position: absolute;
 		top: 100%;
-		padding:8px;
-		border-radius:4px;
-		background-color: var(--bg-color-light);
-		border: 1px solid var(--border-color);
 		animation: opin 0.2s ease-in-out forwards;
 		z-index: 1;
+	}
+
+	.holder {
+		margin-top:18px;
+		padding:8px;
+		border-radius:4px;
+		background-color:var(--bg-color-light);
+		border: 1px solid var(--border-color);
+	}
+
+	.holder::before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 15px solid transparent;
+		border-right: 15px solid transparent;
+		border-bottom: 20px solid var(--border-color);
+		top: -2px;
+		left: 50%;
+		z-index: 10000;
+		transform: translateX(-50%);
+	}
+
+	.holder::after {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 0;
+		border-left: 14px solid transparent;
+		border-right: 14px solid transparent;
+		border-bottom: 18px solid var(--bg-color-light);
+		top: 1px;
+		left: 50%;
+		z-index: 10000;
+		transform: translateX(-50%);
 	}
 
 	.post:hover {
@@ -647,9 +683,11 @@ a:visited{
 @keyframes opin{
 	0%{
 		opacity:0;
+		top:110%;
 	}
 	100%{
 		opacity:1;
+		top:100%;
 	}
 }
 
