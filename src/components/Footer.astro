@@ -3,19 +3,21 @@ const today = new Date();
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
+
+let { display = '', background = '', flex = '', maxwidth = '' } = Astro.props;
 ---
 
-<footer>
-	<div class="copyright">
-		<div class="holder">
-<div class="footer-holder" style="display: flex; justify-content: space-between; align-items: start;">
+<footer style="width:100%;">
+	<div class="copyright" style={background}>
+		<div class="holder" style={maxwidth}>
+<div class="footer-holder" style={flex}>
 	<div class="column" style="width:20%; min-width:300px; gap:0;">
 		<img loading="lazy" class="footer-logo" src="../../img/logo.png" width="150px">
 		<p style="color:#ffffff80; !important; margin-top:15px; opacity:0.7; margin-right:8px; text-align:left;"><i class="fa-solid fa-globe-americas" style="margin-right:5px;"></i> Site by <a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title={t("site.creator")}  style="background-color:white; color:black !important; animation: changecolor2 10s linear infinite; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"><img loading="lazy" src="https://github.com/humanoidear.png" style="width:20px; transform:translate(-10px, -14px);"></button> <u>Alex</u></a></p>
 		<p style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;"><i class="fa-solid fa-envelope-open" style="margin-right:5px;"></i> <a href="mailto:contact@wiilink24.com"><u>contact@wiilink24.com</u></a></p>
 		<p style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;"><a href="https://wfc.wiilink24.com" style="margin-right:5px;"><i class="fas fa-wifi"></i> WiiLink WFC</a></p>
 	</div>
-	<div class="tables-holder" style="width:70%; display: flex; flex-wrap:wrap; gap:40px; justify-content: space-between; align-items: start;">
+	<div class="tables-holder columns" style={flex}>
     <div class="column">
         <h4><b>Site Pages</b></h4>
 		<hr style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;">
@@ -92,11 +94,11 @@ import { localizePath } from "astro-i18next";
     </div>
 </div>
 </div>
-<hr style="border-top:2px solid white; margin:30px 0px;"/>
-        <div class="footer-holder">
+<hr style="border-top:2px solid white; margin:30px 0px;" style={display}/>
+        <div class="footer-holder" style={display}>
 			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
 		</div>
-<div class="footer-holder legal" style="margin-top:30px; opacity:0.3; display: flex; justify-content: space-between; align-items: start;">
+<div class="footer-holder legal" style={display}>
 	<a href="/tos"> <i class="fas fa-arrow-right" style="margin-right:5px;"></i>Terms of Service</a>
     <a href="/privacy-policy"><i class="fas fa-arrow-right" style="margin-right:5px;"></i> Privacy Policy</a>
     <a href="/eula"><i class="fas fa-arrow-right" style="margin-right:5px;"></i> End User License Agreement (EULA)</a>
@@ -126,7 +128,15 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     top:150px;
     z-index: 5;
     background-size: cover;
-    animation: changecolor 10s linear infinite;
+}
+
+.columns {
+	width:70%;
+	display: flex;
+	flex-wrap:wrap;
+	gap:40px;
+	justify-content: space-between;
+	align-items: start;
 }
 
 .copyright::before {
@@ -144,7 +154,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 		display:flex;
 		flex-wrap:wrap;
 		justify-content: space-between;
-		align-items: center;
+		align-items: start;
 		flex-direction:row;
 		gap:18px;
 		position:relative;
@@ -190,6 +200,13 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 		max-width:1200px;
 		padding:30px;
 		margin:auto;
+	}
+	.legal {
+		margin-top:30px;
+		opacity:0.3;
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
 	}
 	.slogan {
 		width:100%;

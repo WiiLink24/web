@@ -9,6 +9,7 @@ import Socials from "../components/Socials.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import JumpIn from "../components/JumpIn.astro";
+import Footer from "../components/Footer.astro";
 import Themes from "astro-themes";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
@@ -58,140 +59,7 @@ changeLanguage("en-US");
 
           <div class="square"></div>
           <div class="footer-holder" id="footer">
-            <img
-              loading="lazy"
-              class="footer-logo"
-              src="img/logo.png"
-              style="left:50px; position:relative;"
-              height="150px"
-            />
-            <h4 class="slogan">
-              <Trans i18nKey="site.slogan"
-                ><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit
-                homebrew project. It is not affiliated with Nintendo and all trademarks
-                are the property of their respective owners. No copyright infringement
-                intended.<br /><br />
-                © 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b
-                  style="font-family:Gilroy;">Team</b
-                >
-              </Trans>
-            </h4>
-            <div class="socials">
-              <div style="width:auto; text-align:right;">
-                <a href="https://discord.gg/wiilink" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="discord.gg/wiilink">
-                    Discord<i
-                      style="margin-left:5px;"
-                      class="fa-brands fa-discord"></i>
-                  </div></a
-                >
-                <a href="https://twitter.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="@WiiLink24">
-                    Twitter<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-twitter"></i>
-                  </div></a
-                >
-                <a href="https://github.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="WiiLink24">
-                    GitHub<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-github"></i>
-                  </div></a
-                >
-                <a href="https://www.patreon.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title={t("site.donate")}>
-                    Patreon<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-patreon"></i>
-                  </div></a
-                >
-                <a href="https://www.youtube.com/@wiilink" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="WiiLink24">
-                    YouTube<i
-                      style="margin-left:5px;"
-                      class="fa-brands fa-youtube"></i>
-                  </div></a
-                >
-              </div>
-              <div style="margin-top:15px;">
-                <a href="mailto:contact@wiilink24.com"
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-secondary"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.contact")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-envelope-open"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href={localizePath("/extras/branding")}
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-primary"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.assets")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-palette"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href={localizePath("/")}
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-success"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.install")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-download"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href="https://github.com/humanoidear"
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-success"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title={t("site.creator")}
-                    style="background-color:white; color:black; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"
-                    ><img
-                      src="https://github.com/humanoidear.png"
-                      style="transform:translate(-10px, -10px); position:relative;"
-                      width="45px"
-                      height="45px"
-                    /></button
-                  ></a
-                >
-              </div>
-            </div>
+            <Footer display="display:none !important;" background="top:35px; background:none;" flex="gap:8px; flex-wrap:nowrap;" maxwidth="max-width:1500px;"/>
           </div>
         </div>
       </div>
