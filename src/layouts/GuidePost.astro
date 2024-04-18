@@ -42,7 +42,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-1.png" />
                 <div
                   class="title-main"
-                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
                   <i class="fa-solid fa-download" style="margin-right:5px;"
                   ></i>{t("guidePost.installGuide")}
                 </div>
@@ -53,7 +53,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-3.png" />
                 <div
                   class="title-main"
-                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
                   <i
                     class="fa-solid fa-circle-exclamation"
                     style="margin-right:5px;"></i>{
@@ -67,7 +67,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                 <img class="mainimg" src="../../img/guidebg-2.png" />
                 <div
                   class="title-main"
-                  style="color:white !important; text-align: center; font-size:20px; font-family:Gilroy;">
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
                   <i
                     class="fa-solid fa-circle-question"
                     style="margin-right:5px;"></i>{t("guidePost.faq")}
@@ -75,14 +75,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
               </a>
             </div>
           </div>
-
           <div class="sidebarcontent">
-            <h4
-              style="font-family: Gilroy; font-size:25px; margin-bottom:20px;">
-              <Trans i18nKey="guidePost.lookingFor">
-                What are you <b class="color">looking for</b>?
-              </Trans>
-            </h4>
+            <hr
+              style="transform:translate(0, -8px); border-top: 2px solid var(--border-color);"
+            />
             {
               posts.map(post => (
                 <div class="post2">
@@ -108,13 +104,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       </div>
     </div>
     <div class="guideholder">
-      <button
-        onclick="toggleScroll()"
-        id="togglebtn"
-        class="btn btn-secondary"
-        style="top:20px; left:20px; background-color:#00000020; backdrop-filter:blur(8px); z-index: 10000; position:relative;"
-        ><i class="fa-solid fa-angle-left"></i></button
-      >
       <div class="dateRemove">
         <FormattedDate pre="Last updated on: " date={pubDate} />
       </div>
@@ -225,7 +214,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       font-size: 45px;
       font-family: Gilroy;
       z-index: 100;
-      top: 60px;
+      top: 80px;
       text-align: center;
       position: relative;
     }
@@ -308,8 +297,14 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       width: 380px;
       height: 100%;
       border-radius: 8px;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
       overflow: scroll;
       overflow-x: hidden;
+    }
+
+    .holder::-webkit-scrollbar {
+      display: none;
     }
 
     .guideholder {
@@ -350,6 +345,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     .mainimg {
       transform: translate(-15px, -15px);
       width: 100%;
+      scale: 110%;
       transform-origin: center;
       transition: 0.5s;
       background-size: cover;
@@ -361,10 +357,14 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     .post:hover .mainimg {
-      filter: blur(8px) brightness(0.7);
-      rotate: 4deg;
-      scale: 120%;
+      filter: blur(3px) brightness(0.7);
+      scale: 105%;
       transition: 0.3s;
+    }
+
+    .post:active, .post2:active {
+      scale: 97%;
+      transition: 0.2s;
     }
 
     .offcanvas {
@@ -465,15 +465,50 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       overflow: hidden;
       border-radius: 8px;
       margin-bottom: 10px;
+      transition: 0.2s;
       position: relative;
     }
 
     .post2 {
-      margin-bottom: 30px;
+      width: 100%;
+      padding: 10px 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      overflow: hidden;
+      transition: 0.2s;
+      position: relative;
+    }
+
+    .post2::after, .post::after {
+      content: "\f061"; /* FontAwesome right arrow */
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      top: 50%;
+      transform: translate(0, -50%);
+      position: absolute;
+      right: 40px; /* Start from outside of the element */
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    .post2:hover::after, .post:hover::after {
+      right: 20px; /* Move the arrow inside the element on hover */
+      opacity: 1;
     }
 
     .post2:hover {
-      text-decoration: underline;
+      padding: 20px 18px;
+      background-color: var(--bg-color-secondary);
+      transition: 0.2s;
+    }
+
+    i {
+      transition: 0.2s;
+    }
+
+    .post2:hover i {
+      transform: scale(1.2) rotate(5deg);
+      transition: 0.2s;
     }
 
     .post2:nth-child(1) {
@@ -493,7 +528,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     .wiiguide {
-      top: 60px;
+      top: 18px;
       width: 100%;
       background-color: rgb(79, 79, 211);
       border-radius: 8px;
