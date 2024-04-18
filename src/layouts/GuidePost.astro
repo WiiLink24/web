@@ -147,22 +147,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       }
     };
 
-    function toggleScroll() {
-      let holder = document.querySelector(".holder");
-      let guideholder = document.querySelector(".guideholder");
-      if (holder.style.display === "none") {
-        holder.style.display = "block";
-        guideholder.style.width = "1100px";
-        document.getElementById("togglebtn").innerHTML =
-          '<i class="fa-solid fa-angle-left"></i>';
-      } else {
-        holder.style.display = "none";
-        guideholder.style.width = "95%";
-        document.getElementById("togglebtn").innerHTML =
-          '<i class="fa-solid fa-angle-right"></i>';
-      }
-    }
-
     document.addEventListener("DOMContentLoaded", function () {
       let guideholder = document.querySelector(".guideholder");
       if (guideholder) {
@@ -282,14 +266,15 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
 
     .flex {
       bottom: 0;
-      left: 0;
-      width: 100%;
+      left: 50%;
+      width: 98%;
       height: calc(100% - 120px);
       display: flex;
+      transform: translate(-50%, 0);
       align-items: flex-end;
       gap: 18px;
       justify-content: center;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       position: fixed;
     }
 
@@ -308,7 +293,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     .guideholder {
-      width: 1000px;
+      width: 90%;
+      max-width: 1200px;
       height: 100%;
       top: 130px;
       border: 0px solid rgba(255, 0, 0, 0.055) !important;
@@ -559,16 +545,15 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       transition: 0.2s;
     }
 
-    @media (max-width: 1400px) {
+    @media (max-width: 1000px) {
       .holder {
         display: none;
       }
-    }
 
-    @media (max-width: 1000px) {
       .flex {
         top: 0;
         height: 100%;
+        align-items: flex-start;
         position: relative;
       }
       .guideholder {
