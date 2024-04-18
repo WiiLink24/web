@@ -116,7 +116,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       <div class="guidecontent" id="container2">
         <slot /><div
           id="google_translate_element"
-          style="transform:translate(0, 20px); z-index:100;">
+          style="z-index:100;">
         </div>
       </div>
       <Footer/>
@@ -283,6 +283,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
 
     .guideholder {
       width: 90%;
+      min-width:700px;
       max-width: 1200px;
       height: 100%;
       top: 130px;
@@ -294,6 +295,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
       z-index: 1;
+      resize: horizontal;
       overflow: scroll;
       overflow-x: hidden;
     }
