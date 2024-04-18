@@ -43,14 +43,14 @@ ___
 </div>
 </br>
 
-1. Download the latest version of the RiiConnect24 + WiiLink Patcher for your operating system.
+1. Download the latest version of the WiiLink Patcher for your operating system.
 2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
 
 <l class="notice info fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
 
 3. After the Patcher is done downloading the files, simply disconnect your SD Card/USB Drive from your Computer, and input it into your Wii/Wii U.
 4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
-5. Highlight the WAD with `Forecast Channel (RiiConnect24)` as its name and press + to select it. When it is selected, press A twice to install the WADs.
+5. Highlight the WAD with `Forecast Channel` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 
 <l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
 
@@ -64,7 +64,7 @@ ___
 
 ### "I'm getting `https://rc24.xyz/priiloader` on the Forecast Channel, but I'm on a real Wii!"
 
-> Make sure that you have the latest version of the Forecast Channel installed from the RiiConnect24 + WiiLink Patcher. This is a problem commonly caused by using an outdated version of the Forecast Channel from before the merge.
+> Make sure that you have the latest version of the Forecast Channel installed from the WiiLink Patcher. This is a problem commonly caused by using an outdated version of the Forecast Channel from before the merge.
 
 ### "Im getting Error Code 'FORE00006' on my console!"
 

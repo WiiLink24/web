@@ -26,11 +26,11 @@ ___
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:18px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-brands fa-discord"></i> A Discord account</h4></div>
 
 <div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px; font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> RiiConnect24 + WiiLink Patcher</button></a>
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px; font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
 </div>
 </br>
 
-1. Download the latest version of the RiiConnect24 + WiiLink Patcher for your operating system.
+1. Download the latest version of the WiiLink Patcher for your operating system.
 2. Launch the patcher and begin the Express Setup process.
 3. Once you get to the WiiLink channels language selection screen, select `1. English Translation` in order to gain access to the Food Delivery Channel (Domino's) channel.
 4. Next, you’ll be asked which version of Food Delivery Channel you want. Pick `2. Domino's (US and Canada only)`.
