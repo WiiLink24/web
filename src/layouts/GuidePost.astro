@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
@@ -116,21 +117,9 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         <slot /><div
           id="google_translate_element"
           style="transform:translate(0, 20px); z-index:100;">
-        </div><h4
-          class="slogan"
-          style="top:-15px; pointer-events:none; text-align:right; position:relative;">
-          <Trans i18nKey="guidePost.copyright">
-            © 2020-2023 <b style="font-family:Rubik;"
-              >WiiLink<span
-                class="badge bg-success"
-                style="top:-10px; left:3px; font-size:10px; font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-                >guide</span
-              ></b
-            >
-            <b style="font-family:Gilroy;"> Team</b>
-          </Trans>
-        </h4>
+        </div>
       </div>
+      <Footer background="background:var(--bg-color-secondary);"/>
     </div>
   </div>
 
