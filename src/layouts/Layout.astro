@@ -236,8 +236,7 @@ const { title, description, image } = Astro.props;
     font-size: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: rgb(30, 30, 30);
-    border: 0px solid rgba(128, 128, 128, 0.168);
+    background-color: var(--bg-color-tertiary);
     border-bottom: 0px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -263,8 +262,7 @@ const { title, description, image } = Astro.props;
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
-    background-color: rgba(88, 88, 88, 0.096);
-    border: 2px solid rgba(128, 128, 128, 0.168);
+    background-color: var(--bg-color-secondary);
     border-radius: 8px;
     z-index: 1;
     -ms-overflow-style: none;
@@ -371,7 +369,6 @@ const { title, description, image } = Astro.props;
   .warn {
     background-color: rgba(182, 197, 14, 0.6);
     color: white;
-    border: 0px solid rgb(182, 197, 14);
   }
   .warn a {
     color: white;
@@ -391,7 +388,6 @@ const { title, description, image } = Astro.props;
   .danger {
     background-color: rgba(197, 14, 14, 0.6);
     color: white;
-    border: 0px solid rgb(197, 14, 14);
   }
   .danger::before {
     margin-left: 5px;
@@ -408,7 +404,6 @@ const { title, description, image } = Astro.props;
   .success {
     background-color: rgba(10, 190, 40, 0.6);
     color: white;
-    border: 0px solid rgb(10, 190, 40);
   }
   .success::before {
     margin-left: 5px;
@@ -425,7 +420,6 @@ const { title, description, image } = Astro.props;
   .info {
     background-color: rgba(14, 124, 197, 0.6);
     color: white;
-    border: 0px solid rgb(14, 124, 197);
   }
   .info code {
     background-color: rgba(14, 124, 197, 0.6);
@@ -461,7 +455,6 @@ const { title, description, image } = Astro.props;
   }
   .generic {
     background-color: rgba(97, 97, 97, 0.382);
-    border: 0px solid rgb(64, 64, 64);
   }
   .generic::before {
     margin-left: 5px;
