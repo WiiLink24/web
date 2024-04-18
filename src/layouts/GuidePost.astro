@@ -8,10 +8,17 @@ import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
-const posts = await getCollection("guide");
+const url = new URL(Astro.request.url);
+let currentPath = url.pathname;
+console.log(currentPath);
+
+let posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
+posts = posts.slice(3);
+posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
 const { title, description, icon, pubDate, updatedDate, heroImage } =
   Astro.props;
+
 ---
 
 <html lang={i18next.language} ">
@@ -26,7 +33,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       <div id="container1"></div>
       <div
         class="offcanvas-body"
-        style="top:30px; overflow-y:visible; position:relative;">
+        style="overflow-y:visible; position:relative;">
         <h4
           style="top:30px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">
           {t("guidePost.whereTo")}
@@ -76,20 +83,25 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
               </a>
             </div>
           </div>
-          <div class="sidebarcontent">
-            <hr
-              style="transform:translate(0, -8px); border-top: 2px solid var(--border-color);"
-            />
+          <div class="sidebarcontent" style="margin-bottom:40px;">
             {
-              posts.map(post => (
-                <div class="post2">
-                  <a href={`/guide/${post.slug}/`}>
-                    <div class="title2">
-                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                      {post.data.title}
-                    </div>
-                  </a>
-                </div>
+              posts.map((post, index) => (
+                <>
+                  {index === 0 && currentPath !== `/guide/${post.slug}/` && (
+                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                  )}
+                  <div class={`post2 ${currentPath === `/guide/${post.slug}/` ? 'active' : ''}`}>
+                    <a href={`/guide/${post.slug}/`}>
+                      <div class="title2">
+                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                        {post.data.title}
+                      </div>
+                    </a>
+                  </div>
+                  {index === 0 && currentPath === `/guide/${post.slug}/` && (
+                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                  )}
+                </>
               ))
             }
           </div>
@@ -430,7 +442,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       top: 38px;
       font-family: Cafe;
       font-size: 15px;
-      margin-bottom: 40px;
+      margin-bottom: 8px;
       z-index: 0;
       position: relative;
     }
@@ -454,6 +466,18 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       overflow: hidden;
       transition: 0.2s;
       position: relative;
+    }
+
+    .post2.active {
+      padding: 20px 18px;
+      background-color: var(--bg-color-tertiary);
+      border-radius:8px;
+      transition: 0.2s;
+}
+
+.post2.active::after, .post.active::after {
+      right: 20px; /* Move the arrow inside the element on hover */
+      opacity: 1;
     }
 
     .post2::after, .post::after {
@@ -486,22 +510,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     .post2:hover i {
       transform: scale(1.2) rotate(5deg);
       transition: 0.2s;
-    }
-
-    .post2:nth-child(1) {
-      display: none;
-    }
-
-    .post2:nth-child(2) {
-      display: none;
-    }
-
-    .post2:nth-child(3) {
-      display: none;
-    }
-
-    .post2:nth-child(4) {
-      display: none;
     }
 
     .wiiguide {

@@ -231,25 +231,26 @@ const { title, description, image } = Astro.props;
   }
   .toc-post:before {
     font-family: Gilroy;
-    left: -2px;
-    top: -43px;
-    width: calc(100% + 4px);
+    top: 0px;
+    width: 100%;
     font-size: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: rgba(101, 101, 101, 0.184);
-    border: 2px solid rgba(128, 128, 128, 0.168);
+    background-color: rgb(30, 30, 30);
+    border: 0px solid rgba(128, 128, 128, 0.168);
     border-bottom: 0px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Table of Contents";
-    position: absolute;
+    display: block;
+    position: sticky;
   }
   .toc-post {
-    top: 43px;
+    top: 0px;
     right: 0;
     width: 100%;
-    padding: 10px;
+    max-height:400px;
+    padding: 0px;
     font-family:
       inter,
       -apple-system,
@@ -264,12 +265,21 @@ const { title, description, image } = Astro.props;
       sans-serif;
     background-color: rgba(88, 88, 88, 0.096);
     border: 2px solid rgba(128, 128, 128, 0.168);
-    border-top: 0px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    backdrop-filter: blur(8px);
+    border-radius: 8px;
     z-index: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x:hidden;
+    overflow-y: scroll;
     position: relative;
+  }
+  .toc-post::-webkit-scrollbar {
+      display: none;
+    }
+
+  .toc-post ol:nth-child(1) {
+    margin-top:8px;
+    padding-right:10px;
   }
   .toc-link {
     color: rgb(38, 38, 38);

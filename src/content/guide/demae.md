@@ -42,7 +42,7 @@ ___
 
 2. Use the `Get Console ID` Homebrew App that was given by the patcher. This is used to retrieve your system's Console ID.
 
-3. Visit the `#dominos-chat` channel on the Discord server.
+3. Visit the `#random` channel on the Discord server.
 
 4. Type the command `/dominos` in the chat, placing your **Console ID** that you got from the **Get Console ID** homebrew app, in the parameter box, otherwise the command will not work and will be posted publicly on the channel.
 
