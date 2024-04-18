@@ -32,6 +32,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     <div class="holder">
       <div id="container1"></div>
       <div
+          id="google_translate_element"
+          style="z-index:100;">
+        </div>
+      <div
         class="offcanvas-body"
         style="overflow-y:visible; position:relative;">
         <h4
@@ -126,12 +130,11 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         {title}
       </div>
       <div class="guidecontent" id="container2">
-        <slot /><div
-          id="google_translate_element"
-          style="z-index:100;">
-        </div>
+        <slot />
       </div>
-      <Footer/>
+      <div>
+      <Footer top="top:17px; border-radius:8px 8px 0px 0px; overflow:hidden;"/>
+    </div>
     </div>
   </div>
 

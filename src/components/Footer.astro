@@ -4,11 +4,11 @@ import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 
-let { display = '', background = '', flex = '', maxwidth = '' } = Astro.props;
+let { display = '', top = '', flex = '', maxwidth = '' } = Astro.props;
 ---
 
-<footer style="width:100%;">
-	<div class="copyright" style={background}>
+<footer>
+	<div class="copyright" style={top}>
 		<div class="holder" style={maxwidth}>
 <div class="footer-holder" style={flex}>
 	<div class="column" style="width:20%; min-width:300px; gap:0;">
