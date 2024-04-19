@@ -25,7 +25,8 @@ Is using WiiLink legal?
    > Absolutely. We develop all of our channels without copyrighted code and material, and rely solely on what is provided within the channel and public knowledge. All code is written from the ground up. You will have no legal trouble from using our service.
 
 </br>
-___
+<hr style="border-top:2px solid var(--color);" />
+</br>
 
 ## Channels
 
@@ -58,4 +59,3 @@ ___
     We’re primarily active on GitHub, and highly appreciate contributions! Check us out: https://github.com/WiiLink24
 
 </br>
-___
