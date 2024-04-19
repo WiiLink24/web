@@ -8,7 +8,6 @@ heroImage: "../../img/guidebg-3.png"
 
 ### Get some info on common errors!
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 
 <input oninput="w3.filterHTML('#error-codes', 'div', this.value); displayErrorMessage()" placeholder="&#xF002; Search for your error here..." style="background-color: var(--bg-opaque-1); color: var(--color); border:2px solid var(--border-color); font-family:inter, FontAwesome; padding: 13px 10px;">
