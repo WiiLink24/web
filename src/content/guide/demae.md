@@ -3,31 +3,38 @@ title: Food Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-utensils
 ---
-## Have Food ordered to your house from a Wii!
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
+  <a href="#troubleshooting-questions" style="text-decoration:none;">
+  <div style="font-family:system-ui; font-size:15px; padding:5px 10px; border-radius:80px; border:2px solid var(--border-color); background-color: var(--bg-color-tertiary);">Skip to Troubleshooting and Questions</div>
+  </a>
+</div>
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+</div></div>
+</br>
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Which service will you be using?</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:nowrap; position:relative;">
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#dominos"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:12px 4px 4px 12px;" class="btn1 btn btn-primary">Domino's</button></a>
+</div>
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#justeat"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 4px 4px 4px;" class="btn1 btn btn-danger">JustEat (in development)</button></a>
+</div>
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#fakeordering"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 12px 12px 4px;" class="btn1 btn btn-warning">Fake Ordering</button></a>
+</div>
+</div>
 
-- Deliver your favorite meals and desserts directly from your Wii!
-
-- Order anything thats available!
-
-- Find something new you can enjoy!
-
-<l class="notice generic fullwidth"> This guide is for installing the Dominos version of the Food Channel. If you want to install the Standard (Fake Ordering) version, please read the regular [Installation Guide](/guide/install), and choose the Standard version in the patcher. </l>
-
-<l class="notice info fullwidth"> If you're having any issues installing the Food Channel, please read the [Troubleshooting & Questions](#troubleshooting--questions) section. </l>
-___
+<i id="dominos"></i>
 
 ## Installation Guide (Dominos)
 
 ### Section I - Getting Started
-</br>
-
-### What you need:
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:18px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:2px solid #00000060; border-radius:8px;"><i class="fa-brands fa-discord"></i> A Discord account</h4></div>
-
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px; font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
-</div>
 </br>
 
 1. Download the latest version of the WiiLink Patcher for your operating system.
@@ -119,7 +126,15 @@ ___
 <l class="notice warn fullwidth"> Currently, only the USA and Canada are supported for Dominos on the Food Channel. </l>
 
 > You cannot use the default Dolphin NAND with this service. You must use your own NAND dump. This can be done in Dolphin by going to the toolbar and clicking `Tools -> Manage NAND -> Import BootMii NAND Backup`. 
+
+<i id="fakeordering"></i>
+
+## Installation Guide (Fake Ordering)
+
+Simply install the channel and run it, adding fake information in the SPD channel when prompted.
+
 ___
+<i id="troubleshooting-questions"></i>
 
 ## Troubleshooting & Questions
 

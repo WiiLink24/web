@@ -6,26 +6,34 @@ description: Get up-to-date instructions on how to install all of our services!
 heroImage: "../../img/guidebg-1.png"
 ---
 
-## What you need
-
-<div style="display:flex; gap:13px; margin-top:10px; align-items:center; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
+</div>
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
 </div></div>
 </br>
-</br>
-
-## Instructions
-
-#### First of all, where are you planning to use WiiLink?
-
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;">
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px; position:relative;">
-<a href="#wii"><button type="button" style="width:100%; height:70px; color:white !important; background-color:gray; font-family:system-ui;" class="btn1 btn"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii / Dolphin</button></a>
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Where will you be using WiiLink?</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
 </div>
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px; position:relative;">
-<a href="#vwii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:nowrap; position:relative;">
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#wii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:12px 4px 4px 12px;" class="btn1 btn btn-info"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii / Dolphin</button></a>
+</div>
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#vwii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 12px 12px 4px;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
 </div>
 </div>
+
+<div style="text-align: center;">
+    <i class="fa-solid fa-arrow-down"></i>
+</div>
+
+<br/>
+<br/>
+<br/>
 
 <div id="vwii"></div>
 
@@ -95,6 +103,8 @@ heroImage: "../../img/guidebg-1.png"
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
+</br>
+<hr style="border-top:2px solid var(--border-color);">
 </br>
 
 ### Section III (Optional) - Adding your Personal Information to the Address Information settings (SPD)
