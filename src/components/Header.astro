@@ -102,7 +102,7 @@ const { isGuide, isMain } = Astro.props;
 		<div id="dropdownMore">
 		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
 			<a class="dropdown-item" href="https://wfc.wiilink24.com"><i class="fa-solid fa-wifi"></i> WiiLink WFC</a>
-				<hr style="border-top:2px solid var(--color);">
+				<hr style="width:110%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 			<a
 				  class="dropdown-item"
 				  href="https://wiilink24.com/privacy-policy"
@@ -114,7 +114,8 @@ const { isGuide, isMain } = Astro.props;
 				<a class="dropdown-item" href="https://wiilink24.com/eula"
 				  ><i class="fa-solid fa-book"></i> EULA</a
 				>
-				<div style="margin:6px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+				<hr style="width:110%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
+				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
 				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
 				<a href={localizePath("/")}><button type="button" class="btn btn-success dropdown-element"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
 				<a href="https://www.discord.gg/wiilink"><button type="button" class="btn btn-primary dropdown-element"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
@@ -391,7 +392,6 @@ setTimeout(() => {
 
 <script is:inline>
 var gradient = document.getElementById("grad");
-
 document.addEventListener('scroll', checkPageScroll);
 
 function checkPageScroll() {
@@ -505,38 +505,38 @@ checkScrollPosition();
 	.holder {
 		margin-top:18px;
 		padding:8px;
-		border-radius:4px;
+		border-radius:12px;
 		background-color:var(--bg-color-light);
 		border: 1px solid var(--border-color);
 	}
 
 	.holder::before {
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 0;
-		border-left: 15px solid transparent;
-		border-right: 15px solid transparent;
-		border-bottom: 20px solid var(--border-color);
-		top: -2px;
-		left: 50%;
-		z-index: 10000;
-		transform: translateX(-50%);
-	}
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 20px solid var(--border-color);
+  top: -2px;
+  left: 50%;
+  z-index: 10000;
+  transform: translateX(-50%);
+}
 
-	.holder::after {
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 0;
-		border-left: 14px solid transparent;
-		border-right: 14px solid transparent;
-		border-bottom: 18px solid var(--bg-color-light);
-		top: 1px;
-		left: 50%;
-		z-index: 10000;
-		transform: translateX(-50%);
-	}
+.holder::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 18px solid var(--bg-color-light);
+  top: 1px;
+  left: 50%;
+  z-index: 10000;
+  transform: translateX(-50%);
+}
 
 	.post:hover {
 		background-color: var(--bg-color-secondary);
@@ -558,7 +558,7 @@ checkScrollPosition();
 		padding:8px;
 		background-color: var(--bg-color-light);
 		border: 1px solid var(--border-color);
-		border-radius:4px;
+		border-radius:12px;
 		z-index: 1;
 		display: none;
 		position: absolute;
