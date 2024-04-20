@@ -1,4 +1,7 @@
 ---
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { localizePath } from "astro-i18next";
 import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
@@ -7,8 +10,9 @@ changeLanguage("es-LAT");
 ---
 
 <Layout
-  title="WiiLink - 404"
-  description="It seems like the content you were looking for isn't here just yet...">
+  title={t("404.mainTitle")}
+  description={t("404.mainDesc")}
+  image={t("site.img")}>
   <html>
     <body>
       <div class="symbolholder">
