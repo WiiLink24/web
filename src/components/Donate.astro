@@ -79,8 +79,8 @@ import { Trans } from "astro-i18next/components";
             style="text-decoration:none;">
             <span class="bdg badge bg-primary">$10</span>
             <span
-              class="badge bg-danger"
-              style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; font-size: 20px; position:absolute;"
+              class="badge"
+              style=" bottom:15px; left:50%; transform:translate(-50%, 0) rotate(-2deg); width:auto; background-color:AccentColor; font-size: 20px; position:absolute;"
               >{t("donate.popular")}</span
             >
             <h1 style="color:#7627b7;" class="tier-title">Tulip</h1>
@@ -381,7 +381,7 @@ import { Trans } from "astro-i18next/components";
     font-size: 25px;
   }
   .color {
-    background: url(/img/header_bg.png) 0 0;
+    background: AccentColor;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: brightness(150%);

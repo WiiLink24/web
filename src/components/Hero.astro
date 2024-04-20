@@ -49,7 +49,7 @@ import { Trans } from "astro-i18next/components";
           >WiiLink Patcher
           <l id="verno"></l></a
         > | {t("site.heroDev")}
-        <a href="https://github.com/PablosCorner">PablosCorner</a>
+        <a href="https://github.com/PablosCorner" style="color:AccentColorText;">PablosCorner</a>
       </p>
       <div class="horizontal-line"></div>
     </div>
@@ -59,8 +59,8 @@ import { Trans } from "astro-i18next/components";
           type="button"
           id="download-btn"
           onclick="downloadPatcher();"
-          class="btn btn-primary btn-lg"
-          style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
+          class="btn btn-lg"
+          style="text-align:left; color:white !important; background-color:AccentColor; border:1px solid AccentColor; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
@@ -71,8 +71,8 @@ import { Trans } from "astro-i18next/components";
         <button
           id="extra-btn-2"
           type="button"
-          class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
-          style="color:white !important; border-radius:4px 12px 12px 4px;"
+          class="btn btn-lg dropdown-toggle dropdown-toggle-split"
+          style="color:white !important; background-color:AccentColor; border:1px solid AccentColor; border-radius:4px 12px 12px 4px;"
           data-bs-toggle="dropdown"
           aria-expanded="false">
           <span class="visually-hidden">Toggle Dropdown</span>
@@ -170,8 +170,8 @@ import { Trans } from "astro-i18next/components";
       </div>
 
       <button
-        class="btn btn-outline-primary btn-lg"
-        style="padding-top:11px; padding-bottom:11px; font-size:18px; border-radius:12px;"
+        class="btn guidebtn btn-lg"
+        style="padding-top:11px; padding-bottom:11px; border:1px solid AccentColor; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
         <i
           class="fa-solid fa-arrow-up fa-rotate-by"
@@ -502,6 +502,10 @@ import { Trans } from "astro-i18next/components";
       gap: 10px;
     }
 
+    a:hover {
+      color:AccentColor !important;
+    }
+
     .btn-group {
       display: grid;
       grid-template-columns: 8fr 1fr;
@@ -602,6 +606,11 @@ import { Trans } from "astro-i18next/components";
       transition: 0.2s;
     }
 
+    .guidebtn:hover {
+      background-color: AccentColor;
+      color: white !important;
+    }
+
     .bar-holder {
       width: 150px;
       height: 10px;
@@ -613,7 +622,8 @@ import { Trans } from "astro-i18next/components";
     .bar {
       width: 50%;
       height: 100%;
-      background-color: var(--bg-opaque-2);
+      background-color: AccentColor;
+      opacity:0.3;
       border-radius: 80px;
       animation: bar 1s infinite;
       overflow: hidden;
