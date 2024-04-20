@@ -49,7 +49,7 @@ import { Trans } from "astro-i18next/components";
           >WiiLink Patcher
           <l id="verno"></l></a
         > | {t("site.heroDev")}
-        <a href="https://github.com/PablosCorner" style="color:AccentColorText;">PablosCorner</a>
+        <a href="https://github.com/PablosCorner">PablosCorner</a>
       </p>
       <div class="horizontal-line"></div>
     </div>
@@ -59,7 +59,7 @@ import { Trans } from "astro-i18next/components";
           type="button"
           id="download-btn"
           onclick="downloadPatcher();"
-          class="btn btn-lg"
+          class="btn btn-primary btn-lg"
           style="text-align:left; color:white !important; background-color:AccentColor; border:1px solid AccentColor; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
             src="img/loading.gif"
@@ -71,7 +71,7 @@ import { Trans } from "astro-i18next/components";
         <button
           id="extra-btn-2"
           type="button"
-          class="btn btn-lg dropdown-toggle dropdown-toggle-split"
+          class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
           style="color:white !important; background-color:AccentColor; border:1px solid AccentColor; border-radius:4px 12px 12px 4px;"
           data-bs-toggle="dropdown"
           aria-expanded="false">
@@ -171,7 +171,7 @@ import { Trans } from "astro-i18next/components";
       </div>
 
       <button
-        class="btn guidebtn btn-lg"
+        class="btn btn-prmiary guidebtn btn-lg"
         style="padding-top:11px; padding-bottom:11px; border:1px solid AccentColor; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
         <i
@@ -504,10 +504,13 @@ import { Trans } from "astro-i18next/components";
     }
 
     a:hover {
+      color: white !important;
       color:AccentColor !important;
     }
 
     .form-check-input:checked {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
       background-color: AccentColor;
       border-color: AccentColor;
     }
@@ -613,6 +616,7 @@ import { Trans } from "astro-i18next/components";
     }
 
     .guidebtn:hover {
+      background-color: #0d6efd;
       background-color: AccentColor;
       color: white !important;
     }
@@ -628,6 +632,7 @@ import { Trans } from "astro-i18next/components";
     .bar {
       width: 50%;
       height: 100%;
+      background-color: var(--color);
       background-color: AccentColor;
       opacity:0.3;
       border-radius: 80px;
@@ -758,6 +763,7 @@ import { Trans } from "astro-i18next/components";
 
 <style is:global>
  #tagline  span:hover {
+    color: #0d6efd !important;
     color:AccentColor !important;
   }
 </style>
