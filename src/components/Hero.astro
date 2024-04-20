@@ -60,7 +60,7 @@ import { Trans } from "astro-i18next/components";
           id="download-btn"
           onclick="downloadPatcher();"
           class="btn btn-primary btn-lg"
-          style="text-align:left; color:white !important; margin-right:2px; font-size:18px;"
+          style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
@@ -72,7 +72,7 @@ import { Trans } from "astro-i18next/components";
           id="extra-btn-2"
           type="button"
           class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
-          style="color:white !important;"
+          style="color:white !important; border-radius:4px 12px 12px 4px;"
           data-bs-toggle="dropdown"
           aria-expanded="false">
           <span class="visually-hidden">Toggle Dropdown</span>
@@ -171,7 +171,7 @@ import { Trans } from "astro-i18next/components";
 
       <button
         class="btn btn-outline-primary btn-lg"
-        style="padding-top:11px; padding-bottom:11px; font-size:18px;"
+        style="padding-top:11px; padding-bottom:11px; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
         <i
           class="fa-solid fa-arrow-up fa-rotate-by"
@@ -390,7 +390,7 @@ import { Trans } from "astro-i18next/components";
           let html = "";
           randomServices.forEach((service, index) => {
             html += `
-            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:8px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
+            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
               <img src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
               <div style="z-index: 1; position:relative;">
                 <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
