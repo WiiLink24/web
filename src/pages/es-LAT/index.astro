@@ -103,21 +103,6 @@ changeLanguage("es-LAT");
       }
     });
 
-    function getRandomColor() {
-    var letters = '0123456789ABCDEF';
-    var color = '#';
-    for (var i = 0; i < 6; i++) {
-      color += letters[Math.floor(Math.random() * 16)];
-    }
-    return color;
-  }
-
-  window.onload = function() {
-    var square = document.querySelector('.square');
-    var randomColor = getRandomColor();
-    square.style.background = `linear-gradient(41deg, AccentColor 0%, ${randomColor} 100%)`;
-  };
-
     const scrollableDiv = document.getElementById("square2");
     const width = window.innerWidth;
 
