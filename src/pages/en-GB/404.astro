@@ -1,311 +1,230 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
-import { localizePath } from "astro-i18next";
-import { Trans } from "astro-i18next/components";
+import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
 
 changeLanguage("en-GB");
 ---
 
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
-  ></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
-
-    gtag("config", "G-LWN8QCFT7S");
-  </script>
-
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script
-    src="https://kit.fontawesome.com/e47ece3e74.js"
-    crossorigin="anonymous"></script>
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
-  <link
-    href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
-    rel="stylesheet"
-  />
-  <script src="https://unpkg.com/@popperjs/core@2" crossorigin="anonymous"
-  ></script>
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
-    crossorigin="anonymous"></script>
-  <Layout
-    title={t("404.mainTitle")}
-    description={t("404.mainDesc")}
-    image="/img/news_post_welcome_back.png"
-  />
-</head>
-<body>
-  <div class="symbolholder">
-    <div class="backsymbol" id="movable">
-      <div class="square2" id="square2">
-        <div
-          class="logo"
-          style="height:150px; right:20px; top:20px; filter:invert(1); z-index:1000000000; position:absolute;">
-          <img src="/img/logo.png" height="100px" />
-        </div>
-
-        <div class="hold">
-          <div class="error">
-            <h1
-              style="font-family:Gilroy; font-size:150px; text-align:center; color:white !important;">
-              404
-            </h1>
-            <h3 style="text-align:center; color:white !important;">
-              {t("404.message")}
-            </h3>
-
-            <a href="/"
-              ><button
-                type="button"
-                class="btn1 btn btn-primary"
-                style="width:300px; bottom:-80px; left:50%; transform:translate(-50%, 0); padding:10px; margin:0px; margin-left:5px; position:absolute;"
-                ><i class="fa-solid fa-home"></i> Go home</button
-              ></a
-            >
+<Layout
+  title="WiiLink - 404"
+  description="It seems like the content you were looking for isn't here just yet...">
+  <html>
+    <body>
+      <div class="symbolholder">
+        <div class="backsymbol" id="movable">
+          <div class="square2" id="square2">
+            <Header/>
+            <main>
+              <div style="display:flex; flex-direction:row; align-items:center; gap:30px;">
+              <h1>404</h1><p class="badge bg-primary" style="color:white !important; font-size:20px; transform:translate(0, 5px);">Page not found</p>
+            </div>
+              <p>
+                It seems like the content you were looking for isn't here just
+                yet...
+                <br>
+                Use the navigation bar to find what you're looking for, or click the button below to go back to the homepage.
+              </p>
+              <a href="/" class="button btn btn-success" style="color:white !important;"><i class="fa fa-home"></i> Go back to the homepage</a>
+            </main>
           </div>
-
           <div class="square"></div>
+          <div class="bottomleftcornerholder">
+            <img
+              class="bottomleftcorner"
+              id="moveCorner"
+              src="../img/corner.png"
+            />
+          </div>
         </div>
       </div>
-      <div class="bottomleftcornerholder">
-        <img class="bottomleftcorner" src="/img/corner.png" />
-      </div>
-    </div>
-  </div>
+    </body>
+  </html>
+</Layout>
 
-  <style>
-    .symbolholder {
-      background-color: var(--bg-color);
-      top: 0;
-      left: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-      position: fixed;
-    }
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
 
-    .backsymbol {
-      width: calc(100% - 28px);
-      height: calc(100% - 28px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      position: absolute;
-    }
+  html {
+    --color: black;
+    --bg-color: white;
+    --bg-color-hero: #ffffffde;
+    --bg-color-light: #ffffff;
+    --bg-color-secondary: #f8f9fa;
+    --bg-color-tertiary: #f1f3f5;
+    --bg-color-absolute: #ffffff;
+    --border-color: #00000020;
+    --shadow-color: #00000020;
+    --bg-select: #eaeaea;
+    --bg-opaque-1: #00000010;
+    --bg-opaque-2: #00000020;
+    --opacity: 0.6;
+  }
 
-    .square {
-      --img-invert: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        41deg,
-        rgba(0, 138, 255, 1) 0%,
-        rgba(255, 0, 59, 1) 100%
-      );
-      z-index: 0;
-      animation: changecolor 10s linear infinite;
-      border-radius: 8px;
-      position: absolute;
-    }
+  html.dark {
+    --color: white;
+    --bg-color: #161515;
+    --bg-color-hero: #161515ee;
+    --bg-color-light: #202020;
+    --bg-color-secondary: #1a1a1a;
+    --bg-color-tertiary: #1e1e1e;
+    --bg-color-absolute: #000000;
+    --border-color: #ffffff20;
+    --shadow-color: #ffffff05;
+    --bg-select: #0a0a0a30;
+    --bg-opaque-1: #ffffff10;
+    --bg-opaque-2: #ffffff20;
+    --opacity: 0.3;
+  }
 
-    .bottomleftcorner {
-      animation: changecolor 10s linear infinite;
-      position: relative;
-    }
-    .bottomleftcornerholder {
-      left: 13px;
-      bottom: 13px;
-      scale: 31.6%;
-      transform: translate(-106.5%, 107.3%);
-      pointer-events: none;
-      z-index: 2;
-      position: absolute;
-    }
+  .backsymbol {
+    width: calc(100% - 28px);
+    height: calc(100% - 28px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    position: absolute;
+  }
 
-    #square2 {
-      width: calc(100% - 30px);
-      height: calc(100% - 30px);
-      left: 15.5px;
-      top: 15.5px;
-      background-color: var(--bg-color);
-      transform: translate(0%, 0%);
-      border-radius: 4px;
-      z-index: 1;
-      scroll-behavior: smooth;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      transition: 0.5s;
-      position: absolute;
-    }
+  h1 {
+    font-family: Rubik;
+    font-weight: 900;
+    font-size:90px;
+  }
 
-    @keyframes changecolordark {
-      0% {
-        filter: hue-rotate(0deg) invert(1);
-      }
-      100% {
-        filter: hue-rotate(360deg) invert(1);
-      }
-    }
-    @keyframes changecolor {
-      0% {
-        filter: hue-rotate(0deg);
-      }
-      100% {
-        filter: hue-rotate(360deg);
-      }
-    }
+  p {
+    width:90%;
+    max-width: 650px;
+    text-align: center;
+  }
 
-    .error {
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 100000;
-      position: absolute;
-    }
-    canvas {
-      display: block;
-      vertical-align: bottom;
-    }
-    #particles-js {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #b6192400;
-      background-image: url("");
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 5;
-      background-position: 50% 50%;
-    }
-    .slide {
-      transform: translateZ(-20px);
-    }
-    .hold {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      position: absolute;
-    }
-    .carousellogos {
-      width: 200px;
-      filter: drop-shadow(-20px 20px 50px #00000060);
-      right: 4%;
-      top: 8%;
-      border-radius: 8px;
-      transform: translateZ(50px);
-      z-index: 1;
-      overflow: hidden;
-      position: absolute;
-    }
-    .carouseltop {
-      width: 1000px;
-      height: 650px;
-      left: 50%;
-      top: 50%;
-      border-radius: 8px;
-      transform: translate(-50%, -50%);
-      z-index: 1;
-      position: absolute;
-    }
-    .blur {
-      width: 150%;
-      height: auto;
-      filter: blur(12px) brightness(70%);
-      left: 50%;
-      transform: translate(-50%, 0) scale(110%);
-      animation: toright 40s linear forwards;
-      position: absolute;
-    }
-    @keyframes toright {
-      0% {
-        left: 50%;
-      }
-      100% {
-        left: 20%;
-      }
-    }
-    .shadow {
-      width: 70%;
-      height: 80%;
-      left: calc(50% + 50px);
-      top: 50%;
-      transform: translate(-50%, -50%);
-      filter: blur(38px) opacity(0.2);
-      z-index: 0;
-      position: absolute;
-    }
-    h5 {
-      font-family: Rubik;
-      font-weight: 600;
-    }
-    .carousel-indicators [data-bs-target] {
-      height: 8px;
-      border-radius: 8px;
-    }
-    .carousel-inner {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      position: relative;
-    }
-    .carousel-item {
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      overflow: hidden;
-    }
+  main {
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+  }
 
-    @media (max-width: 1000px) {
-      .carouseltop {
-        top: calc(50% + 50px);
-      }
+  .symbolholder {
+    background-color: var(--bg-color-absolute);
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    position: fixed;
+  }
 
-      .carousel {
-        width: 100%;
-        height: 530px;
-        -webkit-mask-image: url(/img/mask.png);
-        mask-image: url(/img/mask.png);
-        -webkit-mask-size: 100%;
-        mask-size: 100%;
-        -webkit-mask-repeat: no-repeat;
-        mask-repeat: no-repeat;
-        mask-size: contain;
-        mask-position: center;
-        background-color: blue;
-        z-index: 1;
-        position: absolute;
-      }
+  .popup {
+    position: fixed;
+    width:95%;
+    max-width: 1000px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: var(--bg-color-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    z-index: 1000000000;
+    transition: opacity 2s;
+    display: none;
+  }
 
-      .carousellogos {
-        width: 150px;
-        filter: drop-shadow(-20px 20px 50px #00000060);
-        right: 28%;
-        top: 3%;
-        border-radius: 8px;
-        transform: translateZ(50px);
-        z-index: 1;
-        overflow: hidden;
-        position: absolute;
-      }
+  .popup.hide {
+    opacity: 0;
+  }
+
+  .bottom {
+    top: 14px !important;
+  }
+
+  .left {
+    right: 14px !important;
+  }
+
+  .right {
+    left: 14px !important;
+  }
+
+  .top {
+    bottom: 14px !important;
+  }
+
+  #square2 {
+    width: calc(100% - 30px);
+    height: calc(100% - 30px);
+    left: 15.5px;
+    top: 15.5px;
+    background-color: var(--bg-color-hero);
+    transform: translate(0%, 0%);
+    border-radius: 4px;
+    z-index: 10;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .bottomleftcorner {
+    width: 120px;
+    animation: changecolor 10s linear infinite;
+    position: relative;
+  }
+
+  .bottomleftcornerholder {
+    left: -1px;
+    bottom: -1px;
+    pointer-events: none;
+    z-index: 2000;
+    position: absolute;
+  }
+
+  @keyframes changecolor {
+    0% {
+      filter: hue-rotate(0deg);
     }
-  </style></body
->
+    100% {
+      filter: hue-rotate(360deg);
+    }
+  }
+  @keyframes changecolordark {
+    0% {
+      filter: hue-rotate(0deg) invert(1);
+    }
+    100% {
+      filter: hue-rotate(360deg) invert(1);
+    }
+  }
+
+  .square {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      41deg,
+      rgba(0, 138, 255, 1) 0%,
+      rgba(255, 0, 59, 1) 100%
+    );
+    z-index: 0;
+    animation: changecolor 10s linear infinite;
+    border-radius: 8px;
+    position: absolute;
+  }
+</style>

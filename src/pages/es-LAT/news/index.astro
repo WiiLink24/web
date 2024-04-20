@@ -454,8 +454,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover:before {
-    box-shadow: inset 0 0 0px 3px #ffffff80;
-    border-radius: 10px;
+    box-shadow: inset 0 0 0px 3px var(--bg-opaque-2);
+    border-radius: 14px;
     border: solid 0px transparent;
     transition: 0.2s;
   }
@@ -467,7 +467,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: inset 0 0 0px 3px #ffffff20;
+    box-shadow: inset 0 0 0px 3px var(--bg-opaque-1);
     z-index: 1;
     border-radius: 14px;
     border: solid 0px transparent;
@@ -491,7 +491,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
-    border: 3px solid #ffffff0a;
+    border: 3px solid var(--bg-opaque-1);
     transition: 0.2s;
     display: none;
   }
@@ -503,7 +503,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 
   .postmini:hover {
     transform: translate(0, -5px);
-    border: 3px solid #ffffff98;
+    border: 3px solid var(--bg-opaque-2);
     transition: 0.2s;
   }
 
@@ -601,6 +601,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     transition: 0.2s;
   }
 
+  .newshero:active, .post:active {
+    transform:scale(0.99);
+    transition: 0.2s;
+  }
+
   .newsHero:before {
     content: "";
     position: absolute;
@@ -608,7 +613,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     bottom: 0;
     left: 0;
     right: 0;
-    box-shadow: inset 0 0 0px 3px #ffffff20;
+    box-shadow: inset 0 0 0px 3px var(--bg-opaque-2);
     z-index: 1;
     border-radius: 18px;
     border: solid 0px transparent;
@@ -616,8 +621,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .newsHero:hover:before {
-    box-shadow: inset 0 0 0px 3px #ffffff80;
-    border-radius: 16px;
+    box-shadow: inset 0 0 0px 3px var(--bg-opaque-1);
+    border-radius: 18px;
     border: solid 0px transparent;
     transition: 0.2s;
   }

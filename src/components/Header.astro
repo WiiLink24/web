@@ -102,13 +102,17 @@ const { isGuide, isMain } = Astro.props;
 		<div id="dropdownMore">
 		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
 			<a class="dropdown-item" href="https://wfc.wiilink24.com"><i class="fa-solid fa-wifi"></i> WiiLink WFC</a>
-				<a
+				<hr style="border-top:2px solid var(--color);">
+			<a
 				  class="dropdown-item"
 				  href="https://wiilink24.com/privacy-policy"
 				  ><i class="fa-solid fa-shield"></i> Privacy Policy</a
 				>
 				<a class="dropdown-item" href="https://wiilink24.com/tos"
 				  ><i class="fa-solid fa-feather"></i> Terms of Service</a
+				>
+				<a class="dropdown-item" href="https://wiilink24.com/eula"
+				  ><i class="fa-solid fa-book"></i> EULA</a
 				>
 				<div style="margin:6px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
 				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
@@ -378,7 +382,6 @@ function toggle(id) {
 }
 }
 
-	// Set the transition of the background in the index 1 second after page load to make the transiton more seamless
 setTimeout(() => {
   document.getElementById("square2").style.transition="0.5s";
 }, 1000);
@@ -536,6 +539,11 @@ checkScrollPosition();
 
 	.post:hover {
 		background-color: var(--bg-color-secondary);
+		transition: 0.2s;
+	}
+
+	.post:active {
+		transform:scale(0.98);
 		transition: 0.2s;
 	}
 
@@ -764,9 +772,7 @@ ul{
 		transform: translate(-50%, 0);
 		position: relative;
 	}
-}
-
-@media (max-width:1000px){
+	
 	.bannerholder{
 		height:98px;
 		opacity:0;

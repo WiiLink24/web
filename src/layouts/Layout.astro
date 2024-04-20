@@ -263,7 +263,7 @@ const { title, description, image } = Astro.props;
       "Helvetica Neue",
       sans-serif;
     background-color: var(--bg-color-secondary);
-    border-radius: 8px 8px 0px 0px;
+    border-radius: 8px 8px 4px 4px;
     z-index: 1;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -294,6 +294,11 @@ const { title, description, image } = Astro.props;
   .service:hover {
     transform: scale(105%);
     transition: 0.3s;
+  }
+
+  .service:active {
+    transform:scale(1.03);
+    transition:0.2s;
   }
 
   .header {
@@ -482,9 +487,8 @@ const { title, description, image } = Astro.props;
   .goog-te-combo {
     width:100%;
     border: 0px;
-    transform:translate(0, -5px);
     padding: 15px 5px;
-    border-radius:0px 0px 8px 8px;
+    border-radius:4px 4px 8px 8px;
     background-color: var(--bg-color-tertiary);
     color: var(--color);
   }
