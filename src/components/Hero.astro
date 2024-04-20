@@ -105,8 +105,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" id="download-macos-arm">Apple Silicon</a>
-              <a class="dropdown-item" id="download-macos-x64">64bit</a>
+              <a class="dropdown-item" style="color:white !important;" id="download-macos-arm">Apple Silicon</a>
+              <a class="dropdown-item" style="color:white !important;" id="download-macos-x64">64bit</a>
             </div>
           </li>
           <li>
@@ -124,8 +124,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" id="download-linux-arm">ARM64</a>
-              <a class="dropdown-item" id="download-linux-x64">64bit</a>
+              <a class="dropdown-item" style="color:white !important;" id="download-linux-arm">ARM64</a>
+              <a class="dropdown-item" style="color:white !important;" id="download-linux-x64">64bit</a>
             </div>
           </li>
           <div class="line-container" style="gap: 8px; margin-top: 8px;">
@@ -162,6 +162,7 @@ import { Trans } from "astro-i18next/components";
             <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
+              style="color:white !important;"
               ><i class="fa fa-book" style="margin-right:5px;"></i>
               {t("site.changelog")}</a
             >
@@ -506,6 +507,11 @@ import { Trans } from "astro-i18next/components";
       color:AccentColor !important;
     }
 
+    .form-check-input:checked {
+      background-color: AccentColor;
+      border-color: AccentColor;
+    }
+
     .btn-group {
       display: grid;
       grid-template-columns: 8fr 1fr;
@@ -749,4 +755,10 @@ import { Trans } from "astro-i18next/components";
       }
     }
   </style>
+
+<style is:global>
+ #tagline  span:hover {
+    color:AccentColor !important;
+  }
+</style>
 </div>
