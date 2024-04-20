@@ -16,8 +16,8 @@ changeLanguage("de");
           <div class="square2" id="square2">
             <Header/>
             <main>
-              <div style="display:flex; flex-direction:row; align-items:center; gap:30px;">
-              <h1>404</h1><p class="badge bg-primary" style="color:white !important; font-size:20px; transform:translate(0, 5px);">Page not found</p>
+              <div class="errholder">
+              <h1>404</h1><p class="badge bg-primary" style="color:white !important; font-size:20px;">Page not found</p>
             </div>
               <p>
                 It seems like the content you were looking for isn't here just
@@ -149,6 +149,15 @@ changeLanguage("de");
     display: none;
   }
 
+  .errholder {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    gap:30px;
+    align-items:center;
+    justify-content:center;
+  }
+
   .popup.hide {
     opacity: 0;
   }
@@ -226,5 +235,125 @@ changeLanguage("de");
     animation: changecolor 10s linear infinite;
     border-radius: 8px;
     position: absolute;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .logohold {
+      display: none;
+    }
+    .data {
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 95%;
+      height: auto;
+      position: relative;
+    }
+    .mobilehide {
+      display: none;
+    }
+
+    .errholder {
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:0px;
+    align-items:center;
+    justify-content:center;
+  }
+
+    .mainFooter {
+      top: 37%;
+      display: block;
+      position: relative;
+    }
+
+    .top {
+      top: 0;
+      transform: translate(-50%, 0);
+      height: auto;
+      min-height: 0;
+      max-width: 1500px;
+      position: relative;
+    }
+
+    .socials {
+      right: 20px;
+    }
+
+    .footer-holder {
+      opacity: 0;
+      display: none;
+    }
+
+    .footer-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .slogan {
+      display: none;
+    }
+
+    .accordion-body {
+      background-color: #fff;
+      max-height: 20vh;
+      overflow: scroll;
+    }
+    .symbolholder {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+    }
+    .backsymbol {
+      width: 100%;
+      height: 100%;
+      border-radius: 0px;
+    }
+    #square2 {
+      left: 5px;
+      top: 5px;
+      width: calc(100% - 10px) !important;
+      height: calc(100% - 10px) !important;
+    }
+    .bottomleftcorner {
+      display: none;
+    }
+    .alert {
+      top: 30px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 80%;
+      position: absolute;
+    }
+    .hide {
+      display: none;
+    }
+    .download {
+      width: 100%;
+      height: auto;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+      gap: 5px;
+      position: relative;
+    }
+    .footer-holder {
+      display: none;
+    }
+    .square {
+      animation: none !important;
+      border-radius: 0px;
+    }
+    .btn {
+      width: 100%;
+    }
+    .dropdownbtn {
+      top: 0;
+      right: 0;
+      width: 50px;
+    }
   }
 </style>
