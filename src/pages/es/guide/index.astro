@@ -333,22 +333,21 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     transform: translate(0, 0px);
     opacity: 0;
     transition: 0.5s;
+    overflow:hidden;
     position: relative;
   }
 
   .posthold:nth-child(1) {
+    border-radius: 16px 8px 8px 16px;
     animation: fadeup 200ms 0.3s linear forwards;
   }
   .posthold:nth-child(2) {
+    border-radius: 8px;
     animation: fadeup 200ms 0.35s linear forwards;
   }
   .posthold:nth-child(3) {
+    border-radius: 8px 16px 16px 8px;
     animation: fadeup 200ms 0.4s linear forwards;
-  }
-
-  .posthold:hover {
-    transform: translate(0, -5px);
-    transition: 0.5s;
   }
 
   .mainimg {
@@ -399,7 +398,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     position: absolute;
-    gap: 20px;
+    gap: 16px;
     top: 40px;
     left: 50%;
     transform: translate(-50%, 0);
@@ -425,7 +424,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     height: 500px;
     width: 100%;
     background-color: rgba(195, 195, 195, 0);
-    border-radius: 15px;
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
@@ -454,19 +452,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     display: none;
   }
 
-  .post:hover {
-    transform: translate(0, -5px) scale(102%);
-    transition: 0.5s;
-  }
-
-  .post:hover:before {
-    box-shadow: inset 0 0 0px 3px var(--shadow-color);
-    border-radius: 16px;
-    border: solid 0px transparent;
-    transition: 0.2s;
-  }
-
-  .post:before {
+  .posthold:before {
     content: "";
     position: absolute;
     top: 0;
@@ -476,8 +462,24 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     box-shadow: inset 0 0 0px 3px #ffffff20;
     z-index: 1;
     border-radius: 18px;
-    border: solid 6px transparent;
+    border: solid 0px transparent;
     transition: 0.2s;
+  }
+
+  .posthold:nth-child(1):before {
+    border-radius: 16px 8px 8px 16px;
+  }
+
+  .posthold:nth-child(2):before {
+    border-radius: 8px;
+  }
+
+  .posthold:nth-child(3):before {
+    border-radius: 8px 16px 16px 8px;
+  }
+
+  .posthold:hover:before {
+    box-shadow: inset 0 0 0px 3px #ffffff77;
   }
 
   .postmini:hover {
@@ -495,7 +497,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     transition: 0.3s;
   }
 
-  .post:hover .heroImage {
+  .posthold:hover .heroImage {
     filter: blur(8px) brightness(0.7);
     rotate: 4deg;
     scale: 120%;
@@ -720,15 +722,14 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       transform: translate(-50%, 0);
       display: flex;
       flex-direction: column;
-      gap: 0px;
+      gap: 20px;
       top: 20px;
       position: relative;
-      padding-bottom: 60px;
+      margin-bottom: 60px;
       z-index: 10;
     }
 
     .post {
-      margin-top: 20px;
       margin-bottom: 0;
       border-radius: 8px;
       height: 200px;
@@ -806,12 +807,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       display: none;
     }
 
-    .post:hover {
+    .posthold:hover {
       transform: translate(0, 0px) scale(102%);
       transition: 0.5s;
     }
 
-    .post:hover .heroImage {
+    .posthold:hover .heroImage {
       filter: brightness(0.7);
       rotate: 0deg;
       scale: 110%;
