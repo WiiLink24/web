@@ -308,8 +308,13 @@ import { Trans } from "astro-i18next/components";
     overflow-x: scroll;
     gap: 16px;
     margin-bottom: 50px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     overflow-x: scroll;
     position: relative;
+  }
+  .tiers::-webkit-scrollbar {
+    display: none;
   }
   .tiers > * {
     scroll-snap-align: start;
