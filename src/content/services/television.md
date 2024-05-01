@@ -1,9 +1,10 @@
 ---
-title: TV no Tomo
+title: TV Guide Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-television
 description: Get live EPG guides right on your Wii!
-heroImage: "https://nindb.net/wii/televi-no-tomo-channel/img/screenshot.png"
+heroImage: "tvnotomobanner.png"
+color: 1f67db60
 ---
 ### Get live EPG guides right on your Wii!
 

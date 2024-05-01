@@ -3,7 +3,7 @@ title: Game Nights
 pubDate: 2024-01-24
 icon: fa-solid fa-gamepad
 description: Play a Wii game on Wiimmfi and WiiLink WFC every week!
-heroImage: "https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/msnbc/Components/ArtAndPhoto-Fronts/TECH/080502/080502-tec-marioKart-524p.jpg"
+color: 35418f60
 ---
 
 ### Play a Wii game on Wiimmfi and WiiLink WFC every week!

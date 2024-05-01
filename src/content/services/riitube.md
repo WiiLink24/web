@@ -3,7 +3,8 @@ title: RiiTube
 pubDate: 2024-01-24
 icon: fa-solid fa-video
 description: Watch YouTube on your Wii.
-heroImage: "../../img/guidebg-3.png"
+heroImage: "riitube.png"
+color: e00b0b60
 ---
 
 ### Watch YouTube on your Wii.

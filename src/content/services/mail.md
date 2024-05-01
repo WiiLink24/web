@@ -1,9 +1,9 @@
 ---
-title: Wii Mail
+title: Wii Message Board
 pubDate: 2024-01-24
 icon: fa-solid fa-envelope
 description: Communicate with other Wiis again!
-heroImage: "https://gamespot.com/a/uploads/scale_medium/mig/0/6/4/8/2300648-wiihandson029.jpg"
+heroImage: "msgbanner.png"
 ---
 
 ### Communicate with other Wiis again!

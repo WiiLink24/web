@@ -3,7 +3,8 @@ title: RSSMii
 pubDate: 2024-01-24
 icon: fa-solid fa-rss-square
 description: Get RSS updates on your Wii!
-heroImage: "../../img/guidebg-2.png"
+heroImage: "rssmii.png"
+color: edaa0e60
 ---
 
 ### Get RSS updates on your Wii!

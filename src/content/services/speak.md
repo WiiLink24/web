@@ -3,7 +3,8 @@ title: Wii Speak Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-microphone
 description: Voice chat with people on your Wii!
-heroImage: "https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/WiiSpeakChannel.jpg/220px-WiiSpeakChannel.jpg"
+heroImage: "speak.png"
+color: 15a5ed60
 ---
 ### Voice chat with people on your Wii!
 
