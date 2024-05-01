@@ -98,7 +98,7 @@ const { isGuide, isMain } = Astro.props;
 		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
 		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
 			class="fa-solid fa-chevron-down"
-			style="font-size:20px;"></i></button>
+			style="font-size:20px; pointer-events:none;"></i></button>
 		<div id="dropdownMore">
 		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
 			<a class="dropdown-item" href="https://wfc.wiilink24.com"><i class="fa-solid fa-wifi"></i> WiiLink WFC</a>
