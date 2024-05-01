@@ -35,7 +35,12 @@ import { Trans } from "astro-i18next/components";
       </h2>
       <div id="members_mobile" class="members"></div>
       <div id="members" class="members"></div>
-      <div id="members_small" class="members_small"></div>
+      <div style="top:30px; width:100%; border-radius:8px; overflow-x:hidden; overflow-y:visible; position:relative;">
+      <div style="width:4000px; display:flex; flex-direction:row; flex-wrap:nowrap; position:relative;"> 
+        <div id="members_small" class="members_small"></div>
+        <div id="members_small2" class="members_small"></div>
+      </div>
+    </div>
     </div>
   </div>
 </body>
@@ -53,9 +58,9 @@ import { Trans } from "astro-i18next/components";
 
     function createMemberHTML(member) {
       return `
-        <div class='member' style='border:4px solid ${member.color}60; box-shadow:0px 5px 20px ${member.color}20;'>
+        <div class='member' style='background-color: var(--bg-color-secondary); box-shadow:0px 5px 20px ${member.color}20;'>
           <a href='${member.link}' style='text-decoration:none; color:#212529;'>
-            <img loading='lazy' src='${member.pfp}' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
+            <img loading='lazy' src='${member.pfp}' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:0px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
           </a>
             <div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'>
               <a href='${member.link}' style='text-decoration:none; color:#212529;'>
@@ -69,6 +74,7 @@ import { Trans } from "astro-i18next/components";
     function showService(data) {
       let team = document.getElementById("members");
       let teamSmall = document.getElementById("members_small");
+      let teamSmall2 = document.getElementById("members_small2");
       let teamMobile = document.getElementById("members_mobile");
       let r = Math.floor(Math.random() * 15 + 10);
 
@@ -82,19 +88,20 @@ import { Trans } from "astro-i18next/components";
           team.innerHTML += createMemberHTML(member);
         } else {
           let memberHTML = `
-            <div class='membersmall' title='${member.name}\n${member.title}' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; border:4px solid ${member.color}60; border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
+            <div class='membersmall' onmouseover='pauseanim();' onmouseout='playanim();' title='${member.name}\n${member.title}' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; background-color: var(--bg-color-secondary); border-radius:8px; display:flex; overflow:hidden;'>
               <a href='${member.link}' style='text-decoration:none; color:#212529;'>
                 <img loading='lazy' src='${member.pfp}' style='background-image:url(/img/header_bg.png); background-size:cover; border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
               </a>
             </div>`;
           teamSmall.innerHTML += memberHTML;
+          teamSmall2.innerHTML += memberHTML;
         }
       }
 
       for (let i = 0; i < 20; i++) {
         let member = data.members.member[i];
         let memberHTML = `
-          <div class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; border:4px solid ${member.color}60; border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
+          <div class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; background-color: var(--bg-color-secondary); border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
             <a href='${member.link}' style='text-decoration:none; color:#212529;'>
               <img loading='lazy' src='${member.pfp}' style='border-radius:4px; border-top-left-radius:8px; border-bottom-left-radius:8px; object-fit:cover;' width='90px' height='100%'>
             </a>
@@ -103,6 +110,16 @@ import { Trans } from "astro-i18next/components";
       }
     }
   });
+
+  function pauseanim() {
+    document.getElementById("members_small").style.animationPlayState = "paused";
+    document.getElementById("members_small2").style.animationPlayState = "paused";
+  }
+
+  function playanim() {
+    document.getElementById("members_small").style.animationPlayState = "running";
+    document.getElementById("members_small2").style.animationPlayState = "running";
+  }
 </script>
 
 <style is:global>
@@ -111,9 +128,36 @@ import { Trans } from "astro-i18next/components";
     height: auto;
     width: auto;
     align-self: stretch;
-    border-radius: 16px;
+    border: 3px solid var(--bg-opaque-1);
+    border-radius: 8px;
     display: flex;
     overflow: hidden;
+  }
+  #members_small {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite reverse;
+  }
+
+  #members_small2 {
+    display: flex;
+    overflow: auto;
+    white-space: nowrap;
+    animation: scroll 50s linear infinite reverse;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .membersmall {
+    margin-right:18px;
+    border: 3px solid var(--bg-opaque-1);
   }
   .member:nth-child(1) {
     grid-row: auto / span 2;
@@ -160,14 +204,7 @@ import { Trans } from "astro-i18next/components";
     opacity: 0.5;
   }
   .members_small {
-    top: 20px;
-    width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 18px;
-    left: 50%;
-    transform: translate(-50%);
     position: relative;
     border-radius: 8px;
     z-index: 10;
@@ -220,6 +257,10 @@ import { Trans } from "astro-i18next/components";
       border-radius: 8px;
       z-index: 10;
       scroll-snap-type: both mandatory;
+    }
+
+    .members_small {
+      display: none !important;
     }
 
     .title {
