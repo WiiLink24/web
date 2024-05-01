@@ -1,403 +1,467 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import type { CollectionEntry } from 'astro:content';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import News from '../components/News.astro';
-import FormattedDate from '../components/FormattedDate.astro';
+import type { CollectionEntry } from "astro:content";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import News from "../components/News.astro";
+import FormattedDate from "../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<"blog">["data"];
 
-const { title, description, pubDate, updatedDate, heroImage, author, authImage, authDesc, authTitle} = Astro.props;
+const {
+  title,
+  description,
+  pubDate,
+  updatedDate,
+  heroImage,
+  author,
+  authImage,
+  authDesc,
+  authTitle,
+  color
+} = Astro.props;
 ---
 
 <html lang="en">
+  <Layout
+    title={`WiiLink - ${t("newsPost.name")} (${title})`}
+    description={`${title} - ${description}`}
+    image="/img/News_embed.png"
+  />
 
-<Layout title={`WiiLink - ${t("newsPost.name")} (${title})`} description={`${title} - ${description}`} image="/img/News_embed.png" />
-
-	<Header isGuide="display:none;"/>
-<div class="article-holder">
-	<div id="heroimg">
-		{heroImage && <img style="scale:105%" width={720} height={360} src={heroImage} alt="" />}</div>
-			<div class="tophold">
-				<a href="../"><div class="exit"><img class="close" src="../../img/close.png"></div></a>
-				<div style="top:70px; left:50%; width:100%; transform:translate(-50%, 0); display:flex; flex-wrap: wrap; gap:20px; justify-content: center; align-items: center; z-index:10; position:relative">
-				<img class="mainimg" src={heroImage} width="200px">
-				<FormattedDate color="top:-15px; right:48%; transform:translate(100%, 0); color:white; position:absolute;" date={pubDate} precise="right:calc(50% - 100px); transform:translate(50%, 0);"/>
-				<h2 class="title">{title}</h2>
-			</div>
-			</div>
-				<div class="postexpand">
-					<slot />
-				</div>
-				<hr style="border-top:2px solid var(--color);">
-				<div class="auths">
-					{authImage && <img class="authimage" width={50} height={50} src={authImage} alt="" />}
-					<div class="titles">
-						<div class="hold">
-							<div class="authtitle">{author}</div>
-							<div class="authtitle2">{authTitle}</div>
-						</div>
-						<div class="authdesc">{authDesc}</div>
-					</div>
-				</div>
+  <Header isGuide="display:none;" />
+  <div
+    class="headtitle"
+    style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
+    <div
+      style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
+      {heroImage && <img class="mainimg" src={heroImage} width="200px" />}
+      <div>
+        <h2 class="title" id="titleData">{title}</h2>
+        <hr style="border-top:2px solid var(--color);" />
+        <div
+          style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
+		  <div class="mobileHeadAuth" style="display:flex; gap:4px;">
+          <r
+            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;"
+            datetime={pubDate.toISOString()}>
+            {
+              pubDate.toLocaleDateString("en-uk", {
+                year: "numeric",
+                month: "short",
+                day: "numeric"
+              })
+            }
+          </r>
+          <r
+            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;"
+            >{author}</r
+          >
+          <r
+            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
+            >{authTitle}</r
+          >
+		  </div>
+		  <div>
+		  <r
+		  	id="readingTime"
+			style="font-family:system-ui; position:relative;"
+			></r>
 		</div>
-		<div class="removeOther">
-			<h2 class="other"><Trans i18nKey="news.otherPosts">Other <b class="color">posts</b></Trans></h2>
-			<News />
-		</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="article-holder">
+    <div class="postexpand">
+      <slot />
+    </div>
+    <div class="auths">
+      {
+        authImage && (
+          <img
+            class="authimage"
+            width={50}
+            height={50}
+            src={authImage}
+            alt=""
+          />
+        )
+      }
+      <div class="titles">
+        <div class="hold">
+          <div class="authtitle">{author}</div>
+          <div class="authtitle2">{authTitle}</div>
+        </div>
+        <div class="authdesc">{authDesc}</div>
+      </div>
+    </div>
+  </div>
 
-			<Footer />
+  <News />
 
-</html>
+  <Footer />
 
 <script is:inline>
-	// move the element "heroimg" as the page scrolls down, parallax
-	window.addEventListener("scroll", function() {
-		var element = document.getElementById("heroimg");
-		element.style.top = 0 - window.scrollY/4 + "px";
-		element.style.opacity = 0.5 - window.scrollY / 500;
-	});
+	function updateTagline() {
+		let tagline = document.getElementById("titleData");
+		let words = tagline.innerText.split(" ");
+		tagline.innerHTML = words
+			.map(
+				(word, index) =>
+					`<span style="--delay: ${index * 0.2}s;">${word}</span>`
+			)
+			.join(" ");
+	}
 
+	document.addEventListener("DOMContentLoaded", function () {
+		updateTagline();
+
+		let post = document.querySelector(".postexpand");
+		let wordCount = post.innerHTML.split(" ");
+		let readingTime = Math.ceil(wordCount.length / 200);
+		document.getElementById("readingTime").innerHTML = `<i class="fa fa-clock"></i> ${readingTime} min read`;
+
+		var nav = document.querySelector("nav");
+		if (nav) nav.remove();
+	});
 </script>
 
-<style>
-a:link{
-    color:rgba(32,213,136,1);  
-}
-
-a:hover{
-    color:rgb(22, 152, 96);
-}
-
-a:visited{
-    color:rgb(32, 180, 213);
-}
-
-.auths{
-	left: 50%;
-	width: 95%;
-	transform: translate(-50%, 0);
-	padding-top:30px;
-	display:flex;
-	gap:30px;
-	position: relative;
-	border-top: 2px solid #12121220;
-	z-index: 10000;
-}
-
-.titles{
-	position:relative;
-}
-
-time{
-	color:white;
-}
-
-.other{
-	left:10%; 
-	width:50%;
-	margin-top:50px; 
-	font-family:Gilroy; 
-	font-size:50px; 
-	position:relative; 
-}
-
-.mainimg{
-		-webkit-mask-image: url(/img/mask2.svg);
-  mask-image: url(/img/mask2.svg);
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;    
-  mask-size: 100% 100%;
-  mask-position: center;
-		height:150px;
-		width:auto;
-		filter: blur(0px);
-		transform: translate(0, 10px);
-		z-index:10;
-		position: relative;
-	}
-
-.color {
-	background: #0d6efd;
-   background: AccentColor;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
-   filter:brightness(150%);
+  <style>
+    a:link {
+      color: rgba(32, 213, 136, 1);
     }
 
-.authtitle{
-	font-family: Gilroy;
-	font-size: 30px;
-	position: relative;
-	float:left;
-	color:rgb(0, 0, 0);
-}
+    a:hover {
+      color: rgb(22, 152, 96);
+    }
 
-.hold{
-	display:flex;
-	align-items: center;
-	gap:10px;
-}
+    a:visited {
+      color: rgb(32, 180, 213);
+    }
 
-.authtitle2{
-	position:relative;
-padding:2px 10px 2px 10px;
-	border: 2px solid rgba(0, 0, 0, 0.496);
-	border-radius:8px;
-	font-family: Gilroy;
-	font-size: 18px;
-	line-height: 32px;
-	float:right;
-	color:rgba(0, 0, 0, 0.496);
-}
-.authdesc{
-	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	bottom:0px;
-	margin-top:5px;
-	font-size: 20px;
-	color:rgb(0, 0, 0);
-	position:relative;
-	top:0;
-}
+    .auths {
+      left: 50%;
+      width: 95%;
+      transform: translate(-50%, 0);
+      padding-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      position: relative;
+      border-top: 2px solid var(--bg-opaque-1);
+      z-index: 10000;
+    }
 
-.authimage{
-	width:80px;
-	height:80px;
-	border-radius:8px;
-	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
-	opacity: 1 !important;
-	position:relative;
-	filter:blur(0px) brightness(1) !important;
-}
-	.title {
-		font-size: 50px;
+    .titles {
+      position: relative;
+    }
+
+    time {
+      color: white;
+    }
+
+    .other {
+      left: 5%;
+      width: 50%;
+      margin-top: 50px;
+      font-family: Gilroy;
+      font-size: 50px;
+      position: relative;
+    }
+
+    .mainimg {
+      -webkit-mask-image: url(/img/mask2.svg);
+      mask-image: url(/img/mask2.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+      height: 180px;
+      width: auto;
+      filter: blur(0px);
+      transform: translate(0, 10px);
+      z-index: 10;
+      position: relative;
+    }
+
+    .color {
+      background: #0d6efd;
+      background: AccentColor;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(150%);
+    }
+
+    .authtitle {
+      font-family: Gilroy;
+      font-size: 30px;
+      position: relative;
+      float: left;
+      color: rgb(0, 0, 0);
+    }
+
+    .hold {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .authtitle2 {
+      position: relative;
+      padding: 2px 10px 2px 10px;
+      border: 2px solid var(--color);
+      border-radius: 8px;
+      font-family: Gilroy;
+      font-size: 18px;
+      line-height: 32px;
+      float: right;
+      color: rgba(0, 0, 0, 0.496);
+    }
+    .authdesc {
+      font-family:
+        systemui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      bottom: 0px;
+      margin-top: 5px;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      position: relative;
+      top: 0;
+    }
+
+    .authimage {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
+      opacity: 1 !important;
+      position: relative;
+      filter: blur(0px) brightness(1) !important;
+    }
+    .headtitle {
+      width: 95%;
+      max-width: 1500px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      padding: 80px 30px 80px 30px;
+      border-radius: 18px 18px 8px 8px;
+      margin-bottom: 8px;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+      position: relative;
+    }
+    .title {
+      font-size: 70px;
+      color: black;
+      text-align: left;
+      font-family: Gilroy;
+      z-index: 100;
+    }
+    .last-updated-on {
+      font-style: italic;
+    }
+
+    .postexpand {
+      top: 30px;
+      width: 95%;
+      position: relative;
+      font-family: Cafe;
+      color: white;
+      margin-bottom: 28px;
+      left: 50%;
+      text-align: justify;
+      transform: translate(-50%, 0);
+      overflow: hidden;
+    }
+
+    #heroimg {
+      height: 800px;
+      width: 100%;
+      object-fit: cover;
+      transform: scale(100%);
+      mask-image: linear-gradient(
+        to bottom,
+        rgb(255, 255, 255) 0%,
+        transparent 80%
+      );
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .faded {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: linear-gradient(
+        0deg,
+        rgb(248, 248, 248) 0%,
+        rgba(244, 244, 244, 0) 100%
+      );
+      position: absolute;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      top: 0;
+      height: auto;
+      position: absolute;
+      filter: blur(8px) brightness(0.5);
+    }
+
+    .article-holder {
+      width: 95%;
+      max-width: 1500px;
+      height: auto;
+      left: 50%;
+      top: 0px;
+      perspective: 1px;
+      border: 0px solid var(--border-color);
+      background-color: var(--bg-color-secondary);
+      transform: translate(-50%, 0);
+      border-radius: 8px 8px 18px 18px;
+      overflow: hidden;
+      padding-bottom: 30px;
+      opacity: 0;
+      position: relative;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    article {
+      left: 50%;
+      border-radius: 16px;
+      background-color: rgba(244, 244, 244, 0.602);
+      position: relative;
+    }
+
+    p {
+      font-family: Gilroy;
+      color: white;
+    }
+    h2 {
+    }
+    h3 {
+      font-family: Gilroy;
+    }
+    h4 {
+      font-family: Gilroy;
+    }
+
+    .exit {
+      top: 50px;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      border: 0px solid red;
+      border-radius: 8px;
+      position: absolute;
+      z-index: 1000;
+      transition: 0.2s;
+    }
+
+    .exit:hover {
+      border: 3px solid rgba(255, 0, 0, 0.651);
+      transition: 0.2s;
+    }
+    .close {
+      filter: blur(0px) invert(1);
+      transform: scale(50%);
+    }
+
+    .exit:hover .close {
+      filter: invert(16%) sepia(86%) saturate(7500%) hue-rotate(343deg)
+        brightness(98%) contrast(108%);
+      opacity: 0.7;
+    }
+
+    @keyframes fadeup {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 38px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .title {
+        margin-top: 30px;
+        font-size: 40px;
+      }
+	  .mobileHeadAuth {
 		width:100%;
-		color:black;
-		text-align:center;
-		font-family: Gilroy;
-		z-index: 100;
-	}
-	.last-updated-on {
-		font-style: italic;
-	}
+		display:flex;
+		flex-direction: column;
+	  }
+	  .mobileHeadAuth r {
+		border-radius:8px !important;
+	  }
+    }
 
-	.postexpand{
-		top:350px;
-		width:95%;
-		margin-bottom: 400px;
-		position:relative;
-		font-family: Cafe;
-		color:white;
-		left:50%;
-		text-align: justify;
-		transform: translate(-50%, 0);
-		overflow:hidden;
-	}
+    @media (min-width: 2000px) {
+      main {
+        width: 2000px;
+        left: 50%;
+        top: 10px;
+        transform: translate(-50%, 0);
+        border-radius: 8px;
+        position: relative;
+      }
+    }
 
-	#heroimg{
-		height:800px;
-		width:100%;
-		object-fit: cover;
-		transform: scale(100%);
-		mask-image: linear-gradient(to bottom, rgb(255, 255, 255) 0%, transparent 80%);
-		opacity: 0.5;
-		position:absolute;
-		top:0;
-		left:0;
-		overflow: hidden;
-	}
+    @media only screen and (min-width: 2000px) {
+      .headtitle {
+        top: 150px;
+        margin-bottom: 160px;
+      }
+      .other {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 2000px;
+        position: relative;
+      }
+    }
+  </style>
 
+  <style is:global>
+    #titleData span {
+      opacity: 0;
+      transform: translateY(5px);
+      display: inline-block;
+      animation: fadeUpLetter 0.2s forwards;
+      animation-delay: var(--delay);
+      transition: 0.1s;
+    }
 
-	.faded{
-		bottom: 0;
-		left:0;
-		width:100%;
-		height:100%;
-		z-index: 10;
-		background: linear-gradient(0deg, rgb(248, 248, 248) 0%, rgba(244, 244, 244, 0) 100%);
-		position: absolute;
-	}
-
-	img{
-		width:100%;
-		height:auto;
-		top:0;
-		height:auto;
-		position: absolute;
-		filter:blur(8px) brightness(0.5);
-
-
-	}
-
-	hr{
-		width:0;
-	}
-
-	.article-holder{
-		width:80%;
-		height:auto;
-		left:50%;
-		top:0px;
-		perspective: 1px;
-		border:0px solid var(--border-color);
-		background-color: var(--bg-color-secondary);
-		transform: translate(-50%,0);
-		border-radius:8px;
-		overflow:hidden;
-		padding-bottom:30px;
-		opacity:0;
-		position:relative;
-		animation-name: fadeup;
-		animation-duration:0.5s;
-		animation-fill-mode:forwards;
-	}
-
-	article{
-		left:50%;
-		border-radius:16px;
-		background-color:rgba(244, 244, 244, 0.602);
-		position: relative;
-	}
-
-	p{
-		font-family: Gilroy;
-		color:white;
-	}
-	h2{
-
-	}
-	h3{
-		font-family: Gilroy;
-	}
-	h4{
-		font-family: Gilroy;
-	}
-	.tophold{
-		height:500px;
-		width:100%;
-		left:0;
-		position: absolute;
-		overflow:hidden;
-		z-index:0;
-	}
-
-	.exit{
-		top:50px;
-		right:0;
-		width:50px;
-		height:50px;
-		transform:translate(-50%, -50%);
-		border: 0px solid red;
-		border-radius:8px;
-		position: absolute;
-		z-index: 1000;
-		transition: 0.2s;
-	}
-
-	.exit:hover{
-		border:3px solid rgba(255, 0, 0, 0.651);
-		transition: 0.2s;
-	}
-	.close{
-		filter: blur(0px) invert(1);
-		transform: scale(50%);
-	}
-
-	.exit:hover .close{
-		filter: invert(16%) sepia(86%) saturate(7500%) hue-rotate(343deg) brightness(98%) contrast(108%);
-		opacity:0.7;
-	}
-
-	@keyframes fadeup{
-		0%{
-			opacity:0;
-			transform: translate(-50%, 38px);
-		}
-		100%{
-			opacity:1;
-			transform: translate(-50%, 0px);
-		}
-	}
-
-	@media (max-width:1000px) {
-		.postexpand{
-			top:450px;
-			width:95%;
-			border:0px;
-		}
-		.title{
-			top:40px;
-			font-size: 40px;
-			position:relative;
-		}
-		.tophold {
-			margin-top:50px;
-		}
-
-	.article-holder{
-		width:80%;
-		height:auto;
-		left:50%;
-		top:0px;
-		perspective: 1px;
-		border:2px solid #12121200;
-		background-color: rgba(80, 80, 80, 0);
-		transform: translate(-50%,-130px);
-		border-radius:0px;
-		overflow:visible;
-		padding-bottom:0px;
-		opacity:1;
-		position:relative;
-		animation-name: none;
-	}
-	.removeOther {
-		display:none;
-	}
-		.auths{
-			display:none;
-		}
-		.mainimg{
-			top:20px;
-			position:relative;
-		}
-		.exit{
-			display: none;
-		}
-		.article-holder{
-			top:0px;
-			width: 100%;
-		}
-	}
-
-	@media (min-width:2000px) {
-		main{
-			width:2000px;
-			left:50%;
-			top:10px;
-			transform: translate(-50%, 0);
-			border-radius: 8px;
-			position: relative;
-		}
-	}
-
-		
-	@media only screen and (min-width:2000px) {
-		.article-holder{
-			top:150px;
-			left:50%;
-			transform:translate(-50%, 0);
-			width:2000px;
-			margin-bottom:230px;
-			position:relative;
-		}
-		.other{
-			left:50%;
-			transform:translate(-50%, 0);
-			width:2000px;
-			position:relative;
-		}
-	}
-</style>
+    @keyframes fadeUpLetter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</html>
