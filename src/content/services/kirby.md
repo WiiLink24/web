@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-circle
 description: The food channel, for all your culinary needs!
 heroImage: "kirbytvbanner.png"
+type: "European"
 color: c31bcf60
 ---
 

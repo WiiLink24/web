@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-sun
 description: Check the forecast right on your Wii
 heroImage: "forecastbanner.png"
+type: "WiiConnect24"
 color: 073cb860
 ---
 

@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-film
 description: Watch videos, get information about games, recommend titles, download DS software, and more.
 heroImage: "nintendochannelbanner.png"
+type: "WiiConnect24"
 color: adadad60
 ---
 ### Watch videos, get information about games, recommend titles, download DS software, and more.

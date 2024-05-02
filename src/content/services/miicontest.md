@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-user
 description: Share Miis with the community and enter them in contests.
 heroImage: "miioutbanner.png"
+type: "WiiConnect24"
 color: a0db0b60
 ---
 

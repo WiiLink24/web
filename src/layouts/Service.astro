@@ -11,7 +11,7 @@ import { Trans } from "astro-i18next/components";
 
 const posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
-const { title, description, icon, color, pubDate, updatedDate, heroImage } =
+const { title, description, icon, color, pubDate, type, heroImage } =
   Astro.props;
 ---
 
@@ -60,6 +60,10 @@ const { title, description, icon, color, pubDate, updatedDate, heroImage } =
                       day: "numeric"
                     })
                   }
+                </r>
+                <r
+                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px; font-family:system-ui; position:relative;">
+                  {type}
                 </r>
                 <r
                   style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"

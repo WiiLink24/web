@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-rss-square
 description: Get RSS updates on your Wii!
 heroImage: "rssmii.png"
+type: "Extra"
 color: edaa0e60
 ---
 

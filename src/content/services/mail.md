@@ -3,6 +3,7 @@ title: Wii Message Board
 pubDate: 2024-01-24
 icon: fa-solid fa-envelope
 description: Communicate with other Wiis again!
+type: "WiiConnect24"
 heroImage: "msgbanner.png"
 ---
 

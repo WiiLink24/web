@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-leaf
 description: Get special items delivered to you right on your Wii!
 heroImage: "accf.png"
+type: "Extra"
 color: 4dd14160
 ---
 

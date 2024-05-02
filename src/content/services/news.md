@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-newspaper
 description: Read news on your Wii.
 heroImage: "newsbanner.png"
+type: "WiiConnect24"
 color: 407d0f60
 ---
 

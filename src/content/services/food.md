@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-cutlery
 description: The food channel, for all your culinary needs!
 heroImage: "demaebanner.png"
+type: "Japanese"
 color: d9a41e60
 ---
 The Demae Channel was a Japan-exclusive Channel that allowed you to deliver food to your home

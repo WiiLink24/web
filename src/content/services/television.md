@@ -4,6 +4,7 @@ pubDate: 2024-01-24
 icon: fa-solid fa-television
 description: Get live EPG guides right on your Wii!
 heroImage: "tvnotomobanner.png"
+type: "Japanese"
 color: 1f67db60
 ---
 ### Get live EPG guides right on your Wii!

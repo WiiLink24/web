@@ -45,26 +45,165 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     </div>
 
     <div class="polka-dot"></div>
-    <div class="postholder">
+    <div style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
+      <a href="#wiiconnect24">
+      <div class="link bg-1" style="border-radius:16px 4px 4px 16px">
+        <i class="fa-solid fa-globe"></i> WiiConnect24
+      </div>
+    </a>
+    <a href="#japanese">
+      <div class="link bg-2">
+        <i class="fa-solid fa-earth-asia"></i> Japanese
+      </div>
+    </a>
+      <a href="#european">
+      <div class="link bg-3">
+        <i class="fa-solid fa-earth-europe"></i> European
+      </div>
+    </a>
+      <a href="#extra">
+      <div class="link bg-4" style="border-radius:4px 16px 16px 4px">
+        <i class="fa-solid fa-box-open"></i> Extra
+      </div>
+    </a>
+    </div>
+    <div class="line-container bg-1" id="wiiconnect24">
+      <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
+        <i class="fa-solid fa-globe"></i> <b style="font-family:Gilroy;">WiiConnect24</b> services
+      </h2>
+      <div
+        class="horizontal-line"
+        style="transform:translate(0, 0); opacity:0.5;">
+      </div>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Services powered by the WiiConnect24 service, revived by us!</p>
+    </div>
+    <div
+      class="postholder">
       {
-        posts.map((post, index) => (
-          <div
-            class="posthold"
-            style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-            <div class="post">
-              <a href={`/services/${post.slug}/`}>
-                <img class="heroImage" src={post.data.heroImage} />
-                <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                  <div class="title">
-                    <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                    {post.data.title}
+        posts
+          .filter(post => post.data.type === "WiiConnect24")
+          .map((post, index) => (
+            <div
+              class="posthold"
+              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+              <div class="post">
+                <a href={`/services/${post.slug}/`}>
+                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                    <div class="title">
+                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                      {post.data.title}
+                    </div>
+                    <div class="desc">{post.data.description}</div>
                   </div>
-                  <div class="desc">{post.data.description}</div>
-                </div>
-              </a>
+                </a>
+              </div>
             </div>
-          </div>
-        ))
+          ))
+      }
+    </div>
+
+    <div class="line-container bg-2" id="japanese">
+      <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
+        <i class="fa-solid fa-earth-asia"></i> <b style="font-family:Gilroy;">Japanese exclusive</b> services
+      </h2>
+      <div
+        class="horizontal-line"
+        style="transform:translate(0, 0); opacity:0.5;">
+      </div>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Japanese services localized and enhanced for the West!</p>
+    </div>
+    <div
+      class="postholder">
+      {
+        posts
+          .filter(post => post.data.type === "Japanese")
+          .map((post, index) => (
+            <div
+              class="posthold"
+              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+              <div class="post">
+                <a href={`/services/${post.slug}/`}>
+                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                    <div class="title">
+                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                      {post.data.title}
+                    </div>
+                    <div class="desc">{post.data.description}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          ))
+      }
+    </div>
+
+    <div class="line-container bg-3" id="european">
+      <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
+        <i class="fa-solid fa-earth-europe"></i> <b style="font-family:Gilroy;">European exclusive</b> services
+      </h2>
+      <div
+        class="horizontal-line"
+        style="transform:translate(0, 0); opacity:0.5;">
+      </div>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Europe-only services brought worldwide!</p>
+    </div>
+    <div
+      class="postholder">
+      {
+        posts
+          .filter(post => post.data.type === "European")
+          .map((post, index) => (
+            <div
+              class="posthold"
+              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+              <div class="post">
+                <a href={`/services/${post.slug}/`}>
+                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                    <div class="title">
+                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                      {post.data.title}
+                    </div>
+                    <div class="desc">{post.data.description}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          ))
+      }
+    </div>
+    
+    <div class="line-container bg-4" id="extra">
+      <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
+        <i class="fa-solid fa-box-open"></i> <b style="font-family:Gilroy;">Extra</b> services
+      </h2>
+      <div
+        class="horizontal-line"
+        style="transform:translate(0, 0); opacity:0.5;">
+      </div>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Nifty extra stuff we offer to enhance your experience!</p>
+    </div>
+    <div
+      class="postholder">
+      {
+        posts
+          .filter(post => post.data.type === "Extra")
+          .map((post, index) => (
+            <div
+              class="posthold"
+              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+              <div class="post">
+                <a href={`/services/${post.slug}/`}>
+                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                    <div class="title">
+                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                      {post.data.title}
+                    </div>
+                    <div class="desc">{post.data.description}</div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          ))
       }
     </div>
 
@@ -173,6 +312,72 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     position: absolute;
   }
 
+  .line-container {
+    margin-top:30px;
+    width: 90%;
+    max-width: 1500px;
+    left: 50%;
+    padding:20px;
+    border-radius:16px 16px 4px 4px;
+    transform: translate(-50%, 20px);
+    display: flex;
+    flex-wrap: wrap;
+    gap:28px;
+    align-items: center;
+    position: relative;
+  }
+
+  .line-container .horizontal-line {
+    flex-grow: 1;
+    height: 2px;
+    background-color: var(--color);
+    opacity: 0.5;
+    margin-left: 10px;
+    transform: translate(0, -5px);
+  }
+
+  .bg-1 {
+opacity: 0.8;
+background-color: #28c5fa;
+background-image:  linear-gradient(135deg, #444cf710 25%, transparent 25%), linear-gradient(225deg, #444cf710 25%, transparent 25%), linear-gradient(45deg, #444cf710 25%, transparent 25%), linear-gradient(315deg, #444cf710 25%, #e5e5f700 25%);
+background-position:  40px 0, 40px 0, 0 0, 0 0;
+background-size: 80px 80px;
+background-repeat: repeat;
+  }
+
+  .bg-2 {
+opacity: 0.8;
+background-color: #ff6f6f;
+background-image: radial-gradient(#fa282860 4px, #e5e5f700 4px);
+background-size: 40px 40px;
+  }
+
+  .bg-3 {
+opacity: 0.8;
+background-color: #f56fff;
+background: repeating-linear-gradient( -45deg, #f245f760, #f245f760 10px, #f667ff60 5px, #f667ff60 25px );
+  }
+
+  .bg-4 {
+opacity: 0.8;
+background-color: #96ff7f60;
+background-image:  linear-gradient(135deg, #45f76f20 25%, transparent 25%), linear-gradient(225deg, #45f76f20 25%, transparent 25%), linear-gradient(45deg, #45f76f20 25%, transparent 25%), linear-gradient(315deg, #45f76f20 25%, #e5e5f700 25%);
+background-position:  80px 0, 80px 0, 0 0, 0 0;
+background-size: 80px 80px;
+background-repeat: repeat;
+  }
+
+  .link {
+    border-radius:4px;
+    padding:16px 32px;
+    transition:0.2s;
+  }
+
+  .link:hover {
+    transform:scale(1.02);
+    transition:0.2s;
+  }
+
   .downmargin {
     width: 100%;
     height: 500px;
@@ -226,12 +431,17 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 
   .postholder {
     width: 90%;
+    max-width: 1500px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     position: absolute;
+    background-color: var(--bg-color-secondary);
     gap: 20px;
-    top: 40px;
+    top: 25px;
     left: 50%;
+    padding:30px;
+    margin-bottom:50px;
+    border-radius:4px 4px 16px 16px;
     transform: translate(-50%, 0);
     position: relative;
     padding-bottom: 130px;
@@ -242,13 +452,12 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     position: relative;
     height: 200px;
     width: 100%;
-    background-color: var(--bg-color-secondary);
+    background-color: var(--bg-color);
     border-radius: 8px;
     font-family: Gilroy;
     display: inline-block;
     hyphens: auto;
     overflow: hidden;
-    transition: 0.5s;
   }
 
   .post:hover:before {
@@ -280,10 +489,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     color: black;
   }
 
-  .post:hover {
-    box-shadow: 0px 5px 20px var(--shadow-color);
-    transition: 0.5s;
-  }
   .heroImage {
     width: 100%;
     height: 100%;
@@ -309,7 +514,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     font-size: max(20px, 30px);
     text-align: right;
     margin-bottom: 15px;
-    margin-left:40px;
+    margin-left: 40px;
     line-height: 30px;
     font-family: Gilroy;
     transition: 0.5s;
@@ -336,7 +541,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     font-size: 20px;
     text-align: right;
     transition: 0.5s;
-    margin-left:40px;
+    margin-left: 40px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
