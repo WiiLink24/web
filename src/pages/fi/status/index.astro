@@ -128,14 +128,14 @@ changeLanguage("fi");
           "</h3></div></a>";
         if (
           data.services.service[i].status == "Completed" ||
-          data.services.service[i].status == "Full Release"
+          data.services.service[i].status == "Täysi Julkaisu"
         ) {
           document.getElementsByClassName("stat")[i].style.backgroundColor =
             "var(--bs-green)";
         } else if (
           data.services.service[i].status == "In development" ||
           data.services.service[i].status == "Public Beta" ||
-          data.services.service[i].status == "Private Beta"
+          data.services.service[i].status == "Yksityinen Beta"
         ) {
           document.getElementsByClassName("stat")[i].style.backgroundColor =
             "var(--bs-blue)";
