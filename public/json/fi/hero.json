@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Party on like it's 2006!",
+    "Did you know you can connect your Wii console to the Internet?",
+    "As seen on Scott The Woz!",
+    "The Return of the Legendary WiiConnect24",
+    "Rediscover your Wii",
+    "Link back to Nintendo's golden age",
+    "Get Connected back to the Wii's past once again!",
+    "Wii Play. Do you?",
+    "You can do more with a Wii than just losing in Mario Kart!",
+    "The realest wii network revival service",
+    "Play as if you were back in your childhood!",
+    "Wii would like to play, again",
+    "Your childhood memories, connected to our servers",
+    "WiiLink, Wii Software beyond things",
+    "Fans do what Nintendon't",
+    "WiiLink definitely gives the 2006 vibes!",
+    "Linking the world, one Wii at a time",
+    "One of Nintendo's biggest steps in multiplayer gaming, Revived!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Forecast -kanava",
+        "desc": "Katso ajankohtaisia sääennusteita eri puolilta maailmaa",
+        "link": "/fi/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "News -kanava",
+        "desc": "Pysy ajantasalla uusimmista uutisista eri puolilta maailmaa",
+        "link": "/fi/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Nintendo -kanava",
+        "desc": "Katso trailereita, lue arvosteluita ja lataa demoja DS peleistä",
+        "link": "/fi/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Mii Contest -kanava",
+        "desc": "Osallistu kilpailuihin ja äänestä sinun suosikki Mii:täsi",
+        "link": "/fi/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Everybody Votes -kanava",
+        "desc": "Vastaa äänestyksiin ja katso miten mielipiteesi eroaa muiden mielipiteistä",
+        "link": "/fi/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Food -kanava",
+        "desc": "Tilaa eri tyyppisiä ruoka-annoksia suoraan kotoa Wii konsolillasi",
+        "link": "/fi/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV Guide -kanava",
+        "desc": "Tutustu TV aikatauluihin ja katso trailereita tulevista sarjoista",
+        "link": "/fi/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV -kanava",
+        "desc": "Katso Kirby: Right Back at Ya! TV-sarjan jaksoja",
+        "link": "/fi/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints -kanava",
+        "desc": "Tilaa tulosteita sinun lempi kuvistasi suoraan Wii konsolillasi",
+        "link": "/fi/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Tutustu sarjoihin ja tilausvideosisältöön uudemmalla tavalla",
+        "link": "/fi/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}
