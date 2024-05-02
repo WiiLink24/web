@@ -67,7 +67,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       </div>
     </a>
     </div>
-    <div class="line-container bg-1" id="wiiconnect24">
+    <div class="line-container bg-1" id="wiiconnect24" onclick="toggle2('wc24', 'wiiconnect24');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
         <i class="fa-solid fa-globe"></i> <b style="font-family:Gilroy;">WiiConnect24</b> services
       </h2>
@@ -78,31 +78,34 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Services powered by the WiiConnect24 service, revived by us!</p>
     </div>
     <div
-      class="postholder">
+      class="postholder" id="wc24">
       {
         posts
           .filter(post => post.data.type === "WiiConnect24")
-          .map((post, index) => (
-            <div
-              class="posthold"
-              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-              <div class="post">
-                <a href={`/services/${post.slug}/`}>
-                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                    <div class="title">
-                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                      {post.data.title}
+          .map((post, index) => {
+            const color = post.data.color;
+            return (
+              <div
+                class="posthold"
+                style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+                <div class="post post-1" style={`--before-color: #${color};`}>
+                  <a href={`/services/${post.slug}/`}>
+                    <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                      <div class="title">
+                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                        {post.data.title}
+                      </div>
+                      <div class="desc">{post.data.description}</div>
                     </div>
-                    <div class="desc">{post.data.description}</div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
       }
     </div>
 
-    <div class="line-container bg-2" id="japanese">
+    <div class="line-container bg-2" id="japanese" onclick="toggle2('jp', 'japanese');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
         <i class="fa-solid fa-earth-asia"></i> <b style="font-family:Gilroy;">Japanese exclusive</b> services
       </h2>
@@ -113,31 +116,34 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Japanese services localized and enhanced for the West!</p>
     </div>
     <div
-      class="postholder">
+      class="postholder" id="jp">
       {
         posts
           .filter(post => post.data.type === "Japanese")
-          .map((post, index) => (
-            <div
-              class="posthold"
-              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-              <div class="post">
-                <a href={`/services/${post.slug}/`}>
-                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                    <div class="title">
-                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                      {post.data.title}
+          .map((post, index) => {
+            const color = post.data.color;
+            return (
+              <div
+                class="posthold"
+                style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+                <div class="post post-2" style={`--before-color: #${color};`}>
+                  <a href={`/services/${post.slug}/`}>
+                    <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                      <div class="title">
+                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                        {post.data.title}
+                      </div>
+                      <div class="desc">{post.data.description}</div>
                     </div>
-                    <div class="desc">{post.data.description}</div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
       }
     </div>
 
-    <div class="line-container bg-3" id="european">
+    <div class="line-container bg-3" id="european" onclick="toggle2('eu', 'european');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
         <i class="fa-solid fa-earth-europe"></i> <b style="font-family:Gilroy;">European exclusive</b> services
       </h2>
@@ -145,34 +151,37 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
         class="horizontal-line"
         style="transform:translate(0, 0); opacity:0.5;">
       </div>
-      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Europe-only services brought worldwide!</p>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Europe-only services brought worldwide for you to enjoy!</p>
     </div>
     <div
-      class="postholder">
+      class="postholder" id="eu">
       {
         posts
           .filter(post => post.data.type === "European")
-          .map((post, index) => (
-            <div
-              class="posthold"
-              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-              <div class="post">
-                <a href={`/services/${post.slug}/`}>
-                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                    <div class="title">
-                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                      {post.data.title}
+          .map((post, index) => {
+            const color = post.data.color;
+            return (
+              <div
+                class="posthold"
+                style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+                <div class="post post-3" style={`--before-color: #${color};`}>
+                  <a href={`/services/${post.slug}/`}>
+                    <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                      <div class="title">
+                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                        {post.data.title}
+                      </div>
+                      <div class="desc">{post.data.description}</div>
                     </div>
-                    <div class="desc">{post.data.description}</div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
       }
     </div>
     
-    <div class="line-container bg-4" id="extra">
+    <div class="line-container bg-4" id="extra" onclick="toggle2('ex', 'extra');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
         <i class="fa-solid fa-box-open"></i> <b style="font-family:Gilroy;">Extra</b> services
       </h2>
@@ -183,27 +192,30 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Nifty extra stuff we offer to enhance your experience!</p>
     </div>
     <div
-      class="postholder">
+      class="postholder" id="ex">
       {
         posts
           .filter(post => post.data.type === "Extra")
-          .map((post, index) => (
-            <div
-              class="posthold"
-              style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-              <div class="post">
-                <a href={`/services/${post.slug}/`}>
-                  <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                    <div class="title">
-                      <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                      {post.data.title}
+          .map((post, index) => {
+            const color = post.data.color;
+            return (
+              <div
+                class="posthold"
+                style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+                <div class="post post-4" style={`--before-color: #${color};`}>
+                  <a href={`/services/${post.slug}/`}>
+                    <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
+                      <div class="title">
+                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                        {post.data.title}
+                      </div>
+                      <div class="desc">{post.data.description}</div>
                     </div>
-                    <div class="desc">{post.data.description}</div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))
+            );
+          })
       }
     </div>
 
@@ -236,21 +248,20 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 
 <Footer />
 
-<script>
-  const scrollableDiv = document.getElementById("square2");
-
-  scrollableDiv.addEventListener("scroll", function () {
-    // Check if the user has scrolled to the bottom
-    if (
-      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-      scrollableDiv.clientHeight + 30
-    ) {
-      // User has scrolled to the end
-      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-    } else {
-      scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+<script is:inline>
+    function toggle2(id, origin) {
+      var x = document.getElementById(id);
+      var y = document.getElementById(origin);
+      console.log(x);
+      console.log(y);
+      if (x.style.display === "none") {
+        x.style.display = "grid";
+        y.classList.remove("fullRound");
+      } else {
+        x.style.display = "none";
+        y.classList.add("fullRound");
+      }
     }
-  });
 </script>
 
 <style>
@@ -320,6 +331,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     padding:20px;
     border-radius:16px 16px 4px 4px;
     transform: translate(-50%, 20px);
+    cursor: pointer;
     display: flex;
     flex-wrap: wrap;
     gap:28px;
@@ -374,7 +386,8 @@ background-repeat: repeat;
   }
 
   .link:hover {
-    transform:scale(1.02);
+    transform:translate(0, -5px);
+    border-radius:16px !important;
     transition:0.2s;
   }
 
@@ -458,11 +471,24 @@ background-repeat: repeat;
     display: inline-block;
     hyphens: auto;
     overflow: hidden;
+    transition: 0.2s;
+  }
+
+  .post:hover {
+    transform:translate(0, -5px);
+    border-radius:23px;
+    background-color: var(--before-color);
+    transition:0.2s;
+  }
+
+  .post:active {
+    transform:scale(0.98);
+    transition:0.2s;
   }
 
   .post:hover:before {
-    box-shadow: inset 0 0 0px 3px var(--bg-opaque-2);
-    border-radius: 8px;
+    box-shadow: inset 0 0 0px 3px var(--before-color);
+    border-radius: 23px;
     border: solid 0px transparent;
     transition: 0.2s;
   }
@@ -652,5 +678,12 @@ background-repeat: repeat;
       margin-bottom: 80px;
       position: relative;
     }
+  }
+</style>
+
+<style is:global>
+  .fullRound {
+    border-radius: 16px !important;
+    transition: 0.2s;
   }
 </style>
