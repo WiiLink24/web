@@ -45,7 +45,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     </div>
 
     <div class="polka-dot"></div>
-    <div style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
+    <div class="mobileselect" style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
       <a href="#wiiconnect24">
       <div class="link bg-1" style="border-radius:16px 4px 4px 16px">
         <i class="fa-solid fa-globe"></i> WiiConnect24
@@ -603,16 +603,36 @@ background-repeat: repeat;
       flex-direction: column;
       flex-wrap: wrap;
       gap: 10px;
-      top: 20px;
-      padding-bottom: 0px;
+      top: 25px;
+      padding:8px;
       overflow: visible;
       position: relative;
       z-index: 10;
     }
 
+    .line-container {
+      width:95%;
+    }
+
+
+
+    .bg-1 {
+      border-radius:16px 16px 4px 4px !important;
+    }
+
+    .bg-4 {
+      border-radius:4px 4px 16px 16px !important;
+    }
+
     .post {
       margin-bottom: 0;
       height: 200px;
+    }
+
+    .mobileselect {
+      width:95% !important;
+      display:flex !important;
+      flex-direction:column;
     }
 
     .newstop {
