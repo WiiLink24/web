@@ -74,13 +74,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
         ))
       }
     </div>
-
-    <h2 class="subtitle">
-      <Trans i18nKey="guide.specificGuides">
-        What are you <b class="color">looking for</b>?
-      </Trans>
-    </h2>
-
     <div class="postholdermini">
       <div class="polka-dot"></div>
       {
@@ -411,8 +404,11 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    position: absolute;
+    padding:28px;
+    background-color: var(--bg-color-secondary);
+    border-radius: 16px;
     gap: 20px;
+    top:0px;
     left: 50%;
     transform: translate(-50%, 0px);
     position: relative;
@@ -447,7 +443,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
-    border: 2px solid var(--border-color);
+    border: 3px solid var(--border-color);
     transition: 0.5s;
     display: none;
   }
@@ -752,6 +748,9 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     }
 
     .postholdermini {
+      padding:0px;
+      top:50px;
+      border-radius:0px;
       width: 100%;
       gap: 5px;
       overflow: hidden;
