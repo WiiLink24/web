@@ -337,6 +337,18 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     gap:28px;
     align-items: center;
     position: relative;
+    transition:0.2s;
+  }
+
+  .line-container:hover {
+    transform: translate(-50%, 20px) scale(1.01);
+    border-radius:16px !important;
+    transition:0.2s;
+  }
+  
+  .line-container:active {
+    transform: translate(-50%, 20px) scale(0.98);
+    transition:0.2s;
   }
 
   .line-container .horizontal-line {
