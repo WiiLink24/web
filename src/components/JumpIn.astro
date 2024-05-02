@@ -13,14 +13,14 @@ import { Trans } from "astro-i18next/components";
   </h1>
   <h2>{t("jumpin.slogan")}</h2>
   <div
-    style="display:flex; flex-wrap:wrap; gap:8px; align-items: center; justify-content: center;">
+    style="display:flex; flex-wrap:wrap; gap:4px; align-items: center; justify-content: center;">
     <a href="#top"
-      ><button type="button" class="btn btn-success btn-lg"
+      ><button type="button" class="btn btn-lg" style="background-color:AccentColor; border-radius:8px 4px 4px 8px;"
         >{t("jumpin.install")}</button
       ></a
     >
     <a href="https://wfc.wiilink24.com"
-      ><button type="button" class="btn btn-dark btn-lg"
+      ><button type="button" class="btn btn-dark btn-lg" style="border-radius:4px 8px 8px 4px;"
         >{t("site.wfcPrompt")}</button
       ></a
     >
@@ -97,6 +97,7 @@ import { Trans } from "astro-i18next/components";
 
   .color {
     background: url("/img/header_bg.png");
+    background: AccentColor;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: brightness(150%);

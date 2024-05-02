@@ -188,10 +188,6 @@ const { title, description, image } = Astro.props;
   html.dark .newstop {
     filter: opacity(0.1) invert(1);
   }
-  html.dark .bottomleftcorner,
-  html.dark .square {
-    animation: changecolordark 10s linear infinite;
-  }
 
   :root {
     --accent: 136, 58, 234;
@@ -231,25 +227,25 @@ const { title, description, image } = Astro.props;
   }
   .toc-post:before {
     font-family: Gilroy;
-    left: -2px;
-    top: -43px;
-    width: calc(100% + 4px);
+    top: 0px;
+    width: 100%;
     font-size: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
-    background-color: rgba(101, 101, 101, 0.184);
-    border: 2px solid rgba(128, 128, 128, 0.168);
+    background-color: var(--bg-color-tertiary);
     border-bottom: 0px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     content: "\00a0 \00a0 \00a0 \00a0 \00a0 \00a0 Table of Contents";
-    position: absolute;
+    display: block;
+    position: sticky;
   }
   .toc-post {
-    top: 43px;
+    top: 0px;
     right: 0;
     width: 100%;
-    padding: 10px;
+    max-height:400px;
+    padding: 0px;
     font-family:
       inter,
       -apple-system,
@@ -262,14 +258,22 @@ const { title, description, image } = Astro.props;
       "Open Sans",
       "Helvetica Neue",
       sans-serif;
-    background-color: rgba(88, 88, 88, 0.096);
-    border: 2px solid rgba(128, 128, 128, 0.168);
-    border-top: 0px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    backdrop-filter: blur(8px);
+    background-color: var(--bg-color-secondary);
+    border-radius: 8px 8px 4px 4px;
     z-index: 1;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x:hidden;
+    overflow-y: scroll;
     position: relative;
+  }
+  .toc-post::-webkit-scrollbar {
+      display: none;
+    }
+
+  .toc-post ol:nth-child(1) {
+    margin-top:8px;
+    padding-right:10px;
   }
   .toc-link {
     color: rgb(38, 38, 38);
@@ -286,6 +290,11 @@ const { title, description, image } = Astro.props;
   .service:hover {
     transform: scale(105%);
     transition: 0.3s;
+  }
+
+  .service:active {
+    transform:scale(1.03);
+    transition:0.2s;
   }
 
   .header {
@@ -339,7 +348,7 @@ const { title, description, image } = Astro.props;
     padding: 4px 6px;
     background-color: rgba(97, 97, 97, 0.148);
     color: var(--color);
-    border-radius: 4px;
+    border-radius: 12px;
   }
 
   .toc-item::marker {
@@ -350,15 +359,17 @@ const { title, description, image } = Astro.props;
     height: auto;
     padding: 18px;
     margin-bottom: 0px;
-    border-radius: 4px;
+    border-radius: 12px;
     color: rgb(255, 255, 255);
     display: inline-block;
     position: relative;
   }
+  .notice a {
+    color:white !important;
+  }
   .warn {
     background-color: rgba(182, 197, 14, 0.6);
     color: white;
-    border: 0px solid rgb(182, 197, 14);
   }
   .warn a {
     color: white;
@@ -378,7 +389,6 @@ const { title, description, image } = Astro.props;
   .danger {
     background-color: rgba(197, 14, 14, 0.6);
     color: white;
-    border: 0px solid rgb(197, 14, 14);
   }
   .danger::before {
     margin-left: 5px;
@@ -395,7 +405,6 @@ const { title, description, image } = Astro.props;
   .success {
     background-color: rgba(10, 190, 40, 0.6);
     color: white;
-    border: 0px solid rgb(10, 190, 40);
   }
   .success::before {
     margin-left: 5px;
@@ -412,27 +421,26 @@ const { title, description, image } = Astro.props;
   .info {
     background-color: rgba(14, 124, 197, 0.6);
     color: white;
-    border: 0px solid rgb(14, 124, 197);
   }
   .info code {
     background-color: rgba(14, 124, 197, 0.6);
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
   }
   .warn code {
     background-color: rgba(182, 197, 14, 0.6);
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
   }
   .danger code {
     background-color: rgba(197, 14, 14, 0.6);
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
   }
   .success code {
     background-color: rgba(10, 190, 40, 0.6);
     color: white;
-    border-radius: 4px;
+    border-radius: 12px;
   }
   .info::before {
     margin-left: 5px;
@@ -447,8 +455,7 @@ const { title, description, image } = Astro.props;
     content: "\f059";
   }
   .generic {
-    background-color: rgba(97, 97, 97, 0.062);
-    border: 0px solid rgb(64, 64, 64);
+    background-color: rgba(97, 97, 97, 0.382);
   }
   .generic::before {
     margin-left: 5px;
@@ -471,6 +478,15 @@ const { title, description, image } = Astro.props;
   .center {
     text-align: center;
     padding: 10px;
+  }
+
+  .goog-te-combo {
+    width:100%;
+    border: 0px;
+    padding: 15px 5px;
+    border-radius:4px 4px 8px 8px;
+    background-color: var(--bg-color-tertiary);
+    color: var(--color);
   }
 
   img[alt="img"] {
@@ -662,7 +678,7 @@ const { title, description, image } = Astro.props;
   }
   pre {
     padding: 1.5em;
-    border-radius: 4px;
+    border-radius: 12px;
   }
   pre > code {
     all: unset;
@@ -673,7 +689,7 @@ const { title, description, image } = Astro.props;
     padding: 15px;
     padding-bottom: 3px;
     margin: 5px;
-    border-radius: 4px;
+    border-radius: 12px;
     position: relative;
   }
   hr {

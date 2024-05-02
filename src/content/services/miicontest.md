@@ -3,7 +3,9 @@ title: Check Mii Out Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-user
 description: Share Miis with the community and enter them in contests.
-heroImage: "https://i.ytimg.com/vi/nAzSMtIt4_Q/maxresdefault.jpg"
+heroImage: "miioutbanner.png"
+type: "WiiConnect24"
+color: a0db0b60
 ---
 
 ### Share Miis with the community and enter them in contests.

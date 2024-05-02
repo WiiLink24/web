@@ -13,7 +13,7 @@ import { Trans } from "astro-i18next/components";
   class="badge"
   id="siteVer"
   style="background-color:var(--bg-color-secondary); color:var(--color); font-size:20px; opacity:0; transition:0.2; position:absolute;"
-  >2.3.1</span
+  >2.4.3</span
 >
 <div class="holder">
   <div class="left">
@@ -31,18 +31,15 @@ import { Trans } from "astro-i18next/components";
         scrollamount="1"
         scrolldelay="20"
         truespeed
-        class="badge notice-mobile bg-danger"
-        style="font-size: 18px; background: linear-gradient(-120deg, rgba(255,0,0,0.6) 0%, rgba(255,154,0,0.6) 10%, rgba(208,222,33,0.6) 20%, rgba(79,220,74,0.6) 30%, rgba(63,218,216,0.6) 40%, rgba(47,201,226,0.6) 50%, rgba(28,127,238,0.6) 60%, rgba(95,21,242,0.6) 70%, rgba(186,12,248,0.6) 80%, rgba(251,7,217,0.6) 90%, rgba(255,0,0,0.6) 100%); text-align: left;margin: 10px 0px;padding: 15px;font-weight: 500; white-space: wrap; line-height: 25px; display:none;"
-        ><i class="fa fa-rainbow" aria-hidden="true"></i> Live and love freely, <b
-          >happy pride month</b
-        >!</marquee
+        class="badge notice-mobile"
+        style="font-size: 18px; text-align: left; background-color: var(--bg-opaque-1); border: 1px solid var(--border-color); color: var(--color); margin: 10px 0px;padding: 15px;font-weight: 500; white-space: wrap; line-height: 25px; display:none;"
+        ><i class="fa fa-user" aria-hidden="true"></i> New contests for the Check Mii Out Channel: <b>Pim</b> from Smiling Friends and <b>Lebron James</b>!</marquee
       >
     </div>
     <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
     <p style="font-size:20px; opacity:0.7;">
       {t("site.heroDesc")}
     </p>
-    <br />
     <div class="line-container">
       <p style="opacity:0.5;">
         <i class="fa fa-circle-info" style="margin-right:5px;"></i>
@@ -63,7 +60,7 @@ import { Trans } from "astro-i18next/components";
           id="download-btn"
           onclick="downloadPatcher();"
           class="btn btn-primary btn-lg"
-          style="text-align:left; color:white !important; margin-right:2px; font-size:18px;"
+          style="text-align:left; color:white !important; background-color:AccentColor; border:1px solid AccentColor; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
@@ -75,7 +72,7 @@ import { Trans } from "astro-i18next/components";
           id="extra-btn-2"
           type="button"
           class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
-          style="color:white !important;"
+          style="color:white !important; background-color:AccentColor; border:1px solid AccentColor; border-radius:4px 12px 12px 4px;"
           data-bs-toggle="dropdown"
           aria-expanded="false">
           <span class="visually-hidden">Toggle Dropdown</span>
@@ -108,8 +105,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" id="download-macos-arm">Apple Silicon</a>
-              <a class="dropdown-item" id="download-macos-x64">64bit</a>
+              <a class="dropdown-item" style="color:var(--color) !important;" id="download-macos-arm">Apple Silicon</a>
+              <a class="dropdown-item" style="color:var(--color) !important;" id="download-macos-x64">64bit</a>
             </div>
           </li>
           <li>
@@ -127,8 +124,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" id="download-linux-arm">ARM64</a>
-              <a class="dropdown-item" id="download-linux-x64">64bit</a>
+              <a class="dropdown-item" style="color:var(--color) !important;" id="download-linux-arm">ARM64</a>
+              <a class="dropdown-item" style="color:var(--color) !important;" id="download-linux-x64">64bit</a>
             </div>
           </li>
           <div class="line-container" style="gap: 8px; margin-top: 8px;">
@@ -165,6 +162,7 @@ import { Trans } from "astro-i18next/components";
             <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
+              style="color:var(--color) !important;"
               ><i class="fa fa-book" style="margin-right:5px;"></i>
               {t("site.changelog")}</a
             >
@@ -173,8 +171,8 @@ import { Trans } from "astro-i18next/components";
       </div>
 
       <button
-        class="btn btn-outline-primary btn-lg"
-        style="padding-top:11px; padding-bottom:11px; font-size:18px;"
+        class="btn btn-prmiary guidebtn btn-lg"
+        style="padding-top:11px; padding-bottom:11px; border:1px solid #0d6efd; border:1px solid AccentColor; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
         <i
           class="fa-solid fa-arrow-up fa-rotate-by"
@@ -393,7 +391,7 @@ import { Trans } from "astro-i18next/components";
           let html = "";
           randomServices.forEach((service, index) => {
             html += `
-            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:8px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
+            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
               <img src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
               <div style="z-index: 1; position:relative;">
                 <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
@@ -505,6 +503,18 @@ import { Trans } from "astro-i18next/components";
       gap: 10px;
     }
 
+    a:hover {
+      color: white !important;
+      color:AccentColor !important;
+    }
+
+    .form-check-input:checked {
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      background-color: AccentColor;
+      border-color: AccentColor;
+    }
+
     .btn-group {
       display: grid;
       grid-template-columns: 8fr 1fr;
@@ -546,7 +556,7 @@ import { Trans } from "astro-i18next/components";
       width: 100%;
       padding: 8px !important;
       background-color: var(--bg-color-secondary);
-      border-radius: 8px;
+      border-radius: 12px;
     }
 
     .dropdown-item {
@@ -605,6 +615,12 @@ import { Trans } from "astro-i18next/components";
       transition: 0.2s;
     }
 
+    .guidebtn:hover {
+      background-color: #0d6efd;
+      background-color: AccentColor;
+      color: white !important;
+    }
+
     .bar-holder {
       width: 150px;
       height: 10px;
@@ -616,7 +632,9 @@ import { Trans } from "astro-i18next/components";
     .bar {
       width: 50%;
       height: 100%;
-      background-color: var(--bg-opaque-2);
+      background-color: var(--color);
+      background-color: AccentColor;
+      opacity:0.3;
       border-radius: 80px;
       animation: bar 1s infinite;
       overflow: hidden;
@@ -737,8 +755,16 @@ import { Trans } from "astro-i18next/components";
         display: none;
       }
       .element {
-        background-color: var(--bg-color-tertiary);
+        background-color: var(--bg-opaque-1);
+        border: 1px solid var(--border-color);
       }
     }
   </style>
+
+<style is:global>
+ #tagline  span:hover {
+    color: #0d6efd !important;
+    color:AccentColor !important;
+  }
+</style>
 </div>

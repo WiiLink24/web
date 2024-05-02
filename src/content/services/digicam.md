@@ -1,9 +1,11 @@
 ---
-title: Digicam
+title: Photo Prints Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-camera
 description: Get up-to-date instructions on how to install all of our services!
-heroImage: "https://nindb.net/wii/digicam-print-channel/img/screenshot.png"
+heroImage: "digicambanner.png"
+type: "Japanese"
+color: 6099d160
 ---
 
 The Digicam Print Channel was a Japan-exclusive Channel that let you take pictures from the Photo

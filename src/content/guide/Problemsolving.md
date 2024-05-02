@@ -8,10 +8,9 @@ heroImage: "../../img/guidebg-3.png"
 
 ### Get some info on common errors!
 
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <script src="https://www.w3schools.com/lib/w3.js"></script>
 
-<input oninput="w3.filterHTML('#error-codes', 'div', this.value); displayErrorMessage()" placeholder="&#xF002; Search for your error here..." style="font-family:inter, FontAwesome">
+<input oninput="w3.filterHTML('#error-codes', 'div', this.value); displayErrorMessage()" placeholder="&#xF002; Search for your error here..." style="background-color: var(--bg-opaque-1); color: var(--color); border:2px solid var(--border-color); font-family:inter, FontAwesome; padding: 13px 10px;">
 
 </br>
 </br>
@@ -29,6 +28,16 @@ heroImage: "../../img/guidebg-3.png"
 <div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support</a> if you continue to experience issues.</h4><hr></div>
 
 <div class="error">Error Code: 51330 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your Internet Connection to your Wii is working by doing a Connection Test. if it's Successful, run the Patcher again. If it Fails, Use a different Internet Connection.</h4><hr></div>
+
+<div class="error">Error: 109139 <span class="badge bg-warning">Any Channel</span>
+     <h4>WiiConnect24 service isn’t activated on your console. Go to Wii Settings → WiiConnect24 and agree to it’s terms
+          of use. If it reports that “WiiConnect24 and Wii Shop Channel service is not currently being offered”, try
+          changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you
+          may attempt to switch back to your actual country, though it may not be supported in all
+          regions.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24
+          settings and in Priiloader (if you use it) and “Parental Controls” are turned off.</h4>
+     <hr>
+</div>
 
 <div class="error">Error Code: 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 

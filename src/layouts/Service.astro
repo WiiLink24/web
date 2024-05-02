@@ -11,7 +11,7 @@ import { Trans } from "astro-i18next/components";
 
 const posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
-const { title, description, icon, pubDate, updatedDate, heroImage } =
+const { title, description, icon, color, pubDate, type, heroImage } =
   Astro.props;
 ---
 
@@ -24,14 +24,75 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   <Header isGuide="display:none;" />
   <body>
     <main>
-      <img class="topImage" id="topImage" src={heroImage} />
-      <div class="titlehold">
-        <div class="title">
-          <i class={icon} style="margin-right:18px;"></i>
-          {title}
-        </div>
-        <div class="removeDate">
-          <FormattedDate pre="Last updated on: " date={pubDate} />
+      <div
+        class="headtitle"
+        style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
+        <div
+        class="mobileheadtitle"
+          style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
+          {
+            heroImage && (
+              <img class="mainimg" src={"/img/" + heroImage} width="200px" />
+            )
+          }
+          <div>
+            <a href="/status">
+              <button
+                class="btn"
+                style="top:18px; right:18px; background-color: var(--bg-opaque-1); position:absolute;"
+                >Go to <i class="fa fa-server" style="margin-left:8px;"></i> Status</button
+              >
+            </a>
+            <h2 class="title" id="titleData">{title}</h2>
+            <p id="title" style="display:none;">{title}</p>
+            <p style="max-width:480px;">{description}</p>
+            <hr style="border-top:2px solid var(--color);" />
+            <div
+              style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
+              <div class="mobileHeadAuth" style="display:flex; gap:4px;">
+                <r
+                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;"
+                  datetime={pubDate.toISOString()}>
+                  {
+                    pubDate.toLocaleDateString("en-uk", {
+                      year: "numeric",
+                      month: "short",
+                      day: "numeric"
+                    })
+                  }
+                </r>
+                <r
+                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px; font-family:system-ui; position:relative;">
+                  {type}
+                </r>
+                <r
+                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
+                  datetime={pubDate.toISOString()}>
+                  <i class={icon}></i>
+                </r>
+              </div>
+              <div>
+                <r
+                  id="readingTime"
+                  style="font-family:system-ui; position:relative;"></r>
+              </div>
+            </div>
+          </div>
+          <div class="extraholder">
+            <span class="badge" id="status" style="color: var(--color);"></span>
+            <div
+              style="height:16px; width:100%; margin-top:8px; border-radius:58px; background-color: var(--bg-opaque-1); position:relative;">
+              <div id="progress" style="height:100%; border-radius:58px;"></div>
+            </div>
+            <hr style="border-top:2px solid var(--color);" />
+            <p id="todo" style="margin-top:8px; max-width:480px;"></p>
+            <button
+              id="btncolor"
+              class="btn"
+              style="width:100%; position:relative;"
+              >Open the <i class={icon}></i> {title} guide</button
+            >
+          </div>
         </div>
       </div>
       <div class="guideholder">
@@ -39,29 +100,63 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
           <slot /><div
             id="google_translate_element"
             style="transform:translate(0, 20px); z-index:100;">
-          </div><h4
-            class="slogan"
-            style="margin-bottom:20px; font-family:system-ui; text-align:right; position:relative;">
-            © 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b
-              style="font-family:Gilroy;">
-              Team</b
-            >
-          </h4>
+          </div>
         </div>
       </div>
     </main>
     <Footer />
     <script is:inline>
-      // On scroll down, hide the element with id "topImage"
-      window.onscroll = function () {
-        if (window.scrollY > 1) {
-          document.getElementById("topImage").style.opacity = "0.2";
-          document.getElementById("topImage").style.filter = "blur(16px)";
-        } else {
-          document.getElementById("topImage").style.opacity = "0.7";
-          document.getElementById("topImage").style.filter = "blur(8px)";
+      function updateTagline() {
+        let tagline = document.getElementById("titleData");
+        let words = tagline.innerText.split(" ");
+        tagline.innerHTML = words
+          .map(
+            (word, index) =>
+              `<span style="--delay: ${index * 0.2}s;">${word}</span>`
+          )
+          .join(" ");
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        async function getServiceData() {
+          const response = await fetch("/json/services.json");
+          const data = await response.json();
+          const title = document.getElementById("title").innerHTML;
+          const service = data.services.service.find(s => s.name === title);
+
+          return service;
         }
-      };
+
+        getServiceData().then(service => {
+          console.log(service);
+          if (!service) return;
+          document.querySelector(".extraholder").style.display = "block";
+          document.getElementById("btncolor").style.backgroundColor =
+            service.color;
+          document.getElementById("progress").style.backgroundColor =
+            service.color;
+          document.getElementById("progress").style.width =
+            service.completed + "%";
+          document.getElementById("todo").innerHTML = service.todo;
+          document.getElementById("status").style.backgroundColor =
+            service.color;
+          document.getElementById("status").innerHTML = service.status;
+          document.getElementById("btncolor").onclick = function () {
+            window.location.href = service.link;
+          };
+        });
+
+        updateTagline();
+
+        let post = document.querySelector(".guidecontent");
+        let wordCount = post.innerHTML.split(" ");
+        let readingTime = Math.ceil(wordCount.length / 200);
+        document.getElementById("readingTime").innerHTML =
+          `<i class="fa fa-clock"></i> ${readingTime} min read`;
+
+        var nav = document.querySelector("nav");
+        if (nav) nav.remove();
+      });
 
       window.onload = function () {
         const movableDiv = document.querySelector(".toc-post");
@@ -114,6 +209,31 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         transition: 0.2s;
       }
 
+      .headtitle {
+        width: 95%;
+        max-width: 1500px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        padding: 80px 30px 80px 30px;
+        border-radius: 18px 18px 8px 8px;
+        margin-bottom: 8px;
+        animation-name: fadeup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .extraholder {
+        height: 100%;
+        min-width: 400px;
+        padding: 16px;
+        background-color: var(--bg-opaque-1);
+        border-radius: 8px;
+        margin-bottom: 8px;
+        display: none;
+      }
+
       .guidecontent {
         width: 95%;
         left: 50%;
@@ -130,18 +250,22 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
 
       .guideholder {
         width: 95%;
-        max-width: 1300px;
+        max-width: 1500px;
         height: auto;
         left: 50%;
-        transform: translate(-50%, 0);
-        border: 2px solid var(--border-color);
-        background-color: var(--bg-color-secondary);
-        backdrop-filter: blur(16px);
+        top: 0px;
         perspective: 1px;
-        scroll-behavior: smooth;
-        border-radius: 8px;
-        z-index: 1;
+        border: 0px solid var(--border-color);
+        background-color: var(--bg-color-secondary);
+        transform: translate(-50%, 0);
+        border-radius: 8px 8px 18px 18px;
+        overflow: hidden;
+        padding-bottom: 30px;
+        opacity: 0;
         position: relative;
+        animation-name: fadeup;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
       }
 
       .guideholder::-webkit-scrollbar {
@@ -158,6 +282,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
 
       .color {
         background: url("/img/header_bg.png");
+        background: AccentColor;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         filter: brightness(150%);
@@ -167,13 +292,58 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         display: none;
       }
 
-      @media (max-width: 1000px) {
-        .title {
-          width: 100%;
-          text-align: center;
+      @keyframes fadeup {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, 38px);
         }
-        .removeDate {
-          display: none;
+        100% {
+          opacity: 1;
+          transform: translate(-50%, 0px);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .headtitle {
+          padding:20px;
+          padding-top:80px;
+        }
+
+        .mobileheadtitle {
+          display:flex;
+          flex: column;
+        }
+
+        .mobileheadtitle div{
+          width:100%;
+        }
+
+        .extraholder {
+          min-width:100%;
+        }
+      }
+
+      @media (min-width: 2000px) {
+        .headtitle {
+          margin-top:130px;
+        }
+      }
+    </style>
+
+    <style is:global>
+      #titleData span {
+        opacity: 0;
+        transform: translateY(5px);
+        display: inline-block;
+        animation: fadeUpLetter 0.2s forwards;
+        animation-delay: var(--delay);
+        transition: 0.1s;
+      }
+
+      @keyframes fadeUpLetter {
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
       }
     </style>

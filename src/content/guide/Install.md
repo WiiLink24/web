@@ -1,84 +1,96 @@
 ---
 title: Installation guide
 icon: fa-solid fa-download
-pubDate: 2024-01-24
+pubDate: 2024-04-18
 description: Get up-to-date instructions on how to install all of our services!
 heroImage: "../../img/guidebg-1.png"
 ---
-## What you need
 
-<div style="display:flex; gap:5px; justify-content:space-between; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> An SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> A Wii with an Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> A Windows, Mac, or Linux Computer</h4></div>
-
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="width:100%; height:50px;  font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> RiiConnect24 + WiiLink Patcher</button></a>
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
 </div>
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+</div></div>
 </br>
-</br>
+<div style="display: flex; gap:8px; align-items: center;">
+  <h5 style="font-family: system-ui; font-size:20px;">Where will you be using WiiLink?</h5>
+  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
+</div>
+<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:nowrap; position:relative;">
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#wii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:12px 4px 4px 12px;" class="btn1 btn btn-info"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii / Dolphin</button></a>
+</div>
+<div style="width:100%; height:40px; margin-top:5px; position:relative;">
+<a href="#vwii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 12px 12px 4px;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
+</div>
+</div>
 
-## Instructions
-#### First of all, where are you planning to use WiiLink and RiiConnect24?
+<div style="text-align: center;">
+    <i class="fa-solid fa-arrow-down"></i>
+</div>
 
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:wrap; position:relative;">
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="#wii"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-secondary"><img src="../../img/wiimote.png" style="rotate:30deg; filter:invert(1);" height="25px"> Wii</button></a>
-</div>
-<div style="width:100%; height:40px; margin-top:5px;  border-radius:8px;  position:relative;">
-<a href="#vwii"><button type="button" style="width:100%; height:70px;  font-family:system-ui;" class="btn1 btn btn-primary"><img src="../../img/gamepad.png" style="filter:invert(1);" height="35px"> Wii U</button></a>
-</div>
-</div>
+<br/>
+<br/>
+<br/>
 
 <div id="vwii"></div>
 
 ### vWii (Wii U) ONLY
 
-<l class="notice warn">If you're on vWii and plan on installing the RiiConnect24 services, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
+<l class="notice warn fullwidth">If you're on vWii, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
 
-1. Download the `Priiloader.zip` file from [here](https://oscwii.org/library/app/priiloader)
-2. Unzip the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
-3. Download the `LoadPriiloader.zip` from [here](https://oscwii.org/library/app/LoadPriiloader).
-4. Unzip the `LoadPriiloader.zip` file and copy the apps folder to the root of your SD Card or USB Drive.
-5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
-6. Follow the instructions on the page then copy the result.
-7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
-9. Launch `Priiloader`.
-10. Follow the installation steps.
-11. Launch `Load Priiloader`
-12. Using your Wii Remote, go to `System Menu Hacks`.
-13. Enable `Fix NWC24iSetUniversalTime` and if you're on the vWii enable `Wii System Settings via Options Button` and `Always enable WiiConnect24 on boot`. (Feel free to enable others.)
-14. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-15. Return to the system menu.
+1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader.zip` file from [here](https://oscwii.org/library/app/priiloader)
+2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
+3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `LoadPriiloader.zip` from [here](https://oscwii.org/library/app/LoadPriiloader).
+4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip the `LoadPriiloader.zip` file and copy the apps folder to the root of your SD Card or USB Drive.
+5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
+6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
+7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
+8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
+9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
+10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
+11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
+12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
+13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime` and if you're on the vWii enable `Wii System Settings via Options Button` and `Always enable WiiConnect24 on boot`. (Feel free to enable others.)
+14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
+15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the system menu.
 
 </br>
 
+<hr style="border-top:2px solid var(--border-color);"/>
+
+</br>
 <div id="wii"></div>
 
 ### Section I - Patching WADs
 
 > [If you want to see detailed instructions on how to install the WADs, click here!](#section-ii---installing-wads)
 
-
-1. Visit the [RiiConnect24 + WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
+1. Visit the [ WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
 2. On Windows, run `RC24_WiiLink_Patcher_Windows_v2.X.X.exe`. <br>
-On MacOS, right click the `RC24_WiiLink_Patcher_macOS-<arch>_v2.X.X` file in Finder and click Open. <br>
-On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/RC24_WiiLink_Patcher_Linux-<arch>_v2.X.X`
+   On MacOS, right click the `RC24_WiiLink_Patcher_macOS-<arch>_v2.X.X` file in Finder and click Open. <br>
+   On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/RC24_WiiLink_Patcher_Linux-<arch>_v2.X.X`
 
 > **For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture.
 
 3. Choose your installation setup:
-    - Press `1` for `Express Install Setup`. Follow the steps below:
-        1. Select your region for the WiiConnect24 channels.
-        2. Select whether or not you would like to install the WiiLink channels.
-        3. Select what language you would like for the WiiLink channels as well as your preferred Food Channel version if you chose to install them.
-        4. Select your console platform.
-        5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
-    - Press `2` for `Custom Install Setup`. Follow the steps below:
-        1. Select which channels you would like to install out of the list.
-        2. Select your console platform.
-        3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+   - Press `1` for `Express Install Setup`. Follow the steps below:
+     1. Select your region for the WiiConnect24 channels.
+     2. Select whether or not you would like to install the WiiLink channels.
+     3. Select what language you would like for the WiiLink channels as well as your preferred Food Channel version if you chose to install them.
+     4. Select your console platform.
+     5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+   - Press `2` for `Custom Install Setup`. Follow the steps below:
+     1. Select which channels you would like to install out of the list.
+     2. Select your console platform.
+     3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
 4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
 5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `RiiConnect24 + WiiLink Patcher` file to your SD Card or USB Device.
+6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
+
+</br>
 
 ### Section II - Installing WADs
 
@@ -88,10 +100,14 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
 5. If your Wii is not a Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
 
-6. Highlight all other WADs with `WiiLink` or `RiiConnect24` in the name and press + to select them. When all of them are selected, press A twice to install the WADs.
+6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
-### Section III - Adding your Personal Information to the Address Information settings (SPD)
+</br>
+<hr style="border-top:2px solid var(--border-color);">
+</br>
+
+### Section III (Optional) - Adding your Personal Information to the Address Information settings (SPD)
 
 <l class="notice generic fullwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
@@ -113,18 +129,18 @@ On Linux, open a Terminal, type `bash ` (space included), then drag the file ont
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.
 3. Replace the Placeholder info with the Following:
 
-* `Your First and Last Name`
-* `Your Phone Number (country code FIRST, phone number afterwards)`
-* `Your City`
-* `Your Home Address`
-* `Your Zip Code`
+- `Your First and Last Name`
+- `Your Phone Number (country code FIRST, phone number afterwards)`
+- `Your City`
+- `Your Home Address`
+- `Your Zip Code`
 
 (Make Sure you **Put it in Correctly** or it **Will not Work!** Use the example data in the settings as a template to put your information in correctly.)
 
 4. Press `Ok` and then `Done`
 5. Once you are in the SPD main menu, choose `Demae` in the `Choose Channel` menu.
-6. When you return to the Food Channel via `SPD`, It will display your information that you put in and will give a confirmation box, Once you Double Check and everything is correct, Click on Yes.  After you’ve done that, it should work!
+6. When you return to the Food Channel via `SPD`, It will display your information that you put in and will give a confirmation box, Once you Double Check and everything is correct, Click on Yes. After you’ve done that, it should work!
 
 ### For PAL (European Wiis)<br>
-<l class="notice warn fullwidth">In Wii Settings please set TV Resolution to 60 HZ (480p/480i). You can find this in `Screen -> TV Resolution` If you do not, a pink bar will appear at the bottom of the screen obscuring vision. </l>
 
+<l class="notice warn fullwidth">In Wii Settings please set TV Resolution to 60 HZ (480p/480i). You can find this in `Screen -> TV Resolution` If you do not, a pink bar will appear at the bottom of the screen obscuring vision. </l>

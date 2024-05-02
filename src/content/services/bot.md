@@ -3,7 +3,8 @@ title: WiiLink Bot
 pubDate: 2024-01-24
 icon: fa-solid fa-robot
 description: Our nifty multi-purpose bot!
-heroImage: "../../img/guidebg-1.png"
+type: "Extra"
+color: 35418f60
 ---
 
 ### Look up error codes and exchange friend codes with other users.

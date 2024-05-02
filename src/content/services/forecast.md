@@ -3,7 +3,9 @@ title: Forecast Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-sun
 description: Check the forecast right on your Wii
-heroImage: "https://i.ytimg.com/vi/6xwWYOo6E-k/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBggOyh_MA8=&rs=AOn4CLDw_DBtcwMHBCR0s1f-3bPyNOySPA"
+heroImage: "forecastbanner.png"
+type: "WiiConnect24"
+color: 073cb860
 ---
 
 ### Check the local and international forecasts on your Wii.

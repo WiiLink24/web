@@ -3,7 +3,9 @@ title: WiiRoom
 pubDate: 2024-01-24
 icon: fa-solid fa-home
 description: Feel right at home whilst watching videos on your Wii!
-heroImage: "https://dlhb.gamebrew.org/wiihomebrews/wiilinkpatcher7.png"
+heroImage: "wiinomabanner.png"
+type: "Japanese"
+color: 195ce360
 ---
 ### Feel right at home whilst watching videos on your Wii!
 

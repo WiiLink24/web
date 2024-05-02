@@ -9,6 +9,7 @@ import Socials from "../../components/Socials.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import JumpIn from "../../components/JumpIn.astro";
+import Footer from "../../components/Footer.astro";
 import Themes from "astro-themes";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
@@ -58,145 +59,17 @@ changeLanguage("vi");
 
           <div class="square"></div>
           <div class="footer-holder" id="footer">
-            <img
-              loading="lazy"
-              class="footer-logo"
-              src="img/logo.png"
-              style="left:50px; position:relative;"
-              height="150px"
-            />
-            <h4 class="slogan">
-              <Trans i18nKey="site.slogan"
-                ><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit
-                homebrew project. It is not affiliated with Nintendo and all trademarks
-                are the property of their respective owners. No copyright infringement
-                intended.<br /><br />
-                © 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b
-                  style="font-family:Gilroy;">Team</b
-                >
-              </Trans>
-            </h4>
-            <div class="socials">
-              <div style="width:auto; text-align:right;">
-                <a href="https://discord.gg/wiilink" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="discord.gg/wiilink">
-                    Discord<i
-                      style="margin-left:5px;"
-                      class="fa-brands fa-discord"></i>
-                  </div></a
-                >
-                <a href="https://twitter.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="@WiiLink24">
-                    Twitter<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-twitter"></i>
-                  </div></a
-                >
-                <a href="https://github.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="WiiLink24">
-                    GitHub<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-github"></i>
-                  </div></a
-                >
-                <a href="https://www.patreon.com/WiiLink24" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title={t("site.donate")}>
-                    Patreon<i
-                      style="margin-left:10px;"
-                      class="fa-brands fa-patreon"></i>
-                  </div></a
-                >
-                <a href="https://www.youtube.com/@wiilink" style="color:white;"
-                  ><div
-                    style="color:white !important;"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title="WiiLink24">
-                    YouTube<i
-                      style="margin-left:5px;"
-                      class="fa-brands fa-youtube"></i>
-                  </div></a
-                >
-              </div>
-              <div style="margin-top:15px;">
-                <a href="mailto:contact@wiilink24.com"
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-secondary"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.contact")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-envelope-open"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href={localizePath("/extras/branding")}
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-primary"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.assets")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-palette"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href={localizePath("/")}
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-success"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="bottom"
-                    data-bs-title={t("site.install")}
-                    style="background-color:white; color:black; border:0px; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px;"
-                    ><i
-                      class="fa-solid fa-download"
-                      style="color:black !important;"></i></button
-                  ></a
-                >
-                <a href="https://github.com/humanoidear"
-                  ><button
-                    type="button"
-                    class="btn1 btn btn-success"
-                    data-bs-toggle="tooltip"
-                    data-bs-placement="left"
-                    data-bs-title={t("site.creator")}
-                    style="background-color:white; color:black; border:0px; box-shadow:0px 0px 10px #ffffff20; width:45px; height:45px; padding:10px; margin:0px; margin-left:5px; overflow:hidden;"
-                    ><img
-                      src="https://github.com/humanoidear.png"
-                      style="transform:translate(-10px, -10px); position:relative;"
-                      width="45px"
-                      height="45px"
-                    /></button
-                  ></a
-                >
-              </div>
-            </div>
+            <Footer display="display:none !important;" top="top:0px; background:none;" flex="gap:8px; flex-wrap:nowrap;" maxwidth="max-width:1500px;"/>
           </div>
         </div>
       </div>
       <div class="bottomleftcornerholder">
-        <img class="bottomleftcorner" src="img/corner.png" />
+        <svg class="bottomleftcorner" width="100%" height="100%" viewBox="0 0 391 364" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.5;">
+          <g transform="matrix(1,0,0,1,-1856,-885)">
+              <path id="pathcorner"  d="M1903.53,886.132L1857.55,885.823C1857.93,885.824 1852.78,908.579 1887.46,940.825C1922.21,973.123 2200.55,1234 2200.55,1234C2200.55,1234 2214.8,1247.92 2246.02,1247.92L2245.96,1202.65L2239.82,1202.7C2231.35,1202.68 2228.7,1197.77 2214.96,1184.58C2188.64,1159.33 1909.5,898.26 1909.5,898.26C1909.5,898.26 1903.8,892.648 1903.53,886.132Z" style="stroke:AccentColor;stroke-width:1px;"/>
+          </g>
+      </svg>  
+      <img src="/img/corner-bot.svg" class="svcicons" style="top:5px; left:-5px; z-index:-10; position:absolute;" width="395px" height="395px">    
       </div>
     </body>
   </html>
@@ -226,17 +99,14 @@ changeLanguage("vi");
           "<i class='fa fa-bolt'></i> <b>Low spec mode active!</b><hr style='margin:8px 0;'/>Some animations have been disabled in order to make the site feel snappier on your device.";
         document.querySelector(".square").style.animation =
           "changecolorbasic 10s linear infinite";
-        document.querySelector(".bottomleftcorner").style.display = "none";
+        document.querySelector(".bottomleftcorner").style.animation = "none";
       }
     });
 
     const scrollableDiv = document.getElementById("square2");
     const width = window.innerWidth;
 
-    if (width >= 1000) {
-      document.getElementById("footer").style.animation =
-            "fadeout 0.2s linear forwards";
-      scrollableDiv.addEventListener("scroll", function () {
+    scrollableDiv.addEventListener("scroll", function () {
         // Change the bg color in #square2 to var(--bg-color) if scrolled
         if (scrollableDiv.scrollTop > 0) {
           scrollableDiv.style.setProperty(
@@ -249,6 +119,12 @@ changeLanguage("vi");
             "var(--bg-color-hero)"
           );
         }
+    });
+
+    if (width >= 1000) {
+      document.getElementById("footer").style.animation =
+            "fadeout 0.2s linear forwards";
+      scrollableDiv.addEventListener("scroll", function () {
         if (
           scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
           scrollableDiv.clientHeight + 30
@@ -414,7 +290,6 @@ changeLanguage("vi");
   .guide {
     background-color: #ffffff00;
     color: #000000;
-    box-shadow: inset 0 0 0 4px solid blue;
   }
   .btn {
     padding: 15px;
@@ -464,13 +339,18 @@ changeLanguage("vi");
     grid-template-columns: 112px 140px 125px auto;
     position: relative;
   }
+  #pathcorner {
+    fill: #0d6efd;
+    fill: AccentColor !important;
+  }
   .bottomleftcorner {
     animation: changecolor 10s linear infinite;
-    position: relative;
   }
   .bottomleftcornerholder {
-    left: 3.3px;
-    bottom: 3.3px;
+    width:400px;
+    height:400px;
+    left: 3.2px;
+    bottom: -1.2px;
     scale: 31.6%;
     transform: translate(-100%, 100%);
     pointer-events: none;
@@ -492,30 +372,6 @@ changeLanguage("vi");
     }
     100% {
       filter: hue-rotate(360deg);
-    }
-  }
-  @keyframes changecolordark {
-    0% {
-      filter: hue-rotate(0deg) invert(1);
-    }
-    100% {
-      filter: hue-rotate(360deg) invert(1);
-    }
-  }
-  @keyframes changecolorbasic {
-    0% {
-      filter:;
-    }
-    100% {
-      filter:;
-    }
-  }
-  @keyframes changecolordarkbasic {
-    0% {
-      filter: invert(1);
-    }
-    100% {
-      filter: invert(1);
     }
   }
   @keyframes fadeout2 {
@@ -551,7 +407,12 @@ changeLanguage("vi");
     height: 100%;
     background: linear-gradient(
       41deg,
-      rgba(0, 138, 255, 1) 0%,
+      #0d6efd 0%,
+      rgba(255, 0, 59, 1) 100%
+    );
+    background: linear-gradient(
+      41deg,
+      AccentColor 0%,
       rgba(255, 0, 59, 1) 100%
     );
     z-index: 0;
@@ -676,7 +537,7 @@ changeLanguage("vi");
       width: calc(100% - 10px) !important;
       height: calc(100% - 10px) !important;
     }
-    .bottomleftcorner {
+    .bottomleftcornerholder {
       display: none;
     }
     .alert {
