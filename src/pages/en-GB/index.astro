@@ -73,6 +73,7 @@ changeLanguage("en-GB");
       </div>
     </body>
   </html>
+</Layout>
 
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
@@ -84,9 +85,16 @@ changeLanguage("en-GB");
           ? ""
           : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
+      console.log(navigator.hardwareConcurrency, navigator.deviceMemory, window.screen.width, window.screen.height);
+      if (navigator.hardwareConcurrency < 5 || navigator.deviceMemory < 5 || window.screen.width <= 1000 || window.screen.height <= 720) {
+        document.querySelector(".square").style.animation =
+          "changecolorbasic 10s linear infinite";
+        document.querySelector(".bottomleftcorner").style.animation = "none";
+      };
 
       var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
       var isLowSpec = getUrlParameter("low-spec");
+      var kawaii = getUrlParameter("kawaii");
 
       if (fromRiiConnect24 == "true") {
         document.getElementById("warn").style.display = "block";
@@ -101,6 +109,16 @@ changeLanguage("en-GB");
           "changecolorbasic 10s linear infinite";
         document.querySelector(".bottomleftcorner").style.animation = "none";
       }
+      if (kawaii == "true") {
+    document.getElementById("warn").style.display = "block";
+    document.getElementById("warn").innerHTML =
+      "<i class='fa fa-heart'></i> <b>Haiiiiiii :3</b><hr style='margin:8px 0;'/>We hope you like our vtuber debut!";
+    let logos = document.getElementsByClassName("logo");
+    for (let i = 0; i < logos.length; i++) {
+      logos[i].setAttribute('src', '/img/logo-kawaii.png');
+      logos[i].classList.add("kawaii");
+    }
+  }
     });
 
     const scrollableDiv = document.getElementById("square2");
@@ -153,7 +171,6 @@ changeLanguage("en-GB");
       toastEl => new bootstrap.Toast(toastEl, option)
     );
   </script>
-</Layout>
 
 <style>
   main {
@@ -591,5 +608,10 @@ changeLanguage("en-GB");
       width: 2000px;
       position: absolute;
     }
+  }
+</style>
+<style is:global>
+  .kawaii {
+    filter:invert(0) !important;
   }
 </style>
