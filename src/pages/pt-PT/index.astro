@@ -73,6 +73,7 @@ changeLanguage("pt-PT");
       </div>
     </body>
   </html>
+</Layout>
 
   <script>
     document.addEventListener("DOMContentLoaded", async function () {
@@ -84,9 +85,16 @@ changeLanguage("pt-PT");
           ? ""
           : decodeURIComponent(results[1].replace(/\+/g, " "));
       }
+      console.log(navigator.hardwareConcurrency, navigator.deviceMemory, window.screen.width, window.screen.height);
+      if (navigator.hardwareConcurrency < 5 || navigator.deviceMemory < 5 || window.screen.width <= 1000 || window.screen.height <= 720) {
+        document.querySelector(".square").style.animation =
+          "changecolorbasic 10s linear infinite";
+        document.querySelector(".bottomleftcorner").style.animation = "none";
+      };
 
       var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
       var isLowSpec = getUrlParameter("low-spec");
+      var kawaii = getUrlParameter("kawaii");
 
       if (fromRiiConnect24 == "true") {
         document.getElementById("warn").style.display = "block";
@@ -101,6 +109,15 @@ changeLanguage("pt-PT");
           "changecolorbasic 10s linear infinite";
         document.querySelector(".bottomleftcorner").style.animation = "none";
       }
+      if (kawaii == "true") {
+    document.getElementById("warn").style.display = "block";
+    document.getElementById("warn").innerHTML =
+      "<i class='fa fa-heart'></i> <b>Haiiiiiii :3</b><hr style='margin:8px 0;'/>We hope you like our vtuber debut!";
+    let logos = document.getElementsByClassName("logo");
+    for (let i = 0; i < logos.length; i++) {
+      logos[i].setAttribute('src', '/img/logo-kawaii.png');
+    }
+  }
     });
 
     const scrollableDiv = document.getElementById("square2");
@@ -153,7 +170,6 @@ changeLanguage("pt-PT");
       toastEl => new bootstrap.Toast(toastEl, option)
     );
   </script>
-</Layout>
 
 <style>
   main {
