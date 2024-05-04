@@ -116,6 +116,7 @@ changeLanguage("fi");
     let logos = document.getElementsByClassName("logo");
     for (let i = 0; i < logos.length; i++) {
       logos[i].setAttribute('src', '/img/logo-kawaii.png');
+      logos[i].classList.add("kawaii");
     }
   }
     });
@@ -607,5 +608,10 @@ changeLanguage("fi");
       width: 2000px;
       position: absolute;
     }
+  }
+</style>
+<style is:global>
+  .kawaii {
+    filter:invert(0) !important;
   }
 </style>
