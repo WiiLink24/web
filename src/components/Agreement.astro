@@ -17,7 +17,7 @@ const posts = (await getCollection("blog")).sort(
     href={localizePath("/")}
     class="logohold"
     style="transform:translate(-50px,0);"
-    ><img class="logo" src=" /img/Wii_Link_Logo.png" width="140px" /></a
+    ><img class="logo" src="/img/Wii_Link_Logo.png" width="140px" /></a
   >
   <button
     style="z-index:1000;"
@@ -71,6 +71,8 @@ const posts = (await getCollection("blog")).sort(
       >
     </div>
     <hr />
+    <div class="holdcontainer">
+    </div>
     <div class="elements">
       <a class="link" href="/" style="z-index: 1; position:relative">
         <i class="fas fa-home"></i>

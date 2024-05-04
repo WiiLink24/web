@@ -26,10 +26,27 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     title={`WiiLink - ${t("guidePost.name")} (${title})`}
     description={`${title} - ${description}`}
     image="/img/Guide_embed.png"
-  />
-  <Header isGuide="display:block;" />
+  >
+  <Header/>
+<div class="holder" style="width: 95%; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative;">
+  <a
+    href="/"
+    class="logohold"
+    ><img src="/img/Wii_Link_Logo.png" class="logo" style="width:140px !important" /></a
+  >
+  <button
+    class="btn dropdownbtn btn-black-50"
+    style="z-index:1000; position:relative;"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasTop"
+    aria-controls="offcanvasTop"
+    ><i style="font-size:30px; filter:opacity(0.9);" class="fa-solid fa-bars"
+    ></i></button
+  >
+</div>
   <div class="flex">
-    <div class="holder">
+    <div class="guidehold">
       <div id="container1"></div>
       <div
           id="google_translate_element"
@@ -137,6 +154,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     </div>
     </div>
   </div>
+  </Layout>
 
   <script is:inline>
     window.onload = function () {
@@ -150,6 +168,15 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         container1.appendChild(movableDiv);
       }
     };
+
+    if (window.matchMedia("(max-width: 1000px)").matches) {
+      let guidehold = document.querySelector(".guidehold");
+      guidehold.style.display = "block";
+      let offcanvasBody = document.querySelector(".holdcontainer");
+      offcanvasBody.innerHTML += "<a href='#skip' style='width:100%; padding:8px; border-radius:4px; background-color: var(--bg-color-tertiary); transform:translate(0, -18px); text-decoration:none; text-align:center; display:block; position:relative;'><i class='fa-solid fa-arrow-down'></i> Skip to links</a>";
+      offcanvasBody.appendChild(guidehold);
+      offcanvasBody.innerHTML += "<hr id='skip' style='border-top: 2px solid var(--border-color);'>";
+    }
 
     document.addEventListener("DOMContentLoaded", function () {
       let guideholder = document.querySelector(".guideholder");
@@ -250,6 +277,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       position: absolute;
     }
 
+    body {
+      overflow:hidden;
+    }
+
     body > .skiptranslate {
       display: none;
     }
@@ -277,12 +308,13 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       transform: translate(-50%, 0);
       align-items: flex-end;
       gap: 18px;
+      z-index: 0;
       justify-content: center;
       flex-wrap: nowrap;
       position: fixed;
     }
 
-    .holder {
+    .guidehold {
       width: 380px;
       height: 100%;
       border-radius: 8px;
@@ -551,18 +583,16 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     @media (max-width: 1000px) {
-      .holder {
-        display: none;
-      }
-
       .flex {
-        top: 0;
-        height: 100%;
+        top: -40px;
+        width:100%;
+        height: calc(100% + 12px);
         align-items: flex-start;
         position: relative;
+        z-index: 0;
       }
       .guideholder {
-        height: auto;
+        height: 100%;
         width: 100%;
         top: 0;
         border: 0px solid rgba(255, 0, 0, 0) !important;
@@ -575,25 +605,26 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         overflow: scroll;
         overflow-x: hidden;
       }
-      .topImage {
-        top: 0;
-        left: 0;
-        width: 100%;
-        opacity: 0.3;
-        scale: 250%;
-        transform: translateZ(0px);
-        pointer-events: none;
-        -webkit-mask-image: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 1) 0%,
-          transparent 78%
-        );
-        position: fixed;
+      .offcanvas-body {
+        padding:0px !important;
       }
-      .dateRemove {
+      .guidehold {
+        width:100%;
+        padding:0px !important;
+        overflow:hidden;
+        display:none;
+      }
+      .wiiguide {
         display: none;
       }
+      .topImage {
+        display:none;
+      }
       .holder {
+        display:flex !important;
+        position:fixed;
+      }
+      .dateRemove {
         display: none;
       }
       #togglebtn {
