@@ -33,19 +33,21 @@ const {
 
   <Header isGuide="display:none;" />
   <div
-    class="headtitle"
-    style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
+    class="headtitle">
     <div
       style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
-      {heroImage && <img class="mainimg" src={heroImage} width="200px" />}
+      {heroImage && (
+          <img class="mainimg" src={heroImage ? heroImage : '/img/branding_bg.png'} alt="" width="200px" />
+      )}
+       <img class="mainimg2" style="filter:blur(80px) brightness(0.5); transform:scale(1.2);" src={heroImage ? heroImage : '/img/branding_bg.png'} alt="" width="200px" />
       <div>
         <h2 class="title" id="titleData">{title}</h2>
-        <hr style="border-top:2px solid var(--color);" />
+        <hr style="border-top:2px solid white;" />
         <div
           style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
 		  <div class="mobileHeadAuth" style="display:flex; gap:4px;">
           <r
-            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;"
+            style="background-color: #ffffff20; color:white !important; padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;"
             datetime={pubDate.toISOString()}>
             {
               pubDate.toLocaleDateString("en-uk", {
@@ -56,18 +58,18 @@ const {
             }
           </r>
           <r
-            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;"
+            style="background-color: #ffffff20; color:white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;"
             >{author}</r
           >
           <r
-            style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
+            style="background-color: #ffffff20; color:white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
             >{authTitle}</r
           >
 		  </div>
 		  <div>
 		  <r
 		  	id="readingTime"
-			style="font-family:system-ui; position:relative;"
+			style="font-family:system-ui; color:white !important; position:relative;"
 			></r>
 		</div>
         </div>
@@ -266,7 +268,7 @@ const {
     }
     .title {
       font-size: 70px;
-      color: black;
+      color: white !important;
       text-align: left;
       font-family: Gilroy;
       z-index: 100;
