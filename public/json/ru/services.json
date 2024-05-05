@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Канал погоды",
+        "desc": "Узнайте актуальный прогноз погоды в любой точке мира!",
+        "link": "/guide/forecast",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно! <br><br> <b>Пользователям RiiConnect24</b> нужно обновиться до последней версии WiiLink Patcher чтобы продолжить использование.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "Канал новостей",
+        "desc": "Узнайте последние новости в любой точке мира, благодаря удобному глобусу.",
+        "link": "/guide/news",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Канал Nintendo",
+        "desc": "Путеводитель по играм Nintendo с обзорами, трейлерами, специальными шоу и демками игр.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Канал соревн. Mii",
+        "desc": "Станьте художником Mii и покажите миру свои навыки дизайна Mii в самых разных конкурсах.",
+        "link": "/guide/miicontest",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Канал голосований",
+        "desc": "Узнайте насколько ваше мнение разнится с мнением мира, приняв участие в наших опросах.",
+        "link": "/guide/evc",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Канал доставки",
+        "desc": "Заказывайте различные блюда из дома через консоль Wii.",
+        "link": "/guide/demae",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "Канал TV Guide",
+        "desc": "Расписание телепередач, напоминания о шоу и возможность управлять телевизором пультом Wii.",
+        "link": "/guide/tvnotomo",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Закрытый бета тест",
+        "todo": "<i class='fa fa-hard-hat'></i> Сервис ещё в разработке",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Канал Теле-Кирби",
+        "desc": "Смотрите серии телешоу «Кирби Звездопад» <small>(Hoshii no Kaabii)</small>",
+        "link": "/guide/kirbytv",
+        "isArea": "Был для некоторых Европейских регионов",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Канал Фотопечати",
+        "desc": "Создавайте альбомы и визитки со своими фотографиями и персонажами Mii.",
+        "link": "/guide/digicam",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "WiiRoom",
+        "desc": "Находите различные шоу / видео-контент или отправляйте сообщения друзьям из Wii Room.",
+        "link": "/guide/wiinoma",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Настройки адреса",
+        "desc": "Ввод личной информации, необходимой для каналов фотопечати и доставки.",
+        "link": "/guide/spd",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Доска сообщений Wii",
+        "desc": "Отправляйте сообщения зарегистрированным друзьям Wii и на адреса электронной почты.",
+        "link": "/guide/board",
+        "isArea": "Был доступен везде",
+        "status": "Полный релиз",
+        "todo": "<i class='fa fa-circle-check'></i> Сервис работает как нужно!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "Просматривайте контент <i>Metroid Prime 3: Corruption</i>.",
+        "link": "/guide/primepreview",
+        "isArea": "Был доступен в Америке и Европе",
+        "status": "Отменён",
+        "todo": "<i class='fa fa-bomb'></i> Разработка для этого сервиса была прекращена.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room везде",
+        "desc": "DSiWare для автономного просмотра загруженного контента Wii Room.",
+        "link": "/guide/dokodemo",
+        "isArea": "Был экслюзивом для Японии",
+        "status": "Отменён",
+        "todo": "<i class='fa fa-bomb'></i> Разработка для этого сервиса была прекращена.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}
