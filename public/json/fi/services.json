@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Forecast -kanava",
+        "desc": "Tutustu kotialueesi, maasi tai vaikka koko maailman säähän.",
+        "link": "/fi/guide/forecast",
+        "isArea": "Kansainvälinen",
+        "status": "Täysi Julkaisu",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "News -kanava",
+        "desc": "Nopeasti kiinni viimeisimmistä uutisista ympäri maailmaa ja näet tarkalleen, missä se tapahtuu.",
+        "link": "/fi/guide/news",
+        "isArea": "Kansainvälinen",
+        "status": "Täysi Julkaisu",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Nintendo -kanava",
+        "desc": "Ohje Wii, Nintendo DS ja Nintendo 3DS peleille, jossa on arvosteluita, trailereita, 'special shows' ja demoja.",
+        "link": "/fi/guide/nintendochannel",
+        "isArea": "Kansainvälinen",
+        "status": "Täysi Julkaisu",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Mii Contest -kanava",
+        "desc": "Tule Mii Artisan:iksi ja näytä maailmallesi sinun Mii suunnittelu kykysi monissa eri kilpailuissa.",
+        "link": "/fi/guide/miicontest",
+        "isArea": "Kansainvälinen",
+        "status": "Täysi Julkaisu",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Everybody Votes -kanava",
+        "desc": "Löydä millä eri tavoilla muut ajattelee maailmasta osallistumalla kaikkiin uusiin äänestyksiin.",
+        "link": "/fi/guide/evc",
+        "isArea": "Kansainvälinen",
+        "status": "Täysi Julkaisu",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Food -kanava",
+        "desc": "Tilaa eri tyyppisiä ruoka-annoksia suoraan kotoa Wii konsolillasi.",
+        "link": "/fi/guide/demae",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "TV Guide -kanava",
+        "desc": "Tutustu paikalliseen TV-ohjelmaoppaaseen, laita muistutuksia tv-sarjoille ja ohjaa TV:täsi Wii Ohjaimella.",
+        "link": "/fi/guide/tvnotomo",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Yksityinen Beta",
+        "todo": "<i class='fa fa-hard-hat'></i> Tämä palvelu on silti kehityksessä",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Kirby TV -kanava",
+        "desc": "Katso rajoitetun ajan <i>Kirby: Right Back at Ya!</i> jaksoja.",
+        "link": "/fi/guide/kirbytv",
+        "isArea": "Alkuperältä tietyt Euroopan maat",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Photo Prints -kanava",
+        "desc": "Tee albumeita ja yrityskortteja sinun kuvilla ja Mii hahmoillasi.",
+        "link": "/fi/guide/digicam",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "WiiRoom",
+        "desc": "Tutustu sarjoihin tai muuhun tilausvideosisältöön tai lähetä viestejä kavereillesi Wii Room:ista.",
+        "link": "/fi/guide/wiinoma",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Osoite Asetukset",
+        "desc": "Lisää tietoa jota tarvitaan Photo Prints- ja Food -kanavissa.",
+        "link": "/fi/guide/spd",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Viesti Lauta",
+        "desc": "Lähetä viestejä rekisteröidyille Wii Kavereille ja email-osoitteisiin.",
+        "link": "/fi/guide/board",
+        "isArea": "Aluevapaa (Kansainvälinen)",
+        "status": "Täysi Julkaisu",
+        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "Katso <i>Metroid Prime 3: Corruption</i> sisältöä.",
+        "link": "/fi/guide/primepreview",
+        "isArea": "Alkuperältä Amerikka ja Eurooppa",
+        "status": "Kehitys lakkautettu",
+        "todo": "<i class='fa fa-bomb'></i> Tämän palvelun kehitys on lakkautettu.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "DSiWare sovellus ladatun Wii Room sisällön katsomiseen kun et ole yhdistettynä nettiin.",
+        "link": "/fi/guide/dokodemo",
+        "isArea": "Alkuperältä Japani eksklusiivi",
+        "status": "Kehitys lakkautettu",
+        "todo": "<i class='fa fa-bomb'></i> Tämän palvelun kehitys on lakkautettu.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}
