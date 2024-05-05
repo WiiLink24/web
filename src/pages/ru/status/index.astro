@@ -7,7 +7,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
-changeLanguage("fi");
+changeLanguage("ru");
 ---
 
 <Layout
@@ -128,19 +128,19 @@ changeLanguage("fi");
           "</h3></div></a>";
         if (
           data.services.service[i].status == "Completed" ||
-          data.services.service[i].status == "Täysi Julkaisu"
+          data.services.service[i].status == "Full Release"
         ) {
           document.getElementsByClassName("stat")[i].style.backgroundColor =
             "var(--bs-green)";
         } else if (
           data.services.service[i].status == "In development" ||
           data.services.service[i].status == "Public Beta" ||
-          data.services.service[i].status == "Yksityinen Beta"
+          data.services.service[i].status == "Private Beta"
         ) {
           document.getElementsByClassName("stat")[i].style.backgroundColor =
             "var(--bs-blue)";
         } else if (
-          data.services.service[i].status == "Kehitys lakkautettu" ||
+          data.services.service[i].status == "Halted" ||
           data.services.service[i].status == "Planned"
         ) {
           document.getElementsByClassName("stat")[i].style.backgroundColor =
