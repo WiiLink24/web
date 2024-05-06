@@ -1,6 +1,11 @@
-![header](https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=wiilink24.com&fontSize=90&animation=fadeIn)
-### _The front-facing website of the WiiLink project._
+<p align="center">
+<a href="https://wiilink24.com"><img height="100px" src="https://www.wiilink24.com/img/Wii_Link_Logo.png" alt="Logo"/></a>
+  <h2 align="center"><b><i>The front-facing website of the WiiLink project.</i></b></h2>
+</p>
+
+
 <img alt="GitHub Language Count" src="https://img.shields.io/badge/languages-10-blue" /> <img alt="Github Repo Size" src="https://img.shields.io/badge/repo_size-240_MB-blue" /> <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/WiiLink24/web" /> <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/WiiLink24/web" /> <img alt="Github License" src="https://img.shields.io/github/license/WiiLink24/web" />
+
 A website where you can download our products, as well as getting up to date with our advancements, getting assistance with our products, and informing yourself in the status of them.
 #### All the fun people who've contributed:
 <a href = "https://github.com/WiiLink24/web/graphs/contributors">
