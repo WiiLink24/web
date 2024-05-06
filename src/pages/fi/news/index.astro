@@ -811,21 +811,21 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       height: 100px;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      background-color: rgba(247, 247, 247, 0.019) !important;
-      border-radius: 0px;
+      width: 95%;
+      left:50%;
+      transform: translate(-50%, 0);
+      background-color: var(--bg-color-tertiary) !important;
       font-family: Gilroy;
       hyphens: auto;
       overflow: hidden;
-      border: 0px solid rgba(215, 215, 215, 0.066);
       transition: 0.5s;
       display: none;
     }
 
     .postmini:hover {
-      transform: translate(0, 0px);
+      transform: translate(-50%, 0px);
       box-shadow: 0px 0px 0px rgb(209, 209, 209);
-      border: 0px solid rgba(161, 159, 159, 0.252);
+      border: 3px solid var(--border-color);
       transition: 0.5s;
     }
 

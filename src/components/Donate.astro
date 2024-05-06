@@ -24,9 +24,10 @@ import { Trans } from "astro-i18next/components";
         <div class="build-square tier-1">
           <a
             href="https://buy.stripe.com/8wMdRF25ig3k1ry3cc"
-            style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
+            style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-            <div style="display: flex; gap:8px; align-items: center;">
+            <div class="mobile-gap" style="display: flex; gap:8px; align-items: center;">
+              <img loading="lazy" src="img/tier_1.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
                 <h2 style="font-family: gilroy; margin-right: 10px;">Violet</h2>
                 <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
                 <p style="flex: 2; text-align:right; margin-bottom:0;">Thanks for chipping in!</p>
@@ -45,9 +46,10 @@ import { Trans } from "astro-i18next/components";
         <div class="build-square tier-2">
           <a
           href="https://buy.stripe.com/aEUdRFbFS18qb28cMN"
-          style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
+          style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-          <div style="display: flex; gap:8px; align-items: center;">
+          <div class="mobile-gap" style="display: flex; gap:8px; align-items: center;">
+            <img loading="lazy" src="img/tier_2.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Lilac</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
               <p style="flex: 2; text-align:right; margin-bottom:0;">Thanks for contributing!</p>
@@ -66,9 +68,10 @@ import { Trans } from "astro-i18next/components";
         <div class="build-square tier-3">
           <a
           href="https://buy.stripe.com/eVa7thcJW8AS8U05km"
-          style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
+          style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
          <div>
-          <div style="display: flex; gap:8px; align-items: center;">
+          <div class="mobile-gap" style="display: flex; gap:8px; align-items: center;">
+            <img loading="lazy" src="img/tier_3.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Tulip</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
               <p style="flex: 2; text-align:right; margin-bottom:0;">Now that's a lot of money!</p>
@@ -87,9 +90,10 @@ import { Trans } from "astro-i18next/components";
         <div class="build-square tier-4">
           <a
           href="https://buy.stripe.com/28o7th8tG4kC8U0bIL"
-          style="text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
+          style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
           <div>
-          <div style="display: flex; gap:8px; align-items: center;">
+          <div class="mobile-gap" style="display: flex; gap:8px; align-items: center;">
+            <img loading="lazy" src="img/tier_4.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Rose</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
               <p style="flex: 2; text-align:right; margin-bottom:0;">Whoa! You're too much!</p>
@@ -158,20 +162,20 @@ import { Trans } from "astro-i18next/components";
   .build-holder {
     left: 50%;
     transform: translate(-50%, 20px);
-    width: 100%;
+    width: 95%;
     max-width: 1500px;
     padding-top: 30px;
     position: relative;
   }
   .build-square {
     width: 95%;
-    height:500px;
     box-shadow: 0px 5px 10px #00000020;
     background-color: var(--bg-color-primary);
     border: 2px solid rgb(255, 240, 240);
     border-radius: 16px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
     gap: 50px;
     padding: 15px;
     transition: 0.1s;
@@ -362,11 +366,34 @@ import { Trans } from "astro-i18next/components";
   @media only screen and (max-width: 1000px) {
     .build-square {
       width: 100%;
+      height:auto;
     }
     .tiers-holder {
       left: 50%;
       transform: translate(-50%, 0);
-      width: 80%;
+      width: 98%;
+    }
+    .smalltierimg {
+      display:block !important;
+    }
+    .build-holder img:nth-child(2), .build-holder hr {
+      display:none !important;
+    }
+    .mobile-gap {
+      gap:18px !important;
+    }
+    h5 {
+      margin-top:28px !important;
+    }
+    .build-square:nth-child(1) {
+      border-radius:16px 16px 8px 8px;
+    }
+    .build-square:nth-child(4) {
+      border-radius:8px 8px 16px 16px;
+    }
+    .tiers {
+      display:flex;
+      flex-direction:column;
     }
     .slider::before {
       background: none;
