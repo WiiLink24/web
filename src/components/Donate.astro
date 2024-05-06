@@ -30,16 +30,18 @@ import { Trans } from "astro-i18next/components";
               <img loading="lazy" src="img/tier_1.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
                 <h2 style="font-family: gilroy; margin-right: 10px;">Violet</h2>
                 <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
-                <p style="flex: 2; text-align:right; margin-bottom:0;">Thanks for chipping in!</p>
+                <p style="flex: 2; text-align:right; margin-bottom:0;">{t("donate.thanks-tier-1")}</p>
             </div>
             <img loading="lazy" src="img/tier_1.png" style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"/>
           </div>
             <div>
             <h5 style="margin-top:50px; opacity:0.8;">
+              <Trans i18nKey="donate.info-tier-1">
               Get access to the  <b><i class="fa-solid fa-message"></i> donators channel</b>, as well as  <b><i class="fa-solid fa-globe"></i> recognition on our website</b>!
+              </Trans>
             </h5>
             <br/>
-            <button class="btn btn-success" style="background-color:#8cb727; width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;">Subscribe for <br> per month</l> <b style="font-size:50px">$2</b></button>
+            <button class="btn btn-success" style="background-color:#8cb727; width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;"> <Trans i18nKey="donate.sub">Subscribe for <br> per month</Trans></l> <b style="font-size:50px">$2</b></button>
           </div>
           </a>
         </div>
@@ -52,16 +54,18 @@ import { Trans } from "astro-i18next/components";
             <img loading="lazy" src="img/tier_2.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Lilac</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
-              <p style="flex: 2; text-align:right; margin-bottom:0;">Thanks for contributing!</p>
+              <p style="flex: 2; text-align:right; margin-bottom:0;">{t("donate.thanks-tier-2")}</p>
           </div>
           <img loading="lazy" src="img/tier_2.png" style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"/>
         </div>
         <div>
           <h5 style="margin-top:50px; opacity:0.8;">
+            <Trans i18nKey="donate.info-tier-2">
             Have your very own <b><i class="fa-solid fa-film"></i> movie poster</b> inside of Wii Room, <b><i class="fa fa-cutlery"></i> restaurant</b> inside of the Food Channel, as well as <b>all the perks of Violet</b>!
+            </Trans>
           </h5>
           <br/>
-          <button class="btn btn-success" style="background-color:rgb(82, 143, 147); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;">Subscribe for <br> per month</l> <b style="font-size:50px">$5</b></button>
+          <button class="btn btn-success" style="background-color:rgb(82, 143, 147); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;"> <Trans i18nKey="donate.sub">Subscribe for <br> per month</Trans></l> <b style="font-size:50px">$5</b></button>
         </div>
         </a>
         </div>
@@ -74,16 +78,18 @@ import { Trans } from "astro-i18next/components";
             <img loading="lazy" src="img/tier_3.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Tulip</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
-              <p style="flex: 2; text-align:right; margin-bottom:0;">Now that's a lot of money!</p>
+              <p style="flex: 2; text-align:right; margin-bottom:0;">{t("donate.thanks-tier-3")}</p>
           </div>
           <img loading="lazy" src="img/tier_3.png" style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"/>
         </div>
         <div>
           <h5 style="margin-top:50px; opacity:0.8;">
+            <Trans i18nKey="donate.info-tier-3">
             Have your very own <b><i class="fa fa-user"></i> Mii</b> inside of Wii Room, access to the <b><i class="fa-brands fa-discord"></i> Tester Discord chat</b>, and <b>all the perks of Lilac</b>!
+            </Trans>
           </h5>
           <br/>
-          <button class="btn btn-success" style="background-color:rgb(160, 100, 186); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;">Subscribe for <br> per month</l> <b style="font-size:50px">$10</b></button>
+          <button class="btn btn-success" style="background-color:rgb(160, 100, 186); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;"> <Trans i18nKey="donate.sub">Subscribe for <br> per month</Trans></l> <b style="font-size:50px">$10</b></button>
         </div>
         </a>
         </div>
@@ -96,16 +102,18 @@ import { Trans } from "astro-i18next/components";
             <img loading="lazy" src="img/tier_4.png" class="smalltierimg" style="width:60px; display:none; position:relative;"/>
               <h2 style="font-family: gilroy; margin-right: 10px;">Rose</h2>
               <hr style="flex: 3; border: none; border-top: 2px solid var(--border-color);" />
-              <p style="flex: 2; text-align:right; margin-bottom:0;">Whoa! You're too much!</p>
+              <p style="flex: 2; text-align:right; margin-bottom:0;">{t("donate.thanks-tier-4")}</p>
           </div>
           <img loading="lazy" src="img/tier_4.png" style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"/>
         </div>
         <div>
           <h5 style="margin-top:50px; opacity:0.8;">
+            <Trans i18nKey="donate.info-tier-4">
             Create your very own <b><i class="fa fa-sign-hanging"></i> Room</b> inside of Wii Room, as well as <b>all the perks of Tulip</b>!
+            </Trans>
           </h5>
           <br/>
-          <button class="btn btn-success" style="background-color:rgb(113, 185, 103); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;">Subscribe for <br> per month</l> <b style="font-size:50px">$20</b></button>
+          <button class="btn btn-success" style="background-color:rgb(113, 185, 103); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"><l style="text-align:right;"> <Trans i18nKey="donate.sub">Subscribe for <br> per month</Trans></l> <b style="font-size:50px">$20</b></button>
         </div>
         </a>
         </div>

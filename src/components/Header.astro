@@ -42,7 +42,7 @@ const { isGuide, isMain } = Astro.props;
 				))
 			  }
 			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the news page for more news posts.</div>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.news-info")}</div>
 			</div>
 		</div>
 		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
@@ -54,10 +54,10 @@ const { isGuide, isMain } = Astro.props;
 				<div>
 				  <div class="title">
 					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-					  Installation guide
+						{t("guidePost.installGuide")}
 					</b>
 				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">A step-by-step guide on how to install WiiLink on your console.</div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.installGuide-info")}</div>
 				</div>
 				<i class="fa fa-arrow-right"></i>
 				</a>
@@ -68,10 +68,10 @@ const { isGuide, isMain } = Astro.props;
 				<div>
 				  <div class="title">
 					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-					  Troubleshooting
+						{t("guidePost.problemSolving")}
 					</b>
 				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Got any issues? Let's see if we can sort them out!</div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.problemSolving-info")}</div>
 				</div>
 				<i class="fa fa-arrow-right"></i>
 				</a>
@@ -82,16 +82,16 @@ const { isGuide, isMain } = Astro.props;
 				<div>
 				  <div class="title">
 					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-					  Frequently asked questions
+						{t("guidePost.faq")}
 					</b>
 				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">Some frequently asked questions you might be interested in...</div>
+				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.faq-info")}</div>
 				</div>
 				<i class="fa fa-arrow-right"></i>
 				</a>
 			  </div>
 			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> Go to the guide page for guides and explanations to all our services.</div>
+			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.guide-info")}</div>
 			</div>
 		</div>
 		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
@@ -106,13 +106,13 @@ const { isGuide, isMain } = Astro.props;
 			<a
 				  class="dropdown-item"
 				  href="https://wiilink24.com/privacy-policy"
-				  ><i class="fa-solid fa-shield"></i> Privacy Policy</a
+				  ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
 				>
 				<a class="dropdown-item" href="https://wiilink24.com/tos"
-				  ><i class="fa-solid fa-feather"></i> Terms of Service</a
+				  ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
 				>
 				<a class="dropdown-item" href="https://wiilink24.com/eula"
-				  ><i class="fa-solid fa-book"></i> EULA</a
+				  ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
 				>
 				<hr style="width:110%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">

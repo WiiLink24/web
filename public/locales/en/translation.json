@@ -37,8 +37,17 @@
       "title": "Powered by <0>your support</0>!",
       "subtitle": "<0>WiiLink</0> is funded publicly by its <1>users</1> and <2>sponsors</2>. <3>To help our running costs, please consider donating!</3>",
       "donators": "...and join all these <0>cool people</0>:",
-      "popular": "Most popular",
-      "powered": "Powered by"
+      "powered": "Powered by",
+      "thanks-tier-1": "Thanks for chipping in!",
+      "thanks-tier-2": "Thanks for contributing!",
+      "thanks-tier-3": "Now that's a lot of money!",
+      "thanks-tier-4": "Whoa! You're too much!",
+      "info-tier-1": "Get access to the <0><1></1> donators channel</0>, as well as <2><3></3> recognition on our website</2>!",
+      "info-tier-2": "Have your very own <0><1></1> movie poster</0> inside of Wii Room, <2><3></3> restaurant</2> inside of the Food Channel, as well as <4>all the perks of Violet</4>!",
+      "info-tier-3": "Have your very own <0><1></1> Mii</0> inside of Wii Room, access to the <2><3></3> Tester Discord chat</2>, and <4>all the perks of Lilac</4>!",
+      "info-tier-4": "Create your very own <0><1></1> Room</0> inside of Wii Room, as well as <2>all the perks of Tulip</2>!",
+      "sub": "Subscribe for </0> per month",
+      "local-currency": "$"
     },
     "header": {
       "home": "Home",
@@ -52,7 +61,22 @@
       "services": "Services",
       "chooseLang": "Choose your language",
       "privacyPolicy": "Privacy Policy",
-      "tos": "Terms of Service"
+      "tos": "Terms of Service",
+      "eula": "EULA",
+      "eula-long": "End User License Agreement (EULA)",
+      "news-info": "Go to the news page for more news posts.",
+      "guide-info": "Go to the guide page for guides and explanations to all our services."
+    },
+    "footer": {
+      "pages": "Site Pages",
+      "links": "Github Links",
+      "socials": "Socials",
+      "repos": "Github Repos",
+      "siteby": "Site by",
+      "repo": "Repository",
+      "projects": "Projects",
+      "teams": "Teams",
+      "people": "People"
     },
     "jumpin": {
       "title": "Come and <0>join in</0>!",
@@ -84,7 +108,20 @@
       "mainTitle": "WiiLink - Services",
       "mainDesc": "Check out the services WiiLink has to offer!",
       "title": "Everything we offer! <1>WiiLink</1> <2>services</2>",
-      "subtitle": "Here you'll can see <0>everything we offer</0>! Read up and download them for yourself!"
+      "subtitle": "Here you'll can see <0>everything we offer</0>! Read up and download them for yourself!",
+      "wc24-min": "WiiConnect24",
+      "jp-min": "Japanese",
+      "eu-min": "European",
+      "extra-min": "Extra",
+      "wc24": "<0>WiiConnect24</0> services",
+      "jp": "<0>Japanese exclusive</0> services",
+      "eu": "<0>European exclusive</0> services",
+      "extra": "<0>Extra</0> services",
+      "wc24-desc": "Services powered by the WiiConnect24 service, revived by us!",
+      "jp-desc": "Japanese services localized and enhanced for the West!",
+      "eu-desc": "Europe-only services brought worldwide for you to enjoy!",
+      "extra-desc": "Nifty extra stuff we offer to enhance your experience!",
+      "helpTitle": "<0>Did we miss anything</0>? Be sure to <1>get in touch</1>!</0>"
     },
     "news": {
       "mainTitle": "WiiLink - News",
@@ -110,14 +147,18 @@
       "name": "Guide",
       "whereTo": "Where do you want to go?",
       "installGuide": "Installation guide",
-      "problemSolving": "Problem solving",
+      "problemSolving": "Troubleshooting",
       "faq": "Frequently asked questions",
+      "installGuide-info": "A step-by-step guide on how to install WiiLink on your console.",
+      "problemSolving-info": "Got any issues? Let's see if we can sort them out!",
+      "faq-info": "Some frequently asked questions you might be interested in...",
       "lookingFor": "What are you <0>looking for</0>?",
       "visitWiiHacks": "Visit wii.hacks.guide",
       "copyright": "© 2020-2024 <0>WiiLink<1>guide</1></0> <2> Team</2>"
     },
     "newsPost": {
-      "name": "News"
+      "name": "News",
+      "min": "min read"
     },
     "status": {
       "mainTitle": "WiiLink - Status",

@@ -5,51 +5,86 @@
         "title": "<i class='fa-solid fa-palette'></i> Materiais de marca",
         "desc": "Materiais de marca para uso externo!",
         "img": "/img/branding_bg.png",
-        "link": "404"
+        "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Papéis de parede",
-        "desc": "Papéis de parede WiiLink para seu PC!",
+        "desc": "Papéis de parede do WiiLink para seu PC!",
         "img": "/img/wallpaper_bg.png",
-        "link": "404"
+        "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Conheça a equipe",
-        "desc": "As pessoas por trás do projeto!",
+        "desc": "As pessoas que mais colaboram no projeto!",
         "img": "/img/guidebg-2.png",
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
-        "desc": "Um serviço de <i>game tag</i> para o Wii e Wii U!",
+        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
+        "desc": "Um serviço de game tag para Wii e Wii U!",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Visualizador de votos",
-        "desc": "Veja os resultados do Canal de Opiniões!",
+        "title": "<i class='fa-solid fa-poll'></i> Visualizador de votações",
+        "desc": "Ver resultados de votações do Canal de Opiniões!",
         "img": "/img/guidebg-2.png",
-        "link": "404"
+        "link": "extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-house'></i> Originais Wii Room",
-        "desc": "Veja traduções do conteúdo original do Wii Room!",
+        "title": "<i class='fa-solid fa-house'></i> Originais do Wii Room",
+        "desc": "Assista às traduções do conteúdo original do Wii Room!",
         "img": "/img/guidebg-3.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Temas WiiLink",
-        "desc": "Temas do Wii no estilo WiiLink!",
+        "desc": "Temas bonitos para seu Wii!",
         "img": "/img/guidebg-3.png",
-        "link": "404"
+        "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "Um serviço <i>Nintendo Wi-Fi Connection</i> em andamento!",
+        "desc": "Um serviço de Conexão Wi-Fi Nintendo em desenvolvimento!",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://wfc.wiilink24.com"
+      },
+      {
+        "title": "<i class='fa-solid fa-mask'></i> Quadrinhos",
+        "desc": "Histórias em quadrinhos antigas do RiiConnect24",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/strips"
+      },
+      {
+        "title": "<i class='fa-solid fa-gamepad'></i> Teste de Wii Remote",
+        "desc": "Uma página simples para testar seu Wii Remote",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/internetchannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "desc": "",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/mii"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Trapaças do Canal de Fotos",
+        "desc": "Imagens para conseguir resultados mais rápidos!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/photochannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-shop'></i> Música do Canal Wii Shop",
+        "desc": "Música meme do Canal Wii Shop",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/ring"
+      },
+      {
+        "title": "<i class='fa-solid fa-cat'></i> News cat",
+        "desc": "Um serviço de Conexão Wi-Fi Nintendo em desenvolvimento!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/cat"
       }
-
-]
-}
+    ]
+  }
 }

@@ -9,7 +9,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "forecast_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more Cities",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem! <br><br> <b>Usuários RiiConnect24</b> precisarão atualizar para a versão mais atual do WiiLink Patcher se quiserem continuar usando.",
         "completed": "95"
       },
       {
@@ -18,10 +18,10 @@
         "desc": "Veja as notícias internacionais mais recentes e onde estão ocorrendo.",
         "link": "/guide/news",
         "isArea": "Internacional",
-        "status": "Planejado",
+        "status": "Lançado",
         "icon": "news_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch english provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch foreign language provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
-        "completed": "10"
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
+        "completed": "100"
       },
       {
         "color": "#787878",
@@ -31,29 +31,29 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "nintendo_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Include WiiLink original content <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Include Nintendo original content",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "completed": "90"
       },
       {
         "color": "#F1E3C1",
         "name": "Canal Mii Veja",
         "desc": "Seja um Artesão Mii e mostre ao mundo suas habilidades de criar Miis em vários concursos.",
-        "link": "/guide/cmoc",
+        "link": "/guide/miicontest",
         "isArea": "Internacional",
-        "status": "Planejado",
+        "status": "Lançado",
         "icon": "miicontest_icon.png",
-        "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
-        "completed": "15"
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
+        "completed": "80"
       },
       {
         "color": "#283688",
-        "name": "<l style='font-size:28px;'>Canal de Opiniões</l>",
+        "name": "Canal de Opiniões",
         "desc": "Descubra o quanto a sua opinião difere da opinião mundial em votações completamente novas.",
         "link": "/guide/evc",
         "isArea": "Internacional",
-        "status": "Em manutenção",
+        "status": "Lançado",
         "icon": "democracy_icon.png",
-        "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > Fix Error Codes",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "completed": "80"
       },
       {
@@ -63,9 +63,9 @@
         "link": "/guide/demae",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "Check back later...",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "icon": "demae_icon.png",
-        "completed": "80"
+        "completed": "90"
       },
       {
         "color": "#173de8",
@@ -74,9 +74,9 @@
         "link": "/guide/tvnotomo",
         "isArea": "Antes exclusivo do Japão",
         "status": "Em testes privados",
-        "todo": "Check back later...",
+        "todo": "<i class='fa fa-hard-hat'></i> Ainda está em desenvolvimento",
         "icon": "tvnotomo_icon.png",
-        "completed": "50"
+        "completed": "30"
       },
       {
         "color": "#ed34d8",
@@ -85,9 +85,9 @@
         "link": "/guide/kirbytv",
         "isArea": "Antes exclusivo da Europa",
         "status": "Lançado",
-        "todo": "Check back later...",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "icon": "kirby_icon.png",
-        "completed": "60"
+        "completed": "90"
       },
       {
         "color": "#00FFF8",
@@ -96,42 +96,42 @@
         "link": "/guide/digicam",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "Check back later...",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "icon": "digicam_icon.png",
         "completed": "75"
       },
       {
         "color": "#05AAF8",
-        "name": "Wii Room",
+        "name": "WiiRoom",
         "desc": "Encontre programas e outros conteúdos, ou envie mensagens aos seus amigos do Wii Room.",
         "link": "/guide/wiinoma",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "Check back later...",
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
         "icon": "room_icon.png",
         "completed": "85"
       },
       {
         "color": "#05AAF8",
-        "name": "Config. do endereço",
+        "name": "Configurações de endereço",
         "desc": "Configure as informações pessoais necessárias para o Canal de Impr. de Fotos e o Canal de Comida.",
         "link": "/guide/spd",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
-        "completed": "85"
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
+        "icon": "",
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
         "name": "Caixa de mensagens",
         "desc": "Envie mensagens para amigos do Wii, ou para algum endereço email.",
-        "link": "/guide/mail",
+        "link": "/guide/board",
         "isArea": "Livre de região",
         "status": "Lançado",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
-        "completed": "85"
+        "todo": "<i class='fa fa-circle-check'></i> Está funcionando bem!",
+        "icon": "",
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
@@ -139,10 +139,10 @@
         "desc": "Veja conteúdo de <i>Metroid Prime 3: Corruption</i>.",
         "link": "/guide/primepreview",
         "isArea": "Antes exclusivo da América e Europa",
-        "status": "Planejado",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
-        "completed": "8"	
+        "status": "Pausado",
+        "todo": "<i class='fa fa-bomb'></i> Não está mais em desenvolvimento por enquanto.",
+        "icon": "",
+        "completed": "8"
       },
       {
         "color": "#05AAF8",
@@ -150,9 +150,9 @@
         "desc": "Um aplicativo DSiWare para ver conteúdos baixados do Wii Room offline.",
         "link": "/guide/dokodemo",
         "isArea": "Antes exclusivo do Japão",
-        "status": "Planejado",
-        "todo": "Check back later...",
-        "icon": "room_icon.png",
+        "status": "Pausado",
+        "todo": "<i class='fa fa-bomb'></i> Não está mais em desenvolvimento por enquanto.",
+        "icon": "",
         "completed": "15"
       }
     ]

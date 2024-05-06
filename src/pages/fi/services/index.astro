@@ -48,34 +48,34 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     <div class="mobileselect" style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
       <a href="#wiiconnect24">
       <div class="link bg-1" style="border-radius:16px 4px 4px 16px">
-        <i class="fa-solid fa-globe"></i> WiiConnect24
+        <i class="fa-solid fa-globe"></i> {t("svc-site.wc24-min")}
       </div>
     </a>
     <a href="#japanese">
       <div class="link bg-2">
-        <i class="fa-solid fa-earth-asia"></i> Japanese
+        <i class="fa-solid fa-earth-asia"></i> {t("svc-site.jp-min")}
       </div>
     </a>
       <a href="#european">
       <div class="link bg-3">
-        <i class="fa-solid fa-earth-europe"></i> European
+        <i class="fa-solid fa-earth-europe"></i> {t("svc-site.eu-min")}
       </div>
     </a>
       <a href="#extra">
       <div class="link bg-4" style="border-radius:4px 16px 16px 4px">
-        <i class="fa-solid fa-box-open"></i> Extra
+        <i class="fa-solid fa-box-open"></i> {t("svc-site.extra-min")}
       </div>
     </a>
     </div>
     <div class="line-container bg-1" id="wiiconnect24" onclick="toggle2('wc24', 'wiiconnect24');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-globe"></i> <b style="font-family:Gilroy;">WiiConnect24</b> services
+        <i class="fa-solid fa-globe"></i> <Trans i18nKey="svc-site.wc24"><b style="font-family:Gilroy;">WiiConnect24</b> services</Trans>
       </h2>
       <div
         class="horizontal-line"
         style="transform:translate(0, 0); opacity:0.5;">
       </div>
-      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Services powered by the WiiConnect24 service, revived by us!</p>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">{t("svc-site.wc24-desc")}</p>
     </div>
     <div
       class="postholder" id="wc24">
@@ -107,13 +107,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 
     <div class="line-container bg-2" id="japanese" onclick="toggle2('jp', 'japanese');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-earth-asia"></i> <b style="font-family:Gilroy;">Japanese exclusive</b> services
+        <i class="fa-solid fa-earth-asia"></i> <Trans i18nKey="svc-site.jp"><b style="font-family:Gilroy;">Japanese exclusive</b> services</Trans>
       </h2>
       <div
         class="horizontal-line"
         style="transform:translate(0, 0); opacity:0.5;">
       </div>
-      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Japanese services localized and enhanced for the West!</p>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">{t("svc-site.jp-desc")}</p>
     </div>
     <div
       class="postholder" id="jp">
@@ -145,13 +145,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 
     <div class="line-container bg-3" id="european" onclick="toggle2('eu', 'european');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-earth-europe"></i> <b style="font-family:Gilroy;">European exclusive</b> services
+        <i class="fa-solid fa-earth-europe"></i> <Trans i18nKey="svc-site.eu"><b style="font-family:Gilroy;">European exclusive</b> services</Trans>
       </h2>
       <div
         class="horizontal-line"
         style="transform:translate(0, 0); opacity:0.5;">
       </div>
-      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Europe-only services brought worldwide for you to enjoy!</p>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">{t("svc-site.eu-desc")}</p>
     </div>
     <div
       class="postholder" id="eu">
@@ -183,13 +183,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     
     <div class="line-container bg-4" id="extra" onclick="toggle2('ex', 'extra');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-box-open"></i> <b style="font-family:Gilroy;">Extra</b> services
+        <i class="fa-solid fa-box-open"></i> <Trans i18nKey="svc-site.extra"><b style="font-family:Gilroy;">Extra</b> services</Trans>
       </h2>
       <div
         class="horizontal-line"
         style="transform:translate(0, 0); opacity:0.5;">
       </div>
-      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">Nifty extra stuff we offer to enhance your experience!</p>
+      <p style="max-width:360px; text-align:right; transform:translate(0, 8px); opacity:0.7;">{t("svc-site.extra-desc")}</p>
     </div>
     <div
       class="postholder" id="ex">
@@ -221,7 +221,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 
     <h3
       style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
-      <Trans i18nKey="services.helpTitle">
+      <Trans i18nKey="svc-site.helpTitle">
         <b
           >Did we miss <c class="color">anything</c>? Be sure to <c
             class="color">get in touch</c

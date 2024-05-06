@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Faça uma festa estilo 2006!",
+    "Já acessou a internet no seu Wii?",
+    "Tão retrô!!!",
+    "O retorno do lendário WiiConnect24",
+    "Redescubra seu Wii",
+    "A época de ouro da Nintendo!",
+    "Volte no tempo com WiiLink!",
+    "Wii???????????",
+    "O Wii não serve só para Mario Kart!",
+    "O mais melhor serviço do Wii!!!",
+    "É igual a sua infância!",
+    "Vamos jogar de novo?",
+    "Sua infância está no nosso código",
+    "WiiLink é incrível",
+    "Os fãs sempre fazem melhor",
+    "WiiLink é puro 2006!",
+    "Acesse os nossos Links para reviver o seu Wii",
+    "Um dos melhores consoles da Nintendo, ressuscitado!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Canal do Tempo",
+        "desc": "Confira as previsões do tempo atualizadas do mundo todo",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Canal de Notícias",
+        "desc": "Veja o que anda acontecendo recentemente",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Canal Nintendo",
+        "desc": "Assista a trailers, leia análises e baixe demonstrações de DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Canal Mii Veja",
+        "desc": "Participe de concursos e vote nos seus Miis favoritos",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Canal de Opiniões",
+        "desc": "Responda a votações e veja como suas opiniões diferem da dos outros",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Canal de Comida",
+        "desc": "Peça diferentes tipos de comida diretamente do seu Wii",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Canal Guia TV",
+        "desc": "Confira a programação da sua televisão",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Canal Kirby TV",
+        "desc": "Veja episódios de Kirby",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Canal de Impr. de Fotos",
+        "desc": "Faça pedidos de impressão das suas fotos favoritas",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Assista a vários tipos de vídeos em uma sala confortável",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}
