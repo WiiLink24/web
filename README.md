@@ -25,8 +25,9 @@ In the src folder you will find the components (used to be able to reuse code in
 In the styles folder you will find global css rules.
 
 ## I want to modify the languages or add more of them!
-That's amazing! But first please read up on the documentation for [Astro-i18next](https://github.com/yassinedoghri/astro-i18next), and don't forget to generate the website when you're done with ``` npx astro-i18next generate ```.
-You will also need to add the language code inside the ``` astro-i18next.config.mjs``` file located at the root of the folder!
+That's amazing! 
+Just head on over to [our crowdin page](https://crowdin.com/project/wiilink-site) and begin translating!
+Alternatively you can learn how to use and generate pages with astro-i18next and pull request your added language!
 
 # That's about it, thanks for reading!!!
 
