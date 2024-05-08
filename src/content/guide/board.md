@@ -23,7 +23,7 @@ icon: fa-solid fa-chalkboard
 
 <l class="notice generic fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
 
-1. Open the RiiConnect24 Mail Patcher application inside the Homebrew Channel.
+1. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
 
 2. Follow the on-screen instructions.
 
@@ -55,7 +55,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
 
-7. then go back to the "Internet" page, but select "User Agreements", then Select "Yes".
+7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
 
 8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service.
 
@@ -66,9 +66,6 @@ ___
 <i id="troubleshooting-questions"></i>
 
 ## Troubleshooting & Questions
-
-"Can I just use the WiiLink Mail Patcher and follow this guide, if I can't, then why?"
-> The WiiLink Mail Patcher has been discontinued. If you're using the app, please delete the app, then use the RiiConnect24 Mail Patcher.
 
 "I'm getting error -110211 or another error when trying to use the RiiConnect24 Mail Patcher, or I may have been a former user of the WiiLink Mail service.
 > Please join the WiiLink Discord Server for support, you may need to have your Wii Number removed on the database side in order to remedy this issue.
