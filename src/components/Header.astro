@@ -222,31 +222,62 @@ let loadingindicator = document.getElementById("loadingindicator");
 				
 				switch (optionLink.substring(0, 5).toLowerCase()) {
 					case ' 🇺🇸':
-						optionLink = "🇺🇸 English (US)";
+						optionLinkFlag = "<img src='/img/flags/usa.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/usa.png' class='emoji'> English (US)";
 						break;
 					case ' 🇬🇧':
-						optionLink = "🇬🇧 English (UK)";
+						optionLinkFlag = "<img src='/img/flags/uk.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/uk.png' class='emoji'> English (UK)";
 						break;
 					case ' 🇧🇷':
-						optionLink = "🇧🇷 Português (BR)";
+						optionLinkFlag = "<img src='/img/flags/brazil.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/brazil.png' class='emoji'> Português (BR)";
 						break;
 					case ' 🇵🇹':
-						optionLink = "🇵🇹 Português (PT)";
+						optionLinkFlag = "<img src='/img/flags/portugal.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/portugal.png' class='emoji'> Português (PT)";
 						break;
 					case ' 🇻🇳':
-						optionLinkFlag = "<img src='/img/val.png' class='emoji'>";
-						optionLink = "<img src='/img/val.png' class='emoji'> Català (VA)";
+						optionLinkFlag = "<img src='/img/flags/val.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/val.png' class='emoji'> Català (VA)";
+						break;
+					case ' 🇯🇵':
+						optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/japan.png' class='emoji'> 日本語";
+						break;
+					case ' 🇫🇷':
+						optionLinkFlag = "<img src='/img/flags/france.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/france.png' class='emoji'> Français";
+						break;
+					case ' 🇪🇸':
+						optionLinkFlag = "<img src='/img/flags/spain.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/spain.png' class='emoji'> Español";
+						break;
+					case ' 🇩🇪':
+						optionLinkFlag = "<img src='/img/flags/german.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/german.png' class='emoji'> Deutsch";
+						break;
+					case ' 🇷🇺':
+						optionLinkFlag = "<img src='/img/flags/russia.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/russia.png' class='emoji'> Русский";
+						break;
+					case ' 🇮🇹':
+						optionLinkFlag = "<img src='/img/flags/italy.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/italy.png' class='emoji'> Italiano";
+						break;
+					case ' 🇫🇮':
+						optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/finland.png' class='emoji'> Suomi";
 						break;
 				}
-
 				switch (optionName.substring(0, 7).toLowerCase()) {
 					case '/es-lat':
-						optionLinkFlag = " 🇲🇽";
-						optionLink = "🇲🇽 Español (LATAM)";
+						optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/mexico.png' class='emoji'> Español (LATAM)";
 						break;
 					case '/ca':
-						optionLinkFlag = "<img src='/img/cat.png' class='emoji'>";
-						optionLink = "<img src='/img/cat.png' class='emoji'> Català (CA)";
+						optionLinkFlag = "<img src='/img/flags/cat.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/cat.png' class='emoji'> Català (CA)";
 						break;
 				}
 
