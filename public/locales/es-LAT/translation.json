@@ -1,148 +1,196 @@
 {
     "site": {
-      "title": "WiiLink",
-      "description": "Un proyecto comunitario no oficial de <i>homebrew</i> cuyo objetivo es restaurar, traducir y mejorar los canales y servicios del descontinuado WiiConnect24 y también aquellos que no estaban disponibles en algunas regiones.",
-      "img": "/img/news_post_welcome_back.png",
-      "load": "Cargando...",
-      "dev": "Desarrollado por ",
-      "relNotes": "Notas de la versión",
-      "downloadPrompt": "Descarga la última versión:",
-      "installGuide": "Abrir la guía de instalación",
-      "terms": "He leído y acepto las <0>condiciones de servicio</0> y la <1>política de privacidad</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto no oficial de <i>homebrew</i> sin fines de lucro. No está afiliado a Nintendo y todas las marcas registradas son propiedad de sus respectivos dueños. El proyecto no pretende infringir los derechos de autor.</1></2>© 2020-2024 El <4>equipo</4> de <3>WiiLink</3>",
-      "donate": "¡Dona!",
-      "creator": "Página web diseñada y programada por Alex",
-      "contact": "Contáctanos",
-      "assets": "Elementos de marca",
-      "install": "Instalar",
-      "wfcPrompt": "Check out WiiLink WFC!",
-      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
-      "heroDev": "Developed by",
-      "downloadFor": "Download for",
-      "other": "Other",
-      "legacyPatcher": "Download legacy patcher",
-      "changelog": "Changelog",
-      "withThe": "with the",
-      "heroMorePrompt": "See what else WiiLink can do for you"
+        "title": "WiiLink",
+        "description": "Un proyecto comunitario no oficial dedicado a restaurar, traducir y mejorar los canales y servicios descontinuados de WiiConnect24, incluidos aquellos que no estaban disponibles en todas las regiones.",
+        "img": "/img/news_post_welcome_back.png",
+        "load": "Cargando...",
+        "dev": "Desarrollado por ",
+        "relNotes": "Notas de la versión",
+        "downloadPrompt": "Descargar",
+        "winMinReq": "¡Necesitas Windows 8 o versiones superiores!",
+        "installGuide": "Guía de Instalación",
+        "terms": "He leído y aceptado los <0>Términos de Servicio</0> y <1>la Política de Privacidad</1>.",
+        "slogan": "<0>WiiLink</0> es un proyecto comunitario no oficial y sin fines de lucro. No está afiliado a Nintendo y todas las marcas comerciales son propiedad de sus respectivos dueños. No se pretende infringir los derechos de autor.</1></2>© 2020-2024 <3>Equipo de WiiLink</3><4></4>",
+        "donate": "¡Dona!",
+        "creator": "Página web diseñado y codificado por Alex",
+        "contact": "Contáctanos",
+        "assets": "Recursos de marca",
+        "install": "Instalar ahora",
+        "wfcPrompt": "¡Dale un vistazo a WiiLink WFC!",
+        "heroDesc": "WiiLink es un reemplazo de código abierto para los servidores de Nintendo, tanto para WiiConnect24 como para NWFC, permitiendo conectividad en línea para todos, ¡Incluso después de que los servidores originales fueron descontinuados!",
+        "heroDev": "Desarrollado por",
+        "downloadFor": "Descargar por",
+        "other": "Otro",
+        "legacyPatcher": "Descargar el parcheador",
+        "changelog": "Historial de cambios",
+        "withThe": "con la",
+        "heroMorePrompt": "Mira que más WiiLink puede hacer por tí"
     },
     "build": {
-      "title": "Información sobre la última <0>versión</0>",
-      "releasedBy": "Creada por:",
-      "releaseBranch": "Rama: ",
-      "releaseDate": "Fecha de lanzamiento: ",
-      "releaseTotal": "Total: "
+        "title": "¡Dale un vistazo a la última <0>versión</0>!",
+        "releasedBy": "Publicado por:",
+        "releaseBranch": "Derivado: ",
+        "releaseDate": "Fecha de lanzamiento: ",
+        "releaseTotal": "Total: "
     },
     "donate": {
-      "title": "¡Gracias a <0>tu apoyo</0>!",
-      "subtitle": "<0>WiiLink</0> recibe financiación públicamente de sus <1>usuarios</1> y <2>patrocinadores</2>. <3>¡Si quieres ayudarnos a cubrir los gastos, puedes realizar una donación!</3>",
-      "donators": "y te unirás a <0>gente tan genial</0> como...",
-      "popular": "Más popular",
-      "powered": "Gracias a"
+        "title": "¡Desarrollado por <0>tu apoyo</0>!",
+        "subtitle": "<0>WiiLink</0> está financiado públicamente por sus <1>usuarios</1> y <2>patrocinadores</2>. <3>Para ayudar con nuestros costos de funcionamiento, ¡por favor considere hacer una donación!</3>",
+        "donators": "...y únete a toda esta <0>gente genial</0>:",
+        "powered": "Desarrollado por",
+        "thanks-tier-1": "¡Gracias por colaborar!",
+        "thanks-tier-2": "¡Gracias por contribuir!",
+        "thanks-tier-3": "¡Ahora eso sí es mucho dinero!",
+        "thanks-tier-4": "¡Wow! ¡Eres demasiado!",
+        "info-tier-1": "¡Ten acceso al <0><1></1> canal de donadores</0>, así como al <2><3></3> reconocimiento en nuestro sitio web</2>!",
+        "info-tier-2": "Ten tu propio <0><1></1> póster de película</0> dentro de la SalaWii,<2><3></3> un restaurante</2> dentro del Canal Comida y ¡<4>todas las ventajas de Violeta</4>!",
+        "info-tier-3": "Ten tu propio <0><1></1> Mii</0> dentro de la SalaWii, accede al <2><3></3> chat Tester de Discord</2> y ¡<4>todas las ventajas de Lila</4>!",
+        "info-tier-4": "¡Crea tu propia <0><1></1> Sala</0> dentro de la SalaWii, así como ¡<2>todas las ventajas de Tulipán</2>!",
+        "sub": "Suscríbete por </0> cada mes",
+        "local-currency": "$"
     },
     "header": {
-      "home": "Página principal",
-      "news": "Noticias",
-      "guide": "Guía",
-      "status": "Estado",
-      "faq": "Preguntas frecuentes",
-      "isGuide": "guía",
-      "extras": "Extras",
-      "extrasNew": "novedad",
-      "services": "Services",
-      "chooseLang": "Choose your language",
-      "privacyPolicy": "Privacy Policy",
-      "tos": "Terms of Service"
+        "home": "Casa",
+        "news": "Noticias",
+        "guide": "Guía",
+        "status": "Estado",
+        "faq": "Preguntas frecuentes",
+        "isGuide": "guía",
+        "extras": "Extras",
+        "extrasNew": "nuevo",
+        "services": "Servicios",
+        "chooseLang": "Elige tu idioma",
+        "privacyPolicy": "Política de Privacidad",
+        "tos": "Términos de Servicio",
+        "eula": "CLUF",
+        "eula-long": "Contrato de Licencia para el Usuario Final (CLUF)",
+        "news-info": "Ve a la página de noticias para más publicaciones de noticias.",
+        "guide-info": "Ve a la página de guía para obtener guías y explicaciones de todos nuestros servicios."
+    },
+    "footer": {
+        "pages": "Páginas de sitio",
+        "links": "Enlaces de GitHub",
+        "socials": "Redes Sociales",
+        "repos": "Repositorio de GitHub",
+        "siteby": "Sitio por",
+        "repo": "Repositorio",
+        "projects": "Projectos",
+        "teams": "Equipos",
+        "people": "Gente"
     },
     "jumpin": {
-      "title": "¡<0>Únete</0>!",
-      "slogan": "Saca tu Wii del polvo y prueba los nuevos canales.",
-      "install": "¡Instala ya!"
+        "title": "¡Ven y <0>únete</0>!",
+        "slogan": "Vuelve a darle vida a tu Wii y prueba canales completamente nuevos.",
+        "install": "¡Instalar!"
     },
     "services": {
-      "title": "¡Te damos la bienvenida a <0>WiiLink</0>!",
-      "subtitle": "Un proyecto comunitario no oficial de <i>homebrew</i> cuyo objetivo es restaurar, traducir y mejorar los canales y servicios del descontinuado WiiConnect24 y también aquellos que no estaban disponibles en algunas regiones."
+        "title": "¡Bienvenido a <0>WiiLink</0>!",
+        "subtitle": "Un proyecto comunitario no oficial dedicado a restaurar, traducir y mejorar los canales y servicios descontinuados de WiiConnect24, incluidos aquellos que no estaban disponibles en todas las regiones."
     },
     "socials": {
-      "title": "¡Consulta las <0>redes sociales</0> del proyecto!",
-      "subtitle": "Mantente al tanto de todas las <0>actualizaciones</0> del servicio y los <1>anuncios generales</1>, o únete a nuestro servidor de Discord.",
-      "twFollowers": "2700 seguidores",
-      "twFollow": "Seguir",
-      "twTweets": "Tweets de WiiLink24",
-      "dcMembers": "26000 miembros",
-      "dcJoin": "Unirse",
-      "ghFollowers": "82 seguidores",
-      "ghFollow": "Seguir",
-      "ytSubscribers": "2000 suscriptores",
-      "ytSubscribe": "Suscribirse"
+        "title": "¡Mira las <0>redes sociales</0> del proyecto!",
+        "subtitle": "Manténgase al día con todas las <0>actualizaciones</0> y <1>anuncios generales del servicio</1> o únase al servidor de Discord.",
+        "twFollowers": "3.3 mil seguidores",
+        "twFollow": "Seguir",
+        "twTweets": "Tweets por WiiLink24",
+        "dcMembers": "26.3 mil miembros",
+        "dcJoin": "Únete",
+        "ghFollowers": "133 seguidores",
+        "ghFollow": "Seguir",
+        "ytSubscribers": "2.3 mil seguidores",
+        "ytSubscribe": "Suscríbete"
     },
     "team": {
-      "title": "El <0>equipo</0>",
-      "subtitle": "¡<0>WiiLink</0> es posible gracias a nuestros <1>voluntarios</1>! </2><3>Estas son las personas que han contribuido al proyecto:</3>"
+        "title": "El <0>equipo</0> del proyecto",
+        "subtitle": "<0>WiiLink</0> es desarrollado con <1>trabajo voluntario</1>. </2><3>¡Aquí están los principales contribuyentes que trabajan para funcionar el proyecto!</3>"
+    },
+    "svc-site": {
+        "mainTitle": "WiiLink - Servicios",
+        "mainDesc": "¡Mira los servicios que WiiLink tiene para ofrecer!",
+        "title": "¡Todo lo que ofrecemos! <1>Servicios de</1> <2>WiiLink</2>",
+        "subtitle": "¡Aquí podrás ver <0>todo lo que ofrecemos</0>! ¡Leélos y descárgalos tú mismo!",
+        "wc24-min": "WiiConnect24",
+        "jp-min": "Japonés",
+        "eu-min": "Europeo(a)",
+        "extra-min": "Extra",
+        "wc24": "Servicios de <0>WiiConnect24</0>",
+        "jp": "Servicios <0>exclusivos de Japón</0>",
+        "eu": "Servicios <0>exclusivos de Europa</0>",
+        "extra": "Servicios <0>Extras</0>",
+        "wc24-desc": "¡Servicios desarrollados por el servicio WiiConnect24, revividos por nosotros!",
+        "jp-desc": "¡Servicios japoneses localizados y mejorados para Occidente!",
+        "eu-desc": "¡Servicios exclusivos de Europa lanzados a todo el mundo para que los disfrutes!",
+        "extra-desc": "¡Ingeniosas cosas adicionales que ofrecemos para mejorar tu experiencia!",
+        "helpTitle": "<0>¿Nos perdimos algo?</0> ¡Asegúrate de <1>ponerte en contacto</1>!</0>"
     },
     "news": {
-      "mainTitle": "WiiLink - Noticias",
-      "mainDesc": "¡Infórmate de las últimas mejoras y lanzamientos de WiiLink!",
-      "title": "Estas son las <2>noticias</2> de <1>WiiLink</1>",
-      "subtitle": "Mantente al tanto del <0>progreso del proyecto</0> y las <1>actualizaciones del servicio</1>.",
-      "otherNews": "Algunos artículos <0>más antiguos</0>:",
-      "rssTitle": "<0>¿Quieres tener las <1>noticias de WiiLink</1> en una página web o servicio? Usa el <2><i>feed</i> RSS</2>.</0>",
-      "rssButton": "Obtener el <i>feed</i> RSS",
-      "otherPosts": "Otras <0>publicaciones</0>"
+        "mainTitle": "WiiLink - Noticias",
+        "mainDesc": "¡Lee sobre las últimas mejoras y lanzamientos de WiiLink!",
+        "title": "Aquí están las <1>noticias</1> de <2>WiiLink</2>",
+        "subtitle": "¡Ponte al día con el <0>progreso del proyecto</0>, así como con las <1>actualizaciones del servicio</1>!",
+        "otherNews": "Aquí están algunos artículos <0>antiguos</0>:",
+        "rssTitle": "<0>¿Quieres recibir <1>noticias de WiiLink</1> en tu sitio o servicio? Use el <2>blog RSS</2>.</0>",
+        "rssButton": "Obtén el blog RSS",
+        "otherPosts": "Otras <0>publicaciones</0>"
     },
     "guide": {
-      "mainTitle": "WiiLink - Guía",
-      "mainDesc": "¡Aquí puedes encontrar información útil de nuestros servicios!",
-      "title": "Te damos la bienvenida a la <2>guía</2> de <1>WiiLink</1>",
-      "subtitle": "¡Aquí encontrarás <0>información importante</0> sobre el servicio, <1>guías</1> y <2>herramientas para solucionar problemas</2>!",
-      "specificGuides": "¿Qué <0>buscas</0>?",
-      "helpTitle": "<0>¿No te <1>funciona</1>? ¡<2>Ponte en contacto</c2> con nosotros!</0>",
-      "helpButton1": "Contactar con nosotros",
-      "helpButton2": "Unirse a Discord"
+        "mainTitle": "WiiLink - Guía",
+        "mainDesc": "¡Obtén información importante y ayuda para nuestros servicios!",
+        "title": "Bienvenido a la <1>guía de</1> <2>WiiLink</2>",
+        "subtitle": "¡Aquí encontrará <0>información importante</0> sobre el servicio, así como <1>guías útiles</1> y <2>solucionadores de problemas</2> que le ayudarán!",
+        "specificGuides": "¿Qué es lo que <0>estás buscando</0>?",
+        "helpTitle": "<0>¿Crees que no puedes hacerlo <1>funcionar</1>? ¡No dudes en <2>ponerte en contacto</c2>!</0>",
+        "helpButton1": "¡Ponerse en contacto!",
+        "helpButton2": "Únete al Discord"
     },
     "guidePost": {
-      "name": "Guía",
-      "whereTo": "¿Adónde quieres ir?",
-      "installGuide": "Guía de instalación",
-      "problemSolving": "Solución de problemas",
-      "faq": "Preguntas frecuentes",
-      "lookingFor": "¿Qué <0>buscas</0>?",
-      "visitWiiHacks": "Visita wii.hacks.guide",
-      "copyright": "© 2020-2024 El <2>equipo</2> de la <1>guía</1> de <0>WiiLink</0>"
+        "name": "Guía",
+        "whereTo": "¿A dónde quieres ir?",
+        "installGuide": "Guía de Instalación",
+        "problemSolving": "Solución de Problemas",
+        "faq": "Preguntas frecuentes",
+        "installGuide-info": "Una guía paso a paso de cómo instalar WiiLink en tu consola.",
+        "problemSolving-info": "¿Tienes problemas? ¡Veamos si podemos solucionarlos!",
+        "faq-info": "Algunas preguntas frecuentes que podrían interesarte...",
+        "lookingFor": "¿Qué es lo que <0>estás buscando</0>?",
+        "visitWiiHacks": "Visita wii.hacks.guide",
+        "copyright": "© 2020-2024 <0>Equipo de guía<1>WiiLink</1></0> <2></2>"
     },
     "newsPost": {
-      "name": "News"
+        "name": "Noticias",
+        "min": "lectura mínima"
     },
     "status": {
-      "mainTitle": "WiiLink - Estado",
-      "mainDesc": "¡Comprueba el estado del servicio y su progreso!",
-      "title": "Consulta el <2>estado</2> de <1>WiiLink</1>",
-      "subtitle": "¡Revisa nuestro <0>progreso</0> y al estado del <1>servidor</1>!",
-      "serverStatus": "Comprueba el estado del servidor."
+        "mainTitle": "WiiLink - Estado",
+        "mainDesc": "¡Compruebe el estado del servicio y la finalización!",
+        "title": "Consulta el <1>estado</1> de <2>WiiLink</2>",
+        "subtitle": "¡Eche un vistazo a nuestro <0>progreso</0>, además del estado del <1>servidor</1>!",
+        "serverStatus": "Verifica el estado del servidor."
     },
     "extras": {
-      "mainTitle": "WiiLink - Extras",
-      "mainDesc": "¡Revisa nuestro contenido especial!",
-      "title": "Estos son los <2>Extras</2> de <1>WiiLink</1>",
-      "subtitle": "Aquí encontrarás <0>contenido especial</0> en el que hemos trabajado.",
-      "helpCall": "<0>¿Crees que deberíamos <1>añadir</1> algo? ¡<2>Ponte en contacto</c2> con nosotros!</0>",
-      "contact": "Contactar",
-      "joinDiscord": "Unirse a Discord"
+        "mainTitle": "WiiLink - Extras",
+        "mainDesc": "¡Vea algunos recursos y contenidos especiales!",
+        "title": "Aquí están los <1>extras</1> de <2>WiiLink</2>",
+        "subtitle": "Aquí encontrarás <0>contenido especial</0> en el que hemos estado trabajando.",
+        "helpCall": "<0>¿Crees que hay algo que deberíamos <1>añadir</1> aquí? ¡Asegúrate de <2>ponerte en contacto</2>!</0>",
+        "contact": "¡Ponerse en contacto!",
+        "joinDiscord": "Únete al Discord"
     },
     "404": {
-      "mainTitle": "WiiLink - 404",
-      "mainDesc": "404 - La página que buscas no existe o fue modificada...",
-      "message": "No se ha podido cargar la página..."
+        "mainTitle": "WiiLink - 404",
+        "mainDesc": "404 - La página que estás buscando no pudo ser encontrada...",
+        "message": "La página no pudo ser encontrada..."
     },
     "tos": {
-      "mainTitle": "WiiLink - Condiciones de servicio",
-      "mainDesc": "Las condiciones de servicio de WiiLink."
+        "mainTitle": "WiiLink - Términos de Servicio",
+        "mainDesc": "Términos de Servicio para los servicios de WiiLink."
     },
     "privacyPolicy": {
-      "mainTitle": "WiiLink - Política de privacidad",
-      "mainDesc": "La política de privacidad de WiiLink."
+        "mainTitle": "WiiLink - Política de Privacidad",
+        "mainDesc": "Política de Privacidad para los servicios de WiiLink."
     },
     "eula": {
-      "mainTitle": "WiiLink - Acuerdo de licencia para el usuario final",
-      "mainDesc": "El acuerdo de licencia para el usuario final de WiiLink."
+        "mainTitle": "WiiLink - Acuerdo de Licencia de Usuario Final",
+        "mainDesc": "Acuerdo de Licencia de Usuario Final para los servicios de WiiLink."
     }
-  }
+}

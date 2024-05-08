@@ -3,7 +3,7 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "Coordinación",
+        "title": "<i class='fa fa-crown'></i> Líder del Equipo",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",
@@ -11,7 +11,7 @@
       },
       {
         "name": "LunaValoäa",
-        "title": "Administración / Traducción",
+        "title": "Gerente / Traductor",
         "color": "#FDB0C0",
         "pfp": "https://i.imgur.com/a3bzNPn.png",
         "link": "https://www.youtube.com/@LunaValoaa",
@@ -19,15 +19,15 @@
       },
       {
         "name": "Alex",
-        "title": "Desarrollo / Diseño",
+        "title": "Desarrollador / Diseñador",
         "color": "#5e97f2",
         "pfp": "https://i.imgur.com/cD6iFoq.png",
-        "link": "",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/val.png"
       },
       {
         "name": "Palapeli",
-        "title": "Desarrollo",
+        "title": "Desarrollador",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/REE7fcy.png",
         "link": "https://github.com/mkwcat",
@@ -35,7 +35,7 @@
       },
       {
         "name": "giustino",
-        "title": "Desarrollo",
+        "title": "Desarrollador",
         "color": "#05ffb8",
         "pfp": "https://i.imgur.com/kOnzxx5.png",
         "link": "https://github.com/ed0nkey",
@@ -43,7 +43,7 @@
       },
       {
         "name": "oscie",
-        "title": "Desarrollo / Administración",
+        "title": "Desarrollador / Gerente",
         "color": "#7289da",
         "pfp": "https://i.imgur.com/t3kmziO.png",
         "link": "https://github.com/oscie57",
@@ -51,15 +51,15 @@
       },
       {
         "name": "diego",
-        "title": "Traducción (valenciano, español de España y chino)",
+        "title": "Traducción (CA, ES, ZH)",
         "color": "#fc5a4e",
         "pfp": "https://i.imgur.com/XBY7Tyu.png",
         "link": "https://twitter.com/korewadiego",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "flag": "/img/val.png"
       },
       {
         "name": "Matthe815",
-        "title": "Desarrollo de LinkTag",
+        "title": "Desarrollador de LinkTag",
         "color": "#4858a8",
         "pfp": "https://i.imgur.com/KTAt2o5.png",
         "link": "https://matthe815.dev/",
@@ -67,7 +67,7 @@
       },
       {
         "name": "kouacc",
-        "title": "Traducción (francés)",
+        "title": "Traducción (Francés)",
         "color": "#1389a1",
         "pfp": "https://i.imgur.com/OAaSXtn.png",
         "link": "https://github.com/kouacc",
@@ -75,7 +75,7 @@
       },
       {
         "name": "NecroNova",
-        "title": "Dirección de contenido",
+        "title": "Responsable de Contenidos",
         "color": "#ff1dce",
         "pfp": "https://i.imgur.com/eNhJ6hc.jpg",
         "link": "https://github.com/NecroNovaVGitHub",
@@ -83,7 +83,7 @@
       },
       {
         "name": "bendevnull",
-        "title": "Creación de LinkTag",
+        "title": "Creador de LinkTag",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/KQD481c.png",
         "link": "https://github.com/bennyman123abc",
@@ -91,7 +91,7 @@
       },
       {
         "name": "ZAZiOs",
-        "title": "Traducción (ruso)",
+        "title": "Traducción (Ruso)",
         "color": "#1c1c1c",
         "pfp": "https://i.imgur.com/6QH1xal.png",
         "link": "https://www.youtube.com/@zazios",
@@ -99,7 +99,7 @@
       },
       {
         "name": "Deoku64",
-        "title": "Traducción (japonés y alemán)",
+        "title": "Traducción (JP/DEU)",
         "color": "#abc9ff",
         "pfp": "https://i.imgur.com/0LlgO2g.jpg",
         "link": "https://www.youtube.com/@Deoku64",
@@ -107,7 +107,7 @@
       },
       {
         "name": "Philemax",
-        "title": "Traducción (francés y japonés)",
+        "title": "Traducción (FR, JP)",
         "color": "#45c40c",
         "pfp": "https://i.imgur.com/ONbvAAu.png",
         "link": "https://www.youtube.com/@Philemax/",
@@ -115,7 +115,7 @@
       },
       {
         "name": "Jinjo",
-        "title": "Traducción (portugués de Brasil)",
+        "title": "Traducción (BR, PT)",
         "color": "#6a329f",
         "pfp": "https://i.imgur.com/VH3FeHN.png",
         "link": "https://twitter.com/JinjoGuy",
@@ -123,7 +123,7 @@
       },
       {
         "name": "rubinho146",
-        "title": "Traducción (portugués de Portugal)",
+        "title": "Traducción (PT, PT)",
         "color": "#FB5D35",
         "pfp": "https://i.imgur.com/ZDghpDL.jpg",
         "link": "https://www.youtube.com/user/rubinho146",
@@ -131,7 +131,7 @@
       },
       {
         "name": "PablosCorner",
-        "title": "Desarrollo",
+        "title": "Desarrollador",
         "color": "#efc86f",
         "pfp": "https://i.imgur.com/8tgMXv7.png",
         "link": "https://github.com/PablosCorner",
@@ -139,7 +139,7 @@
       },
       {
         "name": "shoko",
-        "title": "Desarrollo",
+        "title": "Desarrollador",
         "color": "#81f777",
         "pfp": "https://i.imgur.com/iJaTN3U.png",
         "link": "https://youtube.com/@sh0ko64",
@@ -147,7 +147,7 @@
       },
       {
         "name": "grunt22fox",
-        "title": "Parte del personal y administración",
+        "title": "Personal y Gerente",
         "color": "#34ebff",
         "pfp": "https://i.imgur.com/0nR5F9m.png",
         "link": "https://www.doesn0texist.tech/",
@@ -155,7 +155,7 @@
       },
       {
         "name": "Snare-Hawk",
-        "title": "Parte del personal",
+        "title": "Personal",
         "color": "#1bcf9a",
         "pfp": "https://i.imgur.com/ztLAFMt.jpg",
         "link": "https://snare-hawk.carrd.co/",
@@ -163,7 +163,7 @@
       },
       {
         "name": "Citrus Wolf",
-        "title": "Dirección de moderación / Dirección de contenido",
+        "title": "Jefe de Moderación / Responsable de Contenidos",
         "color": "#ffda76",
         "pfp": "https://i.imgur.com/IXphSN7.png",
         "link": "https://twitter.com/WolfCitrus",
@@ -171,7 +171,7 @@
       },
       {
         "name": "Jess Williamson",
-        "title": "Traducción (japonés)",
+        "title": "Traducción (Japonés)",
         "color": "#66cdaa",
         "pfp": "https://i.imgur.com/IeOy0yO.jpg",
         "link": "https://instagram.com/jessdoesvids",
@@ -179,25 +179,43 @@
       },
       {
         "name": "GamerKGR",
-        "title": "Composición de música",
+        "title": "Compositor de Música",
         "color": "#40E0D0",
         "pfp": "https://i.imgur.com/j9HUUiv.png",
-        "link": "https://gamerkgr.neocities.org/"
+        "link": "https://gamerkgr.neocities.org/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "ryaltheamazing",
-        "title": "Redes sociales",
+        "title": "Redes Sociales",
         "color": "#ed3939",
         "pfp": "https://i.imgur.com/fY4S9H3.png",
-        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"
+        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "dhtdht020",
-        "title": "Desarrollo de herramientas",
+        "title": "Desarrollador de Herramientas",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/7f4mg92.png",
         "link": "https://twitter.com/dhtdht020",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+      },
+      {
+        "name": "Jau__CR",
+        "title": "Traducción (Español Europeo, Valenciano)",
+        "color": "#a68a7d",
+        "pfp": "https://i.imgur.com/tbBzDRO.jpg",
+        "link": "https://twitter.com/Jau__CR",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Burrito",
+        "title": "Desarrollador / Administrador de Sistema",
+        "color": "#5a8c72",
+        "pfp": "https://i.imgur.com/TUjjwsG.png",
+        "link": "https://links.burrito.software",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       }
     ]
   }

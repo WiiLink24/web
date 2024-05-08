@@ -96,6 +96,16 @@ const { isGuide, isMain } = Astro.props;
 		</div>
 		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
 		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
+		<div class="dropdown">
+			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false">
+			</button>
+			<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
+				<form>
+				<li style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></li>
+				<div class="optDisplay" id="optionsDisplay" style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;"></div>
+			</form>
+			</ul>
+		  </div>
 		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
 			class="fa-solid fa-chevron-down"
 			style="font-size:20px; pointer-events:none;"></i></button>
@@ -122,16 +132,6 @@ const { isGuide, isMain } = Astro.props;
 			</div>
 		</div>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
-			<div class="dropdown">
-				<button class="btn" onclick="toggleTranslate()"  id="titleTranslate" style="font-size:30px; padding:0px 10px;" type="button" data-bs-toggle="" aria-expanded="false">
-				</button>
-				<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
-					<form>
-					<li style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></li>
-					<div class="optDisplay" id="optionsDisplay" style="top:30px; height:260px; width:200px; overflow-y:scroll; position:relative;"></div>
-				</form>
-				</ul>
-			  </div>
 	 </ul>
 </r>
 
@@ -223,67 +223,70 @@ let loadingindicator = document.getElementById("loadingindicator");
 				switch (optionLink.substring(0, 5).toLowerCase()) {
 					case ' 🇺🇸':
 						optionLinkFlag = "<img src='/img/flags/usa.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/usa.png' class='emoji'> English (US)";
+						optionLink = "<img src='/img/flags/usa.png' class='emoji2'> English (US)";
 						break;
 					case ' 🇬🇧':
 						optionLinkFlag = "<img src='/img/flags/uk.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/uk.png' class='emoji'> English (UK)";
+						optionLink = "<img src='/img/flags/uk.png' class='emoji2'> English (UK)";
 						break;
 					case ' 🇧🇷':
 						optionLinkFlag = "<img src='/img/flags/brazil.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/brazil.png' class='emoji'> Português (BR)";
+						optionLink = "<img src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
 						break;
 					case ' 🇵🇹':
 						optionLinkFlag = "<img src='/img/flags/portugal.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/portugal.png' class='emoji'> Português (PT)";
+						optionLink = "<img src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
 						break;
 					case ' 🇻🇳':
 						optionLinkFlag = "<img src='/img/flags/val.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/val.png' class='emoji'> Català (VA)";
+						optionLink = "<img src='/img/flags/val.png' class='emoji2'> Català (VA)";
 						break;
 					case ' 🇯🇵':
 						optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/japan.png' class='emoji'> 日本語";
+						optionLink = "<img src='/img/flags/japan.png' class='emoji2'> 日本語";
 						break;
 					case ' 🇫🇷':
 						optionLinkFlag = "<img src='/img/flags/france.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/france.png' class='emoji'> Français";
+						optionLink = "<img src='/img/flags/france.png' class='emoji2'> Français";
 						break;
 					case ' 🇪🇸':
 						optionLinkFlag = "<img src='/img/flags/spain.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/spain.png' class='emoji'> Español";
+						optionLink = "<img src='/img/flags/spain.png' class='emoji2'> Español";
 						break;
 					case ' 🇩🇪':
 						optionLinkFlag = "<img src='/img/flags/german.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/german.png' class='emoji'> Deutsch";
+						optionLink = "<img src='/img/flags/german.png' class='emoji2'> Deutsch";
 						break;
 					case ' 🇷🇺':
 						optionLinkFlag = "<img src='/img/flags/russia.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/russia.png' class='emoji'> Русский";
+						optionLink = "<img src='/img/flags/russia.png' class='emoji2'> Русский";
 						break;
 					case ' 🇮🇹':
 						optionLinkFlag = "<img src='/img/flags/italy.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/italy.png' class='emoji'> Italiano";
+						optionLink = "<img src='/img/flags/italy.png' class='emoji2'> Italiano";
 						break;
 					case ' 🇫🇮':
 						optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/finland.png' class='emoji'> Suomi";
+						optionLink = "<img src='/img/flags/finland.png' class='emoji2'> Suomi";
 						break;
 				}
 				switch (optionName.substring(0, 7).toLowerCase()) {
 					case '/es-lat':
 						optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/mexico.png' class='emoji'> Español (LATAM)";
+						optionLink = "<img src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
 						break;
 					case '/ca':
 						optionLinkFlag = "<img src='/img/flags/cat.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/cat.png' class='emoji'> Català (CA)";
+						optionLink = "<img src='/img/flags/cat.png' class='emoji2'> Català (CA)";
 						break;
 				}
 
 				if (i == 0) {
+					const button = document.getElementById('titleTranslate');
 					titleTranslate.innerHTML = optionLinkFlag;
 					currentLangDiv.innerHTML += "<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> " + optionLink + "</div>";
+					optionLink = optionLink.replace(/<img[^>]*>/g, "");
+					button.setAttribute('data-bs-original-title', optionLink);
 				} else {
 					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
 				}
@@ -346,10 +349,7 @@ let loadingindicator = document.getElementById("loadingindicator");
 const themeColorButton = document.getElementById('themeColor');
 const languageOverride = localStorage.getItem('languageOverride');
 
-// Listener to check and set theme preference
 document.addEventListener('DOMContentLoaded', function () {
-
-	// If color-mode has no setting, we will set it through localStorage
 	if (localStorage.getItem('color-mode') === null) {
 		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
 			localStorage.setItem('color-mode', 'dark');
@@ -359,15 +359,12 @@ document.addEventListener('DOMContentLoaded', function () {
 	}
 
 	const savedMode = localStorage.getItem('color-mode');
-
-	// Now we can get the savedMode and guarantee it, setting the theme accordingly (or if we couldn't check, fallback to light)
 	if (savedMode === 'dark') {
 		enableDarkMode();
 	} else {
 		enableLightMode();
 	}
 
-	// We will then add another listener that will listen for changes and update
 	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
 		if (event.matches) {
 			enableDarkMode();
@@ -378,7 +375,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-  // Function to enable dark mode
 function enableDarkMode() {
     document.documentElement.classList.add('dark');
     localStorage.setItem('color-mode', 'dark');
@@ -386,7 +382,6 @@ function enableDarkMode() {
 	themeColorButton.style.filter = "invert(0)";
   }
 
-  // Function to enable light mode
   function enableLightMode() {
     document.documentElement.classList.remove('dark');
     localStorage.setItem('color-mode', 'light');
@@ -394,7 +389,6 @@ function enableDarkMode() {
 	themeColorButton.style.filter = "invert(1)";
   }
 
-  // Toggle the theme
 function darkToggle() {
     if (document.documentElement.classList.contains('dark')) {
       enableLightMode();
@@ -411,10 +405,6 @@ function toggle(id) {
 	element.style.display = "block";
 }
 }
-
-setTimeout(() => {
-  document.getElementById("square2").style.transition="0.5s";
-}, 1000);
 
 </script>
 
@@ -433,7 +423,20 @@ function checkPageScroll() {
 }
 </script>
   
-
+<style is:global>
+	.emoji:nth-child(1) {
+		width:33px;
+		transform:translate(0, -3px);
+	}
+	.emoji2 {
+		width:20px;
+		margin-right:5px;
+		transform:translate(0, -3px);
+	}	
+	.dropdown-item {
+		white-space:wrap !important;
+	}
+</style>
 <style>
 	.my-select-class{
 		top:0;

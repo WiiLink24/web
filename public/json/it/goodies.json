@@ -2,54 +2,89 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Risorse di marca",
-        "desc": "Risorse di marca per uso esterno!",
+        "title": "<i class='fa-solid fa-palette'></i> Asset di branding",
+        "desc": "Asset di branding per uso esterno!",
         "img": "/img/branding_bg.png",
-        "link": "404"
+        "link": "extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Wallpaper",
-        "desc": "Wallpaper a temi WiiLink per il tuo PC!",
+        "title": "<i class='fa-solid fa-image'></i> Sfondi",
+        "desc": "Sfondi WiiLink per il tuo PC!",
         "img": "/img/wallpaper_bg.png",
-        "link": "404"
+        "link": "extras/wallpapers"
       },
       {
-        "title": "<i class='fa-solid fa-user-group'></i>conosci il Team",
-        "desc": "i contributori principali al progetto!",
+        "title": "<i class='fa-solid fa-user-group'></i> Incontra il team",
+        "desc": "I principali contributori del progetto!",
         "img": "/img/guidebg-2.png",
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
-        "desc": "Un servizio di tag di gioco per console Wii e Wii U!",
+        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
+        "desc": "Un servizio di tag di gioco per Wii e Wii U!",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Visualizza i Sondaggi",
-        "desc": "View poll results for the Everybody Votes Channel! Visualizza i risultati dei sondaggi del Canale Vota anche tu!",
+        "title": "<i class='fa-solid fa-poll'></i> Visualizzatore di sondaggi",
+        "desc": "Visualizza i risultati del sondaggio per il Canale Vota Anche Tu!",
         "img": "/img/guidebg-2.png",
-        "link": "404"
+        "link": "extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-house'></i> Contenuti Originali di Wii Room",
-        "desc": "Guarda traduzioni dei contenuti originali di Wii Room!",
+        "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
+        "desc": "Guarda traduzioni dei contenuti originali di Nintendo per Wii Room!",
         "img": "/img/guidebg-3.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Temi WiiLink",
-        "desc": "Sfondi per la Wii a tema WiiLink!",
+        "desc": "Temi belli per il tuo Wii!",
         "img": "/img/guidebg-3.png",
-        "link": "404"
+        "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "Un servizio in progresso per la Nintendo Wi-Fi Connection!",
+        "desc": "Un servizio Nintendo Wi-Fi Connection in corso!",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://wfc.wiilink24.com"
+      },
+      {
+        "title": "<i class='fa-solid fa-mask'></i> Strisce Comiche",
+        "desc": "Vecchi fumetti RiiConnect24",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/strips"
+      },
+      {
+        "title": "<i class='fa-solid fa-gamepad'></i> Test del telecomando Wii",
+        "desc": "Una semplice pagina per testare il tuo telecomando Wii",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/internetchannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "desc": "",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/mii"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Trucchi Canale Foto",
+        "desc": "Immagini per ottenere risultati rapidi!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/photochannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-shop'></i> Sottofondo Canale Wii Shop",
+        "desc": "Canzone meme per il Canale Wii Shop",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/ring"
+      },
+      {
+        "title": "<i class='fa-solid fa-cat'></i> Gatto delle notizie",
+        "desc": "Un servizio Nintendo Wi-Fi Connection in corso!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/cat"
       }
-
-]
-}
+    ]
+  }
 }
