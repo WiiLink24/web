@@ -1,11 +1,11 @@
 ---
 title: DoujinSoft
 pubDate: 2024-05-09
-icon: fa-solid fa-gamepad
+icon: fa-solid fa-truck
 description: Send content made in WarioWare DIY directly to your Wii.
 heroImage: "doujin.png"
 type: "Extra"
-color: e00b0b60
+color: c7d90960
 ---
 
 ### Send content made in WarioWare DIY directly to your Wii.
