@@ -145,6 +145,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     content: '';
     display: block;
     height: 3px;
+	height: var(--remove-border);
     background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
   }
@@ -176,7 +177,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 	}
 
 	.animated-link::before {
-		content: "\f105"; /* FontAwesome angle right */
+		content: "\f105";
 		font-family: "Font Awesome 5 Free";
 		font-weight: 900;
 		position: absolute;
@@ -189,7 +190,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
 		transition: 0.5s;
 	}
 	.animated-link:hover::before {
-		left: 0px; /* Move the arrow to the right */
+		left: 0px;
 		opacity: 1;
 	}
 	.column {
