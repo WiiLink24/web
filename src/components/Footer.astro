@@ -44,38 +44,43 @@ let { display = '', top = '', flex = '', maxwidth = '' } = Astro.props;
 			<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
 				<i style="margin-right:10px;" class="fa-brands fa-twitter"></i>Twitter
 			</a>
-			<ul class="dropdown-menu" style="background-color:#121212; border-color: #ffffff20">
+			<ul class="dropdown-menu" id="dropmenu-footer" onmouseover="toggleflex('dropmenu-footer');" style="background-color:var(--bg-color-tertiary); flex-direction:row; border-color: var(--border-color)">
+			<div style="display:flex; gap:4px; padding:0px 8px;">
 				<li>
 					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink24"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> English</a
+					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg"  width="25"></i></a
 					>
 				  </li>
 				  <li>
 					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_es"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> Español</a
+					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg"  width="25"></i></a
 					>
 				  </li>
 				  <li>
 					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_fr"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg" style="margin-right:5px;" width="20" height="25"></i> Français</a
+					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg"  width="25"></i></a
 					>
 				  </li>
 				  <li>
 					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_ptbr"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg" style="margin-right:5px;" width="20" height="25"></i> Português (Brasil)</a
+					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg"  width="25"></i></a
 					>
 				  </li>
 				  <li>
 					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_jp"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" style="margin-right:5px;" width="20" height="25"></i> 日本語</a
+					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg"  width="25"></i></a
 					>
 				  </li>
+				</div>
 			</ul>
 		</div>
 
 		<style>
 		.dropdown:hover .dropdown-menu {
 			display: block;
+		}
+		a {
+			border-radius:4px;
 		}
 		</style>
 		<a href="https://github.com/WiiLink24" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"><i style="margin-right:10px;" class="fa-brands fa-github"></i>GitHub</a>
@@ -105,14 +110,12 @@ let { display = '', top = '', flex = '', maxwidth = '' } = Astro.props;
 	</div>
 	</div>
 
-
 <script>
 
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 
 </script>
-
 <style>
 	h4, p, a {
 		color:white !important;
@@ -146,7 +149,7 @@ const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstra
     width: 100%;
   }
   .dropdown-item:hover {
-	  background-color:#1e1e1e !important;
+	  background-color:var(--bg-color-secondary) !important;
   }
 
 	.footer-holder {
