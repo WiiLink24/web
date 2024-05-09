@@ -136,7 +136,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
 
-8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a> to enable it.
+8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
 
 9. Once you read the EULA, Click on "I Accept".
 
@@ -144,9 +144,9 @@ Set your Secondary DNS to --> 1.1.1.1
 
 <l class="notice generic fullwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
-<l class="notice info fullwidth">Adding your Personal Information to the Address Information Settings will allow the Photo Prints Channel to send images to your email that you created using it, and the Food Channel to deliver the Food to your House.</l>
+<l class="notice info fullwidth">Adding your personal information to the Address Information Settings will allow the Photo Prints Channel to send images to your email, and the Food Channel to deliver the food to your house.</l>
 
-<l class="notice warn fullwidth"> You are responsible for entering your correct Address Information. Failure to do so may result in Emails and/or Orders not succeeding. </l>
+<l class="notice warn fullwidth">You are responsible for entering your correct Address Information. Failure to do so may result in emails and/or orders not succeeding.</l>
 
 ### Photo Prints Channel
 
@@ -154,7 +154,7 @@ Set your Secondary DNS to --> 1.1.1.1
 2. On the bottom right, press `Address Settings` and then `Yes`.
 3. Click on `Email Address` within the settings and type in your email address. (make sure you **put it in correctly** or it **will not work!**)
 4. Press `OK` and then `Done`.
-5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu. After you’ve done that, it should work!
+5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu.
 
 ### Food Channel
 
@@ -168,8 +168,8 @@ Set your Secondary DNS to --> 1.1.1.1
 - `Your Home Address`
 - `Your Zip Code`
 
-(Make Sure you **Put it in Correctly** or it **Will not Work!** Use the example data in the settings as a template to put your information in correctly.)
+(Make sure you **put it in correctly** or it **will not work!** Use the example data in the settings as a template to put your information in correctly.)
 
-4. Press `Ok` and then `Done`
+4. Press `OK` and then `Done`
 5. Once you are in the SPD main menu, choose `Demae` in the `Choose Channel` menu.
-6. When you return to the Food Channel via `SPD`, It will display your information that you put in and will give a confirmation box, Once you Double Check and everything is correct, Click on Yes. After you’ve done that, it should work!
+6. When you return to the Food Channel via `SPD`, it will display your information that you put in and will give a confirmation box. Once you double check and everything is correct, click on Yes.
