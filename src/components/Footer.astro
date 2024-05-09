@@ -4,233 +4,395 @@ import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 
-let { display = '', top = '', flex = '', maxwidth = '' } = Astro.props;
+let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
 ---
 
-	<div class="copyright" style={top}>
-		<div class="holder" style={maxwidth}>
-<div class="footer-holder" style={flex}>
-	<div class="column" style="width:20%; min-width:300px; gap:0;">
-		<img loading="lazy" class="footer-logo logo" src="../../img/logo.png" width="150px">
-		<p style="color:#ffffff80; !important; margin-top:15px; opacity:0.7; margin-right:8px; text-align:left;"><i class="fa-solid fa-globe-americas" style="margin-right:5px;"></i> {t("footer.siteby")} <a href="https://github.com/humanoidear"><button type="button" class="btn1 btn btn-success" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title={t("site.creator")}  style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"><img loading="lazy" src="https://github.com/humanoidear.png" style="width:20px; transform:translate(-10px, -13.5px);"></button> <u>Alex</u></a></p>
-		<p style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;"><i class="fa-solid fa-envelope-open" style="margin-right:5px;"></i> <a href="mailto:contact@wiilink24.com"><u>contact@wiilink24.com</u></a></p>
-		<p style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;"><a href="https://wfc.wiilink24.com" style="margin-right:5px;"><i class="fas fa-wifi"></i> WiiLink WFC</a></p>
-	</div>
-	<div class="tables-holder columns" style={flex}>
-    <div class="column">
-        <h4><b>{t("footer.pages")}</b></h4>
-		<hr style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;">
-        <a href="/" class="animated-link">{t("header.home")}</a>
-		<a href="/news" class="animated-link">{t("header.news")}</a>
-		<a href="/guide" class="animated-link">{t("header.guide")}</a>
-		<a href="/status" class="animated-link">{t("header.status")}</a>
-		<a href="/services" class="animated-link">{t("header.services")}</a>
-		<a href="/extras" class="animated-link">{t("header.extras")}</a>
+<div class="copyright" style={top}>
+  <div class="holder" style={maxwidth}>
+    <div class="footer-holder" style={flex}>
+      <div class="column" style="width:20%; min-width:300px; gap:0;">
+        <img
+          loading="lazy"
+          class="footer-logo logo"
+          src="../../img/logo.png"
+          width="150px"
+        />
+        <p
+          style="color:#ffffff80; !important; margin-top:15px; opacity:0.7; margin-right:8px; text-align:left;">
+          <i class="fa-solid fa-globe-americas" style="margin-right:5px;"></i>
+          {t("footer.siteby")}
+          <a href="https://github.com/humanoidear"
+            ><button
+              type="button"
+              class="btn1 btn btn-success"
+              data-bs-toggle="tooltip"
+              data-bs-placement="right"
+              data-bs-title={t("site.creator")}
+              style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
+              ><img
+                loading="lazy"
+                src="https://github.com/humanoidear.png"
+                style="width:20px; transform:translate(-10px, -13.5px);"
+              /></button
+            >
+            <u>Alex</u></a
+          >
+        </p>
+        <p
+          style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;">
+          <i class="fa-solid fa-envelope-open" style="margin-right:5px;"></i>
+          <a href="mailto:contact@wiilink24.com"><u>contact@wiilink24.com</u></a
+          >
+        </p>
+        <p
+          style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;">
+          <a href="https://wfc.wiilink24.com" style="margin-right:5px;"
+            ><i class="fas fa-wifi"></i> WiiLink WFC</a
+          >
+        </p>
+      </div>
+      <div class="tables-holder columns" style={flex}>
+        <div class="column">
+          <h4><b>{t("footer.pages")}</b></h4>
+          <hr
+            style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
+          />
+          <a href="/" class="animated-link">{t("header.home")}</a>
+          <a href="/news" class="animated-link">{t("header.news")}</a>
+          <a href="/guide" class="animated-link">{t("header.guide")}</a>
+          <a href="/status" class="animated-link">{t("header.status")}</a>
+          <a href="/services" class="animated-link">{t("header.services")}</a>
+          <a href="/extras" class="animated-link">{t("header.extras")}</a>
+        </div>
+        <div class="column">
+          <h4><b>{t("footer.links")}</b></h4>
+          <hr
+            style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
+          />
+          <a href="https://github.com/WiiLink24" class="animated-link">GitHub</a
+          >
+          <a
+            href="https://github.com/orgs/WiiLink24/repositories"
+            class="animated-link">{t("footer.repo")}</a
+          >
+          <a
+            href="https://github.com/orgs/WiiLink24/projects"
+            class="animated-link">{t("footer.projects")}</a
+          >
+          <a
+            href="https://github.com/orgs/WiiLink24/teams"
+            class="animated-link">{t("footer.teams")}</a
+          >
+          <a
+            href="https://github.com/orgs/WiiLink24/people"
+            class="animated-link">{t("footer.people")}</a
+          >
+        </div>
+        <div class="column">
+          <h4><b>{t("footer.socials")}</b></h4>
+          <hr
+            style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
+          />
+          <a
+            href="https://discord.gg/wiilink"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title="discord.gg/wiilink"
+            ><i style="margin-right:5px;" class="fa-brands fa-discord"
+            ></i>Discord</a
+          >
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+              <i style="margin-right:10px;" class="fa-brands fa-twitter"
+              ></i>Twitter
+            </a>
+            <ul
+              class="dropdown-menu"
+              id="dropmenu-footer"
+              onmouseover="toggleflex('dropmenu-footer');"
+              style="background-color:var(--bg-color-tertiary); flex-direction:row; border-color: var(--border-color)">
+              <div style="display:flex; gap:4px; padding:0px 8px;">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    style="text-decoration:none;"
+                    href="https://twitter.com/WiiLink24"
+                    ><img
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg"
+                      width="25"
+                    /></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    style="text-decoration:none;"
+                    href="https://twitter.com/WiiLink_es"
+                    ><img
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg"
+                      width="25"
+                    /></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    style="text-decoration:none;"
+                    href="https://twitter.com/WiiLink_fr"
+                    ><img
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg"
+                      width="25"
+                    /></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    style="text-decoration:none;"
+                    href="https://twitter.com/WiiLink_ptbr"
+                    ><img
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg"
+                      width="25"
+                    /></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    style="text-decoration:none;"
+                    href="https://twitter.com/WiiLink_jp"
+                    ><img
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg"
+                      width="25"
+                    /></a
+                  >
+                </li>
+              </div>
+            </ul>
+          </div>
+          <a
+            href="https://github.com/WiiLink24"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title="WiiLink24"
+            ><i style="margin-right:10px;" class="fa-brands fa-github"
+            ></i>GitHub</a
+          >
+          <a
+            href="https://www.patreon.com/WiiLink24"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title={t("site.donate")}
+            ><i style="margin-right:10px;" class="fa-brands fa-patreon"
+            ></i>Patreon</a
+          >
+          <a
+            href="https://www.youtube.com/@wiilink"
+            data-bs-toggle="tooltip"
+            data-bs-placement="left"
+            data-bs-title="WiiLink24"
+            ><i style="margin-right:5px;" class="fa-brands fa-youtube"
+            ></i>YouTube</a
+          >
+        </div>
+        <div class="column">
+          <h4><b>{t("footer.repos")}</b></h4>
+          <hr
+            style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
+          />
+          <a
+            href="https://github.com/WiiLink24/WiiLink24-Patcher"
+            class="animated-link">WiiLink Patcher</a
+          >
+          <a
+            href="https://github.com/WiiLink24/wfc-server"
+            class="animated-link">WiiLink WFC</a
+          >
+          <a href="https://github.com/WiiLink24/web" class="animated-link"
+            >Website</a
+          >
+          <a
+            href="https://github.com/WiiLink24/food-server"
+            class="animated-link">Food Channel</a
+          >
+          <a
+            href="https://github.com/WiiLink24/room-server"
+            class="animated-link">Wii Room</a
+          >
+        </div>
+      </div>
     </div>
-    <div class="column">
-        <h4><b>{t("footer.links")}</b></h4>
-		<hr style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;">
-		<a href="https://github.com/WiiLink24" class="animated-link">GitHub</a>
-		<a href="https://github.com/orgs/WiiLink24/repositories" class="animated-link">{t("footer.repo")}</a>
-		<a href="https://github.com/orgs/WiiLink24/projects" class="animated-link">{t("footer.projects")}</a>
-		<a href="https://github.com/orgs/WiiLink24/teams" class="animated-link">{t("footer.teams")}</a>
-		<a href="https://github.com/orgs/WiiLink24/people" class="animated-link">{t("footer.people")}</a>
-    </div>
-    <div class="column">
-        <h4><b>{t("footer.socials")}</b></h4>
-		<hr style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;">
-		<a href="https://discord.gg/wiilink" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="discord.gg/wiilink"><i style="margin-right:5px;" class="fa-brands fa-discord"></i>Discord</a>
-		<div class="dropdown">
-			<a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
-				<i style="margin-right:10px;" class="fa-brands fa-twitter"></i>Twitter
-			</a>
-			<ul class="dropdown-menu" id="dropmenu-footer" onmouseover="toggleflex('dropmenu-footer');" style="background-color:var(--bg-color-tertiary); flex-direction:row; border-color: var(--border-color)">
-			<div style="display:flex; gap:4px; padding:0px 8px;">
-				<li>
-					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink24"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg"  width="25"></i></a
-					>
-				  </li>
-				  <li>
-					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_es"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg"  width="25"></i></a
-					>
-				  </li>
-				  <li>
-					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_fr"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg"  width="25"></i></a
-					>
-				  </li>
-				  <li>
-					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_ptbr"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg"  width="25"></i></a
-					>
-				  </li>
-				  <li>
-					<a class="dropdown-item" style="text-decoration:none;" href="https://twitter.com/WiiLink_jp"
-					  ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg"  width="25"></i></a
-					>
-				  </li>
-				</div>
-			</ul>
-		</div>
 
-		<style>
-		.dropdown:hover .dropdown-menu {
-			display: block;
-		}
-		a {
-			border-radius:4px;
-		}
-		</style>
-		<a href="https://github.com/WiiLink24" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"><i style="margin-right:10px;" class="fa-brands fa-github"></i>GitHub</a>
-		<a href="https://www.patreon.com/WiiLink24" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title={t("site.donate")}><i style="margin-right:10px;" class="fa-brands fa-patreon"></i>Patreon</a>
-		<a href="https://www.youtube.com/@wiilink" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="WiiLink24"><i style="margin-right:5px;" class="fa-brands fa-youtube"></i>YouTube</a>
+    <hr class="hr" style={display} />
+    <div class="footer-holder" style={display}>
+      <h4 class="slogan">
+        <Trans i18nKey="site.slogan">
+          <b style="font-family:Rubik;">WiiLink</b>
+          is an unofficial, non-profit homebrew project. It is not affiliated with
+          Nintendo and all trademarks are the property of their respective owners.
+          No copyright infringement intended.
+          <br />
+          <br />
+          © 2020-2023
+          <b style="font-family:Rubik;">WiiLink</b>
+          <b style="font-family:Gilroy;">Team</b>
+        </Trans>
+      </h4>
     </div>
-    <div class="column">
-        <h4><b>{t("footer.repos")}</b></h4>
-		<hr style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;">
-        <a href="https://github.com/WiiLink24/WiiLink24-Patcher" class="animated-link">WiiLink Patcher</a>
-		<a href="https://github.com/WiiLink24/wfc-server" class="animated-link">WiiLink WFC</a>
-        <a href="https://github.com/WiiLink24/web" class="animated-link">Website</a>
-		<a href="https://github.com/WiiLink24/food-server" class="animated-link">Food Channel</a>
-		<a href="https://github.com/WiiLink24/room-server" class="animated-link">Wii Room</a>
+
+    <div class="footer-holder legal" style={display}>
+      <a href="/tos">
+        <i class="fas fa-arrow-right" style="margin-right:5px;"></i>{
+          t("header.tos")
+        }</a
+      >
+      <a href="/privacy-policy"
+        ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
+        {t("header.privacyPolicy")}</a
+      >
+      <a href="/eula"
+        ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
+        {t("header.eula-long")}</a
+      >
     </div>
+  </div>
 </div>
-</div>
-<hr class="hr" style={display}/>
-        <div class="footer-holder" style={display}>
-			<h4 class="slogan"><Trans i18nKey="site.slogan"><b style="font-family:Rubik;">WiiLink</b> is an unofficial, non-profit homebrew project. It is not affiliated with Nintendo and all trademarks are the property of their respective owners. No copyright infringement intended.</br></br>© 2020-2023 <b style="font-family:Rubik;">WiiLink</b><b style="font-family:Gilroy;"> Team</b></Trans></h4>
-		</div>
-<div class="footer-holder legal" style={display}>
-	<a href="/tos"> <i class="fas fa-arrow-right" style="margin-right:5px;"></i>{t("header.tos")}</a>
-    <a href="/privacy-policy"><i class="fas fa-arrow-right" style="margin-right:5px;"></i> {t("header.privacyPolicy")}</a>
-    <a href="/eula"><i class="fas fa-arrow-right" style="margin-right:5px;"></i> {t("header.eula-long")}</a>
-</div>
-	</div>
-	</div>
 
 <script>
-
-const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
 </script>
 <style>
-	h4, p, a {
-		color:white !important;
-	}
-.copyright{
-    bottom:0;
+  h4,
+  p,
+  a {
+    color: white !important;
+  }
+  .copyright {
+    bottom: 0;
     position: relative;
-	left:0;
-    width:100%;
-    background: linear-gradient(41deg, rgba(0,138,255,1) 0%, rgba(255,0,59,1) 100%);
+    left: 0;
+    width: 100%;
+    background: linear-gradient(
+      41deg,
+      rgba(0, 138, 255, 1) 0%,
+      rgba(255, 0, 59, 1) 100%
+    );
     background-color: rgb(28, 28, 28);
-    top:150px;
+    top: 150px;
     z-index: 5;
     background-size: cover;
-}
+  }
 
-.columns {
-	width:70%;
-	display: flex;
-	flex-wrap:wrap;
-	gap:40px;
-	justify-content: space-between;
-	align-items: start;
-}
-
-.copyright::before {
-    content: '';
+  .columns {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .dropdown:hover .dropdown-menu {
     display: block;
-    height: 3px;
-	height: var(--remove-border);
+  }
+  a {
+    border-radius: 4px;
+  }
+
+  .copyright::before {
+    content: "";
+    display: block;
+    height: var(--remove-border, 3px);
     background-color: rgba(255, 255, 255, 0.1);
     width: 100%;
   }
   .dropdown-item:hover {
-	  background-color:var(--bg-color-secondary) !important;
+    background-color: var(--bg-color-secondary) !important;
   }
 
-	.footer-holder {
-		display:flex;
-		flex-wrap:wrap;
-		justify-content: space-between;
-		align-items: start;
-		flex-direction:row;
-		gap:18px;
-		position:relative;
-	}
-	a, p {
-		color:white;
-		text-decoration:none;
-		font-size:18px;
-	}
-	a:hover {
-		text-decoration:underline;
-	}
-	.animated-link {
-		position: relative;
-		display: inline-block;
-		transition: 0.5s;
-	}
+  .footer-holder {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: row;
+    gap: 18px;
+    position: relative;
+  }
+  a,
+  p {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .animated-link {
+    position: relative;
+    display: inline-block;
+    transition: 0.5s;
+  }
 
-	.animated-link::before {
-		content: "\f105";
-		font-family: "Font Awesome 5 Free";
-		font-weight: 900;
-		position: absolute;
-		left: -20px;
-		opacity: 0;
-		transition: all 0.5s ease;
-	}
-	.animated-link:hover {
-		padding-left: 25px;
-		transition: 0.5s;
-	}
-	.animated-link:hover::before {
-		left: 0px;
-		opacity: 1;
-	}
-	.column {
-		display:flex;
-		flex-direction:column;
-		gap:4px;
-	}
-	.hr {
-		border-top:2px solid white;
-		margin:30px 0px;
-	}
-	.holder {
-		width:98%;
-		max-width:1200px;
-		padding:30px;
-		margin:auto;
-	}
-	.legal {
-		margin-top:30px;
-		opacity:0.3;
-		display: flex;
-		justify-content: space-between;
-		align-items: start;
-		transition: 0.5s;
-	}
-	.legal:hover {
-		opacity:1;
-		transition: 0.5s;
-	}
-	.slogan {
-		width:100%;
-	}
+  .animated-link::before {
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: -20px;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+  .animated-link:hover {
+    padding-left: 25px;
+    transition: 0.5s;
+  }
+  .animated-link:hover::before {
+    left: 0px;
+    opacity: 1;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .hr {
+    border-top: 2px solid white;
+    margin: 30px 0px;
+  }
+  .holder {
+    width: 98%;
+    max-width: 1200px;
+    padding: 30px;
+    margin: auto;
+  }
+  .legal {
+    margin-top: 30px;
+    opacity: 0.3;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    transition: 0.5s;
+  }
+  .legal:hover {
+    opacity: 1;
+    transition: 0.5s;
+  }
+  .slogan {
+    width: 100%;
+  }
 
-	@media (max-width: 1200px) {
-		.tables-holder {
-			width:100% !important;
-		}
-		.legal {
-			flex-direction:column;
-			gap:10px;
-		}
-	}
+  @media (max-width: 1200px) {
+    .tables-holder {
+      width: 100% !important;
+    }
+    .legal {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
 </style>

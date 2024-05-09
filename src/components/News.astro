@@ -19,9 +19,13 @@ posts = posts.slice(0, 3);
           <a href={`/news/${post.slug}/`}>
             <FormattedDate date={post.data.pubDate} />
             <div class="faded" />
-            {post.data.heroImage && <img loading="lazy" class="heroImage" src={post.data.heroImage} />}
+            {post.data.heroImage && (
+              <img loading="lazy" class="heroImage" src={post.data.heroImage} />
+            )}
             <div class="title">
-              {post.data.authImage && <img class="authimage" src={post.data.authImage} alt="" />}
+              {post.data.authImage && (
+                <img class="authimage" src={post.data.authImage} alt="" />
+              )}
               <b style="color:white !important; width:80%; margin-right:10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:right; position:relative;">
                 {post.data.title}
               </b>
@@ -80,27 +84,27 @@ posts = posts.slice(0, 3);
   }
 
   .post:nth-child(1) {
-    border-radius:18px 8px 8px 18px;
+    border-radius: 18px 8px 8px 18px;
   }
 
   .post:nth-child(1):before {
-    border-radius:18px 8px 8px 18px;
+    border-radius: 18px 8px 8px 18px;
   }
 
   .post:nth-child(2) {
-    border-radius:8px 8px 8px 8px;
+    border-radius: 8px 8px 8px 8px;
   }
 
   .post:nth-child(2):before {
-    border-radius:8px 8px 8px 8px;
+    border-radius: 8px 8px 8px 8px;
   }
 
   .post:nth-child(3) {
-    border-radius:8px 18px 18px 8px;
+    border-radius: 8px 18px 18px 8px;
   }
 
   .post:nth-child(3):before {
-    border-radius:8px 18px 18px 8px;
+    border-radius: 8px 18px 18px 8px;
   }
 
   .authimage {
@@ -136,23 +140,23 @@ posts = posts.slice(0, 3);
 
   .post:active {
     transform: scale(0.98);
-    transition:0.2s;
+    transition: 0.2s;
   }
 
-.title {
-  width: 100%;
-  z-index: 11;
-  display: flex;
-  align-items: center;
-  flex-direction: row-reverse;
-  font-size: max(20px, 30px);
-  bottom: 20px;
-  right: 10px;
-  line-height: 30px;
-  font-family: Gilroy;
-  transition: 0.5s;
-  position: absolute;
-}
+  .title {
+    width: 100%;
+    z-index: 11;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    font-size: max(20px, 30px);
+    bottom: 20px;
+    right: 10px;
+    line-height: 30px;
+    font-family: Gilroy;
+    transition: 0.5s;
+    position: absolute;
+  }
 
   .post:hover .title {
     bottom: 60%;
@@ -222,28 +226,28 @@ posts = posts.slice(0, 3);
   }
 
   @media (max-width: 1000px) {
-  .post:nth-child(1) {
-    border-radius:18px 18px 8px 8px;
-  }
+    .post:nth-child(1) {
+      border-radius: 18px 18px 8px 8px;
+    }
 
-  .post:nth-child(1):before {
-    border-radius:18px 18px 8px 8px;
-  }
+    .post:nth-child(1):before {
+      border-radius: 18px 18px 8px 8px;
+    }
 
-  .post:nth-child(2) {
-    border-radius:8px 8px 8px 8px;
-  }
+    .post:nth-child(2) {
+      border-radius: 8px 8px 8px 8px;
+    }
 
-  .post:nth-child(2):before {
-    border-radius:8px 8px 8px 8px;
-  }
+    .post:nth-child(2):before {
+      border-radius: 8px 8px 8px 8px;
+    }
 
-  .post:nth-child(3) {
-    border-radius:8px 8px 18px 18px;
-  }
+    .post:nth-child(3) {
+      border-radius: 8px 8px 18px 18px;
+    }
 
-  .post:nth-child(3):before {
-    border-radius:8px 8px 18px 18px;
-  }
+    .post:nth-child(3):before {
+      border-radius: 8px 8px 18px 18px;
+    }
   }
 </style>

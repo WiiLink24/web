@@ -55,7 +55,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
           height="200px"
         />
         <div class="innerdata">
-          <h1 style="font-family: Gilroy; color:white !important; font-size:50px;">
+          <h1
+            style="font-family: Gilroy; color:white !important; font-size:50px;">
             {posts[0].data.title}
           </h1>
           <h5 style="color:white !important;">
@@ -109,7 +110,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
           <a href={`/news/${post.slug}/`}>
             <div class="fade-small" />
             <div class="hide">
-            <FormattedDate date={post.data.pubDate} />
+              <FormattedDate date={post.data.pubDate} />
             </div>
             <div class="title-small">{post.data.title}</div>
           </a>
@@ -427,11 +428,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     width: 90%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    padding:28px;
+    padding: 28px;
     background-color: var(--bg-color-secondary);
     border-radius: 16px;
     gap: 20px;
-    top:130px;
+    top: 130px;
     left: 50%;
     transform: translate(-50%, 0px);
     position: relative;
@@ -483,7 +484,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     height: 200px;
     width: 100%;
     background-color: var(--bg-color-secondary);
-    border-radius:16px;
+    border-radius: 16px;
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
@@ -597,8 +598,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     transition: 0.2s;
   }
 
-  .newshero:active, .post:active {
-    transform:scale(0.99);
+  .newshero:active,
+  .post:active {
+    transform: scale(0.99);
     transition: 0.2s;
   }
 
@@ -756,11 +758,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     }
 
     .herodatahold h1 {
-      font-size:45px !important;
+      font-size: 45px !important;
     }
 
     .herodatahold h5 {
-      font-size:20px !important;
+      font-size: 20px !important;
     }
 
     .herodatahold p {
@@ -798,9 +800,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     }
 
     .postholdermini {
-      padding:0px;
-      top:50px;
-      border-radius:0px;
+      padding: 0px;
+      top: 50px;
+      border-radius: 0px;
       width: 100%;
       gap: 5px;
       overflow: hidden;
@@ -812,7 +814,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       align-items: center;
       justify-content: center;
       width: 95%;
-      left:50%;
+      left: 50%;
       transform: translate(-50%, 0);
       background-color: var(--bg-color-tertiary) !important;
       font-family: Gilroy;

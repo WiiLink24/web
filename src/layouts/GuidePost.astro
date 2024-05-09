@@ -18,142 +18,146 @@ posts = posts.slice(3);
 posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
 const { title, description, icon, pubDate, updatedDate, heroImage } =
   Astro.props;
-
 ---
 
 <html lang={i18next.language} ">
   <Layout
     title={`WiiLink - ${t("guidePost.name")} (${title})`}
     description={`${title} - ${description}`}
-    image="/img/Guide_embed.png"
-  >
-  <Header/>
-<div class="holder" style="width: 95%; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative;">
-  <a
-    href="/"
-    class="logohold"
-    ><img src="/img/Wii_Link_Logo.png" class="logo" style="width:140px !important" /></a
-  >
-  <button
-    class="btn dropdownbtn btn-black-50"
-    style="z-index:1000; position:relative;"
-    type="button"
-    data-bs-toggle="offcanvas"
-    data-bs-target="#offcanvasTop"
-    aria-controls="offcanvasTop"
-    ><i style="font-size:30px; filter:opacity(0.9);" class="fa-solid fa-bars"
-    ></i></button
-  >
-</div>
-  <div class="flex">
-    <div class="guidehold">
-      <div id="container1"></div>
-      <div
-          id="google_translate_element"
-          style="z-index:100;">
-        </div>
-      <div
-        class="offcanvas-body"
-        style="overflow-y:visible; position:relative;">
-        <h4
-          style="top:30px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">
-          {t("guidePost.whereTo")}
-        </h4>
-        <div>
-          <script
-            is:inline
-            type="text/javascript"
-            src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
-          ></script>
-          <div class="sidebarcontent">
-            <div class="post" style="border-radius: 8px 8px 4px 4px;">
-              <a href={`/guide/install/`}>
-                <img class="mainimg" src="../../img/guidebg-1.png" />
-                <div
-                  class="title-main"
-                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                  <i class="fa-solid fa-download" style="margin-right:5px;"
-                  ></i> {t("guidePost.installGuide")}
-                </div>
-              </a>
-            </div>
-            <div class="post" style="border-radius: 4px;">
-              <a href={`/guide/problemsolving/`}>
-                <img class="mainimg" src="../../img/guidebg-3.png" />
-                <div
-                  class="title-main"
-                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                  <i
-                    class="fa-solid fa-circle-exclamation"
-                    style="margin-right:5px;"></i> {
-                    t("guidePost.problemSolving")
-                  }
-                </div>
-              </a>
-            </div>
-            <div class="post" style="border-radius: 4px 4px 8px 8px;">
-              <a href={`/guide/faq/`}>
-                <img class="mainimg" src="../../img/guidebg-2.png" />
-                <div
-                  class="title-main"
-                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                  <i
-                    class="fa-solid fa-circle-question"
-                    style="margin-right:5px;"></i> {t("guidePost.faq")}
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="sidebarcontent" style="margin-bottom:40px;">
-            {
-              posts.map((post, index) => (
-                <>
-                  {index === 0 && currentPath !== `/guide/${post.slug}/` && (
-                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
-                  )}
-                  <div class={`post2 ${currentPath === `/guide/${post.slug}/` ? 'active' : ''}`}>
-                    <a href={`/guide/${post.slug}/`}>
-                      <div class="title2">
-                        <i class={post.data.icon} style="margin-right:8px;" />{" "}
-                        {post.data.title}
-                      </div>
-                    </a>
+    image="/img/Guide_embed.png">
+    <Header />
+    <div
+      class="holder"
+      style="width: 95%; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative;">
+      <a href="/" class="logohold"
+        ><img
+          src="/img/Wii_Link_Logo.png"
+          class="logo"
+          style="width:140px !important"
+        /></a
+      >
+      <button
+        class="btn dropdownbtn btn-black-50"
+        style="z-index:1000; position:relative;"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasTop"
+        aria-controls="offcanvasTop"
+        ><i
+          style="font-size:30px; filter:opacity(0.9);"
+          class="fa-solid fa-bars"></i></button
+      >
+    </div>
+    <div class="flex">
+      <div class="guidehold">
+        <div id="container1"></div>
+        <div id="google_translate_element" style="z-index:100;"></div>
+        <div
+          class="offcanvas-body"
+          style="overflow-y:visible; position:relative;">
+          <h4
+            style="top:30px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">
+            {t("guidePost.whereTo")}
+          </h4>
+          <div>
+            <script
+              is:inline
+              type="text/javascript"
+              src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+            ></script>
+            <div class="sidebarcontent">
+              <div class="post" style="border-radius: 8px 8px 4px 4px;">
+                <a href={`/guide/install/`}>
+                  <img class="mainimg" src="../../img/guidebg-1.png" />
+                  <div
+                    class="title-main"
+                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                    <i class="fa-solid fa-download" style="margin-right:5px;"
+                    ></i>
+                    {t("guidePost.installGuide")}
                   </div>
-                  {index === 0 && currentPath === `/guide/${post.slug}/` && (
-                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
-                  )}
-                </>
-              ))
-            }
-          </div>
+                </a>
+              </div>
+              <div class="post" style="border-radius: 4px;">
+                <a href={`/guide/problemsolving/`}>
+                  <img class="mainimg" src="../../img/guidebg-3.png" />
+                  <div
+                    class="title-main"
+                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                    <i
+                      class="fa-solid fa-circle-exclamation"
+                      style="margin-right:5px;"></i>
+                    {t("guidePost.problemSolving")}
+                  </div>
+                </a>
+              </div>
+              <div class="post" style="border-radius: 4px 4px 8px 8px;">
+                <a href={`/guide/faq/`}>
+                  <img class="mainimg" src="../../img/guidebg-2.png" />
+                  <div
+                    class="title-main"
+                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                    <i
+                      class="fa-solid fa-circle-question"
+                      style="margin-right:5px;"></i>
+                    {t("guidePost.faq")}
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="sidebarcontent" style="margin-bottom:40px;">
+              {
+                posts.map((post, index) => (
+                  <>
+                    {index === 0 && currentPath !== `/guide/${post.slug}/` && (
+                      <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                    )}
+                    <div
+                      class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
+                      <a href={`/guide/${post.slug}/`}>
+                        <div class="title2">
+                          <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                          {post.data.title}
+                        </div>
+                      </a>
+                    </div>
+                    {index === 0 && currentPath === `/guide/${post.slug}/` && (
+                      <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                    )}
+                  </>
+                ))
+              }
+            </div>
 
-          <a href="https://wii.hacks.guide"
-            ><div class="wiiguide">
-              <Trans i18nKey="guidePost.visitWiiHacks">
-                Visit wii.hacks.guide
-              </Trans>
-            </div></a
-          >
+            <a href="https://wii.hacks.guide"
+              ><div class="wiiguide">
+                <Trans i18nKey="guidePost.visitWiiHacks">
+                  Visit wii.hacks.guide
+                </Trans>
+              </div></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="guideholder">
+        <div class="dateRemove">
+          <FormattedDate pre="Last updated on: " date={pubDate} />
+        </div>
+        <img class="topImage" id="parallax" src={heroImage} />
+        <div class="title">
+          <i class={icon} style="margin-right:18px;"></i>
+          {title}
+        </div>
+        <div class="guidecontent" id="container2">
+          <slot />
+        </div>
+        <div>
+          <Footer
+            top="top:17px; border-radius:8px 8px 0px 0px; overflow:hidden;"
+          />
         </div>
       </div>
     </div>
-    <div class="guideholder">
-      <div class="dateRemove">
-        <FormattedDate pre="Last updated on: " date={pubDate} />
-      </div>
-      <img class="topImage" id="parallax" src={heroImage} />
-      <div class="title">
-        <i class={icon} style="margin-right:18px;"></i>
-        {title}
-      </div>
-      <div class="guidecontent" id="container2">
-        <slot />
-      </div>
-      <div>
-      <Footer top="top:17px; border-radius:8px 8px 0px 0px; overflow:hidden;"/>
-    </div>
-    </div>
-  </div>
   </Layout>
 
   <script is:inline>
@@ -173,9 +177,11 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       let guidehold = document.querySelector(".guidehold");
       guidehold.style.display = "block";
       let offcanvasBody = document.querySelector(".holdcontainer");
-      offcanvasBody.innerHTML += "<a href='#skip' style='width:100%; padding:8px; border-radius:4px; background-color: var(--bg-color-tertiary); transform:translate(0, -18px); text-decoration:none; text-align:center; display:block; position:relative;'><i class='fa-solid fa-arrow-down'></i> Skip to links</a>";
+      offcanvasBody.innerHTML +=
+        "<a href='#skip' style='width:100%; padding:8px; border-radius:4px; background-color: var(--bg-color-tertiary); transform:translate(0, -18px); text-decoration:none; text-align:center; display:block; position:relative;'><i class='fa-solid fa-arrow-down'></i> Skip to links</a>";
       offcanvasBody.appendChild(guidehold);
-      offcanvasBody.innerHTML += "<hr id='skip' style='border-top: 2px solid var(--border-color);'>";
+      offcanvasBody.innerHTML +=
+        "<hr id='skip' style='border-top: 2px solid var(--border-color);'>";
     }
 
     document.addEventListener("DOMContentLoaded", function () {
@@ -278,7 +284,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     body {
-      overflow:hidden;
+      overflow: hidden;
     }
 
     body > .skiptranslate {
@@ -385,7 +391,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       transition: 0.3s;
     }
 
-    .post:active, .post2:active {
+    .post:active,
+    .post2:active {
       scale: 97%;
       transition: 0.2s;
     }
@@ -398,27 +405,27 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       height: calc(100% - 18px);
     }
 
-.title-main {
-  font-family:
-    systemui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
-  color: white;
-  transition: 0.3s;
-  z-index: 100;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
+    .title-main {
+      font-family:
+        systemui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      color: white;
+      transition: 0.3s;
+      z-index: 100;
+      position: relative;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
 
     .title2 {
       font-family:
@@ -508,16 +515,18 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     .post2.active {
       padding: 20px 18px;
       background-color: var(--bg-color-tertiary);
-      border-radius:8px;
+      border-radius: 8px;
       transition: 0.2s;
-}
+    }
 
-.post2.active::after, .post.active::after {
+    .post2.active::after,
+    .post.active::after {
       right: 20px; /* Move the arrow inside the element on hover */
       opacity: 1;
     }
 
-    .post2::after, .post::after {
+    .post2::after,
+    .post::after {
       content: "\f061"; /* FontAwesome right arrow */
       font-family: "Font Awesome 5 Free";
       font-weight: 900;
@@ -529,7 +538,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       transition: all 0.5s ease;
     }
 
-    .post2:hover::after, .post:hover::after {
+    .post2:hover::after,
+    .post:hover::after {
       right: 20px; /* Move the arrow inside the element on hover */
       opacity: 1;
     }
@@ -565,7 +575,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     }
 
     .color {
-      background:#0d6efd;
+      background: #0d6efd;
       background: AccentColor;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -585,7 +595,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     @media (max-width: 1000px) {
       .flex {
         top: -40px;
-        width:100%;
+        width: 100%;
         height: calc(100% + 12px);
         align-items: flex-start;
         position: relative;
@@ -606,23 +616,23 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         overflow-x: hidden;
       }
       .offcanvas-body {
-        padding:0px !important;
+        padding: 0px !important;
       }
       .guidehold {
-        width:100%;
-        padding:0px !important;
-        overflow:hidden;
-        display:none;
+        width: 100%;
+        padding: 0px !important;
+        overflow: hidden;
+        display: none;
       }
       .wiiguide {
         display: none;
       }
       .topImage {
-        display:none;
+        display: none;
       }
       .holder {
-        display:flex !important;
-        position:fixed;
+        display: flex !important;
+        position: fixed;
       }
       .dateRemove {
         display: none;
@@ -646,4 +656,5 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       }
     }
   </style>
+
 </html>

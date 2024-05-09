@@ -28,7 +28,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
         class="headtitle"
         style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
         <div
-        class="mobileheadtitle"
+          class="mobileheadtitle"
           style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
           {
             heroImage && (
@@ -305,27 +305,27 @@ const { title, description, icon, color, pubDate, type, heroImage } =
 
       @media (max-width: 600px) {
         .headtitle {
-          padding:20px;
-          padding-top:80px;
+          padding: 20px;
+          padding-top: 80px;
         }
 
         .mobileheadtitle {
-          display:flex;
+          display: flex;
           flex: column;
         }
 
-        .mobileheadtitle div{
-          width:100%;
+        .mobileheadtitle div {
+          width: 100%;
         }
 
         .extraholder {
-          min-width:100%;
+          min-width: 100%;
         }
       }
 
       @media (min-width: 2000px) {
         .headtitle {
-          margin-top:130px;
+          margin-top: 130px;
         }
       }
     </style>

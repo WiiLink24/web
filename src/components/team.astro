@@ -35,12 +35,14 @@ import { Trans } from "astro-i18next/components";
       </h2>
       <div id="members_mobile" class="members"></div>
       <div id="members" class="members"></div>
-      <div style="top:30px; width:100%; border-radius:8px; overflow-x:hidden; overflow-y:visible; position:relative;">
-      <div style="width:4000px; display:flex; flex-direction:row; flex-wrap:nowrap; position:relative;"> 
-        <div id="members_small" class="members_small"></div>
-        <div id="members_small2" class="members_small"></div>
+      <div
+        style="top:30px; width:100%; border-radius:8px; overflow-x:hidden; overflow-y:visible; position:relative;">
+        <div
+          style="width:4000px; display:flex; flex-direction:row; flex-wrap:nowrap; position:relative;">
+          <div id="members_small" class="members_small"></div>
+          <div id="members_small2" class="members_small"></div>
+        </div>
       </div>
-    </div>
     </div>
   </div>
 </body>
@@ -112,13 +114,17 @@ import { Trans } from "astro-i18next/components";
   });
 
   function pauseanim() {
-    document.getElementById("members_small").style.animationPlayState = "paused";
-    document.getElementById("members_small2").style.animationPlayState = "paused";
+    document.getElementById("members_small").style.animationPlayState =
+      "paused";
+    document.getElementById("members_small2").style.animationPlayState =
+      "paused";
   }
 
   function playanim() {
-    document.getElementById("members_small").style.animationPlayState = "running";
-    document.getElementById("members_small2").style.animationPlayState = "running";
+    document.getElementById("members_small").style.animationPlayState =
+      "running";
+    document.getElementById("members_small2").style.animationPlayState =
+      "running";
   }
 </script>
 
@@ -156,7 +162,7 @@ import { Trans } from "astro-i18next/components";
     }
   }
   .membersmall {
-    margin-right:18px;
+    margin-right: 18px;
     border: 3px solid var(--bg-opaque-1);
   }
   .member:nth-child(1) {
