@@ -92,22 +92,55 @@ heroImage: "../../img/guidebg-1.png"
 
 </br>
 
-### Section II - Installing WADs
+### Section II - Installing WADs and Patching Mail
 
 1. Put your SD card or USB drive in your Wii.
 2. Launch the Homebrew Channel on your Wii.
 3. Launch yawmME (YAWM ModMii Edition).
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
-5. If your Wii is not a Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
-
+5. If your Wii is not Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
+8. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
+9. Follow the on-screen instructions.
+10. Once the patcher is finished, you can return to the Wii Menu.
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
-### Section III (Optional) - Adding your Personal Information to the Address Information settings (SPD)
+### Section III (Optional) - Connecting to DNS and adding your Personal Information to the Address Information settings (SPD)
+
+## Connecting to DNS
+
+<l class="notice info fullwidth">This step is optional, but it's recommended as it allows additional services to function.</l>
+
+1. Go to the Wii Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
+
+2. Make your way to the "Auto-Obtain DNS" setting.
+
+<l class="notice info fullwidth">Take note that the "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
+
+3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
+
+Set your Primary DNS to --> 167.86.108.126<br>
+Set your Secondary DNS to --> 1.1.1.1
+
+4. After you're done setting up the DNS, save the changes and let the system perform the Connection Test.
+
+5. If the Connection Test is successful, make your way back to the second page of the system settings.
+
+<l class="notice generic fullwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
+
+6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
+
+7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
+
+8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a> to enable it.
+
+9. Once you read the EULA, Click on "I Accept".
+
+## Adding Personal Information
 
 <l class="notice generic fullwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
@@ -115,7 +148,7 @@ heroImage: "../../img/guidebg-1.png"
 
 <l class="notice warn fullwidth"> You are responsible for entering your correct Address Information. Failure to do so may result in Emails and/or Orders not succeeding. </l>
 
-## Photo Prints Channel
+### Photo Prints Channel
 
 1. Launch the Photo Prints Channel from your Wii's home menu.
 2. On the bottom right, press `Address Settings` and then `Yes`.
@@ -123,7 +156,7 @@ heroImage: "../../img/guidebg-1.png"
 4. Press `OK` and then `Done`.
 5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu. After you’ve done that, it should work!
 
-## Food Channel
+### Food Channel
 
 1. Launch the Food Channel from your Wii's home menu.
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.
@@ -140,7 +173,3 @@ heroImage: "../../img/guidebg-1.png"
 4. Press `Ok` and then `Done`
 5. Once you are in the SPD main menu, choose `Demae` in the `Choose Channel` menu.
 6. When you return to the Food Channel via `SPD`, It will display your information that you put in and will give a confirmation box, Once you Double Check and everything is correct, Click on Yes. After you’ve done that, it should work!
-
-### For PAL (European Wiis)<br>
-
-<l class="notice warn fullwidth">In Wii Settings please set TV Resolution to 60 HZ (480p/480i). You can find this in `Screen -> TV Resolution` If you do not, a pink bar will appear at the bottom of the screen obscuring vision. </l>

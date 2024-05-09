@@ -27,7 +27,7 @@ icon: fa-solid fa-chalkboard
 
 2. Follow the on-screen instructions.
 
-3. Once the Patcher is Complete, You can return to the Wii Menu.
+3. Once the patcher is finished, you can return to the Wii Menu.
 
 <l class="notice success fullwidth">Congrats! You've installed the Wii Mail Service on your Console! You can use the service to your hearts content once again!</l>
 ___
@@ -44,10 +44,10 @@ ___
 
 3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
 
-Set your Primary DNS to --> 167.86.108.126 <br>
+Set your Primary DNS to --> 167.86.108.12 <br>
 Set your Secondary DNS to --> 1.1.1.1
 
-4. After you get done setting up the DNS, Save the changes and let the system perform the Connection Test.
+4. After you get done setting up the DNS, save the changes and let the system perform the Connection Test.
 
 5. If the Connection Test is successful, make your way back to the second page of the system settings.
 
@@ -57,7 +57,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
 
-8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service.
+8. Allow the EULA to load, the developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a> to enable it.
 
 9. Once you read the EULA, Click on "I Accept".
 
