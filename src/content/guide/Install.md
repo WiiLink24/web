@@ -111,7 +111,7 @@ heroImage: "../../img/guidebg-1.png"
 
 ### Section III (Optional) - Connecting to DNS and adding your Personal Information to the Address Information settings (SPD)
 
-## Connecting to DNS
+#### Connecting to DNS
 
 <l class="notice info fullwidth">This step is optional, but it's recommended as it allows additional services to function.</l>
 
@@ -140,7 +140,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 9. Once you read the EULA, Click on "I Accept".
 
-## Adding Personal Information
+#### Adding Personal Information
 
 <l class="notice generic fullwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
@@ -148,7 +148,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 <l class="notice warn fullwidth">You are responsible for entering your correct Address Information. Failure to do so may result in emails and/or orders not succeeding.</l>
 
-### Photo Prints Channel
+##### Photo Prints Channel
 
 1. Launch the Photo Prints Channel from your Wii's home menu.
 2. On the bottom right, press `Address Settings` and then `Yes`.
@@ -156,7 +156,7 @@ Set your Secondary DNS to --> 1.1.1.1
 4. Press `OK` and then `Done`.
 5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu.
 
-### Food Channel
+##### Food Channel
 
 1. Launch the Food Channel from your Wii's home menu.
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.
