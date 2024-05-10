@@ -124,10 +124,14 @@ changeLanguage("de");
       document.querySelector(".square").style.animation =
         "changecolorbasic 10s linear infinite";
       document.querySelector(".bottomleftcorner").style.animation = "none";
+      document.body.classList.add("no-animation");
+      document.getElementById("siteVer").innerHTML =
+        "<b style='font-weight:400'><i class='fa fa-battery-quarter' style='transform:rotate(-90deg);'></i> Site running in lowest power mode</b>";
     }
 
     var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
     var isLowSpec = getUrlParameter("low-spec");
+    var potato = getUrlParameter("potato");
     var kawaii = getUrlParameter("kawaii");
 
     if (fromRiiConnect24 == "true") {
@@ -142,6 +146,14 @@ changeLanguage("de");
       document.querySelector(".square").style.animation =
         "changecolorbasic 10s linear infinite";
       document.querySelector(".bottomleftcorner").style.animation = "none";
+    }
+    if (potato == "true") {
+      document.querySelector(".square").style.animation =
+        "changecolorbasic 10s linear infinite";
+      document.querySelector(".bottomleftcorner").style.animation = "none";
+      document.body.classList.add("no-animation");
+      document.getElementById("siteVer").innerHTML =
+        "<b style='font-weight:400'><i class='fa fa-battery-quarter' style='transform:rotate(-90deg);'></i> Site running in lowest power mode</b>";
     }
     if (kawaii == "true") {
       document.getElementById("warn").style.display = "block";

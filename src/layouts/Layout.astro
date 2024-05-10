@@ -57,7 +57,9 @@ const { title, description, image } = Astro.props;
     <meta name="darkreader-lock" />
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
-    ></script>
+    >
+      import { set } from "astro/zod";
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -94,7 +96,6 @@ const { title, description, image } = Astro.props;
     <slot />
   </body>
 </html>
-
 <style is:global>
   @font-face {
     font-family: Rubik;
@@ -109,6 +110,54 @@ const { title, description, image } = Astro.props;
   @font-face {
     font-family: inter;
     src: url(/fonts/sfpro.otf);
+  }
+  .no-animation,
+  .no-animation *,
+  .no-animation *:before,
+  .no-animation *:after {
+    animation-play-state: paused !important;
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+  }
+
+  .no-animation #square2 {
+    background-color: var(--bg-color) !important;
+  }
+
+  .no-animation #links .dropdown,
+  .no-animation marquee,
+  .no-animation .bar-holder {
+    display: none;
+  }
+
+  .no-animation span,
+  .no-animation .release-name {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+
+  .no-animation .footer-holder,
+  .no-animation .element,
+  .no-animation .left,
+  .no-animation .download-button {
+    opacity: 1 !important;
+    transform: translate(0, 0) !important;
+  }
+
+  .no-animation .release-name span {
+    transform: translate(-33px, -26px) !important;
+  }
+
+  .no-animation .follow span,
+  .no-animation .social span {
+    transform: translate(0, -50%) !important;
+  }
+
+  .no-animation #footer {
+    transform: translate(-50%, 0) !important;
   }
 
   h1,
