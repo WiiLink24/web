@@ -9,12 +9,18 @@ let data;
 
 async function fetchData() {
   const url = new URL(Astro.request.url);
-  const countryCode = url.pathname.split('/')[1] || '';
+  const countryCode = url.pathname.split('/')[1] || 'default';
 
   const filePath = path.join(process.cwd(), 'public', 'json', countryCode, 'services.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
-  const jsonData = JSON.parse(fileContents);
-  return jsonData.services.service;
+  
+  try {
+    const fileContents = await fs.readFile(filePath, 'utf8');
+    const jsonData = JSON.parse(fileContents);
+    return jsonData.services.service;
+  } catch (error) {
+    console.error(`Failed to read file at ${filePath}:`, error);
+    return [];
+  }
 }
 
 data = await fetchData();
