@@ -1,0 +1,196 @@
+{
+    "site": {
+        "title": "WiiLink",
+        "description": "Tüm bölgelerde mevcut olmayanlar da dahil olmak üzere, şu anda durdurulan WiiConnect24 kanallarını ve hizmetlerini geri yüklemeye, çevirmeye ve geliştirmeye adanmış resmî olmayan bir topluluk homebrew projesi.",
+        "img": "/img/news_post_welcome_back.png",
+        "load": "Yükleniyor...",
+        "dev": "Geliştiren: ",
+        "relNotes": "Sürüm Notları",
+        "downloadPrompt": "İndir",
+        "winMinReq": "Windows 8 veya daha yüksek bir sürüme ihtiyacınız olacak!",
+        "installGuide": "Yükleme rehberi",
+        "terms": "<0>Hizmet Şartları</0>'nı ve <1>Gizlilik Politikası</1>'nı okudum ve kabul ediyorum.",
+        "slogan": "<0>WiiLink</0> resmî olmayan, kâr amacı gütmeyen bir homebrew projesidir. Nintendo'ya bağlı değildir ve tüm ticari markalar ilgili sahiplerinin mülkiyetindedir. Hiçbir telif hakkı ihlali amaçlanmamıştır.</1></2>© 2020-2024 <3>WiiLink</3><4> Ekibi</4>",
+        "donate": "Bağış Yapın!",
+        "creator": "Web sitesi Alex tarafından tasarlanmış ve kodlanmıştır",
+        "contact": "Bize ulaşın",
+        "assets": "Marka varlıkları",
+        "install": "Şimdi yükle",
+        "wfcPrompt": "WiiLink WFC'ye göz atın!",
+        "heroDesc": "WiiLink, Nintendo'nun hem WiiConnect24, hem de NWFC sunucuları için açık kaynaklı bir alternatiftir ve orijinal sunucular durdurulduktan sonra bile herkes için çevrim içi bağlantıya olanak tanır!",
+        "heroDev": "Geliştiren:",
+        "downloadFor": "Şunun için İndir:",
+        "other": "Diğer",
+        "legacyPatcher": "Eski yamayı indirin",
+        "changelog": "Değişim Günlüğü",
+        "withThe": "ile",
+        "heroMorePrompt": "WiiLink'in sizin için başka neler yapabileceğini görün"
+    },
+    "build": {
+        "title": "En sonki <0>derleme</0>'ye göz atın!",
+        "releasedBy": "Yayınlayan:",
+        "releaseBranch": "Dal: ",
+        "releaseDate": "Yayınlanma tarihi: ",
+        "releaseTotal": "Toplam: "
+    },
+    "donate": {
+        "title": "<0>Desteğiniz</0> tarafından desteklenmektedir!",
+        "subtitle": "<0>WiiLink</0>, <1>kullanıcıları</1> ve <2>sponsorları</2> tarafından halka açık olarak finanse edilmektedir. <3>İşletme maliyetlerimize yardımcı olmak için lütfen bağış yapmayı düşünün!</3>",
+        "donators": "...ve tüm bu <0>harika insanlar</0>a katılın:",
+        "powered": "Destekleyen:",
+        "thanks-tier-1": "Katkıda bulunduğunuz için teşekkürler!",
+        "thanks-tier-2": "Katkıda bulunduğunuz için teşekkürler!",
+        "thanks-tier-3": "İşte bu çok para!",
+        "thanks-tier-4": "Vay be! Bu çok fazla!",
+        "info-tier-1": "<0><1></1> donators channel</0>'a erişiminin yanı sıra, <2><3></3> web sitemizde tanınırlığa</2>da erişin!",
+        "info-tier-2": "Wii Room'da kendi <0><1></1> film posterinize</0>, Food Channel'ın içindeki <2><3></3> restorana</2> ve ayrıca <4>Violet'in tüm avantajları</4>'na erişin!",
+        "info-tier-3": "Wii Room'da kendi <0><1></1> Mii</0>'nize sahip olun, <2><3></3> Tester Discord sohbeti</2>'ne ve <4>Lilac'ın tüm avantajları</4>'na erişin!",
+        "info-tier-4": "Wii Room'un içinde kendi <0><1></1> odanızı</0> yaratın ve ayrıca <2>Tulip'in tüm avantajları</2>'na sahip olun!",
+        "sub": "Ayda </0> karşılığında abone olun",
+        "local-currency": "₺"
+    },
+    "header": {
+        "home": "Ana Sayfa",
+        "news": "Haberler",
+        "guide": "Rehber",
+        "status": "Durum",
+        "faq": "SSS",
+        "isGuide": "rehber",
+        "extras": "Ekstralar",
+        "extrasNew": "yeni",
+        "services": "Hizmetler",
+        "chooseLang": "Dilinizi Seçin",
+        "privacyPolicy": "Gizlilik Politikası",
+        "tos": "Hizmet Koşulları",
+        "eula": "EULA",
+        "eula-long": "Son Kullanıcı Lisans Sözleşmesi (EULA)",
+        "news-info": "Daha fazla haber gönderisi için haber sayfasına gidin.",
+        "guide-info": "Tüm hizmetlerimize ilişkin rehberler ve açıklamalar için rehber sayfasına gidin."
+    },
+    "footer": {
+        "pages": "Site Sayfaları",
+        "links": "Github Bağlantıları",
+        "socials": "Sosyal Medya Hesapları",
+        "repos": "GitHub Depoları",
+        "siteby": "Site Yapımcısı:",
+        "repo": "Depo",
+        "projects": "Projeler",
+        "teams": "Takımlar",
+        "people": "Kişiler"
+    },
+    "jumpin": {
+        "title": "Gelin ve <0>katılın</0>!",
+        "slogan": "Wii'nizi hayata döndürün ve yepyeni kanalları deneyin.",
+        "install": "Yükle!"
+    },
+    "services": {
+        "title": "<0>WiiLink</0>'e hoş geldiniz!",
+        "subtitle": "Tüm bölgelerde mevcut olmayanlar da dahil olmak üzere, şu anda durdurulan WiiConnect24 kanallarını ve hizmetlerini geri yüklemeye, çevirmeye ve geliştirmeye adanmış resmî olmayan bir topluluk homebrew projesi."
+    },
+    "socials": {
+        "title": "Projenin <0>sosyal medya hesapları</0>'na göz atın!",
+        "subtitle": "Tüm hizmet <0>güncellemelerini</0> ve <1>genel duyurularını</1> takip edin veya Discord sunucusuna katılın.",
+        "twFollowers": "3.3B takipçi",
+        "twFollow": "Takip Et",
+        "twTweets": "WiiLink24'ün Tweet'leri",
+        "dcMembers": "26,3B üye",
+        "dcJoin": "Katıl",
+        "ghFollowers": "133 takipçi",
+        "ghFollow": "Takip Et",
+        "ytSubscribers": "2.3B abone",
+        "ytSubscribe": "Abone Ol"
+    },
+    "team": {
+        "title": "Projenin <0>ekibi</0>",
+        "subtitle": "<0>WiiLink</0>, <1>gönüllü çalışmayla</1> desteklenmektedir. </2><3>İşte projeyi yürütmek için çalışan başlıca katkıda bulunanlar!</3>"
+    },
+    "svc-site": {
+        "mainTitle": "WiiLink - Hizmetler",
+        "mainDesc": "WiiLink'in sunduğu hizmetlere göz atın!",
+        "title": "Sunduğumuz her şey! <1>WiiLink</1> <2>hizmetleri</2>",
+        "subtitle": "Burada <0>sunduğumuz her şeyi</0> göreceksiniz! Bunları okuyun ve kendiniz indirin!",
+        "wc24-min": "WiiConnect24",
+        "jp-min": "Japon",
+        "eu-min": "Avrupa",
+        "extra-min": "Ekstra",
+        "wc24": "<0>WiiConnect24</0> hizmetleri",
+        "jp": "<0>Japonya'ya özel</0> hizmetleri",
+        "eu": "<0>Avrupa'ya özel</0> hizmetleri",
+        "extra": "<0>Ekstra</0> hizmetler",
+        "wc24-desc": "WiiConnect24 hizmeti tarafından desteklenen hizmetler, tarafımızca yeniden canlandırıldı!",
+        "jp-desc": "Japon hizmetleri Batı için yerelleştirildi ve geliştirildi!",
+        "eu-desc": "Keyfini çıkarmanız için Avrupa'ya özgü hizmetler dünya çapında hizmete sunuluyor!",
+        "extra-desc": "Deneyiminizi geliştirmek için sunduğumuz şık ekstra şeyler!",
+        "helpTitle": "<0>Bir şey mi kaçırdık</0>? <1>İletişime geçtiğinizden</1> emin olun!</0>"
+    },
+    "news": {
+        "mainTitle": "WiiLink - Haberler",
+        "mainDesc": "WiiLink'in en sonki iyileştirmelerini ve sürümlerini okuyun!",
+        "title": "İşte <1>WiiLink</1> <2>haberleri</2>",
+        "subtitle": "<0>Projenin ilerleyişini</0> ve ayrıca <1>hizmet güncellemelerini</1> takip edin!",
+        "otherNews": "İşte bazı <0>eski</0> makaleler:",
+        "rssTitle": "<0>Sitenizde veya hizmetinizde <1>WiiLink haberlerini</1> almak ister misiniz? <2>RSS özet akışını</2> kullanın.</0>",
+        "rssButton": "RSS özet akışını alın",
+        "otherPosts": "Diğer <0>gönderiler</0>"
+    },
+    "guide": {
+        "mainTitle": "WiiLink - Rehber",
+        "mainDesc": "Hizmetlerimiz için önemli bilgiler ve yardım alın!",
+        "title": "<1>WiiLink</1> <2>rehberi</2>ne hoş geldiniz",
+        "subtitle": "Burada hizmetle ilgili <0>önemli bilgiler</0>in yanı sıra size yardımcı olacak yararlı <1>rehberler</1>i ve <2>sorun gidericiler</2>i bulacaksınız!",
+        "specificGuides": "<0>Ne arıyorsunuz</0>?",
+        "helpTitle": "<0><1>Aradığınızı bulamıyor musunuz</1>? <2>İletişime geçmekten</c2> çekinmeyin!</0>",
+        "helpButton1": "Bize Ulaşın!",
+        "helpButton2": "Discord'a katılın"
+    },
+    "guidePost": {
+        "name": "Rehber",
+        "whereTo": "Nereye gitmek istiyorsunuz?",
+        "installGuide": "Yükleme Rehberi",
+        "problemSolving": "Problem çözme",
+        "faq": "Sıkça sorulan sorular",
+        "installGuide-info": "WiiLink'i konsolunuza nasıl kuracağınıza ilişkin adım adım rehber.",
+        "problemSolving-info": "Bir sorununuz mu var? Bunları çözebilir miyiz bir bakalım!",
+        "faq-info": "İlginizi çekebilecek bazı sık sorulan sorular...",
+        "lookingFor": "<0>Ne arıyorsunuz</0>?",
+        "visitWiiHacks": "wii.hacks.guide'ı ziyaret edin",
+        "copyright": "© 2020-2024 <0>WiiLink<1>rehberi</1></0> <2> Ekibi</2>"
+    },
+    "newsPost": {
+        "name": "Haberler",
+        "min": "minimum okuma süresi"
+    },
+    "status": {
+        "mainTitle": "WiiLink - Durum",
+        "mainDesc": "Hizmet durumunu ve tamamlanıp tamamlanmadığını kontrol edin!",
+        "title": "<1>WiiLink</1> <2>durumuna</2> göz atın",
+        "subtitle": "<1>Sunucu</1> durumuna ek olarak <0>ilerlememize</0> de göz atın!",
+        "serverStatus": "Sunucunun durumunu kontrol edin."
+    },
+    "extras": {
+        "mainTitle": "WiiLink - Ekstralar",
+        "mainDesc": "Bazı özel kaynaklara ve içeriklere göz atın!",
+        "title": "İşte <1>WiiLink</1> <2>ekstraları</2>",
+        "subtitle": "Burada üzerinde çalıştığımız <0>özel içeriği</0> bulacaksınız.",
+        "helpCall": "<0>Buraya <1>eklememiz</1> gereken bir şey olduğunu düşünüyor musunuz? <2>İletişime geçtiğinizden</2> emin olun!</0>",
+        "contact": "Bize Ulaşın!",
+        "joinDiscord": "Discord'a katılın"
+    },
+    "404": {
+        "mainTitle": "WiiLink - 404",
+        "mainDesc": "404 - Aradığınız sayfa bulunamadı...",
+        "message": "Sayfa bulunamadı..."
+    },
+    "tos": {
+        "mainTitle": "WiiLink - Hizmet Koşulları",
+        "mainDesc": "WiiLink hizmetlerine ilişkin Hizmet Koşulları."
+    },
+    "privacyPolicy": {
+        "mainTitle": "WiiLink - Gizlilik Politikası",
+        "mainDesc": "WiiLink hizmetlerine ilişkin Gizlilik Politikası."
+    },
+    "eula": {
+        "mainTitle": "WiiLink - Son Kullanıcı Lisans Sözleşmesi",
+        "mainDesc": "WiiLink hizmetleri için Son Kullanıcı Lisans Sözleşmesi."
+    }
+}

@@ -5,13 +5,13 @@
         "title": "<i class='fa-solid fa-palette'></i> Ressources de marque",
         "desc": "Nos ressources de marque pour un usage externe !",
         "img": "/img/branding_bg.png",
-        "link": "404"
+        "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Fond d'écrans",
         "desc": "Des fonds d'écran WiiLink pour votre PC !",
         "img": "/img/wallpaper_bg.png",
-        "link": "404"
+        "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Présentation de l'équipe",
@@ -20,16 +20,16 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
-        "desc": "Un serivce de gamertag pour Wii et Wii U !",
+        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
+        "desc": "Un service de gamertag pour Wii et Wii U !",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Visualiseur de sondages EVC",
+        "title": "<i class='fa-solid fa-poll'></i> Visualiseur de sondages",
         "desc": "Consultez les résultats des sondages de la Chaîne votes !",
         "img": "/img/guidebg-2.png",
-        "link": "404"
+        "link": "extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
@@ -39,17 +39,52 @@
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Thèmes WiiLink",
-        "desc": "Des thèmes WiiLink pour la Wii !",
+        "desc": "Des thèmes cools pour votre Wii !",
         "img": "/img/guidebg-3.png",
-        "link": "404"
+        "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
         "desc": "Un service de Connexion Wi-Fi Nintendo en développement !",
         "img": "/img/guidebg-1.png",
-        "link": "404"
+        "link": "https://wfc.wiilink24.com"
+      },
+      {
+        "title": "<i class='fa-solid fa-mask'></i> Bandes dessinées",
+        "desc": "Anciennes bandes dessinées RiiConnect24",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/strips"
+      },
+      {
+        "title": "<i class='fa-solid fa-gamepad'></i> Testeur télécommande Wii",
+        "desc": "Une simple page pour tester votre télécommande Wii",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/internetchannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "desc": "",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/mii"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Astuces Chaîne photo",
+        "desc": "Des astuces pour obtenir des résultats rapides !",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/photochannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-shop'></i> Chanson de la chaîne boutique Wii",
+        "desc": "Musique meme pour la chaîne boutique Wii",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/ring"
+      },
+      {
+        "title": "<i class='fa-solid fa-cat'></i> Chat des infos",
+        "desc": "Un service de Connexion Wi-Fi Nintendo en développement !",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/cat"
       }
-
-]
-}
+    ]
+  }
 }

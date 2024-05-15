@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Kênh Thời Tiết",
+        "desc": "Khám phá thời tiết cho khu vực của bạn, đất nước của bạn hoặc toàn thế giới.",
+        "link": "/guide/forecast",
+        "isArea": "Quốc tế",
+        "status": "Bản phát hành Đầy đủ",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ đang hoạt động rất tốt! <br><br> <b>Người dùng RiiConnect24</b> sẽ cần cập nhật bằng phiên bản mới nhất của WiiLink Patcher để tiếp tục dịch vụ.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "Kênh Tin Tức",
+        "desc": "Nhanh chóng cập nhật những tin tức mới nhất từ khắp nơi trên thế giới và biết chính xác nó đang diễn ra ở đâu.",
+        "link": "/guide/news",
+        "isArea": "Quốc tế",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Kênh Nintendo",
+        "desc": "Hướng dẫn về các tựa game Wii, Nintendo DS và Nintendo 3DS, cùng với các bài đánh giá, đoạn giới thiệu, chương trình đặc biệt và bản demo.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Quốc Tế",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Check Mii Out Channel",
+        "desc": "Trở thành Nghệ nhân Mii và cho thế giới thấy kỹ năng thiết kế Mii của bạn trong nhiều cuộc thi.",
+        "link": "/guide/miicontest",
+        "isArea": "Quốc Tế",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Kênh Bình Chọn (Everybody Votes Channel)",
+        "desc": "Tìm hiểu xem thế giới nghĩ gì bằng cách tham gia các cuộc thăm dò hoàn toàn mới.",
+        "link": "/guide/evc",
+        "isArea": "Quốc Tế",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Kênh Đồ Ăn (Food Channel)",
+        "desc": "Đặt các loại bữa ăn khác nhau từ nhà thông qua máy chơi game Wii của bạn.",
+        "link": "/guide/demae",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "Kênh hướng dẫn truyền hình (TV Guide Channel)",
+        "desc": "Tham khảo hướng dẫn chương trình truyền hình địa phương của bạn, đặt thời gian nhắc nhở cho các chương trình và vận hành TV bằng Wiimote của bạn.",
+        "link": "/guide/tvnotomo",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Phiên Bản Thử Nghiệm Riêng Tư",
+        "todo": "<i class='fa fa-hard-hat'></i> Dịch vụ này vẫn đang được phát triển",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Kênh TV Kirby (Kirby TV Channel)",
+        "desc": "Xem các tập <i>Kirby: Right Back at Ya!</i> có thời lượng giới hạn.",
+        "link": "/guide/kirbytv",
+        "isArea": "Ban đầu phát hành cho một số nước ở châu Âu",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Kênh In Ấn (Photo Prints Channel)",
+        "desc": "Tạo album và danh thiếp bằng ảnh và nhân vật Mii của bạn.",
+        "link": "/guide/digicam",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Phòng Wii (WiiRoom)",
+        "desc": "Khám phá các chương trình và nội dung video khác theo yêu cầu hoặc gửi tin nhắn cho bạn bè của bạn từ WiiRoom.",
+        "link": "/guide/wiinoma",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Các Cài đặt địa chỉ",
+        "desc": "Nhập thông tin cá nhân cần thiết cho Photo Prints Channel và Food Channel.",
+        "link": "/guide/spd",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Bảng Tin Nhắn Wii",
+        "desc": "Gửi tin nhắn đến bạn bè Wii đã đăng ký của bạn và địa chỉ email.",
+        "link": "/guide/board",
+        "isArea": "Dành Chó Mọi Khu Vực",
+        "status": "Bản Phát Hành Đầy Đủ",
+        "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Bản xem trước của Metroid Prime 3",
+        "desc": "Xem <i>Metroid Prime 3: Corruption</i>.",
+        "link": "/guide/primepreview",
+        "isArea": "Ban đầu phát hành tại Mỹ và Châu Âu",
+        "status": "Dừng lại",
+        "todo": "<i class='fa fa-bomb'></i> Sự phát triển của dịch vụ này đã bị dừng lại.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Phòng Wii ở mọi nơi",
+        "desc": "Ứng dụng DSiWare để xem ngoại tuyến nội dung đã tải xuống của Wii Room.",
+        "link": "/guide/dokodemo",
+        "isArea": "Ban đầu phát hành tại Nhật Bản",
+        "status": "Ngưng Hoạt Động",
+        "todo": "<i class='fa fa-bomb'></i> Sự phát triển của dịch vụ này đã bị dừng lại.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}

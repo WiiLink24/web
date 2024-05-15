@@ -1,0 +1,196 @@
+{
+    "site": {
+        "title": "WiiLink",
+        "description": "Egy nemhivatalos közösségi projekt a néhai WiiConnect24-csatornák és szolgáltatások visszaállítására, lefordítására, korszerűsítésére és régiófüggetlenné tételére.",
+        "img": "/img/news_post_welcome_back.png",
+        "load": "Betöltés…",
+        "dev": "Fejlesztő: ",
+        "relNotes": "Fejlesztői jegyzetek",
+        "downloadPrompt": "Letöltés",
+        "winMinReq": "A futtatáshoz legalább Windows 8-cal kell rendelkezned!",
+        "installGuide": "Telepítési útmutató",
+        "terms": "Megismertem a <0>felhasználási feltételeket</0> és <1>adatvédelmi irányelveket</1>.",
+        "slogan": "A <0>WiiLink</0> egy nemhivatalos és nonprofit rajongói projekt. Nem állunk kapcsolatban a Nintendóval. Minden védjegy a tulajdonosoké. Nem szándékunk a szerzői jogok megsértése. </1></2>© 2020-2024 <3>A WiiLink</3><4> Csapata</4>",
+        "donate": "Támogass minket!",
+        "creator": "A honlapot tervezte és megvalósította: Alex",
+        "contact": "Kapcsolat",
+        "assets": "Márkaeszközök",
+        "install": "Telepítés",
+        "wfcPrompt": "Ismerd meg a WiiLink WFC-t!",
+        "heroDesc": "A WiiLink egy nyílt forráskódú megoldás a WiiConnect24 és a NWFC helyettesítésére, ami ismét lehetővé teszi az internetes játékot az eredeti szolgáltatás leállítása után.",
+        "heroDev": "Fejlesztő:",
+        "downloadFor": "Letöltés:",
+        "other": "Egyebek",
+        "legacyPatcher": "A régi patcher letöltése",
+        "changelog": "Változásnapló",
+        "withThe": "Szolgáltatás:",
+        "heroMorePrompt": "A WiiLink még többre is képes"
+    },
+    "build": {
+        "title": "A legújabb <0>kiadás</0>:",
+        "releasedBy": "Kiadó:",
+        "releaseBranch": "Ág: ",
+        "releaseDate": "Megjelenés dátuma: ",
+        "releaseTotal": "Össz.: "
+    },
+    "donate": {
+        "title": "A WiiLinket a <0>Ti támogatásotok</0> tartja mozgásban!",
+        "subtitle": "A <0>WiiLink</0>et a <1>felhasználók</1> és a <2>szponzorok</2> tartják életben. <3>Ha szeretnél segíteni a fenntartási költségek fedezésében, kérjük adományozz!</3>",
+        "donators": "…és csatlakozz a többi <0>támogatónkhoz</0>:",
+        "powered": "Biztosító:",
+        "thanks-tier-1": "Köszönjük, hogy beszálltál!",
+        "thanks-tier-2": "Köszönjük a segítséget!",
+        "thanks-tier-3": "Ez aztán sok pénz!",
+        "thanks-tier-4": "Hűha! Túl kedves vagy!",
+        "info-tier-1": "Hozzáférést biztosít a <0><1></1> közreműködők csatornájához</0> és <2><3></3> elismerést ad a honlapon</2>.",
+        "info-tier-2": "Saját <0><1></1> filmposzter</0> a Wii Roomon belül és saját <2><3></3>étterem</2> a Food Channelen belül. Továbbá, a <4>Violet előnyeit is tartalmazza</4>.",
+        "info-tier-3": "Saját <0><1></1> Mii</0> a Wii Roomon belül, hozzáférés a <2><3></3> tesztelők Discord-csatornájához</2> és a <4>Lilac minden előnye</4>.",
+        "info-tier-4": "Saját <0><1></1> szoba</0> a Wii Roomon belül és a <2>Tulip összes előnye</2>.",
+        "sub": "Fizess elő havi </0>-ért!",
+        "local-currency": "Ft"
+    },
+    "header": {
+        "home": "Kezdőlap",
+        "news": "Hírek",
+        "guide": "Útmutató",
+        "status": "Állapot",
+        "faq": "GYIK",
+        "isGuide": "útmutató",
+        "extras": "Extrák",
+        "extrasNew": "új",
+        "services": "Szolgáltatások",
+        "chooseLang": "Válassz nyelvet!",
+        "privacyPolicy": "Adatvédelmi irányelvek",
+        "tos": "Felhasználási feltételek",
+        "eula": "Végfelhasználói licencszerződés",
+        "eula-long": "Végfelhasználói licencszerződés",
+        "news-info": "A további hírekért látogasd meg a Hírek-oldalt!",
+        "guide-info": "Útmutatókért és magyarázatokért látogasd meg az Útmutatók-oldalt!"
+    },
+    "footer": {
+        "pages": "Oldalak",
+        "links": "GitHub-hivatkozások",
+        "socials": "Közösségi oldalak",
+        "repos": "GitHub-repók",
+        "siteby": "Honlapkarbantartó:",
+        "repo": "Repó",
+        "projects": "Projektek",
+        "teams": "Csapatok",
+        "people": "Személyek"
+    },
+    "jumpin": {
+        "title": "Gyere és <0>csatlakozz hozzánk</0>!",
+        "slogan": "Keltsd újra életre a Wiid és próbálj ki új csatornákat!",
+        "install": "Telepítsd!"
+    },
+    "services": {
+        "title": "Üdvözöl a <0>WiiLink</0>!",
+        "subtitle": "Egy nemhivatalos közösségi projekt a néhai WiiConnect24-csatornák és szolgáltatások visszaállítására, lefordítására, korszerűsítésére és régiófüggetlenné tételére."
+    },
+    "socials": {
+        "title": "Nézd meg a projekt <0>közösségi oldalait</0>!",
+        "subtitle": "Maradj naprakész a szolgáltatással kapcsolatos <0>hírekkel</0> és <1>bejelentésekkel</1>, vagy csatlakozz a Discord-szerverhez!",
+        "twFollowers": "3,3e követő",
+        "twFollow": "Követés",
+        "twTweets": "A WiiLink24 tweetjei",
+        "dcMembers": "26,3e tag",
+        "dcJoin": "Csatlakozás",
+        "ghFollowers": "133 követő",
+        "ghFollow": "Követés",
+        "ytSubscribers": "2,3e feliratkozó",
+        "ytSubscribe": "Feliratkozás"
+    },
+    "team": {
+        "title": "A projekt <0>csapata</0>",
+        "subtitle": "A <0>WiiLinket</0> <1>önkéntes munka</1> tartja életben. </2><3>Alább olvashatod a projekt fő közreműködőit.</3>"
+    },
+    "svc-site": {
+        "mainTitle": "WiiLink – Szolgáltatások",
+        "mainDesc": "Tekintsd meg a WiiLink által nyújtott szolgáltatásokat!",
+        "title": "Ez a teljes kínálatunk. <1>WiiLink</1> <2>szolgáltatások</2>",
+        "subtitle": "Alább tekintheted meg a <0>teljes kínálatunkat</0>. Olvass róluk és töltsd le!",
+        "wc24-min": "WiiConnect24",
+        "jp-min": "Japán",
+        "eu-min": "Európai",
+        "extra-min": "Extrák",
+        "wc24": "<0>WiiConnect24</0>-szolgáltatások",
+        "jp": "<0>Eredetileg japán</0> szolgáltatások",
+        "eu": "<0>Eredetileg európai</0> szolgáltatások",
+        "extra": "<0>Extra</0> szolgáltatások",
+        "wc24-desc": "A WiiConnect24 szolgáltatásai, melyeknek mi vettük át a stafétáját!",
+        "jp-desc": "Eredetileg csak Japánban elérhető szolgáltatások, melyeket feljavítottunk nyugati használatra!",
+        "eu-desc": "Eredetileg csak Európában elérhető szolgáltatások, melyeket elérhetővé tettünk az egész világ számára!",
+        "extra-desc": "Egyéb újdonságok az élményed fokozására!",
+        "helpTitle": "<0>Kihagytunk valamit?</0> <1>Lépj velünk kapcsolatba!</1></0>"
+    },
+    "news": {
+        "mainTitle": "WiiLink – Hírek",
+        "mainDesc": "Olvass a WiiLink legfrissebb javításairól és újdonságairól!",
+        "title": "Ezek a <1>WiiLink</1> <2>hírek</2>",
+        "subtitle": "Maradj naprakész a <0>projekt haladásával</0> és <1>egyéb bejelentésekkel</1>!",
+        "otherNews": "<0>Korábbi</0> hírek:",
+        "rssTitle": "<0>Szeretnéd a <1>WiiLink híreit</1> a saját honlapodra vagy szolgáltatásodba beágyazni? Akkor az <2>RSS-hírfolyamot</2> neked találták ki.</0>",
+        "rssButton": "RSS-hírfolyam",
+        "otherPosts": "Egyéb <0>bejegyzések</0>"
+    },
+    "guide": {
+        "mainTitle": "WiiLink – Útmutató",
+        "mainDesc": "Fontos információk és segédanyagok a szolgáltatásainkhoz.",
+        "title": "Isten hozott a <1>WiiLink</1><2>-útmutatóban</2>!",
+        "subtitle": "Itt <0>fontos információkat</0> találhatsz a szolgáltatással kapcsolatban, továbbá <1>útmutatókat</1> és <2>hibakeresési segédleteket</2> is olvashatsz.",
+        "specificGuides": "Mit <0>keresel</0>?",
+        "helpTitle": "<0>Valami <1>nem működik</1>? <2>Vedd fel velünk a kapcsolatot!</c2></0>",
+        "helpButton1": "Kapcsolatfelvétel",
+        "helpButton2": "Csatlakozás a Discord-szerverhez"
+    },
+    "guidePost": {
+        "name": "Útmutató",
+        "whereTo": "Mit keresel?",
+        "installGuide": "Telepítési útmutató",
+        "problemSolving": "Problémamegoldás",
+        "faq": "Gyakran ismételt kérdések",
+        "installGuide-info": "A WiiLink telepítésre konzolra, lépésről-lépésre.",
+        "problemSolving-info": "Valami nincs rendben? Lássuk, hogy meg tudjuk-e oldani!",
+        "faq-info": "Néhány gyakran ismételt kérdés, ami érdekelhet…",
+        "lookingFor": "Mit <0>keresel</0>?",
+        "visitWiiHacks": "Keresd fel a wii.hacks.guide-honlapot!",
+        "copyright": "© 2020-2024 A <0>WiiLink<1>útmutató</1></0> <2> csapata</2>"
+    },
+    "newsPost": {
+        "name": "Hírek",
+        "min": "perces olvasmány"
+    },
+    "status": {
+        "mainTitle": "WiiLink – Állapot",
+        "mainDesc": "Tekintsd meg a szolgáltatás állapotát és előrehaladását!",
+        "title": "Tekintsd meg a <1>WiiLink</1> <2>állapotát</2>!",
+        "subtitle": "Tekintsd meg az <0>előrehaladásunkat</0> és a <1>kiszolgálók</1> állapotát!",
+        "serverStatus": "Kiszolgálók állapota"
+    },
+    "extras": {
+        "mainTitle": "WiiLink – Extrák",
+        "mainDesc": "Tekints meg különleges tartalmakat!",
+        "title": "Ezek a <1>WiiLink</1> <2>extrák</2>",
+        "subtitle": "Itt találod a <0>különleges tartalmakat</0>, melyeken dolgozunk.",
+        "helpCall": "<0><1>Hiányzik</1> valami? <2>Lépj velünk kapcsolatba!</2></0>",
+        "contact": "Kapcsolatfelvétel",
+        "joinDiscord": "Csatlakozás a Discord-szerverhez"
+    },
+    "404": {
+        "mainTitle": "WiiLink – 404",
+        "mainDesc": "404 – A keresett oldal nem található…",
+        "message": "A keresett oldal nem található…"
+    },
+    "tos": {
+        "mainTitle": "WiiLink – Felhasználási feltételek",
+        "mainDesc": "A WiiLink felhasználási feltételei."
+    },
+    "privacyPolicy": {
+        "mainTitle": "WiiLink – Adatvédelmi irányelvek",
+        "mainDesc": "A WiiLink adatvédelmi irányelvei."
+    },
+    "eula": {
+        "mainTitle": "WiiLink – Végfelhasználói licencszerződés",
+        "mainDesc": "A WiiLink végfelhasználói licencszerződése."
+    }
+}

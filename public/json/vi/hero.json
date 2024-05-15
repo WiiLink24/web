@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Mở tiệc như bạn đang ở những năm 2006!",
+    "Liệu bạn có biết rằng bạn có thể kết nối máy chơi game Wii của bạn với internet?",
+    "Đã được xem trên Scott The Woz!",
+    "Sự trở lại của WiiConnect24",
+    "Khám phá lại Wii của bạn",
+    "Liên kết trở lại thời hoàng kim của Nintendo",
+    "Kết nối trở lại quá khứ của Wii một lần nữa!",
+    "Wii Play. Đứng không?",
+    "Bạn có thể làm nhiều thứ hơn với Wii so vơi khóc lóc cay cú trong Mario Kart!",
+    "Dịch vụ hồi sinh mạng wii chân thực nhất",
+    "Chơi như bạn hồi bé!",
+    "Wii đang muốn nấu, trở lại",
+    "Ký ức tuổi thơ của bạn, được kết nối với máy chủ của chúng tôi",
+    "WiiLink, Phần mềm Wii vượt xa mọi thứ",
+    "Fans làm thứ mà Nintenkhông",
+    "WiiLink chắc chắn mang đến cảm giác của năm 2006!",
+    "Liên kết thế giới, một Wii tại một thời điểm",
+    "Một trong những bước tiến lớn nhất của Nintendo trong lĩnh vực chơi game nhiều người chơi, Đã được hồi sinh!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Kênh Thời Tiết",
+        "desc": "Kiểm tra dự báo thời tiết cập nhật từ khắp nơi trên thế giới",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Kênh Tin Tức",
+        "desc": "Luôn cập nhật những tin tức mới nhất từ ​​khắp nơi trên thế giới",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Kênh Nintendo",
+        "desc": "Xem các đoạn giới thiệu, đọc đánh giá và tải xuống bản demo của những game DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Check Mii Out Channel",
+        "desc": "Tham gia các cuộc thi và bình chọn cho Miis yêu thích của bạn",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Kênh Bình Chọn",
+        "desc": "Trả lời các cuộc thăm dò và xem ý kiến của bạn so với những người khác như thế nào",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Kênh Đồ Ăn",
+        "desc": "Đặt các loại bữa ăn khác nhau từ nhà thông qua máy chơi game Wii của bạn",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Kênh hướng dẫn truyền hình",
+        "desc": "Kiểm tra lịch truyền hình và xem trailer của các chương trình sắp tới",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kênh TV Kirby",
+        "desc": "Xem các tập của Kirby: Right Back at Ya!",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Kênh In Ấn",
+        "desc": "Đặt hàng in các bức ảnh yêu thích của bạn từ máy chơi gaem Wii của bạn",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Khám phá các chương trình và nội dung video theo yêu cầu theo cách mới lạ hơn",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

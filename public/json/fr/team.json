@@ -3,7 +3,7 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "Chef d'équipe",
+        "title": "<i class='fa fa-crown'></i> Chef d'équipe",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",
@@ -11,7 +11,7 @@
       },
       {
         "name": "LunaValoäa",
-        "title": "Manager / Traductrice",
+        "title": "Responsable / Traductrice",
         "color": "#FDB0C0",
         "pfp": "https://i.imgur.com/a3bzNPn.png",
         "link": "https://www.youtube.com/@LunaValoaa",
@@ -19,15 +19,15 @@
       },
       {
         "name": "Alex",
-        "title": "Développeur / Desineur",
+        "title": "Développeur / Designer",
         "color": "#5e97f2",
         "pfp": "https://i.imgur.com/cD6iFoq.png",
-        "link": "",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/val.png"
       },
       {
         "name": "Palapeli",
-        "title": "Développeur",
+        "title": "Développeuse",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/REE7fcy.png",
         "link": "https://github.com/mkwcat",
@@ -55,11 +55,11 @@
         "color": "#fc5a4e",
         "pfp": "https://i.imgur.com/XBY7Tyu.png",
         "link": "https://twitter.com/korewadiego",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "flag": "/img/val.png"
       },
       {
         "name": "Matthe815",
-        "title": "Développeur LinkTag",
+        "title": "Développeur de RiiTag",
         "color": "#4858a8",
         "pfp": "https://i.imgur.com/KTAt2o5.png",
         "link": "https://matthe815.dev/",
@@ -83,7 +83,7 @@
       },
       {
         "name": "bendevnull",
-        "title": "Créateur de LinkTag",
+        "title": "Créateur de RiiTag",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/KQD481c.png",
         "link": "https://github.com/bennyman123abc",
@@ -147,7 +147,7 @@
       },
       {
         "name": "grunt22fox",
-        "title": "Staff et manager",
+        "title": "Staff et responsable",
         "color": "#34ebff",
         "pfp": "https://i.imgur.com/0nR5F9m.png",
         "link": "https://www.doesn0texist.tech/",
@@ -171,7 +171,7 @@
       },
       {
         "name": "Jess Williamson",
-        "title": "Traductrice (Japanese)",
+        "title": "Traductrice (japonais)",
         "color": "#66cdaa",
         "pfp": "https://i.imgur.com/IeOy0yO.jpg",
         "link": "https://instagram.com/jessdoesvids",
@@ -182,14 +182,16 @@
         "title": "Compositeur",
         "color": "#40E0D0",
         "pfp": "https://i.imgur.com/j9HUUiv.png",
-        "link": "https://gamerkgr.neocities.org/"
+        "link": "https://gamerkgr.neocities.org/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "ryaltheamazing",
         "title": "Réseaux sociaux",
         "color": "#ed3939",
         "pfp": "https://i.imgur.com/fY4S9H3.png",
-        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"
+        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "dhtdht020",
@@ -198,6 +200,22 @@
         "pfp": "https://i.imgur.com/7f4mg92.png",
         "link": "https://twitter.com/dhtdht020",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+      },
+      {
+        "name": "Jau__CR",
+        "title": "Traducteur (espagnol européen, valencien)",
+        "color": "#a68a7d",
+        "pfp": "https://i.imgur.com/tbBzDRO.jpg",
+        "link": "https://twitter.com/Jau__CR",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Burrito",
+        "title": "Développeur / Sysadmin",
+        "color": "#5a8c72",
+        "pfp": "https://i.imgur.com/TUjjwsG.png",
+        "link": "https://links.burrito.software",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       }
     ]
   }

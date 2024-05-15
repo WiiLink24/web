@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "2006'daymış gibi parti yapın!",
+    "Wii konsolunuzu internete bağlayabileceğinizi biliyor muydunuz?",
+    "Scott The Woz'da görüldüğü gibi!",
+    "Efsanevi WiiConnect24'ün Dönüşü",
+    "Wii'nizi yeniden keşfedin",
+    "Nintendo'nun altın çağına geri bağlanın",
+    "Wii'nin geçmişine bir kez daha bağlanın!",
+    "Biz Wii Oynuyoruz. Peki ya sen?",
+    "Wii ile Mario Kart'ta kaybetmekten daha fazlasını yapabilirsin!",
+    "En gerçek wii ağı canlandırma hizmeti",
+    "Çocukluğunuza geri dönmüş gibi oynayın!",
+    "Biiz tekrar oynamak istiyoruz",
+    "Çocukluk anılarınız, sunucularımıza bağlı",
+    "WiiLink, her şeyin ötesindeki Wii Yazılımı",
+    "Nintendo'nun yapmadığını hayranlar yapıyor",
+    "WiiLink kesinlikle 2006 havasını veriyor!",
+    "Tek seferde bir Wii ile dünyayı birbirine bağlıyoruz",
+    "Nintendo'nun çok oyunculu oyun alanındaki en büyük adımlarından biri yeniden canlandırılıyor!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Forecast Channel",
+        "desc": "Dünyanın dört bir yanından güncel hava durumu tahminlerine göz atın",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "News Channel",
+        "desc": "Dünyanın dört bir yanından en son haberlerden haberdar olun",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Nintendo Channel",
+        "desc": "DS oyunlarının fragmanlarını izleyin, yorumlarını okuyun ve demolarını indirin",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Mii Contest Channel",
+        "desc": "Yarışmalara katılın ve favori Mii'nize oy verin",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Everybody Votes Channel",
+        "desc": "Anketleri yanıtlayın ve görüşlerinizin diğerleriyle karşılaştırıldığında nasıl olduğunu görün",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Food Channel",
+        "desc": "Wii konsolunuz aracılığıyla evinizden farklı türde yemekler sipariş edin",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV Guide Channel",
+        "desc": "TV programına göz atın ve gelecek programların fragmanlarını izleyin",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV Channel",
+        "desc": "Kirby: Right Back at Ya! televizyon şovunun bölümlerini izleyin",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints Channel",
+        "desc": "Wii konsolunuzdan favori fotoğraflarınızın baskılarını sipariş edin",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Gösterileri ve isteğe bağlı video içeriğini daha yeni bir şekilde keşfedin",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

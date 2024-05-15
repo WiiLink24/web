@@ -3,7 +3,7 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "<i class='fa fa-crown'></i> Líder del Equipo",
+        "title": "<i class='fa fa-crown'></i> Jefe del equipo",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",
@@ -11,7 +11,7 @@
       },
       {
         "name": "LunaValoäa",
-        "title": "Gerente / Traductor",
+        "title": "Manager / Traductor",
         "color": "#FDB0C0",
         "pfp": "https://i.imgur.com/a3bzNPn.png",
         "link": "https://www.youtube.com/@LunaValoaa",
@@ -43,7 +43,7 @@
       },
       {
         "name": "oscie",
-        "title": "Desarrollador / Gerente",
+        "title": "Desarrollador / Manager",
         "color": "#7289da",
         "pfp": "https://i.imgur.com/t3kmziO.png",
         "link": "https://github.com/oscie57",
@@ -51,7 +51,7 @@
       },
       {
         "name": "diego",
-        "title": "Traducción (CA, ES, ZH)",
+        "title": "Traductor (CA, ES, ZH)",
         "color": "#fc5a4e",
         "pfp": "https://i.imgur.com/XBY7Tyu.png",
         "link": "https://twitter.com/korewadiego",
@@ -67,7 +67,7 @@
       },
       {
         "name": "kouacc",
-        "title": "Traducción (Francés)",
+        "title": "Traductor (Francés)",
         "color": "#1389a1",
         "pfp": "https://i.imgur.com/OAaSXtn.png",
         "link": "https://github.com/kouacc",
@@ -75,7 +75,7 @@
       },
       {
         "name": "NecroNova",
-        "title": "Responsable de Contenidos",
+        "title": "Curación de contenido",
         "color": "#ff1dce",
         "pfp": "https://i.imgur.com/eNhJ6hc.jpg",
         "link": "https://github.com/NecroNovaVGitHub",
@@ -91,7 +91,7 @@
       },
       {
         "name": "ZAZiOs",
-        "title": "Traducción (Ruso)",
+        "title": "Traductor (Ruso)",
         "color": "#1c1c1c",
         "pfp": "https://i.imgur.com/6QH1xal.png",
         "link": "https://www.youtube.com/@zazios",
@@ -99,7 +99,7 @@
       },
       {
         "name": "Deoku64",
-        "title": "Traducción (JP/DEU)",
+        "title": "Traductor (JP/DEU)",
         "color": "#abc9ff",
         "pfp": "https://i.imgur.com/0LlgO2g.jpg",
         "link": "https://www.youtube.com/@Deoku64",
@@ -107,7 +107,7 @@
       },
       {
         "name": "Philemax",
-        "title": "Traducción (FR, JP)",
+        "title": "Traductor (FR, JP)",
         "color": "#45c40c",
         "pfp": "https://i.imgur.com/ONbvAAu.png",
         "link": "https://www.youtube.com/@Philemax/",
@@ -115,7 +115,7 @@
       },
       {
         "name": "Jinjo",
-        "title": "Traducción (BR, PT)",
+        "title": "Traductor (BR. PT)",
         "color": "#6a329f",
         "pfp": "https://i.imgur.com/VH3FeHN.png",
         "link": "https://twitter.com/JinjoGuy",
@@ -123,7 +123,7 @@
       },
       {
         "name": "rubinho146",
-        "title": "Traducción (PT, PT)",
+        "title": "Traductor (PT. PT)",
         "color": "#FB5D35",
         "pfp": "https://i.imgur.com/ZDghpDL.jpg",
         "link": "https://www.youtube.com/user/rubinho146",
@@ -147,7 +147,7 @@
       },
       {
         "name": "grunt22fox",
-        "title": "Personal y Gerente",
+        "title": "Personal y Manager",
         "color": "#34ebff",
         "pfp": "https://i.imgur.com/0nR5F9m.png",
         "link": "https://www.doesn0texist.tech/",
@@ -163,7 +163,7 @@
       },
       {
         "name": "Citrus Wolf",
-        "title": "Jefe de Moderación / Responsable de Contenidos",
+        "title": "Jefe de Moderación / Curador de Contenidos",
         "color": "#ffda76",
         "pfp": "https://i.imgur.com/IXphSN7.png",
         "link": "https://twitter.com/WolfCitrus",
@@ -171,7 +171,7 @@
       },
       {
         "name": "Jess Williamson",
-        "title": "Traducción (Japonés)",
+        "title": "Traductor (Japonés)",
         "color": "#66cdaa",
         "pfp": "https://i.imgur.com/IeOy0yO.jpg",
         "link": "https://instagram.com/jessdoesvids",
@@ -179,7 +179,7 @@
       },
       {
         "name": "GamerKGR",
-        "title": "Compositor de Música",
+        "title": "Compositor de la Música",
         "color": "#40E0D0",
         "pfp": "https://i.imgur.com/j9HUUiv.png",
         "link": "https://gamerkgr.neocities.org/",
@@ -195,7 +195,7 @@
       },
       {
         "name": "dhtdht020",
-        "title": "Desarrollador de Herramientas",
+        "title": "Desarrollador de herramientas",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/7f4mg92.png",
         "link": "https://twitter.com/dhtdht020",
@@ -203,7 +203,7 @@
       },
       {
         "name": "Jau__CR",
-        "title": "Traducción (Español Europeo, Valenciano)",
+        "title": "Traductor (Español Europeo, Valenciano)",
         "color": "#a68a7d",
         "pfp": "https://i.imgur.com/tbBzDRO.jpg",
         "link": "https://twitter.com/Jau__CR",
@@ -211,7 +211,7 @@
       },
       {
         "name": "Burrito",
-        "title": "Desarrollador / Administrador de Sistema",
+        "title": "Desarrollador / Administrador del sistema",
         "color": "#5a8c72",
         "pfp": "https://i.imgur.com/TUjjwsG.png",
         "link": "https://links.burrito.software",

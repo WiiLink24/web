@@ -1,150 +1,196 @@
 {
     "site": {
-      "title": "WiiLink",
-      "description": "WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!",
-      "img": "/img/news_post_welcome_back.png",
-      "load": "Carregant...",
-      "dev": "Desenvolupat per ",
-      "relNotes": "Notes de la Versió",
-      "downloadPrompt": "Descarrega la versió més recient:",
-      "winMinReq": "Necessitaràs Windows 10 o superior!",
-      "installGuide": "Guía d'Instal·lació",
-      "terms": "He llegit i acceptat els <0>Termes</0> i la <1>Política de Privacitat</1>.",
-      "slogan": "<0>WiiLink</0> es un proyecto de homebrew sin ánimo de lucro. No está afiliado con Nintendo y todas las marcas registradas son propiedad de sus respectivos propietarios Cualquier brecha de copyright no es intencional.</1></2>© 2020-2024 <4>Equipo</4> <3>WiiLink</3>",
-      "donate": "Dona!",
-      "creator": "Página web diseñada y programada por Alex",
-      "contact": "Contacta con nosotros",
-      "assets": "Elementos de marca",
-      "install": "Instalar ahora",
-      "wfcPrompt": "Check out WiiLink WFC!",
-      "heroDesc": "WiiLink is an open source replacement for Nintendo's servers for both WiiConnect24 and NWFC, allowing online connectivity for all, even after the original servers were discontinued!",
-      "heroDev": "Developed by",
-      "downloadFor": "Download for",
-      "other": "Other",
-      "legacyPatcher": "Download legacy patcher",
-      "changelog": "Changelog",
-      "withThe": "with the",
-      "heroMorePrompt": "See what else WiiLink can do for you"
+        "title": "WiiLink",
+        "description": "Một dự án homebrew cộng đồng không chính thức dành riêng cho việc khôi phục, dịch và nâng cao các kênh và dịch vụ WiiConnect24 hiện đã ngừng hoạt động, bao gồm cả những kênh và dịch vụ không có sẵn ở tất cả các khu vực.",
+        "img": "/img/news_post_welcome_back.png",
+        "load": "Đang tải...",
+        "dev": "Được phát triển bởi ",
+        "relNotes": "Thông tin phiên bản",
+        "downloadPrompt": "Tải xuống",
+        "winMinReq": "Bạn sẽ cần Windows 8 hoặc mới hơn!",
+        "installGuide": "Hướng dẫn cài đặt",
+        "terms": "Tôi đã đọc và chấp nhận <0>Điều Khoản Dịch Vụ</0> và <1>Chính Sách Bảo Mật</1>.",
+        "slogan": "<0>WiiLink</0> là một dự án homebrew phi lợi nhuận, không chính thức. Nó không liên kết với Nintendo và tất cả các nhãn hiệu đều là tài sản của chủ sở hữu tương ứng. Không có ý định vi phạm bản quyền.</1></2>© 2020-2024 <3>Nhóm WiiLink</3><4></4>",
+        "donate": "Ủng Hộ!",
+        "creator": "Trang web được thiết kế và lập trình bởi Alex",
+        "contact": "Liên hệ với chúng tôi",
+        "assets": "Nội dung thương hiệu",
+        "install": "Cài đặt ngay",
+        "wfcPrompt": "Hãy xem WiiLink WFC!",
+        "heroDesc": "WiiLink là sự thay thế nguồn mở cho các máy chủ của Nintendo cho cả WiiConnect24 và NWFC, cho phép tất cả mọi người kết nối trực tuyến, ngay cả sau khi các máy chủ ban đầu đã ngừng hoạt động!",
+        "heroDev": "Được phát triển bởi",
+        "downloadFor": "Tải xuống cho",
+        "other": "Khác",
+        "legacyPatcher": "Tải xuống   cũ",
+        "changelog": "Nhật ký thay đổi",
+        "withThe": "với",
+        "heroMorePrompt": "Xem WiiLink có thể làm gì khác cho bạn"
     },
     "build": {
-      "title": "¿Qué hay con esta <0>build</0>?",
-      "releasedBy": "Lanzado por:",
-      "releaseBranch": "Rama: ",
-      "releaseDate": "Publicación: ",
-      "releaseTotal": "Total: "
+        "title": "Hãy xem <0>bản dựng</0> mới nhất!",
+        "releasedBy": "Được phát hành bởi:",
+        "releaseBranch": "Chi nhánh: ",
+        "releaseDate": "Ngày phát hành: ",
+        "releaseTotal": "Tổng cộng: "
     },
     "donate": {
-      "title": "Hecho posible por usuarios como <0>tú</0>",
-      "subtitle": "<0>WiiLink</0> está financiado por los <1>usuarios</1> y <2>patrocinadores</2>. <3>Para ayudar con nuestros costes de funcionamiento, ¡Por favor considera donar!</3>",
-      "donators": "y únete a <0>gente guay</0> como...",
-      "popular": "Más popular",
-      "powered": "Servicio de"
+        "title": "Được hỗ trợ bởi <0>sự hỗ trợ của bạn</0>!",
+        "subtitle": "<0>WiiLink</0> được tài trợ công khai bởi <1>người dùng</1> và <2>nhà tài trợ</2>. <3>Để hỗ trợ chi phí hoạt động của chúng tôi, vui lòng cân nhắc quyên góp!</3>",
+        "donators": "...và tham gia cùng tất cả <0>những người tuyệt vời</0> này:",
+        "powered": "Được cung cấp bởi",
+        "thanks-tier-1": "Cảm ơn vì đã tham gia!",
+        "thanks-tier-2": "Cảm ơn sự đóng góp của bạn!",
+        "thanks-tier-3": "Bây giờ nó rất nhiều tiền!",
+        "thanks-tier-4": "A! Bạn cho nhiều quá!",
+        "info-tier-1": "Được quyền truy cập vào <0><1></1> kênh quyên góp</0> cũng như được <2><3></3> ghi nhận trên trang web của chúng tôi</2>!",
+        "info-tier-2": "Nhận <0><1></1>áp phích phim </0> ở trong Wii Room, <2><3></3> nhà hàng</2> ở trong Food Channel, cũng như <4>tất cả các đặc quyền của Violet</4>!",
+        "info-tier-3": "Có <0><1></1> Mii</0> của riêng bạn trong Phòng Wii, truy cập vào <2><3></3> cuộc trò chuyện Discord của người thử nghiệm</2> và <4>tất cả lợi ích của Lilac</4>!",
+        "info-tier-4": "Tạo <0><1></1> Phòng</0> của riêng bạn bên trong Wii Room, cũng như <2>tất cả các đặc quyền của Tulip</2>!",
+        "sub": "Đăng kí cho </0> mỗi tháng",
+        "local-currency": "$"
     },
     "header": {
-      "home": "Inicio",
-      "news": "Noticias",
-      "guide": "Guía",
-      "status": "Estado",
-      "faq": "FAQ",
-      "isGuide": "guía",
-      "extras": "Extras",
-      "extrasNew": "nuevo",
-      "services": "Services",
-      "chooseLang": "Choose your language",
-      "privacyPolicy": "Privacy Policy",
-      "tos": "Terms of Service"
+        "home": "Trang chủ",
+        "news": "Tin tức",
+        "guide": "Hướng dẫn",
+        "status": "Trạng thái",
+        "faq": "Câu hỏi thường gặp",
+        "isGuide": "hướng dẫn",
+        "extras": "Bổ sung",
+        "extrasNew": "mới",
+        "services": "Dịch vụ",
+        "chooseLang": "Chọn ngôn ngữ của bạn",
+        "privacyPolicy": "Chính sách bảo mật",
+        "tos": "Điều khoản Dịch vụ",
+        "eula": "EULA",
+        "eula-long": "Thỏa thuận cấp phép người dùng cuối (EULA)",
+        "news-info": "Đi đến trang tin tức để biết thêm các bài viết tin tức.",
+        "guide-info": "Hãy đến trang hướng dẫn để xem hướng dẫn và giải thích về tất cả các dịch vụ của chúng tôi."
+    },
+    "footer": {
+        "pages": "Các trang",
+        "links": "Github links",
+        "socials": "Mạng xã hội",
+        "repos": "Github Repos",
+        "siteby": "Trang bởi",
+        "repo": "Repository",
+        "projects": "Dự án",
+        "teams": "Đội",
+        "people": "Người"
     },
     "jumpin": {
-      "title": "¿Estás listo para dar el <0>salto</0>?",
-      "slogan": "Si te gusta todo esto, ¿Por qué no unirte a nuestra comunidad?",
-      "install": "¡Instalar ahora!"
+        "title": "Đến và <0>tham gia</0>!",
+        "slogan": "Hồi sinh máy chơi game Wii của bạn và thử các kênh hoàn toàn mới.",
+        "install": "Cài đặt!"
     },
     "services": {
-      "title": "Bienvenido a <0>WiiLink</0>!",
-      "subtitle": "Un proyecto comunitario para la Wii que revive y mejora los canales descontinuados de WiiConnect24, incluyendo aquellos solo lanzados en Japón."
+        "title": "Chào mừng đến vơi <0>Wiilink</0>!",
+        "subtitle": "Một dự án homebrew cộng đồng không chính thức dành riêng cho việc khôi phục, dịch và nâng cao các kênh và dịch vụ WiiConnect24 hiện đã ngừng hoạt động, bao gồm cả những kênh và dịch vụ không có sẵn ở tất cả các khu vực."
     },
     "socials": {
-      "title": "¡Estate al loro de nuestras <0>redes sociales</0>!",
-      "subtitle": "Mantente al dia de <0>lanzamientos</0> y <1>noticias</1> desde nuestras redes sociales.",
-      "twFollowers": "3k seguidores",
-      "twFollow": "Seguir",
-      "twTweets": "Tweets de WiiLink24",
-      "dcMembers": "26k miembros",
-      "dcJoin": "Unirse",
-      "ghFollowers": "103 Seguidores",
-      "ghFollow": "Seguir",
-      "ytSubscribers": "2.1k suscriptores",
-      "ytSubscribe": "Suscribirse"
+        "title": "Hãy xem <0>mạng xã hội</0> của dự án!",
+        "subtitle": "Cập nhật tất cả <0>bản cập nhật</0> và <1>thông báo chung</1> hoặc tham gia máy chủ Discord.",
+        "twFollowers": "3.3k Lượt theo dõi",
+        "twFollow": "Theo dõi",
+        "twTweets": "Tweet của WiiLink24",
+        "dcMembers": "26.3k thành viên",
+        "dcJoin": "Tham gia",
+        "ghFollowers": "133 lượt theo dõi",
+        "ghFollow": "Theo dõi",
+        "ytSubscribers": "2.3K lượt đăng ký",
+        "ytSubscribe": "Đăng ký"
     },
     "team": {
-      "title": "Conoce a nuestro increíble <0>equipo</0>",
-      "subtitle": "<0>WiiLink</0> se basa al <1>100%</1> en el trabajo de nuestros contribuyentes. </2><3>¡Aquí tienes a algunas de las personas que hacen que <4>WiiLink</4> sea posible!</3>"
+        "title": "<0>Nhóm</0> của dự án",
+        "subtitle": "<0>WiiLink</0> được hỗ trợ bởi <1>công việc tình nguyện</1>. </2><3>Đây là những người đóng góp chính để điều hành dự án!</3>"
+    },
+    "svc-site": {
+        "mainTitle": "WiiLink - Dịch vụ",
+        "mainDesc": "Hãy xem các dịch vụ mà WiiLink cung cấp!",
+        "title": "Tất cả mọi thứ chúng tôi cung cấp! <1>WiiLink</1> <2>dịch vụ</2>",
+        "subtitle": "Tại đây bạn sẽ có thể thấy <0>mọi thứ chúng tôi cung cấp</0>! Đọc và tải chúng cho chính mình!",
+        "wc24-min": "WiiConnect24",
+        "jp-min": "Nhật Bản",
+        "eu-min": "Châu Âu",
+        "extra-min": "Thêm",
+        "wc24": "Dịch vụ <0>WiiConnect24</0>",
+        "jp": "Dịch vụ <0>Nhật Bản</0>",
+        "eu": "Dịch vụ <0>Châu Âu</0>",
+        "extra": "Dịch vụ <0>Thêm</0>",
+        "wc24-desc": "Các dịch vụ được cung cấp bởi dịch vụ WiiConnect24, được chúng tôi hồi sinh!",
+        "jp-desc": "Các dịch vụ tiếng Nhật được bản địa hóa và nâng cao cho phương Tây!",
+        "eu-desc": "Các dịch vụ chỉ có ở Châu Âu được mang đến toàn thế giới để bạn tận hưởng!",
+        "extra-desc": "Những nội dung bổ sung tiện lợi mà chúng tôi cung cấp để nâng cao trải nghiệm của bạn!",
+        "helpTitle": "<0>Chúng tôi có bỏ qua gì không</0>? Hãy <1>liên lạc với chúng tôi</1>!</0>"
     },
     "news": {
-      "mainTitle": "WiiLink - Noticias",
-      "mainDesc": "¡Lee las noticias sobre las actualizaciónes del servicio!",
-      "title": "Mantente al dia con <0>WiiLink</0><1>noticias</1>",
-      "subtitle": "¡Estate al tanto de nuestras <0>actividades</0>, así como de las <1>actualizaciones del servicio</1>!",
-      "otherNews": "Aquí tienes algunos artículos <0>antiguos</0>:",
-      "rssTitle": "<0>¿Quieres recibir las <1>noticias de WiiLink</1> en tu página web o servicio? ¡Simplemente utilitza nuestro <2>feed RSS</2>!</0>",
-      "rssButton": "Obten nuestro feed RSS",
-      "otherPosts": "Otras <0>publicaciones</0>"
-      
+        "mainTitle": "Wiilink - Tin Tức",
+        "mainDesc": "Đọc những cải tiến và phát hành mới nhất của WiiLink!",
+        "title": "Đây là những <2>tin tức</2> của <1>WiiLink</1>",
+        "subtitle": "Cập nhật <0>tiến độ của dự án</0> cũng như <1>thông tin cập nhật về dịch vụ</1>!",
+        "otherNews": "Dưới đây là một số bài viết <0>cũ hơn</0>:",
+        "rssTitle": "<0>Bạn muốn nhận <1>tin tức WiiLink</1> trên trang web hoặc dịch vụ của mình? Sử dụng <2>nguồn cấp dữ liệu RSS</2>.</0>",
+        "rssButton": "Nhận RSS feed",
+        "otherPosts": "<0>bài viết</0> khác"
     },
     "guide": {
-      "mainTitle": "WiiLink - Guía",
-      "mainDesc": "¡Obten información importante y ayuda para nuestros múltiples servicios!",
-      "title": "Resuelve tus dudas en <0>WiiLink</0><1>guía</1>",
-      "subtitle": "¡Aquí encontrarás <0>información importante</0> acerca de el servicio, así como útiles <1>guías</1> y <2>ayuda</2> para que puedas disfrutar de nuestros servicios lo antes posible!",
-      "specificGuides": "¿Qué estás <0>buscando</0>?",
-      "helpTitle": "<0>¿Algo no va <1>bién</1>? ¡No dudes en <2>contactarnos</c2>!</0>",
-      "helpButton1": "Contactar",
-      "helpButton2": "Unirse a Discord"
+        "mainTitle": "WiiLink - Hướng dẫn",
+        "mainDesc": "Nhận thông tin quan trọng và trợ giúp cho các dịch vụ của chúng tôi!",
+        "title": "Chào mừng bạn đến vớ <2>hướng dẫn</2>i <1>WiiLink</1>",
+        "subtitle": "Tại đây, bạn sẽ tìm thấy <0>thông tin quan trọng</0> về dịch vụ cũng như <1>hướng dẫn</1> và <2>trình khắc phục sự cố</2> hữu ích để giúp bạn!",
+        "specificGuides": "Bạn đang <0>tìm kiếm điều gì</0>?",
+        "helpTitle": "<0>Dường như nó không thể <1>hoạt động</1>? Đừng ngần ngại <2>liên hệ với chúng tôi</c2>!</0>",
+        "helpButton1": "Liên hệ với chúng tôi!",
+        "helpButton2": "Tham gia Discord"
     },
     "guidePost": {
-      "name": "Guía",
-      "whereTo": "¿Dónde quieres ir?",
-      "installGuide": "Guía de instalación",
-      "problemSolving": "Solución de problemas",
-      "faq": "Preguntas frecuentes",
-      "lookingFor": "¿Qué es lo que estás <0>buscando</0>?",
-      "visitWiiHacks": "Visitar wii.hacks.guide",
-      "copyright": "© 2020-2024  <2>Equipo</2> <0>WiiLink<1>guía</1></0>"
+        "name": "Hướng dẫn",
+        "whereTo": "Bạn muốn đi đâu?",
+        "installGuide": "Hướng dẫn cài đặt",
+        "problemSolving": "Giải quyết vấn đề",
+        "faq": "Câu hỏi thường gặp",
+        "installGuide-info": "Hướng dẫn từng bước về cách cài đặt WiiLink trên bảng máy chơi game của bạn.",
+        "problemSolving-info": "Có vấn đề? Hãy xem liệu chúng tôi có thể sửa nó không!",
+        "faq-info": "Một số câu hỏi thường gặp có thể bạn quan tâm...",
+        "lookingFor": "Bạn đang <0>tìm kiếm điều gì</0>?",
+        "visitWiiHacks": "Truy cập wii.hacks.guide",
+        "copyright": "© 2020-2024 <0>WiiLink<1>guide</1></0> <2>Team</2>"
     },
     "newsPost": {
-      "name": "Noticias"
+        "name": "Tin tức",
+        "min": "phút đọc"
     },
     "status": {
-      "mainTitle": "WiiLink - Estado",
-      "mainDesc": "¡Verifica el estado de nuestros servicios y su progreso!",
-      "title": "Verifica el <0>WiiLink</0><1>estado</1>",
-      "subtitle": "Mira nuestro <0>progreso</0> en los diversos servicios que ofrecemos, así como el estado de nuestros <1>servidores</1>!",
-      "serverStatus": "Mira el estado de nuestros servidores."
+        "mainTitle": "WiiLink - Trạng Thái",
+        "mainDesc": "Kiểm tra trạng thái dịch vụ và tiến độ!",
+        "title": "Hãy xem <1>Trạng thái</1> của <2>WiiLink</2>!",
+        "subtitle": "Hãy xem qua <0>tiến trình</0> của chúng tôi, bên cạnh trạng thái <1>máy chủ</1>!",
+        "serverStatus": "Kiểm tra trạng thái máy chủ."
     },
     "extras": {
-      "mainTitle": "WiiLink - Extras",
-      "mainDesc": "¡Mira algunas cosas chulas que tenemos para tí!",
-      "title": "Esto es <0>WiiLink</0><1>extras</1>",
-      "subtitle": "Aquí encontrarás <0>cosas chulas</0> en las que hemos estado trabajando. ¡Esperamos que os <1>guste</1>!",
-      "helpCall": "<0>¿Crees que hay algo que deberíamos <1>añadir</1> aquí? ¡No dudes en <2>decírnoslo</2>!</0>",
-      "contact": "Contáctanos",
-      "joinDiscord": "Únete a Discord"
+        "mainTitle": "WiiLink - Thêm",
+        "mainDesc": "Kiểm tra một số tài nguyên và nội dung đặc biệt!",
+        "title": "Dưới đây là <1>WiiLink</1> <2>các tính năng bổ sung</2>",
+        "subtitle": "Tại đây, bạn sẽ tìm thấy <0>nội dung đặc biệt</0> mà chúng tôi đang nỗ lực thực hiện.",
+        "helpCall": "<0>Bạn có nghĩ chúng ta nên <1>thêm</1> điều gì vào đây không? Hãy nhớ <2>liên hệ với chúng tôi</2>!</0>",
+        "contact": "Liên hệ với chúng tôi!",
+        "joinDiscord": "Tham gia Discord"
     },
     "404": {
-      "mainTitle": "WiiLink - 404",
-      "mainDesc": "404 - La página que buscas no se ha podido encontrar...",
-      "message": "La página no se ha podido encontrar..."
+        "mainTitle": "Wiilink - 404",
+        "mainDesc": "Xin lỗi, Không tìm thấy trang bạn đang tìm kiếm...",
+        "message": "Không thể tìm thấy trang này..."
     },
     "tos": {
-      "mainTitle": "WiiLink - Términos del Servicio",
-      "mainDesc": "Términos del Servicio para los servicios de WiiLink."
+        "mainTitle": "WiiLink - Điều khoản dịch vụ",
+        "mainDesc": "Điều khoản dịch vụ dành cho dịch vụ WiiLink."
     },
     "privacyPolicy": {
-      "mainTitle": "WiiLink - Politica de Privacidad",
-      "mainDesc": "Política de Privacidad para los servicios de WiiLink."
+        "mainTitle": "WiiLink - Chính sách quyền riêng tư",
+        "mainDesc": "Chính sách quyền riêng tư dành cho các dịch vụ WiiLink."
     },
     "eula": {
-      "mainTitle": "WiiLink - Acuerdo de Licencia para el Usuario",
-      "mainDesc": "Acuerdo de Licencia para el Usuario para los servicios de WiiLink."
+        "mainTitle": "WiiLink - Thỏa thuận cấp phép người dùng cuối",
+        "mainDesc": "Thỏa thuận cấp phép người dùng cuối cho các dịch vụ WiiLink."
     }
-  }
+}

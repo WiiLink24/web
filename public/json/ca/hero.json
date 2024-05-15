@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Festeja com si fos el 2006!",
+    "Sabies que pots connectar la teva consola Wii a l'internet?",
+    "As seen on Scott The Woz!",
+    "El retorn del llegendari WiiConnect24",
+    "Rediscover your Wii",
+    "Link back to Nintendo's golden age",
+    "Get Connected back to the Wii's past once again!",
+    "Wii Play. Do you?",
+    "You can do more with a Wii than just losing in Mario Kart!",
+    "The realest wii network revival service",
+    "Play as if you were back in your childhood!",
+    "Wii would like to play, again",
+    "Your childhood memories, connected to our servers",
+    "WiiLink, Wii Software beyond things",
+    "Fans do what Nintendon't",
+    "WiiLink definitely gives the 2006 vibes!",
+    "Linking the world, one Wii at a time",
+    "One of Nintendo's biggest steps in multiplayer gaming, Revived!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Canal Méteo",
+        "desc": "Check out up-to-date weather forecasts from around the world",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Canal Notícies",
+        "desc": "Stay informed with the latest news from around the world",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Canal Nintendo",
+        "desc": "Watch trailers, read reviews and download demos of DS games",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Canal Concursos Mii",
+        "desc": "Participate in contests and vote for your favorite Miis",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Canal Tothom Vota",
+        "desc": "Answer polls and see how your opinions compare to others",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Canal Menjar",
+        "desc": "Order different types of meals from home via your Wii console",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Canal Guia de TV",
+        "desc": "Check out the TV schedule and watch trailers of upcoming shows",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV Channel",
+        "desc": "Watch episodes of the Kirby: Right Back at Ya! TV show",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints Channel",
+        "desc": "Order prints of your favorite photos from your Wii console",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Discover shows and video-on-demand content in a more novel way",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

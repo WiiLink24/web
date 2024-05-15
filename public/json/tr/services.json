@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Forecast Channel",
+        "desc": "Bölgeniz, ülkeniz veya tüm dünya için hava durumunu keşfedin.",
+        "link": "/guide/forecast",
+        "isArea": "Uluslararası",
+        "status": "Tam Sürüm",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor! <br><br> <b>RiiConnect24 kullanıcılarının</b> hizmeti devam ettirmek için WiiLink Patcher'ın en son sürümünü kullanarak güncelleme yapması gerekecektir.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "News Channel",
+        "desc": "Dünyanın dört bir yanından en son haberleri hızla yakalayın ve tam olarak nerede olduğunu görün.",
+        "link": "/guide/news",
+        "isArea": "Uluslararası",
+        "status": "Tam Sürüm",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Nintendo Channel",
+        "desc": "Wii, Nintendo DS ve Nintendo 3DS oyunlarına ilişkin incelemeler, fragmanlar, özel gösteriler ve demolar içeren bir rehber.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Uluslararası",
+        "status": "Tam Sürüm",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Mii Contest Channel",
+        "desc": "Bir Mii Zanaatkârı olun ve çok çeşitli yarışmalarda dünyaya Mii tasarım becerilerinizi gösterin.",
+        "link": "/guide/miicontest",
+        "isArea": "Uluslararası",
+        "status": "Tam Sürüm",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Everybody Votes Channel",
+        "desc": "Yepyeni anketlere katılarak dünyanın sizden ne kadar farklı düşündüğünü öğrenin.",
+        "link": "/guide/evc",
+        "isArea": "Uluslararası",
+        "status": "Tam Sürüm",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Food Channel",
+        "desc": "Wii konsolunuz aracılığıyla evinizden farklı türde yemekler sipariş edin.",
+        "link": "/guide/demae",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "TV Guide Channel",
+        "desc": "Yerel TV programı rehberinize başvurun, programlar için hatırlatma zamanları ayarlayın ve TV'nizi Wii Kumandanızla çalıştırın.",
+        "link": "/guide/tvnotomo",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Kapalı Beta",
+        "todo": "<i class='fa fa-hard-hat'></i> Bu hizmet hâlâ geliştirilme aşamasında",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Kirby TV Channel",
+        "desc": "Sınırlı süreli <i>Kirby: Right Back at Ya!</i> bölümlerini izleyin.",
+        "link": "/guide/kirbytv",
+        "isArea": "Orijinal olarak belirli Avrupa ülkeleri",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Photo Prints Channel",
+        "desc": "Fotoğraflarınız ve Mii karakterlerinizle albümler ve kartvizitler oluşturun.",
+        "link": "/guide/digicam",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "WiiRoom",
+        "desc": "Gösterileri ve diğer isteğe bağlı video içeriklerini keşfedin veya Wii Room'dan arkadaşlarınıza mesaj gönderin.",
+        "link": "/guide/wiinoma",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Adres Ayarları",
+        "desc": "Photo Prints Channeş ve Food Channel için gereken kişisel bilgileri girin.",
+        "link": "/guide/spd",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Mesaj Panosu",
+        "desc": "Kayıtlı Wii Arkadaşlarına ve e-posta adreslerine mesaj gönderin.",
+        "link": "/guide/board",
+        "isArea": "Bölgesiz",
+        "status": "Tam Sürüm",
+        "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "<i>Metroid Prime 3: Corruption</i> içeriğini görüntüleyin.",
+        "link": "/guide/primepreview",
+        "isArea": "Orijinal olarak Amerika ve Avrupa",
+        "status": "Durduruldu",
+        "todo": "<i class='fa fa-bomb'></i> Bu hizmetin geliştirilmesi durduruldu.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "İndirilen Wii Room içeriğinin çevrimdışı görüntülenmesi için bir DSiWare uygulaması.",
+        "link": "/guide/dokodemo",
+        "isArea": "Orijinal olarak Japonya'ya özgü",
+        "status": "Durduruldu",
+        "todo": "<i class='fa fa-bomb'></i> Bu hizmetin geliştirilmesi durduruldu.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}

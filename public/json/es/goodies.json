@@ -8,56 +8,56 @@
         "link": "extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Fondos de Pantallas",
-        "desc": "¡Fondo de Pantallas de WiiLink para tu PC!",
+        "title": "<i class='fa-solid fa-image'></i> Fondos de pantalla",
+        "desc": "¡Fondos de pantalla de WiiLink para tu PC!",
         "img": "/img/wallpaper_bg.png",
         "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Conoce al equipo",
-        "desc": "¡Los principales contribuyentes al proyecto!",
+        "desc": "¡Los principales colaboradores del proyecto!",
         "img": "/img/guidebg-2.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-tag'></i> RiiTag",
-        "desc": "¡Un servicio de etiquetas de juegos para Wii y Wii U!",
+        "desc": "¡Un servicio de etiquetado de juegos para Wii y Wii U!",
         "img": "/img/guidebg-1.png",
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Vista de Encuestas",
-        "desc": "¡Vea los resultados de las encuestas para el Canal Opiniones!",
+        "title": "<i class='fa-solid fa-poll'></i> Visualizador de encuestas",
+        "desc": "¡Mira los resultados de la encuesta del canal Opiniones!",
         "img": "/img/guidebg-2.png",
         "link": "extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-house'></i> Originales de SalaWii",
-        "desc": "¡Mira las traducciones del contenido original de la SalaWii de Nintendo!",
+        "title": "<i class='fa-solid fa-house'></i> Originales de Wii Room",
+        "desc": "¡Mire las traducciones de los contenidos originales de Nintendo para Wii Room!",
         "img": "/img/guidebg-3.png",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Temas de WiiLink",
-        "desc": "¡Buenos temas para tu Wii!",
+        "desc": "¡Temas geniales para tu Wii!",
         "img": "/img/guidebg-3.png",
         "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "¡Un servicio de Conexión Wi-Fi de Nintendo en progreso!",
+        "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
         "img": "/img/guidebg-1.png",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Historietas",
-        "desc": "Viejas historietas de RiiConnect24",
+        "title": "<i class='fa-solid fa-mask'></i> Tiras Cómicas",
+        "desc": "Antiguas tiras cómicas de RiiConnect24",
         "img": "/img/guidebg-1.png",
         "link": "extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Prueba del Wiimote",
-        "desc": "Una página sencilla para probar tu Wiimote",
+        "title": "<i class='fa-solid fa-gamepad'></i> Prueba del Wii Remote",
+        "desc": "Una simple página para probar tu Wii Remote",
         "img": "/img/guidebg-1.png",
         "link": "extras/internetchannel"
       },
@@ -68,20 +68,20 @@
         "link": "extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Trucos del Canal Fotos",
+        "title": "<i class='fa-solid fa-image'></i> Trucos del Canal Foto",
         "desc": "¡Imágenes para obtener resultados rápidos!",
         "img": "/img/guidebg-1.png",
         "link": "extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Canción del Canal Tienda Wii",
-        "desc": "Canción versión meme para el Canal Tienda Wii",
+        "title": "<i class='fa-solid fa-shop'></i> Música del Canal Tienda Wii",
+        "desc": "Canción meme para el Canal Tienda Wii",
         "img": "/img/guidebg-1.png",
         "link": "extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> Gato de las noticias",
-        "desc": "¡Un servicio de Conexión Wi-Fi de Nintendo en progreso!",
+        "title": "<i class='fa-solid fa-cat'></i> Gato del Canal Noticias",
+        "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
         "img": "/img/guidebg-1.png",
         "link": "extras/cat"
       }

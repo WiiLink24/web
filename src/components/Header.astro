@@ -238,8 +238,8 @@ let loadingindicator = document.getElementById("loadingindicator");
 						optionLink = "<img src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
 						break;
 					case ' 🇻🇳':
-						optionLinkFlag = "<img src='/img/flags/val.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/val.png' class='emoji2'> Català (VA)";
+						optionLinkFlag = "<img src='/img/flags/vi.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
 						break;
 					case ' 🇯🇵':
 						optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
@@ -269,7 +269,16 @@ let loadingindicator = document.getElementById("loadingindicator");
 						optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
 						optionLink = "<img src='/img/flags/finland.png' class='emoji2'> Suomi";
 						break;
+					case ' 🇭🇺':
+    					optionLinkFlag = "<img src='/img/flags/hu.png' class='emoji'>";
+    					optionLink = "<img src='/img/flags/hu.png' class='emoji2'> Magyar";
+    					break;
+  					case ' 🇹🇷':
+   						optionLinkFlag = "<img src='/img/flags/tr.png' class='emoji'>";
+    					optionLink = "<img src='/img/flags/tr.png' class='emoji2'> Türkçe";
+    					break;
 				}
+
 				switch (optionName.substring(0, 7).toLowerCase()) {
 					case '/es-lat':
 						optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
@@ -282,6 +291,10 @@ let loadingindicator = document.getElementById("loadingindicator");
 					case '/frp':
 						optionLinkFlag = "<img src='/img/flags/arp.png' class='emoji'>";
 						optionLink = "<img src='/img/flags/arp.png' class='emoji2'> Arpetan";
+						break;
+					case '/va':
+						optionLinkFlag = "<img src='/img/flags/va.png' class='emoji'>";
+						optionLink = "<img src='/img/flags/va.png' class='emoji2'> Català (VA)";
 						break;
 				}
 

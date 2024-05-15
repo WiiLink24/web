@@ -3,14 +3,14 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "Cap de l'equip",
+        "title": "<i class='fa fa-crown'></i> Cap de l'equip",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-canada_1f1e8-1f1e6.png"
       },
       {
-        "name": "LunaValoäa",
+        "name": "Luna Caoimhe",
         "title": "Gestió / Traducció",
         "color": "#FDB0C0",
         "pfp": "https://i.imgur.com/a3bzNPn.png",
@@ -22,8 +22,8 @@
         "title": "Desenv. / Disseny",
         "color": "#5e97f2",
         "pfp": "https://i.imgur.com/cD6iFoq.png",
-        "link": "",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/val.png"
       },
       {
         "name": "Palapeli",
@@ -55,7 +55,7 @@
         "color": "#fc5a4e",
         "pfp": "https://i.imgur.com/XBY7Tyu.png",
         "link": "https://twitter.com/korewadiego",
-        "flag": "https://cdn.discordapp.com/attachments/997708025169203212/1156236017033035896/Valencia_flag_emoji.png"
+        "flag": "/img/val.png"
       },
       {
         "name": "Matthe815",
@@ -182,14 +182,16 @@
         "title": "Música",
         "color": "#40E0D0",
         "pfp": "https://i.imgur.com/j9HUUiv.png",
-        "link": "https://gamerkgr.neocities.org/"
+        "link": "https://gamerkgr.neocities.org/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "ryaltheamazing",
         "title": "Mitjans socials",
         "color": "#ed3939",
         "pfp": "https://i.imgur.com/fY4S9H3.png",
-        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg"
+        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "dhtdht020",
@@ -198,6 +200,22 @@
         "pfp": "https://i.imgur.com/7f4mg92.png",
         "link": "https://twitter.com/dhtdht020",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+      },
+      {
+        "name": "Jau__CR",
+        "title": "Traducció (ES, VA)",
+        "color": "#a68a7d",
+        "pfp": "https://i.imgur.com/tbBzDRO.jpg",
+        "link": "https://twitter.com/Jau__CR",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Burrito",
+        "title": "Desenv. / Sysadmin",
+        "color": "#5a8c72",
+        "pfp": "https://i.imgur.com/TUjjwsG.png",
+        "link": "https://links.burrito.software",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       }
     ]
   }

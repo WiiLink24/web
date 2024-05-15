@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Party on like it's 2006!",
+    "Did you know you can connect your Wii console to the Internet?",
+    "As seen on Scott The Woz!",
+    "The Return of the Legendary WiiConnect24",
+    "Redécouvrez votre Wii",
+    "Link back to Nintendo's golden age",
+    "Get Connected back to the Wii's past once again!",
+    "Wii Play. Et vous ?",
+    "You can do more with a Wii than just losing in Mario Kart!",
+    "The realest wii network revival service",
+    "Jouez comme si vous étiez de retour dans votre enfance !",
+    "Wii would like to play, again",
+    "Your childhood memories, connected to our servers",
+    "WiiLink, Wii Software beyond things",
+    "Fans do what Nintendon't",
+    "WiiLink definitely gives the 2006 vibes!",
+    "Linking the world, one Wii at a time",
+    "One of Nintendo's biggest steps in multiplayer gaming, Revived!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Chaîne météo",
+        "desc": "Consultez les prévisions météo actuelles du monde entier",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "Chaîne infos",
+        "desc": "Restez informé des actualités du monde entier",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Chaîne Nintendo",
+        "desc": "Regardez des bandes annonces, lisez des avis et téléchargez des démos de jeux DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Chaîne concours Mii",
+        "desc": "Participez à des concours et votez pour vos Mii préférés",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Chaîne votes",
+        "desc": "Répondez à des sondages et comparez vos opinions à celles des autres",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Chaîne cuisine",
+        "desc": "Commandez des repas variés depuis chez vous grâce à votre console Wii",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "Chaîne guide TV",
+        "desc": "Consultez le programme TV et regardez les bandes-annonces des émissions à venir",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Chaîne TV Kirby",
+        "desc": "Regardez les épisodes de la série Kirby: Right Back at Ya!",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Chaîne impression photo",
+        "desc": "Commandez des impressions de vos photos préférées depuis votre console Wii",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Découvrez des émissions et du contenu vidéo à la demande d'une manière plus originale",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

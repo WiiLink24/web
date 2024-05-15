@@ -1,0 +1,90 @@
+{
+  "goodies": {
+    "goodie": [
+      {
+        "title": "<i class='fa-solid fa-palette'></i> Nội dung thương hiệu",
+        "desc": "Nội dung thương hiệu cho sử dụng bên ngoài!",
+        "img": "/img/branding_bg.png",
+        "link": "extras/branding"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Hình nền",
+        "desc": "Hình nền cho PC của bạn!",
+        "img": "/img/wallpaper_bg.png",
+        "link": "extras/wallpapers"
+      },
+      {
+        "title": "<i class='fa-solid fa-user-group'></i> Gặp gỡ đội ngũ",
+        "desc": "Những người đóng góp chính cho dự án!",
+        "img": "/img/guidebg-2.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
+        "desc": "Dịch vụ Tag dành cho Wii và Wii U!",
+        "img": "/img/guidebg-1.png",
+        "link": "https://tag.rc24.xyz/"
+      },
+      {
+        "title": "<i class='fa-solid fa-poll'></i> Trình Xem Thăm Dò Ý Kiến",
+        "desc": "Xem kết quả bình chọn cho Everybody Votes Channel!",
+        "img": "/img/guidebg-2.png",
+        "link": "extras/vote"
+      },
+      {
+        "title": "<i class='fa-solid fa-house'></i> Các Bản Gốc Của Wii Room",
+        "desc": "Xem bản dịch nội dung Wii Room gốc của Nintendo!",
+        "img": "/img/guidebg-3.png",
+        "link": "404"
+      },
+      {
+        "title": "<i class='fa-solid fa-paintbrush'></i> Giao Diện Wiilink",
+        "desc": "Giao diện ấn tượng cho Wii của bạn!",
+        "img": "/img/guidebg-3.png",
+        "link": "extras/themes"
+      },
+      {
+        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "desc": "Dịch vụ kết nối Wi-Fi của Nintendo đang được tiến hành!",
+        "img": "/img/guidebg-1.png",
+        "link": "https://wfc.wiilink24.com"
+      },
+      {
+        "title": "<i class='fa-solid fa-mask'></i> truyện tranh",
+        "desc": "Truyện tranh cũ của Riiconnect24",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/strips"
+      },
+      {
+        "title": "<i class='fa-solid fa-gamepad'></i> Kiểm tra WiiMote",
+        "desc": "Một trang đơn giản cho kiểm tra WiiMote của bạn",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/internetchannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "desc": "",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/mii"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> Gian Lận Cho Photo Channel",
+        "desc": "Hình ảnh để nhận được kết quả thời gian nhanh chóng!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/photochannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-shop'></i> Nhạc cho Wii Shop Channel",
+        "desc": "Nhạc Meme cho Wii Shop Channel",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/ring"
+      },
+      {
+        "title": "<i class='fa-solid fa-cat'></i> Mèo Tin Tức",
+        "desc": "Dịch vụ kết nối Wi-Fi của Nintendo đang được tiến hành!",
+        "img": "/img/guidebg-1.png",
+        "link": "extras/cat"
+      }
+    ]
+  }
+}

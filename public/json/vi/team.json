@@ -1,0 +1,222 @@
+{
+  "members": {
+    "member": [
+      {
+        "name": "Sketch",
+        "title": "<i class='fa fa-crown'></i> Trưởng nhóm",
+        "color": "#5ef2b0",
+        "pfp": "https://i.imgur.com/yGVq4D9.png",
+        "link": "https://github.com/noahpistilli",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-canada_1f1e8-1f1e6.png"
+      },
+      {
+        "name": "LunaValoäa",
+        "title": "Quản Lý / Người phiên dịch",
+        "color": "#FDB0C0",
+        "pfp": "https://i.imgur.com/a3bzNPn.png",
+        "link": "https://www.youtube.com/@LunaValoaa",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
+      },
+      {
+        "name": "Alex",
+        "title": "Lập Trình Viên / Thiết Kế Đồ Họa",
+        "color": "#5e97f2",
+        "pfp": "https://i.imgur.com/cD6iFoq.png",
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Palapeli",
+        "title": "Lập Trình Viên",
+        "color": "#00AAAA",
+        "pfp": "https://i.imgur.com/REE7fcy.png",
+        "link": "https://github.com/mkwcat",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "giustino",
+        "title": "Lập Trình Viên",
+        "color": "#05ffb8",
+        "pfp": "https://i.imgur.com/kOnzxx5.png",
+        "link": "https://github.com/ed0nkey",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-italy_1f1ee-1f1f9.png"
+      },
+      {
+        "name": "oscie",
+        "title": "Lập Trình Viên / Quản Lý",
+        "color": "#7289da",
+        "pfp": "https://i.imgur.com/t3kmziO.png",
+        "link": "https://github.com/oscie57",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
+      },
+      {
+        "name": "diego",
+        "title": "Người dịch (CA, ES, ZH)",
+        "color": "#fc5a4e",
+        "pfp": "https://i.imgur.com/XBY7Tyu.png",
+        "link": "https://twitter.com/korewadiego",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Matthe815",
+        "title": "Lập Trình Viên LinkTag",
+        "color": "#4858a8",
+        "pfp": "https://i.imgur.com/KTAt2o5.png",
+        "link": "https://matthe815.dev/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "kouacc",
+        "title": "Người dịch (Tiếng Pháp)",
+        "color": "#1389a1",
+        "pfp": "https://i.imgur.com/OAaSXtn.png",
+        "link": "https://github.com/kouacc",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-france_1f1eb-1f1f7.png"
+      },
+      {
+        "name": "NecroNova",
+        "title": "Người quản lý nội dung",
+        "color": "#ff1dce",
+        "pfp": "https://i.imgur.com/eNhJ6hc.jpg",
+        "link": "https://github.com/NecroNovaVGitHub",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "bendevnull",
+        "title": "Người tạo LinkTag",
+        "color": "#5ef2b0",
+        "pfp": "https://i.imgur.com/KQD481c.png",
+        "link": "https://github.com/bennyman123abc",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "ZAZiOs",
+        "title": "Người Dịch (Tiếng Nga)",
+        "color": "#1c1c1c",
+        "pfp": "https://i.imgur.com/6QH1xal.png",
+        "link": "https://www.youtube.com/@zazios",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-russia_1f1f7-1f1fa.png"
+      },
+      {
+        "name": "Deoku64",
+        "title": "Người dịch (JP/DEU)",
+        "color": "#abc9ff",
+        "pfp": "https://i.imgur.com/0LlgO2g.jpg",
+        "link": "https://www.youtube.com/@Deoku64",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
+      },
+      {
+        "name": "Philemax",
+        "title": "Người dịch (FR, JP)",
+        "color": "#45c40c",
+        "pfp": "https://i.imgur.com/ONbvAAu.png",
+        "link": "https://www.youtube.com/@Philemax/",
+        "flag": "https://em-content.zobj.net/source/twitter/53/flag-for-switzerland_1f1e8-1f1ed.png"
+      },
+      {
+        "name": "Jinjo",
+        "title": "Người dịch (BR, PT)",
+        "color": "#6a329f",
+        "pfp": "https://i.imgur.com/VH3FeHN.png",
+        "link": "https://twitter.com/JinjoGuy",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-brazil_1f1e7-1f1f7.png"
+      },
+      {
+        "name": "rubinho146",
+        "title": "Người dịch (PT, PT)",
+        "color": "#FB5D35",
+        "pfp": "https://i.imgur.com/ZDghpDL.jpg",
+        "link": "https://www.youtube.com/user/rubinho146",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-portugal_1f1f5-1f1f9.png"
+      },
+      {
+        "name": "PablosCorner",
+        "title": "Phát triển",
+        "color": "#efc86f",
+        "pfp": "https://i.imgur.com/8tgMXv7.png",
+        "link": "https://github.com/PablosCorner",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "shoko",
+        "title": "Phát triển",
+        "color": "#81f777",
+        "pfp": "https://i.imgur.com/iJaTN3U.png",
+        "link": "https://youtube.com/@sh0ko64",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+      },
+      {
+        "name": "grunt22fox",
+        "title": "Nhân viên và Giám đốc",
+        "color": "#34ebff",
+        "pfp": "https://i.imgur.com/0nR5F9m.png",
+        "link": "https://www.doesn0texist.tech/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "Snare-Hawk",
+        "title": "Nhân Viên",
+        "color": "#1bcf9a",
+        "pfp": "https://i.imgur.com/ztLAFMt.jpg",
+        "link": "https://snare-hawk.carrd.co/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "Citrus Wolf",
+        "title": "Kiểm duyệt / Quản lý nội dung",
+        "color": "#ffda76",
+        "pfp": "https://i.imgur.com/IXphSN7.png",
+        "link": "https://twitter.com/WolfCitrus",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
+      },
+      {
+        "name": "Jess Williamson",
+        "title": "Người dịch (Tiếng Nhật)",
+        "color": "#66cdaa",
+        "pfp": "https://i.imgur.com/IeOy0yO.jpg",
+        "link": "https://instagram.com/jessdoesvids",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-japan_1f1ef-1f1f5.png"
+      },
+      {
+        "name": "GamerKGR",
+        "title": "Soạn nhạc",
+        "color": "#40E0D0",
+        "pfp": "https://i.imgur.com/j9HUUiv.png",
+        "link": "https://gamerkgr.neocities.org/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "ryaltheamazing",
+        "title": "Mạng xã hội",
+        "color": "#ed3939",
+        "pfp": "https://i.imgur.com/fY4S9H3.png",
+        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "dhtdht020",
+        "title": "Phát triển công cụ",
+        "color": "#00AAAA",
+        "pfp": "https://i.imgur.com/7f4mg92.png",
+        "link": "https://twitter.com/dhtdht020",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-israel_1f1ee-1f1f1.png"
+      },
+      {
+        "name": "Jau__CR",
+        "title": "Người dịch (Tiếng Châu Âu Tây Ban Nha, tiếng Valencia)",
+        "color": "#a68a7d",
+        "pfp": "https://i.imgur.com/tbBzDRO.jpg",
+        "link": "https://twitter.com/Jau__CR",
+        "flag": "/img/val.png"
+      },
+      {
+        "name": "Burrito",
+        "title": "Nhà phát triển / quản trị viên hệ thống",
+        "color": "#5a8c72",
+        "pfp": "https://i.imgur.com/TUjjwsG.png",
+        "link": "https://links.burrito.software",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      }
+    ]
+  }
+}

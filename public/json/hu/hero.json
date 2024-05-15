@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Bulizz, mintha 2006 lenne!",
+    "Tudtad, hogy a Wii-konzolod képes csatlakozni az internetre?",
+    "Mint a Scott The Wozon!",
+    "A legendás WiiConnect24 visszatérése",
+    "Fedezd fel újra a Wiid!",
+    "A Nintendo aranykora újraélesztve",
+    "Csatlakozz újra a Wii múltjához!",
+    "Mi ismét Wiizünk. És Te?",
+    "Egy Wiin többet is tudsz csinálni, mint veszíteni a Mario Kartban!",
+    "A legjobb Wiihálózat-felélesztőprogram",
+    "Játssz, mintha újra gyerek lennél!",
+    "Újra játszani akarunk!",
+    "A gyerekkori élményeid a mi szerverünkön",
+    "WiiLink: Wii-szoftver határok nélkül",
+    "A rajongók megteszik, amit a Nintendo nem",
+    "A WiiLinknek 2006-os aromája van!",
+    "Összekötjük a világot Wiiről Wiire.",
+    "A Nintendo egyik legnagyobb fejlesztése a többjátékos mókában, újraélesztve!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Forecast Channel",
+        "desc": "Friss időjárás a világ minden tájáról",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "News Channel",
+        "desc": "Friss hírek a világ minden tájáról",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Nintendo Channel",
+        "desc": "DS-játékok előzetesei, kritikái és demói egy helyen",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Check Mii Out Channel",
+        "desc": "Csatlakozz és szavazz számos Miiversenyben!",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Everybody Votes Channel",
+        "desc": "Szavazz és tudd meg mások véleményét",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Food Channel",
+        "desc": "Rendelj házhoz egyenesen a Wii-konzolodról",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV Guide Channel",
+        "desc": "Műsorújság és közelgő sorozatok előzetesei",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV Channel",
+        "desc": "A Kirby: Right Back at Ya!-sorozat részei",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints Channel",
+        "desc": "Fényképnyomtatás és -házhozszállítás a Wii-konzolodon",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "A műsorok és videók nézésének új módja",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

@@ -20,7 +20,7 @@
         "isArea": "Internazionale",
         "status": "Rilascio completo",
         "icon": "news_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "completed": "100"
       },
       {
@@ -31,18 +31,18 @@
         "isArea": "Internazionale",
         "status": "Rilascio completo",
         "icon": "nintendo_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "completed": "90"
       },
       {
         "color": "#F1E3C1",
         "name": "Canale Concorsi Mii",
-        "desc": "Diventa un Artigiano Mii e mostra il mondo le tue abilità di design Mii in una vasta gamma di concorsi.",
+        "desc": "Diventa un Artigiano Mii e mostra al mondo le tue abilità di design Mii in una vasta gamma di concorsi.",
         "link": "/guide/miicontest",
         "isArea": "Internazionale",
         "status": "Rilascio completo",
         "icon": "miicontest_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Internazionale",
         "status": "Rilascio completo",
         "icon": "democracy_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originariamente esclusiva giapponese",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "demae_icon.png",
         "completed": "90"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originariamente certi stati Europei",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "kirby_icon.png",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originariamente esclusiva giapponese",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "digicam_icon.png",
         "completed": "75"
       },
@@ -107,18 +107,18 @@
         "link": "/guide/wiinoma",
         "isArea": "Originariamente esclusiva giapponese",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "room_icon.png",
         "completed": "85"
       },
       {
         "color": "#05AAF8",
         "name": "Impostazioni indirizzo",
-        "desc": "Inserisci le informazioni personali richieste per il Photo Prints Channel e il Food Channel.",
+        "desc": "Inserisci le informazioni personali necessarie per il Photo Prints Channel e il Food Channel.",
         "link": "/guide/spd",
         "isArea": "Originariamente esclusiva giapponese",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "",
         "completed": "100"
       },
@@ -127,20 +127,20 @@
         "name": "Bacheca dei messaggi Wii",
         "desc": "Invia messaggi ad amici Wii registrati e indirizzi email.",
         "link": "/guide/board",
-        "isArea": "Region Free",
+        "isArea": "Regione Libera",
         "status": "Rilascio completo",
-        "todo": "<i class='fa fa-circle-check'></i> Questo servizio sta funzionando correttamente!",
+        "todo": "<i class='fa fa-circle-check'></i> Il servizio funziona correttamente!",
         "icon": "",
         "completed": "100"
       },
       {
         "color": "#05AAF8",
-        "name": "Canale Metroid Prime 3",
-        "desc": "Visualizza contenuti di <i>Metroid Prime 3: Corruption</i>.",
+        "name": "Anteprima Metroid Prime 3",
+        "desc": "Visualizza il contenuto di <i>Metroid Prime 3: Corruption</i>.",
         "link": "/guide/primepreview",
-        "isArea": "Originariamente America e Europa",
+        "isArea": "Originariamente America ed Europa",
         "status": "Interrotto",
-        "todo": "<i class='fa fa-bomb'></i> Il progetto di questo servizio è stato interrotto.",
+        "todo": "<i class='fa fa-bomb'></i> Lo sviluppo di questo servizio è stato interrotto.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/guide/dokodemo",
         "isArea": "Originariamente esclusiva giapponese",
         "status": "Interrotto",
-        "todo": "<i class='fa fa-bomb'></i> Il progetto di questo servizio è stato interrotto.",
+        "todo": "<i class='fa fa-bomb'></i> Lo sviluppo di questo servizio è stato interrotto.",
         "icon": "",
         "completed": "15"
       }

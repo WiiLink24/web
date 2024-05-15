@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Forecast Channel",
+        "desc": "Tekintsd meg a régiód, országod vagy az egész világ időjárását!",
+        "link": "/guide/forecast",
+        "isArea": "Nemzetközi",
+        "status": "Kész",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik. <br><br> Minden <b>RiiConnect24-felhasználónak</b> frissítenie kell a WiiLink Patcher legújabb verziójával a szolgáltatás további igénybevételéhez.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "News Channel",
+        "desc": "Hírek a világ minden tájáról, a térképen megjelenítve.",
+        "link": "/guide/news",
+        "isArea": "Nemzetközi",
+        "status": "Kész",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Nintendo Channel",
+        "desc": "Hírek, kritikák, előzetesek, különleges műsorok és demók Wii-, Nintendo DS- és Nintendo 3DS-játékokhoz.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Nemzetközi",
+        "status": "Kész",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Check Mii Out Channel",
+        "desc": "Válj Miiművésszé és nevezd be a kreálmányaidat mindenféle versenyre!",
+        "link": "/guide/miicontest",
+        "isArea": "Nemzetközi",
+        "status": "Kész",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Everybody Votes Channel",
+        "desc": "Nézd meg, hogyan vélekednek az emberek különböző kérdésekben!",
+        "link": "/guide/evc",
+        "isArea": "Nemzetközi",
+        "status": "Kész",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Food Channel",
+        "desc": "Rendelj házhoz egyenesen a Wii-konzolodról!",
+        "link": "/guide/demae",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "TV Guide Channel",
+        "desc": "Böngészd a műsorújságot, állíts be emlékeztetőket és irányítsd a TV-készülékedet a Wii Remote-oddal!",
+        "link": "/guide/tvnotomo",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Zártkörű próba",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás fejlesztés alatt áll.",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Kirby TV Channel",
+        "desc": "Nézd meg korlátozott ideig a <i>Kirby: Right Back at Ya!</i>-sorozat részeit!",
+        "link": "/guide/kirbytv",
+        "isArea": "Eredetileg csak bizonyos európai országokban volt elérhető",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Photo Prints Channel",
+        "desc": "Készíts albumokat és névjegykártyákat a fényképeidből és Miijeidből!",
+        "link": "/guide/digicam",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "WiiRoom",
+        "desc": "Fedezz fel sorozatokat és egyéb nézhető videókat, vagy üzenj a barátaidnak a Wii Roomban!",
+        "link": "/guide/wiinoma",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Address Settings",
+        "desc": "Add meg a Photo Prints Channel és Food Channel igénybevételéhez szükséges személyes adatokat!",
+        "link": "/guide/spd",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Message Board",
+        "desc": "Üzenj a címjegyzékedben lévő Wii-barátaidnak vagy írj emailt!",
+        "link": "/guide/board",
+        "isArea": "Régiózár-mentes",
+        "status": "Kész",
+        "todo": "<i class='fa fa-circle-check'></i> Ez a szolgáltatás rendben működik.",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "Tekints meg <i>Metroid Prime 3: Corruption</i>-tartalmakat!",
+        "link": "/guide/primepreview",
+        "isArea": "Eredetileg csak Amerikában és Európában volt elérhető",
+        "status": "Szüneteltetve",
+        "todo": "<i class='fa fa-circle-check'></i> A szolgáltatás fejlesztése szünetel.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "Egy DSiWare-alkalmazás a letöltött Wii Room-tartalmak internetkapcsolat nélküli megtekintéséhez.",
+        "link": "/guide/dokodemo",
+        "isArea": "Eredetileg csak Japánban volt elérhető",
+        "status": "Szüneteltetve",
+        "todo": "<i class='fa fa-circle-check'></i> A szolgáltatás fejlesztése szünetel.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}

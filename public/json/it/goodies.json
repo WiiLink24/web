@@ -27,7 +27,7 @@
       },
       {
         "title": "<i class='fa-solid fa-poll'></i> Visualizzatore di sondaggi",
-        "desc": "Visualizza i risultati del sondaggio per il Canale Vota Anche Tu!",
+        "desc": "Visualizza i risultati dei sondaggi per il Canale Vota Anche Tu!",
         "img": "/img/guidebg-2.png",
         "link": "extras/vote"
       },
@@ -39,18 +39,18 @@
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Temi WiiLink",
-        "desc": "Temi belli per il tuo Wii!",
+        "desc": "Temi belli per la tua Wii!",
         "img": "/img/guidebg-3.png",
         "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "Un servizio Nintendo Wi-Fi Connection in corso!",
+        "desc": "Un servizio Nintendo Wi-Fi Connection in sviluppo!",
         "img": "/img/guidebg-1.png",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Strisce Comiche",
+        "title": "<i class='fa-solid fa-mask'></i> Vignette comiche",
         "desc": "Vecchi fumetti RiiConnect24",
         "img": "/img/guidebg-1.png",
         "link": "extras/strips"
@@ -74,14 +74,14 @@
         "link": "extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Sottofondo Canale Wii Shop",
+        "title": "<i class='fa-solid fa-shop'></i> Musica Canale Wii Shop",
         "desc": "Canzone meme per il Canale Wii Shop",
         "img": "/img/guidebg-1.png",
         "link": "extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> Gatto delle notizie",
-        "desc": "Un servizio Nintendo Wi-Fi Connection in corso!",
+        "desc": "Un servizio Nintendo Wi-Fi Connection in sviluppo!",
         "img": "/img/guidebg-1.png",
         "link": "extras/cat"
       }

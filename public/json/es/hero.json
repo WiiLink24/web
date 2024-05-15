@@ -1,23 +1,23 @@
 {
   "taglines": [
-    "¡Festeja como si fuera 2006!",
+    "¡Sigue la fiesta como si fuera 2006!",
     "¿Sabías que puedes conectar tu consola Wii a Internet?",
-    "¡Como lo viste en Scott The Woz!",
-    "El Retorno del Legendario WiiConnect24",
-    "Re-descubre tu Wii",
-    "Link regresa a la época dorada de Nintendo",
-    "¡Conéctate nuevamente al pasado de la Wii!",
-    "Wii Play. \"Nosotros jugamos.\" ¿Y tú?",
-    "¡Puedes hacer más con una Wii que sólo perder en Mario Kart!",
-    "El renacimiento del servicio de red Wii más real",
-    "¡Juega como si regresaras a tu infancia!",
-    "Wii \"Nosotros\" queremos jugar, de nuevo",
-    "Tus recuerdos de la infancia, conectado a nuestros servidores",
-    "WiiLink, el software de Wii más allá de las cosas",
-    "Los Fans hacen lo que Nintendo no hacen",
-    "¡WiiLink definitivamente te da vibras del 2006!",
-    "Enlazando con el mundo, una Wii a la vez",
-    "¡Uno de los grandes pasos de Nintendo en los juegos multijugador, renacido!"
+    "¡Cómo se vio en Scott The Woz!",
+    "El regreso del legendario WiiConnect24",
+    "Redescubre tu Wii",
+    "Volvamos a la época dorada de Nintendo",
+    "¡Conéctate de nuevo al pasado de la Wii!",
+    "Wii juega. ¿Y tú?",
+    "¡Con una Wii puedes hacer mucho más que perder en Mario Kart!",
+    "El verdadero servicio de reactivación de la red wii",
+    "¡Juega como si estuvieras en tu infancia!",
+    "A la Wii le gustaría jugar, otra vez",
+    "Tus recuerdos de la infancia, conectados a nuestros servidores",
+    "WiiLink, el software de Wii que va más allá",
+    "Los fans hacen lo que Nintendo no",
+    "¡WiiLink definitivamente da vibraciones de 2006!",
+    "Uniendo el mundo, una Wii a la vez",
+    "Uno de los mayores pasos de Nintendo en el juego multijugador, ¡Revivido!"
   ],
   "hero": {
     "element": [
@@ -30,63 +30,63 @@
       },
       {
         "name": "Canal Noticias",
-        "desc": "Mantente informado con las últimas noticias de todo el mundo",
+        "desc": "Manténgase informado con las últimas noticias de todo el mundo",
         "link": "/guide/news",
         "icon": "newsbanner.png",
         "bg": "news.jpg"
       },
       {
         "name": "Canal Nintendo",
-        "desc": "Mira tráileres, lee reseñas y descarga demos de juegos para Nintendo DS",
+        "desc": "Vea tráilers, lea críticas y descargue demos de juegos para DS",
         "link": "/guide/nintendochannel",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
       {
-        "name": "Canal Miirame",
-        "desc": "Participa en concursos y vota por tus Miis favoritos",
+        "name": "Canal Concursos Mii",
+        "desc": "Participate in contests and vote for your favorite Miis",
         "link": "/guide/miicontest",
         "icon": "miioutbanner.png",
         "bg": "checkmiiout.png"
       },
       {
         "name": "Canal Opiniones",
-        "desc": "Responde encuestas y compara tus opiniones con las de otros",
+        "desc": "Contesta a las encuestas y compara tus opiniones con las de los demás",
         "link": "/guide/evc",
         "icon": "politicsbanner.png",
         "bg": "politics.jpg"
       },
       {
         "name": "Canal Comida",
-        "desc": "Ordena diferentes tipos de comida desde casa a través de tu consola Wii",
+        "desc": "Pide diferentes tipos de comida a domicilio a través de tu consola Wii",
         "link": "/guide/demae",
         "icon": "demaebanner.png",
         "bg": "food.png"
       },
       {
         "name": "Canal Guía de TV",
-        "desc": "Consulta la programación de televisión y vea tráilers de los próximos programas",
+        "desc": "Consulte la programación de televisión y vea los trailers de las próximas series",
         "link": "/guide/tvnotomo",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },
       {
         "name": "Canal Kirby TV",
-        "desc": "Mira episodios del show de Kirby: Right Back at Ya! en este canal",
+        "desc": "¡Vea los episodios del programa de televisión Kirby: Right Back at Ya! Show de Televisión",
         "link": "/guide/kirbytv",
         "icon": "kirbytvbanner.png",
         "bg": "kirbytv.png"
       },
       {
-        "name": "Canal Impresión de Fotos",
-        "desc": "Ordena impresiones de tus fotografías favoritas desde tu consola Wii",
+        "name": "Canal Impresión de fotos",
+        "desc": "Ordena imprimir tus fotos favoritas desde tu consola Wii",
         "link": "/guide/digicam",
         "icon": "digicambanner.png",
         "bg": "digicamprints.png"
       },
       {
         "name": "Wii Room",
-        "desc": "Descubre programas y contenido de vídeo bajo demanda de una forma más novedosa",
+        "desc": "Descubra espectáculos y contenido de vídeo a la carta de una forma más novedosa",
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.png",
         "bg": "room.webp"
