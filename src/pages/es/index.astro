@@ -182,26 +182,26 @@ changeLanguage("es");
     }
   });
 
-  if (width >= 1000) {
     document.getElementById("footer").style.animation =
       "fadeout 0.2s linear forwards";
+
     scrollableDiv.addEventListener("scroll", function () {
       if (
-        scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-        scrollableDiv.clientHeight + 30
+        (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+        scrollableDiv.clientHeight + 30) && width >= 1000
       ) {
         scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
         document.getElementById("footer").style.animation =
           "fadein 0.2s linear forwards";
+      } else if (width < 1000) {
+        scrollableDiv.style.setProperty("height", "100%");
       } else {
         scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
         document.getElementById("footer").style.animation =
           "fadeout 0.2s linear forwards";
       }
     });
-  } else {
-    scrollableDiv.style.setProperty("height", "100%");
-  }
+
 
   const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]'
