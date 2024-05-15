@@ -168,7 +168,6 @@ changeLanguage("it");
   });
 
   const scrollableDiv = document.getElementById("square2");
-  const width = window.innerWidth;
 
   scrollableDiv.addEventListener("scroll", function () {
     // Change the bg color in #square2 to var(--bg-color) if scrolled
@@ -186,6 +185,7 @@ changeLanguage("it");
       "fadeout 0.2s linear forwards";
 
     scrollableDiv.addEventListener("scroll", function () {
+      let width = window.innerWidth;
       if (
         (scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
         scrollableDiv.clientHeight + 30) && width >= 1000
