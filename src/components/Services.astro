@@ -9,7 +9,7 @@ let data;
 
 async function fetchData() {
   const url = new URL(Astro.request.url);
-  const countryCode = url.pathname.split('/')[1] || 'default';
+  const countryCode = url.pathname.split('/')[1] || '';
 
   const filePath = path.join(process.cwd(), 'public', 'json', countryCode, 'services.json');
   
