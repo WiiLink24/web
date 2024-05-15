@@ -1,0 +1,44 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("de");
+---
+
+<script type="module" is:inline>
+  import { Octokit } from "https://esm.sh/octokit";
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    const octokit = new Octokit({
+      auth: ""
+    });
+
+    const owner = "WiiLink24";
+    const repo = "WiiLink24-Patcher";
+
+    try {
+      // Fetch the latest release information from the GitHub repository using Octokit
+      const { data: release } = await octokit.request(
+        "GET /repos/{owner}/{repo}/releases/latest",
+        {
+          owner,
+          repo,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28"
+          }
+        }
+      );
+      // Update the download link if it exists
+      if (release.assets.length > 0) {
+        console.log("Heya! Downloading ", release.tag_name, " from ", release.assets[3].browser_download_url ," for ya!");
+        window.location = release.assets[3].browser_download_url;
+        setTimeout(function() {
+          window.location = "https://wiilink24.com/";
+        }, 1000);
+      } else {
+        console.error("No assets found in the latest release.");
+      }
+    } catch (error) {
+      console.error("Error fetching GitHub release:", error);
+    }
+  });
+</script>

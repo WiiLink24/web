@@ -1,0 +1,35 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../../../layouts/Layout.astro";
+import Header from "../../../../../components/Header.astro";
+import Footer from "../../../../../components/Footer.astro";
+
+changeLanguage("ru");
+---
+
+<Layout title="Nyan Cat Easter Egg - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
+<Header isGuide="display:none;" />
+<div
+  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
+  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
+  the RiiConnect24 site
+</div>
+<div class="section no-pad-bot">
+  <div class="container center">
+    <h1 class="header center">
+      <i class="fas fa-cat" aria-hidden="true"></i> Nyan Help Cat
+    </h1>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/pc1PWfcYlKo?rel=0"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+      style="border-radius: 8px; overflow: hidden;"></iframe>
+    <br />
+    <br />
+  </div>
+</div>
+
+<Footer />

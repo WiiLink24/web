@@ -9,7 +9,7 @@ import FormattedDate from "../../../components/FormattedDate.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
-changeLanguage("arp");
+changeLanguage("en");
 
 const posts = (await getCollection("services")).sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---

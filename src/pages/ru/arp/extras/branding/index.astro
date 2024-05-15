@@ -1,0 +1,131 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../../../layouts/Layout.astro";
+import Header from "../../../../../components/Header.astro";
+import Footer from "../../../../../components/Footer.astro";
+
+changeLanguage("ru");
+---
+
+<Layout title="Branding - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
+<Header isGuide="display:none;" />
+
+<div
+  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
+  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
+  the RiiConnect24 site
+</div>
+<div class="section no-pad-bot">
+  <div class="container">
+    <h1 class="header center">
+      <i aria-hidden="true" class="fas fa-palette"></i> Branding
+    </h1><br />
+  </div>
+</div>
+<div class="section">
+  <div class="container">
+    <h2 class="header">Logos</h2>
+    <div class="row">
+      <div class="col l6">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://www.rc24.xyz/images/logo_blue.png" />
+          </div>
+          <div class="card-content">
+            <span class="card-title">Logo (Blue)</span>
+          </div>
+          <div class="card-action">
+            <a href="https://www.rc24.xyz/images/logo_blue.png">PNG</a>
+            <a href="https://www.rc24.xyz/images/logo_blue.svg">SVG</a>
+          </div>
+        </div>
+      </div>
+      <div class="col l6">
+        <div class="card">
+          <div class="card-image" style="background-color: #1eb5ec">
+            <img src="https://www.rc24.xyz/images/logo_white.png" />
+          </div>
+          <div class="card-content">
+            <span class="card-title">Logo (White)</span>
+          </div>
+          <div class="card-action">
+            <a href="https://www.rc24.xyz/images/logo_white.png">PNG</a>
+            <a href="https://www.rc24.xyz/images/logo_white.svg">SVG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="display:flex; ">
+      <div class="col m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://www.rc24.xyz/images/logo_small_blue.png" />
+          </div>
+          <div class="card-content">
+            <span class="card-title">Small Logo (Blue Background)</span>
+          </div>
+          <div class="card-action">
+            <a href="https://www.rc24.xyz/images/logo_small_blue.png">PNG</a>
+          </div>
+        </div>
+      </div>
+      <div class="col m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="https://www.rc24.xyz/images/logo_small.png" />
+          </div>
+          <div class="card-content">
+            <span class="card-title">Small Logo (Blue Transparent)</span>
+          </div>
+          <div class="card-action">
+            <a href="https://www.rc24.xyz/images/logo_small.png">PNG</a>
+          </div>
+        </div>
+      </div>
+      <div class="col m4">
+        <div class="card">
+          <div class="card-image" style="background-color: #1eb5ec">
+            <img src="https://www.rc24.xyz/images/logo_small_white.png" />
+          </div>
+          <div class="card-content">
+            <span class="card-title">Small Logo (White Transparent)</span>
+          </div>
+          <div class="card-action">
+            <a href="https://www.rc24.xyz/images/logo_small_white.png">PNG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="header center">Color</h2>
+    <div class="row">
+      <div class="col">
+        <div
+          class="card"
+          style="width:300px; padding:18px; color:white; background-color: #1eb5ec !important">
+          <div class="card-content">
+            <span class="card-title">Reconnected Blue</span>
+            <br /><br /><br /><br /><br />
+            #18B6ED
+            <br />
+            CMYK: 68, 8, 0, 0
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<Footer />
+
+<style>
+  .card {
+    border-radius: 8px;
+    margin: 10px;
+    border: 2px solid #ffffff20;
+    box-shadow: 0px 0px 28px #6c6c6c20;
+    overflow: hidden;
+  }
+
+  .card-image {
+    padding: 20px;
+  }
+</style>

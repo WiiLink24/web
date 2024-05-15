@@ -1,0 +1,428 @@
+---
+import Layout from "../../../../layouts/Layout.astro";
+import Header from "../../../../components/Header.astro";
+import Footer from "../../../../components/Footer.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("ja");
+---
+
+<Layout
+  title={t("eula.mainTitle")}
+  description={t("eula.mainDesc")}
+  image="/img/branding_bg.png">
+  <Header isGuide="display:none;" />
+
+  <section class="section" style="top:200px !important; position:relative;">
+    <h1 style="font-family: Gilroy; margin-bottom: 18px;">EULA</h1>
+    <h1 class="title" style="display:flex; justify-content:space-between;">
+      WIILINK SERVICES END-USER LICENCE AGREEMENT<p
+        style="font-size:20px; text-align:right; padding:13px; border:2px solid #ffffff20; border-radius:8px;">
+        Last Updated: 30 December 2023
+      </p>
+    </h1>
+    <div class="polka-dot"></div>
+    <h5 style="font-size:18px; font-weight:400;">
+    <br />
+    <b
+      >This Agreement is between you (the End User) and WiiLink (the Licensor)
+      and covers the use of the WiiLink Service.</b
+    >
+    <br /><br />
+    <m class="notice danger fullwidth center">
+      If you are under the age of 18, you must find a legal guardian or parent
+      to read and accept the agreement.
+    </m>
+    <br /><br />
+    WiiLink is referred to as "we" or "us". You may not use any of the WiiLink Software
+    if you do not agree to the terms of this Agreement. By downloading and/or using
+    any of the Services or Software provided by WiiLink that falls within the scope
+    of use of the WiiLink Service, and any updates thereto (as permitted by this
+    User Agreement), you acknowledge your agreement to be bound by all of the terms
+    and conditions herein, and your acceptance of this User Agreement. An online
+    version of the Agreement is available at the following address: https://wiilink24.com/eula.
+    <br /><br /><br />
+
+    <b>Section I: DEFINITIONS</b><br />
+
+    <br />
+    "Nintendo" refers to Nintendo Co., Ltd, Nintendo of America, Nintendo of Europe,
+    Nintendo of Japan, Nintendo Australia, or any other subsidiary or otherwise affiliated
+    company.<br /><br />
+    "Nintendo Content" refers to any and all software and content, including applications,
+    referred to as "Channels", that Nintendo owns or has obtained the right to use,
+    distribute or sublicense.<br /><br />
+    "WiiLink services" or "the Service" refers to the services and content that WiiLink
+    offers through Nintendo Content, such as the Food Channel (Demae Channel), the
+    News Channel or the Mii Contest Channel, among others.<br /><br />
+    "Wii Console" refers to the video game system (including the Wii Remote) sold
+    and marketed by Nintendo under the "Wii" brand, including any subsequent and
+    compatible hardware.<br /><br />
+    "Discord" refers to the instant messaging and VoIP platform accessible via browser,
+    PC and mobile devices, which is owned and operated by Discord, Inc.<br /><br
+    />
+    “Nintendo IP” refers to all intellectual property associated with the Wii Console
+    and the Wii Network Services, including but not limited to trademarks, service
+    marks, logos, designs, copyrights, inventions, patents, trade secrets, knowledge
+    and other confidential and proprietary information which Nintendo has developed,
+    owns, or is granted a licence to use.<br /><br />
+    “Third-Party Data” means content or other software, services, material, messages
+    (including commercial and non-commercial messages), links to Internet sites,
+    and other data either created by, or sent to, your Wii Console through the Wii
+    Network Service by any non-Nintendo entity or person (including yourself).<br
+    /><br />
+    "Wii Message Board" refers to the Wii Console menu's functionality for creating,
+    displaying and sending messages or viewing game history.<br /><br />
+    Lastly, "User Agreement" refers to the present document.
+    <br /><br /><br />
+    <b>Section II: LICENCE INFORMATION</b>
+    <br /><br />
+    <u>Article I: GRANT OF LICENCE</u>
+    <br /><br />
+    We grant you a personal, limited, non-exclusive, revocable licence to use the
+    WiiLink Services in accordance with the User Agreement. Specifically:
+    <br /><br />
+    - You are responsible for anyone using the WiiLink services through your Wii
+    Console (whether or not you have given them permission to do so), and you must
+    ensure that they understand and comply with the terms of this agreement.
+    <br /><br />
+    - You may not use the WiiLink Services for any commercial or unlawful purpose,
+    in any way that may adversely affect any other individual or company, or in any
+    unauthorised or improper manner as we may specify from time to time in the User
+    Agreement, the WiiLink Code of Conduct, or otherwise.
+    <br /><br />
+    - The User Agreement must not be interpreted as invalidating or limiting Nintendo's
+    terms and conditions or other Third Party Data agreements, and must be followed
+    accordingly.
+    <br /><br /><br />
+    <u>Article II: UPDATES/CHANGES TO THE LICENCE OR SERVICE</u>
+    <br />
+
+    You understand that WiiLink services are continuously under evolution, and
+    that the services offered may be updated or changed at any time. In this
+    case, we will announce these updates in an announcement channel via the
+    Discord communication service.<br />
+
+    In addition, the User Agreement may change in the future, in which case it
+    will continue to apply to the WiiLink Services unless explicitly stated
+    otherwise. By accepting this User Agreement at this time, you choose to
+    accept all changes thereto until an explicit revocation of the acceptance is
+    made by you.<br />
+
+    <br /><u>Article III: INTELLECTUAL PROPERTY</u>
+    <br />
+
+    The code for the WiiLink Services is based on reverse engineering of
+    legitimate files and packet dumps. Please refer to the licence for the
+    specific repository on how this code may be legally used.<br />
+
+    The names of Nintendo Content are the intellectual property of Nintendo and
+    do not belong to WiiLink.<br />
+
+    <br /><u>Article IV: WARRANTY DISCLAIMER</u><br />
+
+    With the exception of those represented in this Agreement, we provide all
+    WiiLink Services "AS IS". Except as set forth in this Agreement, WiiLink
+    makes no other warranties, expressed or implied, and hereby disclaims all
+    implied warranties, including any of merchantability and of fitness for a
+    particular purpose. WiiLink is NOT responsible for any possible damages that
+    may occur to your Wii Console as a result of the use and installation of
+    WiiLink Content as expressly covered by this Agreement.<br />
+
+    You agree to renounce any right to claim damages or losses caused to you or
+    related to your inability to use the WiiLink Service and/or your Wii
+    Console, or to any other person using the WiiLink Service through your Wii
+    Console.<br />
+
+    <br /><u>Article V: EXPIRATION AND TERMINATION OF AGREEMENT</u><br />
+
+    - You may terminate this agreement by removing all WiiLink content from your
+    Wii console, discontinuing use of the WiiLink Service.<br /><br />
+    - We may terminate this agreement, or any part thereof, at any time and for any
+    reason.<br /><br />
+    - In the event of termination or cancellation of this agreement, articles 2.3,
+    2.4, 2.6 and 4.2 shall remain in effect.<br /><br />
+
+    <br /><u>Article VI: SALE, TRANSFER, AND ASSIGNMENT PROHIBITED</u><br />
+
+    You are not authorised to assign all or any part of this agreement or to
+    sell the content to a third party. Any attempt by you to do so is a breach
+    of this agreement. WiiLink is a free service and will remain so at all
+    times. If you paid to use this service, you have been defrauded.<br />
+
+    <br /><u>Article VII: APPLICABLE LAW</u><br />
+
+    This User Agreement is governed by the laws of Canada, excluding its
+    conflict of law rules.<br />
+
+    <br /><u>Article VIII: LICENCE CONTACT INFORMATION</u><br />
+
+    Should you require clarification of this licence or have any concerns about
+    it, you may contact us at the following e-mail address:
+    support@wiilink24.com.<br /><br /><br />
+
+    <b>Chapter III: Our Usage of Your Data</b><br />
+
+    <br /><u>Article I: THIRD-PARTY DATA</u>
+    <br />
+
+    We are not responsible for any Third-Party Data or for any action you may
+    take relating thereto (including but not limited to modifying, distributing,
+    or posting Third-Party Data). All Third-Party Data is the sole
+    responsibility of the creator or sender of that Third-Party Data. We are
+    unable to monitor, supervise, store, or support Third-Party Data or respond
+    to complaints relating to Third-Party Data.<br />
+
+    <br /><u>Article II: PROTECTION OF PERSONAL INFORMATION</u>
+    <br />
+
+    We are committed to protecting the privacy and security of your personal
+    information. Your use of the WiiLink Service is subject to the WiiLink
+    Privacy Policy, which applies to information given or collected through the
+    WiiLink Service. The most current version of the WiiLink Privacy Policy can
+    be found online at the following website:
+    https://wiilink24.com/privacy-policy. Due to the nature of the data that is
+    collected on some services, you may not use the WiiLink Services if you are
+    under the age of 13.<br /><br /><br />
+
+    <b>Chapter IV: YOUR USAGE OF THE SERVICE</b>
+
+    <br /><br /><u>Article I: CODE OF CONDUCT</u>
+    <br />
+
+    Your use of the WiiLink Service is subject to the WiiLink Code of Conduct,
+    which prohibits all harmful, illegal or offensive acts. The most current
+    version of the WiiLink Code of Conduct can be found online at the following
+    website: https://wiilink24.com/code-of-conduct.<br />
+
+    <br /><u>Article II: CUSTOMER SERVICE/NOTICES</u>
+    <br />
+
+    If your experience with the Service is not satisfactory, or if you would
+    like to otherwise contact us, please join our Discord server at:
+    https://discord.gg/wiilink. If you choose not to use Discord, you can send us
+    an e-mail at the following address: support@wiilink24.com.<br />
+
+    The End User acknowledges that WiiLink has no obligation to provide support
+    services to the End User, and that such support services are provided on a
+    case-by-case basis.<br />
+
+    <br /><u>Article III: WIILINK MESSAGES</u>
+    <br />
+
+    By using our DNS code, you agree to receive non-commercial messages from
+    WiiLink to the Wii Message Board from time to time. If you wish to continue
+    to use the WiiLink service but would prefer not to receive these messages,
+    please do not use our DNS code.<br />
+  </h5>
+  </section>
+
+  <Footer />
+
+  <script>
+    const scrollableDiv = document.getElementById("square2");
+
+    scrollableDiv.addEventListener("scroll", function () {
+      // Check if the user has scrolled to the bottom
+      if (
+        scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+        scrollableDiv.clientHeight + 30
+      ) {
+        // User has scrolled to the end
+        scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
+      } else {
+        scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
+      }
+    });
+  </script>
+
+  <style>
+    .section {
+      max-width: 1500px;
+      padding-left: 5px;
+      padding-right: 5px;
+      left: 50%;
+      transform: translate(-50%, 50px);
+      margin-bottom: 80px;
+      position: relative;
+      font-family: inter;
+    }
+    .title {
+      font-family: Gilroy;
+      font-size: 30px;
+    }
+
+    b {
+      font-family: Gilroy;
+      font-size: 25px;
+    }
+
+    .socials {
+      top: 50%;
+      right: 50px;
+      transform: translate(0, -50%);
+      color: white;
+      font-size: 25px;
+      width: 150px;
+      justify-content: right;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+    }
+    .slogan {
+      left: 80px;
+      font-family:
+        inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      color: white;
+      width: 500px;
+      position: relative;
+    }
+    .footer-holder {
+      bottom: 20px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      align-items: center;
+      width: 98%;
+      height: 250px;
+      position: absolute;
+    }
+
+    .symbolholder {
+      background-color: var(--bg-color);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transition: 0.5s;
+      z-index: 1;
+      overflow: hidden;
+      position: fixed;
+    }
+
+    .backsymbol {
+      width: 100%;
+      height: 100%;
+      top: 0%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      z-index: 1;
+      position: absolute;
+    }
+    .contentholder {
+      left: 50%;
+      transform: translate(-50%, 0);
+      max-width: 1000px;
+      position: relative;
+    }
+    .bottomleftcorner {
+      animation: changecolor 10s linear infinite;
+      position: relative;
+    }
+    .bottomleftcornerholder {
+      left: -2.6px;
+      bottom: -3px;
+      scale: 31.6%;
+      transform: translate(-106.5%, 107.3%);
+      z-index: 2;
+      position: absolute;
+    }
+    .square {
+      --img-invert: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        41deg,
+        rgba(0, 138, 255, 1) 0%,
+        rgba(255, 0, 59, 1) 100%
+      );
+      z-index: 0;
+      animation: changecolor 10s linear infinite;
+      position: absolute;
+    }
+    #square2 {
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background-color: #ffffff;
+      transform: translate(0%, 0%);
+      border-radius: 4px;
+      z-index: 1;
+
+      transition: 0.5s;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      position: absolute;
+    }
+
+    .polka-dot {
+      width: 240px;
+      height: 240px;
+      background-image: radial-gradient(#000 10%, transparent 11%),
+        radial-gradient(#000 10%, transparent 11%);
+      background-size: 30px 30px;
+      background-position:
+        0 0,
+        30px 30px;
+      opacity: 0.1;
+      rotate: 30deg;
+      left: -50px;
+      top: -38px;
+      background-repeat: repeat;
+      animation: rotate 240s linear infinite;
+      position: absolute;
+      z-index: 0;
+    }
+
+    @keyframes rotate {
+      0% {
+        rotate: 0deg;
+      }
+      100% {
+        rotate: 360deg;
+      }
+    }
+
+    .notification {
+      background-color: #292929;
+      color: black;
+      padding: 20px;
+      font-family: Gilroy;
+      border-radius: 8px;
+      border: 2px solid #ffffff20;
+      text-align: center;
+    }
+
+    .is-danger {
+      background-color: #db0f0f20;
+      border: 4px solid #db0f0f80;
+    }
+
+    .is-warning {
+      background-color: #c9b81620;
+      border: 4px solid #c9b81680;
+    }
+
+    strong {
+      font-family: Gilroy;
+      font-size: 20px;
+    }
+
+    @media (max-width: 1000px) {
+    }
+  </style>
+</Layout>
