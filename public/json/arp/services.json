@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "Forecast Channel (Chaîne météo)",
+        "desc": "Dècuvréd la mètèô de voutra règion, de voutron payis ou du mondo entiér.",
+        "link": "/guide/forecast",
+        "isArea": "Entèrnacionâl",
+        "status": "Sortia complèta",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament ! <br><br> Los <b>usagiérs RiiConnect24</b> devront metre a jorn avouéc la dèrriére vèrsion du WiiLink Patcher por continuar a utilisar lo sèrvicio.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "News Channel (Chaîne infos)",
+        "desc": "Siude vito la dèrriére actualitât du mondo entiér et vêde ègzactament yô el sè pâsse.",
+        "link": "/guide/news",
+        "isArea": "Entèrnacionâl",
+        "status": "Sortia complèta",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "Nintendo Channel (Chaîne Nintendo)",
+        "desc": "Un guido entèractif por Wii, Nintendo DS et Nintendo 3DS, avouéc des bendes-anonces, des èmissions spèciâles et des vèrsions d'èssê.",
+        "link": "/guide/nintendochannel",
+        "isArea": "Entèrnacionâl",
+        "status": "Sortia complèta",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Mii Contest Channel (Chaîne concours Mii)",
+        "desc": "Venéd un Mii artisan et montrâd u mondo entiér voutros tâlents en participant a de nombrox concors.",
+        "link": "/guide/miicontest",
+        "isArea": "Entèrnacionâl",
+        "status": "Sortia complèta",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "completed": "80"
+      },
+      {
+        "color": "#283688",
+        "name": "Everybody Votes Channel (Chaîne votes)",
+        "desc": "Dècuvréd coment lo mondo pense en participent a des sondâjos totalament novéls.",
+        "link": "/guide/evc",
+        "isArea": "Entèrnacionâl",
+        "status": "Sortia complèta",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "Food Channel (Chaîne cuisine)",
+        "desc": "Comandâd des repâs vareyês dês adonc chiéz vos en passant per voutra consola Wii.",
+        "link": "/guide/demae",
+        "isArea": "A l'origina èxclusif u Japon",
+        "status": "Sortia complèta",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "TV Guide Channel (Chaîne guide TV)",
+        "desc": "Consultâd voutron programe TV local, règllâd des rapèls por voutres èmissions et controlâd voutra TV avouéc voutra Wii.",
+        "link": "/guide/tvnotomo",
+        "isArea": "A l'origina èxclusif u Japon",
+        "status": "Bèta privâ",
+        "todo": "<i class='fa fa-hard-hat'></i> Ceti sèrvicio est adés en dèvelopament.",
+        "icon": "tvnotomo_icon.png",
+        "completed": "30"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "Kirby TV Channel (Chaîne TV Kirby)",
+        "desc": "Agouétiéd des èpisodos a durâ limitâ de l'anime de <i>Kirby</i>.",
+        "link": "/guide/kirbytv",
+        "isArea": "A l'origina dens des parties de l'Eropa",
+        "status": "Sortia complèta",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "Photo Prints Channel (Chaîne impression photo)",
+        "desc": "Crèâd des albons et des cârtes de vesita avouéc voutres fotôs et voutros pèrsonâjos Mii.",
+        "link": "/guide/digicam",
+        "isArea": "A l'origina èxclusif u Japon",
+        "status": "Sortia complèta",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room",
+        "desc": "Dècuvréd des vidèos a la demanda èxclusives ou envoyéd des mèssâjos a voutros amis dês Wii Room.",
+        "link": "/guide/wiinoma",
+        "isArea": "A l'origina èxclusif u Japon",
+        "status": "Sortia complèta",
+        "todo": "<i class='fa fa-circle-check'></i> Ceti sèrvicio fonccione corrèctament !",
+        "icon": "room_icon.png",
+        "completed": "85"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Address Settings",
+        "desc": "Enter personal information required for the Photo Prints Channel and the Food Channel.",
+        "link": "/guide/spd",
+        "isArea": "Originally Japan exclusive",
+        "status": "Full Release",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Message Board",
+        "desc": "Send messages to registered Wii Friends and email addresses.",
+        "link": "/guide/board",
+        "isArea": "Region Free",
+        "status": "Full Release",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "View <i>Metroid Prime 3: Corruption</i> content.",
+        "link": "/guide/primepreview",
+        "isArea": "Originally America and Europe",
+        "status": "Halted",
+        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
+        "link": "/guide/dokodemo",
+        "isArea": "Originally Japan exclusive",
+        "status": "Halted",
+        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "icon": "",
+        "completed": "15"
+      }
+    ]
+  }
+}

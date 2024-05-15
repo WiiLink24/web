@@ -1,0 +1,196 @@
+{
+    "site": {
+        "title": "WiiLink",
+        "description": "Un projèt homebrew comunôtèro nan oficièl dèdiê a la rèstoracion, a la traduccion et a la mèlioracion des chênes et sèrvicios WiiConnect24, dês ora abandonâs, y comprês celos qu'érant pas disponiblos dens totes les règions.",
+        "img": "/img/news_post_welcome_back.png",
+        "load": "Chargement...",
+        "dev": "Dèvelopâ per ",
+        "relNotes": "Notes de vèrsion",
+        "downloadPrompt": "Tèlèchargiér",
+        "winMinReq": "Vos aréd fôta de Windows 8 ou més !",
+        "installGuide": "Guido d'enstalacion",
+        "terms": "J'é liesu et accèptâ les <0>condicions d'usâjo</0> et la <1>politica de confidencialitât</1>.",
+        "slogan": "<0>WiiLink</0> est un projèt homebrew nan oficièl et sen gagnâjo. Il est pas enrolâ a Nintendo et totes les mârques dèposâyes sont la propriètât de lors titulèros rèspèctifs. Gins de violacion des drêts d'ôtor est envesagiêe.</1></2>© 2020-2024 <3>Èquipa</3><4> WiiLink</4>",
+        "donate": "Féde un don !",
+        "creator": "Sito dèssinâ et dèvelopâ per Alex",
+        "contact": "Contactâd-nos",
+        "assets": "Ressôrses de mârca",
+        "install": "Enstalar",
+        "wfcPrompt": "Dècuvréd WiiLink WFC !",
+        "heroDesc": "WiiLink est un replacement a code sôrsa uvèrt por los sèrvors WiiConnect24 et pués la Nintendo Wi-Fi Connection, rebranchient la conèccion por tôs, mémament aprés l'entèrrupcion des sèrvors originâls !",
+        "heroDev": "Dèvelopâ per",
+        "downloadFor": "Tèlèchargiér por",
+        "other": "Ôtros",
+        "legacyPatcher": "Tèlèchargiér lo patcher héretâ",
+        "changelog": "Notes de vèrsion",
+        "withThe": "avouéc la",
+        "heroMorePrompt": "Èxpllorar cen que WiiLink pôt fâre por vos"
+    },
+    "build": {
+        "title": "Dècuvréd la dèrriére <0>vèrsion</0> !",
+        "releasedBy": "Publeyê per :",
+        "releaseBranch": "Branche : ",
+        "releaseDate": "Dâta de sortia : ",
+        "releaseTotal": "Totâl : "
+    },
+    "donate": {
+        "title": "Possiblo a côsa de <0>voutron supôrt</0> !",
+        "subtitle": "<0>WiiLink</0> est financiê publicament per sos <1>usagiérs</1> et <2>financiors</2>. <3>Por nos édiér a cuvrir noutres frés de fonccionament, envesagiéd de fâre un don !</3>",
+        "donators": "... et rejuendéd totes cetes <0>gens formidâbles</0> :",
+        "powered": "Sèrvicio forni per",
+        "thanks-tier-1": "Marci de voutres contribucions !",
+        "thanks-tier-2": "Marci por voutra contribucion !",
+        "thanks-tier-3": "Cen fât ben des argent !",
+        "thanks-tier-4": "Ahh ! Vos éte trop fôrt !",
+        "info-tier-1": "Obtenéd l'accès a la <0><1></1>chêna des donators</0>, et ben asse <2><3></3> a un marci sur noutron sito</2> !",
+        "info-tier-2": "Have your very own <0><1></1> movie poster</0> inside of Wii Room, <2><3></3> restaurant</2> inside of the Food Channel, as well as <4>all the perks of Violet</4>!",
+        "info-tier-3": "Have your very own <0><1></1> Mii</0> inside of Wii Room, access to the <2><3></3> Tester Discord chat</2>, and <4>all the perks of Lilac</4>!",
+        "info-tier-4": "Create your very own <0><1></1> Room</0> inside of Wii Room, as well as <2>all the perks of Tulip</2>!",
+        "sub": "Abonâd-vos por </0> per mês",
+        "local-currency": "$"
+    },
+    "header": {
+        "home": "Acuely",
+        "news": "Blogo",
+        "guide": "Guido",
+        "status": "Ètat",
+        "faq": "Demandes frèquentes",
+        "isGuide": "guido",
+        "extras": "Suplèments",
+        "extrasNew": "novél",
+        "services": "Sèrvicios",
+        "chooseLang": "Chouèsésséd la lengoua",
+        "privacyPolicy": "Politica de confidencialitât",
+        "tos": "Condicions d'usâjo",
+        "eula": "CLUF",
+        "eula-long": "Contrat de licence d'usagiér final (CLUF)",
+        "news-info": "Go to the news page for more news posts.",
+        "guide-info": "Go to the guide page for guides and explanations to all our services."
+    },
+    "footer": {
+        "pages": "Pâges du sito",
+        "links": "Lims GitHub",
+        "socials": "Malyâjos socials",
+        "repos": "Repèrtouèrs GitHub",
+        "siteby": "Sito per",
+        "repo": "Repèrtouèrs",
+        "projects": "Projèts",
+        "teams": "Èquipes",
+        "people": "Membros"
+    },
+    "jumpin": {
+        "title": "Venéd nos <0>rejuendre</0> !",
+        "slogan": "Rebalyéd via a voutra Wii et èsseyéd de novèles chênes.",
+        "install": "Enstalar !"
+    },
+    "services": {
+        "title": "Benvegnua sur <0>WiiLink</0> !",
+        "subtitle": "Un projèt homebrew comunôtèro nan oficièl dèdiê a la rèstoracion, a la traduccion et a la mèlioracion des chênes et sèrvicios WiiConnect24, dês ora abandonâs, y comprês celos qu'érant pas disponiblos dens totes les règions."
+    },
+    "socials": {
+        "title": "Consultâd los <0>malyâjos socials</0> du projèt !",
+        "subtitle": "Siude les <0>èvolucions</0> des sèrvicios et les <1>anonces gènèrales</1> ou rejuendéd lo sèrvor Discord.",
+        "twFollowers": "3.3k abonâs",
+        "twFollow": "Siuvre",
+        "twTweets": "Touitos per WiiLink24",
+        "dcMembers": "26.3k abonâs",
+        "dcJoin": "Rejuendre",
+        "ghFollowers": "133 abonâs",
+        "ghFollow": "Siuvre",
+        "ytSubscribers": "2.3k abonâs",
+        "ytSubscribe": "S'abonar"
+    },
+    "team": {
+        "title": "<0>L'èquipa</0> du projèt",
+        "subtitle": "<0>WiiLink</0> fonccione a côsa d'un <1>travâly volontèro</1>. </2><3>Vê-ce los colaborators principâls que travalyont sur lo projèt !</3>"
+    },
+    "svc-site": {
+        "mainTitle": "WiiLink - Sèrvicios",
+        "mainDesc": "Dècuvréd los sèrvicios ofèrts per WiiLink !",
+        "title": "Everything we offer! <1>WiiLink</1> <2>services</2>",
+        "subtitle": "Here you'll can see <0>everything we offer</0>! Read up and download them for yourself!",
+        "wc24-min": "WiiConnect24",
+        "jp-min": "Japanese",
+        "eu-min": "European",
+        "extra-min": "Extra",
+        "wc24": "<0>WiiConnect24</0> services",
+        "jp": "<0>Japanese exclusive</0> services",
+        "eu": "<0>European exclusive</0> services",
+        "extra": "<0>Extra</0> services",
+        "wc24-desc": "Services powered by the WiiConnect24 service, revived by us!",
+        "jp-desc": "Japanese services localized and enhanced for the West!",
+        "eu-desc": "Europe-only services brought worldwide for you to enjoy!",
+        "extra-desc": "Nifty extra stuff we offer to enhance your experience!",
+        "helpTitle": "<0>Did we miss anything</0>? Be sure to <1>get in touch</1>!</0>"
+    },
+    "news": {
+        "mainTitle": "WiiLink - News",
+        "mainDesc": "Read up on WiiLink's latest improvements and releases!",
+        "title": "Here are the <1>WiiLink</1> <2>news</2>",
+        "subtitle": "Catch up on <0>the project's progress</0>, as well as <1>service updates</1>!",
+        "otherNews": "Here are some <0>older</0> articles:",
+        "rssTitle": "<0>Want to get <1>WiiLink news</1> on your site o service? Use the <2>RSS feed</2>.</0>",
+        "rssButton": "Get the RSS feed",
+        "otherPosts": "Other <0>posts</0>"
+    },
+    "guide": {
+        "mainTitle": "WiiLink - Guide",
+        "mainDesc": "Get important info and help for our services!",
+        "title": "Welcome to the <1>WiiLink</1> <2>guide</2>",
+        "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to help you out!",
+        "specificGuides": "What are you <0>looking for</0>?",
+        "helpTitle": "<0>Can't seem to get it <1>working</1>? Don't hesitate to <2>get in touch</c2>!</0>",
+        "helpButton1": "Get in touch!",
+        "helpButton2": "Join the Discord"
+    },
+    "guidePost": {
+        "name": "Guide",
+        "whereTo": "Where do you want to go?",
+        "installGuide": "Installation guide",
+        "problemSolving": "Problem solving",
+        "faq": "Frequently asked questions",
+        "installGuide-info": "A step-by-step guide on how to install WiiLink on your console.",
+        "problemSolving-info": "Got any issues? Let's see if we can sort them out!",
+        "faq-info": "Some frequently asked questions you might be interested in...",
+        "lookingFor": "What are you <0>looking for</0>?",
+        "visitWiiHacks": "Visit wii.hacks.guide",
+        "copyright": "© 2020-2024 <0>WiiLink<1>guide</1></0> <2> Team</2>"
+    },
+    "newsPost": {
+        "name": "News",
+        "min": "min read"
+    },
+    "status": {
+        "mainTitle": "WiiLink - Ètat",
+        "mainDesc": "Consultâd l'ètat de noutros sèrvicios !",
+        "title": "Consultâd l'<1>ètat</1> <2>WiiLink</2>",
+        "subtitle": "Dècuvréd noutron <0>progrès</0>, et pués l'ètat de noutros <1>sèrvors</1> !",
+        "serverStatus": "Controlâd l'ètat de noutros sèrvors."
+    },
+    "extras": {
+        "mainTitle": "WiiLink - Suplèments",
+        "mainDesc": "Dècuvréd des ressôrses et des contenus spèciâls !",
+        "title": "Vê-ce los <1>suplèments</1> <2>WiiLink</2>",
+        "subtitle": "Vos troveréd cé du <0>contenu spèciâl</0> sur que nos ens travalyê.",
+        "helpCall": "<0>Vos pensâd qu'il y at quârque chousa a <1>apondre</1> cé ? Margalyéd pas a <2>nos contactar</2> !</0>",
+        "contact": "Contactâd-nos !",
+        "joinDiscord": "Rejuendéd sur Discord"
+    },
+    "404": {
+        "mainTitle": "WiiLink - 404",
+        "mainDesc": "404 - La pâge que vos chèrchiêvâd at pas pu étre trovâ...",
+        "message": "La pâge at pu étre trovâ..."
+    },
+    "tos": {
+        "mainTitle": "WiiLink - Condicions d'usâjo",
+        "mainDesc": "Condicions d'usâjo por los sèrvicios WiiLink."
+    },
+    "privacyPolicy": {
+        "mainTitle": "WiiLink - Politica de confidencialitât",
+        "mainDesc": "Politica de confidencialitât por los sèrvicios WiiLink."
+    },
+    "eula": {
+        "mainTitle": "WiiLink - Contrat de licence d'usagiér final",
+        "mainDesc": "Contrat de licence d'usagiér final por los sèrvicios WiiLink."
+    }
+}

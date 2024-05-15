@@ -1,0 +1,96 @@
+{
+  "taglines": [
+    "Party on like it's 2006!",
+    "Did you know you can connect your Wii console to the Internet?",
+    "As seen on Scott The Woz!",
+    "The Return of the Legendary WiiConnect24",
+    "Rediscover your Wii",
+    "Link back to Nintendo's golden age",
+    "Get Connected back to the Wii's past once again!",
+    "Wii Play. Do you?",
+    "You can do more with a Wii than just losing in Mario Kart!",
+    "The realest wii network revival service",
+    "Play as if you were back in your childhood!",
+    "Wii would like to play, again",
+    "Your childhood memories, connected to our servers",
+    "WiiLink, Wii Software beyond things",
+    "Fans do what Nintendon't",
+    "WiiLink definitely gives the 2006 vibes!",
+    "Linking the world, one Wii at a time",
+    "One of Nintendo's biggest steps in multiplayer gaming, Revived!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "Forecast Channel (Chaîne météo)",
+        "desc": "Consultâd les prèvisions mètèô actuèles du mondo entiér",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "News Channel (Chaîne infos)",
+        "desc": "Réstâd enformâ des actualitâts du mondo entiér",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "Nintendo Channel (Chaîne Nintendo)",
+        "desc": "Agouétiéd des bendes-anonces, liéséd des critiques et tèlèchargiéd des vèrsions d'èssê de juès DS",
+        "link": "/guide/nintendochannel",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Mii Contest Channel (Chaîne concours Mii)",
+        "desc": "Participâd a des concors et votâd por voutros Mii prèfèrâs",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "Everybody Votes Channel (Chaîne votes)",
+        "desc": "Rèpondéd a des sondâjos et comparâd voutres opinions a celes des ôtros",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "Food Channel (Chaîne cuisine)",
+        "desc": "Comandâd des repâs vareyês dês adonc chiéz vos en passant per voutra consola Wii",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV Guide Channel (Chaîne guide TV)",
+        "desc": "Consultâd lo programe TV et agouétiéd les bendes-anonces des èmissions a venir",
+        "link": "/guide/tvnotomo",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "Kirby TV Channel (Chaîne TV Kirby)",
+        "desc": "Agouétiéd los èpisodos de la sèrie animâ de Kirby",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "Photo Prints Channel (Chaîne impression photo)",
+        "desc": "Comandâd des emprèssions de voutres fotôs prèferâyes dês voutra consola Wii",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii Room",
+        "desc": "Dècuvréd des èmissions et du contenu vidèo sur la demanda d'una maniére la més originâla",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}
