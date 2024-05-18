@@ -1,0 +1,11 @@
+---
+title: RiiTag
+pubDate: 2024-05-17
+icon: fa-solid fa-tag
+description: Get your own Nintendo gamertag!
+heroImage: "riitag.png"
+type: "Extra"
+color: 6099d160
+---
+
+### RiiTag is a customizable gamertag that you can share with your friends or embed on websites.
