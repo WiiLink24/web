@@ -5,7 +5,7 @@ icon: fa-solid fa-truck
 description: Send content made in WarioWare DIY directly to your Wii.
 heroImage: "doujin.png"
 type: "Extra"
-color: c7d90960
+color: e00b0b60
 ---
 
 ### Send content made in WarioWare DIY directly to your Wii.
