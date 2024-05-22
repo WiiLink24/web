@@ -20,12 +20,6 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
-        "desc": "A game tag service for Wii and Wii U!",
-        "img": "/img/guidebg-1.png",
-        "link": "https://tag.rc24.xyz/"
-      },
-      {
         "title": "<i class='fa-solid fa-poll'></i> Poll Viewer",
         "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.png",
@@ -85,6 +79,6 @@
         "img": "/img/guidebg-1.png",
         "link": "extras/cat"
       }
-]
-}
+    ]
+  }
 }
