@@ -44,7 +44,7 @@ ___
 
 3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
 
-Set your Primary DNS to --> 167.86.108.12 <br>
+Set your Primary DNS to --> 167.86.108.126 <br>
 Set your Secondary DNS to --> 1.1.1.1
 
 4. After you get done setting up the DNS, save the changes and let the system perform the Connection Test.
