@@ -201,7 +201,7 @@ import { Trans } from "astro-i18next/components";
       <img
         src="/img/loading.gif"
         style="top:50%; left:50%; filter:brightness(1000); transform:translate(-50%, -50%); position:absolute;"
-        width="40px"
+        width="36px"
       />
     </div>
     <div class="bottom-cta">
@@ -353,7 +353,6 @@ import { Trans } from "astro-i18next/components";
             "";
           break;
       }
-      updateTagline();
     };
 
     document
@@ -422,6 +421,7 @@ import { Trans } from "astro-i18next/components";
     import { Octokit } from "https://esm.sh/octokit";
 
     document.addEventListener("DOMContentLoaded", async function () {
+      updateTagline();
       updateHero();
       setInterval(updateHero, 10000);
       const octokit = new Octokit({
