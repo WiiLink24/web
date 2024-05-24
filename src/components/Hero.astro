@@ -323,7 +323,6 @@ import { Trans } from "astro-i18next/components";
 
       let downloadFor = document.getElementById("downloadFor").innerHTML;
       let downloadPrompt = document.getElementById("downloadPrompt").innerHTML;
-      updateButtons();
       switch (osdetect()) {
         case "MacOS":
           document.getElementById("download-btn").innerHTML =
@@ -423,6 +422,7 @@ import { Trans } from "astro-i18next/components";
     document.addEventListener("DOMContentLoaded", async function () {
       updateTagline();
       updateHero();
+      updateButtons();
       setInterval(updateHero, 10000);
       const octokit = new Octokit({
         auth: ""
