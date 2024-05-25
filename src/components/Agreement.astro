@@ -55,7 +55,7 @@ const posts = (await getCollection("blog")).sort(
         ><button
           type="button"
           class="btn btn-success"
-          style="width:100%; height:60px;"
+          style="border-radius: 16px 4px 4px 16px; width:100%; height:60px;"
           ><i class="fa-solid fa-download" style="color: white !important;"
           ></i></button
         ></a
@@ -64,7 +64,7 @@ const posts = (await getCollection("blog")).sort(
         id="themeColorMobile"
         type="button"
         class="btn btn-light"
-        style="background-color: var(--color);"
+        style="border-radius: 4px 16px 16px 4px; background-color: var(--color);"
         onclick="darkToggle()"
         ><i class="fa-solid fa-sun" style="color: var(--bg-color-absolute);"
         ></i></button
@@ -73,7 +73,7 @@ const posts = (await getCollection("blog")).sort(
     <hr />
     <div class="holdcontainer"></div>
     <div class="elements">
-      <a class="link" href="/" style="z-index: 1; position:relative">
+      <a class="link" href="/" style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
         <i class="fas fa-home"></i>
         {t("header.home")}
       </a>
@@ -93,7 +93,7 @@ const posts = (await getCollection("blog")).sort(
         <i class="fas fa-cogs"></i>
         {t("header.services")}
       </a>
-      <a class="link" href="/extras" style="z-index: 1; position:relative">
+      <a class="link" href="/extras" style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
         <i class="fas fa-gift"></i>
         {t("header.extras")}
       </a>
@@ -150,14 +150,11 @@ const posts = (await getCollection("blog")).sort(
 
   a {
     font-size: 16px;
+    text-decoration: none;
   }
 
   .offcanvas {
     background-color: var(--bg-color);
-  }
-
-  a {
-    text-decoration: none;
   }
 
   .buttons {
@@ -173,7 +170,7 @@ const posts = (await getCollection("blog")).sort(
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 4px;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
@@ -184,15 +181,22 @@ const posts = (await getCollection("blog")).sort(
     padding: 18px;
     text-align: center;
     background-color: var(--bg-color-tertiary);
-    border-radius: 8px;
+    border-radius: 4px;
+    transition: 0.2s;
   }
 
   .link:hover {
     background-color: var(--bg-color-secondary);
   }
 
+  .link:active {
+    transform: scale(0.95);
+    transition:0.2s;
+  }
+
   li {
     padding: 4px;
+    padding-left:8px;
     border-radius: 4px;
     list-style-type: none;
     opacity: 0.5;
