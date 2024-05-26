@@ -2,25 +2,25 @@
 title: News Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-newspaper
-description: Read news on your Wii.
+description: Read the global news on your Wii!
 heroImage: "newsbanner.png"
 type: "WiiConnect24"
 color: 407d0f60
 ---
 
-### Read news on your Wii.
+## Read the global news on your Wii!
 
-The News Channel works with WiiLink, and you can read news in 7 different languages depending on what
-language your Wii is set to. They all have the location where the article takes place in on the Globe
+<br>
+
+With the News Channel, and you can read the news in 7 different languages depending on what
+region your Wii is set to! They all have the location where the article takes place in on the Globe
 (location data comes from <a href="https://developers.google.com/maps/">Google Maps API</a>) and has
-pictures associated with the article. Plus, you can view the headlines on the Wii Menu. See below to see
+pictures associated with the article. You can even view specific headlines on the Wii Menu! See below to see
 what news sources are used for each language.
-<br>
-<br>
+
 We have tried to pick the best news sources for each language, and especially looked for sources that
 included a location in the article. That's because we want the article to appear on the Globe! We've also
 searched for sources that send out enough news.
-<br>
 <br>
 
 ### List of news sources
