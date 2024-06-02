@@ -70,7 +70,7 @@ heroImage: "../../img/guidebg-1.png"
 
 1. Visit the [ WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
 2. On Windows, run `WiiLink_Patcher_Windows_v2.X.X.exe`. <br>
-   On MacOS, right click the `iiLink_Patcher_macOS-<arch>_v2.X.X` file in Finder and click Open. <br>
+   On MacOS, right click the `WiiLink_Patcher_macOS-<arch>_v2.X.X` file in Finder and click Open. <br>
    On Linux, open a Terminal, type `bash ` (space included), then drag the file onto the Terminal window. It should look like this: `bash /path/to/WiiLink_Patcher_Linux-<arch>_v2.X.X`
 
 > **For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture.
