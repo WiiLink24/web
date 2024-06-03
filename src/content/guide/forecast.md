@@ -53,7 +53,7 @@ icon: fa-solid fa-umbrella
 
 <i id="wii"></i>
 
-### Section II
+### Section II - Installation
 1. Download the latest version of the WiiLink Patcher for your operating system.
 2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
 

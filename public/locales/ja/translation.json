@@ -46,13 +46,13 @@
       "guide": "ガイド",
       "status": "ステータス",
       "faq": "よくある質問",
-      "isGuide": "guide",
+      "isGuide": "ガイド",
       "extras": "追加コンテンツ",
-      "extrasNew": "new",
-      "services": "Services",
-      "chooseLang": "Choose your language",
-      "privacyPolicy": "Privacy Policy",
-      "tos": "Terms of Service"
+      "extrasNew": "ニュー",
+      "services": "サービス",
+      "chooseLang": "言語を選ぶ",
+      "privacyPolicy": "プライバシーポリシー",
+      "tos": "利用規約"
     },
     "jumpin": {
       "title": "Wiiを世界中に<0>リンク</0>する準備はできましたか？",
@@ -79,6 +79,25 @@
     "team": {
       "title": "WiiLinkの<0>チーム</0>の皆さん",
       "subtitle": "<0>WiiLink</0>は<1>100%</1>ボランティアにより制作されてます。</2><3><4>WiiLink</4>は作ってくれる皆さんのおかげでできています！</3>"
+    },
+    "svc-site": {
+      "mainTitle": "WiiLink - サービス",
+      "mainDesc": "WiiLinkが提供するサービスをチェックしよう！",
+      "title": "私たちが提供するすべて！ <1>WiiLink</1> <2>サービス</2>",
+      "subtitle": "ここでは、以下のものを見ることができる <0>私たちが提供するすべて</0>！ 読んで、自分でダウンロードしよう！",
+      "wc24-min": "WiiConnect24",
+      "jp-min": "日本語",
+      "eu-min": "ヨーロピアン",
+      "extra-min": "エキストラ",
+      "wc24": "<0>WiiConnect24</0> サービス",
+      "jp": "<0>日本限定</0> サービス",
+      "eu": "<0>ヨーロッパのみ</0> サービス",
+      "extra": "<0>エキストラ</0> サービス",
+      "wc24-desc": "WiiLinkによって復活したWiiConnect24サービスによるサービス！",
+      "jp-desc": "日本のサービスを欧米向けにローカライズして強化！",
+      "eu-desc": "ヨーロッパ限定のサービスを世界各地でお楽しみいただけます！",
+      "extra-desc": "私たちはあなたの経験を高めるために提供する気の利いた余分なもの！",
+      "helpTitle": "<0>何か見落としはなかったか</0>？  必ずご <1>連絡を</1>！</0>"
     },
     "news": {
       "mainTitle": "WiiLinkニュース",

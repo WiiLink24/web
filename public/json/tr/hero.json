@@ -38,7 +38,7 @@
       {
         "name": "Nintendo Channel",
         "desc": "DS oyunlarının fragmanlarını izleyin, yorumlarını okuyun ve demolarını indirin",
-        "link": "/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
@@ -66,7 +66,7 @@
       {
         "name": "TV Guide Channel",
         "desc": "TV programına göz atın ve gelecek programların fragmanlarını izleyin",
-        "link": "/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },
