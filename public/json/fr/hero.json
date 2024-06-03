@@ -38,7 +38,7 @@
       {
         "name": "Chaîne Nintendo",
         "desc": "Regardez des bandes annonces, lisez des avis et téléchargez des démos de jeux DS",
-        "link": "/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
@@ -66,7 +66,7 @@
       {
         "name": "Chaîne guide TV",
         "desc": "Consultez le programme TV et regardez les bandes-annonces des émissions à venir",
-        "link": "/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },

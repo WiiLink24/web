@@ -38,7 +38,7 @@
       {
         "name": "Canal Nintendo",
         "desc": "Mira tráileres, lee reseñas y descarga demos de juegos para Nintendo DS",
-        "link": "/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
@@ -66,7 +66,7 @@
       {
         "name": "Canal Guía de TV",
         "desc": "Consulta la programación de televisión y vea tráilers de los próximos programas",
-        "link": "/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },

@@ -46,4 +46,4 @@ ___
 > This problem is caused by vWii users not properly generating a timestamp for their consoles PriiLoader hacks. Simply refollow the `PriiLoader Setup` part of the guide, and try again once you're finished.
 
 "I'm getting Error Code: 107245, What do I do?"
-> You'll need to install a Patched IOS31 from the Legacy RiiConnect24 Patcher.
+> You'll need to install Patched IOS31 from the Legacy RiiConnect24 Patcher.

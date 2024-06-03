@@ -66,7 +66,7 @@ heroImage: "../../img/guidebg-1.png"
 
 ### Section I - Patching WADs
 
-> [If you want to see detailed instructions on how to install the WADs, click here!](#section-ii---installing-wads)
+> [If you want to see detailed instructions on how to install the WADs, click here!](#section-ii---installing-wads-and-patching-mail)
 
 1. Visit the [ WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
 2. On Windows, run `WiiLink_Patcher_Windows_v2.X.X.exe`. <br>

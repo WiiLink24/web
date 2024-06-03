@@ -24,70 +24,70 @@
       {
         "name": "Forecast -kanava",
         "desc": "Katso ajankohtaisia sääennusteita eri puolilta maailmaa",
-        "link": "/fi/guide/forecast",
+        "link": "/guide/forecast",
         "icon": "forecastbanner.png",
         "bg": "forecast.png"
       },
       {
         "name": "News -kanava",
         "desc": "Pysy ajantasalla uusimmista uutisista eri puolilta maailmaa",
-        "link": "/fi/guide/news",
+        "link": "/guide/news",
         "icon": "newsbanner.png",
         "bg": "news.jpg"
       },
       {
         "name": "Nintendo -kanava",
         "desc": "Katso trailereita, lue arvosteluita ja lataa demoja DS peleistä",
-        "link": "/fi/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
       {
         "name": "Mii Contest -kanava",
         "desc": "Osallistu kilpailuihin ja äänestä sinun suosikki Mii:täsi",
-        "link": "/fi/guide/miicontest",
+        "link": "/guide/miicontest",
         "icon": "miioutbanner.png",
         "bg": "checkmiiout.png"
       },
       {
         "name": "Everybody Votes -kanava",
         "desc": "Vastaa äänestyksiin ja katso miten mielipiteesi eroaa muiden mielipiteistä",
-        "link": "/fi/guide/evc",
+        "link": "/guide/evc",
         "icon": "politicsbanner.png",
         "bg": "politics.jpg"
       },
       {
         "name": "Food -kanava",
         "desc": "Tilaa eri tyyppisiä ruoka-annoksia suoraan kotoa Wii konsolillasi",
-        "link": "/fi/guide/demae",
+        "link": "/guide/demae",
         "icon": "demaebanner.png",
         "bg": "food.png"
       },
       {
         "name": "TV Guide -kanava",
         "desc": "Tutustu TV aikatauluihin ja katso trailereita tulevista sarjoista",
-        "link": "/fi/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },
       {
         "name": "Kirby TV -kanava",
         "desc": "Katso Kirby: Right Back at Ya! TV-sarjan jaksoja",
-        "link": "/fi/guide/kirbytv",
+        "link": "/guide/kirbytv",
         "icon": "kirbytvbanner.png",
         "bg": "kirbytv.png"
       },
       {
         "name": "Photo Prints -kanava",
         "desc": "Tilaa tulosteita sinun lempi kuvistasi suoraan Wii konsolillasi",
-        "link": "/fi/guide/digicam",
+        "link": "/guide/digicam",
         "icon": "digicambanner.png",
         "bg": "digicamprints.png"
       },
       {
         "name": "Wii Room",
         "desc": "Tutustu sarjoihin ja tilausvideosisältöön uudemmalla tavalla",
-        "link": "/fi/guide/wiinoma",
+        "link": "/guide/wiinoma",
         "icon": "wiinomabanner.png",
         "bg": "room.webp"
       }

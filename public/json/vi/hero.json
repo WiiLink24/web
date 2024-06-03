@@ -38,7 +38,7 @@
       {
         "name": "Kênh Nintendo",
         "desc": "Xem các đoạn giới thiệu, đọc đánh giá và tải xuống bản demo của những game DS",
-        "link": "/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
@@ -66,7 +66,7 @@
       {
         "name": "Kênh hướng dẫn truyền hình",
         "desc": "Kiểm tra lịch truyền hình và xem trailer của các chương trình sắp tới",
-        "link": "/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },

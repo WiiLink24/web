@@ -38,7 +38,7 @@
       {
         "name": "Nintendo Channel (Chaîne Nintendo)",
         "desc": "Agouétiéd des bendes-anonces, liéséd des critiques et tèlèchargiéd des vèrsions d'èssê de juès DS",
-        "link": "/guide/nintendochannel",
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.png",
         "bg": "nintendo.webp"
       },
@@ -66,7 +66,7 @@
       {
         "name": "TV Guide Channel (Chaîne guide TV)",
         "desc": "Consultâd lo programe TV et agouétiéd les bendes-anonces des èmissions a venir",
-        "link": "/guide/tvnotomo",
+        "link": "/status",
         "icon": "tvnotomobanner.png",
         "bg": "tvnotomo.png"
       },
