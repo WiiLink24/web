@@ -1,6 +1,6 @@
 ---
 title: Wii Message Board
-pubDate: 2024-01-24
+pubDate: 2024-06-11
 icon: fa-solid fa-chalkboard
 ---
 
@@ -17,55 +17,36 @@ icon: fa-solid fa-chalkboard
 </br>
 </br>
 
-### Installation guide
+## Installation guide
 
-<l class="notice info fullwidth">This software is included with your regular WiiLink install.</l>
 
-<l class="notice generic fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
 
-1. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
+<l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="https://www.wiilink24.com/guide/install/">here</a>.</l>
+
+</br>
+
+1. Open the Mail-Patcher application from the Homebrew Channel.
 
 2. Follow the on-screen instructions.
 
 3. Once the patcher is finished, you can return to the Wii Menu.
 
-<l class="notice success fullwidth">Congrats! You've installed the Wii Mail Service on your Console! You can use the service to your hearts content once again!</l>
+</br>
+
+<l class="notice success smallwidth">Congratulations! You've patched Wii Mail on your Console! You can use the service to your hearts content once again!</l>
 ___
 
-## Receiving Mail from the service
 
-<l class="notice info fullwidth">This step is optional, but it's recommended so you can get news about the service on your Wii. </l>
+## Receiving Mail from the service with our DNS
 
-1. Go to the Wii Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
+<l class="notice info fullwidth">This step is completely optional, but recommended so you can get service news directly from your Wii! You can view the steps on how to use the DNS <a href="https://www.wiilink24.com/guide/install/">here.</a> </l>
 
-2. Make your way to the "Auto-Obtain DNS" setting.
-
-<l class="notice info fullwidth">Take note that the "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
-
-3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
-
-Set your Primary DNS to --> 167.86.108.126 <br>
-Set your Secondary DNS to --> 1.1.1.1
-
-4. After you get done setting up the DNS, save the changes and let the system perform the Connection Test.
-
-5. If the Connection Test is successful, make your way back to the second page of the system settings.
-
-<l class="notice generic fullwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
-
-6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
-
-7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
-
-8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
-
-9. Once you read the EULA, Click on "I Accept".
-
-<l class="notice success fullwidth">Congrats! You've getting news about the service on the Wii Message Borad! You can stay informed about the service once again!</l>
 ___
-<i id="troubleshooting-questions"></i>
 
 ## Troubleshooting & Questions
 
-"I'm getting error -110211 or another error when trying to use the RiiConnect24 Mail Patcher, or I may have been a former user of the WiiLink Mail service.
-> Please join the WiiLink Discord Server for support, you may need to have your Wii Number removed on the database side in order to remedy this issue.
+</br>
+
+### "I'm getting error -110211 'Duplicate Registration' or another error when trying to use the Mail-Patcher, or I may have been a former user of the WiiLink Mail service."
+
+> Please join the <a href="https://discord.gg/wiilink">WiiLink Discord server</a>. for support, you may need to have your Wii Number removed on the database side in order to remedy this issue.
