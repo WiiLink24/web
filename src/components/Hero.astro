@@ -28,12 +28,15 @@ import { Trans } from "astro-i18next/components";
     <div style="display:flex; align-items:center; gap:18px;">
       <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
       <marquee
+        onclick="document.getElementById('DNSNotice').style.display = 'block';"
         scrollamount="1"
         scrolldelay="20"
         truespeed
+        data-bs-toggle="tooltip" data-bs-placement="top"
+        data-bs-title="Click here for more information"
         class="badge notice-mobile"
-        style="font-size: 18px; text-align: left; background-color: #34abeb; border: 1px solid var(--border-color); color: white !important; margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 25px; display:none;"
-        ><img src="/img/room_icon.png" style="width:25px; filter:brightness(10000); margin-right:8px;">Get ready for <b>WiiRoom release 1.0</b> coming <b>May 15</b>!</marquee
+        style="font-size: 18px; text-align: left; background-color: var(--bg-color-secondary); border: 1px solid var(--border-color); color: var(--color); margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; cursor:pointer; text-overflow: ellipsis; line-height: 25px;"
+        ><i class="fa-solid fa-circle-exclamation" style="margin-right:8px;"></i> Please change your Primary and Secondary DNS to <b>167.235.229.36</b> and <b>1.1.1.1</b> respectively. <u>Click here for more info</u></marquee
       >
     </div>
     <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>

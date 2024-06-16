@@ -49,44 +49,48 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
     <div class="postholder">
       {
-        posts.map(post => (
-          <div class="posthold">
-            <div class="post">
-              <a href={`/guide/${post.slug}/`}>
-                <FormattedDate
-                  pre="Last updated on: "
-                  date={post.data.pubDate}
-                />
-                <img class="heroImage" src={post.data.heroImage} />
-                <div class="icon">
-                  <i
-                    class={post.data.icon}
-                    style="top:50%; left:50%; transform:translate(-50%, -50%); font-size:80px; position:absolute;"
+        posts
+          .filter(post => ["Installation guide", "Frequently asked questions", "Problem solving"].includes(post.data.title))
+          .map(post => (
+            <div class="posthold">
+              <div class="post">
+                <a href={`/guide/${post.slug}/`}>
+                  <FormattedDate
+                    pre="Last updated on: "
+                    date={post.data.pubDate}
                   />
-                </div>
-                <div class="innerData">
-                  <div class="title">{post.data.title}</div>
-                  <div class="desc">{post.data.description}</div>
-                </div>
-              </a>
+                  <img class="heroImage" src={post.data.heroImage} />
+                  <div class="icon">
+                    <i
+                      class={post.data.icon}
+                      style="top:50%; left:50%; transform:translate(-50%, -50%); font-size:80px; position:absolute;"
+                    />
+                  </div>
+                  <div class="innerData">
+                    <div class="title">{post.data.title}</div>
+                    <div class="desc">{post.data.description}</div>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-        ))
+          ))
       }
     </div>
     <div class="postholdermini">
       <div class="polka-dot"></div>
       {
-        posts.map(post => (
-          <div class="postmini">
-            <a href={`/guide/${post.slug}/`}>
-              <div class="dateRemove">
-                <FormattedDate date={post.data.pubDate} />
-              </div>
-              <div class="title-small">{post.data.title}</div>
-            </a>
-          </div>
-        ))
+        posts
+          .filter(post => !["Installation guide", "Frequently asked questions", "Problem solving"].includes(post.data.title))
+          .map(post => (
+            <div class="postmini">
+              <a href={`/guide/${post.slug}/`}>
+                <div class="dateRemove">
+                  <FormattedDate date={post.data.pubDate} />
+                </div>
+                <div class="title-small">{post.data.title}</div>
+              </a>
+            </div>
+          ))
       }
     </div>
 
@@ -426,14 +430,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     transition: 0.5s;
   }
 
-  .posthold:nth-child(n + 4) {
-    display: none;
-  }
-
-  .postmini:nth-child(n + 5) {
-    display: block;
-  }
-
   .postmini {
     position: relative;
     height: 150px;
@@ -445,7 +441,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     overflow: hidden;
     border: 3px solid var(--border-color);
     transition: 0.5s;
-    display: none;
   }
 
   .posthold:before {
@@ -769,7 +764,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       overflow: hidden;
       border: 0px solid var(--border-color);
       transition: 0.5s;
-      display: none;
     }
 
     .icon {
