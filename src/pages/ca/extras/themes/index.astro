@@ -6,455 +6,565 @@ import Footer from "../../../../components/Footer.astro";
 
 changeLanguage("ca");
 ---
-<Layout title="Wii Menu Themes - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
-<Header isGuide="display:none;"/>
-<div
-  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
-  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
-  the RiiConnect24 site
-</div>
-<div class="section no-pad-bot">
-	<div class="container">
-		<h1 class="header center"><i class="fas fa-download" aria-hidden="true"></i> Theme Downloads</h1>
-		<div class="row center">
-			<h5 class="header center col s12">Here's some themes for you to download.</h5>
-		</div>
+
+<Layout
+  title="Wii Menu Themes - WiiLink"
+  description="WiiLink Extra content."
+  image="/img/Extras_embed.png"
+/>
+<Header isGuide="display:none;" />
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+	margin-bottom: 20px;
+	font-size:38px;
+	font-weight:700;
+  }
+
+  h5 {
+    opacity:0.7;
+    font-weight:400;
+  }
+
+  h3, p {
+    margin:0;
+  }
+
+
+  div p {
+    opacity:0.6;
+  }
+
+  .notice {
+    width: 98%;
+    max-width: 1300px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(203, 60, 60);
+    box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1);
+  }
+
+  .container {
+    max-width: 1300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    margin: 20px 0;
+  }
+
+  .grid {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	justify-content: ;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: ;
+  }
+
+  .card {
+    background-color: var(--bg-color-secondary);
+    color: var(--color);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card img {
+    border-radius:8px;
+    margin:13px;
+    display: block;
+  }
+
+  .card-title {
+	font-size: 28px;
+    text-align:left;
+    font-weight: bold;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-action {
+	margin-left: 8px;
+	margin-right: 8px;
+    margin-bottom:13px;
+    cursor: pointer;
+    border-radius:8px;
+    position: relative;
+    padding: 10px;
+    background: var(--bg-color-tertiary);
+    transition: 0.3s;
+  }
+
+  .card-action:hover {
+    background-color: green;
+    color:white !important;
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card-action:hover a {
+    color:white !important;
+    transition: 0.3s;
+  }
+
+  .card-action::before {
+    content: "\f019";
+    font-family: "Font Awesome 5 Free"; /* Adjust based on the version of FontAwesome you're using */
+    font-weight: 900; /* Necessary for solid icons */
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+  }
+</style>
+
+<body>
+  <div class="container">
+<h1 class="header"><i class="fas fa-download" aria-hidden="true"></i> Wallpaper Downloads</h1>
+<h5 class="header">Here's our collection of wallpapers you can download.</h5>
+
+	<br>
+    <h2>RiiConnect24 Themes</h2>
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_3ds_theme.png"
+          alt="3DS Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">3DS Theme</h3>
+          <p>By liam2503</p>
+        </div>
+        <div class="card-action">
+          <a href="https://themeplaza.eu/item/2170">ThemePlaza</a>
+          <a href="rc24_3ds_theme.zip">Direct</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_3ds_badge_set.png"
+          alt="3DS Badge Set"
+        />
+        <div class="card-content">
+          <h3 class="card-title">3DS Badge Set</h3>
+          <p>By Larsenv</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_3ds_badge_set.zip">Download</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_firefox_theme.png"
+          alt="Firefox Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Firefox Theme</h3>
+          <p>By meltstrap</p>
+        </div>
+        <div class="card-action">
+          <a href="https://addons.mozilla.org/en-US/firefox/addon/riiconnect24/"
+            >Download</a
+          >
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_google_chrome_theme.png"
+          alt="Google Chrome Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Google Chrome Theme</h3>
+          <p>By liam2503</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_google_chrome_theme.zip">Download</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_hbc_theme.png"
+          alt="Homebrew Channel Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Homebrew Channel Theme</h3>
+          <p>By liam2503</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_hbc_theme.zip">Download</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_usb_loader_gx_theme.png"
+          alt="USB Loader GX Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">USB Loader GX Theme</h3>
+          <p>By liam2503</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_usb_loader_gx_theme.zip">Download</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_wii_menu_theme.png"
+          alt="Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_red_wii_menu_theme.png"
+          alt="Wii Menu Theme - Red"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Wii Menu Theme - Red</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_red_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+          <a href="https://imgur.com/a/rGrlf3Y">Screenshots</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rc24_wood_r4_theme.png"
+          alt="Wood R4 Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Wood R4 Theme</h3>
+          <p>By liam2503</p>
+        </div>
+        <div class="card-action">
+          <a href="rc24_wood_r4_theme.zip">Download</a>
+        </div>
+      </div>
+    </div>
+
+	<hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+	<br>
+    <h2>Everybody Votes Channel</h2>
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/evc_3ds_theme.png"
+          alt="3DS Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">3DS Theme</h3>
+          <p>By sks316</p>
+        </div>
+        <div class="card-action">
+          <a href="https://themeplaza.eu/item/2112">ThemePlaza</a>
+          <a href="evc_3ds_theme.zip">Direct</a>
+        </div>
+      </div>
+    </div>
+
+	<hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+	<br>
+    <h2>Material</h2>
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/material_dark_usb_loader_gx_theme.png"
+          alt="Material Dark"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Material Dark</h3>
+          <p>By Larsenv</p>
+          <a href="http://wiibrew.org/wiki/Homebrew_Channel/Themes"
+            >Based on the Homebrew Channel theme by Shining Wing</a
+          >
+        </div>
+        <div class="card-action">
+          <a href="material_dark_usb_loader_gx_theme.zip">Download</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/material_light_usb_loader_gx_theme.png"
+          alt="Material Light"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Material Light</h3>
+          <p>By Larsenv</p>
+          <a href="http://wiibrew.org/wiki/Homebrew_Channel/Themes"
+            >Based on the Homebrew Channel theme by Shining Wing</a
+          >
+        </div>
+        <div class="card-action">
+          <a href="material_light_usb_loader_gx_theme.zip">Download</a>
+        </div>
+      </div>
+    </div>
+
+	<hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+	<br>
+    <h2>Wii Menu Themes</h2>
+    <div class="grid">
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/darkwii_plus_wii_menu_theme.png"
+          alt="DarkWii Plus"
+        />
+        <div class="card-content">
+          <h3 class="card-title">DarkWii Plus</h3>
+          <p>By Diddy81 & Burrito</p>
+        </div>
+        <div class="card-action">
+          <a href="https://website.burrito.software/ANY_DarkWii_Plus_v7.mym"
+            >Download</a
+          >
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/animal_crossing_wii_menu_theme.png"
+          alt="Animal Crossing Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Animal Crossing Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="animal_crossing_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/check_mii_out_channel_wii_menu_theme.png"
+          alt="Check Mii Out Channel Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Check Mii Out Channel Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="check_mii_out_channel_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+          <a href="https://imgur.com/a/ay7sDM8">Screenshots</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/discord_wii_menu_theme.png"
+          alt="Discord Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Discord Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="discord_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/kirby_wii_menu_theme.png"
+          alt="Kirby Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Kirby Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="kirby_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/mkw_wii_menu_theme.png"
+          alt="Mario Kart Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Mario Kart Wii Menu Theme</h3>
+
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="mkw_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/pikmin_wii_menu_theme.png"
+          alt="Pikmin Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Pikmin Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="pikmin_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+          <a href="https://imgur.com/a/8dB8hgs">Screenshots</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/rhythm_heaven_wii_menu_theme.png"
+          alt="Rhythm Heaven Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Rhythm Heaven Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="rhythm_heaven_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+          <a href="https://imgur.com/a/UVkQQHk">Screenshots</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/warioware_wii_menu_theme.png"
+          alt="WarioWare Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">WarioWare Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="warioware_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/wii_fit_wii_menu_theme.png"
+          alt="Wii Fit Wii Menu Theme"
+        />
+
+        <div class="card-content">
+          <h3 class="card-title">Wii Fit Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="wii_fit_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/wii_sports_wii_menu_theme.png"
+          alt="Wii Sports Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Wii Sports Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="wii_sports_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/wii_u_wii_menu_theme.png"
+          alt="Wii U Wii Menu Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Wii U Wii Menu Theme</h3>
+          <p>By BlueNight</p>
+        </div>
+        <div class="card-action">
+          <a href="wii_u_wii_menu_theme.zip">Download</a>
+          <a href="https://wii.hacks.guide/themes">How to Install</a>
+          <a href="https://imgur.com/a/nJDramU">Screenshots</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/discord_hbc_theme.png"
+          alt="Discord Homebrew Channel Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">Discord Homebrew Channel Theme</h3>
+          <p>By Larsenv</p>
+        </div>
+        <div class="card-action">
+          <a href="discord_hbc_theme.zip">Download</a>
+        </div>
+      </div>
+      <div class="card">
+        <img
+          src="https://rc24.xyz/goodies/themes/pokeacer_hbc_theme.png"
+          alt="PokeAcer Madness Homebrew Channel Theme"
+        />
+        <div class="card-content">
+          <h3 class="card-title">PokeAcer Madness Homebrew Channel Theme</h3>
+          <p>By MCNX</p>
+        </div>
+        <div class="card-action">
+          <a href="pokeacer_hbc_theme.zip">Download</a>
+        </div>
+      </div>
 	</div>
 </div>
-<div class="section">
-	<div class="container">
-		<h3 class="">RiiConnect24 Themes</h3>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_3ds_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">3DS Theme</span>
-						<p class="light">By liam2503</p>
-					</div>
-					<div class="card-action">
-						<a href="https://themeplaza.eu/item/2170">ThemePlaza</a>
-						<a href="rc24_3ds_theme.zip">Direct</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_3ds_badge_set.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">3DS Badge Set</span>
-						<p class="light">By Larsenv</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_3ds_badge_set.zip">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_firefox_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Firefox Theme</span>
-						<p class="light">By meltstrap</p>
-					</div>
-					<div class="card-action">
-						<a href="https://addons.mozilla.org/en-US/firefox/addon/riiconnect24/">Download</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_google_chrome_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Google Chrome Theme</span>
-						<p class="light">By liam2503</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_google_chrome_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_hbc_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Homebrew Channel Theme</span>
-						<p class="light">By liam2503</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_hbc_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_usb_loader_gx_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">USB Loader GX Theme</span>
-						<p class="light">By liam2503</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_usb_loader_gx_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_red_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wii Menu Theme - Red</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_red_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-						<a href="https://imgur.com/a/rGrlf3Y">Screenshots</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rc24_wood_r4_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wood R4 Theme</span>
-						<p class="light">By liam2503</p>
-					</div>
-					<div class="card-action">
-						<a href="rc24_wood_r4_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		<h3 class="">Everybody Votes Channel</h3>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/evc_3ds_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">3DS Theme</span>
-						<p class="light">By sks316</p>
-					</div>
-					<div class="card-action">
-						<a href="https://themeplaza.eu/item/2112">ThemePlaza</a>
-						<a href="evc_3ds_theme.zip">Direct</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		<h3 class="">Material</h3>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/material_dark_usb_loader_gx_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Material Dark</span>
-						<p class="light">By Larsenv</p>
-						<a href="http://wiibrew.org/wiki/Homebrew_Channel/Themes">Based on the Homebrew Channel theme by
-							Shining Wing</a>
-					</div>
-					<div class="card-action">
-						<a href="material_dark_usb_loader_gx_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/material_light_usb_loader_gx_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Material Light</span>
-						<p class="light">By Larsenv</p>
-						<a href="http://wiibrew.org/wiki/Homebrew_Channel/Themes">Based on the Homebrew Channel theme by
-							Shining Wing</a>
-					</div>
-					<div class="card-action">
-						<a href="material_light_usb_loader_gx_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<br>
-		<h3 class="">Wii Menu Themes</h3>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/darkwii_plus_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">DarkWii Plus</span>
-						<p class="light">By Diddy81 & Burrito</p>
-					</div>
-					<div class="card-action">
-						<a href="https://website.burrito.software/ANY_DarkWii_Plus_v7.mym">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/animal_crossing_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Animal Crossing Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="animal_crossing_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/check_mii_out_channel_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Check Mii Out Channel Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="check_mii_out_channel_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-						<a href="https://imgur.com/a/ay7sDM8">Screenshots</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/discord_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Discord Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="discord_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/kirby_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Kirby Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="kirby_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/mkw_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Mario Kart Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="mkw_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/pikmin_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Pikmin Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="pikmin_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-						<a href="https://imgur.com/a/8dB8hgs">Screenshots</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/rhythm_heaven_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Rhythm Heaven Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="rhythm_heaven_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-						<a href="https://imgur.com/a/UVkQQHk">Screenshots</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/warioware_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">WarioWare Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="warioware_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/wii_fit_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wii Fit Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="wii_fit_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/wii_sports_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wii Sports Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="wii_sports_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/wii_u_wii_menu_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Wii U Wii Menu Theme</span>
-						<p class="light">By BlueNight</p>
-					</div>
-					<div class="card-action">
-						<a href="wii_u_wii_menu_theme.zip">Download</a>
-						<a href="https://wii.hacks.guide/themes">How to Install</a>
-						<a href="https://imgur.com/a/nJDramU">Screenshots</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<h3 class="">Other</h3>
-		<div class="row">
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/discord_hbc_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">Discord Homebrew Channel Theme</span>
-						<p class="light">By Larsenv</p>
-					</div>
-					<div class="card-action">
-						<a href="discord_hbc_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-			<div class="col s12 m4">
-				<div class="card">
-					<div class="card-image">
-						<img src="https://rc24.xyz/goodies/themes/pokeacer_hbc_theme.png">
-					</div>
-					<div class="card-content">
-						<span class="card-title">PokeAcer Madness Homebrew Channel Theme</span>
-						<p class="light">By MCNX</p>
-					</div>
-					<div class="card-action">
-						<a href="pokeacer_hbc_theme.zip">Download</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		</div>
-	</div>
 
-<Footer />
-
-	<style>
-		.card {
-			border-radius:8px;
-			margin:10px;
-			border:2px solid #ffffff20;
-			box-shadow: 0px 0px 28px #6c6c6c20;
-			overflow: hidden;
-		}
-	
-		.card-image{
-			padding:20px;
-		}
-	</style>
+      <Footer />

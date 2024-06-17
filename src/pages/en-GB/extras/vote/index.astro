@@ -9,32 +9,27 @@ changeLanguage("en-GB");
 
 <Layout title="EVC Poll Results - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
 <Header isGuide="display:none;" />
-<div
-  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
-  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
-  the RiiConnect24 site
-</div>
 <div class="section no-pad-bot">
   <div class="container">
-    <h1 class="header center">
+    <h1 class="header">
       <i class="fas fa-comments" aria-hidden="true"></i> Everybody Votes Channel
     </h1>
-    <h2 class="header center">Poll Results</h2>
-    <div class="row center">
-      <h5 class="header col s12">
+    <div class="row">
+      <h5 class="col s12" style="opacity:0.7;">
         You can find poll results from all polls in the Everybody Votes Channel
         here.
       </h5>
     </div>
   </div>
 </div>
+<br>
 <div class="section">
   <div class="container">
     <div class="row center">
       <p>Whose results do you want to view?</p>
       <div
         class="collection"
-        style="left:50%; width:95%; max-width:1180px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
+        style="left:50%; width:100%; max-width:1400px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
         <a href="https://rc24.xyz/goodies/vote/nintendo.html" class="collection-item"
           ><h3 class="center">Nintendo</h3></a
         >
@@ -45,7 +40,7 @@ changeLanguage("en-GB");
       <p style="margin-top:30px;">You might be interested in seeing Miitomo questions too.</p>
       <div
         class="collection"
-        style="left:50%; width:95%; max-width:1180px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
+        style="left:50%; width:100%; max-width:1400px; transform:translate(-50%, 0); background-color:#ffffff00; border:0px; display:grid; grid-template-columns: repeat(auto-fit,minmax(345px,1fr)); gap:18px; overflow: visible; position:relative;">
         <div class="collection-item">
           <a
             href="https://gist.github.com/jaames/1b14264e322855fb5a67d4d934e95e5f"
@@ -62,14 +57,13 @@ changeLanguage("en-GB");
 <style>
   .collection-item {
     border-radius: 8px;
-    border: 2px solid #ffffff20 !important;
-    box-shadow: 0px 0px 28px #ffffff00 !important;
+    border: 2px solid var(--border-color) !important;
+    box-shadow: 0px 0px 28px var(--shadow-color) !important;
     transition: 0.3s;
   }
 
   .collection-item:hover {
     transform: translate(0, -5px);
-    box-shadow: 0px 0px 28px #ffffff20;
     transition: 0.3s;
   }
 </style>

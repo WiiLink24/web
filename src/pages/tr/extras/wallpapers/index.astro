@@ -9,272 +9,332 @@ changeLanguage("tr");
 
 <Layout title="Wallpapers - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
 <Header isGuide="display:none;" />
-<div
-  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
-  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
-  the RiiConnect24 site
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h5 {
+    opacity:0.7;
+    font-weight:400;
+  }
+
+  h3, p {
+    margin:0;
+  }
+
+
+  div p {
+    opacity:0.6;
+  }
+
+  .notice {
+    width: 98%;
+    max-width: 1300px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(203, 60, 60);
+    box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1);
+  }
+
+  .container {
+    max-width: 1300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    margin: 20px 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: ;
+  }
+
+  .card {
+    background-color: var(--bg-color-secondary);
+    color: var(--color);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card img {
+    border-radius:8px;
+    margin-top:13px;
+    width: 100%;
+    display: block;
+  }
+
+  .card-title {
+    text-align:left;
+    font-weight: bold;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-action {
+    margin-bottom:13px;
+    cursor: pointer;
+    border-radius:8px;
+    position: relative;
+    padding: 10px;
+    background: var(--bg-color-tertiary);
+    transition: 0.3s;
+  }
+
+  .card-action:hover {
+    background-color: green;
+    color:white !important;
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card-action:hover a {
+    color:white !important;
+    transition: 0.3s;
+  }
+
+  .card-action::before {
+    content: "\f019";
+    font-family: "Font Awesome 5 Free"; /* Adjust based on the version of FontAwesome you're using */
+    font-weight: 900; /* Necessary for solid icons */
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 class="header"><i class="fas fa-download" aria-hidden="true"></i> Wallpaper Downloads</h1>
+  <h5 class="header">Here's our collection of wallpapers you can download.</h5>
+
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>RiiConnect24 Wallpapers</h3>
+  <p>Made by Larsenv</p>
 </div>
-<div class="section no-pad-bot">
-  <div class="container">
-    <h1 class="header center">
-      <i class="fas fa-download" aria-hidden="true"></i> Wallpaper Downloads
-    </h1>
-    <div class="row center">
-      <h5 class="header center col s12">
-        Here's our collection of wallpapers you can download.
-      </h5>
-    </div>
-  </div>
-</div>
-<div class="section">
-  <div class="container">
-    <h3 class="">RiiConnect24 Wallpapers</h3>
-    <p class="">Made by Larsenv</p>
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers//riiconnect24_background_1_1920x1080.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper 1</span>
-          </div>
-          <div class="card-action">
-            <a href="riiconnect24_background_1_1920x1080.png">1920x1080</a>
-          </div>
-        </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers//riiconnect24_background_1_1920x1080.png" alt="Wallpaper 1">
+      <img src="https://rc24.xyz/goodies/wallpapers//riiconnect24_background_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 1</span>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper 2</span>
-          </div>
-          <div class="card-action">
-            <a href="riiconnect24_background_2_1920x1080.png">1920x1080</a>
-          </div>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper Quote 1</span>
-          </div>
-          <div class="card-action">
-            <a href="riiconnect24_kouichi_1_1920x1080.png">1920x1080</a>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title">Wallpaper Quote 2</span>
-            </div>
-            <div class="card-action">
-              <a href="riiconnect24_kouichi_2_1920x1080.png">1920x1080</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title">Wallpaper Quote 3</span>
-            </div>
-            <div class="card-action">
-              <a href="riiconnect24_kuniharu_1_1920x1080.png">1920x1080</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title">Wallpaper Quote 4</span>
-            </div>
-            <div class="card-action">
-              <a href="riiconnect24_kuniharu_2_1920x1080.png">1920x1080</a>
-            </div>
-          </div>
-        </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_1_1920x1080.png">1920x1080</a>
       </div>
     </div>
-    <br />
-    <h3 class="">Wii Front Wallpapers</h3>
-    <p class="">
-      Made by <a href="https://youtube.com/c/466gaming">466</a>
-    </p>
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Black Wallpaper</span>
-          </div>
-          <div class="card-action">
-            <a href="riiconnect24_black_wii_1920x1080.png">1920x1080</a>
-          </div>
-        </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png" alt="Wallpaper 2">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 2">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 2</span>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">White Wallpaper</span>
-          </div>
-          <div class="card-action">
-            <a href="riiconnect24_white_wii_1920x1080.png">1920x1080</a>
-          </div>
-        </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png">1920x1080</a>
       </div>
     </div>
-    <br />
-    <h3 class="">Wii Wallpapers</h3>
-    <p class="">Made by KcrPL</p>
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wii Disc Slot Light Wallpaper</span>
-          </div>
-          <div class="card-action">
-            <a href="WiiDiscSlotLight.jpg">1920x1080</a>
-          </div>
-        </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png" alt="Wallpaper Quote 1">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 1">
+      <div class="card-content">
+        <span class="card-title">Wallpaper Quote 1</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png">1920x1080</a>
       </div>
     </div>
-    <br />
-    <h3 class="">Check Mii Out Channel Wallpapers</h3>
-    <p class="">Made by Super from NotDiscord™</p>
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper 1</span>
-          </div>
-          <div class="card-action">
-            <a href="CMO_Channel_BG_1600x900.png">1600x900</a>
-          </div>
-        </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png" alt="Wallpaper Quote 2">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 2">
+      <div class="card-content">
+        <span class="card-title">Wallpaper Quote 2</span>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper 2</span>
-          </div>
-          <div class="card-action">
-            <a href="CMO_Channel_BG_blue_1600x900.png">1600x900</a>
-          </div>
-        </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png">1920x1080</a>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">Wallpaper 3</span>
-          </div>
-          <div class="card-action">
-            <a href="CMO_Channel_BG_orange_1600x900.png">1600x900</a>
-          </div>
-        </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png" alt="Wallpaper Quote 3">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 3">
+      <div class="card-content">
+        <span class="card-title">Wallpaper Quote 3</span>
       </div>
-      <br />
-      <h3 class="">Everybody Votes Channel Wallpaper</h3>
-      <p class="">Made by Larsenv</p>
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title">Wallpaper 1</span>
-            </div>
-            <div class="card-action">
-              <a href="EVC_1920x1080.png">1920x1080</a>
-            </div>
-          </div>
-        </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png">1920x1080</a>
       </div>
-      <br />
-      <br />
-      <h3 class="center">Other Wallpapers</h3>
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title">The system files are corrupted</span>
-            </div>
-            <div class="card-action">
-              <a href="SystemFilesCorrupted_3840x2160.png">3840x2160</a>
-            </div>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png" />
-            </div>
-            <div class="card-content">
-              <span class="card-title"
-                >RiiConnect24 Discord Invite Wallpaper</span
-              >
-            </div>
-            <div class="card-action">
-              <a href="riiconnect24_invite_background_1920x1080.png"
-                >1920x1080</a
-              >
-            </div>
-          </div>
-        </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png" alt="Wallpaper Quote 4">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 4">
+      <div class="card-content">
+        <span class="card-title">Wallpaper Quote 4</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png">1920x1080</a>
       </div>
     </div>
   </div>
+  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>Wii Front Wallpapers</h3>
+  <p>Made by 466</p>
+  </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png" alt="Black Wallpaper">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Black Wallpaper">
+      <div class="card-content">
+        <span class="card-title">Black Wallpaper</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png">1920x1080</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png" alt="White Wallpaper">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="White Wallpaper">
+      <div class="card-content">
+        <span class="card-title">White Wallpaper</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png">1920x1080</a>
+      </div>
+    </div>
+  </div>
+  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>Wii Wallpapers</h3>
+  <p>Made by KcrPL</p>
+  </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg" alt="Wii Disc Slot Light Wallpaper">
+      <img src="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wii Disc Slot Light Wallpaper">
+      <div class="card-content">
+        <span class="card-title">Wii Disc Slot Light Wallpaper</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg">1920x1080</a>
+      </div>
+    </div>
+  </div>
+  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>Check Mii Out Channel Wallpapers</h3>
+  <p>Made by Super from NotDiscord™</p>
+  </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png" alt="Wallpaper 1">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 1</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png">1600x900</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png" alt="Wallpaper 2">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 2">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 2</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png">1600x900</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png" alt="Wallpaper 3">
+      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 3">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 3</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png">1600x900</a>
+      </div>
+    </div>
+  </div>
+  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>Everybody Votes Channel Wallpaper</h3>
+  <p>Made by Larsenv</p>
+  </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png" alt="Wallpaper 1">
+      <img src="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
+      <div class="card-content">
+        <span class="card-title">Wallpaper 1</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png">1920x1080</a>
+      </div>
+    </div>
+  </div>
+  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
+  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
+  <h3>Other Wallpapers</h3>
+  </div>
+  <div class="row">
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png" alt="The system files are corrupted">
+      <img src="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="The system files are corrupted">
+      <div class="card-content">
+        <span class="card-title">The system files are corrupted</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png">3840x2160</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png" alt="RiiConnect24 Discord Invite Wallpaper">
+      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="RiiConnect24 Discord Invite Wallpaper">
+      <div class="card-content">
+        <span class="card-title">RiiConnect24 Discord Invite Wallpaper</span>
+      </div>
+      <div class="card-action">
+        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png">1920x1080</a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 
   <Footer />
-
-  <style>
-    .card {
-      border-radius: 8px;
-      margin: 10px;
-      border: 2px solid #ffffff20;
-      box-shadow: 0px 0px 28px #6c6c6c20;
-      overflow: hidden;
-    }
-
-    .card-image {
-      padding: 20px;
-    }
-  </style>
-</div>

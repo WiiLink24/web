@@ -9,87 +9,206 @@ changeLanguage("en-GB");
 
 <Layout title="Photo Channel Puzzle Cheats - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
 <Header isGuide="display:none;" />
-<div
-  style="width:98%; max-width:1300px; margin-bottom:30px; left:50%; transform:translate(-50%, 0); padding:10px; border-radius:8px; color:white; background-color:rgb(203, 60, 60); box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1); text-align:center; position:relative;">
-  <i class="fa fa-triangle-exclamation"></i> Heads up! This content is a port of
-  the RiiConnect24 site
-</div>
+<style>
+   body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h5 {
+    opacity:0.7;
+    font-weight:400;
+  }
+
+  h3, p {
+    margin:0;
+  }
+
+
+  div p {
+    opacity:0.6;
+  }
+
+  .notice {
+    width: 98%;
+    max-width: 1300px;
+    margin-bottom: 30px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    background-color: rgb(203, 60, 60);
+    box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1);
+  }
+
+  .container {
+    max-width: 1300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .header {
+    margin: 20px 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: ;
+  }
+
+  .card {
+    background-color: var(--bg-color-secondary);
+    color: var(--color);
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    overflow: hidden;
+    width: calc(33.333% - 20px);
+    box-shadow: 0 2px 5px var(--shadow-color);
+    transition: 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card img {
+    border-radius:8px;
+    margin-top:13px;
+    width: 100%;
+    display: block;
+  }
+
+  .card-title {
+    text-align:left;
+    font-weight: bold;
+  }
+
+  .card-content {
+    padding: 10px;
+  }
+
+  .card-action {
+    margin-bottom:13px;
+    cursor: pointer;
+    border-radius:8px;
+    position: relative;
+    padding: 10px;
+    background: var(--bg-color-tertiary);
+    transition: 0.3s;
+  }
+
+  .card-action:hover {
+    background-color: green;
+    color:white !important;
+    transform: scale(1.02);
+    transition: 0.3s;
+  }
+
+  .card-action:hover a {
+    color:white !important;
+    transition: 0.3s;
+  }
+
+  .card-action::before {
+    content: "\f019";
+    font-family: "Font Awesome 5 Free"; /* Adjust based on the version of FontAwesome you're using */
+    font-weight: 900; /* Necessary for solid icons */
+    position: absolute;
+    left: 10px; /* Adjust as needed */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%;
+    }
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    background-color: #28a745;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .btn i {
+    margin-right: 5px;
+  }
+</style>
+</head>
+<body>
+
 <div class="section no-pad-bot">
   <div class="container">
-    <h1 class="header center">
+    <h1 class="header">
       <i class="fas fa-download" aria-hidden="true"></i> Photo Channel Puzzle Cheats
     </h1>
-    <div class="row center">
-      <h5 class="header center col s12">
-        These are intended to help get fast puzzle records on the Photo Channel,
-        every number on the puzzle piece corresponds to where it fits.
+    <div class="row">
+      <h5 class="header col s12">
+        These are intended to help get fast puzzle records on the Photo Channel, every number on the puzzle piece corresponds to where it fits.
       </h5>
-      <a href="puzzle_all.zip" id="download-button" class="btn btn-success"
-        ><i class="fa fa-download"></i> Download Puzzle Cheats</a
-      >
+      <a href="puzzle_all.zip" id="download-button" class="btn">
+        <i class="fa fa-download"></i> Download Puzzle Cheats
+      </a>
     </div>
   </div>
 </div>
+
 <div class="section">
   <div class="container">
     <br />
     <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/photochannel/puzzle_6.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">6-Piece Puzzle</span>
-          </div>
+      <div class="card">
+        <img src="https://rc24.xyz/goodies/photochannel/puzzle_6.jpg" alt="6-Piece Puzzle">
+        <div class="card-content">
+          <span class="card-title">6-Piece Puzzle</span>
         </div>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/photochannel/puzzle_12.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">12-Piece Puzzle</span>
-          </div>
+      <div class="card">
+        <img src="https://rc24.xyz/goodies/photochannel/puzzle_12.jpg" alt="12-Piece Puzzle">
+        <div class="card-content">
+          <span class="card-title">12-Piece Puzzle</span>
         </div>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/photochannel/puzzle_24.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">24-Piece Puzzle</span>
-          </div>
+      <div class="card">
+        <img src="https://rc24.xyz/goodies/photochannel/puzzle_24.jpg" alt="24-Piece Puzzle">
+        <div class="card-content">
+          <span class="card-title">24-Piece Puzzle</span>
         </div>
       </div>
     </div>
+    <br>
     <div class="row">
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/photochannel/puzzle_48.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">48-Piece Puzzle</span>
-          </div>
+      <div class="card">
+        <img src="https://rc24.xyz/goodies/photochannel/puzzle_48.jpg" alt="48-Piece Puzzle">
+        <div class="card-content">
+          <span class="card-title">48-Piece Puzzle</span>
         </div>
       </div>
-      <div class="col s12 m4">
-        <div class="card">
-          <div class="card-image">
-            <img src="https://rc24.xyz/goodies/photochannel/puzzle_192.jpg" />
-          </div>
-          <div class="card-content">
-            <span class="card-title">192-Piece Puzzle</span>
-            <p class="light">
-              To access the 192 piece puzzle, on the puzzle select screen hold
-              down the 1 Button to get the option. You can also use this trick
-              on the puzzle records when you've successfully completed a 192
-              piece puzzle.
-            </p>
-          </div>
+      <div class="card">
+        <img src="https://rc24.xyz/goodies/photochannel/puzzle_192.jpg" alt="192-Piece Puzzle">
+        <div class="card-content">
+          <span class="card-title">192-Piece Puzzle</span>
+          <p class="light">
+            To access the 192 piece puzzle, on the puzzle select screen hold down the 1 Button to get the option. You can also use this trick on the puzzle records when you've successfully completed a 192 piece puzzle.
+          </p>
         </div>
       </div>
     </div>
@@ -97,18 +216,6 @@ changeLanguage("en-GB");
   </div>
 </div>
 
+</body>
+
 <Footer />
-
-<style>
-  .card {
-    border-radius: 8px;
-    margin: 10px;
-    border: 2px solid #ffffff20;
-    box-shadow: 0px 0px 28px #6c6c6c20;
-    overflow: hidden;
-  }
-
-  .card-image {
-    padding: 20px;
-  }
-</style>
