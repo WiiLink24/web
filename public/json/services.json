@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-exclamation'></i> The service is currently under maintenance as we prepare for Release 1.0!",
+        "todo": "<i class='fa fa-circle-exclamation'></i> The service is working properly! <br> We hope you enjoy Release 1.0!",
         "icon": "room_icon.png",
         "completed": "85"
       },
