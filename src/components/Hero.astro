@@ -451,13 +451,14 @@ import { Trans } from "astro-i18next/components";
 
           if (assets) {
             let versionNumber = release.tag_name;
+            console.log(assets);
             document.getElementById("verno").innerHTML = `${versionNumber}`;
             document.getElementById("download-windows").href =
-              assets[4]?.browser_download_url;
-            document.getElementById("download-macos-arm").href =
-              assets[2]?.browser_download_url;
-            document.getElementById("download-macos-x64").href =
               assets[3]?.browser_download_url;
+            document.getElementById("download-macos-arm").href =
+              assets[4]?.browser_download_url;
+            document.getElementById("download-macos-x64").href =
+              assets[2]?.browser_download_url;
             document.getElementById("download-linux-arm").href =
               assets[0]?.browser_download_url;
             document.getElementById("download-linux-x64").href =
