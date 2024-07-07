@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: fa-solid fa-circle-exclamation
-pubDate: 2024-01-24
+pubDate: 2024-07-07
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "../../img/guidebg-3.png"
 ---
@@ -16,6 +16,9 @@ heroImage: "../../img/guidebg-3.png"
 </br>
 
 <div class="errorCodes" id="error-codes">
+
+
+<div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><i class="fa-solid fa-download"></i> WiiFlow WFL</a></h4><hr></div>
 
 <div class="error">Error Code: -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled "Food Channel (English).wad" on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
 
