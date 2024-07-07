@@ -61,7 +61,7 @@ import { Trans } from "astro-i18next/components";
         <button
           type="button"
           id="download-btn"
-          onclick="downloadPatcher();"
+          onclick="downloadPatcher(); gaq.push(['_trackEvent','Download','Patcher',this.href]);"
           class="btn btn-primary btn-lg"
           style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
