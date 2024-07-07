@@ -110,7 +110,7 @@ heroImage: "../../img/guidebg-1.png"
 2. Launch the Homebrew Channel on your Wii.
 3. Launch yawmME (YAWM ModMii Edition).
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
-5. If your Wii is not Japanese region, install `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`(Depending on console) before anything else. This is required so that we know your email address to send files.
+5. If your Wii is not Japanese region, install `WiiLink Address Settings.wad` before anything else. This is required so that we know your email address to send files.
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 8. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
@@ -121,7 +121,7 @@ heroImage: "../../img/guidebg-1.png"
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
-## Section III (Optional) - Connecting to DNS and using the Address Information settings (SPD)
+## Section III (Optional) - Connecting to DNS and using the Address Settings
 
 </br>
 
@@ -160,7 +160,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 <l class="notice generic smallwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
-<l class="notice info smallwidth">Adding your personal information to the Address Information Settings will allow the Photo Prints Channel to send images to your email, and the Food Channel to deliver the food to your house.</l>
+<l class="notice info smallwidth">Adding your personal information to the Address Settings will allow the Photo Prints Channel to send images to your email, and the Food Channel to deliver the food to your house.</l>
 
 <l class="notice warn smallwidth">You are responsible for entering your correct Address Information. Failure to do so may result in emails and/or orders not succeeding.</l>
 
