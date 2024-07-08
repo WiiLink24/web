@@ -42,8 +42,8 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "miicontest_icon.png",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
-        "completed": "80"
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> We are improving our backend, once ready, we will begin rolling out new contests!",
+        "completed": "90"
       },
       {
         "color": "#283688",
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-circle-exclamation'></i> Demae Domino's is experiencing hgih volumes of unprocessed/errored orders.",
         "icon": "demae_icon.png",
         "completed": "90"
       },
@@ -76,7 +76,7 @@
         "status": "Private Beta",
         "todo": "<i class='fa fa-hard-hat'></i> This service is still under development",
         "icon": "tvnotomo_icon.png",
-        "completed": "30"
+        "completed": "40"
       },
       {
         "color": "#ed34d8",
@@ -107,9 +107,9 @@
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-exclamation'></i> The service is working properly! <br> We hope you enjoy Release 1.0!",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> We hope you enjoy Release 1.0!",
         "icon": "room_icon.png",
-        "completed": "85"
+        "completed": "90"
       },
       {
         "color": "#05AAF8",
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> Mail-Wii service suspended temporarily.",
         "icon": "",
         "completed": "100"
       },
@@ -150,10 +150,10 @@
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
         "link": "/status",
         "isArea": "Originally Japan exclusive",
-        "status": "Halted",
-        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "status": "Private Beta",
+        "todo": "<i class='fa-solid fa-circle-question'></i> You can access this service by donating on our Stripe!",
         "icon": "",
-        "completed": "15"
+        "completed": "50"
       }
     ]
   }
