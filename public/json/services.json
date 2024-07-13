@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-exclamation'></i> Demae Domino's is experiencing hgih volumes of unprocessed/errored orders.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "demae_icon.png",
         "completed": "90"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> We hope you enjoy Release 1.0!",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "room_icon.png",
         "completed": "90"
       },
