@@ -1,0 +1,95 @@
+{
+  "taglines": [
+    "2006년때처럼 파티하세요!",
+    "Wii를 인터넷에 연결할 수 있단 사실을 아셨나요?",
+    "Scott The Woz 출연!",
+    "전설의 WiiConnect24의 귀환",
+    "Wii를 재발견하세요",
+    "닌텐도의 황금기로 다시 연결하세요",
+    "Wii의 과거로 다시 한번 연결하세요!",
+    "Wii에서 할 수 있는 것은 마리오 카트에서 지는 것, 그 이상이에요",
+    "가장 실제같은 Wii 네트워크 부활 서비스",
+    "어린 시절처럼 플레이하세요!",
+    "Wii가 놀고 싶어해요, 다시요.",
+    "당신의 어린 시절 추억, 우리의 서버에 연결되었다.",
+    "WiiLink, Wii 소프트웨어 이상의 것",
+    "닌텐도가 안 한다면 팬이 한다",
+    "응답하라 2006",
+    "WiiLink로 만나는 2006년의 감성!",
+    "닌텐도가 뗀 멀티플레이어의 첫걸음, 부활했습니다!"
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "날씨 채널",
+        "desc": "세계 곳곳의 최신 일기예보를 확인하세요",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.png",
+        "bg": "forecast.png"
+      },
+      {
+        "name": "뉴스 채널",
+        "desc": "세계 곳곳의 최신 뉴스를 알아보세요",
+        "link": "/guide/news",
+        "icon": "newsbanner.png",
+        "bg": "news.jpg"
+      },
+      {
+        "name": "닌텐도 채널",
+        "desc": "DS 게임의 데모를 다운로드하고, 리뷰를 읽고, 예고편을 시청하세요",
+        "link": "/guide/nintendo",
+        "icon": "nintendochannelbanner.png",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Mii 콘테스트 채널",
+        "desc": "최애의 Mii에 투표하고 콘테스트에 참여하세요",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.png",
+        "bg": "checkmiiout.png"
+      },
+      {
+        "name": "모두의 투표 채널",
+        "desc": "남들과 의견을 비교하고 투표에 참여하세요",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.png",
+        "bg": "politics.jpg"
+      },
+      {
+        "name": "음식 채널",
+        "desc": "Wii 콘솔로 집에서 다양한 종류의 음식을 주문하세요",
+        "link": "/guide/demae",
+        "icon": "demaebanner.png",
+        "bg": "food.png"
+      },
+      {
+        "name": "TV 편성표 채널",
+        "desc": "곧 방영되는 프로그램의 예고편을 시청하고 TV 편성표를 확인하세요",
+        "link": "/status",
+        "icon": "tvnotomobanner.png",
+        "bg": "tvnotomo.png"
+      },
+      {
+        "name": "커비 TV 채널",
+        "desc": "커비: 곧 돌아올거야! TV 프로그램 에피소드를 시청하세요",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.png",
+        "bg": "kirbytv.png"
+      },
+      {
+        "name": "사진 인화 채널",
+        "desc": "좋아하는 사진의 인화물을 Wii 콘솔에서 주문하세요",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.png",
+        "bg": "digicamprints.png"
+      },
+      {
+        "name": "Wii의 방",
+        "desc": "프로그램과 VOD 컨텐츠를 더 혁신적인 방법으로 발견하세요",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.png",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

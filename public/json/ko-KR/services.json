@@ -1,0 +1,160 @@
+{
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "날씨 채널",
+        "desc": "당신의 지역, 당신의 국가, 또는 전 세계의 날씨를 확인하세요!",
+        "link": "/guide/forecast",
+        "isArea": "전세계",
+        "status": "정식 출시",
+        "icon": "forecast_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요! <br><br> <b>RiiConnect24 사용자</b>는 WiiLink Patcher의 최신 버전으로 업데이트해야 서비스를 계속 이용할 수 있어요.",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "뉴스 채널",
+        "desc": "세계 곳곳의 뉴스를 발빠르게 따라잡고 정확히 어디서 어떤 일이 일어나는지 보세요.",
+        "link": "/guide/news",
+        "isArea": "전세계",
+        "status": "정식 출시",
+        "icon": "news_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "닌텐도 채널",
+        "desc": "A guide to Wii, Nintendo DS and Nintendo 3DS titles, with reviews, trailers, special shows and demos.",
+        "link": "/guide/nintendo",
+        "isArea": "전세계",
+        "status": "정식 출시",
+        "icon": "nintendo_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Mii 콘테스트 채널",
+        "desc": "Become a Mii Artisan and show the world your Mii design skills in a wide range of contests.",
+        "link": "/guide/miicontest",
+        "isArea": "전세계",
+        "status": "정식 출시",
+        "icon": "miicontest_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요! <br> 백엔드를 개선 중이에요. 준비 되면 새 콘테스트를 배포할 예정이에요.",
+        "completed": "90"
+      },
+      {
+        "color": "#283688",
+        "name": "모두의 투표 채널",
+        "desc": "Find out how differently the world thinks from you by participating in all-new polls.",
+        "link": "/guide/evc",
+        "isArea": "전세계",
+        "status": "정식 출시",
+        "icon": "democracy_icon.png",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "음식 채널",
+        "desc": "Order different types of meals from home via your Wii console.",
+        "link": "/guide/demae",
+        "isArea": "기존엔 일본 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "icon": "demae_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "TV 편성표 채널",
+        "desc": "Consult your local TV program guide, set reminders times for shows and operate your TV with your Wii Remote.",
+        "link": "/status",
+        "isArea": "기존엔 일본 한정",
+        "status": "비공개 베타",
+        "todo": "<i class='fa fa-hard-hat'></i> 이 프로젝트는 아직 개발중이에요",
+        "icon": "tvnotomo_icon.png",
+        "completed": "40"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "커비 TV 채널",
+        "desc": "Watch limited-time <i>Kirby: Right Back at Ya!</i> episodes.",
+        "link": "/guide/kirbytv",
+        "isArea": "기존엔 몇몇 유럽 국가 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "icon": "kirby_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "사진 인화 채널",
+        "desc": "사진과 Mii로 인화 사진과 명함을 만들어보세요.",
+        "link": "/guide/digicam",
+        "isArea": "기존엔 일본 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "icon": "digicam_icon.png",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room",
+        "desc": "Discover shows and other video-on-demand content or send messages to your friends from the Wii Room.",
+        "link": "/guide/wiinoma",
+        "isArea": "기존엔 일본 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "icon": "room_icon.png",
+        "completed": "90"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Address Settings",
+        "desc": "Enter personal information required for the Photo Prints Channel and the Food Channel.",
+        "link": "/guide/install/#adding-personal-information",
+        "isArea": "기존엔 일본 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Message Board",
+        "desc": "Send messages to registered Wii Friends and email addresses.",
+        "link": "/guide/board",
+        "isArea": "지역 제한 없음",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> Mail-Wii service suspended temporarily.",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Metroid Prime 3 Preview",
+        "desc": "View <i>Metroid Prime 3: Corruption</i> content.",
+        "link": "/status",
+        "isArea": "기존엔 미국 및 유럽 한정",
+        "status": "정식 출시",
+        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wii Room Anywhere",
+        "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
+        "link": "/status",
+        "isArea": "기존엔 일본 한정",
+        "status": "비공개 베타",
+        "todo": "<i class='fa-solid fa-circle-question'></i> You can access this service by donating on our Stripe!",
+        "icon": "",
+        "completed": "50"
+      }
+    ]
+  }
+}
