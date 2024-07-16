@@ -59,7 +59,7 @@ icon: fa-solid fa-utensils
 
 #### Section III - Installing WADs
 
-You will now install the Food Delivery Channel and Set Personal Data channels.
+You will now install the Food Delivery Channel and Address Settings channels.
 
 1. Put your SD card or USB drive in your Wii.
 
@@ -67,7 +67,7 @@ You will now install the Food Delivery Channel and Set Personal Data channels.
 
 3. In the WAD Manager menu, locate `Food Channel (Domino's) [English] (WiiLink).wad`.
 
-4. Also locate `WiiLink SPD (Wii).wad` or `WiiLink SPD (vWii).wad`, depending on your console platform.
+4. Also locate `WiiLink Address Settings.wad`.
 
 5. Select both WADs by pressing `+` on each one.
 
