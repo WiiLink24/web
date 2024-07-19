@@ -112,10 +112,9 @@ import { Trans } from "astro-i18next/components";
 <style>
   .build-holder {
     left: 50%;
-    transform: translate(-50%, 20px);
+    transform: translate(-50%, 0);
     width: 100%;
     max-width: 1500px;
-    padding-top: 30px;
     position: relative;
   }
   .build-square {
@@ -148,7 +147,6 @@ import { Trans } from "astro-i18next/components";
     position: relative;
   }
   .build {
-    top: 200px;
     background-color: var(--bg-color-secondary);
     position: relative;
   }
@@ -160,6 +158,7 @@ import { Trans } from "astro-i18next/components";
     filter: brightness(150%);
   }
   .title {
+    padding-top:80px;
     right: 50px;
     text-align: right;
     width: 100%;
