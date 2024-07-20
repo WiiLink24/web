@@ -41,7 +41,7 @@ heroImage: "../../img/guidebg-1.png"
 
 <l class="notice warn smallwidth">If you're on vWii, these steps are required. Otherwise, [skip to Section I.](#section-i---patching-wads)</l>
 
-1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader).
+1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), and the `system-channel-restorer` from [here](https://oscwii.org/library/app/system-channel-restorer).
 2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Open the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
 3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader).
 4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip the `LoadPriiloader.zip` file and copy the apps folder to the root of your SD Card or USB Drive.
@@ -55,7 +55,12 @@ heroImage: "../../img/guidebg-1.png"
 12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
 13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime` from the menu. If you're on a Wii U, enable `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button`. (Feel free to enable other options while you're in this menu)
 14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the system menu.
+15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
+16. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `system-channel-restorer`.
+17. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press A to select `EULA`.
+18. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press + to install.
+19. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home to return to the Homebrew Channel.
+20. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
 
 </br>
 
