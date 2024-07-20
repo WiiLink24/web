@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import Ad from "../../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
@@ -56,6 +57,8 @@ changeLanguage("de");
     </div>
     <div id="postholder"></div>
   </section>
+
+  <Ad />
 
   <h1 id="fetcherStatus" style="display:none;">
     /json{localizePath("/services.json")}
@@ -389,6 +392,7 @@ changeLanguage("de");
     left: 50%;
     transform: translate(-50%, 0);
     max-width: 1550px;
+    margin-bottom:100px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-auto-rows: 1fr;
@@ -626,7 +630,7 @@ changeLanguage("de");
       width: 2000px;
       left: 50%;
       transform: translate(-50%, 150px);
-      margin-bottom: 200px;
+      margin-bottom: 300px;
       position: relative;
     }
     .status {

@@ -6,6 +6,7 @@ import Footer from "../../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../../components/FormattedDate.astro";
+import Ad from "../../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
@@ -93,6 +94,8 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
           ))
       }
     </div>
+
+    <Ad />
 
     <h3
       style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">

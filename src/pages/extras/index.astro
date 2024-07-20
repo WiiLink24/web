@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
+import Ad from "../../components/Ad.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
@@ -46,6 +47,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     </div>
 
     <div id="slide-track" class="postholder"></div>
+
+    <Ad />
+
     <h3
       style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
       <Trans i18nKey="extras.helpCall">

@@ -6,6 +6,7 @@ import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
+import Ad from "../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 
@@ -73,6 +74,9 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
         </div>
       </a>
     </div>
+
+    <Ad />
+
     <div
       class="line-container bg-1"
       id="wiiconnect24"

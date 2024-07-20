@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Sidebar from "../components/GuideSidebar.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Ad from "../components/Ad.astro";
 import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
@@ -103,6 +104,9 @@ const { title, description, icon, color, pubDate, type, heroImage } =
           </div>
         </div>
       </div>
+
+      <Ad />
+
     </main>
     <Footer />
     <script is:inline>
