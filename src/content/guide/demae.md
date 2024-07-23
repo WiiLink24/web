@@ -144,7 +144,7 @@ ___
 
 ### "I'm getting an error message when adding food to my basket! What do I do?"
 
-> Please try erasing save data for the Demae Channel, and setting it up again! Let us know in #demae-support if you continue to experience issues.
+> Please try erasing save data for the Demae Channel, and setting it up again! Let us know in #support-text if you continue to experience issues.
 
 ### "How do I pay for my order on the Food Channel?"
 
