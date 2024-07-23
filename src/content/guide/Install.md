@@ -10,8 +10,9 @@ heroImage: "../../img/guidebg-1.png"
   <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>
   <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
 </div>
-<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, Linux, or Android Device</h4><div style="height:40px; border-radius:8px;  position:relative;">
 <a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid#getting-started"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher for Android</button></a>
 </div></div>
 </br>
 <div style="display: flex; gap:8px; align-items: center;">
@@ -84,6 +85,8 @@ heroImage: "../../img/guidebg-1.png"
 
    On `Linux`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_Linux-<arch>_v2.X.X`. Afterwards, run `./WiiLinkPatcher_Linux-<arch>_v.2.X.X` and the patcher will launch right on your terminal.
 
+   On `Android`, follow the guide [here](https://github.com/AyeItsHarry/WiiLinkPatcherAndroid#getting-started) to launch the unofficial patcher script in Termux.
+
    <l class="notice info">Alternatively, you can rename the patcher file on MacOS or Linux to a simpler filename like "WiiLinkPatcher" and run the commands with that name in mind.</l>
 
 > **For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture, and `X.X` with the latest version on the filename.
@@ -95,8 +98,8 @@ heroImage: "../../img/guidebg-1.png"
 ### Express Installation
    - Press `1` for `Express Install Setup`. Follow the steps below:
      1. Select your region for the WiiConnect24 channels.
-     2. Select whether or not you would like to install the WiiLink channels.
-     3. Select what language you would like for the WiiLink channels as well as your preferred Food Channel version if you chose to install them.
+     2. Select whether or not you would like to install the regional channels.
+     3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
      4. Select your console platform.
      5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
 
@@ -113,14 +116,16 @@ heroImage: "../../img/guidebg-1.png"
 
 ### Section II - Installing WADs and Patching `Wii Mail`
 
+<l class="notice info">If you already have `Wii Mail` patched for use with RiiConnect24, you don't need to run the WiiLink Mail Patcher.</l>
+
 1. Put your SD card or USB drive in your Wii.
 2. Launch the Homebrew Channel on your Wii.
 3. Launch yawmME (YAWM ModMii Edition).
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
-5. If your Wii is not Japanese region, install `WiiLink Address Settings.wad` before anything else. This is required so that we know your email address to send files.
+5. If your Wii is not Japanese region, and you have chosen to install regional channels, install `WiiLink Address Settings.wad` before anything else. This is required for use of the Food Channel and the Photo Prints Channel.
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
-8. Open the WiiLink Mail Patcher application inside the Homebrew Channel.
+8. Open the `WiiLink Mail Patcher` application inside the Homebrew Channel.
 9. Follow the on-screen instructions.
 10. Once the patcher is finished, you can return to the Wii Menu.
 
