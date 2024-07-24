@@ -163,6 +163,19 @@ import { Trans } from "astro-i18next/components";
           </li>
           <li>
             <a
+              id="download-windows"
+              class="dropdown-item"
+              style="display:flex; align-items:center; justify-content:space-between;"
+              href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid"
+              ><div>
+                <i class="fa-brands fa-android" style="margin-right:5px;"
+                ></i> {t("site.downloadFor")} Android
+              </div>
+              <p style="margin:0; opacity:0.3;">Unofficial</p></a
+            >
+          </li>
+          <li>
+            <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
               style="color:var(--color) !important;"
@@ -560,6 +573,8 @@ import { Trans } from "astro-i18next/components";
       padding: 8px !important;
       background-color: var(--bg-color-secondary);
       border-radius: 12px;
+      z-index: 1000;
+      position: relative;
     }
 
     .dropdown-item {
