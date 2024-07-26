@@ -176,6 +176,25 @@ changeLanguage("pt-BR");
   </html>
 </Layout>
 
+<script is:inline>
+  document.getElementById("square2").addEventListener('scroll', checkElementScroll);
+
+  function checkElementScroll() {
+    console.log("Checking Scroll");
+    var scrollPosition = document.getElementById("square2").scrollTop;
+
+    if (scrollPosition > 0) {
+      document.querySelector(".square").style.animationPlayState = "paused";
+      document.querySelector(".bottomleftcorner").style.animationPlayState = "paused";
+      console.log("Scrolled");
+    } else {
+      document.querySelector(".square").style.animationPlayState = "running";
+      document.querySelector(".bottomleftcorner").style.animationPlayState = "running";
+      console.log("Not Scrolled");
+    }
+  }
+</script>
+
 <script>
   const img = document.getElementById("perspectiveImage");
 
