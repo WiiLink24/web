@@ -362,12 +362,6 @@ donators = await fetchData();
   h5 {
     color: rgb(37, 37, 41);
   }
-  .slide-track {
-    animation: scroll 80s linear infinite;
-    display: flex;
-    width: calc(450px * 20);
-    background-color: #ffffff00;
-  }
   #donators {
     display:flex;
     flex-direction: row;
@@ -403,25 +397,7 @@ donators = await fetchData();
     transform: scale(0.98);
     transition: 0.2s;
   }
-  .bdg {
-    top: 20px;
-    right: 10px;
-    border-radius: 8px;
-    transform: translateZ(20px);
-    scale: 80%;
-    font-size: 25px;
-    position: absolute;
-  }
-  .tier-title {
-    top: 190px;
-    left: 50%;
-    width: 100%;
-    text-align: center;
-    transform: translate(-50%, 0) translateZ(30px);
-    color: black;
-    font-family: Gilroy;
-    position: absolute;
-  }
+
   .tier-1 {
     border-radius: 16px 8px 8px 16px;
     background-size: cover;
@@ -468,16 +444,6 @@ donators = await fetchData();
   .tiers > * {
     scroll-snap-align: start;
   }
-  .dots {
-    top: -80px;
-    width: 150px;
-    height: 150px;
-    opacity: 0.5;
-    background-image: radial-gradient(#00000040 2px, transparent 2px);
-    background-size: 15px 15px;
-    z-index: 0;
-    position: relative;
-  }
   .build {
     top: 100px;
     position: relative;
@@ -491,13 +457,6 @@ donators = await fetchData();
     text-align: center;
     margin-bottom: 20px;
     font-size: 25px;
-  }
-  .color {
-    background: url("/img/header_bg.png");
-    background: AccentColor;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: brightness(150%);
   }
   .title {
     text-align: center;
@@ -558,16 +517,6 @@ donators = await fetchData();
     }
     .subtitle {
       display: none;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .slide-track {
-      width: 100%;
-      animation: none !important;
-      transform: translate(0, 0);
-      overflow: hidden;
-      overflow-x: scroll;
     }
   }
 </style>

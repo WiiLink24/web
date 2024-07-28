@@ -2,7 +2,7 @@
 import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
-import Agreement from "../components/Agreement.astro";
+import MobileHeader from "../components/MobileHeader.astro";
 import { getCollection } from "astro:content";
 const posts = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -11,801 +11,974 @@ const posts = (await getCollection("blog")).sort(
 const { isGuide, isMain } = Astro.props;
 ---
 
-<Agreement/>
+<MobileHeader />
 
 <r lang={i18next.language} class="bannerholder">
-	<div id="loadingindicator" style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;"></div>
-	<img id="loadingspinner" src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
+  <div
+    id="loadingindicator"
+    style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;">
+  </div>
+  <img
+    id="loadingspinner"
+    src="/img/loading.gif"
+    style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;"
+  />
 
-	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
-	  <ul id="links" style="display:none;">
-		<a class="header-link" href={localizePath("/")}><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
-		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
-		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
-			<div class="holder">
-			{
-				posts.slice(0,3).map(post => (
-				  <div class="post" style="padding:8px; border-radius:4px;">
-					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`}>
-					  <img loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
-					  <div>
-					  <div class="title">
-						<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						  {post.data.title}
-						</b>
-					  </div>
-					  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{post.data.description}</div>
-					</div>
-					</a>
-				  </div>
-				))
-			  }
-			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.news-info")}</div>
-			</div>
-		</div>
-		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
-		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
-			<div class="holder">
-			<div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install'>
-					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.installGuide")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.installGuide-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving'>
-					<i class="fa fa-circle-exclamation" style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.problemSolving")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.problemSolving-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq'>
-					<i class="fa fa-circle-question" style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.faq")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.faq-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.guide-info")}</div>
-			</div>
-		</div>
-		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
-		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
-		<div class="dropdown">
-			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false">
-			</button>
-			<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
-				<form>
-				<li style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></li>
-				<div class="optDisplay" id="optionsDisplay" style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;"></div>
-			</form>
-			</ul>
-		  </div>
-		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
-			class="fa-solid fa-chevron-down"
-			style="font-size:20px; pointer-events:none;"></i>
-			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle"></span>
-			</button>
-		<div id="dropdownMore">
-		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://miicontest.wiilink.ca"><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div> <span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px; opacity:0.3; cursor:not-allowed;"><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div></a>
-				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-			<a
-				  class="dropdown-item"
-				  href="https://wiilink24.com/privacy-policy"
-				  ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
-				>
-				<a class="dropdown-item" href="https://wiilink24.com/tos"
-				  ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
-				>
-				<a class="dropdown-item" href="https://wiilink24.com/eula"
-				  ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
-				>
-				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
-				<a href={localizePath("/")}><button type="button" class="btn btn-success dropdown-element"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
-				<a href="https://www.discord.gg/wiilink"><button type="button" class="btn btn-primary dropdown-element"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
-			</div>
-		</div>
-			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
-	 </ul>
+  <t
+    id="grad"
+    style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
+  ></t>
+  <a href={localizePath("/")} class="logohold"
+    ><img
+      class="logo"
+      style={isMain}
+      src=" /img/Wii_Link_Logo.png"
+      width="190px"
+    /></a
+  >
+  <ul id="links" style="display:none;">
+    <a class="header-link" href={localizePath("/")}
+      ><i class="fa fa-home" style="margin-right:5px;"></i>
+      {t("header.home")}</a
+    >
+    <a
+      class="header-link"
+      onmouseover="toggle('newsheader');"
+      onmouseout="toggle('newsheader');"
+      href={localizePath("/news")}
+      ><i class="fa fa-newspaper" style="margin-right:5px;"></i>
+      {t("header.news")}</a
+    >
+    <div
+      id="newsheader"
+      class="popover-header"
+      onmouseout="toggle('newsheader');">
+      <div class="holder">
+        {
+          posts.slice(0, 3).map(post => (
+            <div class="post" style="padding:8px; border-radius:4px;">
+              <a
+                style="display:flex; flex-direction:row; gap:8px;"
+                href={`/news/${post.slug}/`}>
+                <img
+                  loading="lazy"
+                  style="height:100px; border-radius:4px;"
+                  src={post.data.heroImage}
+                />
+                <div>
+                  <div class="title">
+                    <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                      {post.data.title}
+                    </b>
+                  </div>
+                  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                    {post.data.description}
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+        <hr style="border-top: 1px solid var(--border-color);" />
+        <div
+          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
+          <i class="fa fa-circle-info"></i>
+          {t("header.news-info")}
+        </div>
+      </div>
+    </div>
+    <a
+      class="header-link"
+      onmouseover="toggle('guideheader');"
+      onmouseout="toggle('guideheader');"
+      href={localizePath("/guide/")}
+      ><i class="fa fa-book" style="margin-right:5px;"></i>
+      {t("header.guide")}</a
+    >
+    <div
+      id="guideheader"
+      class="popover-header"
+      onmouseout="toggle('guideheader');">
+      <div class="holder">
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/install">
+            <i
+              class="fa fa-download"
+              style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.installGuide")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.installGuide-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/problemsolving">
+            <i
+              class="fa fa-circle-exclamation"
+              style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.problemSolving")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.problemSolving-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/faq">
+            <i
+              class="fa fa-circle-question"
+              style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.faq")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.faq-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <hr style="border-top: 1px solid var(--border-color);" />
+        <div
+          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
+          <i class="fa fa-circle-info"></i>
+          {t("header.guide-info")}
+        </div>
+      </div>
+    </div>
+    <a class="header-link" href={localizePath("/status")}
+      ><i class="fa fa-server" style="margin-right:5px;"></i>
+      {t("header.status")}</a
+    >
+    <a class="header-link" href={localizePath("/services")}
+      ><i class="fa fa-box" style="margin-right:5px;"></i>
+      {t("header.services")}</a
+    >
+    <div class="dropdown">
+      <button
+        class="btn"
+        onclick="toggleTranslate()"
+        id="titleTranslate"
+        style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);"
+        type="button"
+        data-bs-toggle="tooltip"
+        data-bs-placement="bottom"
+        data-bs-html="true"
+        data-bs-original-title="<i class='fas fa-globe'></i>"
+        aria-expanded="false">
+      </button>
+      <ul
+        class="dropdown-menu"
+        id="dropMenu"
+        style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
+        <form>
+          <li
+            style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;">
+            <h6 class="dropdown-header" id="currentlang">
+              <i class="fa fa-globe"></i>
+              {t("header.chooseLang")}
+            </h6>
+          </li>
+          <div
+            class="optDisplay"
+            id="optionsDisplay"
+            style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;">
+          </div>
+        </form>
+      </ul>
+    </div>
+    <button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"
+      ><i
+        class="fa-solid fa-chevron-down"
+        style="font-size:20px; pointer-events:none;"></i>
+      <span
+        class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle"
+      ></span>
+    </button>
+    <div id="dropdownMore">
+      <a class="dropdown-item" href={localizePath("/extras")}
+        ><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a
+      >
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://wfc.wiilink24.com"
+        ><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div>
+        <span
+          class="p-1 bg-danger rounded"
+          style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"
+          ><i class="fa-solid fa-fire"></i></span
+        ></a
+      >
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://miicontest.wiilink.ca"
+        ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div>
+        <span
+          class="p-1 bg-info rounded"
+          style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"
+          ><i class="fa-solid fa-star"></i></span
+        ></a
+      >
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px; opacity:0.3; cursor:not-allowed;"
+        ><div>
+          <i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel
+        </div></a
+      >
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <a class="dropdown-item" href="https://wiilink24.com/privacy-policy"
+        ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
+      >
+      <a class="dropdown-item" href="https://wiilink24.com/tos"
+        ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
+      >
+      <a class="dropdown-item" href="https://wiilink24.com/eula"
+        ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
+      >
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <div
+        style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+        <button
+          id="themeColor"
+          type="button"
+          class="btn btn-light dropdown-element"
+          onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button
+        >
+        <a href={localizePath("/")}
+          ><button type="button" class="btn btn-success dropdown-element"
+            ><i class="fa-solid fa-download" style="color:white !important"
+            ></i></button
+          ></a
+        >
+        <a href="https://www.discord.gg/wiilink"
+          ><button type="button" class="btn btn-primary dropdown-element"
+            ><i class="fa-brands fa-discord" style="color:white !important"
+            ></i></button
+          ></a
+        >
+      </div>
+    </div>
+    <LanguageSelector
+      showFlag={true}
+      id="my-select-id"
+      class="my-select-class"
+    />
+  </ul>
 </r>
 
 <script is:inline>
+  let loadingindicator = document.getElementById("loadingindicator");
+  loadingindicator.style.width = "0%";
+  loadingspinner = document.getElementById("loadingspinner");
 
-let loadingindicator = document.getElementById("loadingindicator");
-    loadingindicator.style.width = "0%";
-    loadingspinner = document.getElementById("loadingspinner");
+  loadingindicator.style.display = "block";
+  loadingspinner.style.display = "block";
 
-      loadingindicator.style.display = "block";
-	  loadingspinner.style.display = "block";
+  let increaseWidth = setInterval(() => {
+    let currentWidth = parseInt(loadingindicator.style.width);
+    if (currentWidth < 80) {
+      loadingindicator.style.width = currentWidth + 1 + "%";
+    }
+  }, 100);
 
-    let increaseWidth = setInterval(() => {
-      let currentWidth = parseInt(loadingindicator.style.width);
-      if (currentWidth < 80) {
-        loadingindicator.style.width = currentWidth + 1 + "%";
+  window.addEventListener("load", () => {
+    clearInterval(increaseWidth);
+    loadingindicator.style.width = "100%";
+    setTimeout(() => {
+      loadingindicator.style.opacity = "0";
+      loadingspinner.style.display = "none";
+    }, 500);
+  });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("links").style.display = "flex";
+    localStorage.setItem("languageOverride", "yes");
+
+    var dropdown = document.getElementById("my-select-id");
+    var option = dropdown.options[0];
+    var optionName = option.value;
+    var editLink = optionName.split("/");
+    editlink = editLink.splice(0, 2);
+    editLink = "/" + editLink.join("/") + "";
+    if (editLink == "/") {
+      editLink = "";
+    }
+
+    if (languageOverride != "yes") {
+      switch (navigator.language.substring(0, 2)) {
+        case "en":
+          if (navigator.language.substring(0, 5) == "en-GB") {
+            localStorage.setItem("languageOverride", "yes");
+            location.href = "/en-GB" + editLink + "";
+            break;
+          }
+          break;
+        case "es":
+          localStorage.setItem("languageOverride", "yes");
+          location.href = "/es" + editLink + "";
+          break;
+        case "fr":
+          localStorage.setItem("languageOverride", "yes");
+          location.href = "/fr" + editLink + "";
+          break;
+        case "de":
+          localStorage.setItem("languageOverride", "yes");
+          location.href = "/fr" + editLink + "";
+          break;
+        case "pt":
+          localStorage.setItem("languageOverride", "yes");
+          location.href = "/pt-PT" + editLink + "";
+          break;
+        case "jp":
+          localStorage.setItem("languageOverride", "yes");
+          location.href = "/jp" + editLink + "";
+          break;
       }
-    }, 100);
+    }
 
-    window.addEventListener("load", () => {
-      clearInterval(increaseWidth);
-      loadingindicator.style.width = "100%";
-      setTimeout(() => {
-        loadingindicator.style.opacity = "0";
-        loadingspinner.style.display = "none";
-      }, 500);
-    });
+    var optionsDisplayDiv = document.getElementById("optionsDisplay");
+    var currentLangDiv = document.getElementById("currentlang");
+    var titleTranslate = document.getElementById("titleTranslate");
 
-        document.addEventListener('DOMContentLoaded', function () {
+    optionsDisplayDiv.innerHTML = "";
 
-			document.getElementById("links").style.display = "flex";
-			localStorage.setItem('languageOverride', 'yes');
+    for (var i = 0; i < dropdown.options.length; i++) {
+      var option = dropdown.options[i];
+      var optionName = option.value;
+      var optionLink = option.innerHTML;
+      var optionLinkFlag = optionLink.substring(0, 5);
 
-            var dropdown = document.getElementById("my-select-id");
-			var option = dropdown.options[0];
-			var optionName = option.value;
-			var editLink = optionName.split('/');
-			editlink = editLink.splice(0,2);
-			editLink = "/" + editLink.join('/') + "";
-			if (editLink == "/") {
-				editLink = "";
-			}
+      switch (optionLink.substring(0, 5).toLowerCase()) {
+        case " 🇺🇸":
+          optionLinkFlag = "<img src='/img/flags/usa.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/usa.png' class='emoji2'> English (US)";
+          break;
+        case " 🇬🇧":
+          optionLinkFlag = "<img src='/img/flags/uk.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/uk.png' class='emoji2'> English (UK)";
+          break;
+        case " 🇧🇷":
+          optionLinkFlag = "<img src='/img/flags/brazil.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
+          break;
+        case " 🇵🇹":
+          optionLinkFlag = "<img src='/img/flags/portugal.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
+          break;
+        case " 🇻🇳":
+          optionLinkFlag = "<img src='/img/flags/vi.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
+          break;
+        case " 🇯🇵":
+          optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
+          optionLink = "<img src='/img/flags/japan.png' class='emoji2'> 日本語";
+          break;
+        case " 🇫🇷":
+          optionLinkFlag = "<img src='/img/flags/france.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/france.png' class='emoji2'> Français";
+          break;
+        case " 🇪🇸":
+          optionLinkFlag = "<img src='/img/flags/spain.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/spain.png' class='emoji2'> Español";
+          break;
+        case " 🇩🇪":
+          optionLinkFlag = "<img src='/img/flags/german.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/german.png' class='emoji2'> Deutsch";
+          break;
+        case " 🇷🇺":
+          optionLinkFlag = "<img src='/img/flags/russia.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/russia.png' class='emoji2'> Русский";
+          break;
+        case " 🇮🇹":
+          optionLinkFlag = "<img src='/img/flags/italy.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/italy.png' class='emoji2'> Italiano";
+          break;
+        case " 🇫🇮":
+          optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/finland.png' class='emoji2'> Suomi";
+          break;
+        case " 🇭🇺":
+          optionLinkFlag = "<img src='/img/flags/hu.png' class='emoji'>";
+          optionLink = "<img src='/img/flags/hu.png' class='emoji2'> Magyar";
+          break;
+        case " 🇹🇷":
+          optionLinkFlag = "<img src='/img/flags/tr.png' class='emoji'>";
+          optionLink = "<img src='/img/flags/tr.png' class='emoji2'> Türkçe";
+          break;
+        case " 🇰🇷":
+          optionLinkFlag = "<img src='/img/flags/kr.png' class='emoji'>";
+          optionLink = "<img src='/img/flags/kr.png' class='emoji2'> 한국어";
+          break;
+      }
 
-			if (languageOverride != 'yes') {
+      switch (optionName.substring(0, 7).toLowerCase()) {
+        case "/es-lat":
+          optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
+          break;
+        case "/ca":
+          optionLinkFlag = "<img src='/img/flags/cat.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/cat.png' class='emoji2'> Català (CA)";
+          break;
+        case "/frp":
+          optionLinkFlag = "<img src='/img/flags/arp.png' class='emoji'>";
+          optionLink = "<img src='/img/flags/arp.png' class='emoji2'> Arpetan";
+          break;
+        case "/va":
+          optionLinkFlag = "<img src='/img/flags/va.png' class='emoji'>";
+          optionLink =
+            "<img src='/img/flags/va.png' class='emoji2'> Català (VA)";
+          break;
+      }
 
-			switch (navigator.language.substring(0,2)) {
-				case "en":
-					if (navigator.language.substring(0,5) == "en-GB"){
-						localStorage.setItem('languageOverride', 'yes');
-						location.href = "/en-GB" + editLink + "";
-						break;
-					}
-					break;
-				case "es":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/es" + editLink + "";
-					break;
-				case "fr":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/fr" + editLink + "";
-					break;
-				case "de":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/fr" + editLink + "";
-					break;
-				case "pt":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/pt-PT" + editLink + "";
-					break;
-				case "jp":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/jp" + editLink + "";
-					break;
-			}
-			}
+      if (i == 0) {
+        const button = document.getElementById("titleTranslate");
+        titleTranslate.innerHTML = optionLinkFlag;
+        currentLangDiv.innerHTML +=
+          "<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> " +
+          optionLink +
+          "</div>";
+        optionLink = optionLink.replace(/<img[^>]*>/g, "");
+        button.setAttribute("data-bs-original-title", optionLink);
+      } else {
+        optionsDisplayDiv.innerHTML +=
+          "<li><a href='" +
+          optionName +
+          "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" +
+          optionLink +
+          "</div></button></a></li>";
+      }
+    }
+  });
 
-            var optionsDisplayDiv = document.getElementById("optionsDisplay");
-			var currentLangDiv = document.getElementById("currentlang");
-			var titleTranslate = document.getElementById("titleTranslate");
-
-            optionsDisplayDiv.innerHTML = "";
-
-			for (var i = 0; i < dropdown.options.length; i++) {
-                var option = dropdown.options[i];
-                var optionName = option.value;
-                var optionLink = option.innerHTML;
-				var optionLinkFlag = optionLink.substring(0,5);
-				
-				switch (optionLink.substring(0, 5).toLowerCase()) {
-					case ' 🇺🇸':
-						optionLinkFlag = "<img src='/img/flags/usa.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/usa.png' class='emoji2'> English (US)";
-						break;
-					case ' 🇬🇧':
-						optionLinkFlag = "<img src='/img/flags/uk.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/uk.png' class='emoji2'> English (UK)";
-						break;
-					case ' 🇧🇷':
-						optionLinkFlag = "<img src='/img/flags/brazil.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
-						break;
-					case ' 🇵🇹':
-						optionLinkFlag = "<img src='/img/flags/portugal.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
-						break;
-					case ' 🇻🇳':
-						optionLinkFlag = "<img src='/img/flags/vi.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
-						break;
-					case ' 🇯🇵':
-						optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/japan.png' class='emoji2'> 日本語";
-						break;
-					case ' 🇫🇷':
-						optionLinkFlag = "<img src='/img/flags/france.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/france.png' class='emoji2'> Français";
-						break;
-					case ' 🇪🇸':
-						optionLinkFlag = "<img src='/img/flags/spain.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/spain.png' class='emoji2'> Español";
-						break;
-					case ' 🇩🇪':
-						optionLinkFlag = "<img src='/img/flags/german.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/german.png' class='emoji2'> Deutsch";
-						break;
-					case ' 🇷🇺':
-						optionLinkFlag = "<img src='/img/flags/russia.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/russia.png' class='emoji2'> Русский";
-						break;
-					case ' 🇮🇹':
-						optionLinkFlag = "<img src='/img/flags/italy.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/italy.png' class='emoji2'> Italiano";
-						break;
-					case ' 🇫🇮':
-						optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/finland.png' class='emoji2'> Suomi";
-						break;
-					case ' 🇭🇺':
-    					optionLinkFlag = "<img src='/img/flags/hu.png' class='emoji'>";
-    					optionLink = "<img src='/img/flags/hu.png' class='emoji2'> Magyar";
-    					break;
-  					case ' 🇹🇷':
-   						optionLinkFlag = "<img src='/img/flags/tr.png' class='emoji'>";
-    					optionLink = "<img src='/img/flags/tr.png' class='emoji2'> Türkçe";
-    					break;
-					case ' 🇰🇷':
-						optionLinkFlag = "<img src='/img/flags/kr.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/kr.png' class='emoji2'> 한국어";
-						break;
-				}
-
-				switch (optionName.substring(0, 7).toLowerCase()) {
-					case '/es-lat':
-						optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
-						break;
-					case '/ca':
-						optionLinkFlag = "<img src='/img/flags/cat.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/cat.png' class='emoji2'> Català (CA)";
-						break;
-					case '/frp':
-						optionLinkFlag = "<img src='/img/flags/arp.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/arp.png' class='emoji2'> Arpetan";
-						break;
-					case '/va':
-						optionLinkFlag = "<img src='/img/flags/va.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/va.png' class='emoji2'> Català (VA)";
-						break;
-				}
-
-				if (i == 0) {
-					const button = document.getElementById('titleTranslate');
-					titleTranslate.innerHTML = optionLinkFlag;
-					currentLangDiv.innerHTML += "<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> " + optionLink + "</div>";
-					optionLink = optionLink.replace(/<img[^>]*>/g, "");
-					button.setAttribute('data-bs-original-title', optionLink);
-				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
-				}
-            }
-        });
-
-		document.addEventListener('click', function(event) {
-    var dropdownButton = document.getElementById('titleTranslate');
-    var dropdownMenu = document.getElementById('dropMenu');
-	var dropdownMore = document.getElementById('dropdownMore');
-    var moreHeader = document.getElementById('moreHeader');
+  document.addEventListener("click", function (event) {
+    var dropdownButton = document.getElementById("titleTranslate");
+    var dropdownMenu = document.getElementById("dropMenu");
+    var dropdownMore = document.getElementById("dropdownMore");
+    var moreHeader = document.getElementById("moreHeader");
 
     // Check if the click event's target is inside the dropdownMore element
     if (!dropdownMore.contains(event.target) && event.target !== moreHeader) {
       // If it's not, hide the dropdownMore element
-      dropdownMore.style.display = 'none';
+      dropdownMore.style.display = "none";
     }
 
     // Check if the click was outside the dropdown button or menu
-    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open == 1) {
+    if (
+      !dropdownButton.contains(event.target) &&
+      !dropdownMenu.contains(event.target) &&
+      open == 1
+    ) {
       // Close the dropdown
-	  document.getElementById("dropMenu").style.animation = "langoff 0.2s ease-in-out forwards";
-				setTimeout(() => {
-				document.getElementById("dropMenu").style.opacity = "0";
-				document.getElementById("dropMenu").style.pointerEvents = "none";
-				document.getElementById("dropMenu").style.animation = "";
-				open = 0; }, "200")
+      document.getElementById("dropMenu").style.animation =
+        "langoff 0.2s ease-in-out forwards";
+      setTimeout(() => {
+        document.getElementById("dropMenu").style.opacity = "0";
+        document.getElementById("dropMenu").style.pointerEvents = "none";
+        document.getElementById("dropMenu").style.animation = "";
+        open = 0;
+      }, "200");
     }
   });
 
-		let open = 0;
-		function toggleTranslate() {
-			if (open == 0) {
-				document.getElementById("dropMenu").style.opacity = "1";
-				document.getElementById("dropMenu").style.pointerEvents = "";
-				document.getElementById("dropMenu").style.animation = "langon 0.2s ease-in-out forwards";
-				open = 1;
-			} else {
-				document.getElementById("dropMenu").style.animation = "langoff 0.2s ease-in-out forwards";
-				setTimeout(() => {
-				document.getElementById("dropMenu").style.opacity = "0";
-				document.getElementById("dropMenu").style.pointerEvents = "none";
-				document.getElementById("dropMenu").style.animation = "";
-				open = 0; }, "200")
-			}
-		}
+  let open = 0;
+  function toggleTranslate() {
+    if (open == 0) {
+      document.getElementById("dropMenu").style.opacity = "1";
+      document.getElementById("dropMenu").style.pointerEvents = "";
+      document.getElementById("dropMenu").style.animation =
+        "langon 0.2s ease-in-out forwards";
+      open = 1;
+    } else {
+      document.getElementById("dropMenu").style.animation =
+        "langoff 0.2s ease-in-out forwards";
+      setTimeout(() => {
+        document.getElementById("dropMenu").style.opacity = "0";
+        document.getElementById("dropMenu").style.pointerEvents = "none";
+        document.getElementById("dropMenu").style.animation = "";
+        open = 0;
+      }, "200");
+    }
+  }
 
-		document.getElementById("dropMenu").style.opacity = "0";
-		document.getElementById("dropMenu").style.pointerEvents = "none";
-    </script>
-
+  document.getElementById("dropMenu").style.opacity = "0";
+  document.getElementById("dropMenu").style.pointerEvents = "none";
+</script>
 
 <script is:inline>
-const themeColorButton = document.getElementById('themeColor');
-const languageOverride = localStorage.getItem('languageOverride');
+  const themeColorButton = document.getElementById("themeColor");
+  const languageOverride = localStorage.getItem("languageOverride");
 
-document.addEventListener('DOMContentLoaded', function () {
-	if (localStorage.getItem('color-mode') === null) {
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			localStorage.setItem('color-mode', 'dark');
-		} else {
-			localStorage.setItem('color-mode', 'dark');
-		}
-	}
+  document.addEventListener("DOMContentLoaded", function () {
+    if (localStorage.getItem("color-mode") === null) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        localStorage.setItem("color-mode", "dark");
+      } else {
+        localStorage.setItem("color-mode", "dark");
+      }
+    }
 
-	const savedMode = localStorage.getItem('color-mode');
-	if (savedMode === 'dark') {
-		enableDarkMode();
-	} else {
-		enableLightMode();
-	}
+    const savedMode = localStorage.getItem("color-mode");
+    if (savedMode === "dark") {
+      enableDarkMode();
+    } else {
+      enableLightMode();
+    }
 
-	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-		if (event.matches) {
-			enableDarkMode();
-		} else {
-			enableLightMode();
-		}
-	});
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", event => {
+        if (event.matches) {
+          enableDarkMode();
+        } else {
+          enableLightMode();
+        }
+      });
+  });
 
-});
-
-function enableDarkMode() {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('color-mode', 'dark');
-	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sun'><circle cx='12' cy='12' r='4'/><path d='M12 2v2'/><path d='M12 20v2'/><path d='m4.93 4.93 1.41 1.41'/><path d='m17.66 17.66 1.41 1.41'/><path d='M2 12h2'/><path d='M20 12h2'/><path d='m6.34 17.66-1.41 1.41'/><path d='m19.07 4.93-1.41 1.41'/></svg>";
-	themeColorButton.style.filter = "invert(0)";
+  function enableDarkMode() {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("color-mode", "dark");
+    themeColorButton.innerHTML =
+      "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sun'><circle cx='12' cy='12' r='4'/><path d='M12 2v2'/><path d='M12 20v2'/><path d='m4.93 4.93 1.41 1.41'/><path d='m17.66 17.66 1.41 1.41'/><path d='M2 12h2'/><path d='M20 12h2'/><path d='m6.34 17.66-1.41 1.41'/><path d='m19.07 4.93-1.41 1.41'/></svg>";
+    themeColorButton.style.filter = "invert(0)";
   }
 
   function enableLightMode() {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('color-mode', 'light');
-	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-moon'><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/></svg>";
-	themeColorButton.style.filter = "invert(1)";
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("color-mode", "light");
+    themeColorButton.innerHTML =
+      "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-moon'><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/></svg>";
+    themeColorButton.style.filter = "invert(1)";
   }
 
-function darkToggle() {
-    if (document.documentElement.classList.contains('dark')) {
+  function darkToggle() {
+    if (document.documentElement.classList.contains("dark")) {
       enableLightMode();
     } else {
       enableDarkMode();
     }
-}
-
-function toggle(id) {
-	  var element = document.getElementById(id);
-  if (element.style.display === 'block' && !element.matches(':hover')) {
-	element.style.display = "none";
-  } else {
-	element.style.display = "block";
-}
-}
-
-</script>
-
-<script is:inline>
-var gradient = document.getElementById("grad");
-document.addEventListener('scroll', checkPageScroll);
-
-function checkPageScroll() {
-  var scrollPosition = window.scrollY || window.pageYOffset;
-
-  if (scrollPosition > 0) {
-    gradient.style.opacity = 1;
-  } else {
-	gradient.style.opacity = 0;
   }
-}
+
+  function toggle(id) {
+    var element = document.getElementById(id);
+    if (element.style.display === "block" && !element.matches(":hover")) {
+      element.style.display = "none";
+    } else {
+      element.style.display = "block";
+    }
+  }
+
+  var gradient = document.getElementById("grad");
+  document.addEventListener("scroll", checkPageScroll);
+
+  function checkPageScroll() {
+    var scrollPosition = window.scrollY || window.pageYOffset;
+
+    if (scrollPosition > 0) {
+      gradient.style.opacity = 1;
+    } else {
+      gradient.style.opacity = 0;
+    }
+  }
 </script>
-  
+
 <style is:global>
-	.emoji:nth-child(1) {
-		width:33px;
-		transform:translate(0, -3px);
-	}
-	.emoji2 {
-		width:20px;
-		margin-right:5px;
-		transform:translate(0, -3px);
-	}	
-	.dropdown-item {
-		white-space:wrap !important;
-	}
+  .emoji:nth-child(1) {
+    width: 33px;
+    transform: translate(0, -3px);
+  }
+  .emoji2 {
+    width: 20px;
+    margin-right: 5px;
+    transform: translate(0, -3px);
+  }
+  .dropdown-item {
+    white-space: wrap !important;
+  }
 </style>
 <style>
-	.my-select-class{
-		top:0;
-		left:0;
-		width:45px;
-		height:42px;
-		font-size:30px;
-		border:0px;
-		display:none;
-		background-color:#ffffff00;
-		position:relative;
-	}
-	.badge{
-		top:20px; 
-		left:230px; 
-		font-size:15px; 
-		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-		position:absolute;
-	}
-	a {
-		font-size:17px;
-	}
+  .my-select-class {
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 42px;
+    font-size: 30px;
+    border: 0px;
+    display: none;
+    background-color: #ffffff00;
+    position: relative;
+  }
+  .badge {
+    top: 20px;
+    left: 230px;
+    font-size: 15px;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    position: absolute;
+  }
+  a {
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+  }
 
-	#grad{
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
-	}
+  #grad {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(32, 32, 32, 0.5) 100%
+    );
+  }
 
-	#newsheader {
-		width:500px;
-		transform:translate(-153px, 0);
-	}
+  #newsheader {
+    width: 500px;
+    transform: translate(-153px, 0);
+  }
 
-	#guideheader {
-		width:400px;
-		transform:translate(-60px, 0);
-	}
+  #guideheader {
+    width: 400px;
+    transform: translate(-60px, 0);
+  }
 
-	.popover-header {
-		display: none;
-		position: absolute;
-		top: 100%;
-		animation: opin 0.2s ease-in-out forwards;
-		z-index: 1;
-	}
+  .popover-header {
+    display: none;
+    position: absolute;
+    top: 100%;
+    animation: opin 0.2s ease-in-out forwards;
+    z-index: 1;
+  }
 
-	.holder {
-		margin-top:18px;
-		padding:8px;
-		border-radius:12px;
-		background-color:var(--bg-color-light);
-		border: 1px solid var(--border-color);
-	}
+  .holder {
+    margin-top: 18px;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+  }
 
-	.holder::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid var(--border-color);
-  top: -2px;
-  left: 50%;
-  z-index: 10000;
-  transform: translateX(-50%);
-}
+  .holder::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid var(--border-color);
+    top: -2px;
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+  }
 
-.holder::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 18px solid var(--bg-color-light);
-  top: 1px;
-  left: 50%;
-  z-index: 10000;
-  transform: translateX(-50%);
-}
+  .holder::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 18px solid var(--bg-color-light);
+    top: 1px;
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+  }
 
-	.post:hover {
-		background-color: var(--bg-color-secondary);
-		transition: 0.2s;
-	}
+  .post:hover {
+    background-color: var(--bg-color-secondary);
+    transition: 0.2s;
+  }
 
-	.post:active {
-		transform:scale(0.98);
-		transition: 0.2s;
-	}
+  .post:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+  }
 
-	#dropdownMore {
-		right:0;
-		top:100%;
-		width: 300px;
-		display:flex;
-		flex-direction: column;
-		gap:5px;
-		padding:8px;
-		background-color: var(--bg-color-light);
-		border: 1px solid var(--border-color);
-		border-radius:12px;
-		z-index: 1;
-		display: none;
-		position: absolute;
-	}
+  #dropdownMore {
+    right: 0;
+    top: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    z-index: 1;
+    display: none;
+    position: absolute;
+  }
 
-	.dropdown-element {
-		width:100%;
-		position:relative;
-	}
+  .dropdown-element {
+    width: 100%;
+    position: relative;
+  }
 
-	.dropdown-item {
-		padding:8px;
-		border-radius:4px;
-	}
+  .dropdown-item {
+    padding: 8px;
+    border-radius: 4px;
+  }
 
-	.header-link {
-	height:50px;
-	font-size:18px;
-	margin-left:8px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-      transition: 0.3s;
-      padding-left: 5px;
-      padding-right: 5px;
-      border-radius: 8px;
-      position: relative;
-      overflow: hidden;
-    }
+  .header-link {
+    height: 50px;
+    font-size: 18px;
+    margin-left: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
 
-    .header-link:hover {
-      transform: scale(1.02);
-      background-color: var(--bg-opaque-1);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding-left: 15px;
-      padding-right: 15px;
-      border-radius: 8px;
-      transition: 0.3s;
-    }
+  .header-link:hover {
+    transform: scale(1.02);
+    background-color: var(--bg-opaque-1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
 
-    .header-link:active {
-      transform: scale(0.97);
-      background-color: #ffffff40;
-      transition: 0.1s;
-    }
+  .header-link:active {
+    transform: scale(0.97);
+    background-color: #ffffff40;
+    transition: 0.1s;
+  }
 
-    .header-link::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0;
-      height: 4px;
-	  opacity:0.3;
-      background: var(--color);
-      transition: 0.2s;
-    }
+  .header-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0.3;
+    background: var(--color);
+    transition: 0.2s;
+  }
 
-    .header-link:hover::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--color);
-      transition: 0.2s;
-    }
+  .header-link:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color);
+    transition: 0.2s;
+  }
 
-  .optDisplay::-webkit-scrollbar{
-		display:none;
-	}
+  .optDisplay::-webkit-scrollbar {
+    display: none;
+  }
 
-	.btn1{
-		transform: translate(0, 10px);
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
-
-	.btn2{
-		top:50%;
-		left:258px;
-		transform: translate(0, -50%);
-		opacity:0;
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: absolute;
-	}
-
-	.btn3{
-		transform: translate(0, 10px);
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
-
-a:link{
-	text-decoration: none;
-	color: white;
-}
-
-a:visited{
-	text-decoration: none;
-	color: white;
-}
-
-.bannerholder{
-    top:0;
-    left:0;
-	width:100%;
-	height:128px;
-	display:block;
-	background-color: rgba(255, 255, 255, 0);
+  .bannerholder {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128px;
+    display: block;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 80;
     position: sticky;
-}
+  }
 
-.logo{
-	top:50%;
-	left:50px;
-	transform: translate(0,-50%);
-	filter: invert(1);
-	position: absolute;
-}
+  .logo {
+    top: 50%;
+    left: 50px;
+    transform: translate(0, -50%);
+    filter: invert(1);
+    position: absolute;
+  }
 
-@keyframes opin{
-	0%{
-		opacity:0;
-		top:110%;
-	}
-	100%{
-		opacity:1;
-		top:100%;
-	}
-}
+  ul {
+    display: flex;
+    gap: 10px;
+    width: auto;
+    right: 50px;
+    top: 60px;
+    transform: translate(0, -50%);
+    align-items: center;
+    justify-content: center;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: rgba(255, 255, 255, 0.53);
+    position: absolute;
+  }
 
-@keyframes opout{
-	0%{
-		opacity:1;
-	}
-	100%{
-		opacity:0;
-	}
-}
+  @keyframes opin {
+    0% {
+      opacity: 0;
+      top: 110%;
+    }
+    100% {
+      opacity: 1;
+      top: 100%;
+    }
+  }
 
-@keyframes langon{
-	0%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-	100%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -12px);
-	}
-}
+  @keyframes opout {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
 
-@keyframes langoff{
-	0%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -12px);
-	}
-	100%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-}
+  @keyframes langon {
+    0% {
+      opacity: 0;
+      height: 0px;
+      transform: translate(50px, -15px);
+    }
+    100% {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -12px);
+    }
+  }
 
-ul{
-	display: flex;
-	gap:10px;
-	width:auto;
-	right:50px;
-	top:60px;
-	transform: translate(0, -50%);
-	align-items:center;
-	justify-content:center;
-	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	color:rgba(255, 255, 255, 0.53);
-	position: absolute;
-}
+  @keyframes langoff {
+    0% {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -12px);
+    }
+    100% {
+      opacity: 0;
+      height: 0px;
+      transform: translate(50px, -15px);
+    }
+  }
 
-@media (max-width:1400px){
-		.btn2{
-			opacity:1;
-		}
-	}
+  @media (max-width: 1000px) {
+    .container {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      transform: translate(0, 0);
+      border: 0px;
+      border-radius: 0px;
+      animation: none;
+      position: fixed;
+    }
 
-@media (max-width:1000px){
-	.container{
-		top:0;
-		left:0;
-		width:100%;
-		height:100%;
-		transform: translate(0, 0);
-		border: 0px;
-		border-radius: 0px;
-		animation: none;
-		position: fixed;
-	}
+    .osimg {
+      left: 90%;
+      transform: translate(-50%, 0);
+      position: relative;
+    }
 
-	.osimg{
-		left:90%;
-		transform: translate(-50%, 0);
-		position: relative;
-	}
-	
-	.bannerholder{
-		height:98px;
-		opacity:0;
-		pointer-events: none;
-	}
+    .bannerholder {
+      height: 98px;
+      opacity: 0;
+      pointer-events: none;
+    }
 
-	ul{
-		display:none;
-	}
+    ul {
+      display: none;
+    }
 
-	.lang{
-		display: none;
-	}
+    .lang {
+      display: none;
+    }
 
-	span{
-		display:none;
-	}
+    span {
+      display: none;
+    }
+  }
 
-	.btn1{
-		display:none;
-	}
-}
-
-
-@media (min-width:2000px) {
-		.bannerholder{
-			width:2000px;
-			left:50%;
-			top:0px;
-			transform: translate(-50%, 0);
-			border-bottom-left-radius: 8px;
-			border-bottom-right-radius: 8px;
-			position: fixed;
-	}
+  @media (min-width: 2000px) {
+    .bannerholder {
+      width: 2000px;
+      left: 50%;
+      top: 0px;
+      transform: translate(-50%, 0);
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      position: fixed;
+    }
+  }
 </style>
