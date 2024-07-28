@@ -180,17 +180,14 @@ changeLanguage("hu");
   document.getElementById("square2").addEventListener('scroll', checkElementScroll);
 
   function checkElementScroll() {
-    console.log("Checking Scroll");
     var scrollPosition = document.getElementById("square2").scrollTop;
 
     if (scrollPosition > 0) {
       document.querySelector(".square").style.animationPlayState = "paused";
       document.querySelector(".bottomleftcorner").style.animationPlayState = "paused";
-      console.log("Scrolled");
     } else {
       document.querySelector(".square").style.animationPlayState = "running";
       document.querySelector(".bottomleftcorner").style.animationPlayState = "running";
-      console.log("Not Scrolled");
     }
   }
 </script>
@@ -227,12 +224,6 @@ changeLanguage("hu");
         ? ""
         : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
-    console.log(
-      navigator.hardwareConcurrency,
-      navigator.deviceMemory,
-      window.screen.width,
-      window.screen.height
-    );
     if (
       navigator.hardwareConcurrency < 5 ||
       navigator.deviceMemory < 5 ||

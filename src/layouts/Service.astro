@@ -132,7 +132,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
         }
 
         getServiceData().then(service => {
-          console.log(service);
           if (!service) return;
           document.querySelector(".extraholder").style.display = "block";
           document.getElementById("btncolor").style.backgroundColor =

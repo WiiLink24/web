@@ -294,8 +294,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
   function toggle2(id, origin) {
     var x = document.getElementById(id);
     var y = document.getElementById(origin);
-    console.log(x);
-    console.log(y);
     if (x.style.display === "none") {
       x.style.display = "grid";
       y.classList.remove("fullRound");

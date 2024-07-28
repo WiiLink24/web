@@ -10,7 +10,6 @@ import { Trans } from "astro-i18next/components";
 
 const url = new URL(Astro.request.url);
 let currentPath = url.pathname;
-console.log(currentPath);
 
 let posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
