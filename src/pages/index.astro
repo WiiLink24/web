@@ -27,6 +27,80 @@ changeLanguage("en");
     <body>
       <Themes defaultTheme="dark" />
 
+      <div
+        id="DNSNotice"
+        role="alert"
+        style="width:100%; height:100%; background-color:#12121260; backdrop-filter:blur(8px); display:none; z-index:10000; position:fixed;">
+        <div
+          style="left:50%; top:50%; transform:translate(-50%, -50%); width:95%; max-width:1500px; background-color:var(--bg-color-secondary); border:2px solid var(--border-color); border-radius:8px; overflow:scroll; position:absolute;">
+          <div
+            style="margin:30px; display:flex; align-items:center; justify-content:space-between; position:relative;">
+            <h2>
+              <b
+                ><i class="fa-solid fa-circle-exclamation"></i> Notice Regarding
+                the WiiLink DNS</b>
+            </h2>
+            <button
+              onclick="document.getElementById('DNSNotice').style.display = 'none';"
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Close"></button>
+          </div>
+          <div
+            style="margin:30px; display:flex; gap:30px; align-items:center; justify-content:space-between;">
+            <img
+              id="perspectiveImage"
+              src="/img/DNS.png"
+              class="mobilehide"
+              style="width:480px; height:auto; transition:0.1s; position:relative;"
+            />
+            <div>
+              Due to changes in the backend, we are changing our DNS servers. In
+              order to resume functionality on services like Animal Crossing:
+              City Folk DLC and WiiLink Tag, you will need to perform the
+              following changes to your installation:
+              <br />
+              <div
+                style="margin:16px; display:flex; flex-direction: row; align-items:center; gap:30px; flex-wrap:wrap; position:relative;">
+                <div
+                  style="display:flex; flex-direction:column; gap:8px; position:relative;">
+                  <p style="margin:0; font-weight:800;">
+                    <i class="fa-solid fa-circle-chevron-right"></i> Set your Primary
+                    DNS to
+                  </p>
+                  <span
+                    style="padding:8px; border-radius:8px; background-color:var(--bg-color-primary); box-shadow:0px 0px 20px #ffffff08; font-size:28px; font-weight:800;"
+                    >167.235.229.36</span
+                  >
+                </div>
+                <div
+                  style="display:flex; flex-direction:column; gap:8px; position:relative;">
+                  <p style="margin:0; font-weight:800;">
+                    <i class="fa-solid fa-circle-chevron-right"></i> Set your Secondary
+                    DNS to
+                  </p>
+                  <span
+                    style="padding:8px; border-radius:8px; background-color:var(--bg-color-primary); box-shadow:0px 0px 20px #ffffff08; font-size:28px; font-weight:800;"
+                    >1.1.1.1</span
+                  >
+                </div>
+                <br />
+              </div>
+              <div
+                style="padding:16px; border-radius:8px; border:2px solid #ffffff20; color:white !important; background-color: #47a9e1;">
+                To do this, you will need to navigate to Wii Settings <i
+                  class="fa-solid fa-circle-chevron-right"></i> Internet <i
+                  class="fa-solid fa-circle-chevron-right"></i> Connection Settings
+                <i class="fa-solid fa-circle-chevron-right"></i> the Connection that
+                you're using <i class="fa-solid fa-circle-chevron-right"></i> Change
+                Settings
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="symbolholder">
         <div class="backsymbol" id="movable">
           <div class="square2" id="square2">
@@ -38,15 +112,21 @@ changeLanguage("en");
                 style="width:400px; background-color:var(--bg-color-tertiary); animation:fadeout2 500ms 8s linear forwards; display:none; z-index:1000000; position:absolute;"
                 role="alert">
               </div>
+
               <Hero />
             </div>
-
             <Services />
+
             <Ad />
+
             <BuildInfo />
+
             <Donate />
+
             <Team />
+
             <Socials />
+
             <JumpIn />
 
             <div class="mainFooter">
@@ -97,26 +177,44 @@ changeLanguage("en");
 </Layout>
 
 <script is:inline>
-  document
-    .getElementById("square2")
-    .addEventListener("scroll", checkElementScroll);
+  document.getElementById("square2").addEventListener('scroll', checkElementScroll);
 
   function checkElementScroll() {
     var scrollPosition = document.getElementById("square2").scrollTop;
 
     if (scrollPosition > 0) {
       document.querySelector(".square").style.animationPlayState = "paused";
-      document.querySelector(".bottomleftcorner").style.animationPlayState =
-        "paused";
+      document.querySelector(".bottomleftcorner").style.animationPlayState = "paused";
     } else {
       document.querySelector(".square").style.animationPlayState = "running";
-      document.querySelector(".bottomleftcorner").style.animationPlayState =
-        "running";
+      document.querySelector(".bottomleftcorner").style.animationPlayState = "running";
     }
   }
 </script>
 
 <script>
+  const img = document.getElementById("perspectiveImage");
+
+  img.addEventListener("mousemove", function (e) {
+    const { left, top, width, height } = this.getBoundingClientRect();
+    const x = e.clientX - left;
+    const y = e.clientY - top;
+    const xc = width / 2;
+    const yc = height / 2;
+    const dx = x - xc;
+    const dy = y - yc;
+    // Adjust these values to control the effect intensity
+    const tiltX = dy / yc;
+    const tiltY = -(dx / xc);
+    const radius = Math.sqrt(Math.pow(tiltX, 2) + Math.pow(tiltY, 2));
+    const degree = radius * 10; // Max rotation in degrees
+    this.style.transform = `perspective(500px) rotateX(${tiltX * degree}deg) rotateY(${tiltY * degree}deg)`;
+  });
+
+  img.addEventListener("mouseleave", function () {
+    this.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg)";
+  });
+
   document.addEventListener("DOMContentLoaded", async function () {
     function getUrlParameter(name) {
       name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
@@ -126,7 +224,12 @@ changeLanguage("en");
         ? ""
         : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
-    if (navigator.hardwareConcurrency < 5 || navigator.deviceMemory < 5) {
+    if (
+      navigator.hardwareConcurrency < 5 ||
+      navigator.deviceMemory < 5 ||
+      window.screen.width <= 1000 ||
+      window.screen.height <= 720
+    ) {
       document.querySelector(".square").style.animation =
         "changecolorbasic 10s linear infinite";
       document.querySelector(".bottomleftcorner").style.animation = "none";
@@ -172,6 +275,7 @@ changeLanguage("en");
   const scrollableDiv = document.getElementById("square2");
 
   scrollableDiv.addEventListener("scroll", function () {
+    // Change the bg color in #square2 to var(--bg-color) if scrolled
     if (scrollableDiv.scrollTop > 0) {
       scrollableDiv.style.setProperty("background-color", "var(--bg-color)");
     } else {
@@ -272,6 +376,9 @@ changeLanguage("en");
     transition: 0.2;
     position: absolute;
   }
+  .accordion-body::-webkit-scrollbar {
+    display: none;
+  }
   .top {
     top: calc(50% - 90px);
     left: 50%;
@@ -281,6 +388,36 @@ changeLanguage("en");
     height: 100%;
     min-height: 800px;
     position: relative;
+  }
+  .accordion-body {
+    background-color: #fff;
+    max-height: 30vh;
+    overflow: scroll;
+  }
+  .btn-secondary {
+    background-color: rgba(0, 0, 255, 0.469);
+    border: 1px solid rgba(0, 0, 255, 0.117);
+  }
+  .btn-secondary:hover {
+    background-color: rgba(0, 0, 255, 0.427);
+    border: 1px solid rgba(0, 0, 255, 0.117);
+  }
+  .slidedown {
+    left: 50%;
+    top: 40px;
+    transform: translate(-50%, 0);
+    width: 1px;
+    height: 50px;
+    color: black;
+    z-index: 1;
+    position: relative;
+  }
+  .about {
+    top: 0;
+    right: 0;
+    color: #00000050;
+    z-index: 1;
+    position: absolute;
   }
   .symbolholder {
     background-color: var(--bg-color-absolute);
@@ -294,6 +431,43 @@ changeLanguage("en");
     z-index: 1;
     overflow: hidden;
     position: fixed;
+  }
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translate(0, 10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
+  }
+  .logohold {
+    top: 0;
+    left: -80px;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+  }
+  .release-name {
+    font-weight: bolder;
+  }
+  .guide {
+    background-color: #ffffff00;
+    color: #000000;
+  }
+  .btn {
+    padding: 15px;
+    margin: 5px;
+    margin-top: 10px;
+  }
+  .data {
+    width: 615px;
+    right: 5%;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1;
+    position: absolute;
   }
   #square2 {
     width: calc(100% - 30px);
@@ -357,22 +531,20 @@ changeLanguage("en");
     z-index: 1;
     position: absolute;
   }
-  .square {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
-    z-index: 0;
-    animation: changecolor 10s linear infinite;
-    border-radius: 8px;
-    position: absolute;
-  }
-
   @keyframes changecolor {
     0% {
       filter: hue-rotate(0deg);
     }
     100% {
       filter: hue-rotate(360deg);
+    }
+  }
+  @keyframes fadeout2 {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
   @keyframes fadein {
@@ -395,26 +567,74 @@ changeLanguage("en");
       opacity: 0;
     }
   }
-  @keyframes fadeout2 {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
+  .square {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
+    z-index: 0;
+    animation: changecolor 10s linear infinite;
+    border-radius: 8px;
+    position: absolute;
   }
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translate(0, 10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
+
+  h1 {
+    color: var(--bg-text);
+    --bg-text: #ffffff;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  h2 {
+    --bg-text: #000000;
+
+    color: var(--bg-text);
+    text-align: left;
+    z-index: 1;
+    position: relative;
+  }
+  .text-gradient {
+    background-image: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 400%;
+    background-position: 0%;
+  }
+  .instructions {
+    margin-bottom: 2rem;
+    border: 1px solid rgba(var(--accent-light), 25%);
+    background: linear-gradient(
+      rgba(var(--accent-dark), 66%),
+      rgba(var(--accent-dark), 33%)
+    );
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+  .instructions code {
+    font-size: 0.8em;
+    font-weight: bold;
+    background: rgba(var(--accent-light), 12%);
+    color: rgb(var(--accent-light));
+    border-radius: 4px;
+    padding: 0.3em 0.4em;
+  }
+  .instructions strong {
+    color: rgb(var(--accent-light));
   }
 
   @media only screen and (max-width: 1000px) {
+    .logohold {
+      display: none;
+    }
+    .data {
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 95%;
+      height: auto;
+      position: relative;
+    }
     .mobilehide {
       display: none;
     }
@@ -432,6 +652,30 @@ changeLanguage("en");
       min-height: 0;
       max-width: 1500px;
       position: relative;
+    }
+
+    .socials {
+      right: 20px;
+    }
+
+    .footer-holder {
+      opacity: 0;
+      display: none;
+    }
+
+    .footer-logo {
+      width: 150px;
+      height: auto;
+    }
+
+    .slogan {
+      display: none;
+    }
+
+    .accordion-body {
+      background-color: #fff;
+      max-height: 20vh;
+      overflow: scroll;
     }
     .symbolholder {
       width: 100%;
@@ -480,6 +724,14 @@ changeLanguage("en");
       animation: none !important;
       border-radius: 0px;
     }
+    .btn {
+      width: 100%;
+    }
+    .dropdownbtn {
+      top: 0;
+      right: 0;
+      width: 50px;
+    }
   }
 
   @media only screen and (min-width: 2000px) {
@@ -503,7 +755,6 @@ changeLanguage("en");
     }
   }
 </style>
-
 <style is:global>
   .kawaii {
     filter: invert(0) !important;

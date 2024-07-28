@@ -12,6 +12,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     <div class="footer-holder" style={flex}>
       <div class="column" style="width:20%; min-width:300px; gap:0;">
         <img
+          loading="lazy"
           class="footer-logo logo"
           src="../../img/logo.png"
           width="150px"
@@ -29,6 +30,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
               data-bs-title={t("site.creator")}
               style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
               ><img
+                loading="lazy"
                 src="https://github.com/humanoidear.png"
                 style="width:20px; transform:translate(-10px, -13.5px);"
               /></button
@@ -261,6 +263,14 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
   </div>
 </div>
 
+<script>
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
+</script>
 <style>
   h4,
   p,
