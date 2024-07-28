@@ -316,12 +316,6 @@ let loadingindicator = document.getElementById("loadingindicator");
 					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
 				}
             }
-
-			import('https://unpkg.com/twemoji@latest/dist/twemoji.min.js')
-    .then(twemoji => {
-		twemoji.parse(document.getElementById("optionsDisplay"));
-			twemoji.parse(document.getElementById("titleTranslate"));
-    });	
         });
 
 		document.addEventListener('click', function(event) {

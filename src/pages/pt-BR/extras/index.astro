@@ -114,44 +114,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       }
     }
   });
-
-  let canChange = 0;
-
-  async function effect(i) {
-    document.getElementsByClassName("service")[i].style.transform =
-      "translate(0, -5px) scale(105%)";
-    document.getElementsByClassName("service")[i].style.boxShadow =
-      "0px 0px 20px #12121220";
-    document.getElementsByClassName("img")[i].style.transform = "scale(100%)";
-    document.getElementsByClassName("service")[i].style.transition = "0.3s";
-    document.getElementsByClassName("img")[i].style.transition = "0.3s";
-    canChange = 0;
-  }
-  async function noEffect(i) {
-    document.getElementsByClassName("service")[i].style.transform =
-      "translate(0, 0px) scale(100%)";
-    document.getElementsByClassName("service")[i].style.boxShadow =
-      "0px 0px 0px #12121220";
-    document.getElementsByClassName("img")[i].style.transform = "scale(105%)";
-    canChange = 1;
-  }
-</script>
-
-<script>
-  const scrollableDiv = document.getElementById("square2");
-
-  scrollableDiv.addEventListener("scroll", function () {
-    // Check if the user has scrolled to the bottom
-    if (
-      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-      scrollableDiv.clientHeight + 30
-    ) {
-      // User has scrolled to the end
-      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-    } else {
-      scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
-    }
-  });
 </script>
 
 <style>

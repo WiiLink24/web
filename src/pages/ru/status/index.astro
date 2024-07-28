@@ -67,23 +67,6 @@ changeLanguage("ru");
 
 <Footer />
 
-<script>
-  const scrollableDiv = document.getElementById("square2");
-
-  scrollableDiv.addEventListener("scroll", function () {
-    // Check if the user has scrolled to the bottom
-    if (
-      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-      scrollableDiv.clientHeight + 30
-    ) {
-      // User has scrolled to the end
-      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-    } else {
-      scrollableDiv.style.setProperty("height", "calc(100% - 0px)");
-    }
-  });
-</script>
-
 <script is:inline>
   document.addEventListener("DOMContentLoaded", async function () {
     let fetcher = document.getElementById("fetcherStatus").innerHTML;
