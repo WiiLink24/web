@@ -19,7 +19,7 @@ const { isGuide, isMain } = Astro.props;
 
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
 	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.webp" width="190px"></a>
-	  <ul id="links" style="display:none;">
+	  <div id="links" style="display:none;">
 		<a class="header-link" href={localizePath("/")} aria-label="Home Link"><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
 		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")} aria-label="News Link"><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
 		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
@@ -99,12 +99,10 @@ const { isGuide, isMain } = Astro.props;
 		<div class="dropdown">
 			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false" aria-label="Language Picker">
 			</button>
-			<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
-				<form>
-				<li style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></li>
-				<div class="optDisplay" id="optionsDisplay" style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;"></div>
-			</form>
-			</ul>
+			<div class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
+				<div style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></div>
+				<ul class="optDisplay" id="optionsDisplay" style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;"></ul>
+			</div>
 		  </div>
 		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn" aria-label="More button"><i
 			class="fa-solid fa-chevron-down"
@@ -137,7 +135,7 @@ const { isGuide, isMain } = Astro.props;
 			</div>
 		</div>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
-	 </ul>
+	</div>
 </r>
 
 <script is:inline>
@@ -226,8 +224,8 @@ for (let i = 0; i < dropdown.options.length; i++) {
     const langCode = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
     const [flag, lang] = flagMap[langCode] || ["usa", "English (US)"];
 
-    const optionLinkFlag = `<img alt='${lang} Emoji' src='/img/flags/${flag}.webp' class='emoji'>`;
-    const optionLink = `<img alt='${lang} Text' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
+    const optionLinkFlag = `<img alt='Emoji ${lang}' src='/img/flags/${flag}.webp' class='emoji'>`;
+    const optionLink = `<img alt='Text ${lang}' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
 
     if (i === 0) {
         titleTranslate.innerHTML = optionLinkFlag;
@@ -543,31 +541,10 @@ function checkPageScroll() {
 		display:none;
 	}
 
-	.btn1{
-		transform: translate(0, 10px);
-		font-size: 20px;
+	ul {
+		list-style-type: none;
+		padding:0px;
 		margin:0px;
-		margin-bottom:18px;
-		position: relative;
-	}
-
-	.btn2{
-		top:50%;
-		left:258px;
-		transform: translate(0, -50%);
-		opacity:0;
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: absolute;
-	}
-
-	.btn3{
-		transform: translate(0, 10px);
-		font-size: 20px;
-		margin:0px;
-		margin-bottom:18px;
-		position: relative;
 	}
 
 a:link{
@@ -645,7 +622,7 @@ a:visited{
 	}
 }
 
-ul{
+#links, #dropMenu{
 	display: flex;
 	gap:10px;
 	width:auto;
@@ -688,10 +665,6 @@ ul{
 		height:98px;
 		opacity:0;
 		pointer-events: none;
-	}
-
-	ul{
-		display:none;
 	}
 
 	.lang{
