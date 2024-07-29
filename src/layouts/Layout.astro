@@ -56,7 +56,7 @@ const { title, description, image } = Astro.props;
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="darkreader-lock" />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
+    <script type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
     >
       import { set } from "astro/zod";
     </script>
@@ -73,13 +73,16 @@ const { title, description, image } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script
+    type="text/partytown"
       src="https://kit.fontawesome.com/e47ece3e74.js"
       crossorigin="anonymous"></script>
     <link
+    rel="preconnect"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
     <link
+    rel="preconnect"
       href="https://getbootstrap.com/docs/5.3/assets/css/docs.css"
       rel="stylesheet"
     />
@@ -88,7 +91,7 @@ const { title, description, image } = Astro.props;
       integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
       crossorigin="anonymous"></script>
     <script
-      async
+      type="text/partytown"
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4011748932374526"
       crossorigin="anonymous"></script>
     <title>{title}</title>

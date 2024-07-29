@@ -27,80 +27,6 @@ changeLanguage("en-GB");
     <body>
       <Themes defaultTheme="dark" />
 
-      <div
-        id="DNSNotice"
-        role="alert"
-        style="width:100%; height:100%; background-color:#12121260; backdrop-filter:blur(8px); display:none; z-index:10000; position:fixed;">
-        <div
-          style="left:50%; top:50%; transform:translate(-50%, -50%); width:95%; max-width:1500px; background-color:var(--bg-color-secondary); border:2px solid var(--border-color); border-radius:8px; overflow:scroll; position:absolute;">
-          <div
-            style="margin:30px; display:flex; align-items:center; justify-content:space-between; position:relative;">
-            <h2>
-              <b
-                ><i class="fa-solid fa-circle-exclamation"></i> Notice Regarding
-                the WiiLink DNS</b>
-            </h2>
-            <button
-              onclick="document.getElementById('DNSNotice').style.display = 'none';"
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="alert"
-              aria-label="Close"></button>
-          </div>
-          <div
-            style="margin:30px; display:flex; gap:30px; align-items:center; justify-content:space-between;">
-            <img
-              id="perspectiveImage"
-              src="/img/DNS.png"
-              class="mobilehide"
-              style="width:480px; height:auto; transition:0.1s; position:relative;"
-            />
-            <div>
-              Due to changes in the backend, we are changing our DNS servers. In
-              order to resume functionality on services like Animal Crossing:
-              City Folk DLC and WiiLink Tag, you will need to perform the
-              following changes to your installation:
-              <br />
-              <div
-                style="margin:16px; display:flex; flex-direction: row; align-items:center; gap:30px; flex-wrap:wrap; position:relative;">
-                <div
-                  style="display:flex; flex-direction:column; gap:8px; position:relative;">
-                  <p style="margin:0; font-weight:800;">
-                    <i class="fa-solid fa-circle-chevron-right"></i> Set your Primary
-                    DNS to
-                  </p>
-                  <span
-                    style="padding:8px; border-radius:8px; background-color:var(--bg-color-primary); box-shadow:0px 0px 20px #ffffff08; font-size:28px; font-weight:800;"
-                    >167.235.229.36</span
-                  >
-                </div>
-                <div
-                  style="display:flex; flex-direction:column; gap:8px; position:relative;">
-                  <p style="margin:0; font-weight:800;">
-                    <i class="fa-solid fa-circle-chevron-right"></i> Set your Secondary
-                    DNS to
-                  </p>
-                  <span
-                    style="padding:8px; border-radius:8px; background-color:var(--bg-color-primary); box-shadow:0px 0px 20px #ffffff08; font-size:28px; font-weight:800;"
-                    >1.1.1.1</span
-                  >
-                </div>
-                <br />
-              </div>
-              <div
-                style="padding:16px; border-radius:8px; border:2px solid #ffffff20; color:white !important; background-color: #47a9e1;">
-                To do this, you will need to navigate to Wii Settings <i
-                  class="fa-solid fa-circle-chevron-right"></i> Internet <i
-                  class="fa-solid fa-circle-chevron-right"></i> Connection Settings
-                <i class="fa-solid fa-circle-chevron-right"></i> the Connection that
-                you're using <i class="fa-solid fa-circle-chevron-right"></i> Change
-                Settings
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       <div class="symbolholder">
         <div class="backsymbol" id="movable">
           <div class="square2" id="square2">
@@ -165,6 +91,7 @@ changeLanguage("en-GB");
           </g>
         </svg>
         <img
+          alt=""
           src="/img/corner-bot.svg"
           class="svcicons"
           style="top:5px; left:-5px; z-index:-10; position:absolute;"
@@ -193,27 +120,6 @@ changeLanguage("en-GB");
 </script>
 
 <script>
-  const img = document.getElementById("perspectiveImage");
-
-  img.addEventListener("mousemove", function (e) {
-    const { left, top, width, height } = this.getBoundingClientRect();
-    const x = e.clientX - left;
-    const y = e.clientY - top;
-    const xc = width / 2;
-    const yc = height / 2;
-    const dx = x - xc;
-    const dy = y - yc;
-    // Adjust these values to control the effect intensity
-    const tiltX = dy / yc;
-    const tiltY = -(dx / xc);
-    const radius = Math.sqrt(Math.pow(tiltX, 2) + Math.pow(tiltY, 2));
-    const degree = radius * 10; // Max rotation in degrees
-    this.style.transform = `perspective(500px) rotateX(${tiltX * degree}deg) rotateY(${tiltY * degree}deg)`;
-  });
-
-  img.addEventListener("mouseleave", function () {
-    this.style.transform = "perspective(500px) rotateX(0deg) rotateY(0deg)";
-  });
 
   document.addEventListener("DOMContentLoaded", async function () {
     function getUrlParameter(name) {

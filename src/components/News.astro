@@ -16,15 +16,15 @@ posts = posts.slice(0, 3);
     {
       posts.map(post => (
         <div class="post">
-          <a href={`/news/${post.slug}/`}>
+          <a href={`/news/${post.slug}/`} aria-label={post.data.title + ' Link'}>
             <FormattedDate date={post.data.pubDate} />
             <div class="faded" />
             {post.data.heroImage && (
-              <img loading="lazy" class="heroImage" src={post.data.heroImage} />
+              <img alt={post.data.title} loading="lazy" class="heroImage" src={post.data.heroImage} />
             )}
             <div class="title">
               {post.data.authImage && (
-                <img class="authimage" src={post.data.authImage} alt="" />
+                <img alt="News Author PFP" class="authimage" src={post.data.authImage} alt="" />
               )}
               <b style="color:white !important; width:80%; margin-right:10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:right; position:relative;">
                 {post.data.title}

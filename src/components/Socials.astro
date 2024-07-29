@@ -24,7 +24,7 @@ import { Trans } from "astro-i18next/components";
             style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
             class="badge bg-primary">{t("socials.twFollowers")}</span
           >
-          <img loading="lazy" class="socials-logo" src="img/twitter_logo.png" height="40px" />
+          <img loading="lazy" alt="Twitter Logo" class="socials-logo" src="img/twitter_logo.png" height="40px" />
           <div class="buttons">
             <div class="dropdown" style="width:100%; position:relative; ">
               <button
@@ -41,28 +41,28 @@ import { Trans } from "astro-i18next/components";
                 style="width:250%; padding:10px; background-color:var(--bg-color-secondary);"
               >
                 <li>
-                  <a class="dropdown-item center" href="https://twitter.com/WiiLink24"
-                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> English</a
+                  <a class="dropdown-item center" aria-label="English Twitter Link" href="https://twitter.com/WiiLink24"
+                    ><img alt="American Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> English</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_es"
-                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> Español</a
+                  <a class="dropdown-item center" aria-label="Spanish Twitter Link" href="https://twitter.com/WiiLink_es"
+                    ><img alt="Spanish Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> Español</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_fr"
-                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg" style="margin-right:5px;" width="20" height="25"></i> Français</a
+                  <a class="dropdown-item center" aria-label="French Twitter Link" href="https://twitter.com/WiiLink_fr"
+                    ><img alt="French Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg" style="margin-right:5px;" width="20" height="25"></i> Français</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_ptbr"
-                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg" style="margin-right:5px;" width="20" height="25"></i> Português (Brasil)</a
+                  <a class="dropdown-item center" aria-label="Protuguese Twitter Link" href="https://twitter.com/WiiLink_ptbr"
+                    ><img alt="Portuguese Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg" style="margin-right:5px;" width="20" height="25"></i> Português (Brasil)</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" href="https://twitter.com/WiiLink_jp"
-                    ><img src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" style="margin-right:5px;" width="20" height="25"></i> 日本語</a
+                  <a class="dropdown-item center" aria-label="Japanese Twitter Link" href="https://twitter.com/WiiLink_jp"
+                    ><img alt="Japanese Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" style="margin-right:5px;" width="20" height="25"></i> 日本語</a
                   >
                 </li>
               </ul>
@@ -72,9 +72,10 @@ import { Trans } from "astro-i18next/components";
         <div
           class="twholder"
           style="top:0px; left:0; width:100%; z-index:1; position:absolute;">
-          <a class="twitter-timeline" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">Tweets by WiiLink24</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+          <a class="twitter-timeline" aria-label="English Twitter Link" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">Tweets by WiiLink24</a> <script type="text/partytown" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
         </div>
         <img
+          alt="Loading..."
           style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(0); z-index:0; position:absolute;"
           src="img/loading.gif"
           width="30px"
@@ -82,13 +83,13 @@ import { Trans } from "astro-i18next/components";
       </div>
       <div class="discord" style="border-radius:8px 16px 8px 8px;">
         <div class="follow dsc">
-          <img loading="lazy" class="socials-logo" src="img/discord_logo.png" height="30px" />
+          <img alt="Discord Logo" loading="lazy" class="socials-logo" src="img/discord_logo.png" height="30px" />
           <span
             style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
             class="badge bg-info">{t("socials.dcMembers")}</span
           >
           <div class="buttons">
-            <a href="https://discord.gg/wiilink"
+            <a href="https://discord.gg/wiilink" aria-label="Discord Link"
               ><div style="background-color:var(--bg-color-secondary); color:#004078;" class="btn">
                 {t("socials.dcJoin")}
               </div></a
@@ -97,6 +98,8 @@ import { Trans } from "astro-i18next/components";
         </div>
         <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
           <iframe
+          type="text/partytown"
+          title="Discord Widget"
             src="https://discord.com/widget?id=206934458954153984&theme=dark"
             style="top:-20px; position:absolute;"
             width="100%"
@@ -107,6 +110,7 @@ import { Trans } from "astro-i18next/components";
           ></iframe>
         </div>
         <img
+        alt="Loading..."
           style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;"
           src="img/loading.gif"
           width="30px"
@@ -115,7 +119,7 @@ import { Trans } from "astro-i18next/components";
       <div class="social github" style="border-radius:8px 8px 8px 16px;">
         <div class="inner">
           <i class="fa-brands fa-github"></i>
-          <a href="https://github.com/WiiLink24"
+          <a href="https://github.com/WiiLink24" aria-label="GitHub Link"
             ><span
               style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
               class="badge bg-dark">{t("socials.ghFollowers")}</span
@@ -135,7 +139,7 @@ import { Trans } from "astro-i18next/components";
       <div class="social youtube" style="border-radius:8px 8px 16px 8px;">
         <div class="inner">
           <i class="fa-brands fa-youtube" style="color:rgb(206, 47, 47);"></i><a
-            href="https://www.youtube.com/@wiilink"
+            href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
             ><span
               style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
               class="badge bg-danger">{t("socials.ytSubscribers")}</span

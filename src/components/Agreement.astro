@@ -15,9 +15,10 @@ const posts = (await getCollection("blog")).sort(
 <div class="holder">
   <a
     href={localizePath("/")}
+    aria-label="Home Link"
     class="logohold"
     style="transform:translate(-50px,0);"
-    ><img class="logo" src="/img/Wii_Link_Logo.png" width="140px" /></a
+    ><img alt="WiiLink Logo" class="logo" src="/img/Wii_Link_Logo.png" width="140px" /></a
   >
   <button
     style="z-index:1000;"
@@ -37,6 +38,7 @@ const posts = (await getCollection("blog")).sort(
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
     <img
+      alt="WiiLink Logo"
       src="/img/Wii_Link_Logo.png"
       width="140px"
       class="invert"
@@ -52,6 +54,7 @@ const posts = (await getCollection("blog")).sort(
 
     <div class="buttons">
       <a href="/"
+      aria-label="Home Link"
         ><button
           type="button"
           class="btn btn-success"
@@ -73,44 +76,44 @@ const posts = (await getCollection("blog")).sort(
     <hr />
     <div class="holdcontainer"></div>
     <div class="elements">
-      <a class="link" href="/" style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
+      <a class="link" href="/" aria-label="Home Link" style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
         <i class="fas fa-home"></i>
         {t("header.home")}
       </a>
-      <a class="link" href="/news" style="z-index: 1; position:relative">
+      <a class="link" href="/news" aria-label="News Link" style="z-index: 1; position:relative">
         <i class="fas fa-newspaper"></i>
         {t("header.news")}
       </a>
-      <a class="link" href="/guide" style="z-index: 1; position:relative">
+      <a class="link" href="/guide" aria-label="Guide Link" style="z-index: 1; position:relative">
         <i class="fas fa-book"></i>
         {t("header.guide")}
       </a>
-      <a class="link" href="/status" style="z-index: 1; position:relative">
+      <a class="link" href="/status" aria-label="Status Link" style="z-index: 1; position:relative">
         <i class="fas fa-info-circle"></i>
         {t("header.status")}
       </a>
-      <a class="link" href="/services" style="z-index: 1; position:relative">
+      <a class="link" href="/services" aria-label="Services Link" style="z-index: 1; position:relative">
         <i class="fas fa-cogs"></i>
         {t("header.services")}
       </a>
-      <a class="link" href="/extras" style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
+      <a class="link" href="/extras" aria-label="Extras Link" style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
         <i class="fas fa-gift"></i>
         {t("header.extras")}
       </a>
     </div>
     <br />
     <li style="padding:12px; opacity:1 !important;">
-      <a href="https://wfc.wiilink24.com" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+      <a href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         ><div><i class="fa-solid fa-globe"></i> WiiLink WFC</div><span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a href="https://miicontest.wiilink.ca" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+      <a href="https://miicontest.wiilink.ca" aria-label="CMOC Viewing Tool Link" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div><span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a
       >
     </li>
     <li style="padding:12px; opacity:0.3 !important;">
-      <a style="cursor: not-allowed; display:flex; align-items:center; justify-content:space-between; gap:8px;"
+      <a style="cursor: not-allowed; display:flex; align-items:center; justify-content:space-between; gap:8px;" href="" aria-label="EVC Viewing Tool Link"
         ><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div></a
       >
     </li>
@@ -118,20 +121,20 @@ const posts = (await getCollection("blog")).sort(
     <hr>
 
     <li>
-      <a href="https://www.discord.gg/wiilink"
+      <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
         ><i class="fa-brands fa-discord"></i> Join our Discord server!</a
       >
     </li>
     <li>
-      <a href="/privacy-policy"
+      <a href="/privacy-policy" aria-label="Privacy Policy Link"
         ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
       >
     </li>
     <li>
-      <a href="/tos"><i class="fa-solid fa-feather"></i> {t("header.tos")}</a>
+      <a href="/tos" aria-label="Terms of Service Link"><i class="fa-solid fa-feather"></i> {t("header.tos")}</a>
     </li>
     <li>
-      <a href="/eula"><i class="fa-solid fa-book"></i> EULA</a>
+      <a href="/eula" aria-label="EULA Link"><i class="fa-solid fa-book"></i> EULA</a>
     </li>
   </div>
 </div>

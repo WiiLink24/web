@@ -21,12 +21,13 @@ import { Trans } from "astro-i18next/components";
     <iframe
       width="100%"
       height="250"
+      title="WiiLink Promotional Video"
       class="promotional-video"
       style="border-radius: 8px; margin-bottom: 8px; box-shadow:0px 0px 38px #ed5d234b; display:none; z-index: 1;"
       src="https://www.youtube.com/embed/i5c4ShKd704?controls=0"
       allow="autoplay;"></iframe>
     <div style="display:flex; align-items:center; gap:18px;">
-      <img class="logo" src="/img/logo.png" alt="logo" width="150px" />
+      <img alt="WiiLink Logo" class="logo" src="/img/logo.png" alt="logo" width="150px" />
       <marquee
         onclick="document.getElementById('DNSNotice').style.display = 'block';"
         scrollamount="1"
@@ -48,11 +49,12 @@ import { Trans } from "astro-i18next/components";
         <i class="fa fa-circle-info" style="margin-right:5px;"></i>
         <a
           href="https://github.com/WiiLink24/WiiLink24-Patcher"
+          aria-label="WiiLink Patcher"
           style="text-decoration: none;"
           >WiiLink Patcher
           <l id="verno"></l></a
         > | {t("site.heroDev")}
-        <a href="https://github.com/PablosCorner">PablosCorner</a>
+        <a href="https://github.com/PablosCorner" aria-label="Pablo's GitHub Link">PablosCorner</a>
       </p>
       <div class="horizontal-line"></div>
     </div>
@@ -65,6 +67,7 @@ import { Trans } from "astro-i18next/components";
           class="btn btn-primary btn-lg"
           style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
+            alt="Loading..."
             src="img/loading.gif"
             style="transform:translate(0, -2px); filter:brightness(1000);"
             width="20px"
@@ -86,7 +89,8 @@ import { Trans } from "astro-i18next/components";
               id="download-windows"
               class="dropdown-item"
               style="display:flex; align-items:center; justify-content:space-between;"
-              href="#"
+              href=""
+              aria-label="Download for Windows"
               ><div>
                 <i class="fa-brands fa-microsoft" style="margin-right:5px;"></i>
                 {t("site.downloadFor")} Windows
@@ -108,8 +112,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" style="color:var(--color) !important;" id="download-macos-arm">Apple Silicon</a>
-              <a class="dropdown-item" style="color:var(--color) !important;" id="download-macos-x64">64bit</a>
+              <a class="dropdown-item" href="" style="color:var(--color) !important;" id="download-macos-arm" aria-label="Apple Silicon Download">Apple Silicon</a>
+              <a class="dropdown-item" href="" style="color:var(--color) !important;" id="download-macos-x64" aria-label="Apple 64bit Download">64bit</a>
             </div>
           </li>
           <li>
@@ -127,8 +131,8 @@ import { Trans } from "astro-i18next/components";
             </div>
             <div
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
-              <a class="dropdown-item" style="color:var(--color) !important;" id="download-linux-arm">ARM64</a>
-              <a class="dropdown-item" style="color:var(--color) !important;" id="download-linux-x64">64bit</a>
+              <a class="dropdown-item" href="" style="color:var(--color) !important;" id="download-linux-arm" aria-label="Linux ARM64 Link">ARM64</a>
+              <a class="dropdown-item" href="" style="color:var(--color) !important;" id="download-linux-x64" aria-label="Linux 64bit Link">64bit</a>
             </div>
           </li>
           <div class="line-container" style="gap: 8px; margin-top: 8px;">
@@ -148,6 +152,8 @@ import { Trans } from "astro-i18next/components";
               href="https://github.com/riiconnect24/RiiConnect24-Patcher/releases"
               ><div style="transform:translate(-5px, 0);">
                 <img
+                  alt="RC24 Logo"
+                  loading="lazy"
                   class="invert"
                   src="https://rc24.xyz/images/logo_small_white.png"
                   style="filter: invert(1);"
@@ -167,6 +173,7 @@ import { Trans } from "astro-i18next/components";
               class="dropdown-item"
               style="display:flex; align-items:center; justify-content:space-between;"
               href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid"
+              aria-label="Download for Android"
               ><div>
                 <i class="fa-brands fa-android" style="margin-right:5px;"
                 ></i> {t("site.downloadFor")} Android
@@ -178,6 +185,7 @@ import { Trans } from "astro-i18next/components";
             <a
               class="dropdown-item"
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
+              aria-label="Changelog"
               style="color:var(--color) !important;"
               ><i class="fa fa-book" style="margin-right:5px;"></i>
               {t("site.changelog")}</a
@@ -205,8 +213,8 @@ import { Trans } from "astro-i18next/components";
       />
       <label class="form-check-label" for="flexCheckDefault">
         <Trans i18nKey="site.terms">
-          I have read and accepted the <a href="/tos">terms of service</a> and the
-          <a href="/privacy-policy">privacy policy</a>.
+          I have read and accepted the <a href="/tos" aria-label="Terms of Service Link">terms of service</a> and the
+          <a href="/privacy-policy" aria-label="Privacy Policy Link">privacy policy</a>.
         </Trans>
       </label>
     </div>
@@ -215,6 +223,7 @@ import { Trans } from "astro-i18next/components";
   <div class="right">
     <div class="holder-svc" id="hero-services">
       <img
+        alt="Loading..."
         src="/img/loading.gif"
         style="top:50%; left:50%; filter:brightness(1000); transform:translate(-50%, -50%); position:absolute;"
         width="36px"
@@ -224,7 +233,7 @@ import { Trans } from "astro-i18next/components";
       <div class="bar-holder">
         <div id="bar" class="bar"></div>
       </div>
-      <a href="#intro" class="more">
+      <a href="#intro" aria-label="Jump to Services List" class="more">
         {t("site.heroMorePrompt")}
         <i class="fa-solid fa-chevron-right"></i>
       </a>
@@ -406,15 +415,15 @@ import { Trans } from "astro-i18next/components";
           randomServices.forEach((service, index) => {
             html += `
             <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
-              <img src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
+              <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
               <div style="z-index: 1; position:relative;">
                 <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
                 <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
-                <a href="${service.link}">${service.name}</a>
+                <a href="${service.link}" aria-label="${service.name} Link">${service.name}</a>
                 </p>
               </div>
               <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
-                <img src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
+                <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
               </div>
             </div>
           `;

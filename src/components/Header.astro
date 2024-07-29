@@ -15,20 +15,20 @@ const { isGuide, isMain } = Astro.props;
 
 <r lang={i18next.language} class="bannerholder">
 	<div id="loadingindicator" style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;"></div>
-	<img id="loadingspinner" src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
+	<img id="loadingspinner" alt="Loading..." src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
 
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} class="logohold"><img class="logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
+	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
 	  <ul id="links" style="display:none;">
-		<a class="header-link" href={localizePath("/")}><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
-		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")}><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
+		<a class="header-link" href={localizePath("/")} aria-label="Home Link"><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
+		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")} aria-label="News Link"><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
 		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
 			<div class="holder">
 			{
 				posts.slice(0,3).map(post => (
 				  <div class="post" style="padding:8px; border-radius:4px;">
-					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`}>
-					  <img loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
+					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`} aria-label={post.data.title + 'News Link'}>
+					  <img alt="News Post Image" loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
 					  <div>
 					  <div class="title">
 						<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
@@ -45,11 +45,11 @@ const { isGuide, isMain } = Astro.props;
 			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.news-info")}</div>
 			</div>
 		</div>
-		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")}><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
+		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")} aria-label="Guide Link"><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
 		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
 			<div class="holder">
 			<div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install'>
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install' aria-label="Install Guide Link">
 					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
 				<div>
 				  <div class="title">
@@ -63,7 +63,7 @@ const { isGuide, isMain } = Astro.props;
 				</a>
 			  </div>
 			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving'>
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving' aria-label="Troubleshooting Guide Link">
 					<i class="fa fa-circle-exclamation" style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
 				<div>
 				  <div class="title">
@@ -77,7 +77,7 @@ const { isGuide, isMain } = Astro.props;
 				</a>
 			  </div>
 			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq'>
+				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq' aria-label="FAQ Link">
 					<i class="fa fa-circle-question" style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
 				<div>
 				  <div class="title">
@@ -94,10 +94,10 @@ const { isGuide, isMain } = Astro.props;
 			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.guide-info")}</div>
 			</div>
 		</div>
-		<a class="header-link" href={localizePath("/status")}><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
-		<a class="header-link" href={localizePath("/services")}><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
+		<a class="header-link" href={localizePath("/status")} aria-label="Status Link"><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
+		<a class="header-link" href={localizePath("/services")} aria-label="Services Link"><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
 		<div class="dropdown">
-			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false">
+			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false" aria-label="Language Picker">
 			</button>
 			<ul class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
 				<form>
@@ -106,33 +106,34 @@ const { isGuide, isMain } = Astro.props;
 			</form>
 			</ul>
 		  </div>
-		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn"><i
+		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn" aria-label="More button"><i
 			class="fa-solid fa-chevron-down"
 			style="font-size:20px; pointer-events:none;"></i>
 			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle"></span>
 			</button>
 		<div id="dropdownMore">
-		<a class="dropdown-item" href={localizePath("/extras")}><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://miicontest.wiilink.ca"><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div> <span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px; opacity:0.3; cursor:not-allowed;"><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div></a>
+		<a class="dropdown-item" href={localizePath("/extras")} aria-label="Extras Link"><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
+			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
+			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://miicontest.wiilink.ca" aria-label="CMOC Viewing Tool Link"><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div> <span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a>
+			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px; opacity:0.3; cursor:not-allowed;" href="" aria-label="EVC Viewing Tool Link"><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div></a>
 				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 			<a
 				  class="dropdown-item"
 				  href="https://wiilink24.com/privacy-policy"
+				  aria-label="Privacy Policy Link"
 				  ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
 				>
-				<a class="dropdown-item" href="https://wiilink24.com/tos"
+				<a class="dropdown-item" href="https://wiilink24.com/tos" aria-label="Terms of Service Link"
 				  ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
 				>
-				<a class="dropdown-item" href="https://wiilink24.com/eula"
+				<a class="dropdown-item" href="https://wiilink24.com/eula" aria-label="EULA Link"
 				  ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
 				>
 				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-				<button id="themeColor" type="button" class="btn btn-light dropdown-element"  onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
-				<a href={localizePath("/")}><button type="button" class="btn btn-success dropdown-element"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
-				<a href="https://www.discord.gg/wiilink"><button type="button" class="btn btn-primary dropdown-element"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
+				<button id="themeColor" type="button" class="btn btn-light dropdown-element" aria-label="Theme Button" onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
+				<a href={localizePath("/")} aria-label="Home Link"><button type="button" class="btn btn-success dropdown-element" aria-label="Download Button"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
+				<a href="https://www.discord.gg/wiilink" aria-label="Discord Link"><button type="button" class="btn btn-primary dropdown-element" aria-label="Discord Button"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
 			</div>
 		</div>
 			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
@@ -223,86 +224,85 @@ let loadingindicator = document.getElementById("loadingindicator");
                 var optionName = option.value;
                 var optionLink = option.innerHTML;
 				var optionLinkFlag = optionLink.substring(0,5);
-				
 
 				switch (optionName.substring(0, 7).toLowerCase()) {
-					case '/':
-						optionLinkFlag = "<img src='/img/flags/usa.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/usa.png' class='emoji2'> English (US)";
-						break;
-					case '/en-gb':
-						optionLinkFlag = "<img src='/img/flags/uk.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/uk.png' class='emoji2'> English (UK)";
-						break;
-					case '/pt-br':
-						optionLinkFlag = "<img src='/img/flags/brazil.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
-						break;
-					case '/pt-pt':
-						optionLinkFlag = "<img src='/img/flags/portugal.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
-						break;
-					case '/vi':
-						optionLinkFlag = "<img src='/img/flags/vi.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
-						break;
-					case '/ja':
-						optionLinkFlag = "<img src='/img/flags/japan.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/japan.png' class='emoji2'> 日本語";
-						break;
-					case '/fr':
-						optionLinkFlag = "<img src='/img/flags/france.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/france.png' class='emoji2'> Français";
-						break;
-					case '/es':
-						optionLinkFlag = "<img src='/img/flags/spain.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/spain.png' class='emoji2'> Español";
-						break;
-					case '/de':
-						optionLinkFlag = "<img src='/img/flags/german.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/german.png' class='emoji2'> Deutsch";
-						break;
-					case '/ru':
-						optionLinkFlag = "<img src='/img/flags/russia.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/russia.png' class='emoji2'> Русский";
-						break;
-					case '/it':
-						optionLinkFlag = "<img src='/img/flags/italy.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/italy.png' class='emoji2'> Italiano";
-						break;
-					case '/fi':
-						optionLinkFlag = "<img src='/img/flags/finland.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/finland.png' class='emoji2'> Suomi";
-						break;
-					case '/hu':
-    					optionLinkFlag = "<img src='/img/flags/hu.png' class='emoji'>";
-    					optionLink = "<img src='/img/flags/hu.png' class='emoji2'> Magyar";
-    					break;
-  					case '/tr':
-   						optionLinkFlag = "<img src='/img/flags/tr.png' class='emoji'>";
-    					optionLink = "<img src='/img/flags/tr.png' class='emoji2'> Türkçe";
-    					break;
-					case '/ko-kr':
-						optionLinkFlag = "<img src='/img/flags/kr.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/kr.png' class='emoji2'> 한국어";
-						break;
-					case '/es-lat':
-						optionLinkFlag = "<img src='/img/flags/mexico.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
-						break;
-					case '/ca':
-						optionLinkFlag = "<img src='/img/flags/cat.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/cat.png' class='emoji2'> Català (CA)";
-						break;
-					case '/frp':
-						optionLinkFlag = "<img src='/img/flags/arp.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/arp.png' class='emoji2'> Arpetan";
-						break;
-					case '/va':
-						optionLinkFlag = "<img src='/img/flags/va.png' class='emoji'>";
-						optionLink = "<img src='/img/flags/va.png' class='emoji2'> Català (VA)";
-						break;
-				}
+	case '/':
+		optionLinkFlag = "<img alt='English' src='/img/flags/usa.png' class='emoji'>";
+		optionLink = "<img alt='English (US)' src='/img/flags/usa.png' class='emoji2'> English (US)";
+		break;
+	case '/en-gb':
+		optionLinkFlag = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji'>";
+		optionLink = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji2'> English (UK)";
+		break;
+	case '/pt-br':
+		optionLinkFlag = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji'>";
+		optionLink = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
+		break;
+	case '/pt-pt':
+		optionLinkFlag = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji'>";
+		optionLink = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
+		break;
+	case '/vi':
+		optionLinkFlag = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji'>";
+		optionLink = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
+		break;
+	case '/ja':
+		optionLinkFlag = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji'>";
+		optionLink = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji2'> 日本語";
+		break;
+	case '/fr':
+		optionLinkFlag = "<img alt='French' src='/img/flags/france.png' class='emoji'>";
+		optionLink = "<img alt='French' src='/img/flags/france.png' class='emoji2'> Français";
+		break;
+	case '/es':
+		optionLinkFlag = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji'>";
+		optionLink = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji2'> Español";
+		break;
+	case '/de':
+		optionLinkFlag = "<img alt='German' src='/img/flags/german.png' class='emoji'>";
+		optionLink = "<img alt='German' src='/img/flags/german.png' class='emoji2'> Deutsch";
+		break;
+	case '/ru':
+		optionLinkFlag = "<img alt='Russian' src='/img/flags/russia.png' class='emoji'>";
+		optionLink = "<img alt='Russian' src='/img/flags/russia.png' class='emoji2'> Русский";
+		break;
+	case '/it':
+		optionLinkFlag = "<img alt='Italian' src='/img/flags/italy.png' class='emoji'>";
+		optionLink = "<img alt='Italian' src='/img/flags/italy.png' class='emoji2'> Italiano";
+		break;
+	case '/fi':
+		optionLinkFlag = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji'>";
+		optionLink = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji2'> Suomi";
+		break;
+	case '/hu':
+		optionLinkFlag = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji'>";
+		optionLink = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji2'> Magyar";
+		break;
+	case '/tr':
+		optionLinkFlag = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji'>";
+		optionLink = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji2'> Türkçe";
+		break;
+	case '/ko-kr':
+		optionLinkFlag = "<img alt='Korean' src='/img/flags/kr.png' class='emoji'>";
+		optionLink = "<img alt='Korean' src='/img/flags/kr.png' class='emoji2'> 한국어";
+		break;
+	case '/es-lat':
+		optionLinkFlag = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji'>";
+		optionLink = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
+		break;
+	case '/ca':
+		optionLinkFlag = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji'>";
+		optionLink = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji2'> Català (CA)";
+		break;
+	case '/frp':
+		optionLinkFlag = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji'>";
+		optionLink = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji2'> Arpetan";
+		break;
+	case '/va':
+		optionLinkFlag = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji'>";
+		optionLink = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji2'> Català (VA)";
+		break;
+}
 
 				if (i == 0) {
 					const button = document.getElementById('titleTranslate');
@@ -311,7 +311,7 @@ let loadingindicator = document.getElementById("loadingindicator");
 					optionLink = optionLink.replace(/<img[^>]*>/g, "");
 					button.setAttribute('data-bs-original-title', optionLink);
 				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' aria-label='" + optionName + " Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='" + optionLink + " Button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
 				}
             }
         });

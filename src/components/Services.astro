@@ -42,11 +42,11 @@ data = await fetchData();
   <div class="slider">
     <div class="slide-track">
       {data.map(service => (
-        <a class="service-link" href={service.link}>
+        <a class="service-link" href={service.link}  aria-label={service.name + ' Link'}>
           <div class='service'>
             <div class='service-color' style={{backgroundColor: service.color}}></div>
             <div class='service-content'>
-              <img loading='lazy' src={`img/${service.icon}`} />
+              <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />
               <h2>{service.name}</h2>
               <div class="horizontal-line"></div>
             </div>
@@ -61,11 +61,11 @@ data = await fetchData();
     
     <div class="slide-track">
       {data.map(service => (
-        <a class="service-link" href={service.link}>
+        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
           <div class='service'>
             <div class='service-color' style={{backgroundColor: service.color}}></div>
             <div class='service-content'>
-              <img loading='lazy' src={`img/${service.icon}`} />
+              <img alt={service.name + 'Icon'} loading='lazy' src={`img/${service.icon}`} />
               <h2>{service.name}</h2>
               <div class="horizontal-line"></div>
             </div>

@@ -12,6 +12,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     <div class="footer-holder" style={flex}>
       <div class="column" style="width:20%; min-width:300px; gap:0;">
         <img
+          alt="WiiLink Logo"
           loading="lazy"
           class="footer-logo logo"
           src="../../img/logo.png"
@@ -21,7 +22,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           style="color:#ffffff80; !important; margin-top:15px; opacity:0.7; margin-right:8px; text-align:left;">
           <i class="fa-solid fa-globe-americas" style="margin-right:5px;"></i>
           {t("footer.siteby")}
-          <a href="https://github.com/humanoidear"
+          <a href="https://github.com/humanoidear" aria-label="Alex's GitHub"
             ><button
               type="button"
               class="btn1 btn btn-success"
@@ -30,6 +31,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
               data-bs-title={t("site.creator")}
               style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
               ><img
+                alt="Alex's GitHub PFP"
                 loading="lazy"
                 src="https://github.com/humanoidear.png"
                 style="width:20px; transform:translate(-10px, -13.5px);"
@@ -41,12 +43,12 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         <p
           style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;">
           <i class="fa-solid fa-envelope-open" style="margin-right:5px;"></i>
-          <a href="mailto:contact@wiilink24.com"><u>contact@wiilink24.com</u></a
+          <a href="mailto:contact@wiilink24.com" aria-label="Contact Link"><u>contact@wiilink24.com</u></a
           >
         </p>
         <p
           style="color:#ffffff80; !important; margin-top:-10px; opacity:0.7; margin-right:8px; text-align:left;">
-          <a href="https://wfc.wiilink24.com" style="margin-right:5px;"
+          <a href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link" style="margin-right:5px;"
             ><i class="fas fa-wifi"></i> WiiLink WFC</a
           >
         </p>
@@ -57,34 +59,34 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           <hr
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
-          <a href="/" class="animated-link">{t("header.home")}</a>
-          <a href="/news" class="animated-link">{t("header.news")}</a>
-          <a href="/guide" class="animated-link">{t("header.guide")}</a>
-          <a href="/status" class="animated-link">{t("header.status")}</a>
-          <a href="/services" class="animated-link">{t("header.services")}</a>
-          <a href="/extras" class="animated-link">{t("header.extras")}</a>
+          <a href="/" aria-label="Home Link" class="animated-link">{t("header.home")}</a>
+          <a href="/news" aria-label="News Link" class="animated-link">{t("header.news")}</a>
+          <a href="/guide" aria-label="Guide Link" class="animated-link">{t("header.guide")}</a>
+          <a href="/status" aria-label="Status Link" class="animated-link">{t("header.status")}</a>
+          <a href="/services" aria-label="Services Link" class="animated-link">{t("header.services")}</a>
+          <a href="/extras" aria-label="Extras Link" class="animated-link">{t("header.extras")}</a>
         </div>
         <div class="column">
           <h4><b>{t("footer.links")}</b></h4>
           <hr
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
-          <a href="https://github.com/WiiLink24" class="animated-link">GitHub</a
+          <a href="https://github.com/WiiLink24" aria-label="GitHub Link" class="animated-link">GitHub</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/repositories"
+            href="https://github.com/orgs/WiiLink24/repositories" aria-label="GitHub Repository Link"
             class="animated-link">{t("footer.repo")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/projects"
+            href="https://github.com/orgs/WiiLink24/projects" aria-label="GitHub Projects Link"
             class="animated-link">{t("footer.projects")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/teams"
+            href="https://github.com/orgs/WiiLink24/teams" aria-label="GitHub Teams Link"
             class="animated-link">{t("footer.teams")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/people"
+            href="https://github.com/orgs/WiiLink24/people" aria-label="GitHub People Link"
             class="animated-link">{t("footer.people")}</a
           >
         </div>
@@ -94,7 +96,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
           <a
-            href="https://discord.gg/wiilink"
+            href="https://discord.gg/wiilink" aria-label="Discord Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="discord.gg/wiilink"
@@ -102,7 +104,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             ></i>Discord</a
           >
           <div class="dropdown">
-            <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
+            <a href="#" aria-label="Language Dropdown" class="dropdown-toggle" data-bs-toggle="dropdown">
               <i style="margin-right:10px;" class="fa-brands fa-twitter"
               ></i>Twitter
             </a>
@@ -116,8 +118,9 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink24"
+                    href="https://twitter.com/WiiLink24" aria-label="English Twitter Link"
                     ><img
+                    alt="Flag of United States"
                       src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg"
                       width="25"
                     /></a
@@ -127,8 +130,9 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_es"
+                    href="https://twitter.com/WiiLink_es" aria-label="Spanish Twitter Link"
                     ><img
+                      alt="Flag of Spain"
                       src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg"
                       width="25"
                     /></a
@@ -138,8 +142,9 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_fr"
+                    href="https://twitter.com/WiiLink_fr" aria-label="French Twitter Link"
                     ><img
+                      alt="Flag of France"
                       src="https://abs-0.twimg.com/emoji/v2/svg/1f1f7-1f1fa.svg"
                       width="25"
                     /></a
@@ -149,8 +154,9 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_ptbr"
+                    href="https://twitter.com/WiiLink_ptbr" aria-label="Portuguese Twitter Link"
                     ><img
+                      alt="Flag of Brazil"
                       src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg"
                       width="25"
                     /></a
@@ -160,8 +166,9 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_jp"
+                    href="https://twitter.com/WiiLink_jp" aria-label="Japanese Twitter Link"
                     ><img
+                      alt="Flag of Japan"
                       src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg"
                       width="25"
                     /></a
@@ -171,7 +178,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             </ul>
           </div>
           <a
-            href="https://github.com/WiiLink24"
+            href="https://github.com/WiiLink24" aria-label="Github Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
@@ -179,7 +186,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             ></i>GitHub</a
           >
           <a
-            href="https://www.patreon.com/WiiLink24"
+            href="https://www.patreon.com/WiiLink24" aria-label="Patreon Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title={t("site.donate")}
@@ -187,7 +194,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             ></i>Patreon</a
           >
           <a
-            href="https://www.youtube.com/@wiilink"
+            href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
@@ -201,22 +208,22 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
           <a
-            href="https://github.com/WiiLink24/WiiLink24-Patcher"
+            href="https://github.com/WiiLink24/WiiLink24-Patcher" aria-label="WiiLink Patcher Repository Link"
             class="animated-link">WiiLink Patcher</a
           >
           <a
-            href="https://github.com/WiiLink24/wfc-server"
+            href="https://github.com/WiiLink24/wfc-server" aria-label="WiiLink WFC Repository Link"
             class="animated-link">WiiLink WFC</a
           >
-          <a href="https://github.com/WiiLink24/web" class="animated-link"
+          <a href="https://github.com/WiiLink24/web" aria-label="WiiLink Website Repository Link" class="animated-link"
             >Website</a
           >
           <a
-            href="https://github.com/WiiLink24/food-server"
+            href="https://github.com/WiiLink24/food-server" aria-label="WiiLink Food Channel Repository Link"
             class="animated-link">Food Channel</a
           >
           <a
-            href="https://github.com/WiiLink24/room-server"
+            href="https://github.com/WiiLink24/room-server" aria-label="WiiLink Wii Room Repository Link"
             class="animated-link">Wii Room</a
           >
         </div>
@@ -241,21 +248,21 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     </div>
 
     <div class="footer-holder legal" style={display}>
-      <a href="/tos">
+      <a href="/tos" aria-label="Terms of Service Link">
         <i class="fas fa-arrow-right" style="margin-right:5px;"></i>{
           t("header.tos")
         }</a
       >
-      <a href="/privacy-policy"
+      <a href="/privacy-policy" aria-label="Privacy Policy Link"
         ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
         {t("header.privacyPolicy")}</a
       >
-      <a href="/eula"
+      <a href="/eula" aria-label="EULA Link"
         ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
         {t("header.eula-long")}</a
       >
       <a
-        href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)"
+        href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" aria-label="Cookies Message Popup"
         ><i class="fas fa-arrow-right" style="margin-right:5px;"></i> Privacy and
         cookie settings</a
       >
