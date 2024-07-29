@@ -99,6 +99,14 @@ const { title, description, image } = Astro.props;
     <slot />
   </body>
 </html>
+<script>
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
+</script>
 <style is:global>
   @font-face {
     font-family: Rubik;
@@ -293,6 +301,13 @@ const { title, description, image } = Astro.props;
   }
   toolbar {
     display: none !important;
+  }
+  .color {
+    background: url("/img/header_bg.webp");
+    background: AccentColor;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: brightness(150%);
   }
   .toc-post:before {
     font-family: Gilroy;

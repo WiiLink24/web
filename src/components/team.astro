@@ -1,7 +1,30 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
-import { localizePath } from "astro-i18next";
+import { localizePath, defaultLocale } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
+
+import { promises as fs } from "fs";
+import path from "path";
+
+let team;
+
+async function fetchData() {
+  const language = i18next.language === "en" ? "" : i18next.language;
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "json",
+    language,
+    "team.json"
+  );
+  const fileContents = await fs.readFile(filePath, "utf8");
+  const jsonData = JSON.parse(fileContents);
+  return jsonData.members.member;
+}
+
+team = await fetchData();
+const random = Math.floor(Math.random() * (team.length - 10)) + 10;
+team.splice(4, 0, team[random]);
 ---
 
 <head>
@@ -33,86 +56,176 @@ import { Trans } from "astro-i18next/components";
           >
         </Trans>
       </h2>
-      <div id="members_mobile" class="members"></div>
-      <div id="members" class="members"></div>
+      <div id="members_mobile" class="members">
+        {
+          team.slice(0, 20).map(member => (
+            <div
+              class="membersmall"
+              style={
+                `background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; background-color: var(--bg-color-secondary); border-radius:16px; box-shadow:0px 5px 20px` +
+                member.color +
+                `40; display:flex; overflow:hidden;`
+              }>
+              <a
+                href={member.link}
+                aria-label={member.name + `'s Social media`}
+                style="text-decoration:none; color:#212529;">
+                <img
+                  loading="lazy"
+                  alt={member.name + `'s PFP`}
+                  src={member.pfp}
+                  style="border-radius:4px; object-fit:cover;"
+                  width="90px"
+                  height="100%"
+                />
+              </a>
+            </div>
+          ))
+        }
+      </div>
+      <div id="members" class="members">
+        {
+          team.slice(0, 10).map(member => (
+            <div
+              class="member"
+              style={
+                `background-color: var(--bg-color-secondary); box-shadow: 0px 5px 20px` +
+                member.color +
+                `20;`
+              }>
+              <a
+                href={member.link}
+                aria-label={member.name + `'s Social media`}
+                style="text-decoration: none; color: #212529;">
+                <img
+                  loading="lazy"
+                  alt={member.name + `'s PFP`}
+                  src={member.pfp}
+                  style="background-image: url(/img/header_bg.webp); background-size: cover; border-radius: 0px; object-fit: cover;"
+                  width="90px"
+                  height="100%"
+                />
+              </a>
+              <div style="top: 50%; left: 20px; width: calc(100% - 130px); transform: translate(0, -50%); position: relative;">
+                <a
+                  href={member.link}
+                  aria-label={member.name + `'s Social media`}
+                  style="text-decoration: none; color: #212529;">
+                  <h2 style="top: 10px; text-align: right; font-family: Gilroy; position: relative;">
+                    {member.name}
+                    <img
+                      loading="lazy"
+                      alt={member.name + `'s Country Flag`}
+                      src={member.flag}
+                      style="top: -3px; object-fit: contain; position: relative;"
+                      width="30px"
+                      height=""
+                    />
+                  </h2>
+                  <h3 style="top: 0px; left: 0; width: 100%; text-align: right; font-size: 25px; font-weight: 200; position: relative;">
+                    <div set:html={member.title} />
+                  </h3>
+                </a>
+              </div>
+            </div>
+          ))
+        }
+      </div>
       <div
         style="top:18px; width:100%; border-radius:8px; overflow-x:hidden; overflow-y:visible; position:relative;">
         <div
           style="width:4000px; display:flex; flex-direction:row; flex-wrap:nowrap; position:relative;">
-          <div id="members_small" class="members_small"></div>
-          <div id="members_small2" class="members_small"></div>
+          <div id="members_small" class="members_small">
+            {
+              team.slice(0, Math.ceil(team.length / 2)).map(member => (
+                <div
+                  class="membersmall"
+                  onMouseOver="pauseanim();"
+                  onMouseOut="playanim();"
+                  title={member.name + `\n` + member.title}
+                  style="
+                    transition:0.3s;
+                    height: 90px;
+                    width: 90px;
+                    align-self: stretch;
+                    background-color: var(--bg-color-secondary);
+                    border-radius: 8px;
+                    display: flex;
+                    overflow: hidden;
+                  "
+                  key={member.name}>
+                  <a
+                    href={member.link}
+                    aria-label={member.name + `'s Social media`}
+                    style="text-decoration: none; color: #21252;">
+                    <img
+                      loading="lazy"
+                      alt={member.name + `'s PFP`}
+                      src={member.pfp}
+                      style="
+                        background-size url(/img/header_bg.webp);
+                        background-size: cover;
+                        border-radius: 4px;
+                        object-fit: cover;
+                      "
+                      width="90px"
+                      height="100%"
+                    />
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+          <div id="members_small2" class="members_small">
+            {
+              team
+                .slice(Math.ceil(team.length / 2), team.length)
+                .map(member => (
+                  <div
+                    class="membersmall"
+                    onMouseOver="pauseanim();"
+                    onMouseOut="playanim();"
+                    title={member.name + `\n` + member.title}
+                    style="
+                    transition:0.3s;
+                    height: 90px;
+                    width: 90px;
+                    align-self: stretch;
+                    background-color: var(--bg-color-secondary);
+                    border-radius: 8px;
+                    display: flex;
+                    overflow: hidden;
+                  "
+                    key={member.name}>
+                    <a
+                      href={member.link}
+                      aria-label={member.name + `'s Social media`}
+                      style="text-decoration: none; color: #21252;">
+                      <img
+                        loading="lazy"
+                        alt={member.name + `'s PFP`}
+                        src={member.pfp}
+                        style="
+                        background-size url(/img/header_bg.webp);
+                        background-size: cover;
+                        border-radius: 4px;
+                        object-fit: cover;
+                      "
+                        width="90px"
+                        height="100%"
+                      />
+                    </a>
+                  </div>
+                ))
+            }
+          </div>
         </div>
       </div>
     </div>
   </div>
 </body>
 
-<h1 id="fetcherTeam" style="display:none;">
-  json{localizePath("/team.json")}
-</h1>
-
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", async function () {
-    let fetcher = document.getElementById("fetcherTeam").innerHTML;
-    fetch(fetcher)
-      .then(response => response.json())
-      .then(data => showService(data));
-
-    function createMemberHTML(member) {
-      return `
-        <div class='member' style='background-color: var(--bg-color-secondary); box-shadow:0px 5px 20px ${member.color}20;'>
-          <a href='${member.link}' aria-label="${member.name}'s Social media" style='text-decoration:none; color:#212529;'>
-            <img loading='lazy' alt="${member.name}'s PFP" src='${member.pfp}' style='background-image:url(/img/header_bg.webp); background-size:cover; border-radius:0px; object-fit:cover;' width='90px' height='100%'>
-          </a>
-            <div style='top:50%; left:20px; width:calc(100% - 130px); transform:translate(0, -50%); position:relative;'>
-              <a href='${member.link}' aria-label="${member.name}'s Social media" style='text-decoration:none; color:#212529;'>
-              <h2 style='top:10px; text-align:right; font-family:Gilroy; position:relative;'>${member.name} <img loading='lazy' alt="${member.name}'s Country Flag" srcset='${member.flag}' style='top:-3px; object-fit:contain; position:relative;' width='30px' height=''></h2>
-              <h3 style='top:0px; left:0; width:100%; text-align:right; font-size:25px; font-weight:200; position:relative;'>${member.title}</h3>
-              </a>
-            </div>
-        </div>`;
-    }
-
-    function showService(data) {
-      let team = document.getElementById("members");
-      let teamSmall = document.getElementById("members_small");
-      let teamSmall2 = document.getElementById("members_small2");
-      let teamMobile = document.getElementById("members_mobile");
-      let r = Math.floor(Math.random() * 15 + 10);
-
-      for (let i = 0; i < data.members.member.length; i++) {
-        let member = data.members.member[i];
-        if (i < 10) {
-          if (i == 4) {
-            r = Math.floor(Math.random() * 15 + 10);
-            member = data.members.member[r];
-          }
-          team.innerHTML += createMemberHTML(member);
-        } else {
-          let memberHTML = `
-            <div class='membersmall' onmouseover='pauseanim();' onmouseout='playanim();' title='${member.name}\n${member.title}' style='transition: 0.3s; height:90px; width:90px; align-self:stretch; background-color: var(--bg-color-secondary); border-radius:8px; display:flex; overflow:hidden;'>
-              <a href='${member.link}' aria-label="${member.name}'s Social media" style='text-decoration:none; color:#212529;'>
-                <img loading='lazy' alt="${member.name}'s PFP" src='${member.pfp}' style='background-image:url(/img/header_bg.webp); background-size:cover; border-radius:4px; object-fit:cover;' width='90px' height='100%'>
-              </a>
-            </div>`;
-          teamSmall.innerHTML += memberHTML;
-          teamSmall2.innerHTML += memberHTML;
-        }
-      }
-
-      for (let i = 0; i < 20; i++) {
-        let member = data.members.member[i];
-        let memberHTML = `
-          <div class='membersmall' style='background-color:rgb(242,254,250); height:90px; width:90px; align-self:stretch; background-color: var(--bg-color-secondary); border-radius:16px; box-shadow:0px 5px 20px ${member.color}40; display:flex; overflow:hidden;'>
-            <a href='${member.link}' aria-label="${member.name}'s Social media" style='text-decoration:none; color:#212529;'>
-              <img loading='lazy' alt="${member.name}'s PFP" src='${member.pfp}' style='border-radius:4px; object-fit:cover;' width='90px' height='100%'>
-            </a>
-          </div>`;
-        teamMobile.innerHTML += memberHTML;
-      }
-    }
-  });
-
   function pauseanim() {
     document.getElementById("members_small").style.animationPlayState =
       "paused";
@@ -205,22 +318,15 @@ import { Trans } from "astro-i18next/components";
   #members_mobile {
     display: none;
   }
-  a:hover {
-    opacity: 0.5;
-  }
   .members_small {
-    margin-right:18px;
+    margin-right: 18px;
     display: flex;
-    gap:18px;
+    gap: 18px;
     position: relative;
     border-radius: 8px;
     z-index: 10;
     scroll-snap-type: both mandatory;
     overflow-y: hidden !important;
-  }
-
-  .member {
-    display: none;
   }
 
   .build {

@@ -157,7 +157,6 @@ import { Trans } from "astro-i18next/components";
         </div>
       </div>
     </div>
-    <div class="socials-small"></div>
   </div>
 </div>
 
@@ -226,12 +225,6 @@ import { Trans } from "astro-i18next/components";
     border-radius: 8px;
     line-height: 50px;
   }
-  .socials-small {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 15px;
-    position: relative;
-  }
   .btn {
     padding: 5px;
     padding-left: 10px;
@@ -297,18 +290,6 @@ import { Trans } from "astro-i18next/components";
     overflow: hidden;
     position: relative;
   }
-  .slider::before {
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 1) 40%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    content: "";
-    height: 100%;
-    position: absolute;
-    width: 30%;
-    z-index: 2;
-  }
   .donator-holder {
     top: -30px;
     height: 100px;
@@ -316,17 +297,6 @@ import { Trans } from "astro-i18next/components";
     border-radius: 8px;
     overflow: hidden;
     position: relative;
-  }
-  .slider {
-    top: -35px;
-    height: 150px;
-    background: white;
-    margin: auto;
-    border-radius: 8px;
-    z-index: 0;
-    width: 1500px;
-    overflow: hidden;
-    position: absolute;
   }
   .build {
     top: 300px;
@@ -337,13 +307,6 @@ import { Trans } from "astro-i18next/components";
     margin-bottom: 20px;
     font-size: 25px;
   }
-  .color {
-    background: url("/img/header_bg.webp");
-    background: AccentColor;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: brightness(150%);
-  }
   .title {
     text-align: left;
     width: 100%;
@@ -351,39 +314,6 @@ import { Trans } from "astro-i18next/components";
     font-size: 50px;
     font-family: Gilroy;
     position: relative;
-  }
-  blockquote.twitter-tweet {
-    display: inline-block;
-    font-family: "Helvetica Neue", Roboto, "Segoe UI", Calibri, sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 16px;
-    border-color: #eee #ddd #bbb;
-    border-radius: 8px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
-    margin: 10px 5px;
-    padding: 0 16px 16px 16px;
-    max-width: 468px;
-  }
-
-  blockquote.twitter-tweet p {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 20px;
-  }
-
-  blockquote.twitter-tweet a {
-    color: inherit;
-    font-weight: normal;
-    text-decoration: none;
-    outline: 0 none;
-  }
-
-  blockquote.twitter-tweet a:hover,
-  blockquote.twitter-tweet a:focus {
-    text-decoration: underline;
   }
 
   @media only screen and (max-width: 1000px) {

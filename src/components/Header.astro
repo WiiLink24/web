@@ -165,269 +165,179 @@ let loadingindicator = document.getElementById("loadingindicator");
       }, 500);
     });
 
-        document.addEventListener('DOMContentLoaded', function () {
+	document.getElementById("links").style.display = "flex";
+localStorage.setItem('languageOverride', 'yes');
 
-			document.getElementById("links").style.display = "flex";
-			localStorage.setItem('languageOverride', 'yes');
+const dropdown = document.getElementById("my-select-id");
+let editLink = "/" + dropdown.options[0].value.split('/').slice(0, 2).join('/');
 
-            var dropdown = document.getElementById("my-select-id");
-			var option = dropdown.options[0];
-			var optionName = option.value;
-			var editLink = optionName.split('/');
-			editlink = editLink.splice(0,2);
-			editLink = "/" + editLink.join('/') + "";
-			if (editLink == "/") {
-				editLink = "";
-			}
-
-			if (languageOverride != 'yes') {
-
-			switch (navigator.language.substring(0,2)) {
-				case "en":
-					if (navigator.language.substring(0,5) == "en-GB"){
-						localStorage.setItem('languageOverride', 'yes');
-						location.href = "/en-GB" + editLink + "";
-						break;
-					}
-					break;
-				case "es":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/es" + editLink + "";
-					break;
-				case "fr":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/fr" + editLink + "";
-					break;
-				case "de":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/fr" + editLink + "";
-					break;
-				case "pt":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/pt-PT" + editLink + "";
-					break;
-				case "jp":
-					localStorage.setItem('languageOverride', 'yes');
-					location.href = "/jp" + editLink + "";
-					break;
-			}
-			}
-
-            var optionsDisplayDiv = document.getElementById("optionsDisplay");
-			var currentLangDiv = document.getElementById("currentlang");
-			var titleTranslate = document.getElementById("titleTranslate");
-
-            optionsDisplayDiv.innerHTML = "";
-
-			for (var i = 0; i < dropdown.options.length; i++) {
-                var option = dropdown.options[i];
-                var optionName = option.value;
-                var optionLink = option.innerHTML;
-				var optionLinkFlag = optionLink.substring(0,5);
-
-				var langConverterCheck = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
-
-				switch (langConverterCheck) {
-	case '':
-		optionLinkFlag = "<img alt='English' src='/img/flags/usa.webp' class='emoji'>";
-		optionLink = "<img alt='English (US)' src='/img/flags/usa.webp' class='emoji2'> English (US)";
-		break;
-	case 'en-gb':
-		optionLinkFlag = "<img alt='English (UK)' src='/img/flags/uk.webp' class='emoji'>";
-		optionLink = "<img alt='English (UK)' src='/img/flags/uk.webp' class='emoji2'> English (UK)";
-		break;
-	case 'pt-br':
-		optionLinkFlag = "<img alt='Portuguese (BR)' src='/img/flags/brazil.webp' class='emoji'>";
-		optionLink = "<img alt='Portuguese (BR)' src='/img/flags/brazil.webp' class='emoji2'> Português (BR)";
-		break;
-	case 'pt-pt':
-		optionLinkFlag = "<img alt='Portuguese (PT)' src='/img/flags/portugal.webp' class='emoji'>";
-		optionLink = "<img alt='Portuguese (PT)' src='/img/flags/portugal.webp' class='emoji2'> Português (PT)";
-		break;
-	case 'vi':
-		optionLinkFlag = "<img alt='Vietnamese' src='/img/flags/vi.webp' class='emoji'>";
-		optionLink = "<img alt='Vietnamese' src='/img/flags/vi.webp' class='emoji2'> Tiếng Việt";
-		break;
-	case 'ja':
-		optionLinkFlag = "<img alt='Japanese' src='/img/flags/japan.webp' class='emoji'>";
-		optionLink = "<img alt='Japanese' src='/img/flags/japan.webp' class='emoji2'> 日本語";
-		break;
-	case 'fr':
-		optionLinkFlag = "<img alt='French' src='/img/flags/france.webp' class='emoji'>";
-		optionLink = "<img alt='French' src='/img/flags/france.webp' class='emoji2'> Français";
-		break;
-	case 'es':
-		optionLinkFlag = "<img alt='Spanish' src='/img/flags/spain.webp' class='emoji'>";
-		optionLink = "<img alt='Spanish' src='/img/flags/spain.webp' class='emoji2'> Español";
-		break;
-	case 'de':
-		optionLinkFlag = "<img alt='German' src='/img/flags/german.webp' class='emoji'>";
-		optionLink = "<img alt='German' src='/img/flags/german.webp' class='emoji2'> Deutsch";
-		break;
-	case 'ru':
-		optionLinkFlag = "<img alt='Russian' src='/img/flags/russia.webp' class='emoji'>";
-		optionLink = "<img alt='Russian' src='/img/flags/russia.webp' class='emoji2'> Русский";
-		break;
-	case 'it':
-		optionLinkFlag = "<img alt='Italian' src='/img/flags/italy.webp' class='emoji'>";
-		optionLink = "<img alt='Italian' src='/img/flags/italy.webp' class='emoji2'> Italiano";
-		break;
-	case 'fi':
-		optionLinkFlag = "<img alt='Finnish' src='/img/flags/finland.webp' class='emoji'>";
-		optionLink = "<img alt='Finnish' src='/img/flags/finland.webp' class='emoji2'> Suomi";
-		break;
-	case 'hu':
-		optionLinkFlag = "<img alt='Hungarian' src='/img/flags/hu.webp' class='emoji'>";
-		optionLink = "<img alt='Hungarian' src='/img/flags/hu.webp' class='emoji2'> Magyar";
-		break;
-	case 'tr':
-		optionLinkFlag = "<img alt='Turkish' src='/img/flags/tr.webp' class='emoji'>";
-		optionLink = "<img alt='Turkish' src='/img/flags/tr.webp' class='emoji2'> Türkçe";
-		break;
-	case 'ko-kr':
-		optionLinkFlag = "<img alt='Korean' src='/img/flags/kr.webp' class='emoji'>";
-		optionLink = "<img alt='Korean' src='/img/flags/kr.webp' class='emoji2'> 한국어";
-		break;
-	case 'es-lat':
-		optionLinkFlag = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.webp' class='emoji'>";
-		optionLink = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.webp' class='emoji2'> Español (LATAM)";
-		break;
-	case 'ca':
-		optionLinkFlag = "<img alt='Catalan (CA)' src='/img/flags/cat.webp' class='emoji'>";
-		optionLink = "<img alt='Catalan (CA)' src='/img/flags/cat.webp' class='emoji2'> Català (CA)";
-		break;
-	case 'frp':
-		optionLinkFlag = "<img alt='Arpetan' src='/img/flags/arp.webp' class='emoji'>";
-		optionLink = "<img alt='Arpetan' src='/img/flags/arp.webp' class='emoji2'> Arpetan";
-		break;
-	case 'va':
-		optionLinkFlag = "<img alt='Catalan (VA)' src='/img/flags/va.webp' class='emoji'>";
-		optionLink = "<img alt='Catalan (VA)' src='/img/flags/va.webp' class='emoji2'> Català (VA)";
-		break;
+if (editLink === "/") {
+    editLink = "";
 }
 
-				if (i == 0) {
-					const button = document.getElementById('titleTranslate');
-					titleTranslate.innerHTML = optionLinkFlag;
-					currentLangDiv.innerHTML += "<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> " + optionLink + "</div>";
-					optionLink = optionLink.replace(/<img[^>]*>/g, "");
-					button.setAttribute('data-bs-original-title', optionLink);
-				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' aria-label='" + optionName + " Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='Language Button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
-				}
-            }
-        });
+if (localStorage.getItem('languageOverride') !== 'yes') {
+    const langMap = {
+        "en": "/en-GB",
+        "es": "/es",
+        "fr": "/fr",
+        "de": "/fr",
+        "pt": "/pt-PT",
+        "jp": "/jp"
+    };
 
-		document.addEventListener('click', function(event) {
-    var dropdownButton = document.getElementById('titleTranslate');
-    var dropdownMenu = document.getElementById('dropMenu');
-	var dropdownMore = document.getElementById('dropdownMore');
-    var moreHeader = document.getElementById('moreHeader');
+    const language = navigator.language.substring(0, 5);
+    if (language === "en-GB" || langMap[navigator.language.substring(0, 2)]) {
+        localStorage.setItem('languageOverride', 'yes');
+        location.href = langMap[language] + editLink;
+    }
+}
 
-    // Check if the click event's target is inside the dropdownMore element
+const optionsDisplayDiv = document.getElementById("optionsDisplay");
+const currentLangDiv = document.getElementById("currentlang");
+const titleTranslate = document.getElementById("titleTranslate");
+
+optionsDisplayDiv.innerHTML = "";
+
+const flagMap = {
+    '': ["usa", "English (US)"],
+    'en-gb': ["uk", "English (UK)"],
+    'pt-br': ["brazil", "Português (BR)"],
+    'pt-pt': ["portugal", "Português (PT)"],
+    'vi': ["vi", "Tiếng Việt"],
+    'ja': ["japan", "日本語"],
+    'fr': ["france", "Français"],
+    'es': ["spain", "Español"],
+    'de': ["german", "Deutsch"],
+    'ru': ["russia", "Русский"],
+    'it': ["italy", "Italiano"],
+    'fi': ["finland", "Suomi"],
+    'hu': ["hu", "Magyar"],
+    'tr': ["tr", "Türkçe"],
+    'ko-kr': ["kr", "한국어"],
+    'es-lat': ["mexico", "Español (LATAM)"],
+    'ca': ["cat", "Català (CA)"],
+    'frp': ["arp", "Arpetan"],
+    'va': ["va", "Català (VA)"]
+};
+
+for (let i = 0; i < dropdown.options.length; i++) {
+    const option = dropdown.options[i];
+    const optionName = option.value;
+    const langCode = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
+    const [flag, lang] = flagMap[langCode] || ["usa", "English (US)"];
+
+    const optionLinkFlag = `<img alt='${lang}' src='/img/flags/${flag}.webp' class='emoji'>`;
+    const optionLink = `<img alt='${lang}' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
+
+    if (i === 0) {
+        titleTranslate.innerHTML = optionLinkFlag;
+        currentLangDiv.innerHTML += `<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> ${optionLink}</div>`;
+        document.getElementById('titleTranslate').setAttribute('data-bs-original-title', optionLink.replace(/<img[^>]*>/g, ""));
+    } else {
+        optionsDisplayDiv.innerHTML += `<li><a href='${optionName}' aria-label='${optionName} Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='Language Button'><div class='dropdown-text' style='transition:0.2s;'>${optionLink}</div></button></a></li>`;
+    }
+}
+
+document.addEventListener('click', function(event) {
+    const dropdownButton = document.getElementById('titleTranslate');
+    const dropdownMenu = document.getElementById('dropMenu');
+    const dropdownMore = document.getElementById('dropdownMore');
+    const moreHeader = document.getElementById('moreHeader');
+
     if (!dropdownMore.contains(event.target) && event.target !== moreHeader) {
-      // If it's not, hide the dropdownMore element
-      dropdownMore.style.display = 'none';
+        dropdownMore.style.display = 'none';
     }
 
-    // Check if the click was outside the dropdown button or menu
-    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open == 1) {
-      // Close the dropdown
-	  document.getElementById("dropMenu").style.animation = "langoff 0.2s ease-in-out forwards";
-				setTimeout(() => {
-				document.getElementById("dropMenu").style.opacity = "0";
-				document.getElementById("dropMenu").style.pointerEvents = "none";
-				document.getElementById("dropMenu").style.animation = "";
-				open = 0; }, "200")
+    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open) {
+        closeDropdown();
     }
-  });
-
-		let open = 0;
-		function toggleTranslate() {
-			if (open == 0) {
-				document.getElementById("dropMenu").style.opacity = "1";
-				document.getElementById("dropMenu").style.pointerEvents = "";
-				document.getElementById("dropMenu").style.animation = "langon 0.2s ease-in-out forwards";
-				open = 1;
-			} else {
-				document.getElementById("dropMenu").style.animation = "langoff 0.2s ease-in-out forwards";
-				setTimeout(() => {
-				document.getElementById("dropMenu").style.opacity = "0";
-				document.getElementById("dropMenu").style.pointerEvents = "none";
-				document.getElementById("dropMenu").style.animation = "";
-				open = 0; }, "200")
-			}
-		}
-
-		document.getElementById("dropMenu").style.opacity = "0";
-		document.getElementById("dropMenu").style.pointerEvents = "none";
-    </script>
-
-
-<script is:inline>
-const themeColorButton = document.getElementById('themeColor');
-const languageOverride = localStorage.getItem('languageOverride');
-
-document.addEventListener('DOMContentLoaded', function () {
-	if (localStorage.getItem('color-mode') === null) {
-		if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-			localStorage.setItem('color-mode', 'dark');
-		} else {
-			localStorage.setItem('color-mode', 'dark');
-		}
-	}
-
-	const savedMode = localStorage.getItem('color-mode');
-	if (savedMode === 'dark') {
-		enableDarkMode();
-	} else {
-		enableLightMode();
-	}
-
-	window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-		if (event.matches) {
-			enableDarkMode();
-		} else {
-			enableLightMode();
-		}
-	});
-
 });
 
-function enableDarkMode() {
-    document.documentElement.classList.add('dark');
-    localStorage.setItem('color-mode', 'dark');
-	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-sun'><circle cx='12' cy='12' r='4'/><path d='M12 2v2'/><path d='M12 20v2'/><path d='m4.93 4.93 1.41 1.41'/><path d='m17.66 17.66 1.41 1.41'/><path d='M2 12h2'/><path d='M20 12h2'/><path d='m6.34 17.66-1.41 1.41'/><path d='m19.07 4.93-1.41 1.41'/></svg>";
-	themeColorButton.style.filter = "invert(0)";
-  }
+let open = 0;
 
-  function enableLightMode() {
-    document.documentElement.classList.remove('dark');
-    localStorage.setItem('color-mode', 'light');
-	themeColorButton.innerHTML = "<svg style='transform:translate(0, -2px);' xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='#000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='lucide lucide-moon'><path d='M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z'/></svg>";
-	themeColorButton.style.filter = "invert(1)";
-  }
-
-function darkToggle() {
-    if (document.documentElement.classList.contains('dark')) {
-      enableLightMode();
+function toggleTranslate() {
+    if (open) {
+        closeDropdown();
     } else {
-      enableDarkMode();
+        openDropdown();
     }
 }
 
+function openDropdown() {
+    const dropdownMenu = document.getElementById('dropMenu');
+    dropdownMenu.style.opacity = "1";
+    dropdownMenu.style.pointerEvents = "";
+    dropdownMenu.style.animation = "langon 0.2s ease-in-out forwards";
+    open = 1;
+}
+
+function closeDropdown() {
+    const dropdownMenu = document.getElementById('dropMenu');
+    dropdownMenu.style.animation = "langoff 0.2s ease-in-out forwards";
+    setTimeout(() => {
+        dropdownMenu.style.opacity = "0";
+        dropdownMenu.style.pointerEvents = "none";
+        dropdownMenu.style.animation = "";
+        open = 0;
+    }, 200);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    const themeColorButton = document.getElementById('themeColor');
+
+    if (!localStorage.getItem('color-mode')) {
+        localStorage.setItem('color-mode', 'dark');
+    }
+
+    const savedMode = localStorage.getItem('color-mode');
+    if (savedMode === 'dark') {
+        enableDarkMode();
+    } else {
+        enableLightMode();
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+            enableDarkMode();
+        } else {
+            enableLightMode();
+        }
+    });
+
+    function enableDarkMode() {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-mode', 'dark');
+        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+        themeColorButton.style.filter = "invert(0)";
+    }
+
+    function enableLightMode() {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-mode', 'light');
+        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+        themeColorButton.style.filter = "invert(1)";
+    }
+
+    document.getElementById('darkToggle').addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            enableLightMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+});
+
 function toggle(id) {
-	  var element = document.getElementById(id);
-  if (element.style.display === 'block' && !element.matches(':hover')) {
-	element.style.display = "none";
-  } else {
-	element.style.display = "block";
-}
+    const element = document.getElementById(id);
+    element.style.display = element.style.display === 'block' && !element.matches(':hover') ? 'none' : 'block';
 }
 
-</script>
+// Initialize dropdown menu state
+const dropdownMenu = document.getElementById('dropMenu');
+dropdownMenu.style.opacity = '0';
+dropdownMenu.style.pointerEvents = 'none';
 
-<script is:inline>
+
 var gradient = document.getElementById("grad");
 document.addEventListener('scroll', checkPageScroll);
 

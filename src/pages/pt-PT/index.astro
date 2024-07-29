@@ -104,115 +104,83 @@ changeLanguage("pt-PT");
 </Layout>
 
 <script is:inline>
-  document.getElementById("square2").addEventListener('scroll', checkElementScroll);
-
-  function checkElementScroll() {
-    var scrollPosition = document.getElementById("square2").scrollTop;
-
-    if (scrollPosition > 0) {
-      document.querySelector(".square").style.animationPlayState = "paused";
-      document.querySelector(".bottomleftcorner").style.animationPlayState = "paused";
-    } else {
-      document.querySelector(".square").style.animationPlayState = "running";
-      document.querySelector(".bottomleftcorner").style.animationPlayState = "running";
-    }
-  }
-</script>
-
-<script>
-
-  document.addEventListener("DOMContentLoaded", async function () {
-    function getUrlParameter(name) {
-      name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
-      var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
-      var results = regex.exec(location.hash);
-      return results === null
-        ? ""
-        : decodeURIComponent(results[1].replace(/\+/g, " "));
-    }
-    if (
-      navigator.hardwareConcurrency < 5 ||
-      navigator.deviceMemory < 5 ||
-      window.screen.width <= 1000 ||
-      window.screen.height <= 720
-    ) {
-      document.querySelector(".square").style.animation =
-        "changecolorbasic 10s linear infinite";
-      document.querySelector(".bottomleftcorner").style.animation = "none";
-      document.body.classList.add("no-animation");
-    }
-
-    var fromRiiConnect24 = getUrlParameter("from-riiconnect24");
-    var isLowSpec = getUrlParameter("low-spec");
-    var potato = getUrlParameter("potato");
-    var kawaii = getUrlParameter("kawaii");
-
-    if (fromRiiConnect24 == "true") {
-      document.getElementById("warn").style.display = "block";
-      document.getElementById("warn").innerHTML =
-        "<i class='fa fa-triangle-exclamation'></i> <b>You were redirected from RC24.xyz!</b><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>";
-    }
-    if (isLowSpec == "true") {
-      document.getElementById("warn").style.display = "block";
-      document.getElementById("warn").innerHTML =
-        "<i class='fa fa-bolt'></i> <b>Low spec mode active!</b><hr style='margin:8px 0;'/>Some animations have been disabled in order to make the site feel snappier on your device.";
-      document.querySelector(".square").style.animation =
-        "changecolorbasic 10s linear infinite";
-      document.querySelector(".bottomleftcorner").style.animation = "none";
-    }
-    if (potato == "true") {
-      document.querySelector(".square").style.animation =
-        "changecolorbasic 10s linear infinite";
-      document.querySelector(".bottomleftcorner").style.animation = "none";
-      document.body.classList.add("no-animation");
-    }
-    if (kawaii == "true") {
-      document.getElementById("warn").style.display = "block";
-      document.getElementById("warn").innerHTML =
-        "<i class='fa fa-heart'></i> <b>Haiiiiiii :3</b><hr style='margin:8px 0;'/>We hope you like our vtuber debut!";
-      let logos = document.getElementsByClassName("logo");
-      for (let i = 0; i < logos.length; i++) {
-        logos[i].setAttribute("src", "/img/logo-kawaii.webp");
-        logos[i].classList.add("kawaii");
-      }
-    }
-  });
-
-  const scrollableDiv = document.getElementById("square2");
-
-  scrollableDiv.addEventListener("scroll", function () {
-    // Change the bg color in #square2 to var(--bg-color) if scrolled
-    if (scrollableDiv.scrollTop > 0) {
-      scrollableDiv.style.setProperty("background-color", "var(--bg-color)");
-    } else {
-      scrollableDiv.style.setProperty(
-        "background-color",
-        "var(--bg-color-hero)"
-      );
-    }
-  });
-
   document.getElementById("footer").style.animation =
     "fadeout 0.2s linear forwards";
 
-  scrollableDiv.addEventListener("scroll", function () {
-    let width = window.innerWidth;
-    if (
-      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
-        scrollableDiv.clientHeight + 30 &&
-      width >= 1000
-    ) {
-      scrollableDiv.style.setProperty("height", "calc(100% - 300px)");
-      document.getElementById("footer").style.animation =
-        "fadein 0.2s linear forwards";
-    } else if (width < 1000) {
-      scrollableDiv.style.setProperty("height", "100%");
+  document.getElementById("square2").addEventListener('scroll', function() {
+    const scrollableDiv = document.getElementById("square2");
+    const scrollPosition = scrollableDiv.scrollTop;
+    const width = window.innerWidth;
+    const isScrolled = scrollPosition > 0;
+    const isNearBottom = scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30;
+  
+    document.querySelector(".square").style.animationPlayState = isScrolled ? "paused" : "running";
+    document.querySelector(".bottomleftcorner").style.animationPlayState = isScrolled ? "paused" : "running";
+    scrollableDiv.style.setProperty("background-color", isScrolled ? "var(--bg-color)" : "var(--bg-color-hero)");
+  
+    if (width >= 1000) {
+      scrollableDiv.style.setProperty("height", isNearBottom ? "calc(100% - 300px)" : "calc(100% - 30px)");
+      document.getElementById("footer").style.animation = isNearBottom ? "fadein 0.2s linear forwards" : "fadeout 0.2s linear forwards";
     } else {
-      scrollableDiv.style.setProperty("height", "calc(100% - 30px)");
-      document.getElementById("footer").style.animation =
-        "fadeout 0.2s linear forwards";
+      scrollableDiv.style.setProperty("height", "100%");
     }
   });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  function getUrlParameter(name) {
+    name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
+    var results = regex.exec(location.hash);
+    return results ? decodeURIComponent(results[1].replace(/\+/g, " ")) : "";
+  }
+
+  function showWarning(icon, message) {
+    const warnElement = document.getElementById("warn");
+    warnElement.style.display = "block";
+    warnElement.innerHTML = `<i class='fa ${icon}'></i> <b>${message}</b>`;
+  }
+
+  function setLowSpecMode() {
+    document.querySelector(".square").style.animation = "changecolorbasic 10s linear infinite";
+    document.querySelector(".bottomleftcorner").style.animation = "none";
+    document.body.classList.add("no-animation");
+  }
+
+  const parameters = {
+    fromRiiConnect24: getUrlParameter("from-riiconnect24"),
+    isLowSpec: getUrlParameter("low-spec"),
+    potato: getUrlParameter("potato"),
+    kawaii: getUrlParameter("kawaii")
+  };
+
+  if (navigator.hardwareConcurrency < 5 || navigator.deviceMemory < 5 || window.screen.width <= 1000 || window.screen.height <= 720) {
+    setLowSpecMode();
+  }
+
+  if (parameters.fromRiiConnect24 === "true") {
+    showWarning("fa-triangle-exclamation", "You were redirected from RC24.xyz!<br /><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>");
+  }
+
+  if (parameters.isLowSpec === "true") {
+    showWarning("fa-bolt", "Low spec mode active!<br /><hr style='margin:8px 0;'/>Some animations have been disabled in order to make the site feel snappier on your device.");
+    setLowSpecMode();
+  }
+
+  if (parameters.potato === "true") {
+    setLowSpecMode();
+  }
+
+  if (parameters.kawaii === "true") {
+    showWarning("fa-heart", "Haiiiiiii :3<br /><hr style='margin:8px 0;'/>We hope you like our vtuber debut!");
+    let logos = document.getElementsByClassName("logo");
+    for (let logo of logos) {
+      logo.setAttribute("src", "/img/logo-kawaii.webp");
+      logo.classList.add("kawaii");
+    }
+  }
+});
 
   const tooltipTriggerList = document.querySelectorAll(
     '[data-bs-toggle="tooltip"]'
@@ -236,39 +204,8 @@ changeLanguage("pt-PT");
     font-size: 20px;
     line-height: 1.6;
   }
-  .spinner {
-    filter: brightness(0);
-  }
   a {
     text-decoration: none;
-  }
-  .color {
-    background: url("/img/header_bg.webp");
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: brightness(150%);
-  }
-  .disabled {
-    cursor: not-allowed;
-  }
-  .socials {
-    right: 50px;
-    color: white;
-    font-size: 23px;
-    justify-content: right;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    position: absolute;
-  }
-  .mainFooter {
-    display: none;
-  }
-  .slogan {
-    left: 80px;
-    color: white !important;
-    width: 500px;
-    position: relative;
   }
   .footer-holder {
     bottom: 20px;
@@ -282,9 +219,6 @@ changeLanguage("pt-PT");
     transition: 0.2;
     position: absolute;
   }
-  .accordion-body::-webkit-scrollbar {
-    display: none;
-  }
   .top {
     top: calc(50% - 90px);
     left: 50%;
@@ -294,36 +228,6 @@ changeLanguage("pt-PT");
     height: 100%;
     min-height: 800px;
     position: relative;
-  }
-  .accordion-body {
-    background-color: #fff;
-    max-height: 30vh;
-    overflow: scroll;
-  }
-  .btn-secondary {
-    background-color: rgba(0, 0, 255, 0.469);
-    border: 1px solid rgba(0, 0, 255, 0.117);
-  }
-  .btn-secondary:hover {
-    background-color: rgba(0, 0, 255, 0.427);
-    border: 1px solid rgba(0, 0, 255, 0.117);
-  }
-  .slidedown {
-    left: 50%;
-    top: 40px;
-    transform: translate(-50%, 0);
-    width: 1px;
-    height: 50px;
-    color: black;
-    z-index: 1;
-    position: relative;
-  }
-  .about {
-    top: 0;
-    right: 0;
-    color: #00000050;
-    z-index: 1;
-    position: absolute;
   }
   .symbolholder {
     background-color: var(--bg-color-absolute);
@@ -337,43 +241,6 @@ changeLanguage("pt-PT");
     z-index: 1;
     overflow: hidden;
     position: fixed;
-  }
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translate(0, 10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
-  }
-  .logohold {
-    top: 0;
-    left: -80px;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-  }
-  .release-name {
-    font-weight: bolder;
-  }
-  .guide {
-    background-color: #ffffff00;
-    color: #000000;
-  }
-  .btn {
-    padding: 15px;
-    margin: 5px;
-    margin-top: 10px;
-  }
-  .data {
-    width: 615px;
-    right: 5%;
-    top: 50%;
-    transform: translate(0, -50%);
-    z-index: 1;
-    position: absolute;
   }
   #square2 {
     width: calc(100% - 30px);
@@ -397,18 +264,6 @@ changeLanguage("pt-PT");
     width: 95%;
     left: 50%;
     transform: translate(-50%, 0);
-    position: relative;
-  }
-  .download {
-    width: 100%;
-    height: auto;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 1;
-    display: flex;
-    gap: 20px;
-    grid-auto-rows: 1fr;
-    grid-template-columns: 112px 140px 125px auto;
     position: relative;
   }
   #pathcorner {
@@ -436,6 +291,29 @@ changeLanguage("pt-PT");
     justify-content: center;
     z-index: 1;
     position: absolute;
+  }
+  .mainFooter {
+    display: none;
+  }
+  .square {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
+    z-index: 0;
+    animation: changecolor 10s linear infinite;
+    border-radius: 8px;
+    position: absolute;
+  }
+
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translate(0, 10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, 0px);
+    }
   }
   @keyframes changecolor {
     0% {
@@ -473,84 +351,13 @@ changeLanguage("pt-PT");
       opacity: 0;
     }
   }
-  .square {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(41deg, #0d6efd 0%, rgba(255, 0, 59, 1) 100%);
-    z-index: 0;
-    animation: changecolor 10s linear infinite;
-    border-radius: 8px;
-    position: absolute;
-  }
-
-  h1 {
-    color: var(--bg-text);
-    --bg-text: #ffffff;
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-  h2 {
-    --bg-text: #000000;
-
-    color: var(--bg-text);
-    text-align: left;
-    z-index: 1;
-    position: relative;
-  }
-  .text-gradient {
-    background-image: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 400%;
-    background-position: 0%;
-  }
-  .instructions {
-    margin-bottom: 2rem;
-    border: 1px solid rgba(var(--accent-light), 25%);
-    background: linear-gradient(
-      rgba(var(--accent-dark), 66%),
-      rgba(var(--accent-dark), 33%)
-    );
-    padding: 1.5rem;
-    border-radius: 8px;
-  }
-  .instructions code {
-    font-size: 0.8em;
-    font-weight: bold;
-    background: rgba(var(--accent-light), 12%);
-    color: rgb(var(--accent-light));
-    border-radius: 4px;
-    padding: 0.3em 0.4em;
-  }
-  .instructions strong {
-    color: rgb(var(--accent-light));
-  }
 
   @media only screen and (max-width: 1000px) {
-    .logohold {
-      display: none;
-    }
-    .data {
-      top: 0px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: 95%;
-      height: auto;
-      position: relative;
-    }
-    .mobilehide {
-      display: none;
-    }
-
     .mainFooter {
       top: 37%;
       display: block;
       position: relative;
     }
-
     .top {
       top: 0;
       transform: translate(-50%, 0);
@@ -559,29 +366,9 @@ changeLanguage("pt-PT");
       max-width: 1500px;
       position: relative;
     }
-
-    .socials {
-      right: 20px;
-    }
-
     .footer-holder {
       opacity: 0;
       display: none;
-    }
-
-    .footer-logo {
-      width: 150px;
-      height: auto;
-    }
-
-    .slogan {
-      display: none;
-    }
-
-    .accordion-body {
-      background-color: #fff;
-      max-height: 20vh;
-      overflow: scroll;
     }
     .symbolholder {
       width: 100%;
@@ -609,34 +396,12 @@ changeLanguage("pt-PT");
       width: 80%;
       position: absolute;
     }
-    .hide {
-      display: none;
-    }
-    .download {
-      width: 100%;
-      height: auto;
-      left: 50%;
-      transform: translate(-50%, 0);
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, auto));
-      gap: 5px;
-      position: relative;
-    }
     .footer-holder {
       display: none;
     }
     .square {
       animation: none !important;
       border-radius: 0px;
-    }
-    .btn {
-      width: 100%;
-    }
-    .dropdownbtn {
-      top: 0;
-      right: 0;
-      width: 50px;
     }
   }
 
@@ -661,6 +426,7 @@ changeLanguage("pt-PT");
     }
   }
 </style>
+
 <style is:global>
   .kawaii {
     filter: invert(0) !important;
