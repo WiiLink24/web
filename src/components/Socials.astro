@@ -69,11 +69,6 @@ import { Trans } from "astro-i18next/components";
           </div>
           </div>
         </div>
-        <div
-          class="twholder"
-          style="top:0px; left:0; width:100%; z-index:1; position:absolute;">
-          <a class="twitter-timeline" aria-label="English Twitter Link" href="https://twitter.com/WiiLink24?ref_src=twsrc%5Etfw">Tweets by WiiLink24</a> <script type="text/partytown" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
-        </div>
         <img
           alt="Loading..."
           style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(0); z-index:0; position:absolute;"
@@ -98,7 +93,7 @@ import { Trans } from "astro-i18next/components";
         </div>
         <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
           <iframe
-          type="text/partytown"
+          loading="lazy"
           title="Discord Widget"
             src="https://discord.com/widget?id=206934458954153984&theme=dark"
             style="top:-20px; position:absolute;"
@@ -106,7 +101,6 @@ import { Trans } from "astro-i18next/components";
             height="580px"
             allowtransparency="true"
             frameborder="0"
-            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
           ></iframe>
         </div>
         <img
