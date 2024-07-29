@@ -225,80 +225,85 @@ let loadingindicator = document.getElementById("loadingindicator");
                 var optionLink = option.innerHTML;
 				var optionLinkFlag = optionLink.substring(0,5);
 
-				switch (optionName.substring(0, 7).toLowerCase()) {
-	case '/':
+				var langConverterCheck = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
+
+				console.log(option);
+				console.log(langConverterCheck);
+
+				switch (langConverterCheck) {
+	case '':
 		optionLinkFlag = "<img alt='English' src='/img/flags/usa.png' class='emoji'>";
 		optionLink = "<img alt='English (US)' src='/img/flags/usa.png' class='emoji2'> English (US)";
 		break;
-	case '/en-gb':
+	case 'en-gb':
 		optionLinkFlag = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji'>";
 		optionLink = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji2'> English (UK)";
 		break;
-	case '/pt-br':
+	case 'pt-br':
 		optionLinkFlag = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji'>";
 		optionLink = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
 		break;
-	case '/pt-pt':
+	case 'pt-pt':
 		optionLinkFlag = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji'>";
 		optionLink = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
 		break;
-	case '/vi':
+	case 'vi':
 		optionLinkFlag = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji'>";
 		optionLink = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
 		break;
-	case '/ja':
+	case 'ja':
 		optionLinkFlag = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji'>";
 		optionLink = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji2'> 日本語";
 		break;
-	case '/fr':
+	case 'fr':
 		optionLinkFlag = "<img alt='French' src='/img/flags/france.png' class='emoji'>";
 		optionLink = "<img alt='French' src='/img/flags/france.png' class='emoji2'> Français";
 		break;
-	case '/es':
+	case 'es':
 		optionLinkFlag = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji'>";
 		optionLink = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji2'> Español";
 		break;
-	case '/de':
+	case 'de':
 		optionLinkFlag = "<img alt='German' src='/img/flags/german.png' class='emoji'>";
 		optionLink = "<img alt='German' src='/img/flags/german.png' class='emoji2'> Deutsch";
 		break;
-	case '/ru':
+	case 'ru':
 		optionLinkFlag = "<img alt='Russian' src='/img/flags/russia.png' class='emoji'>";
 		optionLink = "<img alt='Russian' src='/img/flags/russia.png' class='emoji2'> Русский";
 		break;
-	case '/it':
+	case 'it':
 		optionLinkFlag = "<img alt='Italian' src='/img/flags/italy.png' class='emoji'>";
 		optionLink = "<img alt='Italian' src='/img/flags/italy.png' class='emoji2'> Italiano";
 		break;
-	case '/fi':
+	case 'fi':
 		optionLinkFlag = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji'>";
 		optionLink = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji2'> Suomi";
 		break;
-	case '/hu':
+	case 'hu':
 		optionLinkFlag = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji'>";
 		optionLink = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji2'> Magyar";
 		break;
-	case '/tr':
+	case 'tr':
 		optionLinkFlag = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji'>";
 		optionLink = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji2'> Türkçe";
 		break;
-	case '/ko-kr':
+	case 'ko-kr':
 		optionLinkFlag = "<img alt='Korean' src='/img/flags/kr.png' class='emoji'>";
 		optionLink = "<img alt='Korean' src='/img/flags/kr.png' class='emoji2'> 한국어";
 		break;
-	case '/es-lat':
+	case 'es-lat':
 		optionLinkFlag = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji'>";
 		optionLink = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
 		break;
-	case '/ca':
+	case 'ca':
 		optionLinkFlag = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji'>";
 		optionLink = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji2'> Català (CA)";
 		break;
-	case '/frp':
+	case 'frp':
 		optionLinkFlag = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji'>";
 		optionLink = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji2'> Arpetan";
 		break;
-	case '/va':
+	case 'va':
 		optionLinkFlag = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji'>";
 		optionLink = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji2'> Català (VA)";
 		break;
@@ -311,7 +316,7 @@ let loadingindicator = document.getElementById("loadingindicator");
 					optionLink = optionLink.replace(/<img[^>]*>/g, "");
 					button.setAttribute('data-bs-original-title', optionLink);
 				} else {
-					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' aria-label='" + optionName + " Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='" + optionLink + " Button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
+					optionsDisplayDiv.innerHTML += "<li><a href='" + optionName + "' aria-label='" + optionName + " Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='Language Button'> <div class='dropdown-text' style='transition:0.2s;'>" + optionLink + "</div></button></a></li>";
 				}
             }
         });
