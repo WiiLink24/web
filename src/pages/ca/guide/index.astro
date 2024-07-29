@@ -18,13 +18,13 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 <Layout
   title={t("guide.mainTitle")}
   description={t("guide.mainDesc")}
-  image="/img/Guide_embed.png"
+  image="/img/Guide_embed.webp"
 />
 <Header isGuide="display:none;" />
 
 <body>
   <div class="hold">
-    <img class="newstop" style="" src="/img/guidestop.png" />
+    <img class="newstop" style="" src="/img/guidestop.webp" />
     <div class="welcome-msg">
       <h2 style="font-size:40px; font-family:Gilroy;">
         <Trans i18nKey="guide.title">
@@ -305,7 +305,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .color {
-    background: url("/img/header_bg.png");
+    background: url("/img/header_bg.webp");
     background: AccentColor;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

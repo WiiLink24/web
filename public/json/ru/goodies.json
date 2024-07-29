@@ -4,85 +4,85 @@
       {
         "title": "<i class='fa-solid fa-palette'></i> Материалы брендинга",
         "desc": "Наш брендинг для сторонних использований!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/branding_bg.png",
+        "img": "/img/branding_bg.webp",
         "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Обои",
         "desc": "Обои WiiLink для вашего ПК!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/wallpaper_bg.png",
+        "img": "/img/wallpaper_bg.webp",
         "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Знакомьтесь с командой",
         "desc": "Основные участники проекта!",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-tag'></i> RiiTag",
         "desc": "Гейм-тег сервис для Wii и Wii U!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://tag.rc24.xyz/"
       },
       {
         "title": "<i class='fa-solid fa-poll'></i> Просмотр опросов",
         "desc": "Смотрите результаты опросов Канала Голосований!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
         "desc": "Смотрите переводы оригинального контента Wii Room!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> Темы WiiLink",
         "desc": "Милые темы для вашей Wii!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
         "desc": "Классная замена для службы<br>Nintendo Wi-Fi Connection!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
         "title": "<i class='fa-solid fa-mask'></i> Комиксы",
         "desc": "Старые комиксы RiiConnect24<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/strips"
       },
       {
         "title": "<i class='fa-solid fa-gamepad'></i> Тест Wii Remote",
         "desc": "Простая страница для тестирования вашего Wii Remote<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/internetchannel"
       },
       {
         "title": "<i class='fa-solid fa-user'></i> Mii",
         "desc": "",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/mii"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Чит для Фотоканала",
         "desc": "Изображения для получения лучших результатов!<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/photochannel"
       },
       {
         "title": "<i class='fa-solid fa-shop'></i> Песня Wii Shop Channel",
         "desc": "Мемная песня с канала Wii Shop Channel<br><span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> Котик с новостей",
         "desc": "Тако-о-ой милашка!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/cat"
       }
     ]

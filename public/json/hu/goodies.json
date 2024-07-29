@@ -4,85 +4,85 @@
       {
         "title": "<i class='fa-solid fa-palette'></i> Márkaeszközök",
         "desc": "Márkaeszközök külső használatra.",
-        "img": "/img/branding_bg.png",
+        "img": "/img/branding_bg.webp",
         "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Háttérképek",
         "desc": "WiiLinkes háttérképek számítógépre.",
-        "img": "/img/wallpaper_bg.png",
+        "img": "/img/wallpaper_bg.webp",
         "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Csapatbemutató",
         "desc": "A csapat fő tagjainak bemutatója.",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-tag'></i> RiiTag",
         "desc": "Játékcímkézési szolgáltatás Wiire és Wii U-ra.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://tag.rc24.xyz/"
       },
       {
         "title": "<i class='fa-solid fa-poll'></i> Korábbi szavazások",
         "desc": "Az Everybody Votes Channel korábbi szavazásainak eredményei.",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Eredeti Wii Room-tartalmak",
         "desc": "Tekintsd meg a Nintendo eredeti Wii Room-tartalmainak lefordított változatait!",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> WiiLinkes témák",
         "desc": "A WiiLinkkel kapcsolatos témák tárháza.",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
         "desc": "Egy fejlesztés alatt álló Nintendo Wi-Fi Connection-szolgáltatás.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
         "title": "<i class='fa-solid fa-mask'></i> Képregények",
         "desc": "A korábbi RiiConnect24-képregények.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/strips"
       },
       {
         "title": "<i class='fa-solid fa-gamepad'></i> Wii Remote-próba",
         "desc": "Egy honlap, ahol kipróbálhatod a Wii Remote-odat.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/internetchannel"
       },
       {
         "title": "<i class='fa-solid fa-user'></i> Miik",
         "desc": "",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/mii"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Photo Channel-csalások",
         "desc": "A gyorsaságot elősegítő puskák.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/photochannel"
       },
       {
         "title": "<i class='fa-solid fa-shop'></i> Wii Shop Channel-dal",
         "desc": "Egy mémdal a Wii Shop Channelről.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> Hírmacska",
         "desc": "Egy fejlesztés alatt álló Nintendo Wi-Fi Connection-szolgáltatás.",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/cat"
       }
     ]

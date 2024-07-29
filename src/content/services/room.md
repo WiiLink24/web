@@ -3,7 +3,7 @@ title: WiiRoom
 pubDate: 2024-01-24
 icon: fa-solid fa-home
 description: Feel right at home whilst watching videos on your Wii!
-heroImage: "wiinomabanner.png"
+heroImage: "wiinomabanner.webp"
 type: "Japanese"
 color: 195ce360
 ---

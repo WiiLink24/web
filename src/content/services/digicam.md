@@ -3,7 +3,7 @@ title: Photo Prints Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-camera
 description: Get up-to-date instructions on how to install all of our services!
-heroImage: "digicambanner.png"
+heroImage: "digicambanner.webp"
 type: "Japanese"
 color: 6099d160
 ---

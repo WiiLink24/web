@@ -3,7 +3,7 @@ title: Wii Speak Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-microphone
 description: Voice chat with people on your Wii!
-heroImage: "speak.png"
+heroImage: "speak.webp"
 type: "WiiConnect24"
 color: 15a5ed60
 ---

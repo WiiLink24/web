@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "International",
         "status": "Sortie complète",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "International",
         "status": "Sortie complète",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
         "completed": "100"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "International",
         "status": "Sortie complète",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "International",
         "status": "Sortie complète",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
         "completed": "80"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "International",
         "status": "Sortie complète",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "90"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Exclusif Japon",
         "status": "Bêta privée",
         "todo": "<i class='fa fa-hard-hat'></i> Ce service est en cours de développement",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Exclusif à certains pays européens",
         "status": "Sortie complète",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "90"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
         "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "85"
       },
       {

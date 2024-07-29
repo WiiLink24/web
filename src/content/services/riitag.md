@@ -3,7 +3,7 @@ title: RiiTag
 pubDate: 2024-05-17
 icon: fa-solid fa-tag
 description: Get your own Nintendo gamertag!
-heroImage: "riitag.png"
+heroImage: "riitag.webp"
 type: "Extra"
 color: 6099d160
 ---

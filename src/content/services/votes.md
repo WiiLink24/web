@@ -3,7 +3,7 @@ title: Everybody Votes Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-pie-chart
 description: Answer questions and tell the world your answer in national and worldwide polls!
-heroImage: "politicsbanner.png"
+heroImage: "politicsbanner.webp"
 type: "WiiConnect24"
 color: 2291b360
 ---

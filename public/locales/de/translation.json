@@ -2,7 +2,7 @@
     "site": {
       "title": "WiiLink",
       "description": "Ein gemeinschaftliches Homebrew-Projekt mit dem Ziel, die eingestellten WiiConnect24-Kanäle und -Services zurückzubringen, zu übersetzen und zu verbessern (einschließlich derer, die nicht in allen Regionen verfügbar waren).",
-      "img": "/img/news_post_welcome_back.png",
+      "img": "/img/news_post_welcome_back.webp",
       "load": "Laden...",
       "dev": "Entwickelt von ",
       "relNotes": "Hinweise zur Veröffentlichung",

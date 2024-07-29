@@ -3,7 +3,7 @@ title: Frequently asked questions
 icon: fa-solid fa-circle-question
 pubDate: 2024-01-24
 description: Some frequently asked questions you might be interested in...
-heroImage: "../../img/guidebg-2.png"
+heroImage: "../../img/guidebg-2.webp"
 ---
 ## WiiLink
 #### Information about the service itself.

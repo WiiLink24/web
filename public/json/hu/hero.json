@@ -25,70 +25,70 @@
         "name": "Forecast Channel",
         "desc": "Friss időjárás a világ minden tájáról",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "News Channel",
         "desc": "Friss hírek a világ minden tájáról",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Nintendo Channel",
         "desc": "DS-játékok előzetesei, kritikái és demói egy helyen",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Check Mii Out Channel",
         "desc": "Csatlakozz és szavazz számos Miiversenyben!",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Everybody Votes Channel",
         "desc": "Szavazz és tudd meg mások véleményét",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Food Channel",
         "desc": "Rendelj házhoz egyenesen a Wii-konzolodról",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "TV Guide Channel",
         "desc": "Műsorújság és közelgő sorozatok előzetesei",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Kirby TV Channel",
         "desc": "A Kirby: Right Back at Ya!-sorozat részei",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Photo Prints Channel",
         "desc": "Fényképnyomtatás és -házhozszállítás a Wii-konzolodon",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "A műsorok és videók nézésének új módja",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

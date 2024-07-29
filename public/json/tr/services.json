@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "Uluslararası",
         "status": "Tam Sürüm",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "Uluslararası",
         "status": "Tam Sürüm",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
         "completed": "100"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "Uluslararası",
         "status": "Tam Sürüm",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "Uluslararası",
         "status": "Tam Sürüm",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
         "completed": "80"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "Uluslararası",
         "status": "Tam Sürüm",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Orijinal olarak Japonya'ya özgü",
         "status": "Tam Sürüm",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "90"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Orijinal olarak Japonya'ya özgü",
         "status": "Kapalı Beta",
         "todo": "<i class='fa fa-hard-hat'></i> Bu hizmet hâlâ geliştirilme aşamasında",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Orijinal olarak belirli Avrupa ülkeleri",
         "status": "Tam Sürüm",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "90"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Orijinal olarak Japonya'ya özgü",
         "status": "Tam Sürüm",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Orijinal olarak Japonya'ya özgü",
         "status": "Tam Sürüm",
         "todo": "<i class='fa fa-circle-check'></i> Hizmet düzgün çalışıyor!",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "85"
       },
       {

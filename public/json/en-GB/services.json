@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "International",
         "status": "Full release",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more Cities",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "International",
         "status": "Planned",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch english provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch foreign language provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
         "completed": "10"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "International",
         "status": "Full release",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Include WiiLink original content <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Include Nintendo original content",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "International",
         "status": "Planned",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
         "completed": "15"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "International",
         "status": "Under maintenance",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='pointer-events:none;' type='checkbox' value='' id='flexCheckDefault' > Fix Error Codes",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full release",
         "todo": "Check back later...",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "80"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Private beta",
         "todo": "Check back later...",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "50"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Originally certain European countries",
         "status": "Full release",
         "todo": "Check back later...",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "60"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full release",
         "todo": "Check back later...",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full release",
         "todo": "Check back later...",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "85"
       },
       {

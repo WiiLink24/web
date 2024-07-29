@@ -2,7 +2,7 @@
     "site": {
       "title": "WiiLink",
       "description": "WiiLinkはWiiの新しい復刻サービスです！好評のチャンネルや日本限定のサービスが再び使えるようになります！",
-      "img": "/img/news_post_welcome_back.png",
+      "img": "/img/news_post_welcome_back.webp",
       "load": "ロード中...",
       "dev": "開発 ",
       "relNotes": "配信追記",

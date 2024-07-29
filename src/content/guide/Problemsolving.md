@@ -3,7 +3,7 @@ title: Problem solving
 icon: fa-solid fa-circle-exclamation
 pubDate: 2024-07-07
 description: Got any issues? Let's see if we can sort them out!
-heroImage: "../../img/guidebg-3.png"
+heroImage: "../../img/guidebg-3.webp"
 ---
 
 ### Get some info on common errors!

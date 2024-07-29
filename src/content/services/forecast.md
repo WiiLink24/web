@@ -3,7 +3,7 @@ title: Forecast Channel
 pubDate: 2024-05-26
 icon: fa-solid fa-sun
 description: Check the weather from anywhere right from your Wii!
-heroImage: "forecastbanner.png"
+heroImage: "forecastbanner.webp"
 type: "WiiConnect24"
 color: 073cb860
 ---

@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "International",
         "status": "Full Release",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br><br> <b>RiiConnect24 users</b> will need to update using the latest version of the WiiLink Patcher to resume service.",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "International",
         "status": "Full Release",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "100"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "International",
         "status": "Full Release",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "International",
         "status": "Full Release",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> We are improving our backend, once ready, we will begin rolling out new contests!",
         "completed": "90"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "International",
         "status": "Full Release",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "90"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Private Beta",
         "todo": "<i class='fa fa-hard-hat'></i> This service is still under development",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "40"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Originally certain European countries",
         "status": "Full Release",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "90"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
         "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "90"
       },
       {

@@ -4,85 +4,85 @@
       {
         "title": "<i class='fa-solid fa-palette'></i> Brändi-resurssit",
         "desc": "Brandi resursseja ulkoiseen käyttöön!",
-        "img": "/img/branding_bg.png",
+        "img": "/img/branding_bg.webp",
         "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Taustakuvia",
         "desc": "WiiLink taustakuvia tietokoneellesi!",
-        "img": "/img/wallpaper_bg.png",
+        "img": "/img/wallpaper_bg.webp",
         "link": "extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Tapaa tiimi",
         "desc": "Projektin pää-tiimiläiset!",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-tag'></i> RiiTag",
         "desc": "Peli-tägi palvelu Wii:lle ja Wii U:lle!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://tag.rc24.xyz/"
       },
       {
         "title": "<i class='fa-solid fa-poll'></i> Äänestykset",
         "desc": "Katso äänestysvastauksia Everybody Votes -kanava:lta!",
-        "img": "/img/guidebg-2.png",
+        "img": "/img/guidebg-2.webp",
         "link": "extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
         "desc": "Katso käännoksiä Nintendon alkuperäisestä Wii Room sisällöstä!",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Teemoja",
         "desc": "Kivoja teemoja sinun Wii:llesi!",
-        "img": "/img/guidebg-3.png",
+        "img": "/img/guidebg-3.webp",
         "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
         "desc": "Keskeneräinen Nintendo Wi-Fi Connection palvelu!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
         "title": "<i class='fa-solid fa-mask'></i> Sarjakuvia",
         "desc": "Vanhoja RiiConnect24 mini-sarjakuvia",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/strips"
       },
       {
         "title": "<i class='fa-solid fa-gamepad'></i> Wii Ohjain Testausta",
         "desc": "Simppeli sivu sinun Wii Ohjaimen testaamiselle",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/internetchannel"
       },
       {
         "title": "<i class='fa-solid fa-user'></i> Mii",
         "desc": "",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/mii"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Photo -kanava Cheats",
         "desc": "Kuvia nopeille tuloksille!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/photochannel"
       },
       {
         "title": "<i class='fa-solid fa-shop'></i> Wii Shop -kanava laulu",
         "desc": "Meemi laulu Wii Shop -kanavalle",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> Uutis kissa",
         "desc": "Keskeneräinen Nintendo Wi-Fi Connection palvelu!",
-        "img": "/img/guidebg-1.png",
+        "img": "/img/guidebg-1.webp",
         "link": "extras/cat"
       }
 ]

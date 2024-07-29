@@ -2,7 +2,7 @@
     "site": {
         "title": "WiiLink",
         "description": "Tüm bölgelerde mevcut olmayanlar da dahil olmak üzere, şu anda durdurulan WiiConnect24 kanallarını ve hizmetlerini geri yüklemeye, çevirmeye ve geliştirmeye adanmış resmî olmayan bir topluluk homebrew projesi.",
-        "img": "/img/news_post_welcome_back.png",
+        "img": "/img/news_post_welcome_back.webp",
         "load": "Yükleniyor...",
         "dev": "Geliştiren: ",
         "relNotes": "Sürüm Notları",

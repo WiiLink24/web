@@ -8,7 +8,7 @@
           "link": "/guide/forecast",
           "isArea": "WiiConnect24",
           "status": "配信中",
-          "icon": "forecast_icon.png",
+          "icon": "forecast_icon.webp",
           "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 町の追加 <br> <input class='form-check-input' style='background-color:#138fed; pointer-events:none; border:2px solid #138fed;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
           "completed": "95"
         },
@@ -19,7 +19,7 @@
           "link": "/guide/news",
           "isArea": "WiiConnect24",
           "status": "開発予定",
-          "icon": "news_icon.png",
+          "icon": "news_icon.webp",
           "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 英語プロバイダーデータの収集 <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 多言語プロバイダーデータの収集 <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > ベータサービス配信",
           "completed": "10"
         },
@@ -30,7 +30,7 @@
             "link": "/guide/nintendo",
             "isArea": "WiiConnect24",
             "status": "配信中",
-            "icon": "nintendo_icon.png",
+            "icon": "nintendo_icon.webp",
             "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > WiiLinkオリジナルコンテンツの追加 <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > 任天堂オリジナルコンテンツの追加 </br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
             "completed": "90"
           },
@@ -41,7 +41,7 @@
             "link": "/guide/miicontest",
             "isArea": "WiiConnect24",
             "status": "開発予定",
-            "icon": "miicontest_icon.png",
+            "icon": "miicontest_icon.webp",
             "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > オリジナルコンテストの開始 <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > コンテストデータの読み込み </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > ベータサービス配信",
             "completed": "15"
           },
@@ -52,7 +52,7 @@
             "link": "/guide/evc",
             "isArea": "WiiConnect24",
             "status": "メンテナンス中",
-            "icon": "democracy_icon.png",
+            "icon": "democracy_icon.webp",
             "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > 多言語質問のサポート <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > オリジナルのアンケート <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
             "completed": "80"
           },
@@ -64,7 +64,7 @@
             "isArea": "日本限定",
             "status": "配信中",
             "todo": "またいつか確認してください",
-            "icon": "demae_icon.png",
+            "icon": "demae_icon.webp",
             "completed": "80"
           },
           {
@@ -75,7 +75,7 @@
             "isArea": "日本限定",
             "status": "限定ベータ",
             "todo": "またいつか確認してください",
-            "icon": "tvnotomo_icon.png",
+            "icon": "tvnotomo_icon.webp",
             "completed": "50"
           },
           {
@@ -86,7 +86,7 @@
             "isArea": "動画配信",
             "status": "配信中",
             "todo": "またいつか確認してください",
-            "icon": "kirby_icon.png",
+            "icon": "kirby_icon.webp",
             "completed": "60"
           },
           {
@@ -97,7 +97,7 @@
             "isArea": "日本限定",
             "status": "配信中",
             "todo": "またいつか確認してください",
-            "icon": "digicam_icon.png",
+            "icon": "digicam_icon.webp",
             "completed": "75"
           },
           {
@@ -108,7 +108,7 @@
             "isArea": "日本限定",
             "status": "配信中",
             "todo": "またいつか確認してください",
-            "icon": "room_icon.png",
+            "icon": "room_icon.webp",
             "completed": "85"
           },
           {

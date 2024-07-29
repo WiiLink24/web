@@ -2,7 +2,7 @@
     "site": {
       "title": "WiiLink",
       "description": "Epävirallinen, yhteisön kehittämä homebrew-projekti, jonka tarkoituksena on entisöidä, kääntää ja parantaa pois käytöstä otettuja WiiConnect24 kanavia ja palveluita, mukaan lukien kanavia joita ei julkaistu kaikilla alueilla.",
-      "img": "/img/news_post_welcome_back.png",
+      "img": "/img/news_post_welcome_back.webp",
       "load": "Ladataan...",
       "dev": "Koodannut ",
       "relNotes": "Versio tiedot",

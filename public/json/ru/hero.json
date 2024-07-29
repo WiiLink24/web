@@ -25,70 +25,70 @@
         "name": "Канал погоды",
         "desc": "Узнайте актуальный прогноз погоды в любой точке мира!",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "Канал новостей",
         "desc": "Узнайте актуальные новости в любой точке мира!",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Канал Nintendo",
         "desc": "Смотрите трейлеры, читайте обзоры и загружайте демо-версии игр для Nintendo DS",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Канал соревнований Mii",
         "desc": "Участвуйте в конкурсах и голосуйте за своих любимых Mii",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Канал голосований",
         "desc": "Отвечайте на опросы и узнайте как ваше мнение сочетается с мнением большинства",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Канал доставки",
         "desc": "Заказывайте различные блюда из дома через консоль Wii",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "Канал TV Guide",
         "desc": "Узнайте расписание телепередач и смотрите предпросмотр будущих программ",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Канал Кирби",
         "desc": "Смотрите серии телешоу «Кирби Звездопад» (Hoshii no Kaabii)",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Канал Фотопечати",
         "desc": "Закажите распечатку Фото со своей консоли Wii",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "Смотрите фильмы и шоу новым способом",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

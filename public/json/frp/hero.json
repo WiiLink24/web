@@ -25,70 +25,70 @@
         "name": "Forecast Channel (Chaîne météo)",
         "desc": "Consultâd les prèvisions mètèô actuèles du mondo entiér",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "News Channel (Chaîne infos)",
         "desc": "Réstâd enformâ des actualitâts du mondo entiér",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Nintendo Channel (Chaîne Nintendo)",
         "desc": "Agouétiéd des bendes-anonces, liéséd des critiques et tèlèchargiéd des vèrsions d'èssê de juès DS",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Mii Contest Channel (Chaîne concours Mii)",
         "desc": "Participâd a des concors et votâd por voutros Mii prèfèrâs",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Everybody Votes Channel (Chaîne votes)",
         "desc": "Rèpondéd a des sondâjos et comparâd voutres opinions a celes des ôtros",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Food Channel (Chaîne cuisine)",
         "desc": "Comandâd des repâs vareyês dês adonc chiéz vos en passant per voutra consola Wii",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "TV Guide Channel (Chaîne guide TV)",
         "desc": "Consultâd lo programe TV et agouétiéd les bendes-anonces des èmissions a venir",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Kirby TV Channel (Chaîne TV Kirby)",
         "desc": "Agouétiéd los èpisodos de la sèrie animâ de Kirby",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Photo Prints Channel (Chaîne impression photo)",
         "desc": "Comandâd des emprèssions de voutres fotôs prèferâyes dês voutra consola Wii",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "Dècuvréd des èmissions et du contenu vidèo sur la demanda d'una maniére la més originâla",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

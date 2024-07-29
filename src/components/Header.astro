@@ -18,7 +18,7 @@ const { isGuide, isMain } = Astro.props;
 	<img id="loadingspinner" alt="Loading..." src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
 
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.png" width="190px"></a>
+	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.webp" width="190px"></a>
 	  <ul id="links" style="display:none;">
 		<a class="header-link" href={localizePath("/")} aria-label="Home Link"><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
 		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")} aria-label="News Link"><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
@@ -229,80 +229,80 @@ let loadingindicator = document.getElementById("loadingindicator");
 
 				switch (langConverterCheck) {
 	case '':
-		optionLinkFlag = "<img alt='English' src='/img/flags/usa.png' class='emoji'>";
-		optionLink = "<img alt='English (US)' src='/img/flags/usa.png' class='emoji2'> English (US)";
+		optionLinkFlag = "<img alt='English' src='/img/flags/usa.webp' class='emoji'>";
+		optionLink = "<img alt='English (US)' src='/img/flags/usa.webp' class='emoji2'> English (US)";
 		break;
 	case 'en-gb':
-		optionLinkFlag = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji'>";
-		optionLink = "<img alt='English (UK)' src='/img/flags/uk.png' class='emoji2'> English (UK)";
+		optionLinkFlag = "<img alt='English (UK)' src='/img/flags/uk.webp' class='emoji'>";
+		optionLink = "<img alt='English (UK)' src='/img/flags/uk.webp' class='emoji2'> English (UK)";
 		break;
 	case 'pt-br':
-		optionLinkFlag = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji'>";
-		optionLink = "<img alt='Portuguese (BR)' src='/img/flags/brazil.png' class='emoji2'> Português (BR)";
+		optionLinkFlag = "<img alt='Portuguese (BR)' src='/img/flags/brazil.webp' class='emoji'>";
+		optionLink = "<img alt='Portuguese (BR)' src='/img/flags/brazil.webp' class='emoji2'> Português (BR)";
 		break;
 	case 'pt-pt':
-		optionLinkFlag = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji'>";
-		optionLink = "<img alt='Portuguese (PT)' src='/img/flags/portugal.png' class='emoji2'> Português (PT)";
+		optionLinkFlag = "<img alt='Portuguese (PT)' src='/img/flags/portugal.webp' class='emoji'>";
+		optionLink = "<img alt='Portuguese (PT)' src='/img/flags/portugal.webp' class='emoji2'> Português (PT)";
 		break;
 	case 'vi':
-		optionLinkFlag = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji'>";
-		optionLink = "<img alt='Vietnamese' src='/img/flags/vi.png' class='emoji2'> Tiếng Việt";
+		optionLinkFlag = "<img alt='Vietnamese' src='/img/flags/vi.webp' class='emoji'>";
+		optionLink = "<img alt='Vietnamese' src='/img/flags/vi.webp' class='emoji2'> Tiếng Việt";
 		break;
 	case 'ja':
-		optionLinkFlag = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji'>";
-		optionLink = "<img alt='Japanese' src='/img/flags/japan.png' class='emoji2'> 日本語";
+		optionLinkFlag = "<img alt='Japanese' src='/img/flags/japan.webp' class='emoji'>";
+		optionLink = "<img alt='Japanese' src='/img/flags/japan.webp' class='emoji2'> 日本語";
 		break;
 	case 'fr':
-		optionLinkFlag = "<img alt='French' src='/img/flags/france.png' class='emoji'>";
-		optionLink = "<img alt='French' src='/img/flags/france.png' class='emoji2'> Français";
+		optionLinkFlag = "<img alt='French' src='/img/flags/france.webp' class='emoji'>";
+		optionLink = "<img alt='French' src='/img/flags/france.webp' class='emoji2'> Français";
 		break;
 	case 'es':
-		optionLinkFlag = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji'>";
-		optionLink = "<img alt='Spanish' src='/img/flags/spain.png' class='emoji2'> Español";
+		optionLinkFlag = "<img alt='Spanish' src='/img/flags/spain.webp' class='emoji'>";
+		optionLink = "<img alt='Spanish' src='/img/flags/spain.webp' class='emoji2'> Español";
 		break;
 	case 'de':
-		optionLinkFlag = "<img alt='German' src='/img/flags/german.png' class='emoji'>";
-		optionLink = "<img alt='German' src='/img/flags/german.png' class='emoji2'> Deutsch";
+		optionLinkFlag = "<img alt='German' src='/img/flags/german.webp' class='emoji'>";
+		optionLink = "<img alt='German' src='/img/flags/german.webp' class='emoji2'> Deutsch";
 		break;
 	case 'ru':
-		optionLinkFlag = "<img alt='Russian' src='/img/flags/russia.png' class='emoji'>";
-		optionLink = "<img alt='Russian' src='/img/flags/russia.png' class='emoji2'> Русский";
+		optionLinkFlag = "<img alt='Russian' src='/img/flags/russia.webp' class='emoji'>";
+		optionLink = "<img alt='Russian' src='/img/flags/russia.webp' class='emoji2'> Русский";
 		break;
 	case 'it':
-		optionLinkFlag = "<img alt='Italian' src='/img/flags/italy.png' class='emoji'>";
-		optionLink = "<img alt='Italian' src='/img/flags/italy.png' class='emoji2'> Italiano";
+		optionLinkFlag = "<img alt='Italian' src='/img/flags/italy.webp' class='emoji'>";
+		optionLink = "<img alt='Italian' src='/img/flags/italy.webp' class='emoji2'> Italiano";
 		break;
 	case 'fi':
-		optionLinkFlag = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji'>";
-		optionLink = "<img alt='Finnish' src='/img/flags/finland.png' class='emoji2'> Suomi";
+		optionLinkFlag = "<img alt='Finnish' src='/img/flags/finland.webp' class='emoji'>";
+		optionLink = "<img alt='Finnish' src='/img/flags/finland.webp' class='emoji2'> Suomi";
 		break;
 	case 'hu':
-		optionLinkFlag = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji'>";
-		optionLink = "<img alt='Hungarian' src='/img/flags/hu.png' class='emoji2'> Magyar";
+		optionLinkFlag = "<img alt='Hungarian' src='/img/flags/hu.webp' class='emoji'>";
+		optionLink = "<img alt='Hungarian' src='/img/flags/hu.webp' class='emoji2'> Magyar";
 		break;
 	case 'tr':
-		optionLinkFlag = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji'>";
-		optionLink = "<img alt='Turkish' src='/img/flags/tr.png' class='emoji2'> Türkçe";
+		optionLinkFlag = "<img alt='Turkish' src='/img/flags/tr.webp' class='emoji'>";
+		optionLink = "<img alt='Turkish' src='/img/flags/tr.webp' class='emoji2'> Türkçe";
 		break;
 	case 'ko-kr':
-		optionLinkFlag = "<img alt='Korean' src='/img/flags/kr.png' class='emoji'>";
-		optionLink = "<img alt='Korean' src='/img/flags/kr.png' class='emoji2'> 한국어";
+		optionLinkFlag = "<img alt='Korean' src='/img/flags/kr.webp' class='emoji'>";
+		optionLink = "<img alt='Korean' src='/img/flags/kr.webp' class='emoji2'> 한국어";
 		break;
 	case 'es-lat':
-		optionLinkFlag = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji'>";
-		optionLink = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.png' class='emoji2'> Español (LATAM)";
+		optionLinkFlag = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.webp' class='emoji'>";
+		optionLink = "<img alt='Spanish (LATAM)' src='/img/flags/mexico.webp' class='emoji2'> Español (LATAM)";
 		break;
 	case 'ca':
-		optionLinkFlag = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji'>";
-		optionLink = "<img alt='Catalan (CA)' src='/img/flags/cat.png' class='emoji2'> Català (CA)";
+		optionLinkFlag = "<img alt='Catalan (CA)' src='/img/flags/cat.webp' class='emoji'>";
+		optionLink = "<img alt='Catalan (CA)' src='/img/flags/cat.webp' class='emoji2'> Català (CA)";
 		break;
 	case 'frp':
-		optionLinkFlag = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji'>";
-		optionLink = "<img alt='Arpetan' src='/img/flags/arp.png' class='emoji2'> Arpetan";
+		optionLinkFlag = "<img alt='Arpetan' src='/img/flags/arp.webp' class='emoji'>";
+		optionLink = "<img alt='Arpetan' src='/img/flags/arp.webp' class='emoji2'> Arpetan";
 		break;
 	case 'va':
-		optionLinkFlag = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji'>";
-		optionLink = "<img alt='Catalan (VA)' src='/img/flags/va.png' class='emoji2'> Català (VA)";
+		optionLinkFlag = "<img alt='Catalan (VA)' src='/img/flags/va.webp' class='emoji'>";
+		optionLink = "<img alt='Catalan (VA)' src='/img/flags/va.webp' class='emoji2'> Català (VA)";
 		break;
 }
 

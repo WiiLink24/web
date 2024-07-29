@@ -24,70 +24,70 @@
         "name": "날씨 채널",
         "desc": "세계 곳곳의 최신 일기예보를 확인하세요",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "뉴스 채널",
         "desc": "세계 곳곳의 최신 뉴스를 알아보세요",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "닌텐도 채널",
         "desc": "DS 게임의 데모를 다운로드하고, 리뷰를 읽고, 예고편을 시청하세요",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Mii 콘테스트 채널",
         "desc": "최애의 Mii에 투표하고 콘테스트에 참여하세요",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "모두의 투표 채널",
         "desc": "남들과 의견을 비교하고 투표에 참여하세요",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "음식 채널",
         "desc": "Wii 콘솔로 집에서 다양한 종류의 음식을 주문하세요",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "TV 편성표 채널",
         "desc": "곧 방영되는 프로그램의 예고편을 시청하고 TV 편성표를 확인하세요",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "커비 TV 채널",
         "desc": "커비: 곧 돌아올거야! TV 프로그램 에피소드를 시청하세요",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "사진 인화 채널",
         "desc": "좋아하는 사진의 인화물을 Wii 콘솔에서 주문하세요",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii의 방",
         "desc": "프로그램과 VOD 컨텐츠를 더 혁신적인 방법으로 발견하세요",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

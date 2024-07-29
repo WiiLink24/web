@@ -2,7 +2,7 @@
     "site": {
         "title": "WiiLink",
         "description": "Un progetto homebrew non ufficiale della comunità dedicato al restauro, traduzione e miglioramento dei canali e servizi WiiConnect24 ormai sospesi, compresi quelli che non erano disponibili in tutte le regioni.",
-        "img": "/img/news_post_welcome_back.png",
+        "img": "/img/news_post_welcome_back.webp",
         "load": "Caricamento...",
         "dev": "Sviluppato da ",
         "relNotes": "Note di rilascio",

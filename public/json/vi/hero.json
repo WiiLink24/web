@@ -25,70 +25,70 @@
         "name": "Kênh Thời Tiết",
         "desc": "Kiểm tra dự báo thời tiết cập nhật từ khắp nơi trên thế giới",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "Kênh Tin Tức",
         "desc": "Luôn cập nhật những tin tức mới nhất từ ​​khắp nơi trên thế giới",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Kênh Nintendo",
         "desc": "Xem các đoạn giới thiệu, đọc đánh giá và tải xuống bản demo của những game DS",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Check Mii Out Channel",
         "desc": "Tham gia các cuộc thi và bình chọn cho Miis yêu thích của bạn",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Kênh Bình Chọn",
         "desc": "Trả lời các cuộc thăm dò và xem ý kiến của bạn so với những người khác như thế nào",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Kênh Đồ Ăn",
         "desc": "Đặt các loại bữa ăn khác nhau từ nhà thông qua máy chơi game Wii của bạn",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "Kênh hướng dẫn truyền hình",
         "desc": "Kiểm tra lịch truyền hình và xem trailer của các chương trình sắp tới",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Kênh TV Kirby",
         "desc": "Xem các tập của Kirby: Right Back at Ya!",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Kênh In Ấn",
         "desc": "Đặt hàng in các bức ảnh yêu thích của bạn từ máy chơi gaem Wii của bạn",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "Khám phá các chương trình và nội dung video theo yêu cầu theo cách mới lạ hơn",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

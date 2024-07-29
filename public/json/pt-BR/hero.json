@@ -25,70 +25,70 @@
         "name": "Canal do Tempo",
         "desc": "Confira as previsões do tempo atualizadas do mundo todo",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "Canal de Notícias",
         "desc": "Veja o que anda acontecendo recentemente",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Canal Nintendo",
         "desc": "Assista a trailers, leia análises e baixe demonstrações de DS",
         "link": "/guide/nintendo
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Canal Mii Veja",
         "desc": "Participe de concursos e vote nos seus Miis favoritos",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Canal de Opiniões",
         "desc": "Responda a votações e veja como suas opiniões diferem da dos outros",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Canal de Comida",
         "desc": "Peça diferentes tipos de comida diretamente do seu Wii",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "Canal Guia TV",
         "desc": "Confira a programação da sua televisão",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Canal Kirby TV",
         "desc": "Veja episódios de Kirby",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Canal de Impr. de Fotos",
         "desc": "Faça pedidos de impressão das suas fotos favoritas",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "Assista a vários tipos de vídeos em uma sala confortável",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

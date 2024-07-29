@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "Internacional",
         "status": "Lançamento completo",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Add more cities <br> <input class='form-check-input' style='background-color:#138fed; pointer-events:none; border:2px solid #138fed;' type='checkbox' value='' id='flexCheckDefault' checked > Service launch",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "Internacional",
         "status": "Planeado",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch english provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Fetch foreign language provider data <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
         "completed": "10"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "Internacional",
         "status": "Lançamento completo",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Include WiiLink original content <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Include Nintendo original content </br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > Service launch",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "Internacional",
         "status": "Planeado",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch custom contests <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > Load and fetch contest data </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > Launch service beta",
         "completed": "15"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "Internacional",
         "status": "Em manutenção",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Multiple language question support <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Custom polls <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > Service launch",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Originalmente exclusivo do Japão",
         "status": "Lançamento completo",
         "todo": "Volta mais tarde...",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "80"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Originalmente exclusivo do Japão",
         "status": "Beta privado",
         "todo": "Volta mais tarde...",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "50"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Originalmente em alguns países Europeus",
         "status": "Lançamento completo",
         "todo": "Volta mais tarde...",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "60"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Exclusivo do Japão",
         "status": "Lançamento completo",
         "todo": "Volta mais tarde...",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Originalmente exclusivo do Japão",
         "status": "Lançamento completo",
         "todo": "Volta mais tarde...",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "85"
       },
       {

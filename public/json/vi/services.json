@@ -8,7 +8,7 @@
         "link": "/guide/forecast",
         "isArea": "Quốc tế",
         "status": "Bản phát hành Đầy đủ",
-        "icon": "forecast_icon.png",
+        "icon": "forecast_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ đang hoạt động rất tốt!",
         "completed": "95"
       },
@@ -19,7 +19,7 @@
         "link": "/guide/news",
         "isArea": "Quốc tế",
         "status": "Bản Phát Hành Đầy Đủ",
-        "icon": "news_icon.png",
+        "icon": "news_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
         "completed": "100"
       },
@@ -30,7 +30,7 @@
         "link": "/guide/nintendo",
         "isArea": "Quốc Tế",
         "status": "Bản Phát Hành Đầy Đủ",
-        "icon": "nintendo_icon.png",
+        "icon": "nintendo_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
         "completed": "90"
       },
@@ -41,7 +41,7 @@
         "link": "/guide/miicontest",
         "isArea": "Quốc Tế",
         "status": "Bản Phát Hành Đầy Đủ",
-        "icon": "miicontest_icon.png",
+        "icon": "miicontest_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
         "completed": "80"
       },
@@ -52,7 +52,7 @@
         "link": "/guide/evc",
         "isArea": "Quốc Tế",
         "status": "Bản Phát Hành Đầy Đủ",
-        "icon": "democracy_icon.png",
+        "icon": "democracy_icon.webp",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
         "completed": "80"
       },
@@ -64,7 +64,7 @@
         "isArea": "Ban đầu phát hành tại Nhật Bản",
         "status": "Bản Phát Hành Đầy Đủ",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
-        "icon": "demae_icon.png",
+        "icon": "demae_icon.webp",
         "completed": "90"
       },
       {
@@ -75,7 +75,7 @@
         "isArea": "Ban đầu phát hành tại Nhật Bản",
         "status": "Phiên Bản Thử Nghiệm Riêng Tư",
         "todo": "<i class='fa fa-hard-hat'></i> Dịch vụ này vẫn đang được phát triển",
-        "icon": "tvnotomo_icon.png",
+        "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
       {
@@ -86,7 +86,7 @@
         "isArea": "Ban đầu phát hành cho một số nước ở châu Âu",
         "status": "Bản Phát Hành Đầy Đủ",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
-        "icon": "kirby_icon.png",
+        "icon": "kirby_icon.webp",
         "completed": "90"
       },
       {
@@ -97,7 +97,7 @@
         "isArea": "Ban đầu phát hành tại Nhật Bản",
         "status": "Bản Phát Hành Đầy Đủ",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
-        "icon": "digicam_icon.png",
+        "icon": "digicam_icon.webp",
         "completed": "75"
       },
       {
@@ -108,7 +108,7 @@
         "isArea": "Ban đầu phát hành tại Nhật Bản",
         "status": "Bản Phát Hành Đầy Đủ",
         "todo": "<i class='fa fa-circle-check'></i> Dịch vụ này đang hoạt động rất tốt!",
-        "icon": "room_icon.png",
+        "icon": "room_icon.webp",
         "completed": "85"
       },
       {

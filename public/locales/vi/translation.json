@@ -2,7 +2,7 @@
     "site": {
         "title": "WiiLink",
         "description": "Một dự án homebrew cộng đồng không chính thức dành riêng cho việc khôi phục, dịch và nâng cao các kênh và dịch vụ WiiConnect24 hiện đã ngừng hoạt động, bao gồm cả những kênh và dịch vụ không có sẵn ở tất cả các khu vực.",
-        "img": "/img/news_post_welcome_back.png",
+        "img": "/img/news_post_welcome_back.webp",
         "load": "Đang tải...",
         "dev": "Được phát triển bởi ",
         "relNotes": "Thông tin phiên bản",

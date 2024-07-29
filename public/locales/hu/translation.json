@@ -2,7 +2,7 @@
     "site": {
         "title": "WiiLink",
         "description": "Egy nemhivatalos közösségi projekt a néhai WiiConnect24-csatornák és szolgáltatások visszaállítására, lefordítására, korszerűsítésére és régiófüggetlenné tételére.",
-        "img": "/img/news_post_welcome_back.png",
+        "img": "/img/news_post_welcome_back.webp",
         "load": "Betöltés…",
         "dev": "Fejlesztő: ",
         "relNotes": "Fejlesztői jegyzetek",

@@ -2,7 +2,7 @@
     "site": {
       "title": "WiiLink",
       "description": "WiiLink is an all new revival service for the Wii. It brings back some of the most highly requested channels back online &mdash; channels released only in Japan!",
-      "img": "/img/news_post_welcome_back.png",
+      "img": "/img/news_post_welcome_back.webp",
       "load": "Carregant...",
       "dev": "Desenvolupat per ",
       "relNotes": "Notes de la Versió",

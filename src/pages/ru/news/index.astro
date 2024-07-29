@@ -18,11 +18,11 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
 <Layout
   title={t("news.mainTitle")}
   description={t("news.mainDesc")}
-  image="/img/News_embed.png"
+  image="/img/News_embed.webp"
 />
 <Header isGuide="display:none;" />
 <div class="hold">
-  <img class="newstop" src="/img/newstop.png" />
+  <img class="newstop" src="/img/newstop.webp" />
   <div class="welcome-msg">
     <h2 style="font-size:40px; font-family:Gilroy;">
       <Trans i18nKey="news.title">
@@ -328,7 +328,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .color {
-    background: url("/img/header_bg.png");
+    background: url("/img/header_bg.webp");
     background: AccentColor;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

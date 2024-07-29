@@ -25,70 +25,70 @@
         "name": "Canal Tiempo",
         "desc": "Consulta las previsiones meteorológicas actualizadas de todo el mundo",
         "link": "/guide/forecast",
-        "icon": "forecastbanner.png",
-        "bg": "forecast.png"
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
       },
       {
         "name": "Canal Noticias",
         "desc": "Mantente informado con las últimas noticias de todo el mundo",
         "link": "/guide/news",
-        "icon": "newsbanner.png",
+        "icon": "newsbanner.webp",
         "bg": "news.jpg"
       },
       {
         "name": "Canal Nintendo",
         "desc": "Mira tráileres, lee reseñas y descarga demos de juegos para Nintendo DS",
         "link": "/guide/nintendo",
-        "icon": "nintendochannelbanner.png",
+        "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Canal Miirame",
         "desc": "Participa en concursos y vota por tus Miis favoritos",
         "link": "/guide/miicontest",
-        "icon": "miioutbanner.png",
-        "bg": "checkmiiout.png"
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
       },
       {
         "name": "Canal Opiniones",
         "desc": "Responde encuestas y compara tus opiniones con las de otros",
         "link": "/guide/evc",
-        "icon": "politicsbanner.png",
+        "icon": "politicsbanner.webp",
         "bg": "politics.jpg"
       },
       {
         "name": "Canal Comida",
         "desc": "Ordena diferentes tipos de comida desde casa a través de tu consola Wii",
         "link": "/guide/demae",
-        "icon": "demaebanner.png",
-        "bg": "food.png"
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
       },
       {
         "name": "Canal Guía de TV",
         "desc": "Consulta la programación de televisión y vea tráilers de los próximos programas",
         "link": "/status",
-        "icon": "tvnotomobanner.png",
-        "bg": "tvnotomo.png"
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
       },
       {
         "name": "Canal Kirby TV",
         "desc": "Mira episodios del show de Kirby: Right Back at Ya! en este canal",
         "link": "/guide/kirbytv",
-        "icon": "kirbytvbanner.png",
-        "bg": "kirbytv.png"
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
       },
       {
         "name": "Canal Impresión de Fotos",
         "desc": "Ordena impresiones de tus fotografías favoritas desde tu consola Wii",
         "link": "/guide/digicam",
-        "icon": "digicambanner.png",
-        "bg": "digicamprints.png"
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
         "desc": "Descubre programas y contenido de vídeo bajo demanda de una forma más novedosa",
         "link": "/guide/wiinoma",
-        "icon": "wiinomabanner.png",
+        "icon": "wiinomabanner.webp",
         "bg": "room.webp"
       }
     ]

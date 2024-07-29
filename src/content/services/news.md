@@ -3,7 +3,7 @@ title: News Channel
 pubDate: 2024-01-24
 icon: fa-solid fa-newspaper
 description: Read the global news on your Wii!
-heroImage: "newsbanner.png"
+heroImage: "newsbanner.webp"
 type: "WiiConnect24"
 color: 407d0f60
 ---
