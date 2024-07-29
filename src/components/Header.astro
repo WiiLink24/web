@@ -109,7 +109,7 @@ const { isGuide, isMain } = Astro.props;
 		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn" aria-label="More button"><i
 			class="fa-solid fa-chevron-down"
 			style="font-size:20px; pointer-events:none;"></i>
-			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle"></span>
+			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle" style="pointer-events: none;"></span>
 			</button>
 		<div id="dropdownMore">
 		<a class="dropdown-item" href={localizePath("/extras")} aria-label="Extras Link"><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
@@ -226,8 +226,8 @@ for (let i = 0; i < dropdown.options.length; i++) {
     const langCode = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
     const [flag, lang] = flagMap[langCode] || ["usa", "English (US)"];
 
-    const optionLinkFlag = `<img alt='${lang}' src='/img/flags/${flag}.webp' class='emoji'>`;
-    const optionLink = `<img alt='${lang}' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
+    const optionLinkFlag = `<img alt='${lang} Emoji' src='/img/flags/${flag}.webp' class='emoji'>`;
+    const optionLink = `<img alt='${lang} Text' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
 
     if (i === 0) {
         titleTranslate.innerHTML = optionLinkFlag;
