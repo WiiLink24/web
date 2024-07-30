@@ -71,7 +71,7 @@ import { Trans } from "astro-i18next/components";
         <button
           type="button"
           id="download-btn"
-          onclick="downloadPatcher(); gaq.push(['_trackEvent','Download','Patcher',this.href]);"
+          onclick="downloadPatcher();"
           class="btn btn-primary btn-lg"
           style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
@@ -187,7 +187,7 @@ import { Trans } from "astro-i18next/components";
                   alt="RC24 Logo"
                   loading="lazy"
                   class="invert"
-                  src="/img/rc24.webp"
+                  src="/img/rc24_logo.webp"
                   style="filter: invert(1);"
                   width="25px"
                 />
@@ -301,13 +301,13 @@ import { Trans } from "astro-i18next/components";
 
         switch (os) {
           case "MacOS":
-            window.location.href = assets[3].browser_download_url;
+            window.location.href = assets[3];
             break;
           case "Windows":
-            window.location.href = assets[4].browser_download_url;
+            window.location.href = assets[4];
             break;
           case "Linux":
-            window.location.href = assets[1].browser_download_url;
+            window.location.href = assets[1];
             break;
           default:
             window.location.href =
@@ -455,9 +455,11 @@ import { Trans } from "astro-i18next/components";
             "download-linux-x64": assetUrls[1]
           };
 
+          let index = 0;
           for (const [id, url] of Object.entries(downloadElements)) {
             if (url) document.getElementById(id).href = url;
           }
+          assets = assetUrls;
         }
       } catch (error) {
         console.error("Error fetching GitHub release:", error);
