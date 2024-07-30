@@ -18,7 +18,7 @@ const { isGuide, isMain } = Astro.props;
 	<img id="loadingspinner" alt="Loading..." src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
 
 	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.webp" width="190px"></a>
+	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img loading="lazy" class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.webp" width="190px" height="69px"></a>
 	  <div id="links" style="display:none;">
 		<a class="header-link" href={localizePath("/")} aria-label="Home Link"><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
 		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")} aria-label="News Link"><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
@@ -139,6 +139,8 @@ const { isGuide, isMain } = Astro.props;
 </r>
 
 <script is:inline>
+
+const themeColorButton = document.getElementById('themeColor');
 
 let loadingindicator = document.getElementById("loadingindicator");
     loadingindicator.style.width = "0%";
@@ -280,8 +282,30 @@ function closeDropdown() {
     }, 200);
 }
 
+function enableDarkMode() {
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('color-mode', 'dark');
+        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+        themeColorButton.style.filter = "invert(0)";
+    }
+
+    function enableLightMode() {
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('color-mode', 'light');
+        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+        themeColorButton.style.filter = "invert(1)";
+    }
+
+
+function darkToggle() {
+	if (document.documentElement.classList.contains('dark')) {
+		enableLightMode();
+	} else {
+		enableDarkMode();
+	}
+}
+
 document.addEventListener('DOMContentLoaded', function() {
-    const themeColorButton = document.getElementById('themeColor');
 
     if (!localStorage.getItem('color-mode')) {
         localStorage.setItem('color-mode', 'dark');
@@ -301,20 +325,6 @@ document.addEventListener('DOMContentLoaded', function() {
             enableLightMode();
         }
     });
-
-    function enableDarkMode() {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-mode', 'dark');
-        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
-        themeColorButton.style.filter = "invert(0)";
-    }
-
-    function enableLightMode() {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-mode', 'light');
-        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
-        themeColorButton.style.filter = "invert(1)";
-    }
 
     document.getElementById('darkToggle').addEventListener('click', () => {
         if (document.documentElement.classList.contains('dark')) {
