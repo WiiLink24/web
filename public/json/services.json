@@ -42,7 +42,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> We are improving our backend, once ready, we will begin rolling out new contests!",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "completed": "90"
       },
       {
