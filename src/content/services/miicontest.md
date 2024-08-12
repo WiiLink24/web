@@ -10,7 +10,7 @@ color: a0db0b60
 
 ### Share Miis with the community and enter them in contests.
 
-<a href="https://mii.rc24.xyz/" style="margin-top:5px; width:100%;" class="btn btn-success"> View Miis and Stats</a>
+<a href="https://miicontest.wiilink.ca/" style="margin-top:5px; width:100%;" class="btn btn-success"> View Miis and Stats</a>
 
 The Check Mii Out Channel/Mii Contest Channel is available with RiiConnect24! You can post your favorite Miis for the whole RiiConnect24 community to see.
 
