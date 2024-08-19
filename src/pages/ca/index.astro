@@ -142,34 +142,13 @@ changeLanguage("ca");
     warnElement.innerHTML = `<i class='fa ${icon}'></i> <b>${message}</b>`;
   }
 
-  function setLowSpecMode() {
-    document.querySelector(".square").style.animation = "changecolorbasic 10s linear infinite";
-    document.querySelector(".bottomleftcorner").style.animation = "none";
-    document.body.classList.add("no-animation");
-  }
-
   const parameters = {
     fromRiiConnect24: getUrlParameter("from-riiconnect24"),
-    isLowSpec: getUrlParameter("low-spec"),
-    potato: getUrlParameter("potato"),
     kawaii: getUrlParameter("kawaii")
   };
 
-  if (navigator.hardwareConcurrency < 5 || navigator.deviceMemory < 5 || window.screen.width <= 1000 || window.screen.height <= 720) {
-    setLowSpecMode();
-  }
-
   if (parameters.fromRiiConnect24 === "true") {
     showWarning("fa-triangle-exclamation", "You were redirected from RC24.xyz!<br /><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>");
-  }
-
-  if (parameters.isLowSpec === "true") {
-    showWarning("fa-bolt", "Low spec mode active!<br /><hr style='margin:8px 0;'/>Some animations have been disabled in order to make the site feel snappier on your device.");
-    setLowSpecMode();
-  }
-
-  if (parameters.potato === "true") {
-    setLowSpecMode();
   }
 
   if (parameters.kawaii === "true") {
