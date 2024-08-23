@@ -121,26 +121,24 @@ heroImage: "../../img/guidebg-1.webp"
 
 <l class="notice info smallwidth">This step is optional, but it's recommended as it allows additional services to function.</l>
 
-1. Go to the Wii Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
+1. Go to the Wii U Menu --> System Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
 
-2. Make your way to the "Auto-Obtain DNS" setting.
+2. Make your way to the `DNS` setting.
 
-<l class="notice info smallwidth">Take note that the "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
-
-3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
+3. Once you made sure that you're on the DNS setting, Click on `Don't Auto-Obtain`, then enter the following DNS info:
 
 Set your Primary DNS to --> 167.235.229.36<br>
 Set your Secondary DNS to --> 1.1.1.1
 
 4. After you're done setting up the DNS, save the changes and let the system perform the Connection Test.
 
-5. If the Connection Test is successful, make your way back to the second page of the system settings.
-
 <l class="notice generic smallwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
+
+5. Return to the vWii, then navigate to `Wii Options`.
 
 6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
 
-7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
+7. Go to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
 
 8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
 
