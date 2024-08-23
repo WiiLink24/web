@@ -64,12 +64,15 @@ heroImage: "../../img/guidebg-1.webp"
 
 </br>
 
+<l class="notice info">To use WiiConnect24 services in Dolphin, you need to have the Wii System Menu installed. You can do this by navigating to `Tools` > `Perform Online System Update`</l>
+
 1. Open Dolphin Emulator.
 2. Select `Tools`
 3. Select `Install WAD...`
 4. If you have chosen to install regional channels, navigate to the `WAD` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
 5. Repeat the process to install all other WADs.
 6. Navigate to `Options` > `Configuration` > `Wii`, and ensure `Enable WiiConnect24 via WiiLink` is enabled.
+7. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](../../eula).
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
