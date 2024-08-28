@@ -5,6 +5,16 @@ import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 
 changeLanguage("vi");
+
+const data = await fetch("/json/wallpapers.json")
+    .then(response => response.json())
+    .then(data => {
+    console.log(data);
+    return data;
+})
+    .catch(error => {
+    console.error("Error fetching wallpapers:", error);
+});
 ---
 
 <Layout title="Wallpapers - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />

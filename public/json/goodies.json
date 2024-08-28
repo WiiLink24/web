@@ -14,22 +14,10 @@
         "link": "extras/wallpapers"
       },
       {
-        "title": "<i class='fa-solid fa-user-group'></i> Meet the team",
-        "desc": "The main contributors to the project!",
-        "img": "/img/guidebg-2.webp",
-        "link": "404"
-      },
-      {
         "title": "<i class='fa-solid fa-poll'></i> Poll Viewer",
         "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "extras/vote"
-      },
-      {
-        "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
-        "desc": "Watch translations of Nintendo's original Wii Room content!",
-        "img": "/img/guidebg-3.webp",
-        "link": "404"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Themes",
@@ -56,7 +44,7 @@
         "link": "extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<i class='fa-solid fa-user'></i> Mii Avatar Editor",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "extras/mii"

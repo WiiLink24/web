@@ -3,7 +3,7 @@ title: Wii U Installation
 icon: fa-solid fa-download
 pubDate: 2024-07-25
 description: Get up-to-date instructions on how to install all of our services!
-heroImage: "../../img/guidebg-1.webp"
+heroImage: "../../img/guidebg-3.webp"
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">
