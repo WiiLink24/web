@@ -81,7 +81,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       <div class="polka-dot"></div>
       {
         posts
-          .filter(post => !["Installation guide", "Frequently asked questions", "Problem solving"].includes(post.data.title))
+          .filter(post => !["Installation guide", "Frequently asked questions", "Problem solving", "Dolphin Installation", "Wii U Installation", "Wii Installation"].includes(post.data.title))
           .map(post => (
             <div class="postmini">
               <a href={`/guide/${post.slug}/`}>
@@ -108,7 +108,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       </Trans>
     </h3>
     <div class="btn-wrapper">
-      <a href="mailto:contact@wiilink24.com"
+      <a href="mailto:support@wiilink.ca"
         ><div
           class="btn btn-success"
           style="color:white !important; padding:10px;">
