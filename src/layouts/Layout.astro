@@ -70,12 +70,8 @@ const { title, description, image } = Astro.props;
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="darkreader-lock" />
     <!-- Google tag (gtag.js) -->
-    <script
-      type="text/partytown"
-      src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
-    >
-      import { set } from "astro/zod";
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -105,12 +101,11 @@ const { title, description, image } = Astro.props;
       crossorigin="anonymous"
       async></script>
     <script
-      type="text/partytown"
+      async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4011748932374526"
       crossorigin="anonymous"></script>
     <script
       type="module"
-      type="text/partytown"
       src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"
     ></script>
     <title>{title}</title>
