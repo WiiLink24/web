@@ -3,7 +3,7 @@ title: Wii U Installation
 icon: fa-solid fa-download
 pubDate: 2024-07-25
 description: Get up-to-date instructions on how to install all of our services!
-heroImage: "../../img/guidebg-3.webp"
+heroImage: "../../img/guidebg-1.webp"
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">
@@ -17,28 +17,26 @@ heroImage: "../../img/guidebg-3.webp"
 </br>
 
 
-## Section I - Priiloader
+## Section I - Priiloader and installing EULA
 
-1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), and the `system-channel-restorer` from [here](https://oscwii.org/library/app/system-channel-restorer).
-2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Open the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
-3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader).
-4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip the `LoadPriiloader.zip` file and copy the apps folder to the root of your SD Card or USB Drive.
-5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
-6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
-7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 6` at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
-9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
-10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
-11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
-12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
-13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime` from the menu. If you're on a Wii U, enable `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button`. (Feel free to enable other options while you're in this menu)
-14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
-16. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `system-channel-restorer`.
-17. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press A to select `EULA`.
-18. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press + to install.
-19. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home to return to the Homebrew Channel.
-20. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
+1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader), and `system-channel-restorer` from [here](https://oscwii.org/library/app/system-channel-restorer).
+2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip all 3 zip files, and copy the `apps` folder from within each to the root of your SD Card or USB Drive.
+3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
+4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
+5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
+6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 6` at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
+7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
+8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
+9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
+10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
+11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime` from the menu. If you're on a Wii U, enable `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button`. (Feel free to enable other options while you're in this menu)
+12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
+13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
+14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `system-channel-restorer`.
+15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press A to select `EULA`.
+16. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press + to install.
+17. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home to return to the Homebrew Channel.
+18. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
 
 </br>
 
