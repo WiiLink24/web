@@ -18,6 +18,8 @@ heroImage: "../../img/guidebg-3.webp"
 <div class="errorCodes" id="error-codes">
 
 
+<div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a>, and send a picture of your error.</h4><hr></div>
+
 <div class="error">Error Code: 107245 <span class="badge bg-warning">Any Channel</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
 
 <div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock">here</a> to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> for further help with diagnosing your issue!</h4><hr></div>
