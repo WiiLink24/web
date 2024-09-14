@@ -38,6 +38,8 @@ heroImage: "../../img/guidebg-3.webp"
 
 <div class="error">Error Code: 109139 <span class="badge bg-warning">Any Channel</span><h4>The WiiConnect24 service isn’t activated on your console. Go to Wii Settings → WiiConnect24 and agree to its terms of use. If it reports that “WiiConnect24 and Wii Shop Channel service is not currently being offered”, try changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you can use AnyGlobe Changer to switch back to your country.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24 settings, and “Parental Controls” are turned off.</h4><hr></div>
 
+<div class="error">Error Code: 221001 <span class="badge bg-warning">EULA</span><h4>Try changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you can use AnyGlobe Changer to switch back to your country.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24 settings, and “Parental Controls” are turned off.</h4><hr></div>
+
 <div class="error">Error Code: 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 
 <div class="error">PAL crashes <span class="badge bg-danger">Japanese channels</span><h4>Unfortunately, this is a known issue. We're aware of many crashes for PAL Region consoles. We continue to work on a solution for this, thank you for your patience.</h4><hr></div>
