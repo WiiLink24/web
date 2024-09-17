@@ -21,17 +21,17 @@ heroImage: "../../img/guidebg-1.webp"
 </br>
 
 1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
-2. On `Windows`, run `WiiLink_Patcher_Windows_v2.X.X.exe`. <br>
+2. On `Windows`, run `WiiLink_Patcher_Windows_vXXX.exe`\*. <br>
 
-   On `MacOS`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLink_Patcher_macOS-<arch>_v2.X.X`. Afterwards, run `./WiiLink_Patcher_macOS-<arch>_v2.X.X` and the patcher will launch right on your terminal.<br>
+   On `MacOS`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLink_Patcher_macOS-<arch>_vXXX`\*. Afterwards, run `./WiiLink_Patcher_macOS-<arch>_vXXX`\* and the patcher will launch right on your terminal.<br>
 
-   On `Linux`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_Linux-<arch>_v2.X.X`. Afterwards, run `./WiiLinkPatcher_Linux-<arch>_v.2.X.X` and the patcher will launch right on your terminal.
+   On `Linux`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_Linux-<arch>_vXXX`\*. Afterwards, run `./WiiLinkPatcher_Linux-<arch>_v.2.X.X`\* and the patcher will launch right on your terminal.
 
    On `Android`, follow the guide [here](https://github.com/AyeItsHarry/WiiLinkPatcherAndroid#getting-started) to launch the unofficial patcher script in Termux.
 
-   <l class="notice info">Alternatively, you can rename the patcher file on MacOS or Linux to a simpler filename like "WiiLinkPatcher" and run the commands with that name in mind.</l>
+   <l class="notice info">Alternatively, you can rename the patcher file on MacOS or Linux to a simpler filename like `WiiLinkPatcher` and run the commands with that name in mind.</l>
 
-> **For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `arm64` depending on your system architecture, and `X.X` with the latest version on the filename.
+> \***For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `ARM64` depending on your system architecture, and `XXX` with the latest version on the filename.
 
 3. Choose your installation setup:
 
@@ -99,6 +99,8 @@ heroImage: "../../img/guidebg-1.webp"
 5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu.
 
 ### Food Channel
+
+<l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](demae) instead. Otherwise, proceed with the guide below.</l>
 
 1. Launch the Food Channel from your Wii's home menu.
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.
