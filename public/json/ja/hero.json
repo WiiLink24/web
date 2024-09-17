@@ -1,0 +1,88 @@
+{
+  "taglines": [
+    "2006年に時が戻る。",
+    "インターネットにつなげると、できること。",
+    "伝説のWiiConnect24の帰還。",
+    "Wiiを再発見。",
+    "黄金期にリンクする。",
+    "Wiiの過去につながる。",
+    "Wiiはマリオカートだけじゃない。",
+    "皆の子供時代に戻る。",
+    "懐かしいチャンネルを復帰する。",
+    "一台一台、復帰する。",
+  ],
+  "hero": {
+    "element": [
+      {
+        "name": "お天気チャンネル",
+        "desc": "国際的な天気を確認する",
+        "link": "/guide/forecast",
+        "icon": "forecastbanner.webp",
+        "bg": "forecast.webp"
+      },
+      {
+        "name": "ニュースチャンネル",
+        "desc": "今のニュースをすぐに確認する",
+        "link": "/guide/news",
+        "icon": "newsbanner.webp",
+        "bg": "news.webp"
+      },
+      {
+        "name": "みんなのニンテンドーチャンネル",
+        "desc": "予告編、レビューやデモを好きなだけ見る",
+        "link": "/guide/nintendo",
+        "icon": "nintendochannelbanner.webp",
+        "bg": "nintendo.webp"
+      },
+      {
+        "name": "Miiコンテストチャンネル",
+        "desc": "コンテストに参加し、好きなMiiに投票する",
+        "link": "/guide/miicontest",
+        "icon": "miioutbanner.webp",
+        "bg": "checkmiiout.webp"
+      },
+      {
+        "name": "みんなで投票チャンネル",
+        "desc": "質問を答え、みんなとの意見の違いを調べる",
+        "link": "/guide/evc",
+        "icon": "politicsbanner.webp",
+        "bg": "politics.webp"
+      },
+      {
+        "name": "出前チャンネル",
+        "desc": "いろんな食べ物をWiiから注文する",
+        "link": "/guide/demae",
+        "icon": "demaebanner.webp",
+        "bg": "food.webp"
+      },
+      {
+        "name": "テレビの友チャンネル",
+        "desc": "地デジのスケジュールを確認し、予告編を見る",
+        "link": "/status",
+        "icon": "tvnotomobanner.webp",
+        "bg": "tvnotomo.webp"
+      },
+      {
+        "name": "カービィTVチャンネル",
+        "desc": "一部星のカービィのアニメを視聴する",
+        "link": "/guide/kirbytv",
+        "icon": "kirbytvbanner.webp",
+        "bg": "kirbytv.webp"
+      },
+      {
+        "name": "デジカメプリントチャンネル",
+        "desc": "好きな写真のプリントをWiiから作る",
+        "link": "/guide/digicam",
+        "icon": "digicambanner.webp",
+        "bg": "digicamprints.webp"
+      },
+      {
+        "name": "Wiiの間",
+        "desc": "番組やビデオを新たな方法で見る",
+        "link": "/guide/wiinoma",
+        "icon": "wiinomabanner.webp",
+        "bg": "room.webp"
+      }
+    ]
+  }
+}

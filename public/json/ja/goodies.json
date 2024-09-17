@@ -2,54 +2,71 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> ブランドデータ",
-        "desc": "アナウンスなどで使う画像やロゴ。",
+        "title": "<i class='fa-solid fa-palette'></i> ブランド素材",
+        "desc": "外部サイトで使えるブランド素材",
         "img": "/img/branding_bg.webp",
-        "link": "404"
+        "link": "extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> 壁紙",
-        "desc": "パソコンやスマホをWiiLinkの壁紙でデコろう！",
+        "desc": "PC用のWiiLink壁紙",
         "img": "/img/wallpaper_bg.webp",
-        "link": "404"
+        "link": "extras/wallpapers"
       },
       {
-        "title": "<i class='fa-solid fa-user-group'></i> チームメンバー",
-        "desc": "WiiLinkの開発者について知ろう！",
+        "title": "<i class='fa-solid fa-poll'></i> 投票ビューア",
+        "desc": "みんなで投票チャンネルの結果一覧",
         "img": "/img/guidebg-2.webp",
-        "link": "404"
-      },
-      {
-        "title": "<i class='fa-solid fa-tag'></i> LinkTag",
-        "desc": "Wii・Wii Uのアカウントタグサービス",
-        "img": "/img/guidebg-1.webp",
-        "link": "404"
-      },
-      {
-        "title": "<i class='fa-solid fa-poll'></i> 投票チャンネルアンケート結果",
-        "desc": "みんなで投票チャンネルのアンケート結果を見てみよう！!",
-        "img": "/img/guidebg-2.webp",
-        "link": "404"
-      },
-      {
-        "title": "<i class='fa-solid fa-house'></i> Wiiの間オリジナル",
-        "desc": "Wiiの間の動画のアーカイブ！",
-        "img": "/img/guidebg-3.webp",
-        "link": "404"
+        "link": "extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-paintbrush'></i> WiiLinkテーマ",
-        "desc": "WiiをWiiLinkのテーマで雰囲気を変えよう！",
+        "desc": "機種、ブラウザその他のWiiLinkテーマ",
         "img": "/img/guidebg-3.webp",
-        "link": "404"
+        "link": "extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
-        "desc": "WiiLinkの新しいオンラインプレイサービス！",
+        "desc": "Nintendo Wi-Fi Connectionの復帰サービス",
         "img": "/img/guidebg-1.webp",
-        "link": "404"
+        "link": "https://wfc.wiilink24.com"
+      },
+      {
+        "title": "<i class='fa-solid fa-mask'></i> マンガ",
+        "desc": "RiiConnect24のマンガ",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/strips"
+      },
+      {
+        "title": "<i class='fa-solid fa-gamepad'></i> Wiiリモコンテスター",
+        "desc": "Wiiリモコンをテストするサイト",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/internetchannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-user'></i> Mii編集",
+        "desc": "Miiを編集するサイト",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/mii"
+      },
+      {
+        "title": "<i class='fa-solid fa-image'></i> 写真チャンネルチート",
+        "desc": "早くパズルを解くための画像",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/photochannel"
+      },
+      {
+        "title": "<i class='fa-solid fa-shop'></i> Wiiショップチャンネルの歌",
+        "desc": "Wiiショップについての古い歌",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/ring"
+      },
+      {
+        "title": "<i class='fa-solid fa-cat'></i> ニュースキャット",
+        "desc": "",
+        "img": "/img/guidebg-1.webp",
+        "link": "extras/cat"
       }
-
-]
-}
+    ]
+  }
 }

@@ -1,160 +1,160 @@
 {
-    "services": {
-      "service": [
-        {
-          "color": "#138fed",
-          "name": "お天気チャンネル",
-          "desc": "世界中の国の現在やこの先の天気が確認しよう！",
-          "link": "/guide/forecast",
-          "isArea": "WiiConnect24",
-          "status": "配信中",
-          "icon": "forecast_icon.webp",
-          "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 町の追加 <br> <input class='form-check-input' style='background-color:#138fed; pointer-events:none; border:2px solid #138fed;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
-          "completed": "95"
-        },
-        {
-          "color": "#0C9228",
-          "name": "ニュースチャンネル",
-          "desc": "今世界中で起きていることについてWiiで直接みよう！",
-          "link": "/guide/news",
-          "isArea": "WiiConnect24",
-          "status": "開発予定",
-          "icon": "news_icon.webp",
-          "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 英語プロバイダーデータの収集 <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > 多言語プロバイダーデータの収集 <br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > ベータサービス配信",
-          "completed": "10"
-        },
-        {
-            "color": "#787878",
-            "name": "<l style='font-size:23px;'>みんなのニンテンドーチャンネル<l>",
-            "desc": "Wii、ニンテンドーDS、ニンテンドー3DSなどの予告編やデモで見れるWiiの任天堂究極ガイド！",
-            "link": "/guide/nintendo",
-            "isArea": "WiiConnect24",
-            "status": "配信中",
-            "icon": "nintendo_icon.webp",
-            "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > WiiLinkオリジナルコンテンツの追加 <br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > 任天堂オリジナルコンテンツの追加 </br> <input class='form-check-input' style='background-color:#787878; pointer-events:none; border:2px solid #787878;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
-            "completed": "90"
-          },
-          {
-            "color": "#F1E3C1",
-            "name": "Miiコンテストチャンネル",
-            "desc": "何かに似ているMiiを作るコンテストに参加しよう！",
-            "link": "/guide/miicontest",
-            "isArea": "WiiConnect24",
-            "status": "開発予定",
-            "icon": "miicontest_icon.webp",
-            "todo": " <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > オリジナルコンテストの開始 <br> <input class='form-check-input' style='background-color:#F1E3C1; pointer-events:none; border:2px solid #F1E3C1;' type='checkbox' value='' id='flexCheckDefault' checked > コンテストデータの読み込み </br> <input class='form-check-input' style='pointer-events: none;' type='checkbox' value='' id='flexCheckDefault' > ベータサービス配信",
-            "completed": "15"
-          },
-          {
-            "color": "#283688",
-            "name": "みんなで投票チャンネル",
-            "desc": "ついにWiiに民主社会がやってきた！色んなアンケートに答え、みんなの回答を予想しよう！",
-            "link": "/guide/evc",
-            "isArea": "WiiConnect24",
-            "status": "メンテナンス中",
-            "icon": "democracy_icon.webp",
-            "todo": "<input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > 多言語質問のサポート <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > オリジナルのアンケート <br> <input class='form-check-input' style='background-color:#283688; pointer-events:none; border:2px solid #283688;' type='checkbox' value='' id='flexCheckDefault' checked > サービス配信",
-            "completed": "80"
-          },
-          {
-            "color": "#d4a80b",
-            "name": "出前チャンネル",
-            "desc": "色んな種類の食べ物を注文して出前を買おう！（日本未対応）",
-            "link": "/guide/demae",
-            "isArea": "日本限定",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "demae_icon.webp",
-            "completed": "80"
-          },
-          {
-            "color": "#173de8",
-            "name": "<l style='font-size:21px;'>テレビの友チャンネル Gガイド for Wii<l>",
-            "desc": "地域のテレビガイドで好きな番組を探し、Wiiリモコンでテレビを操作しよう！",
-            "link": "/status",
-            "isArea": "日本限定",
-            "status": "限定ベータ",
-            "todo": "またいつか確認してください",
-            "icon": "tvnotomo_icon.webp",
-            "completed": "50"
-          },
-          {
-            "color": "#ed34d8",
-            "name": "星のカービィTVチャンネル",
-            "desc": "星のカービィのアニメをヨーロッパ限定だったチャンネルを見よう！（日本未対応）",
-            "link": "/guide/kirbytv",
-            "isArea": "動画配信",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "kirby_icon.webp",
-            "completed": "60"
-          },
-          {
-            "color": "#00FFF8",
-            "name": "<l style='font-size:28px;'>デジカメプリントチャンネル<l>",
-            "desc": "SDカードの写真やMiiを使い、アルバムやビジネスカードを作ろう！",
-            "link": "/guide/digicam",
-            "isArea": "日本限定",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "digicam_icon.webp",
-            "completed": "75"
-          },
-          {
-            "color": "#05AAF8",
-            "name": "Wiiの間",
-            "desc": "閉鎖した買い物・動画配信サービスの「Wiiの間」の扉が再び開く！",
-            "link": "/guide/wiinoma",
-            "isArea": "日本限定",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "room_icon.webp",
-            "completed": "85"
-          },
-          {
-            "color": "#05AAF8",
-            "name": "住所設定",
-            "desc": "デジカメプリントチャンネルや出前チャンネルの設定をしよう！",
-            "link": "/guide/install/#adding-personal-information",
-            "isArea": "日本限定",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "",
-            "completed": "85"
-          },
-          {
-            "color": "#05AAF8",
-            "name": "Wiiメッセージボード",
-            "desc": "誰にでもWiiからメールを送ろう！!",
-            "link": "/guide/board",
-            "isArea": "WiiConnect24",
-            "status": "配信中",
-            "todo": "またいつか確認してください",
-            "icon": "",
-            "completed": "85"
-          },
-          {
-            "color": "#05AAF8",
-            "name": "メトロイドプラムプレビュー",
-            "desc": "メトロイドプライムの予告編などをWiiから見よう！",
-            "link": "/status",
-            "isArea": "日本限定",
-            "status": "開発予定",
-            "todo": "またいつか確認してください",
-            "icon": "",
-            "completed": "85"
-          },
-          {
-            "color": "#05AAF8",
-            "name": "どこでもWiiの間",
-            "desc": "Wiiの間をDSでどこにでも持っていこう！",
-            "link": "/status",
-            "isArea": "日本限定",
-            "status": "開発中",
-            "todo": "またいつか確認してください",
-            "icon": "",
-            "completed": "85"
-          }
-      ]
-    }
+  "services": {
+    "service": [
+      {
+        "color": "#138fed",
+        "name": "お天気チャンネル",
+        "desc": "地域、国や世界の天気をすぐに確認。",
+        "link": "/guide/forecast",
+        "isArea": "国際",
+        "status": "配信中",
+        "icon": "forecast_icon.webp",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！ <br><br> <b>RiiConnect24を利用していた方は</b>最新のWiiLinkパッチャーを使ってアップデートが必要です。",
+        "completed": "95"
+      },
+      {
+        "color": "#0C9228",
+        "name": "ニュースチャンネル",
+        "desc": "世界で今何が起きているかをチェック。",
+        "link": "/guide/news",
+        "isArea": "国際",
+        "status": "配信中",
+        "icon": "news_icon.webp",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "completed": "100"
+      },
+      {
+        "color": "#787878",
+        "name": "みんなのニンテンドーチャンネル",
+        "desc": "Wii、ニンテンドーDSや3DSのソフトのレビュー、予告編、番組やデモを見る。",
+        "link": "/guide/nintendo",
+        "isArea": "国際",
+        "status": "配信中",
+        "icon": "nintendo_icon.webp",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "completed": "90"
+      },
+      {
+        "color": "#F1E3C1",
+        "name": "Miiコンテストチャンネル",
+        "desc": "Miiの芸術家になり、世界に自分の完成品を見せびらかす。",
+        "link": "/guide/miicontest",
+        "isArea": "国際",
+        "status": "配信中",
+        "icon": "miicontest_icon.webp",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "completed": "90"
+      },
+      {
+        "color": "#283688",
+        "name": "みんなで投票チャンネル",
+        "desc": "オリジナルの質問で世界とのズレの距離を測る。",
+        "link": "/guide/evc",
+        "isArea": "国際",
+        "status": "配信中",
+        "icon": "democracy_icon.webp",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "completed": "80"
+      },
+      {
+        "color": "#d4a80b",
+        "name": "出前チャンネル",
+        "desc": "いろんな種類の食べ物をWiiから注文。",
+        "link": "/guide/demae",
+        "isArea": "日本限定",
+        "status": "配信中",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "icon": "demae_icon.webp",
+        "completed": "90"
+      },
+      {
+        "color": "#173de8",
+        "name": "テレビの友チャンネル",
+        "desc": "地デジのスケジュールを確認し、Wiiリモコンでテレビを使う。",
+        "link": "/status",
+        "isArea": "日本限定",
+        "status": "閉鎖ベータ",
+        "todo": "<i class='fa fa-hard-hat'></i> 現在まだ開発中です。",
+        "icon": "tvnotomo_icon.webp",
+        "completed": "40"
+      },
+      {
+        "color": "#ed34d8",
+        "name": "カービィTVチャンネル",
+        "desc": "一部の<i>星のカービィ</i>のアニメを視聴する。",
+        "link": "/guide/kirbytv",
+        "isArea": "ヨーロッパ限定",
+        "status": "配信中",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "icon": "kirby_icon.webp",
+        "completed": "90"
+      },
+      {
+        "color": "#00FFF8",
+        "name": "デジカメプリントチャンネル",
+        "desc": "アルバムや名刺カードをMiiや写真で作り出す。",
+        "link": "/guide/digicam",
+        "isArea": "日本限定",
+        "status": "配信中",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "icon": "digicam_icon.webp",
+        "completed": "75"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wiiの間",
+        "desc": "番組やビデオを見て、フレンドにお勧めの動画を送る。",
+        "link": "/guide/wiinoma",
+        "isArea": "日本限定",
+        "status": "配信中",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "icon": "room_icon.webp",
+        "completed": "90"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "住所設定",
+        "desc": "デジカメプリント、出前チャンネルを使うための個人情報を入力。",
+        "link": "/guide/install/#adding-personal-information",
+        "isArea": "Originally Japan exclusive",
+        "status": "Full Release",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "Wiiメッセージボード",
+        "desc": "Wiiフレンドやメールアドレスにメッセージを送る。",
+        "link": "/guide/board",
+        "isArea": "国際",
+        "status": "配信中",
+        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！ <br> メールからWiiに送る作用が一時停止されています。",
+        "icon": "",
+        "completed": "100"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "メトロイドプライム３プレビュー",
+        "desc": "<i>メトロイドプライム３</i>の動画を視聴する。",
+        "link": "/status",
+        "isArea": "欧米",
+        "status": "停止",
+        "todo": "<i class='fa fa-bomb'></i>開発は停止されています。",
+        "icon": "",
+        "completed": "8"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "どこでもWiiの間",
+        "desc": "Wiiの間の動画をオフラインで視聴する。",
+        "link": "/status",
+        "isArea": "日本限定",
+        "status": "閉鎖ベータ",
+        "todo": "<i class='fa-solid fa-circle-question'></i> Stripeに募金することでテストできます！",
+        "icon": "",
+        "completed": "50"
+      }
+    ]
   }
+}
