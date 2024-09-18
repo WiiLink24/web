@@ -125,7 +125,7 @@
     },
     "news": {
       "mainTitle": "WiiLink - ニュース",
-      "mainDesc": "WiiLinkの最新ニュースを読めます！",
+      "mainDesc": "WiiLinkの最新ニュースを読めます!",
       "title": "<1>WiiLink</1> <2>ニュース</2>",
       "subtitle": "今の<0>開発の進行</0>、<1>アップデート</1>の最新の情報がよめます!",
       "otherNews": "<0>古めの</0>記事も読めます。",
@@ -144,7 +144,7 @@
       "helpButton2": "Discordに入る"
     },
     "guidePost": {
-      "name": "ガイド,
+      "name": "ガイド",
       "whereTo": "どうしたいですか?",
       "installGuide": "インストールガイド",
       "problemSolving": "トラブルシューティング",
