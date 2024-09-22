@@ -78,9 +78,20 @@ heroImage: "../../img/guidebg-1.webp"
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
-## Section III - Using the Address Settings
+## Section III - Using the Address Settings and AnyGlobe Changer
 
 </br>
+
+### Setting your region in AnyGlobe Changer
+<l class="notice warn smallwidth">This is needed to use the Everybody Votes Channel.</l>
+1. Download AnyGlobe Changer v1.0 from [here](https://github.com/fishguy6564/AnyGlobe-Changer/releases/tag/1.0) (the version included with the patcher doesn't work in Dolphin).
+2. Extract the `AnyGlobe.Changer.zip` file.
+3. In Dolphin, head to `File` > `Open`, and navigate to the extracted folder.
+4. Navigate to `apps` > `AnyGlobe Changer`, and open `boot.dol`.
+5. Read the disclaimer, and press `1` to continue.
+6. Using the D-pad / arrow keys, set your region and sub-region.
+7. Highlight `Save Settings`, then press `A` / left click to save.
+8. Return to the System Menu.
 
 ### Adding Personal Information
 
