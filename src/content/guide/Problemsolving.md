@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: fa-solid fa-circle-exclamation
-pubDate: 2024-09-13
+pubDate: 2024-10-02
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "../../img/guidebg-3.webp"
 ---
@@ -32,7 +32,7 @@ heroImage: "../../img/guidebg-3.webp"
 
 <div class="error">Error Code: -1022/-1029 <span class="badge bg-warning">Any Channel</span><h4>Using your favorite WAD manager, uninstall the channel, and install again. For yawmME, this means locating the channel WAD, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
 
-<div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please ensure your console ID is registered as per the instructions <a href="https://wiilink24.com/guide/demae/#section-ii---registering-your-console-id">here</a>, then try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> if you continue to experience issues.</h4><hr></div>
+<div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please ensure your console ID is registered as per the instructions <a href="/guide/demae/#section-ii---registering-your-console-id">here</a>, then try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> if you continue to experience issues.</h4><hr></div>
 
 <div class="error">Error Code: 51330 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your internet connection to your Wii is working by doing a connection test. If it's successful, run the Mail Patcher again. If it fails, your router is incompatible with the Wii. You can potentially fix this by configuring your router to use the 802.11g or 802.11b band alongside the other bands that it uses.</h4><hr></div>
 

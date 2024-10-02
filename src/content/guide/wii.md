@@ -1,8 +1,8 @@
 ---
 title: Wii Installation
 icon: fa-solid fa-download
-pubDate: 2024-07-25
-description: Get up-to-date instructions on how to install all of our services!
+pubDate: 2024-10-02
+description: Get up-to-date instructions on how to install all of our services on Wii!
 heroImage: "../../img/guidebg-1.webp"
 ---
 
@@ -16,6 +16,7 @@ heroImage: "../../img/guidebg-1.webp"
 </div></div>
 </br>
 
+<l class="notice info">To install WiiLink, you will need to have a homebrewed console. If your console isn't already homebrewed, follow the instructions [here](https://wii.hacks.guide/get-started) to homebrew your Wii.</l>
 
 ## Section I - Patching WADs
 

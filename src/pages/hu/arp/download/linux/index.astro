@@ -32,7 +32,7 @@ changeLanguage("hu");
         console.log("Heya! Downloading ", release.tag_name, " from ", release.assets[1].browser_download_url ," for ya!");
         window.location = release.assets[1].browser_download_url;
         setTimeout(function() {
-          window.location = "https://wiilink24.com/";
+          window.location = "/";
         }, 1000);
       } else {
         console.error("No assets found in the latest release.");

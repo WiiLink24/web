@@ -1,6 +1,7 @@
 ---
 title: Wii Message Board
-pubDate: 2024-06-11
+pubDate: 2024-10-02
+description: Get up-to-date instructions on how to patch the Wii Message Board!
 icon: fa-solid fa-chalkboard
 ---
 
@@ -11,8 +12,10 @@ icon: fa-solid fa-chalkboard
   <div style="font-family:system-ui; font-size:15px; padding:5px 10px; border-radius:80px; border:2px solid var(--border-color); background-color: var(--bg-color-tertiary);">Skip to Troubleshooting and Questions</div>
   </a>
 </div>
-<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, Linux, or Android Device</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:28px; padding-right:28px; border-radius:12px 4px 4px 12px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid#getting-started"><button type="button" style="height:50px; padding-left:18px; padding-right:18px; border-radius:4px 12px 12px 4px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-brands fa-android"></i></button></a>
+</div></div>
 </div></div>
 </br>
 </br>
@@ -21,7 +24,7 @@ icon: fa-solid fa-chalkboard
 
 
 
-<l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="https://www.wiilink24.com/guide/install/">here</a>.</l>
+<l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="/guide/install/">here</a>.</l>
 
 </br>
 
@@ -39,7 +42,7 @@ ___
 
 ## Receiving Mail from the service with our DNS
 
-<l class="notice info fullwidth">This step is completely optional, but recommended so you can get service news directly from your Wii! You can view the steps on how to use the DNS <a href="https://www.wiilink24.com/guide/install/">here.</a> </l>
+<l class="notice info fullwidth">This step is completely optional, but recommended so you can get service news directly from your Wii! You can view the steps on how to use the DNS <a href="/guide/install/">here.</a> </l>
 
 ___
 

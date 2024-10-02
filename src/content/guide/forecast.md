@@ -1,6 +1,7 @@
 ---
 title: Forecast Channel
-pubDate: 2024-01-24
+pubDate: 2024-10-02
+description: Get up-to-date instructions on how to patch the Forecast Channel!
 icon: fa-solid fa-umbrella
 ---
 
@@ -11,63 +12,23 @@ icon: fa-solid fa-umbrella
   <div style="font-family:system-ui; font-size:15px; padding:5px 10px; border-radius:80px; border:2px solid var(--border-color); background-color: var(--bg-color-tertiary);">Skip to Troubleshooting and Questions</div>
   </a>
 </div>
-<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, or Linux Computer</h4><div style="height:40px; border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:40px; padding-right:40px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-sd-card"></i> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-globe"></i> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><i class="fa-solid fa-desktop"></i> Windows, Mac, Linux, or Android Device</h4><div style="height:40px; border-radius:8px;  position:relative;">
+<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:28px; padding-right:28px; border-radius:12px 4px 4px 12px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-solid fa-download"></i> WiiLink Patcher</button></a>
+<a href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid#getting-started"><button type="button" style="height:50px; padding-left:18px; padding-right:18px; border-radius:4px 12px 12px 4px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><i class="fa-brands fa-android"></i></button></a>
 </div></div>
+
 </br>
-<div style="display: flex; gap:8px; align-items: center;">
-  <h5 style="font-family: system-ui; font-size:20px;">Where will you be using this service?</h5>
-  <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
-</div>
-<div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:100px; gap:5px; flex-wrap:nowrap; position:relative;">
-<div style="width:100%; height:40px; margin-top:5px; position:relative;">
-<a href="#wii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:12px 4px 4px 12px;" class="btn1 btn btn-info"><img src="../../img/wiimote.webp" style="rotate:30deg; filter:invert(1);" height="25px"> Wii / Dolphin</button></a>
-</div>
-<div style="width:100%; height:40px; margin-top:5px; position:relative;">
-<a href="#vwii"><button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 12px 12px 4px;" class="btn1 btn btn-primary"><img src="../../img/gamepad.webp" style="filter:invert(1);" height="35px"> Wii U</button></a>
-</div>
-</div>
 
-### Installation guide
-<i id="vwii"></i>
+## Installation guide
 
-### Section I - PriiLoader Setup (For vWii ONLY)
+<l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="/guide/install/">here</a>.</l>
 
-<l class="notice warn">If you are on vWii and are downloading the Forecast Channel, these steps are required. Otherwise, please skip to the next section.</l>
+1. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
+2. Highlight the WAD with `Forecast Channel` as its name and press + to select it. When it is selected, press A twice to install the WADs.
 
-1. Download the `Priiloader.zip` file from [here](https://oscwii.org/library/app/priiloader)
-2. Unzip the `Priiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
-3. Download the `LoadPriiloader.zip` from [here](https://oscwii.org/library/app/LoadPriiloader).
-4. Unzip the `LoadPriiloader.zip` file and copy the apps folder to your SD Card or USB Drive.
-5. Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
-6. Follow the instructions on the page then copy the result.
-7. On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-8. Paste the patch from step 6 at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
-9. Launch `Priiloader`.
-10. Follow the installation steps.
-11. Launch `Load Priiloader`
-12. Using your Wii Remote, go to `System Menu Hacks`.
-13. Enable `Fix NWC24iSetUniversalTime` and `Always enable WiiConnect24 for vWii`. (Feel free to enable others.)
-14. Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-15. Return to the system menu.
+<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Forecast Channel`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
 
-<i id="wii"></i>
-
-### Section II - Installation
-1. Download the latest version of the WiiLink Patcher for your operating system.
-2. Launch the patcher and begin the download process by selecting "Express Install Setup"".
-
-<l class="notice info fullwidth">Make sure your SD Card/USB Drive is connected to your Computer in order for the Patcher to automatically send your files to your Wii's SD Card/USB Drive.</l>
-
-3. After the Patcher is done downloading the files, simply disconnect your SD Card/USB Drive from your Computer, and input it into your Wii/Wii U.
-4. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
-5. Highlight the WAD with `Forecast Channel` as its name and press + to select it. When it is selected, press A twice to install the WADs.
-
-<l class="notice info fullwidth">The WAD name might also have `[USA]`, `[PAL]`, or `[Japan]` depending on what region of Console youre installing the Channel on. Please install the correct region version of the Channel on your Console.</l>
-
-<l class="notice generic fullwidth">If you happen to get `Error -1022/Error -1029` when installing `Forecast Channel (WiiLink)`, uninstall the channel by selecting the WAD with `-` and pressing `A`. Then, re-install the WAD.</l>
-
-6. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
+3. After it is successfully installed, press the HOME Button to exit back to the Homebrew Channel. Press the HOME Button again and select `"Exit to System Menu"`.
 
 <l class="notice success fullwidth">Congrats! You've installed the Forecast Channel on your Console! Enjoy the Channel to your hearts content once again!</l>
 ___
@@ -79,13 +40,13 @@ ___
 
 > Make sure that you have the latest version of the Forecast Channel installed from the WiiLink Patcher. This is a problem commonly caused by using an outdated version of the Forecast Channel from before the merge.
 
-### "Im getting Error Code 'FORE00006' on my console!"
+### "Im getting Error Code `FORE000006` on my console!"
 
-> This problem is caused by vWii users not properly generating a timestamp for their consoles PriiLoader hacks. Simply refollow the `PriiLoader Setup` part of the guide, and try again once you're finished.
+> Follow the instructions [here](https://wii.hacks.guide/wiiconnect24#updating-rtc-clock) to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask in [our Discord server](https://discord.gg/wiilink) for further help with diagnosing your issue!
 
 ### "The Forecast Channel hangs on the loading screen for me!"
 
-> This problem may simply either be because of a bad Internet Connection on your console. Please check your Wifi settings on your Wii/Wii U. If that doesnt work, then it may be a server error on our side of things, Weather Forecasts may not be available at this time.
+> This problem may simply either be because of a bad Internet Connection on your console. Please check your Internet settings on your Wii/Wii U. If that doesnt work, then it may be a server error on our side of things, the channel may not be available at this time.
 ___
 ## Country Support
 
