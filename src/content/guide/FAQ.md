@@ -1,7 +1,7 @@
 ---
 title: Frequently asked questions
 icon: fa-solid fa-circle-question
-pubDate: 2024-01-24
+pubDate: 2024-10-02
 description: Some frequently asked questions you might be interested in...
 heroImage: "../../img/guidebg-2.webp"
 ---
@@ -41,8 +41,7 @@ Is using WiiLink legal?
 
 "How do I install a WiiLink channel on my Wii or Wii U?"
 
-   > You’ll want to check out our instructions on wii.guide for simple, easy to follow instructions to get everything installed.
-    For video streaming channels from Striim Network, see their installation guide!
+   > You’ll want to check out our instructions [here](/guide/install) for simple, easy to follow instructions to get everything installed.
 
 "How do I update a WiiLink channel?"
 
