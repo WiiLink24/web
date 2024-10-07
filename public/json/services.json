@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-bomb'></i> Domino's ordering is experiencing degraded performance.",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
