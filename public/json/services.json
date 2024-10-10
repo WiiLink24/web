@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originally certain European countries",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-bomb'></i> The Kirby TV Channel is currently unavailable.",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<i class='fa fa-bomb'></i> The Photo Prints Channel is experiencing degraded performance.",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> Mail-Wii service suspended temporarily.",
+        "todo": "<i class='fa fa-bomb'></i> Wii Mail is currently unavailable while an incident of mail duplication is being investigated.",
         "icon": "",
         "completed": "100"
       },
