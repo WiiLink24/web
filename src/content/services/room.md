@@ -1,5 +1,5 @@
 ---
-title: WiiRoom
+title: Wii Room
 pubDate: 2024-01-24
 icon: fa-solid fa-home
 description: Feel right at home whilst watching videos on your Wii!
@@ -9,7 +9,7 @@ color: 195ce360
 ---
 ### Feel right at home whilst watching videos on your Wii!
 
-Wii no Ma (localized as WiiRoom) was a Japan-exclusive Channel made by Nintendo and <a
+Wii no Ma (localized as Wii Room) was a Japan-exclusive Channel made by Nintendo and <a
         href="http://www.dentsu.com">Dentsu</a> that had a variety of things to offer. You could buy thousands of
       different things on it. There was Mii merchandise you could buy on it as well. Some of the merchandise it had were
       stamps, keychains, towels, bags, and stickers. WiiLink wants to recreate the merchandise in the future so you
