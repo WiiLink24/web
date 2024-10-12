@@ -48,17 +48,15 @@ heroImage: "../../img/guidebg-1.webp"
      1. Select your region for the WiiConnect24 channels.
      2. Select whether or not you would like to install the regional channels.
      3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
-     4. Select your console platform.
-     5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+     4. Select `Wii`.
 
 ### Custom Installation
    - Press `2` for `Custom Install Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
-     2. Select your console platform.
-     3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
-     4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
-     5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-     6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
+     2. Select `Wii`.
+     3. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+     4. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
+     5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
 
 </br>
 
@@ -116,7 +114,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
 
-9. Once you read the EULA, Click on "I Accept".
+9. Once you read the EULA, click on "I ACCEPT".
 
 </br>
 

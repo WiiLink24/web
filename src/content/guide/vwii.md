@@ -20,24 +20,20 @@ heroImage: "../../img/guidebg-3.webp"
 
 ## Section I - Priiloader and installing EULA
 
-1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader), and `system-channel-restorer` from [here](https://oscwii.org/library/app/system-channel-restorer).
-2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip all 3 zip files, and copy the `apps` folder from within each to the root of your SD Card or USB Drive.
+1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), and `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader).
+2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip both zip files, and copy the `apps` folder from within each to the root of your SD Card or USB Drive.
 3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
 4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
 5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 6` at the bottom of the `hacks_hash.ini` Save the file, then proceed to `Step 9`
+6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` at the bottom of the `hacks_hash.ini`
 7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
 8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
 9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
 10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
-11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime` from the menu. If you're on a Wii U, enable `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button`. (Feel free to enable other options while you're in this menu)
+11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button` from the menu. (Feel free to enable other options while you're in this menu)
 12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
 13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
-14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `system-channel-restorer`.
-15. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press A to select `EULA`.
-16. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press + to install.
-17. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home to return to the Homebrew Channel.
-18. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
+14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
 
 </br>
 
@@ -75,17 +71,15 @@ heroImage: "../../img/guidebg-3.webp"
      1. Select your region for the WiiConnect24 channels.
      2. Select whether or not you would like to install the regional channels.
      3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
-     4. Select your console platform.
-     5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+     4. Select `vWii (Wii U)`.
 
 ### Custom Installation
    - Press `2` for `Custom Install Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
-     2. Select your console platform.
-     3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
-     4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
-     5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-     6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
+     2. Select `vWii (Wii U)`.
+     3. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+     4. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
+     5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
 
 </br>
 
@@ -141,7 +135,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
 
-9. Once you read the EULA, Click on "I Accept".
+9. Once you read the EULA, click on "I ACCEPT".
 
 </br>
 
