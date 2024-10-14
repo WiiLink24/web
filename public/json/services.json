@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-bomb'></i> Domino's ordering is experiencing degraded performance.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-bomb'></i> The Photo Prints Channel is experiencing degraded performance.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<i class='fa fa-bomb'></i> Wii Mail is currently unavailable while an incident of mail duplication is being investigated.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
