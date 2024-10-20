@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: fa-solid fa-download
-pubDate: 2024-10-02
+pubDate: 2024-10-12
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "../../img/guidebg-1.webp"
 ---
