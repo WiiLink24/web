@@ -15,4 +15,4 @@ The TV no Tomo Channel G Guide for Wii was a Japan-exclusive Channel that let yo
       starting via an email or text. Also, you used a stamp to mark programs that interest you. This Channel used
       G-Guide from <a href="https://www.ipg.co.jp">IPG</a>. Also, <a href="http://www.hallab.co.jp/eng/">HAL
         Laboratory</a>, best known by making games in the Super Smash Bros. and Kirby franchise, helped make this
-      Channel.
+      channel.
