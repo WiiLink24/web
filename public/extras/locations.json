@@ -1,0 +1,1626 @@
+[
+  {
+    "geo_point_2d": {
+      "lon": -0.3993369274208722,
+      "lat": 39.49103152203733
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.399336927420872,
+          39.49103152203733
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENICALAP",
+    "coddistbar": "161",
+    "coddistrit": "16",
+    "codbar": 161,
+    "transporte": "metrovlc",
+    "stop_id": 54,
+    "stop_name": "Beniferri",
+    "stop_desc": "NULL",
+    "x": 723646.02,
+    "y": 4374498.31,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3872583065788684,
+      "lat": 39.489562835999216
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.387258306578868,
+          39.489562835999216
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENICALAP",
+    "coddistbar": "161",
+    "coddistrit": "16",
+    "codbar": 161,
+    "transporte": "metrovlc",
+    "stop_id": 96,
+    "stop_name": "Trànsits",
+    "stop_desc": "NULL",
+    "x": 724689.6,
+    "y": 4374365.36,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39681665593963605,
+      "lat": 39.49443419501499
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.396816655939636,
+          39.49443419501499
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENICALAP",
+    "coddistbar": "161",
+    "coddistrit": "16",
+    "codbar": 161,
+    "transporte": "metrovlc",
+    "stop_id": 99,
+    "stop_name": "Florista",
+    "stop_desc": "NULL",
+    "x": 723851.8600000001,
+    "y": 4374882.28,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.37253697994425605,
+      "lat": 39.495952415263645
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.372536979944256,
+          39.495952415263645
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "TORREFIEL",
+    "coddistbar": "152",
+    "coddistrit": "15",
+    "codbar": 152,
+    "transporte": "metrovlc",
+    "stop_id": 132,
+    "stop_name": "Tossal del Rei",
+    "stop_desc": "NULL",
+    "x": 725935.0700000001,
+    "y": 4375111.47,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3579472605373582,
+      "lat": 39.483371570569695
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.357947260537358,
+          39.483371570569695
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMACLET",
+    "coddistbar": "141",
+    "coddistrit": "14",
+    "codbar": 141,
+    "transporte": "metrovlc",
+    "stop_id": 90,
+    "stop_name": "Vicent Zaragozà",
+    "stop_desc": "NULL",
+    "x": 727230.7899999999,
+    "y": 4373751.68,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.37318052689450615,
+      "lat": 39.481780856191584
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.373180526894506,
+          39.481780856191584
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "MORVEDRE",
+    "coddistbar": "052",
+    "coddistrit": "5",
+    "codbar": 52,
+    "transporte": "metrovlc",
+    "stop_id": 92,
+    "stop_name": "Pont de Fusta",
+    "stop_desc": "NULL",
+    "x": 725925.62,
+    "y": 4373536.77,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.329471996538712,
+      "lat": 39.463100251421544
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.329471996538712,
+          39.463100251421544
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 123,
+    "stop_name": "Grau - Canyamelar",
+    "stop_desc": "NULL",
+    "x": 729746.88,
+    "y": 4371573.75,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3258508514177504,
+      "lat": 39.463252831640446
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.32585085141775,
+          39.463252831640446
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 126,
+    "stop_name": "Marina Reial Joan Carles I",
+    "stop_desc": "NULL",
+    "x": 730057.95,
+    "y": 4371599.93,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3279319771200871,
+      "lat": 39.466522044854365
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.327931977120087,
+          39.466522044854365
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 127,
+    "stop_name": "Mediterrani",
+    "stop_desc": "NULL",
+    "x": 729868.12,
+    "y": 4371957.51,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.36531668099171977,
+      "lat": 39.4731558364109
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.36531668099172,
+          39.4731558364109
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "MESTALLA",
+    "coddistbar": "062",
+    "coddistrit": "6",
+    "codbar": 62,
+    "transporte": "metrovlc",
+    "stop_id": 14,
+    "stop_name": "Alameda",
+    "stop_desc": "NULL",
+    "x": 726630.07,
+    "y": 4372599.13,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.37092779565723527,
+      "lat": 39.47014605671977
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.370927795657235,
+          39.47014605671977
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "6",
+    "nombre": "SANT FRANCESC",
+    "coddistbar": "016",
+    "coddistrit": "1",
+    "codbar": 16,
+    "transporte": "metrovlc",
+    "stop_id": 15,
+    "stop_name": "Colón",
+    "stop_desc": "NULL",
+    "x": 726157.1,
+    "y": 4372250.93,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.33823695323821834,
+      "lat": 39.46493894538717
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.338236953238218,
+          39.46493894538717
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "AIORA",
+    "coddistbar": "121",
+    "coddistrit": "12",
+    "codbar": 121,
+    "transporte": "metrovlc",
+    "stop_id": 115,
+    "stop_name": "Marítim - Serrería",
+    "stop_desc": "NULL",
+    "x": 728986.69,
+    "y": 4371755.53,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3429694959208192,
+      "lat": 39.46642666483745
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.342969495920819,
+          39.46642666483745
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "AIORA",
+    "coddistbar": "121",
+    "coddistrit": "12",
+    "codbar": 121,
+    "transporte": "metrovlc",
+    "stop_id": 22,
+    "stop_name": "Ayora",
+    "stop_desc": "NULL",
+    "x": 728574.63,
+    "y": 4371908.65,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3975749455178018,
+      "lat": 39.468219589785335
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.397574945517802,
+          39.468219589785335
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "3",
+    "nombre": "TRES FORQUES",
+    "coddistbar": "073",
+    "coddistrit": "7",
+    "codbar": 73,
+    "transporte": "metrovlc",
+    "stop_id": 18,
+    "stop_name": "Av. del Cid",
+    "stop_desc": "NULL",
+    "x": 723870.7400000001,
+    "y": 4371970.51,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.42541943956927514,
+      "lat": 39.498737177566674
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.425419439569275,
+          39.498737177566674
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMAMET",
+    "coddistbar": "181",
+    "coddistrit": "18",
+    "codbar": 181,
+    "transporte": "metrovlc",
+    "stop_id": 58,
+    "stop_name": "Les Carolines/Fira",
+    "stop_desc": "NULL",
+    "x": 721378.2799999999,
+    "y": 4375289.18,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.425494426338093,
+      "lat": 39.504142603379144
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.425494426338093,
+          39.504142603379144
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMAMET",
+    "coddistbar": "181",
+    "coddistrit": "18",
+    "codbar": 181,
+    "transporte": "metrovlc",
+    "stop_id": 106,
+    "stop_name": "Fira València",
+    "stop_desc": "NULL",
+    "x": 721354.67,
+    "y": 4375889.01,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.4076306164124647,
+      "lat": 39.470657176664986
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.407630616412465,
+          39.470657176664986
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "SOTERNES",
+    "coddistbar": "072",
+    "coddistrit": "7",
+    "codbar": 72,
+    "transporte": "metrovlc",
+    "stop_id": 19,
+    "stop_name": "Nou d'Octubre",
+    "stop_desc": "NULL",
+    "x": 722997.81,
+    "y": 4372216.14,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.40014171768641005,
+      "lat": 39.49718074137374
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.40014171768641,
+          39.49718074137374
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "BENIFERRI",
+    "coddistbar": "182",
+    "coddistrit": "18",
+    "codbar": 182,
+    "transporte": "metrovlc",
+    "stop_id": 100,
+    "stop_name": "Palau de Congressos",
+    "stop_desc": "NULL",
+    "x": 723557.09,
+    "y": 4375178.89,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3655419636665424,
+      "lat": 39.494918643397284
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.365541963666542,
+          39.494918643397284
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "3",
+    "nombre": "SANT LLORENS",
+    "coddistbar": "153",
+    "coddistrit": "15",
+    "codbar": 153,
+    "transporte": "metrovlc",
+    "stop_id": 130,
+    "stop_name": "Estadi del Llevant",
+    "stop_desc": "NULL",
+    "x": 726540.01,
+    "y": 4375014.3,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3676635797666982,
+      "lat": 39.493148671390315
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.367663579766698,
+          39.493148671390315
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "ELS ORRIOLS",
+    "coddistbar": "151",
+    "coddistrit": "15",
+    "codbar": 151,
+    "transporte": "metrovlc",
+    "stop_id": 129,
+    "stop_name": "Orriols",
+    "stop_desc": "NULL",
+    "x": 726363.29,
+    "y": 4374812.49,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.41064717497469666,
+      "lat": 39.44081104053535
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.410647174974697,
+          39.44081104053535
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "8",
+    "nombre": "FAITANAR",
+    "coddistbar": "198",
+    "coddistrit": "19",
+    "codbar": 198,
+    "transporte": "metrovlc",
+    "stop_id": 30,
+    "stop_name": "València Sud",
+    "stop_desc": "NULL",
+    "x": 722833.5,
+    "y": 4368895.7,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.37497222404940356,
+      "lat": 39.486499603390406
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.374972224049404,
+          39.486499603390406
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "SANT ANTONI",
+    "coddistbar": "055",
+    "coddistrit": "5",
+    "codbar": 55,
+    "transporte": "metrovlc",
+    "stop_id": 93,
+    "stop_name": "Sagunt",
+    "stop_desc": "NULL",
+    "x": 725756.23,
+    "y": 4374056.07,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.36603297983889216,
+      "lat": 39.48929957314496
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.366032979838892,
+          39.48929957314496
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMACLET",
+    "coddistbar": "141",
+    "coddistrit": "14",
+    "codbar": 141,
+    "transporte": "metrovlc",
+    "stop_id": 128,
+    "stop_name": "Alfauir",
+    "stop_desc": "NULL",
+    "x": 726516.03,
+    "y": 4374389.33,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.381707062233023,
+      "lat": 39.48596553530534
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.381707062233023,
+          39.48596553530534
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "MARXALENES",
+    "coddistbar": "051",
+    "coddistrit": "5",
+    "codbar": 51,
+    "transporte": "metrovlc",
+    "stop_id": 94,
+    "stop_name": "Reus",
+    "stop_desc": "NULL",
+    "x": 725178.67,
+    "y": 4373979.92,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3677638200412132,
+      "lat": 39.48627077103394
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.367763820041213,
+          39.48627077103394
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "3",
+    "nombre": "TRINITAT",
+    "coddistbar": "053",
+    "coddistrit": "5",
+    "codbar": 53,
+    "transporte": "metrovlc",
+    "stop_id": 91,
+    "stop_name": "Primat Reig",
+    "stop_desc": "NULL",
+    "x": 726376.99,
+    "y": 4374048.77,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39503609191661143,
+      "lat": 39.484630462974906
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.395036091916611,
+          39.484630462974906
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "CAMPANAR",
+    "coddistbar": "041",
+    "coddistrit": "4",
+    "codbar": 41,
+    "transporte": "metrovlc",
+    "stop_id": 53,
+    "stop_name": "Campanar",
+    "stop_desc": "NULL",
+    "x": 724036.48,
+    "y": 4373798.47,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3281528160637301,
+      "lat": 39.46930676682647
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.32815281606373,
+          39.46930676682647
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 83,
+    "stop_name": "Dr. Lluch",
+    "stop_desc": "NULL",
+    "x": 729839.95,
+    "y": 4372266.06,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.32758333896886244,
+      "lat": 39.472854461850375
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.327583338968862,
+          39.472854461850375
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 84,
+    "stop_name": "La Marina",
+    "stop_desc": "NULL",
+    "x": 729877.2599999999,
+    "y": 4372661.32,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.32937497056629306,
+      "lat": 39.47520431699668
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.329374970566293,
+          39.47520431699668
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 85,
+    "stop_name": "La Cadena",
+    "stop_desc": "NULL",
+    "x": 729715.39,
+    "y": 4372917.59,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.32572781010070184,
+      "lat": 39.46892910442868
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.325727810100702,
+          39.46892910442868
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 82,
+    "stop_name": "Les Arenes",
+    "stop_desc": "NULL",
+    "x": 730049.83,
+    "y": 4372230.33,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3581166906639272,
+      "lat": 39.47262553704674
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.358116690663927,
+          39.47262553704674
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "MESTALLA",
+    "coddistbar": "062",
+    "coddistrit": "6",
+    "codbar": 62,
+    "transporte": "metrovlc",
+    "stop_id": 24,
+    "stop_name": "Aragón",
+    "stop_desc": "NULL",
+    "x": 727251.21,
+    "y": 4372558.41,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3794221866304545,
+      "lat": 39.463977610543736
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.379422186630455,
+          39.463977610543736
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "LA ROQUETA",
+    "coddistbar": "032",
+    "coddistrit": "3",
+    "codbar": 32,
+    "transporte": "metrovlc",
+    "stop_id": 109,
+    "stop_name": "Bailén",
+    "stop_desc": "NULL",
+    "x": 725446.22,
+    "y": 4371544.92,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3845416334770257,
+      "lat": 39.45920168868365
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.384541633477026,
+          39.45920168868365
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "LA RAIOSA",
+    "coddistbar": "091",
+    "coddistrit": "9",
+    "codbar": 91,
+    "transporte": "metrovlc",
+    "stop_id": 25,
+    "stop_name": "Jesús",
+    "stop_desc": "NULL",
+    "x": 725021.13,
+    "y": 4371001.98,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.35039450514670223,
+      "lat": 39.4703329351722
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.350394505146702,
+          39.4703329351722
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "3",
+    "nombre": "L'AMISTAT",
+    "coddistbar": "133",
+    "coddistrit": "13",
+    "codbar": 133,
+    "transporte": "metrovlc",
+    "stop_id": 23,
+    "stop_name": "Amistat-Casa de Salud",
+    "stop_desc": "NULL",
+    "x": 727923.04,
+    "y": 4372323.44,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.33420280903834676,
+      "lat": 39.476592879144114
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.334202809038347,
+          39.476592879144114
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "LA CARRASCA",
+    "coddistbar": "135",
+    "coddistrit": "13",
+    "codbar": 135,
+    "transporte": "metrovlc",
+    "stop_id": 86,
+    "stop_name": "Serrería",
+    "stop_desc": "NULL",
+    "x": 729295.5,
+    "y": 4373059.42,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.35049997904250535,
+      "lat": 39.48131547991357
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.350499979042505,
+          39.48131547991357
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "LA CARRASCA",
+    "coddistbar": "135",
+    "coddistrit": "13",
+    "codbar": 135,
+    "transporte": "metrovlc",
+    "stop_id": 89,
+    "stop_name": "Universitat Politècnica",
+    "stop_desc": "NULL",
+    "x": 727878.0999999999,
+    "y": 4373542.27,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.35879439673741037,
+      "lat": 39.492431471036156
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.35879439673741,
+          39.492431471036156
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "3",
+    "nombre": "SANT LLORENS",
+    "coddistbar": "153",
+    "coddistrit": "15",
+    "codbar": 153,
+    "transporte": "metrovlc",
+    "stop_id": 11,
+    "stop_name": "Machado",
+    "stop_desc": "NULL",
+    "x": 727128.4199999999,
+    "y": 4374755.22,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.40287774436432333,
+      "lat": 39.53660947109004
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.402877744364323,
+          39.53660947109004
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "6",
+    "nombre": "MASSARROJOS",
+    "coddistbar": "176",
+    "coddistrit": "17",
+    "codbar": 176,
+    "transporte": "metrovlc",
+    "stop_id": 76,
+    "stop_name": "Massarrojos",
+    "stop_desc": "NULL",
+    "x": 723195.47,
+    "y": 4379548.8,
+    "zone_id": "B"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39092783478983306,
+      "lat": 39.4900282530122
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.390927834789833,
+          39.4900282530122
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENICALAP",
+    "coddistbar": "161",
+    "coddistrit": "16",
+    "codbar": 161,
+    "transporte": "metrovlc",
+    "stop_id": 97,
+    "stop_name": "Benicalap",
+    "stop_desc": "NULL",
+    "x": 724372.49,
+    "y": 4374407.87,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39451112428515994,
+      "lat": 39.49229031699458
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.39451112428516,
+          39.49229031699458
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENICALAP",
+    "coddistbar": "161",
+    "coddistrit": "16",
+    "codbar": 161,
+    "transporte": "metrovlc",
+    "stop_id": 98,
+    "stop_name": "Garbí",
+    "stop_desc": "NULL",
+    "x": 724057.03,
+    "y": 4374650.04,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.36233332864935913,
+      "lat": 39.48485171700381
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.362333328649359,
+          39.48485171700381
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMACLET",
+    "coddistbar": "141",
+    "coddistrit": "14",
+    "codbar": 141,
+    "transporte": "metrovlc",
+    "stop_id": 12,
+    "stop_name": "Benimaclet",
+    "stop_desc": "NULL",
+    "x": 726848.7000000001,
+    "y": 4373904.92,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.383836935925793,
+      "lat": 39.48797210819133
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.383836935925793,
+          39.48797210819133
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "MARXALENES",
+    "coddistbar": "051",
+    "coddistrit": "5",
+    "codbar": 51,
+    "transporte": "metrovlc",
+    "stop_id": 95,
+    "stop_name": "Marxalenes",
+    "stop_desc": "NULL",
+    "x": 724989.0,
+    "y": 4374197.33,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3912055592778527,
+      "lat": 39.478866459072414
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.391205559277853,
+          39.478866459072414
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "CAMPANAR",
+    "coddistbar": "041",
+    "coddistrit": "4",
+    "codbar": 41,
+    "transporte": "metrovlc",
+    "stop_id": 52,
+    "stop_name": "Túria",
+    "stop_desc": "NULL",
+    "x": 724384.5,
+    "y": 4373168.19,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.361905590302888,
+      "lat": 39.47800426522892
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.361905590302888,
+          39.47800426522892
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "EXPOSICIO",
+    "coddistbar": "061",
+    "coddistrit": "6",
+    "codbar": 61,
+    "transporte": "metrovlc",
+    "stop_id": 13,
+    "stop_name": "Facultats",
+    "stop_desc": "NULL",
+    "x": 726907.76,
+    "y": 4373145.91,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3257277947693958,
+      "lat": 39.47368985478737
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.325727794769396,
+          39.47368985478737
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "CABANYAL-CANYAMELAR",
+    "coddistbar": "112",
+    "coddistrit": "11",
+    "codbar": 112,
+    "transporte": "metrovlc",
+    "stop_id": 81,
+    "stop_name": "Eugenia Viñes",
+    "stop_desc": "NULL",
+    "x": 730034.14,
+    "y": 4372758.79,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3850361352883691,
+      "lat": 39.470302398378614
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.385036135288369,
+          39.470302398378614
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "4",
+    "nombre": "ARRANCAPINS",
+    "coddistbar": "034",
+    "coddistrit": "3",
+    "codbar": 34,
+    "transporte": "metrovlc",
+    "stop_id": 17,
+    "stop_name": "Àngel Guimerà",
+    "stop_desc": "NULL",
+    "x": 724942.81,
+    "y": 4372232.95,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3773750373833963,
+      "lat": 39.46718586156372
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.377375037383396,
+          39.46718586156372
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "LA ROQUETA",
+    "coddistbar": "032",
+    "coddistrit": "3",
+    "codbar": 32,
+    "transporte": "metrovlc",
+    "stop_id": 16,
+    "stop_name": "Xàtiva",
+    "stop_desc": "NULL",
+    "x": 725611.99,
+    "y": 4371906.17,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.38163339444366745,
+      "lat": 39.46620163682386
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.381633394443667,
+          39.46620163682386
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "LA ROQUETA",
+    "coddistbar": "032",
+    "coddistrit": "3",
+    "codbar": 32,
+    "transporte": "metrovlc",
+    "stop_id": 51,
+    "stop_name": "Pl. Espanya",
+    "stop_desc": "NULL",
+    "x": 725248.79,
+    "y": 4371786.26,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39838336779154243,
+      "lat": 39.45457065137901
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.398383367791542,
+          39.45457065137901
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "SANT ISIDRE",
+    "coddistbar": "082",
+    "coddistrit": "8",
+    "codbar": 82,
+    "transporte": "metrovlc",
+    "stop_id": 27,
+    "stop_name": "Safranar",
+    "stop_desc": "NULL",
+    "x": 723844.94,
+    "y": 4370453.44,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.40280271437368137,
+      "lat": 39.45103441846973
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.402802714373681,
+          39.45103441846973
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "2",
+    "nombre": "SANT ISIDRE",
+    "coddistbar": "082",
+    "coddistrit": "8",
+    "codbar": 82,
+    "transporte": "metrovlc",
+    "stop_id": 28,
+    "stop_name": "Sant Isidre",
+    "stop_desc": "NULL",
+    "x": 723475.9599999998,
+    "y": 4370049.94,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.39050831461495283,
+      "lat": 39.45645127364373
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.390508314614953,
+          39.45645127364373
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "FAVARA",
+    "coddistbar": "085",
+    "coddistrit": "8",
+    "codbar": 85,
+    "transporte": "metrovlc",
+    "stop_id": 26,
+    "stop_name": "Patraix",
+    "stop_desc": "NULL",
+    "x": 724516.56,
+    "y": 4370681.79,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.33962227063585687,
+      "lat": 39.47813784720567
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.339622270635857,
+          39.47813784720567
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "LA CARRASCA",
+    "coddistbar": "135",
+    "coddistrit": "13",
+    "codbar": 135,
+    "transporte": "metrovlc",
+    "stop_id": 87,
+    "stop_name": "Tarongers",
+    "stop_desc": "NULL",
+    "x": 728824.22,
+    "y": 4373217.13,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.34482499702123176,
+      "lat": 39.479659864984505
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.344824997021232,
+          39.479659864984505
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "5",
+    "nombre": "LA CARRASCA",
+    "coddistbar": "135",
+    "coddistrit": "13",
+    "codbar": 135,
+    "transporte": "metrovlc",
+    "stop_id": 88,
+    "stop_name": "La Carrasca",
+    "stop_desc": "NULL",
+    "x": 728371.68,
+    "y": 4373372.87,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3339729524767214,
+      "lat": 39.4632452141471
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.333972952476721,
+          39.4632452141471
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "EL GRAU",
+    "coddistbar": "111",
+    "coddistrit": "11",
+    "codbar": 111,
+    "transporte": "metrovlc",
+    "stop_id": 122,
+    "stop_name": "Francesc Cubells",
+    "stop_desc": "NULL",
+    "x": 729359.13,
+    "y": 4371578.37,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.41941110501500944,
+      "lat": 39.50187670343946
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.419411105015009,
+          39.50187670343946
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "BENIMAMET",
+    "coddistbar": "181",
+    "coddistrit": "18",
+    "codbar": 181,
+    "transporte": "metrovlc",
+    "stop_id": 57,
+    "stop_name": "Benimàmet",
+    "stop_desc": "NULL",
+    "x": 721884.99,
+    "y": 4375652.47,
+    "zone_id": "A"
+  },
+  {
+    "geo_point_2d": {
+      "lon": -0.3684949593362927,
+      "lat": 39.49721892085884
+    },
+    "geo_shape": {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [
+          -0.368494959336293,
+          39.49721892085884
+        ],
+        "type": "Point"
+      },
+      "properties": {}
+    },
+    "codbarrio": "1",
+    "nombre": "ELS ORRIOLS",
+    "coddistbar": "151",
+    "coddistrit": "15",
+    "codbar": 151,
+    "transporte": "metrovlc",
+    "stop_id": 131,
+    "stop_name": "Sant Miquel dels Reis",
+    "stop_desc": "NULL",
+    "x": 726278.58,
+    "y": 4375262.21,
+    "zone_id": "A"
+  }
+]
