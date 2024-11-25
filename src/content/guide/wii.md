@@ -54,7 +54,7 @@ heroImage: "../../img/guidebg-1.webp"
    - Press `2` for `Custom Install Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
      2. Select `Wii`.
-     3. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+     3. Please wait a moment for the patcher to download and patch the files on your device.
      4. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
      5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
 

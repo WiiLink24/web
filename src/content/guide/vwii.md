@@ -18,22 +18,37 @@ heroImage: "../../img/guidebg-3.webp"
 
 <l class="notice info">To install WiiLink, you will need to have a homebrewed console. If your console isn't already homebrewed, follow the instructions [here](https://wii.hacks.guide/get-started) to homebrew your vWii.</l>
 
-## Section I - Priiloader and installing EULA
+</br>
+
+## Section I - Priiloader
+
+</br>
+
+
+<l class="notice info">If you already have Priiloader installed, skip to [Configuring Priiloader](#configuring-priiloader)</l>
+
+</br>
+
+
+### Installing Priiloader
 
 1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Download the `Priiloader Installer` from [here](https://oscwii.org/library/app/priiloader), and `Load Priiloader` from [here](https://oscwii.org/library/app/LoadPriiloader).
 2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Unzip both zip files, and copy the `apps` folder from within each to the root of your SD Card or USB Drive.
-3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
-4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
-5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` at the bottom of the `hacks_hash.ini`
-7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
-8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
-9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
-10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
-11. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button` from the menu. (Feel free to enable other options while you're in this menu)
-12. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-13. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
-14. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
+3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Priiloader`.
+4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the installation steps.
+
+### Configuring Priiloader
+
+1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
+2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
+3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
+4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` into a new line at the bottom of the `hacks_hash.ini`
+5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
+6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
+7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button` from the menu. (Feel free to enable other options while you're in this menu)
+8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
+9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
+10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
 
 </br>
 
@@ -77,7 +92,7 @@ heroImage: "../../img/guidebg-3.webp"
    - Press `2` for `Custom Install Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
      2. Select `vWii (Wii U)`.
-     3. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
+     3. Please wait a moment for the patcher to download and patch the files on your device.
      4. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
      5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
 
