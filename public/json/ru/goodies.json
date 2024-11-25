@@ -5,13 +5,13 @@
         "title": "<i class='fa-solid fa-palette'></i> Материалы брендинга",
         "desc": "Наш брендинг для сторонних использований!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/branding_bg.webp",
-        "link": "extras/branding"
+        "link": "/extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Обои",
         "desc": "Обои WiiLink для вашего ПК!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/wallpaper_bg.webp",
-        "link": "extras/wallpapers"
+        "link": "/extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-user-group'></i> Знакомьтесь с командой",
@@ -29,7 +29,7 @@
         "title": "<i class='fa-solid fa-poll'></i> Просмотр опросов",
         "desc": "Смотрите результаты опросов Канала Голосований!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-2.webp",
-        "link": "extras/vote"
+        "link": "/extras/vote"
       },
       {
         "title": "<i class='fa-solid fa-house'></i> Wii Room Originals",
@@ -41,7 +41,7 @@
         "title": "<i class='fa-solid fa-paintbrush'></i> Темы WiiLink",
         "desc": "Милые темы для вашей Wii!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-3.webp",
-        "link": "extras/themes"
+        "link": "/extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
@@ -53,37 +53,37 @@
         "title": "<i class='fa-solid fa-mask'></i> Комиксы",
         "desc": "Старые комиксы RiiConnect24<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/strips"
+        "link": "/extras/strips"
       },
       {
         "title": "<i class='fa-solid fa-gamepad'></i> Тест Wii Remote",
         "desc": "Простая страница для тестирования вашего Wii Remote<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/internetchannel"
+        "link": "/extras/internetchannel"
       },
       {
         "title": "<i class='fa-solid fa-user'></i> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/mii"
+        "link": "/extras/mii"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Чит для Фотоканала",
         "desc": "Изображения для получения лучших результатов!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/photochannel"
+        "link": "/extras/photochannel"
       },
       {
         "title": "<i class='fa-solid fa-shop'></i> Песня Wii Shop Channel",
         "desc": "Мемная песня с канала Wii Shop Channel<br><span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/ring"
+        "link": "/extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> Котик с новостей",
         "desc": "Тако-о-ой милашка!",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/cat"
+        "link": "/extras/cat"
       }
     ]
   }

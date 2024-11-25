@@ -5,25 +5,25 @@
         "title": "<i class='fa-solid fa-palette'></i> Branding assets",
         "desc": "Brand assets for external usage!",
         "img": "/img/branding_bg.webp",
-        "link": "extras/branding"
+        "link": "/extras/branding"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Wallpapers",
         "desc": "WiiLink wallpapers for your PC!",
         "img": "/img/wallpaper_bg.webp",
-        "link": "extras/wallpapers"
+        "link": "/extras/wallpapers"
       },
       {
         "title": "<i class='fa-solid fa-poll'></i> Poll Viewer",
         "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
-        "link": "extras/vote"
+        "link": "/extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Themes",
-        "desc": "Nice themes for your Wii!",
+        "title": "<i class='fa-solid fa-paintbrush'></i> Themes",
+        "desc": "Nice themes for your consoles!",
         "img": "/img/guidebg-3.webp",
-        "link": "extras/themes"
+        "link": "/extras/themes"
       },
       {
         "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
@@ -35,37 +35,37 @@
         "title": "<i class='fa-solid fa-mask'></i> Comic Strips",
         "desc": "Old RiiConnect24 comic strips",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/strips"
+        "link": "/extras/strips"
       },
       {
         "title": "<i class='fa-solid fa-gamepad'></i> Wii Remote Testing",
         "desc": "A simple page for testing your Wii Remote",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/internetchannel"
+        "link": "/extras/internetchannel"
       },
       {
         "title": "<i class='fa-solid fa-user'></i> Mii Avatar Editor",
         "desc": "",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/mii"
+        "link": "/extras/mii"
       },
       {
         "title": "<i class='fa-solid fa-image'></i> Photo Channel Cheats",
         "desc": "Images for getting fast time results!",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/photochannel"
+        "link": "/extras/photochannel"
       },
       {
         "title": "<i class='fa-solid fa-shop'></i> Wii Shop Channel song",
         "desc": "Meme song for the Wii Shop Channel",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/ring"
+        "link": "/extras/ring"
       },
       {
         "title": "<i class='fa-solid fa-cat'></i> News cat",
         "desc": "An in progress Nintendo Wi-Fi Connection service!",
         "img": "/img/guidebg-1.webp",
-        "link": "extras/cat"
+        "link": "/extras/cat"
       }
     ]
   }

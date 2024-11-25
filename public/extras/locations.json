@@ -1,0 +1,1291 @@
+{
+    "stops": [
+        {
+            "stop_id": 121,
+            "stop_name": "Aeroport",
+            "stop_lat": 39.4923667908,
+            "stop_lon": -0.4749194384,
+            "zone_id": "+",
+            "street_name": "CV-37",
+            "lines": [3,5]
+        },
+        {
+            "stop_id": 190,
+            "stop_name": "Alacant",
+            "stop_lat": 39.464721,
+            "stop_lon": -0.377477,
+            "zone_id": "A",
+            "street_name": "Carrer d'Alacant",
+            "lines": [10]
+        },
+        {
+            "stop_id": 14,
+            "stop_name": "Alameda",
+            "stop_lat": 39.4731559753,
+            "stop_lon": -0.3653166592,
+            "zone_id": "A",
+            "street_name": "Pont de l'Exposició",
+            "lines": [3,9,5,7]
+        },
+        {
+            "stop_id": 5,
+            "stop_name": "Albalat dels Sorells",
+            "stop_lat": 39.5452651978,
+            "stop_lon": -0.3482888937,
+            "zone_id": "A B",
+            "street_name": "Unknown",
+            "lines": [3]
+        },
+        {
+            "stop_id": 36,
+            "stop_name": "Alberic",
+            "stop_lat": 39.1170501709,
+            "stop_lon": -0.5235260129,
+            "zone_id": "B",
+            "street_name": "Avinguda de les Corts Valencianes",
+            "lines": [1]
+        },
+        {
+            "stop_id": 10,
+            "stop_name": "Alboraia Palmaret",
+            "stop_lat": 39.4956626892,
+            "stop_lon": -0.3552222252,
+            "zone_id": "A B",
+            "street_name": "Avinguda de l'Orxata",
+            "lines": [3,9]
+        },
+        {
+            "stop_id": 9,
+            "stop_name": "Alboraia Peris Aragó",
+            "stop_lat": 39.5007629395,
+            "stop_lon": -0.352327764,
+            "zone_id": "A B",
+            "street_name": "Calle del Canónigo Julián",
+            "lines": [3,9]
+        },
+        {
+            "stop_id": 128,
+            "stop_name": "Alfauir",
+            "stop_lat": 39.4892997742,
+            "stop_lon": -0.3660329878,
+            "zone_id": "A",
+            "street_name": "Carrer d'Alfauir",
+            "lines": [6]
+        },
+        {
+            "stop_id": 43,
+            "stop_name": "Alginet",
+            "stop_lat": 39.2629394531,
+            "stop_lon": -0.4748860002,
+            "zone_id": "B",
+            "street_name": "Avinguda de l'Estació",
+            "lines": [1]
+        },
+        {
+            "stop_id": 8,
+            "stop_name": "Almàssera",
+            "stop_lat": 39.5122566223,
+            "stop_lon": -0.3542666733,
+            "zone_id": "A B",
+            "street_name": "Carrer del Mestre Serrano",
+            "lines": [3]
+        },
+        {
+            "stop_id": 192,
+            "stop_name": "Amado Granell - Montolivet",
+            "stop_lat": 39.459373,
+            "stop_lon": -0.36511,
+            "zone_id": "A",
+            "street_name": "Avinguda d'Amado Granell Mesado (Militar)",
+            "lines": [10]
+        },
+        {
+            "stop_id": 23,
+            "stop_name": "Amistat",
+            "stop_lat": 39.4703330994,
+            "stop_lon": -0.3503944576,
+            "zone_id": "A",
+            "street_name": "Carrer dels Sants Just i Pastor",
+            "lines": [5,7]
+        },
+        {
+            "stop_id": 24,
+            "stop_name": "Aragó",
+            "stop_lat": 39.4726257324,
+            "stop_lon": -0.3581166565,
+            "zone_id": "A",
+            "street_name": "Carrer d'Amadeu de Savoia",
+            "lines": [5,7]
+        },
+        {
+            "stop_id": 42,
+            "stop_name": "Ausiàs March",
+            "stop_lat": 39.2495574951,
+            "stop_lon": -0.4919772148,
+            "zone_id": "B",
+            "street_name": "Camí de Vora Riu",
+            "lines": [1]
+        },
+        {
+            "stop_id": 18,
+            "stop_name": "Av. del Cid",
+            "stop_lat": 39.4682197571,
+            "stop_lon": -0.397574991,
+            "zone_id": "A",
+            "street_name": "Avinguda del Cid",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 22,
+            "stop_name": "Ayora",
+            "stop_lat": 39.4664268494,
+            "stop_lon": -0.3429694474,
+            "zone_id": "A",
+            "street_name": "Carrer de Jeroni de Montsoriu",
+            "lines": [5,7]
+        },
+        {
+            "stop_id": 109,
+            "stop_name": "Bailén",
+            "stop_lat": 39.4639778137,
+            "stop_lon": -0.3794222176,
+            "zone_id": "A",
+            "street_name": "Carrer de Vives Liern",
+            "lines": [7]
+        },
+        {
+            "stop_id": 70,
+            "stop_name": "Benaguasil",
+            "stop_lat": 39.5988807678,
+            "stop_lon": -0.5839277506,
+            "zone_id": "B",
+            "street_name": "Carrer de Serra",
+            "lines": [2]
+        },
+        {
+            "stop_id": 97,
+            "stop_name": "Benicalap",
+            "stop_lat": 39.4900283813,
+            "stop_lon": -0.3909277916,
+            "zone_id": "A",
+            "street_name": "Carril bici Av. Burjassot",
+            "lines": [4]
+        },
+        {
+            "stop_id": 54,
+            "stop_name": "Beniferri",
+            "stop_lat": 39.4910316467,
+            "stop_lon": -0.3993369341,
+            "zone_id": "A",
+            "street_name": "Avinguda de les Corts Valencianes",
+            "lines": [1,2]
+        },
+        {
+            "stop_id": 12,
+            "stop_name": "Benimaclet",
+            "stop_lat": 39.4848518372,
+            "stop_lon": -0.3623333275,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Vicent Zaragozà",
+            "lines": [3,4,5,6,7,9]
+        },
+        {
+            "stop_id": 40,
+            "stop_name": "Benimodo",
+            "stop_lat": 39.216293335,
+            "stop_lon": -0.5196194649,
+            "zone_id": "B",
+            "street_name": "CV-546",
+            "lines": [1]
+        },
+        {
+            "stop_id": 57,
+            "stop_name": "Benimàmet",
+            "stop_lat": 39.5018768311,
+            "stop_lon": -0.4194111228,
+            "zone_id": "A B",
+            "street_name": "Avinguda de l'Estació",
+            "lines": [2]
+        },
+        {
+            "stop_id": 86,
+            "stop_name": "Beteró",
+            "stop_lat": 39.4765930176,
+            "stop_lon": -0.3342027664,
+            "zone_id": "A",
+            "street_name": "Avinguda dels Tarongers",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 72,
+            "stop_name": "Burjassot",
+            "stop_lat": 39.5084152222,
+            "stop_lon": -0.4067361057,
+            "zone_id": "A B",
+            "street_name": "Camí del Molí de la Sal",
+            "lines": [1]
+        },
+        {
+            "stop_id": 73,
+            "stop_name": "Burjassot - Godella",
+            "stop_lat": 39.5135307312,
+            "stop_lon": -0.4119972289,
+            "zone_id": "A B",
+            "street_name": "Calle de Bétera",
+            "lines": [1]
+        },
+        {
+            "stop_id": 107,
+            "stop_name": "Bétera",
+            "stop_lat": 39.5906066895,
+            "stop_lon": -0.4575305581,
+            "zone_id": "B",
+            "street_name": "Carrer de l'Estació",
+            "lines": [1]
+        },
+        {
+            "stop_id": 84,
+            "stop_name": "Cabanyal",
+            "stop_lat": 39.4728546143,
+            "stop_lon": -0.3275833428,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Lluch",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 59,
+            "stop_name": "Campament",
+            "stop_lat": 39.4958457947,
+            "stop_lon": -0.435323,
+            "zone_id": "A B",
+            "street_name": "Carrer Doctor Machi",
+            "lines": [2]
+        },
+        {
+            "stop_id": 53,
+            "stop_name": "Campanar",
+            "stop_lat": 39.4846305847,
+            "stop_lon": -0.3950361013,
+            "zone_id": "A",
+            "street_name": "Avinguda de Pius XII",
+            "lines": [1,2]
+        },
+        {
+            "stop_id": 103,
+            "stop_name": "Campus",
+            "stop_lat": 39.5072212219,
+            "stop_lon": -0.4174583256,
+            "zone_id": "A B",
+            "street_name": "Carrer de Rosa de Luxemburgo",
+            "lines": [4]
+        },
+        {
+            "stop_id": 56,
+            "stop_name": "Cantereria",
+            "stop_lat": 39.5023803711,
+            "stop_lon": -0.4120722115,
+            "zone_id": "A B",
+            "street_name": "Calle Cardenal Cisneros",
+            "lines": [2]
+        },
+        {
+            "stop_id": 127,
+            "stop_name": "Canyamelar",
+            "stop_lat": 39.4665222168,
+            "stop_lon": -0.3279320002,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Lluch",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 41,
+            "stop_name": "Carlet",
+            "stop_lat": 39.2267990112,
+            "stop_lon": -0.5249416828,
+            "zone_id": "B",
+            "street_name": "Avinguda de la Caixa d'Estalvis",
+            "lines": [1]
+        },
+        {
+            "stop_id": 35,
+            "stop_name": "Castelló",
+            "stop_lat": 39.0840072632,
+            "stop_lon": -0.5160138607,
+            "zone_id": "B",
+            "street_name": "Unknown",
+            "lines": [1]
+        },
+        {
+            "stop_id": 194,
+            "stop_name": "Ciutat Arts i Ciències - Justícia",
+            "stop_lat": 39.452592,
+            "stop_lon": -0.353216,
+            "zone_id": "A",
+            "street_name": "Avinguda d'Antonio Ferrandis (Actor)",
+            "lines": [10]
+        },
+        {
+            "stop_id": 50,
+            "stop_name": "Col·legi El Vedat",
+            "stop_lat": 39.4231338501,
+            "stop_lon": -0.4606527686,
+            "zone_id": "A B",
+            "street_name": "Camí d'Alcàsser",
+            "lines": [1]
+        },
+        {
+            "stop_id": 15,
+            "stop_name": "Colón",
+            "stop_lat": 39.4701461792,
+            "stop_lon": -0.3709277809,
+            "zone_id": "A",
+            "street_name": "Plaça dels Pinazo",
+            "lines": [3,5,7,9]
+        },
+        {
+            "stop_id": 83,
+            "stop_name": "Dr. Lluch",
+            "stop_lat": 39.4693069458,
+            "stop_lon": -0.3281527758,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Lluch",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 108,
+            "stop_name": "El Clot",
+            "stop_lat": 39.5498657227,
+            "stop_lon": -0.5279861093,
+            "zone_id": "B",
+            "street_name": "Calle de Ramón Lahuerta",
+            "lines": [2]
+        },
+        {
+            "stop_id": 55,
+            "stop_name": "Empalme",
+            "stop_lat": 39.4995765686,
+            "stop_lon": -0.4021083415,
+            "zone_id": "A",
+            "street_name": "Camí Vell de Beniferri",
+            "lines": [1,2,4]
+        },
+        {
+            "stop_id": 65,
+            "stop_name": "Entrepins",
+            "stop_lat": 39.5433349609,
+            "stop_lon": -0.5139539838,
+            "zone_id": "B",
+            "street_name": "Calle de Pobla de Vallbona",
+            "lines": [2]
+        },
+        {
+            "stop_id": 45,
+            "stop_name": "Espioca",
+            "stop_lat": 39.3218841553,
+            "stop_lon": -0.4667472243,
+            "zone_id": "A B",
+            "street_name": "Unknown",
+            "lines": [1]
+        },
+        {
+            "stop_id": 130,
+            "stop_name": "Estadi Ciutat de València",
+            "stop_lat": 39.4949188232,
+            "stop_lon": -0.3655419946,
+            "zone_id": "A",
+            "street_name": "Carrer de Sant Vicent de Paül",
+            "lines": [6]
+        },
+        {
+            "stop_id": 13,
+            "stop_name": "Facultats - Manuel Broseta",
+            "stop_lat": 39.4780044556,
+            "stop_lon": -0.361905545,
+            "zone_id": "A",
+            "street_name": "Avinguda de Blasco Ibáñez",
+            "lines": [3,5,7,9]
+        },
+        {
+            "stop_id": 200,
+            "stop_name": "Faitanar",
+            "stop_lat": 39.4776191711,
+            "stop_lon": -0.4331833422,
+            "zone_id": "A B",
+            "street_name": "Carrer Reverendo Padre José Palacios",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 106,
+            "stop_name": "Fira València",
+            "stop_lat": 39.5041427612,
+            "stop_lon": -0.4254944324,
+            "zone_id": "A B",
+            "street_name": "Avenida del Regimiento Guadalajara 20",
+            "lines": [4]
+        },
+        {
+            "stop_id": 99,
+            "stop_name": "Florista",
+            "stop_lat": 39.4944343567,
+            "stop_lon": -0.3968166709,
+            "zone_id": "A",
+            "street_name": "Carrer de la Serra d'Agullent",
+            "lines": [4]
+        },
+        {
+            "stop_id": 6,
+            "stop_name": "Foios",
+            "stop_lat": 39.5372238159,
+            "stop_lon": -0.3538694382,
+            "zone_id": "A B",
+            "street_name": "Plaça de l'Estació",
+            "lines": [3]
+        },
+        {
+            "stop_id": 69,
+            "stop_name": "Fondo de Benaguasil",
+            "stop_lat": 39.5927238464,
+            "stop_lon": -0.5780805349,
+            "zone_id": "B",
+            "street_name": "Calle de Valencia",
+            "lines": [2]
+        },
+        {
+            "stop_id": 44,
+            "stop_name": "Font Almaguer",
+            "stop_lat": 39.2894058228,
+            "stop_lon": -0.4640861154,
+            "zone_id": "B",
+            "street_name": "Unknown",
+            "lines": [1]
+        },
+        {
+            "stop_id": 122,
+            "stop_name": "Francesc Cubells",
+            "stop_lat": 39.4632453918,
+            "stop_lon": -0.3339729905,
+            "zone_id": "A",
+            "street_name": "Carrer de Francesc Cubells",
+            "lines": [6]
+        },
+        {
+            "stop_id": 62,
+            "stop_name": "Fuente del Jarro",
+            "stop_lat": 39.5111732483,
+            "stop_lon": -0.4645166695,
+            "zone_id": "A B",
+            "street_name": "Calle Islas Canarias",
+            "lines": [2]
+        },
+        {
+            "stop_id": 201,
+            "stop_name": "Gallipont - Torre del Virrei",
+            "stop_lat": 39.5686645508,
+            "stop_lon": -0.5419166684,
+            "zone_id": "B",
+            "street_name": "Avinguda de la Torre del Virrei",
+            "lines": [2]
+        },
+        {
+            "stop_id": 98,
+            "stop_name": "Garbí",
+            "stop_lat": 39.4922904968,
+            "stop_lon": -0.3945111036,
+            "zone_id": "A",
+            "street_name": "Carrer del Garbí",
+            "lines": [4]
+        },
+        {
+            "stop_id": 74,
+            "stop_name": "Godella",
+            "stop_lat": 39.5195045471,
+            "stop_lon": -0.4144555628,
+            "zone_id": "A B",
+            "street_name": "Calle de San Vicente",
+            "lines": [1]
+        },
+        {
+            "stop_id": 123,
+            "stop_name": "Grau - La Marina",
+            "stop_lat": 39.4631004333,
+            "stop_lon": -0.3294720054,
+            "zone_id": "A",
+            "street_name": "Plaça de la Setmana Santa Marinera",
+            "lines": [6,8]
+        },
+        {
+            "stop_id": 80,
+            "stop_name": "Horta Vella",
+            "stop_lat": 39.5819320679,
+            "stop_lon": -0.4431444407,
+            "zone_id": "B",
+            "street_name": "CV-3106",
+            "lines": [1]
+        },
+        {
+            "stop_id": 25,
+            "stop_name": "Jesús",
+            "stop_lat": 39.4592018127,
+            "stop_lon": -0.3845416605,
+            "zone_id": "A",
+            "street_name": "Avinguda de Giorgeta",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 39,
+            "stop_name": "L'Alcúdia",
+            "stop_lat": 39.193813324,
+            "stop_lon": -0.5102638602,
+            "zone_id": "B",
+            "street_name": "Avinguda del Mestre Serrano",
+            "lines": [1]
+        },
+        {
+            "stop_id": 67,
+            "stop_name": "L'Eliana",
+            "stop_lat": 39.561832428,
+            "stop_lon": -0.5359194279,
+            "zone_id": "B",
+            "street_name": "Calle del Padre Damián",
+            "lines": [2]
+        },
+        {
+            "stop_id": 85,
+            "stop_name": "La Cadena",
+            "stop_lat": 39.4752044678,
+            "stop_lon": -0.3293749988,
+            "zone_id": "A",
+            "street_name": "Avinguda dels Tarongers",
+            "lines": [4,6,8]
+        },
+        {
+            "stop_id": 63,
+            "stop_name": "La Canyada",
+            "stop_lat": 39.5268058777,
+            "stop_lon": -0.4871222079,
+            "zone_id": "A B",
+            "street_name": "Plaza Puerta del Sol",
+            "lines": [2]
+        },
+        {
+            "stop_id": 88,
+            "stop_name": "La Carrasca",
+            "stop_lat": 39.4796600342,
+            "stop_lon": -0.3448249996,
+            "zone_id": "A",
+            "street_name": "Avinguda dels Tarongers",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 111,
+            "stop_name": "La Coma",
+            "stop_lat": 39.521572113,
+            "stop_lon": -0.4317069948,
+            "zone_id": "A B",
+            "street_name": "Carrer de Silla",
+            "lines": [4]
+        },
+        {
+            "stop_id": 183,
+            "stop_name": "La Cova",
+            "stop_lat": 39.4988899231,
+            "stop_lon": -0.4844444394,
+            "zone_id": "A B",
+            "street_name": "Carrer del Rincó d'Ademús",
+            "lines": [9]
+        },
+        {
+            "stop_id": 101,
+            "stop_name": "La Granja",
+            "stop_lat": 39.504032135,
+            "stop_lon": -0.4124779999,
+            "zone_id": "A B",
+            "street_name": "Avenida Virgen de la Cabeza",
+            "lines": [4]
+        },
+        {
+            "stop_id": 2,
+            "stop_name": "La Pobla de Farnals",
+            "stop_lat": 39.5794181824,
+            "stop_lon": -0.3304361105,
+            "zone_id": "A B",
+            "street_name": "Unknown",
+            "lines": [3]
+        },
+        {
+            "stop_id": 68,
+            "stop_name": "La Pobla de Vallbona",
+            "stop_lat": 39.5827636719,
+            "stop_lon": -0.5622777939,
+            "zone_id": "B",
+            "street_name": "Unknown",
+            "lines": [3]
+        },
+        {
+            "stop_id": 184,
+            "stop_name": "La Presa",
+            "stop_lat": 39.5172233582,
+            "stop_lon": -0.5158333182,
+            "zone_id": "A B",
+            "street_name": "Senda Purito",
+            "lines": [9]
+        },
+        {
+            "stop_id": 64,
+            "stop_name": "La Vallesa",
+            "stop_lat": 39.5378417969,
+            "stop_lon": -0.4979777634,
+            "zone_id": "A B",
+            "street_name": "354",
+            "lines": [2]
+        },
+        {
+            "stop_id": 58,
+            "stop_name": "Les Carolines - Fira",
+            "stop_lat": 39.4987373352,
+            "stop_lon": -0.4254194498,
+            "zone_id": "A B",
+            "street_name": "Avinguda de l'Estació",
+            "lines": [2]
+        },
+        {
+            "stop_id": 114,
+            "stop_name": "Ll. Llarga - Terramelar",
+            "stop_lat": 39.5098991394,
+            "stop_lon": -0.4304472208,
+            "zone_id": "A B",
+            "street_name": "Acceso Noroeste de Paterna",
+            "lines": [4]
+        },
+        {
+            "stop_id": 71,
+            "stop_name": "Llíria",
+            "stop_lat": 39.6228408813,
+            "stop_lon": -0.590277791,
+            "zone_id": "B",
+            "street_name": "Carrer de Juan Izquierdo",
+            "lines": [2]
+        },
+        {
+            "stop_id": 11,
+            "stop_name": "Machado",
+            "stop_lat": 39.4924316406,
+            "stop_lon": -0.3587944508,
+            "zone_id": "A",
+            "street_name": "Carrer d'Ismael Merlo",
+            "lines": [3,5,7,9]
+        },
+        {
+            "stop_id": 119,
+            "stop_name": "Manises",
+            "stop_lat": 39.4895896912,
+            "stop_lon": -0.4590654373,
+            "zone_id": "A B",
+            "street_name": "Calle de Murillo",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 95,
+            "stop_name": "Marxalenes",
+            "stop_lat": 39.4879722595,
+            "stop_lon": -0.3838368952,
+            "zone_id": "A",
+            "street_name": "Passeig de l'Ullal",
+            "lines": [4]
+        },
+        {
+            "stop_id": 115,
+            "stop_name": "Marítim",
+            "stop_lat": 39.4649391174,
+            "stop_lon": -0.3382369876,
+            "zone_id": "A",
+            "street_name": "Carrer de José María Cervera Lloret",
+            "lines": [5,6,7,8]
+        },
+        {
+            "stop_id": 110,
+            "stop_name": "Mas del Rosari",
+            "stop_lat": 39.5249595642,
+            "stop_lon": -0.4358249903,
+            "zone_id": "A B",
+            "street_name": "Plaça de l'Alcúdia",
+            "lines": [4]
+        },
+        {
+            "stop_id": 185,
+            "stop_name": "Masia de Traver",
+            "stop_lat": 39.5380554199,
+            "stop_lon": -0.5466666818,
+            "zone_id": "B",
+            "street_name": "Carrer de la Séquia na Rosella",
+            "lines": [9]
+        },
+        {
+            "stop_id": 79,
+            "stop_name": "Masies",
+            "stop_lat": 39.5665817261,
+            "stop_lon": -0.4053777754,
+            "zone_id": "A B",
+            "street_name": "Carrer 117",
+            "lines": [1]
+        },
+        {
+            "stop_id": 37,
+            "stop_name": "Massalavés",
+            "stop_lat": 39.1438064575,
+            "stop_lon": -0.5187610984,
+            "zone_id": "B",
+            "street_name": "Camí del Rincón",
+            "lines": [1]
+        },
+        {
+            "stop_id": 3,
+            "stop_name": "Massamagrell",
+            "stop_lat": 39.5705604553,
+            "stop_lon": -0.3330333233,
+            "zone_id": "A B",
+            "street_name": "Carrer del Rei En Jaume",
+            "lines": [3]
+        },
+        {
+            "stop_id": 76,
+            "stop_name": "Massarrojos",
+            "stop_lat": 39.5366096497,
+            "stop_lon": -0.4028777778,
+            "zone_id": "A B",
+            "street_name": "Camí Fondo de Borbotó a Massarrojos",
+            "lines": [1]
+        },
+        {
+            "stop_id": 7,
+            "stop_name": "Meliana",
+            "stop_lat": 39.5280303955,
+            "stop_lon": -0.3518194556,
+            "zone_id": "A B",
+            "street_name": "Carrer de Julio Benlloch",
+            "lines": [3]
+        },
+        {
+            "stop_id": 20,
+            "stop_name": "Mislata",
+            "stop_lat": 39.4738235474,
+            "stop_lon": -0.418305546,
+            "zone_id": "A B",
+            "street_name": "Avinguda de Gregorio Gea",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 21,
+            "stop_name": "Mislata Almassil",
+            "stop_lat": 39.4760093689,
+            "stop_lon": -0.4243694544,
+            "zone_id": "A B",
+            "street_name": "Avinguda de Gregorio Gea",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 77,
+            "stop_name": "Moncada - Alfara",
+            "stop_lat": 39.5435295105,
+            "stop_lon": -0.388461113,
+            "zone_id": "A B",
+            "street_name": "Carrer Mariano Benlliure",
+            "lines": [1]
+        },
+        {
+            "stop_id": 66,
+            "stop_name": "Montesol",
+            "stop_lat": 39.5555725098,
+            "stop_lon": -0.5316972136,
+            "zone_id": "B",
+            "street_name": "Carrer del Rei En Jaume",
+            "lines": [2]
+        },
+        {
+            "stop_id": 38,
+            "stop_name": "Montortal",
+            "stop_lat": 39.1737976074,
+            "stop_lon": -0.5158861279,
+            "zone_id": "B",
+            "street_name": "Unknown",
+            "lines": [1]
+        },
+        {
+            "stop_id": 196,
+            "stop_name": "Moreres",
+            "stop_lat": 39.45015,
+            "stop_lon": -0.338408,
+            "zone_id": "A",
+            "street_name": "Carrer de les Barraques del Figuero",
+            "lines": [10]
+        },
+        {
+            "stop_id": 4,
+            "stop_name": "Museros",
+            "stop_lat": 39.5615768433,
+            "stop_lon": -0.3408555686,
+            "zone_id": "A B",
+            "street_name": "Carrer de Sagunt",
+            "lines": [3]
+        },
+        {
+            "stop_id": 197,
+            "stop_name": "Natzaret",
+            "stop_lat": 39.449889,
+            "stop_lon": -0.334674,
+            "zone_id": "A",
+            "street_name": "Carrer de Fontilles",
+            "lines": [10]
+        },
+        {
+            "stop_id": 126,
+            "stop_name": "Neptú",
+            "stop_lat": 39.4632530212,
+            "stop_lon": -0.3258508444,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Marcos Sopena",
+            "lines": [8]
+        },
+        {
+            "stop_id": 19,
+            "stop_name": "Nou d'Octubre",
+            "stop_lat": 39.4706573486,
+            "stop_lon": -0.4076305628,
+            "zone_id": "A",
+            "street_name": "Carrer de l'Orde del Cister",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 195,
+            "stop_name": "Oceanogràfic",
+            "stop_lat": 39.452038,
+            "stop_lon": -0.347342,
+            "zone_id": "A",
+            "street_name": "Carrer d'Eduardo Primo Yúfera",
+            "lines": [10]
+        },
+        {
+            "stop_id": 46,
+            "stop_name": "Omet",
+            "stop_lat": 39.3532447815,
+            "stop_lon": -0.4736869931,
+            "zone_id": "A B",
+            "street_name": "Carrer N-1",
+            "lines": [1]
+        },
+        {
+            "stop_id": 129,
+            "stop_name": "Orriols",
+            "stop_lat": 39.4931488037,
+            "stop_lon": -0.3676636219,
+            "zone_id": "A",
+            "street_name": "Carrer de Sant Vicent de Paül",
+            "lines": [6]
+        },
+        {
+            "stop_id": 31,
+            "stop_name": "Paiporta",
+            "stop_lat": 39.4322624207,
+            "stop_lon": -0.4180611074,
+            "zone_id": "A B",
+            "street_name": "Carrer del Músic Mestre Ramón Navarro Galán",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 100,
+            "stop_name": "Palau de Congressos",
+            "stop_lat": 39.4971809387,
+            "stop_lon": -0.4001416564,
+            "zone_id": "A",
+            "street_name": "Carrer de la Florista",
+            "lines": [4]
+        },
+        {
+            "stop_id": 113,
+            "stop_name": "Parc Científic",
+            "stop_lat": 39.5151405334,
+            "stop_lon": -0.4226219952,
+            "zone_id": "A B",
+            "street_name": "Paseo",
+            "lines": [4]
+        },
+        {
+            "stop_id": 60,
+            "stop_name": "Paterna",
+            "stop_lat": 39.4988098145,
+            "stop_lon": -0.4419719875,
+            "zone_id": "A B",
+            "street_name": "Plaça de l'Estació",
+            "lines": [2]
+        },
+        {
+            "stop_id": 26,
+            "stop_name": "Patraix",
+            "stop_lat": 39.456451416,
+            "stop_lon": -0.3905083239,
+            "zone_id": "A",
+            "street_name": "Avinguda de Gaspar Aguilar",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 32,
+            "stop_name": "Picanya",
+            "stop_lat": 39.4331207275,
+            "stop_lon": -0.4371583462,
+            "zone_id": "A B",
+            "street_name": "Carrer del Cardenal Cisneros",
+            "lines": [7]
+        },
+        {
+            "stop_id": 47,
+            "stop_name": "Picassent",
+            "stop_lat": 39.3630371094,
+            "stop_lon": -0.4648583233,
+            "zone_id": "A B",
+            "street_name": "Carrer de la Diputació",
+            "lines": [1]
+        },
+        {
+            "stop_id": 51,
+            "stop_name": "Pl. Espanya",
+            "stop_lat": 39.4662017822,
+            "stop_lon": -0.3816333413,
+            "zone_id": "A",
+            "street_name": "Gran Via de Ramón y Cajal",
+            "lines": [2]
+        },
+        {
+            "stop_id": 81,
+            "stop_name": "Platja Malva-rosa",
+            "stop_lat": 39.473690033,
+            "stop_lon": -0.3257277906,
+            "zone_id": "A",
+            "street_name": "Carrer d'Eugènia Viñes",
+            "lines": [4,6,8]
+        },
+        {
+            "stop_id": 82,
+            "stop_name": "Platja les Arenes",
+            "stop_lat": 39.4689292908,
+            "stop_lon": -0.3257277906,
+            "zone_id": "A",
+            "street_name": "Carrer d'Eugènia Viñes",
+            "lines": [4,6,8]
+        },
+        {
+            "stop_id": 92,
+            "stop_name": "Pont de Fusta",
+            "stop_lat": 39.4817810059,
+            "stop_lon": -0.3731805682,
+            "zone_id": "A",
+            "street_name": "Carrer d'Almassora",
+            "lines": [4]
+        },
+        {
+            "stop_id": 117,
+            "stop_name": "Quart de Poblet",
+            "stop_lat": 39.481086731,
+            "stop_lon": -0.441880554,
+            "zone_id": "A B",
+            "street_name": "Carrer Reverendo Padre José Palacios",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 193,
+            "stop_name": "Quatre Carreres",
+            "stop_lat": 39.452447,
+            "stop_lon": -0.360125,
+            "zone_id": "A",
+            "street_name": "Avinguda d'Amado Granell Mesado (Militar)",
+            "lines": [10]
+        },
+        {
+            "stop_id": 1,
+            "stop_name": "Rafelbunyol",
+            "stop_lat": 39.5885238647,
+            "stop_lon": -0.3310583234,
+            "zone_id": "A B",
+            "street_name": "Carrer de la Sèquia Reial de Montcada",
+            "lines": [3]
+        },
+        {
+            "stop_id": 49,
+            "stop_name": "Realón",
+            "stop_lat": 39.3939056396,
+            "stop_lon": -0.4640137851,
+            "zone_id": "A B",
+            "street_name": "Carretera de Torrent a Picassent",
+            "lines": [1]
+        },
+        {
+            "stop_id": 94,
+            "stop_name": "Reus",
+            "stop_lat": 39.4859657288,
+            "stop_lon": -0.3817070127,
+            "zone_id": "A",
+            "street_name": "Carrer de Montañana",
+            "lines": [4]
+        },
+        {
+            "stop_id": 186,
+            "stop_name": "Riba-roja de Túria",
+            "stop_lat": 39.5433349609,
+            "stop_lon": -0.5594444275,
+            "zone_id": "B",
+            "street_name": "Carrer de la Senyera",
+            "lines": [9]
+        },
+        {
+            "stop_id": 75,
+            "stop_name": "Rocafort",
+            "stop_lat": 39.5287094116,
+            "stop_lon": -0.4075777829,
+            "zone_id": "A B",
+            "street_name": "Unknown",
+            "lines": [1]
+        },
+        {
+            "stop_id": 120,
+            "stop_name": "Roses",
+            "stop_lat": 39.4926490784,
+            "stop_lon": -0.4672361016,
+            "zone_id": "A B",
+            "street_name": "Calle de las Rosas",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 191,
+            "stop_name": "Russafa",
+            "stop_lat": 39.463913,
+            "stop_lon": -0.369531,
+            "zone_id": "A",
+            "street_name": "Avinguda del Regne de València",
+            "lines": [10]
+        },
+        {
+            "stop_id": 27,
+            "stop_name": "Safranar",
+            "stop_lat": 39.4545707703,
+            "stop_lon": -0.3983833194,
+            "zone_id": "A",
+            "street_name": "Carrer de Campos Crespo",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 93,
+            "stop_name": "Sagunt",
+            "stop_lat": 39.4864997864,
+            "stop_lon": -0.3749722242,
+            "zone_id": "A",
+            "street_name": "Carrer de l'Actor Mora",
+            "lines": [4]
+        },
+        {
+            "stop_id": 118,
+            "stop_name": "Salt de l'Aigua",
+            "stop_lat": 39.4848327637,
+            "stop_lon": -0.4505681992,
+            "zone_id": "A B",
+            "street_name": "Calle de Valencia",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 28,
+            "stop_name": "Sant Isidre",
+            "stop_lat": 39.4510345459,
+            "stop_lon": -0.4028027654,
+            "zone_id": "A",
+            "street_name": "Carrer de Campos Crespo",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 102,
+            "stop_name": "Sant Joan",
+            "stop_lat": 39.5052909851,
+            "stop_lon": -0.4163239896,
+            "zone_id": "A B",
+            "street_name": "Avenida Virgen de la Cabeza",
+            "lines": [4]
+        },
+        {
+            "stop_id": 131,
+            "stop_name": "Sant Miquel dels Reis",
+            "stop_lat": 39.4972190857,
+            "stop_lon": -0.3684949875,
+            "zone_id": "A",
+            "street_name": "Camí de l'Alqueria de Albors",
+            "lines": [6]
+        },
+        {
+            "stop_id": 48,
+            "stop_name": "Sant Ramon",
+            "stop_lat": 39.3848648071,
+            "stop_lon": -0.4672611058,
+            "zone_id": "A B",
+            "street_name": "Carrer Iberia",
+            "lines": [1]
+        },
+        {
+            "stop_id": 61,
+            "stop_name": "Santa Rita",
+            "stop_lat": 39.505657196,
+            "stop_lon": -0.4551055431,
+            "zone_id": "A B",
+            "street_name": "Calle del Testar",
+            "lines": [2]
+        },
+        {
+            "stop_id": 78,
+            "stop_name": "Seminari - CEU",
+            "stop_lat": 39.549987793,
+            "stop_lon": -0.3897444308,
+            "zone_id": "A B",
+            "street_name": "CV-315",
+            "lines": [1]
+        },
+        {
+            "stop_id": 87,
+            "stop_name": "Tarongers - Ernest Lluch",
+            "stop_lat": 39.47813797,
+            "stop_lon": -0.3396222293,
+            "zone_id": "A",
+            "street_name": "Avinguda dels Tarongers",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 112,
+            "stop_name": "Tomás y Valiente",
+            "stop_lat": 39.5197715759,
+            "stop_lon": -0.4256361127,
+            "zone_id": "A B",
+            "street_name": "Avinguda de Francisco Tomás i Valiente",
+            "lines": [4]
+        },
+        {
+            "stop_id": 33,
+            "stop_name": "Torrent",
+            "stop_lat": 39.4346466064,
+            "stop_lon": -0.4609861076,
+            "zone_id": "A B",
+            "street_name": "Carrer dels Sants Patrons",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 34,
+            "stop_name": "Torrent Avinguda",
+            "stop_lat": 39.4318122864,
+            "stop_lon": -0.4728333354,
+            "zone_id": "A B",
+            "street_name": "Avinguda Al Vedat",
+            "lines": [2,7]
+        },
+        {
+            "stop_id": 132,
+            "stop_name": "Tossal del Rei",
+            "stop_lat": 39.4959526062,
+            "stop_lon": -0.3725369871,
+            "zone_id": "A",
+            "street_name": "Carrer del Comte de Lumiares",
+            "lines": [6]
+        },
+        {
+            "stop_id": 91,
+            "stop_name": "Trinitat",
+            "stop_lat": 39.4862709045,
+            "stop_lon": -0.3677638769,
+            "zone_id": "A",
+            "street_name": "Carrer de Bellús",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 96,
+            "stop_name": "Trànsits",
+            "stop_lat": 39.4895629883,
+            "stop_lon": -0.387258321,
+            "zone_id": "A",
+            "street_name": "Carrer del Mondúver",
+            "lines": [4]
+        },
+        {
+            "stop_id": 52,
+            "stop_name": "Túria",
+            "stop_lat": 39.4788665771,
+            "stop_lon": -0.3912055492,
+            "zone_id": "A",
+            "street_name": "Avinguda Pius XII",
+            "lines": [1,2]
+        },
+        {
+            "stop_id": 89,
+            "stop_name": "Universitat Politècnica",
+            "stop_lat": 39.4813156128,
+            "stop_lon": -0.3504999876,
+            "zone_id": "A",
+            "street_name": "Carrer del Clariano",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 30,
+            "stop_name": "València Sud",
+            "stop_lat": 39.4408111572,
+            "stop_lon": -0.4106472135,
+            "zone_id": "A",
+            "street_name": "Carretera de la Perrina",
+            "lines": [1,2,7]
+        },
+        {
+            "stop_id": 188,
+            "stop_name": "València la Vella",
+            "stop_lat": 39.5304832458,
+            "stop_lon": -0.5342069864,
+            "zone_id": "B",
+            "street_name": "Carrer de la Melissa",
+            "lines": [9]
+        },
+        {
+            "stop_id": 104,
+            "stop_name": "Vicent Andrés Estellés",
+            "stop_lat": 39.5085601807,
+            "stop_lon": -0.4198839962,
+            "zone_id": "A B",
+            "street_name": "Avenida Vicente Andrés Estellés",
+            "lines": [4]
+        },
+        {
+            "stop_id": 90,
+            "stop_name": "Vicente Zaragozá",
+            "stop_lat": 39.4833717346,
+            "stop_lon": -0.3579472303,
+            "zone_id": "A",
+            "street_name": "Carrer del Doctor Vicent Zaragozà",
+            "lines": [4,6]
+        },
+        {
+            "stop_id": 16,
+            "stop_name": "Xàtiva",
+            "stop_lat": 39.4671859741,
+            "stop_lon": -0.3773750067,
+            "zone_id": "A",
+            "street_name": "Carrer de Xàtiva",
+            "lines": [3,5,9]
+        },
+        {
+            "stop_id": 105,
+            "stop_name": "À Punt",
+            "stop_lat": 39.5122032166,
+            "stop_lon": -0.424748987,
+            "zone_id": "A B",
+            "street_name": "Avinguda de la Universitat",
+            "lines": [4]
+        },
+        {
+            "stop_id": 17,
+            "stop_name": "Àngel Guimerà",
+            "stop_lat": 39.4703025818,
+            "stop_lon": -0.3850361109,
+            "zone_id": "A",
+            "street_name": "Gran Via de Ferran el Catòlic",
+            "lines": [1,2,3,5,9]
+        }
+    ]
+}
