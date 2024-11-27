@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: fa-solid fa-circle-exclamation
-pubDate: 2024-10-02
+pubDate: 2024-10-20
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "../../img/guidebg-3.webp"
 ---
@@ -24,11 +24,12 @@ heroImage: "../../img/guidebg-3.webp"
 
 <div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock">here</a> to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> for further help with diagnosing your issue!</h4><hr></div>
 
-<div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><i class="fa-solid fa-download"></i> WiiFlow WFL</a>.</h4><hr></div>
+<div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and improve general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><i class="fa-solid fa-download"></i> WiiFlow WFL</a>.</h4><hr></div>
 
 <div class="error">Error Code: -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled "Food Channel (English).wad" on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
 
-<div class="error">Wii Update <span class="badge bg-warning">Food Channel/Photo Prints Channel</span><h4>If the system asks you to update. It means that you didn't install the "WiiLink Address Settings.wad". Using yawmME, go to the location where you put the "WiiLink Address Settings.wad", then install it by pressing the A Button twice on your Wii remote.</h4><hr></div>
+<div class="error">Wii Update <span class="badge bg-warning">Food Channel/Photo Prints Channel</span><h4>If the system asks you to update, you didn't install "WiiLink Address Settings.wad". Using yawmME, go to the location where you put "WiiLink Address Settings.wad", then install it by pressing the A Button twice on your Wii remote. 
+</h4><hr></div>
 
 <div class="error">Error Code: -1022/-1029 <span class="badge bg-warning">Any Channel</span><h4>Using your favorite WAD manager, uninstall the channel, and install again. For yawmME, this means locating the channel WAD, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
 
@@ -40,7 +41,7 @@ heroImage: "../../img/guidebg-3.webp"
 
 <div class="error">Error Code: 221001 <span class="badge bg-warning">EULA</span><h4>Try changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you can use AnyGlobe Changer to switch back to your country.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24 settings, and “Parental Controls” are turned off.</h4><hr></div>
 
-<div class="error">Error Code: 354 <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
+<div class="error">Error Code: 354xxx <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 
 <div class="error">PAL crashes <span class="badge bg-danger">Japanese channels</span><h4>Unfortunately, this is a known issue. We're aware of many crashes for PAL Region consoles. We continue to work on a solution for this, thank you for your patience.</h4><hr></div>
 

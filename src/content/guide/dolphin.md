@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: fa-solid fa-download
-pubDate: 2024-10-02
+pubDate: 2024-10-12
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "../../img/guidebg-1.webp"
 ---
@@ -42,17 +42,14 @@ heroImage: "../../img/guidebg-1.webp"
      1. Select your region for the WiiConnect24 channels.
      2. Select whether or not you would like to install the regional channels.
      3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
-     4. Select your console platform.
-     5. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
+     4. Select `Dolphin Emulator`.
 
 ### Custom Installation
    - Press `2` for `Custom Install Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
-     2. Select your console platform.
-     3. At the `Insert SD Card / USB Drive (if applicable)` step, press `1` to begin patching.
-     4. It may take a moment for the patcher to download the files to your SD Card or USB Drive.
-     5. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-     6. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder next to the `WiiLink Patcher` file to your SD Card or USB Device.
+     2. Select `Dolphin Emulator`.
+     3. Please wait a moment for the patcher to download and patch the files on your device.
+     4. Once it's done, you can safely close the patcher. All of the files are ready.
 
 </br>
 
@@ -72,7 +69,7 @@ heroImage: "../../img/guidebg-1.webp"
 4. If you have chosen to install regional channels, navigate to the `WAD` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
 5. Repeat the process to install all other WADs.
 6. Navigate to `Options` > `Configuration` > `Wii`, and ensure `Enable WiiConnect24 via WiiLink` is enabled.
-7. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](../../eula).
+7. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](/eula).
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
@@ -84,14 +81,12 @@ heroImage: "../../img/guidebg-1.webp"
 
 ### Setting your region in AnyGlobe Changer
 <l class="notice warn smallwidth">This is needed to use the Everybody Votes Channel.</l>
-1. Download AnyGlobe Changer v1.0 from [here](https://github.com/fishguy6564/AnyGlobe-Changer/releases/tag/1.0) (the version included with the patcher doesn't work in Dolphin).
-2. Extract the `AnyGlobe.Changer.zip` file.
-3. In Dolphin, head to `File` > `Open`, and navigate to the extracted folder.
-4. Navigate to `apps` > `AnyGlobe Changer`, and open `boot.dol`.
-5. Read the disclaimer, and press `1` to continue.
-6. Using the D-pad / arrow keys, set your region and sub-region.
-7. Highlight `Save Settings`, then press `A` / left click to save.
-8. Return to the System Menu.
+1. In Dolphin, head to `File` > `Open`, and navigate to the folder where you ran the patcher.
+2. Navigate to `apps` > `AnyGlobe Changer`, and open `boot.dol`.
+3. Read the disclaimer, and press `1` to continue.
+4. Using the D-pad / arrow keys, set your region and sub-region.
+5. Highlight `Save Settings`, then press `A` / left click to save.
+6. Return to the System Menu.
 
 ### Adding Personal Information
 
