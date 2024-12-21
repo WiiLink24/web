@@ -45,71 +45,79 @@ data.push(last);
   <div class="slider">
     <div class="slide-track">
       {data.slice(0, data.length / 2).map(service => (
-        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
-          <div class='service'>
-            <div class='service-color' style={{backgroundColor: service.color}}></div>
-            <div class='service-content'>
-              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
-              <h2>{service.name}</h2>
-              <div class="horizontal-line"></div>
+        service && service.link && (
+          <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+            <div class='service'>
+              <div class='service-color' style={{backgroundColor: service.color}}></div>
+              <div class='service-content'>
+                {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+                <h2>{service.name}</h2>
+                <div class="horizontal-line"></div>
+              </div>
+              <h3 class='service-desc'>{service.desc}</h3>
+              <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+                <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+              </div>
             </div>
-            <h3 class='service-desc'>{service.desc}</h3>
-            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
-              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
-            </div>
-          </div>
-        </a>
+          </a>
+        )
       ))}
       {data.slice(0, data.length / 2).map(service => (
-        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
-          <div class='service'>
-            <div class='service-color' style={{backgroundColor: service.color}}></div>
-            <div class='service-content'>
-              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
-              <h2>{service.name}</h2>
-              <div class="horizontal-line"></div>
+        service && service.link && (
+          <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+            <div class='service'>
+              <div class='service-color' style={{backgroundColor: service.color}}></div>
+              <div class='service-content'>
+                {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+                <h2>{service.name}</h2>
+                <div class="horizontal-line"></div>
+              </div>
+              <h3 class='service-desc'>{service.desc}</h3>
+              <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+                <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+              </div>
             </div>
-            <h3 class='service-desc'>{service.desc}</h3>
-            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
-              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
-            </div>
-          </div>
-        </a>
+          </a>
+        )
       ))}
     </div>
     
     <div class="slide-track">
       {data.slice(data.length / 2).map(service => (
-        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
-          <div class='service'>
-            <div class='service-color' style={{backgroundColor: service.color}}></div>
-            <div class='service-content'>
-              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
-              <h2>{service.name}</h2>
-              <div class="horizontal-line"></div>
+        service && service.link && (
+          <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+            <div class='service'>
+              <div class='service-color' style={{backgroundColor: service.color}}></div>
+              <div class='service-content'>
+                {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+                <h2>{service.name}</h2>
+                <div class="horizontal-line"></div>
+              </div>
+              <h3 class='service-desc'>{service.desc}</h3>
+              <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+                <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+              </div>
             </div>
-            <h3 class='service-desc'>{service.desc}</h3>
-            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
-              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
-            </div>
-          </div>
-        </a>
+          </a>
+        )
       ))}
       {data.slice(data.length / 2).map(service => (
-        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
-          <div class='service'>
-            <div class='service-color' style={{backgroundColor: service.color}}></div>
-            <div class='service-content'>
-              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
-              <h2>{service.name}</h2>
-              <div class="horizontal-line"></div>
+        service && service.link && (
+          <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+            <div class='service'>
+              <div class='service-color' style={{backgroundColor: service.color}}></div>
+              <div class='service-content'>
+                {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+                <h2>{service.name}</h2>
+                <div class="horizontal-line"></div>
+              </div>
+              <h3 class='service-desc'>{service.desc}</h3>
+              <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+                <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+              </div>
             </div>
-            <h3 class='service-desc'>{service.desc}</h3>
-            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
-              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
-            </div>
-          </div>
-        </a>
+          </a>
+        )
       ))}
     </div>
   </div>
