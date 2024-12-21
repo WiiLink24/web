@@ -24,6 +24,9 @@ async function fetchData() {
 }
 
 data = await fetchData();
+const last = data[data.length - 1];
+data = data.slice(0, -4);
+data.push(last);
 ---
 
 <div id="intro" class="svc-holder">
@@ -41,12 +44,28 @@ data = await fetchData();
   </h2>
   <div class="slider">
     <div class="slide-track">
-      {data.map(service => (
-        <a class="service-link" href={service.link}  aria-label={service.name + ' Link'}>
+      {data.slice(0, data.length / 2).map(service => (
+        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
           <div class='service'>
             <div class='service-color' style={{backgroundColor: service.color}}></div>
             <div class='service-content'>
-              <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />
+              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+              <h2>{service.name}</h2>
+              <div class="horizontal-line"></div>
+            </div>
+            <h3 class='service-desc'>{service.desc}</h3>
+            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+            </div>
+          </div>
+        </a>
+      ))}
+      {data.slice(0, data.length / 2).map(service => (
+        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+          <div class='service'>
+            <div class='service-color' style={{backgroundColor: service.color}}></div>
+            <div class='service-content'>
+              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
               <h2>{service.name}</h2>
               <div class="horizontal-line"></div>
             </div>
@@ -60,12 +79,28 @@ data = await fetchData();
     </div>
     
     <div class="slide-track">
-      {data.map(service => (
+      {data.slice(data.length / 2).map(service => (
         <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
           <div class='service'>
             <div class='service-color' style={{backgroundColor: service.color}}></div>
             <div class='service-content'>
-              <img alt={service.name + 'Icon'} loading='lazy' src={`img/${service.icon}`} />
+              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
+              <h2>{service.name}</h2>
+              <div class="horizontal-line"></div>
+            </div>
+            <h3 class='service-desc'>{service.desc}</h3>
+            <div class='barhold' style={{backgroundColor: `${service.color}20`}}>
+              <div class='bar' style={{width: `${service.completed}%`, backgroundColor: service.color}}></div>
+            </div>
+          </div>
+        </a>
+      ))}
+      {data.slice(data.length / 2).map(service => (
+        <a class="service-link" href={service.link} aria-label={service.name + ' Link'}>
+          <div class='service'>
+            <div class='service-color' style={{backgroundColor: service.color}}></div>
+            <div class='service-content'>
+              {service.icon && <img alt={service.name + ' Icon'} loading='lazy' src={`img/${service.icon}`} />}
               <h2>{service.name}</h2>
               <div class="horizontal-line"></div>
             </div>

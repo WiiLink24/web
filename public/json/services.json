@@ -81,7 +81,7 @@
       {
         "color": "#ed34d8",
         "name": "Kirby TV Channel",
-        "desc": "Watch limited-time <i>Kirby: Right Back at Ya!</i> episodes.",
+        "desc": "Watch limited-time Kirby: Right Back at Ya! episodes.",
         "link": "/guide/kirbytv",
         "isArea": "Originally certain European countries",
         "status": "Full Release",
@@ -145,7 +145,7 @@
         "completed": "8"
       },
       {
-        "color": "#05AAF8",
+        "color": "#80D4FF",
         "name": "Wii Room Anywhere",
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
         "link": "/status",
@@ -153,7 +153,7 @@
         "status": "Private Beta",
         "todo": "<i class='fa-solid fa-circle-question'></i> You can access this service by donating on our Stripe!",
         "icon": "",
-        "completed": "50"
+        "completed": "70"
       }
     ]
   }

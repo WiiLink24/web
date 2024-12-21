@@ -53,7 +53,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
         posts
           .filter(post => ["Installation guide", "Frequently asked questions", "Problem solving"].includes(post.data.title))
           .map(post => (
-            <div class="posthold">
+            <div class="posthold" onclick={`window.location.href = /guide/${post.slug}/`} style="cursor:pointer;">
               <div class="post">
                 <a href={`/guide/${post.slug}/`}>
                   <FormattedDate

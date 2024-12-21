@@ -76,7 +76,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   <div class="postholder">
     {
       posts.slice(1, 7).map(post => (
-        <div class="posthold">
+        <div class="posthold" onclick="window.location.href = `/news/${post.slug}/`" style="cursor:pointer;">
           <div class="post">
             <a href={`/news/${post.slug}/`}>
               <FormattedDate date={post.data.pubDate} />
@@ -490,11 +490,13 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     filter: blur(0px) brightness(0.8);
     object-fit: cover;
     transition: 0.2s;
+    z-index: 0;
+    position: absolute;
   }
 
   .post:hover .heroImage {
     transform: scale(110%);
-    filter: blur(8px) brightness(0.5);
+    filter: blur(2px) brightness(0.3);
     z-index: 0;
     transition: 0.3s;
   }
@@ -532,8 +534,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover .title {
-    bottom: 50%;
-    transform: translate(0, 50%);
+    transform: translate(0, -300px);
     transition: 0.3s;
   }
 
@@ -546,7 +547,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     bottom: 0;
     transform: translate(0, 50px);
     opacity: 0;
-    text-align: justify;
+    text-align: right;
     transition: 0.2s;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -615,9 +616,9 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .newsHero:hover .heroimg {
-    filter: blur(18px) brightness(0.4) grayscale(0.7);
+    filter: blur(12px) brightness(0.4) grayscale(0.7);
     rotate: 0deg;
-    transform: scale(100%);
+    transform: scale(100%) translate(0, -40%);
     z-index: 0;
     transition: 0.2s;
   }
@@ -627,8 +628,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     left: 0;
     width: 100%;
     object-fit: cover;
-    transform: scale(105%);
-    filter: blur(18px) brightness(0.3) grayscale(0.7);
+    transform: scale(105%) translate(0, -40%);
+    filter: blur(6px) brightness(0.3) grayscale(0.7);
     z-index: 0;
     position: absolute;
   }

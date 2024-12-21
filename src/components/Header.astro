@@ -316,8 +316,37 @@ function darkToggle() {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() {
 
+    if (!localStorage.getItem('color-mode')) {
+        localStorage.setItem('color-mode', 'dark');
+    }
+
+    const savedMode = localStorage.getItem('color-mode');
+    if (savedMode === 'dark') {
+        enableDarkMode();
+    } else {
+        enableLightMode();
+    }
+
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+        if (event.matches) {
+            enableDarkMode();
+        } else {
+            enableLightMode();
+        }
+    });
+
+    document.getElementById('darkToggle').addEventListener('click', () => {
+        if (document.documentElement.classList.contains('dark')) {
+            enableLightMode();
+        } else {
+            enableDarkMode();
+        }
+    });
+};
+
+window.addEventListener('DOMContentLoaded', function() {
     if (!localStorage.getItem('color-mode')) {
         localStorage.setItem('color-mode', 'dark');
     }
@@ -481,6 +510,8 @@ function checkPageScroll() {
 		right:0;
 		top:100%;
 		width: 300px;
+		max-height: calc(100vh - 150px);
+		overflow-y: scroll;
 		display:flex;
 		flex-direction: column;
 		gap:5px;
