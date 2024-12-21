@@ -116,6 +116,7 @@ const { isGuide, isMain } = Astro.props;
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://evc.wiilink.ca" aria-label="EVC Viewing Tool Link"><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div><span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a>
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://tag.rc24.xyz/" aria-label="LinkTag"><div><i class="fa-solid fa-tag"></i> LinkTag</div></a>
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://card.wiilink24.com/" aria-label="LinkTag"><div><i class="fa-solid fa-address-card"></i> Digicard</div></a>
+			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://stamp.wiilink.ca/" aria-label="LinkTag"><div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div></a>
 			<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 			<div style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
 				<a href="https://bookmark.rc24.xyz" style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Wii Bookmarks" title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a>
@@ -139,7 +140,7 @@ const { isGuide, isMain } = Astro.props;
 				>
 				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-				<button id="themeColor" type="button" class="btn btn-light dropdown-element" aria-label="Theme Button" onclick="darkToggle()"><i class="fa-solid fa-moon"></i></button>
+				<button id="themeColor" type="button" class="btn btn-light dropdown-element" aria-label="Theme Button" onclick="darkToggle()"><i class="fa-solid fa-moon" style="pointer-events:none;"></i></button>
 				<a href={localizePath("/")} aria-label="Home Link"><button type="button" class="btn btn-success dropdown-element" aria-label="Download Button"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
 				<a href="https://www.discord.gg/wiilink" aria-label="Discord Link"><button type="button" class="btn btn-primary dropdown-element" aria-label="Discord Button"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
 			</div>
@@ -295,14 +296,14 @@ function closeDropdown() {
 function enableDarkMode() {
         document.documentElement.classList.add('dark');
         localStorage.setItem('color-mode', 'dark');
-        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+        themeColorButton.innerHTML = `<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
         themeColorButton.style.filter = "invert(0)";
     }
 
     function enableLightMode() {
         document.documentElement.classList.remove('dark');
         localStorage.setItem('color-mode', 'light');
-        themeColorButton.innerHTML = `<svg style="transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+        themeColorButton.innerHTML = `<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
         themeColorButton.style.filter = "invert(1)";
     }
 

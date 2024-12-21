@@ -88,17 +88,11 @@ import { Trans } from "astro-i18next/components";
             <h2 style='font-size:23px;'><i class='fa-solid fa-heart'></i> ${release.reactions.heart}</h2>
             <h2 style='font-size:23px;'><i class='fa-solid fa-rocket'></i> ${release.reactions.rocket}</h2>
             <h2 style='font-size:23px;'><i class='fa-solid fa-eye'></i> ${release.reactions.eyes}</h2>
+            <div class="btn btn-success" style="width:100%; font-size:16px; padding:6px; border-radius:10px; box-shadow:0px 0px 20px #00000020; text-align:center;">
+            <a style="color:white; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest" aria-label="Download WiiLink Patcher">
+              <i class="fa-brands fa-github"></i> View on GitHub
+            </a>
           </div>
-          <div style='width:300px; display:flex; flex-wrap:wrap; gap:5px; position:relative;' class='download'>
-            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-linux' href='${release.assets[1].browser_download_url}' aria-label='Linux Download Link'>
-              <button style='color:white !important; background-color:#0d6efd; border-radius: 8px 8px 4px 4px; background-color:AccentColor; width:300px; position:relative;' id='linux' type='button' class='btn'><i class='fa fa-linux' style='scale:150%; margin-right:15px;'></i>Linux</button>
-            </a>
-            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-windows' href='${release.assets[4].browser_download_url}' aria-label='Windows Download Link'>
-              <button style='color:white !important; background-color:#0d6efd; border-radius: 4px; background-color:AccentColor; width:300px; position:relative;' id='linux' type='button' class='btn'><i class='fa-brands fa-microsoft' style='scale:150%; margin-right:15px;'></i>Windows</button>
-            </a>
-            <a style='animation:fadeup 0.3s 200ms forwards; opacity:0;' class='download-button' id='download-link-macOS' href='${release.assets[3].browser_download_url}' aria-label='macOS Download Link'>
-              <button style='color:white !important; background-color:#0d6efd; border-radius: 4px 4px 8px 8px; background-color:AccentColor; width:300px; position:relative;' id='linux' type='button' class='btn'><i class='fa-brands fa-apple' style='scale:150%; margin-right:15px;'></i>macOS</button>
-            </a>
           </div>
         `;
       } else {
@@ -132,7 +126,7 @@ import { Trans } from "astro-i18next/components";
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 100px;
     padding: 15px;
     min-height: 250px;
     z-index: 1;
