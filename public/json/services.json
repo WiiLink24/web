@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originally certain European countries",
         "status": "Full Release",
-        "todo": "<i class='fa fa-bomb'></i> The Kirby TV Channel is currently unavailable.",
+        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
