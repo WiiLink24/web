@@ -24,7 +24,7 @@ import { Trans } from "astro-i18next/components";
             style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
             class="badge bg-primary">{t("socials.twFollowers")}</span
           >
-          <img loading="lazy" alt="Twitter Logo" class="socials-logo" src="img/twitter_logo.webp" height="40px" />
+          <img loading="lazy" alt="Bluesky Logo" class="socials-logo" src="img/bluesky_logo.png" height="40px" />
           <div class="buttons">
             <div class="dropdown" style="width:100%; position:relative; ">
               <button
@@ -41,27 +41,12 @@ import { Trans } from "astro-i18next/components";
                 style="width:250%; padding:10px; background-color:var(--bg-color-secondary);"
               >
                 <li>
-                  <a class="dropdown-item center" aria-label="English Twitter Link" href="https://twitter.com/WiiLink24"
+                  <a class="dropdown-item center" aria-label="English Twitter Link" href="https://bsky.app/profile/wiilink24.com"
                     ><img alt="American Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> English</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" aria-label="Spanish Twitter Link" href="https://twitter.com/WiiLink_es"
-                    ><img alt="Spanish Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1ea-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> Español</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item center" aria-label="French Twitter Link" href="https://twitter.com/WiiLink_fr"
-                    ><img alt="French Flag" src="/img/flags/france.webp" style="margin-right:5px;" width="20" height="25"></i> Français</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item center" aria-label="Protuguese Twitter Link" href="https://twitter.com/WiiLink_ptbr"
-                    ><img alt="Portuguese Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1e7-1f1f7.svg" style="margin-right:5px;" width="20" height="25"></i> Português (Brasil)</a
-                  >
-                </li>
-                <li>
-                  <a class="dropdown-item center" aria-label="Japanese Twitter Link" href="https://twitter.com/WiiLink_jp"
+                  <a class="dropdown-item center" aria-label="Japanese Twitter Link" href="https://bsky.app/profile/did:plc:sxhc44x5ouhdmyzspe26meop"
                     ><img alt="Japanese Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" style="margin-right:5px;" width="20" height="25"></i> 日本語</a
                   >
                 </li>
@@ -69,12 +54,12 @@ import { Trans } from "astro-i18next/components";
           </div>
           </div>
         </div>
-        <img
-          alt="Loading..."
-          style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(0); z-index:0; position:absolute;"
-          src="img/loading.gif"
-          width="30px"
-        />
+        <bsky-embed
+  username="wiilink.ca"
+  mode="dark"
+  limit="5"
+>
+</bsky-embed>
       </div>
       <div class="discord" style="border-radius:8px 16px 8px 8px;">
         <div class="follow dsc">
@@ -263,7 +248,7 @@ import { Trans } from "astro-i18next/components";
   .twitter {
     height: 500px;
     border: 2px solid #289bff;
-    background-color: #289bff;
+    background-color: #1c1c1c;
     box-shadow: 0px 5px 10px #289bff40;
     border-radius: 8px;
     overflow: scroll;
