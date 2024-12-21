@@ -76,20 +76,23 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   <div class="postholder">
     {
       posts.slice(1, 7).map(post => (
-        <div class="posthold" onclick="window.location.href = `/news/${post.slug}/`" style="cursor:pointer;">
-          <div class="post">
-            <a href={`/news/${post.slug}/`}>
-              <FormattedDate date={post.data.pubDate} />
-              <img class="heroImage" src={post.data.heroImage} />
-              <div class="title">
-                <img class="authimage" src={post.data.authImage} alt="" />
-                <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-                  {post.data.title}
-                </b>
-              </div>
-              <div class="desc">{post.data.description}</div>
-            </a>
-          </div>
+        <div class="post" onclick={'window.location.href="/news/' + post.slug + '/";'} style="cursor:pointer;">
+          <a href={`/news/${post.slug}/`} aria-label={post.data.title + ' Link'}>
+            <FormattedDate date={post.data.pubDate} />
+            <div class="faded" />
+            {post.data.heroImage && (
+              <img alt={post.data.title} loading="lazy" class="heroImage" src={post.data.heroImage} />
+            )}
+            <div class="title">
+              {post.data.authImage && (
+                <img alt="News Author PFP" class="authimage" src={post.data.authImage} alt="" />
+              )}
+              <b style="color:white !important; width:80%; margin-right:10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:right; position:relative;">
+                {post.data.title}
+              </b>
+            </div>
+            <div class="desc">{post.data.description}</div>
+          </a>
         </div>
       ))
     }
@@ -502,7 +505,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .title {
-    width: 110%;
+    width: 100%;
     z-index: 11;
     display: flex;
     align-items: center;
@@ -512,8 +515,14 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     right: 10px;
     line-height: 30px;
     font-family: Gilroy;
-    transition: 0.2s;
+    transition: 0.4s;
     position: absolute;
+  }
+
+  .post:hover .title {
+    bottom: 50%;
+    transform: translate(0, 50%);
+    transition: 0.4s;
   }
 
   .title-small {
@@ -531,11 +540,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     font-family: Gilroy;
     transition: 0.2s;
     position: absolute;
-  }
-
-  .post:hover .title {
-    transform: translate(0, -300px);
-    transition: 0.3s;
   }
 
   .desc {
@@ -618,7 +622,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   .newsHero:hover .heroimg {
     filter: blur(12px) brightness(0.4) grayscale(0.7);
     rotate: 0deg;
-    transform: scale(100%) translate(0, -40%);
+    transform: scale(100%);
     z-index: 0;
     transition: 0.2s;
   }
@@ -628,7 +632,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     left: 0;
     width: 100%;
     object-fit: cover;
-    transform: scale(105%) translate(0, -40%);
+    transform: scale(105%);
     filter: blur(6px) brightness(0.3) grayscale(0.7);
     z-index: 0;
     position: absolute;
