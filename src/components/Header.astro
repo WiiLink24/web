@@ -349,8 +349,22 @@ window.onload = function() {
 };
 
 window.addEventListener('DOMContentLoaded', function() {
-	document.cookie = "key=hello!; domain=.wiilink.ca; path=/; secure; samesite=lax";
-	console.log(document.cookie); // Outputs all cookies for the current domain
+  // Function to get a cookie by name
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+  }
+
+  // Access the cookie
+  const userCookie = getCookie('wiilink_user');
+  if (userCookie) {
+    const userData = JSON.parse(userCookie);
+    console.log('Username:', userData.username);
+    console.log('Profile Picture:', userData.pfp);
+  } else {
+    console.log('User cookie not found');
+  }
 
     if (!localStorage.getItem('color-mode')) {
         localStorage.setItem('color-mode', 'dark');
