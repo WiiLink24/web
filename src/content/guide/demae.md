@@ -48,17 +48,22 @@ icon: fa-solid fa-utensils
 
 ### Section II - Registering your Console ID
 
-1. After completing the setup process, go to the [**WiiLink Discord server**](https://discord.gg/wiilink) to register your Wii's console ID.
+<l class="notice info fullwidth"> Following the creation of WiiLink Accounts, you must create one in order to continue using Domino's Ordering, please set it up by following the steps below. </l>
 
-2. Use the `Get Console ID` Homebrew App that was given by the patcher. This is used to retrieve your system's Console ID.
+1. After completing the setup process, download the [**WiiLink Account Linker**](https://discord.gg/wiilink) from the Open Shop Channel and place the contents in the `apps` folder in the root of your SD Card.
 
-3. Visit the `#bot-commands` channel on the Discord server.
+![img2](/img/guide/qrlink.png)
 
-4. Type the command `/dominos` in the chat, placing your **Console ID** that you got from the **Get Console ID** homebrew app, in the parameter box, otherwise the command will not work and will be posted publicly on the channel.
+2. Launch the `WiiLink Account Linker` Homebrew App and scan the QR code with any camera-equiped mobile device.
 
-    ![imgcaroussel](/img/guide/consoleID.png)
+![imgcaroussel](/img/guide/loginpage.png)
+![imgcaroussel](/img/guide/linkpage.png)
 
-5. Double-check that you've typed the correct Console ID, as it can't be re-registered. If you need to re-register, ask a staff member in the server for assistance.
+3. Log in with your WiiLink Account (create one if you don't have it yet).
+
+4. Once you are successful, you can access your Account Tab, where you have to `enable` Domino's Ordering by clicking on the `Enable Domino's Ordering` button
+
+![img2](/img/guide/enabledominos.png)
 
 ### Section III - Installing WADs
 
