@@ -110,6 +110,8 @@ const { isGuide, isMain } = Astro.props;
 			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle" style="pointer-events: none;"></span>
 			</button>
 		<div id="dropdownMore">
+			<a class="dropdown-item" href="https://accounts.wiilink.ca" aria-label="Extras Link"><i class="fa-solid fa-user" style="margin-right:13px;"></i>Your WiiLink Account</a>
+			<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 		<a class="dropdown-item" href={localizePath("/extras")} aria-label="Extras Link"><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://miicontest.wiilink.ca" aria-label="CMOC Viewing Tool Link"><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a>
@@ -124,7 +126,7 @@ const { isGuide, isMain } = Astro.props;
 				<a href="http://interviews.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Nintendo dev interviews" title="Nintendo dev interviews"><i class="fa-solid fa-comments"></i></a>
 				<a href="http://wiiremote.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Get the date your Wii Remote was manufactured." title="Get the date your Wii Remote was manufactured."><i class="fa-solid fa-gamepad"></i></a>
 			</div>
-			<a style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://forum.wiilink.ca/" aria-label="LinkTag"><div style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;"><img src="/img/favicon.webp" style="filter:brightness(10000);" height="20px"> WiiLink Forum</div></a>
+			<!--<a style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://forum.wiilink.ca/" aria-label="LinkTag"><div style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;"><img src="/img/favicon.webp" style="filter:brightness(10000);" height="20px"> WiiLink Forum</div></a>-->
 				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 			<a
 				  class="dropdown-item"
