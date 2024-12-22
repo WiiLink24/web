@@ -42,8 +42,8 @@ icon: fa-solid fa-utensils
 
 1. Download the latest version of the WiiLink Patcher for your operating system.
 2. Launch the patcher and begin the Express Setup process.
-3. Once you get to the WiiLink channels language selection screen, select `1. English Translation` in order to gain access to the Food Delivery Channel (Domino's) channel.
-4. Next, you’ll be asked which version of Food Delivery Channel you want. Pick `2. Domino's (US and Canada only)`.
+3. Once you get to the WiiLink channels language selection screen, select `1. English Translation` in order to gain access to the Food Channel (Domino's) channel.
+4. Next, you’ll be asked which version of Food Channel you want. Pick `2. Domino's (US and Canada only)`.
 5. After that, you can go through the rest of the process, but once you reach the final step, be sure to pick the correct console platform you’re installing this on, as it will matter when using the app.
 
 ### Section II - Registering your Console ID
@@ -67,7 +67,7 @@ icon: fa-solid fa-utensils
 
 ### Section III - Installing WADs
 
-You will now install the Food Delivery Channel and Address Settings channels.
+You will now install the Food Channel and Address Settings channels.
 
 1. Put your SD card or USB drive in your Wii.
 
@@ -104,11 +104,11 @@ Otherwise, click the `Change Address Information` button in the main menu.
 
 <l class="notice info"> This section requires you to have cash to pay for your meal. </l>
 
-If you have used the standard version of the Food Delivery Channel before, go to <br>`Wii Menu settings` -> `Data Management` -> `Save Data` -> `Wii`, then find the <br>Food Delivery Channel icon and click "Erase" to delete the existing save data.
+If you have used the standard version of the Food Channel before, go to <br>`Wii Menu settings` -> `Data Management` -> `Save Data` -> `Wii`, then find the <br>Food Channel icon and click "Erase" to delete the existing save data.
 
 ### If you have previously placed an order, skip to step 4.
 
-1. Launch the Food Delivery Channel (aka. Food Channel) from the Wii Menu
+1. Launch the Food Channel from the Wii Menu
 
 2. Follow the on-screen instructions, then click `Order` in the main menu.<br><br>
 ![img2](/img/guide/success.png)<br><br>

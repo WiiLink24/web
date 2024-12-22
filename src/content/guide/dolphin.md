@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: fa-solid fa-download
-pubDate: 2024-10-12
+pubDate: 2024-12-22
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "../../img/guidebg-1.webp"
 ---
@@ -63,13 +63,18 @@ heroImage: "../../img/guidebg-1.webp"
 
 <l class="notice info">To use WiiConnect24 services in Dolphin, you need to have the Wii System Menu installed. You can do this by navigating to `Tools` > `Perform Online System Update`</l>
 
+<l class="notice warning">`Wii Mail` doesn't work properly in Dolphin yet, but patching it is necessary for the Everybody Votes Channel to function correctly</l>
+
 1. Open Dolphin Emulator.
 2. Select `Tools`
 3. Select `Install WAD...`
 4. If you have chosen to install regional channels, navigate to the `WAD` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
 5. Repeat the process to install all other WADs.
 6. Navigate to `Options` > `Configuration` > `Wii`, and ensure `Enable WiiConnect24 via WiiLink` is enabled.
-7. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](/eula).
+7. Head to `File` > `Open`, and navigate to the folder where you ran the patcher.
+8. Navigate to `apps` > `Mail-Patcher`, and open `boot.dol`.
+9. Wait for patching to complete, then press `HOME` / `Enter` to exit the patcher.
+10. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. If it tells you that WiiConnect24 isn't being offered in your region, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U). Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](/eula).
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
@@ -80,7 +85,7 @@ heroImage: "../../img/guidebg-1.webp"
 </br>
 
 ### Setting your region in AnyGlobe Changer
-<l class="notice warn smallwidth">This is needed to use the Everybody Votes Channel.</l>
+<l class="notice generic smallwidth">This allows you to set your country if the WiiConnect24 settings say that it's not supported.</l>
 1. In Dolphin, head to `File` > `Open`, and navigate to the folder where you ran the patcher.
 2. Navigate to `apps` > `AnyGlobe Changer`, and open `boot.dol`.
 3. Read the disclaimer, and press `1` to continue.
