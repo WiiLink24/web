@@ -1,6 +1,6 @@
 ---
 title: Food Channel
-pubDate: 2024-10-02
+pubDate: 2024-12-22
 description: Get up-to-date instructions on how to install the Food Channel!
 icon: fa-solid fa-utensils
 ---
@@ -48,21 +48,15 @@ icon: fa-solid fa-utensils
 
 ### Section II - Registering your Console ID
 
-1. After completing the setup process, go to the [**WiiLink Discord server**](https://discord.gg/wiilink) to register your Wii's console ID.
+1. After completing the setup process, open the `WiiLink Account Linker` homebrew app. For Dolphin, this means heading to `File` > `Open...`, and navigating to `apps` > `WiiLink Account Linker` > `boot.dol`. For real consoles, this means opening The Homebrew Channel, and launching `WiiLink Account Linker`
 
-2. Use the `Get Console ID` Homebrew App that was given by the patcher. This is used to retrieve your system's Console ID.
+2. Scan the QR code displayed on screen with a mobile device, and follow the on-screen instructions to create / sign into your WiiLink Account.
 
-3. Visit the `#bot-commands` channel on the Discord server.
-
-4. Type the command `/dominos` in the chat, placing your **Console ID** that you got from the **Get Console ID** homebrew app, in the parameter box, otherwise the command will not work and will be posted publicly on the channel.
-
-    ![imgcaroussel](/img/guide/consoleID.png)
-
-5. Double-check that you've typed the correct Console ID, as it can't be re-registered. If you need to re-register, ask a staff member in the server for assistance.
+3. Click the `Enable Domino's Ordering` button.
 
 ### Section III - Installing WADs
 
-You will now install the Food Delivery Channel and Address Settings channels.
+You will now install the Food Channel and Address Settings.
 
 1. Put your SD card or USB drive in your Wii.
 
