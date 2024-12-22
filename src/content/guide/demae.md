@@ -59,7 +59,7 @@ icon: fa-solid fa-utensils
 ![imgcaroussel](/img/guide/loginpage.png)
 ![imgcaroussel](/img/guide/linkpage.png)
 
-3. Log in with your WiiLink Account (create one if you don't have it yet).
+3. Log in with your [**WiiLink Account**](https://accounts.wiilink.ca) (create one if you don't have it yet).
 
 4. Once you are successful, you can access your Account Tab, where you have to `enable` Domino's Ordering by clicking on the `Enable Domino's Ordering` button
 
