@@ -50,7 +50,7 @@ icon: fa-solid fa-utensils
 
 <l class="notice info fullwidth"> Following the creation of WiiLink Accounts, you must create one in order to continue using Domino's Ordering, please set it up by following the steps below. </l>
 
-1. After completing the setup process, download the [**WiiLink Account Linker**](https://discord.gg/wiilink) from the Open Shop Channel and place the contents in the `apps` folder in the root of your SD Card.
+1. After completing the setup process, download the [**WiiLink Account Linker**](https://oscwii.org/library/app/WiiLink_Account_Linker) from the Open Shop Channel and place the contents in the `apps` folder in the root of your SD Card.
 
 ![img2](/img/guide/qrlink.png)
 
