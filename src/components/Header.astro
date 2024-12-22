@@ -347,6 +347,9 @@ window.onload = function() {
 };
 
 window.addEventListener('DOMContentLoaded', function() {
+	document.cookie = "key=hello!; domain=.wiilink.ca; path=/; secure; samesite=lax";
+	console.log(document.cookie); // Outputs all cookies for the current domain
+
     if (!localStorage.getItem('color-mode')) {
         localStorage.setItem('color-mode', 'dark');
     }
