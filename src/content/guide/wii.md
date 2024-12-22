@@ -1,7 +1,7 @@
 ---
 title: Wii Installation
 icon: fa-solid fa-download
-pubDate: 2024-10-12
+pubDate: 2024-12-22
 description: Get up-to-date instructions on how to install all of our services on Wii!
 heroImage: "../../img/guidebg-1.webp"
 ---
@@ -83,7 +83,7 @@ heroImage: "../../img/guidebg-1.webp"
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
-## Section III (Optional) - Connecting to DNS and using the Address Settings
+## Section III (Optional) - Connecting to DNS, using the Address Settings and using AnyGlobe Changer
 
 </br>
 
@@ -104,21 +104,27 @@ Set your Secondary DNS to --> 1.1.1.1
 
 4. After you're done setting up the DNS, save the changes and let the system perform the Connection Test.
 
-5. If the Connection Test is successful, make your way back to the second page of the system settings.
-
 <l class="notice generic smallwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
 
-6. Select WiiConnect24 then set "WiiConnect24" and "Standby Connection" to On.
+6. Go to the 1st page of the "Internet" category, then select "User Agreements", then select "Yes".
 
-7. Go back to the 1st page of the "Internet" page, then select "User Agreements", then select "Yes".
+7. Allow the EULA to load. If it tells you that WiiConnect24 isn't being offered in your region, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U). The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
 
-8. Allow the EULA to load. The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
+8. Once you read the EULA, click on "I ACCEPT".
 
-9. Once you read the EULA, click on "I ACCEPT".
+9. Navigate back to the main settings page, select WiiConnect24, and set "WiiConnect24" and "Standby Connection" to On.
 
-</br>
+### Setting your region in AnyGlobe Changer
 
-## Adding Personal Information
+<l class="notice generic smallwidth">This allows you to set your country if the WiiConnect24 settings say that it's not supported.</l>
+1. Launch The Homebrew Channel on your console.
+2. Open AnyGlobe Changer.
+3. Read the disclaimer, and press `1` to continue.
+4. Using the D-pad, set your region and sub-region.
+5. Highlight `Save Settings`, then press `A` to save.
+6. Return to the System Menu.
+
+### Adding Personal Information
 
 <l class="notice generic smallwidth">WiiLink never stores your personal data. For more information on what is used, read our [Privacy Policy](/privacy-policy).</l>
 
@@ -126,7 +132,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 <l class="notice warn smallwidth">You are responsible for entering your correct Address Information. Failure to do so may result in emails and/or orders not succeeding.</l>
 
-### Photo Prints Channel
+#### Photo Prints Channel
 
 1. Launch the Photo Prints Channel from your Wii's home menu.
 2. On the bottom right, press `Address Settings` and then `Yes`.
@@ -134,7 +140,7 @@ Set your Secondary DNS to --> 1.1.1.1
 4. Press `OK` and then `Done`.
 5. Once you are in the SPD main menu, choose `Digicam` in the `Choose Channel` menu.
 
-### Food Channel
+#### Food Channel
 
 <l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](demae) instead. Otherwise, proceed with the guide below.</l>
 
