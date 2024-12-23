@@ -349,19 +349,33 @@ window.onload = function() {
 };
 
 window.addEventListener('DOMContentLoaded', function() {
-  // Function to get a cookie by name
-  function getCookie(name) {
+// Function to get a cookie by name
+function getCookie(name) {
     const value = `; ${document.cookie}`;
     const parts = value.split(`; ${name}=`);
     if (parts.length === 2) return parts.pop().split(';').shift();
-  }
+}
 
-  // Access the cookie
-  const userCookie = getCookie('wiilink_user');
-  if (userCookie) {
+// Access the cookie
+const userCookie = getCookie('wiilink_user');
+const isLoggedIn = getCookie('is_logged_in');
+
+if (userCookie) {
     const userData = JSON.parse(userCookie);
-	document.getElementById('account').innerHTML = `<img src="${userData.pfp}" style="width:40px; height:40px; border-radius:8px; margin-right:5px;"><div style="display:flex flex-direction:column; align-items:start;">WiiLink Account <span style="opacity:70%;">${userData.username}</span></div>`;
-  }
+    const accountHtml = `
+        <img src="${userData.pfp}?d=404" 
+            style="width:40px; height:40px; border-radius:8px; margin-right:5px;"
+            onerror="this.onerror=null; this.innerHTML='<i class=\'fa fa-user\'></i>'">
+        <div style="display:flex; flex-direction:column; align-items:start;">
+            ${isLoggedIn === "true" ? 
+                `WiiLink Account <span style="opacity:70%;">${userData.username}</span>` : 
+                `<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account 
+                    <span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>
+                </span> 
+                <span style="opacity:70%;">${userData.username}</span>`}
+        </div>`;
+    document.getElementById('account').innerHTML = accountHtml;
+}
 
     if (!localStorage.getItem('color-mode')) {
         localStorage.setItem('color-mode', 'dark');
