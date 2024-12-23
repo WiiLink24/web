@@ -1,6 +1,6 @@
 ---
 title: Wii Message Board
-pubDate: 2024-10-02
+pubDate: 2024-12-23
 description: Get up-to-date instructions on how to patch the Wii Message Board!
 icon: fa-solid fa-chalkboard
 ---
@@ -18,13 +18,12 @@ icon: fa-solid fa-chalkboard
 </div></div>
 </div></div>
 </br>
-</br>
 
 ## Installation guide
 
-
-
 <l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="/guide/install/">here</a>.</l>
+
+<l class="notice warn fullwidth">To use this service on vWii, you will need to enable the `Create message via Calendar button` hack in Priiloader. If you are unsure of how to do this, or do not have Priiloader installed, follow [this](/guide/vwii#section-i---priiloader) guide.</l>
 
 </br>
 

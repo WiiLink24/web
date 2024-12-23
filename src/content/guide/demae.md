@@ -1,6 +1,6 @@
 ---
 title: Food Channel
-pubDate: 2024-10-02
+pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install the Food Channel!
 icon: fa-solid fa-utensils
 ---
@@ -35,7 +35,9 @@ icon: fa-solid fa-utensils
 
 <i id="dominos"></i>
 
-## Installation Guide (Dominos)
+## Installation Guide (Domino's)
+
+<l class="notice warn fullwidth">You cannot use the default Dolphin NAND with Domino's ordering. You must create your own NAND dump following [this guide](https://wii.hacks.guide/bootmii), then import it into Dolphin by going to the toolbar and clicking `Tools -> Manage NAND -> Import BootMii NAND Backup`. </l>
 
 ### Section I - Getting Started
 </br>
@@ -46,24 +48,9 @@ icon: fa-solid fa-utensils
 4. Next, you’ll be asked which version of Food Channel you want. Pick `2. Domino's (US and Canada only)`.
 5. After that, you can go through the rest of the process, but once you reach the final step, be sure to pick the correct console platform you’re installing this on, as it will matter when using the app.
 
-### Section II - Registering your Console ID
+### Section II - Linking your WiiLink Account
 
-<l class="notice info fullwidth"> Following the creation of WiiLink Accounts, you must create one in order to continue using Domino's Ordering, please set it up by following the steps below. </l>
-
-1. After completing the setup process, download the [**WiiLink Account Linker**](https://oscwii.org/library/app/WiiLink_Account_Linker) from the Open Shop Channel and place the contents in the `apps` folder in the root of your SD Card.
-
-![img2](/img/guide/qrlink.png)
-
-2. Launch the `WiiLink Account Linker` Homebrew App and scan the QR code with any camera-equiped mobile device.
-
-![imgcaroussel](/img/guide/loginpage.png)
-![imgcaroussel](/img/guide/linkpage.png)
-
-3. Log in with your [**WiiLink Account**](https://accounts.wiilink.ca) (create one if you don't have it yet).
-
-4. Once you are successful, you can access your Account Tab, where you have to `enable` Domino's Ordering by clicking on the `Enable Domino's Ordering` button
-
-![img2](/img/guide/enabledominos.png)
+<l class="notice info fullwidth"> Following the creation of WiiLink Accounts, you must now create and link a WiiLink Account to use Domino's food ordering. You can do this by following the steps [here](/guide/accounts#linking-your-console). </l>
 
 ### Section III - Installing WADs
 
@@ -132,8 +119,6 @@ ___
 <l class="notice info fullwidth"> If you need help for anything regarding this tutorial, please join the [WiiLink Discord Server](https://discord.gg/wiilink). </l>
 
 <l class="notice warn fullwidth"> Currently, only the USA and Canada are supported for Dominos on the Food Channel. </l>
-
-> You cannot use the default Dolphin NAND with this service. You must use your own NAND dump. This can be done in Dolphin by going to the toolbar and clicking `Tools -> Manage NAND -> Import BootMii NAND Backup`. 
 
 <i id="fakeordering"></i>
 
