@@ -1,7 +1,7 @@
 ---
 title: Wii Installation
 icon: fa-solid fa-download
-pubDate: 2024-12-22
+pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install all of our services on Wii!
 heroImage: "../../img/guidebg-1.webp"
 ---
@@ -142,7 +142,7 @@ Set your Secondary DNS to --> 1.1.1.1
 
 #### Food Channel
 
-<l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](demae) instead. Otherwise, proceed with the guide below.</l>
+<l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](/guide/demae) instead. Otherwise, proceed with the guide below.</l>
 
 1. Launch the Food Channel from your Wii's home menu.
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.

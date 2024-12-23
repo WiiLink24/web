@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: fa-solid fa-download
-pubDate: 2024-12-22
+pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "../../img/guidebg-1.webp"
 ---
@@ -111,7 +111,7 @@ heroImage: "../../img/guidebg-1.webp"
 
 ### Food Channel
 
-<l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](demae) instead. Otherwise, proceed with the guide below.</l>
+<l class="notice warn smallwidth">If you want to use the **Domino's** version of the Food Channel, please follow this [guide](/guide/demae) instead. Otherwise, proceed with the guide below.</l>
 
 1. Launch the Food Channel from your Wii's home menu.
 2. In the Delivery Address, Press the `Change Address Information` button in the main menu.
