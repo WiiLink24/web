@@ -360,7 +360,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const userCookie = getCookie('wiilink_user');
   if (userCookie) {
     const userData = JSON.parse(userCookie);
-	document.getElementById('account').innerHTML = `<img src="${userData.pfp}" style="width:40px; height:40px; border-radius:8px; margin-right:5px;"><div style="display:flex flex-direction:col; align-items:start;">WiiLink Account <span style="opacity:70%;">${userData.username}</span></div>`;
+	document.getElementById('account').innerHTML = `<img src="${userData.pfp}" style="width:40px; height:40px; border-radius:8px; margin-right:5px;"><div style="display:flex flex-direction:column; align-items:start;">WiiLink Account <span style="opacity:70%;">${userData.username}</span></div>`;
   }
 
     if (!localStorage.getItem('color-mode')) {
