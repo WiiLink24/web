@@ -110,7 +110,7 @@ const { isGuide, isMain } = Astro.props;
 			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle" style="pointer-events: none;"></span>
 			</button>
 		<div id="dropdownMore">
-			<a class="dropdown-item" id="account" href="https://accounts.wiilink.ca" aria-label="Extras Link"><i class="fa-solid fa-user" style="margin-right:13px;"></i>Log into WiiLink Accounts</a>
+			<a class="dropdown-item" style="display:flex; flex-direction:row; align-items:center; gap:8px;" id="account" href="https://accounts.wiilink.ca" aria-label="Extras Link"><i class="fa-solid fa-user"></i>Log into WiiLink Accounts</a>
 			<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
 		<a class="dropdown-item" href={localizePath("/extras")} aria-label="Extras Link"><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
 			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
@@ -360,7 +360,7 @@ window.addEventListener('DOMContentLoaded', function() {
   const userCookie = getCookie('wiilink_user');
   if (userCookie) {
     const userData = JSON.parse(userCookie);
-	document.getElementById('account').innerHTML = `<img src="${userData.pfp}" style="width:30px; height:30px; border-radius:8px; margin-right:5px;"> ${userData.username}'s WiiLink Account`;
+	document.getElementById('account').innerHTML = `<img src="${userData.pfp}" style="width:40px; height:40px; border-radius:8px; margin-right:5px;"><div style="display:flex flex-direction:row; align-items:start;">WiiLink Account <span style="opacity:70%;">${userData.username}</span></div>`;
   }
 
     if (!localStorage.getItem('color-mode')) {
