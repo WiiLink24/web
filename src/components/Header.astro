@@ -11,148 +11,377 @@ const posts = (await getCollection("blog")).sort(
 const { isMain } = Astro.props;
 ---
 
-<Agreement/>
+<script is:inline>
+  // Run this immediately to prevent a flash of the wrong theme
+  (function () {
+    document.documentElement.classList.add("no-transitions");
+
+    var savedMode = localStorage.getItem("color-mode") || "dark";
+    var systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    var shouldBeDark =
+      savedMode === "dark" || (savedMode === null && systemPrefersDark);
+
+    document.documentElement.classList.toggle("dark", shouldBeDark);
+
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () {
+        document.documentElement.classList.remove("no-transitions");
+      });
+    });
+  })();
+</script>
+
+<Agreement />
 
 <r lang={i18next.language} class="bannerholder">
-	<div id="loadingindicator" style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;"></div>
-	<img id="loadingspinner" alt="Loading..." src="/img/loading.gif" style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;">
+  <div
+    id="loadingindicator"
+    style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;">
+  </div>
+  <img
+    id="loadingspinner"
+    alt="Loading..."
+    src="/img/loading.gif"
+    style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;"
+  />
 
-	<t id="grad" style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"></t>
-	<a href={localizePath("/")} aria-label="Home Link" class="logohold"><img loading="lazy" class="logo" alt="WiiLink Logo" style={isMain} src=" /img/Wii_Link_Logo.webp" width="190px" height="69px"></a>
-	  <div id="links" style="display:none;">
-		<a class="header-link" href={localizePath("/")} aria-label="Home Link"><i class="fa fa-home" style="margin-right:5px;"></i> {t("header.home")}</a>
-		<a class="header-link" onmouseover="toggle('newsheader');" onmouseout="toggle('newsheader');" href={localizePath("/news")} aria-label="News Link"><i class="fa fa-newspaper" style="margin-right:5px;"></i> {t("header.news")}</a>
-		<div id="newsheader" class="popover-header" onmouseout="toggle('newsheader');">
-			<div class="holder">
-			{
-				posts.slice(0,3).map(post => (
-				  <div class="post" style="padding:8px; border-radius:4px;">
-					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`} aria-label={post.data.title + 'News Link'}>
-					  <img alt="News Post Image" loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
-					</a>
-				  </div>
-				))
-			  }
-			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.news-info")}</div>
-			</div>
-		</div>
-		<a class="header-link" onmouseover="toggle('guideheader');" onmouseout="toggle('guideheader');" href={localizePath("/guide/")} aria-label="Guide Link"><i class="fa fa-book" style="margin-right:5px;"></i> {t("header.guide")}</a>
-		<div id="guideheader" class="popover-header" onmouseout="toggle('guideheader');">
-			<div class="holder">
-			<div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/install' aria-label="Install Guide Link">
-					<i class="fa fa-download" style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.installGuide")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.installGuide-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/problemsolving' aria-label="Troubleshooting Guide Link">
-					<i class="fa fa-circle-exclamation" style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.problemSolving")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.problemSolving-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <div class="post" style="padding:8px; border-radius:4px;">
-				<a style="display:flex; flex-direction:row; align-items:center; gap:8px;" href='/guide/faq' aria-label="FAQ Link">
-					<i class="fa fa-circle-question" style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"></i>
-				<div>
-				  <div class="title">
-					<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						{t("guidePost.faq")}
-					</b>
-				  </div>
-				  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{t("guidePost.faq-info")}</div>
-				</div>
-				<i class="fa fa-arrow-right"></i>
-				</a>
-			  </div>
-			  <hr style="border-top: 1px solid var(--border-color);"/>
-			  <div style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;"><i class="fa fa-circle-info"></i> {t("header.guide-info")}</div>
-			</div>
-		</div>
-		<a class="header-link" href={localizePath("/status")} aria-label="Status Link"><i class="fa fa-server" style="margin-right:5px;"></i> {t("header.status")}</a>
-		<a class="header-link" href={localizePath("/services")} aria-label="Services Link"><i class="fa fa-box" style="margin-right:5px;"></i> {t("header.services")}</a>
-		<div class="dropdown">
-			<button class="btn" onclick="toggleTranslate()" id="titleTranslate" style="font-size:30px; padding:0px 10px; transform:translate(5px, 0);" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true" data-bs-original-title="<i class='fas fa-globe'></i>" aria-expanded="false" aria-label="Language Picker">
-			</button>
-			<div class="dropdown-menu" id="dropMenu" style="background-color: var(--bg-color-light); border:1px solid var(--border-color); transform:translate(50px, -10px); border-radius:12px; overflow:hidden;">
-				<div style="width:100%; top:0; position:fixed; border-bottom:1px solid var(--border-color); background-color: var(--bg-color-tertiary); z-index:10000;"><h6 class="dropdown-header" id="currentlang"><i class="fa fa-globe"></i> {t("header.chooseLang")}</h6></div>
-				<ul class="optDisplay" id="optionsDisplay" style="top:30px; height:255px; width:200px; overflow-y:scroll; position:relative;"></ul>
-			</div>
-		  </div>
-		<button id="moreHeader" onclick="toggle('dropdownMore');" class="btn" aria-label="More button"><i
-			class="fa-solid fa-chevron-down"
-			style="font-size:20px; pointer-events:none;"></i>
-			<span class="position-absolute top-10 start-95 translate-middle p-1 bg-danger rounded-circle" style="pointer-events: none;"></span>
-			</button>
-		<div id="dropdownMore">
-			<a class="dropdown-item" style="display:flex; flex-direction:row; align-items:center; gap:8px;" id="account" href="https://accounts.wiilink.ca" aria-label="Extras Link"><i class="fa-solid fa-user"></i>Log into WiiLink Accounts</a>
-			<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-		<a class="dropdown-item" href={localizePath("/extras")} aria-label="Extras Link"><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link"><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div> <span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://miicontest.wiilink.ca" aria-label="CMOC Viewing Tool Link"><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://evc.wiilink.ca" aria-label="EVC Viewing Tool Link"><div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div><span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-star"></i></span></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://tag.rc24.xyz/" aria-label="LinkTag"><div><i class="fa-solid fa-tag"></i> LinkTag</div></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://card.wiilink24.com/" aria-label="LinkTag"><div><i class="fa-solid fa-address-card"></i> Digicard</div></a>
-			<a class="dropdown-item" style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://stamp.wiilink.ca/" aria-label="LinkTag"><div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div></a>
-			<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-			<div style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
-				<a href="https://bookmark.rc24.xyz" style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Wii Bookmarks" title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a>
-				<a href="http://disc.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured." title="Get the date your GameCube, Wii, or Wii U disc was manufactured."><i class="fa-solid fa-compact-disc"></i></a>
-				<a href="http://interviews.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Nintendo dev interviews" title="Nintendo dev interviews"><i class="fa-solid fa-comments"></i></a>
-				<a href="http://wiiremote.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Get the date your Wii Remote was manufactured." title="Get the date your Wii Remote was manufactured."><i class="fa-solid fa-gamepad"></i></a>
-			</div>
-			<!--<a style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://forum.wiilink.ca/" aria-label="LinkTag"><div style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;"><img src="/img/favicon.webp" style="filter:brightness(10000);" height="20px"> WiiLink Forum</div></a>-->
-				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-			<a
-				  class="dropdown-item"
-				  href="/privacy-policy"
-				  aria-label="Privacy Policy Link"
-				  ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
-				>
-				<a class="dropdown-item" href="/tos" aria-label="Terms of Service Link"
-				  ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
-				>
-				<a class="dropdown-item" href="/eula" aria-label="EULA Link"
-				  ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
-				>
-				<hr style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);">
-				<div style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-				<button id="themeColor" type="button" class="btn btn-light dropdown-element" aria-label="Theme Button" onclick="darkToggle()"><i class="fa-solid fa-moon" style="pointer-events:none;"></i></button>
-				<a href={localizePath("/")} aria-label="Home Link"><button type="button" class="btn btn-success dropdown-element" aria-label="Download Button"><i class="fa-solid fa-download" style="color:white !important"></i></button></a>
-				<a href="https://www.discord.gg/wiilink" aria-label="Discord Link"><button type="button" class="btn btn-primary dropdown-element" aria-label="Discord Button"><i class="fa-brands fa-discord" style="color:white !important"></i></button></a>
-			</div>
-		</div>
-			<LanguageSelector showFlag={true} id="my-select-id" class="my-select-class" />
-	</div>
-</r>
-
-<script is:inline>
-
-const themeColorButton = document.getElementById('themeColor');
-
-let loadingindicator = document.getElementById("loadingindicator");
-    loadingindicator.style.width = "0%";
-    loadingspinner = document.getElementById("loadingspinner");
+  <t
+    id="grad"
+    style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
+  ></t>
+  <a href={localizePath("/")} aria-label="Home Link" class="logohold"
+    ><img
+      loading="lazy"
+      class="logo"
+      alt="WiiLink Logo"
+      style={isMain}
+      src=" /img/Wii_Link_Logo.webp"
+      width="190px"
+      height="69px"
+    /></a
+  >
+  <div id="links">
+    <a class="header-link" href={localizePath("/")} aria-label="Home Link"
+      ><i class="fa fa-home" style="margin-right:5px;"></i>
+      {t("header.home")}</a
+    >
+    <a
+      class="header-link"
+      onmouseover="toggle('newsheader');"
+      onmouseout="toggle('newsheader');"
+      href={localizePath("/news")}
+      aria-label="News Link"
+      ><i class="fa fa-newspaper" style="margin-right:5px;"></i>
+      {t("header.news")}</a
+    >
+    <div
+      id="newsheader"
+      class="popover-header"
+      onmouseout="toggle('newsheader');">
+      <div class="holder">
+        {
+          posts.slice(0, 3).map(post => (
+            <div class="post" style="padding:8px; border-radius:4px;">
+              <a
+                style="display:flex; flex-direction:row; gap:8px;"
+                href={`/news/${post.slug}/`}
+                aria-label={post.data.title + "News Link"}>
+                <img
+                  alt="News Post Image"
+                  loading="lazy"
+                  style="height:100px; border-radius:4px;"
+                  src={post.data.heroImage}
+                />
+                <div>
+                  <div class="title">
+                    <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                      {post.data.title}
+                    </b>
+                  </div>
+                  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                    {post.data.description}
+                  </div>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+        <hr style="border-top: 1px solid var(--border-color);" />
+        <div
+          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
+          <i class="fa fa-circle-info"></i>
+          {t("header.news-info")}
+        </div>
+      </div>
+    </div>
+    <a
+      class="header-link"
+      onmouseover="toggle('guideheader');"
+      onmouseout="toggle('guideheader');"
+      href={localizePath("/guide/")}
+      aria-label="Guide Link"
+      ><i class="fa fa-book" style="margin-right:5px;"></i>
+      {t("header.guide")}</a
+    >
+    <div
+      id="guideheader"
+      class="popover-header"
+      onmouseout="toggle('guideheader');">
+      <div class="holder">
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/install"
+            aria-label="Install Guide Link">
+            <i
+              class="fa fa-download"
+              style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.installGuide")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.installGuide-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/problemsolving"
+            aria-label="Troubleshooting Guide Link">
+            <i
+              class="fa fa-circle-exclamation"
+              style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.problemSolving")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.problemSolving-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+            href="/guide/faq"
+            aria-label="FAQ Link">
+            <i
+              class="fa fa-circle-question"
+              style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+            ></i>
+            <div>
+              <div class="title">
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  {t("guidePost.faq")}
+                </b>
+              </div>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                {t("guidePost.faq-info")}
+              </div>
+            </div>
+            <i class="fa fa-arrow-right"></i>
+          </a>
+        </div>
+        <hr style="border-top: 1px solid var(--border-color);" />
+        <div
+          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
+          <i class="fa fa-circle-info"></i>
+          {t("header.guide-info")}
+        </div>
+      </div>
+    </div>
+    <a
+      class="header-link"
+      href={localizePath("/status")}
+      aria-label="Status Link"
+      ><i class="fa fa-server" style="margin-right:5px;"></i>
+      {t("header.status")}</a
+    >
+    <a
+      class="header-link"
+      href={localizePath("/services")}
+      aria-label="Services Link"
+      ><i class="fa fa-box" style="margin-right:5px;"></i>
+      {t("header.services")}</a
+    >
+    <button
+      id="moreHeader"
+      onclick="toggle('dropdownMore');"
+      class="btn"
+      style="border: 0px !important;"
+      aria-label="More button"
+      ><i
+        class="fa-solid fa-chevron-down"
+        style="font-size:20px; pointer-events:none;"></i>
+    </button>
+    <div id="dropdownMore">
+      <a
+        class="dropdown-item"
+        style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+        id="account"
+        href="https://accounts.wiilink.ca"
+        aria-label="Extras Link"
+        ><i class="fa-solid fa-user"></i>Log into WiiLink Accounts</a
+      >
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <LanguageDropdown />
+      <a
+        class="dropdown-item"
+        href={localizePath("/extras")}
+        aria-label="Extras Link"
+        ><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a
+      >
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://wfc.wiilink24.com"
+        aria-label="WiiLink WFC Link"
+        ><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div>
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://miicontest.wiilink.ca"
+          aria-label="CMOC Viewing Tool Link"
+          ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a
+        >
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://evc.wiilink.ca"
+          aria-label="EVC Viewing Tool Link"
+          ><div>
+            <i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel
+          </div></a
+        >
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://tag.rc24.xyz/"
+          aria-label="LinkTag"
+          ><div><i class="fa-solid fa-tag"></i> LinkTag</div></a
+        >
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://card.wiilink24.com/"
+          aria-label="LinkTag"
+          ><div><i class="fa-solid fa-address-card"></i> Digicard</div></a
+        >
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://stamp.wiilink.ca/"
+          aria-label="LinkTag"
+          ><div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div></a
+        >
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <div
+          style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
+          <a
+            href="https://bookmark.rc24.xyz"
+            style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
+            aria-label="Wii Bookmarks"
+            title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a
+          >
+          <a
+            href="http://disc.rc24.xyz/"
+            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+            aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+            title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+            ><i class="fa-solid fa-compact-disc"></i></a
+          >
+          <a
+            href="http://interviews.rc24.xyz/"
+            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+            aria-label="Nintendo dev interviews"
+            title="Nintendo dev interviews"
+            ><i class="fa-solid fa-comments"></i></a
+          >
+          <a
+            href="http://wiiremote.rc24.xyz/"
+            style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
+            aria-label="Get the date your Wii Remote was manufactured."
+            title="Get the date your Wii Remote was manufactured."
+            ><i class="fa-solid fa-gamepad"></i></a
+          >
+        </div>
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <a
+          class="dropdown-item"
+          href="/privacy-policy"
+          aria-label="Privacy Policy Link"
+          ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
+        >
+        <a class="dropdown-item" href="/tos" aria-label="Terms of Service Link"
+          ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
+        >
+        <a class="dropdown-item" href="/eula" aria-label="EULA Link"
+          ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
+        >
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <div
+          style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+          <button
+            id="themeColor"
+            type="button"
+            class="btn btn-light dropdown-element"
+            aria-label="Theme Button"
+            onclick="themeToggle()"
+            ><i class="fa-solid fa-moon" style="pointer-events:none;"
+            ></i></button
+          >
+          <a href={localizePath("/")} aria-label="Home Link"
+            ><button
+              type="button"
+              class="btn btn-success dropdown-element"
+              aria-label="Download Button"
+              ><i class="fa-solid fa-download" style="color:white !important"
+              ></i></button
+            ></a
+          >
+          <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
+            ><button
+              type="button"
+              class="btn btn-primary dropdown-element"
+              aria-label="Discord Button"
               ><i class="fa-brands fa-discord" style="color:white !important"
               ></i></button
             ></a
+          >
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <script is:inline>
     /************************
      * Loading Animation
      ************************/
@@ -608,12 +837,12 @@ let loadingindicator = document.getElementById("loadingindicator");
 
     #newsheader {
       width: 500px;
-      transform: translate(-163px, 0);
+      transform: translate(-130px, 0);
     }
 
     #guideheader {
       width: 400px;
-      transform: translate(-70px, 0);
+      transform: translate(-35px, 0);
     }
 
     /* Utility Classes */
