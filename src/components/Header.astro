@@ -1,14 +1,14 @@
 ---
-import { LanguageSelector } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
 import { getCollection } from "astro:content";
+import LanguageDropdown from "../components/LanguageDropdown.astro";
 const posts = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 
-const { isGuide, isMain } = Astro.props;
+const { isMain } = Astro.props;
 ---
 
 <Agreement/>
@@ -29,14 +29,6 @@ const { isGuide, isMain } = Astro.props;
 				  <div class="post" style="padding:8px; border-radius:4px;">
 					<a style="display:flex; flex-direction:row; gap:8px;" href={`/news/${post.slug}/`} aria-label={post.data.title + 'News Link'}>
 					  <img alt="News Post Image" loading="lazy" style="height:100px; border-radius:4px;" src={post.data.heroImage} />
-					  <div>
-					  <div class="title">
-						<b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-						  {post.data.title}
-						</b>
-					  </div>
-					  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">{post.data.description}</div>
-					</div>
 					</a>
 				  </div>
 				))
@@ -158,427 +150,341 @@ const themeColorButton = document.getElementById('themeColor');
 let loadingindicator = document.getElementById("loadingindicator");
     loadingindicator.style.width = "0%";
     loadingspinner = document.getElementById("loadingspinner");
+              ><i class="fa-brands fa-discord" style="color:white !important"
+              ></i></button
+            ></a
+    /************************
+     * Loading Animation
+     ************************/
+    function initLoading() {
+      var loadingIndicator = document.getElementById("loadingindicator");
+      var loadingSpinner = document.getElementById("loadingspinner");
 
-      loadingindicator.style.display = "block";
-	  loadingspinner.style.display = "block";
-
-    let increaseWidth = setInterval(() => {
-      let currentWidth = parseInt(loadingindicator.style.width);
-      if (currentWidth < 80) {
-        loadingindicator.style.width = currentWidth + 1 + "%";
+      if (!loadingIndicator || !loadingSpinner) {
+        return;
       }
-    }, 100);
 
-    window.addEventListener("load", () => {
-      clearInterval(increaseWidth);
-      loadingindicator.style.width = "100%";
-      setTimeout(() => {
-        loadingindicator.style.opacity = "0";
-        loadingspinner.style.display = "none";
-      }, 500);
-    });
+      loadingIndicator.style.width = "0%";
+      loadingIndicator.style.display = "block";
+      loadingSpinner.style.display = "block";
 
-	document.getElementById("links").style.display = "flex";
-localStorage.setItem('languageOverride', 'yes');
+      var increaseWidth = setInterval(function () {
+        var currentWidth = parseInt(loadingIndicator.style.width);
+        if (currentWidth < 80) {
+          loadingIndicator.style.width = currentWidth + 1 + "%";
+        }
+      }, 100);
 
-const dropdown = document.getElementById("my-select-id");
-let editLink = "/" + dropdown.options[0].value.split('/').slice(0, 2).join('/');
-
-if (editLink === "/") {
-    editLink = "";
-}
-
-if (localStorage.getItem('languageOverride') !== 'yes') {
-    const langMap = {
-        "en": "/en-GB",
-        "es": "/es",
-        "fr": "/fr",
-        "de": "/fr",
-        "pt": "/pt-PT",
-        "jp": "/jp"
-    };
-
-    const language = navigator.language.substring(0, 5);
-    if (language === "en-GB" || langMap[navigator.language.substring(0, 2)]) {
-        localStorage.setItem('languageOverride', 'yes');
-        location.href = langMap[language] + editLink;
-    }
-}
-
-const optionsDisplayDiv = document.getElementById("optionsDisplay");
-const currentLangDiv = document.getElementById("currentlang");
-const titleTranslate = document.getElementById("titleTranslate");
-
-optionsDisplayDiv.innerHTML = "";
-
-const flagMap = {
-    '': ["usa", "English (US)"],
-    'en-gb': ["uk", "English (UK)"],
-    'pt-br': ["brazil", "Português (BR)"],
-    'pt-pt': ["portugal", "Português (PT)"],
-    'vi': ["vi", "Tiếng Việt"],
-    'ja': ["japan", "日本語"],
-    'fr': ["france", "Français"],
-    'es': ["spain", "Español"],
-    'de': ["german", "Deutsch"],
-    'ru': ["russia", "Русский"],
-    'it': ["italy", "Italiano"],
-    'fi': ["finland", "Suomi"],
-    'hu': ["hu", "Magyar"],
-    'tr': ["tr", "Türkçe"],
-    'ko-kr': ["kr", "한국어"],
-    'es-lat': ["mexico", "Español (LATAM)"],
-    'ca': ["cat", "Català (CA)"],
-    'frp': ["arp", "Arpetan"],
-    'va': ["va", "Català (VA)"]
-};
-
-for (let i = 0; i < dropdown.options.length; i++) {
-    const option = dropdown.options[i];
-    const optionName = option.value;
-    const langCode = optionName.match(/^\/?([^\/]*)/)?.[1]?.toLowerCase() || '';
-    const [flag, lang] = flagMap[langCode] || ["usa", "English (US)"];
-
-    const optionLinkFlag = `<img alt='Emoji ${lang}' src='/img/flags/${flag}.webp' class='emoji'>`;
-    const optionLink = `<img alt='Text ${lang}' src='/img/flags/${flag}.webp' class='emoji2'> ${lang}`;
-
-    if (i === 0) {
-        titleTranslate.innerHTML = optionLinkFlag;
-        currentLangDiv.innerHTML += `<div style='margin-top:8px; opacity:0.6;'><i class='fa fa-arrow-right' style='margin-right:5px;'></i> ${optionLink}</div>`;
-        document.getElementById('titleTranslate').setAttribute('data-bs-original-title', optionLink.replace(/<img[^>]*>/g, ""));
-    } else {
-        optionsDisplayDiv.innerHTML += `<li><a href='${optionName}' aria-label='${optionName} Link' onclick='override()' style='text-decoration:none; color:black;'><button class='dropdown-item' type='button' aria-label='Language Button'><div class='dropdown-text' style='transition:0.2s;'>${optionLink}</div></button></a></li>`;
-    }
-}
-
-document.addEventListener('click', function(event) {
-    const dropdownButton = document.getElementById('titleTranslate');
-    const dropdownMenu = document.getElementById('dropMenu');
-    const dropdownMore = document.getElementById('dropdownMore');
-    const moreHeader = document.getElementById('moreHeader');
-
-    if (!dropdownMore.contains(event.target) && event.target !== moreHeader) {
-        dropdownMore.style.display = 'none';
+      window.addEventListener("load", function () {
+        clearInterval(increaseWidth);
+        loadingIndicator.style.width = "100%";
+        setTimeout(function () {
+          loadingIndicator.style.opacity = "0";
+          loadingSpinner.style.display = "none";
+        }, 500);
+      });
     }
 
-    if (!dropdownButton.contains(event.target) && !dropdownMenu.contains(event.target) && open) {
-        closeDropdown();
-    }
-});
+    /************************
+     * Theme Management
+     ************************/
+    var themeColorButton = document.getElementById("themeColor");
 
-let open = 0;
-
-function toggleTranslate() {
-    if (open) {
-        closeDropdown();
-    } else {
-        openDropdown();
-    }
-}
-
-function openDropdown() {
-    const dropdownMenu = document.getElementById('dropMenu');
-    dropdownMenu.style.opacity = "1";
-    dropdownMenu.style.pointerEvents = "";
-    dropdownMenu.style.animation = "langon 0.2s ease-in-out forwards";
-    open = 1;
-}
-
-function closeDropdown() {
-    const dropdownMenu = document.getElementById('dropMenu');
-    dropdownMenu.style.animation = "langoff 0.2s ease-in-out forwards";
-    setTimeout(() => {
-        dropdownMenu.style.opacity = "0";
-        dropdownMenu.style.pointerEvents = "none";
-        dropdownMenu.style.animation = "";
-        open = 0;
-    }, 200);
-}
-
-function enableDarkMode() {
-        document.documentElement.classList.add('dark');
-        localStorage.setItem('color-mode', 'dark');
-        themeColorButton.innerHTML = `<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>`;
+    function enableDarkMode() {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("color-mode", "dark");
+      if (themeColorButton) {
+        themeColorButton.innerHTML =
+          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
         themeColorButton.style.filter = "invert(0)";
+      }
     }
 
     function enableLightMode() {
-        document.documentElement.classList.remove('dark');
-        localStorage.setItem('color-mode', 'light');
-        themeColorButton.innerHTML = `<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>`;
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("color-mode", "light");
+      if (themeColorButton) {
+        themeColorButton.innerHTML =
+          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
         themeColorButton.style.filter = "invert(1)";
+      }
     }
 
-
-function darkToggle() {
-	if (document.documentElement.classList.contains('dark')) {
-		enableLightMode();
-	} else {
-		enableDarkMode();
-	}
-}
-
-window.onload = function() {
-
-    if (!localStorage.getItem('color-mode')) {
-        localStorage.setItem('color-mode', 'dark');
-    }
-
-    const savedMode = localStorage.getItem('color-mode');
-    if (savedMode === 'dark') {
-        enableDarkMode();
-    } else {
+    function themeToggle() {
+      if (document.documentElement.classList.contains("dark")) {
         enableLightMode();
-    }
-
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        if (event.matches) {
-            enableDarkMode();
-        } else {
-            enableLightMode();
-        }
-    });
-
-    document.getElementById('darkToggle').addEventListener('click', () => {
-        if (document.documentElement.classList.contains('dark')) {
-            enableLightMode();
-        } else {
-            enableDarkMode();
-        }
-    });
-};
-
-window.addEventListener('DOMContentLoaded', function() {
-// Function to get a cookie by name
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
-// Access the cookie
-const userCookie = getCookie('wiilink_user');
-const isLoggedIn = getCookie('is_logged_in');
-
-if (userCookie) {
-    const userData = JSON.parse(userCookie);
-    const accountHtml = `
-        <div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">
-			<span>
-				<img src="${userData.pfp}?d=404" 
-					style="width:40px; height:40px; border-radius:8px;"
-					onError="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\'>${userData.username.charAt(0).toUpperCase()}</div>'">
-			</span>
-        </div>
-        <div style="display:flex; flex-direction:column; align-items:start;">
-            ${isLoggedIn === "true" ? 
-                `WiiLink Account <span style="opacity:70%;">${userData.username}</span>` : 
-                `<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account 
-                    <span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>
-                </span> 
-                <span style="opacity:70%;">${userData.username}</span>`}
-        </div>`;
-    document.getElementById('account').innerHTML = accountHtml;
-}
-
-    if (!localStorage.getItem('color-mode')) {
-        localStorage.setItem('color-mode', 'dark');
-    }
-
-    const savedMode = localStorage.getItem('color-mode');
-    if (savedMode === 'dark') {
+      } else {
         enableDarkMode();
-    } else {
-        enableLightMode();
+      }
     }
 
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-        if (event.matches) {
-            enableDarkMode();
-        } else {
-            enableLightMode();
+    /************************
+     * Cookie Management
+     ************************/
+    function getCookie(name) {
+      try {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        return parts.length === 2 ? parts.pop().split(";").shift() : null;
+      } catch (error) {
+        console.error("Error reading cookie:", error);
+        return null;
+      }
+    }
+
+    function updateUserInterface() {
+      var userCookie = getCookie("wiilink_user");
+      var isLoggedIn = getCookie("is_logged_in") === "true";
+
+      if (!userCookie) {
+        return;
+      }
+
+      try {
+        var userData = JSON.parse(userCookie);
+        var accountElement = document.getElementById("account");
+        var moreHeader = document.getElementById("moreHeader");
+		var mobileaccountbtn = document.getElementById("mobileaccountbtn");
+
+        if (accountElement) {
+          accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
+		  mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
+          moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
         }
-    });
+      } catch (error) {
+        console.error("Error parsing user data:", error);
+      }
+    }
 
-    document.getElementById('darkToggle').addEventListener('click', () => {
-        if (document.documentElement.classList.contains('dark')) {
-            enableLightMode();
-        } else {
-            enableDarkMode();
+    function createUserHTML(userData, isLoggedIn) {
+      return [
+        '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
+        "<span>",
+        '<img src="' + userData.pfp + '?d=404" ',
+        'style="width:40px; height:40px; border-radius:8px;"',
+        "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
+        userData.username.charAt(0).toUpperCase(),
+        "</div>'\">",
+        "</span>",
+        "</div>",
+        '<div style="display:flex; flex-direction:column; align-items:start;">',
+        isLoggedIn
+          ? 'WiiLink Account <span style="opacity:70%;">' +
+            userData.username +
+            "</span>"
+          : '<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account' +
+            '<span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>' +
+            "</span>" +
+            '<span style="opacity:70%;">' +
+            userData.username +
+            "</span>",
+        "</div>"
+      ].join("");
+    }
+
+    function createUserPfpHTML(userData, isLoggedIn) {
+      return [
+        '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
+        '<img class="dropdownpfp" src="' + userData.pfp + '?d=404" ',
+        'style="width:40px; height:40px; border-radius:8px;"',
+        "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
+        userData.username.charAt(0).toUpperCase(),
+        "</div>'\">",
+        "</div>"
+      ].join("");
+    }
+
+    /************************
+     * UI Management
+     ************************/
+    function toggle(id) {
+      var element = document.getElementById(id);
+      if (element) {
+        element.style.display =
+          element.style.display === "block" && !element.matches(":hover")
+            ? "none"
+            : "block";
+      }
+    }
+
+    function initClickOutside() {
+      document.addEventListener("click", function (event) {
+        const dropdownMore = document.getElementById("dropdownMore");
+        const newsHeader = document.getElementById("newsheader");
+        const guideHeader = document.getElementById("guideheader");
+        const moreHeader = document.getElementById("moreHeader");
+
+        // Handle dropdownMore
+        if (
+          dropdownMore &&
+          dropdownMore.style.display === "block" &&
+          !dropdownMore.contains(event.target) &&
+          !moreHeader.contains(event.target)
+        ) {
+          dropdownMore.style.display = "none";
         }
+
+        // Handle newsheader
+        if (
+          newsHeader &&
+          newsHeader.style.display === "block" &&
+          !newsHeader.contains(event.target) &&
+          !event.target.matches('[onmouseover*="newsheader"]')
+        ) {
+          newsHeader.style.display = "none";
+        }
+
+        // Handle guideheader
+        if (
+          guideHeader &&
+          guideHeader.style.display === "block" &&
+          !guideHeader.contains(event.target) &&
+          !event.target.matches('[onmouseover*="guideheader"]')
+        ) {
+          guideHeader.style.display = "none";
+        }
+      });
+    }
+
+    function initUI() {
+      var dropdownMenu = document.getElementById("dropMenu");
+      if (dropdownMenu) {
+        dropdownMenu.style.opacity = "0";
+        dropdownMenu.style.pointerEvents = "none";
+      }
+
+      var gradient = document.getElementById("grad");
+      if (gradient) {
+        document.addEventListener("scroll", function () {
+          gradient.style.opacity = window.pageYOffset > 0 ? "1" : "0";
+        });
+      }
+
+      initClickOutside();
+    }
+
+    /************************
+     * Initialization
+     ************************/
+    document.addEventListener("DOMContentLoaded", function () {
+      initLoading();
+      updateUserInterface();
+      initUI();
+
+      // Theme change listeners
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", function (event) {
+          if (event.matches) {
+            enableDarkMode();
+          } else {
+            enableLightMode();
+          }
+        });
+
+      if (document.documentElement.classList.contains("dark")) {
+        document.getElementById("themeColor").innerHTML =
+          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      } else {
+        document.getElementById("themeColor").innerHTML =
+          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      }
+
+      var darkToggleButton = document.getElementById("darkToggle");
+      if (darkToggleButton) {
+        darkToggleButton.addEventListener("click", function () {
+          if (document.documentElement.classList.contains("dark")) {
+            enableLightMode();
+          } else {
+            enableDarkMode();
+          }
+        });
+      }
     });
-});
+  </script>
 
-function toggle(id) {
-    const element = document.getElementById(id);
-    element.style.display = element.style.display === 'block' && !element.matches(':hover') ? 'none' : 'block';
-}
+  <style>
+    /* Base Styles */
+    :root {
+      --header-height: 128px;
+      --header-mobile-height: 98px;
+      --border-radius-standard: 8px;
+      --border-radius-large: 12px;
+      --spacing-standard: 8px;
+      --transition-standard: 0.2s;
+      --transition-slow: 0.3s;
+      --max-width: 2000px;
+    }
 
-// Initialize dropdown menu state
-const dropdownMenu = document.getElementById('dropMenu');
-dropdownMenu.style.opacity = '0';
-dropdownMenu.style.pointerEvents = 'none';
+    /* Typography */
+    a {
+      font-size: 17px;
+      text-decoration: none;
+      color: white;
+    }
 
+    a:visited {
+      color: white;
+    }
 
-var gradient = document.getElementById("grad");
-document.addEventListener('scroll', checkPageScroll);
+    /* Layout Components */
+    .bannerholder {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      display: block;
+      background-color: transparent;
+      z-index: 80;
+      position: sticky;
+    }
 
-function checkPageScroll() {
-  var scrollPosition = window.scrollY || window.pageYOffset;
+    .logo {
+      top: 50%;
+      left: 50px;
+      transform: translate(0, -50%);
+      filter: invert(1);
+      position: absolute;
+    }
 
-  if (scrollPosition > 0) {
-    gradient.style.opacity = 1;
-  } else {
-	gradient.style.opacity = 0;
-  }
-}
-</script>
-  
-<style is:global>
-	.emoji:nth-child(1) {
-		width:33px;
-		transform:translate(0, -3px);
-	}
-	.emoji2 {
-		width:20px;
-		margin-right:5px;
-		transform:translate(0, -3px);
-	}	
-	.dropdown-item {
-		white-space:wrap !important;
-	}
-</style>
-<style>
-	.my-select-class{
-		top:0;
-		left:0;
-		width:45px;
-		height:42px;
-		font-size:30px;
-		border:0px;
-		display:none;
-		background-color:#ffffff00;
-		position:relative;
-	}
-	.badge{
-		top:20px; 
-		left:230px; 
-		font-size:15px; 
-		font-family:systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; 
-		position:absolute;
-	}
-	a {
-		font-size:17px;
-	}
+    /* Navigation */
+    #links,
+    #dropMenu {
+      display: flex;
+      gap: 10px;
+      width: auto;
+      right: 50px;
+      top: 60px;
+      transform: translate(0, -50%);
+      align-items: center;
+      justify-content: center;
+      font-family:
+        systemui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      color: rgba(255, 255, 255, 0.53);
+      position: absolute;
+    }
 
-	#grad{
-	background: rgb(255,255,255);
-	background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(32,32,32,0.5) 100%);
-	}
-
-	#newsheader {
-		width:500px;
-		transform:translate(-153px, 0);
-	}
-
-	#guideheader {
-		width:400px;
-		transform:translate(-60px, 0);
-	}
-
-	.popover-header {
-		display: none;
-		position: absolute;
-		top: 100%;
-		animation: opin 0.2s ease-in-out forwards;
-		z-index: 1;
-	}
-
-	.holder {
-		margin-top:18px;
-		padding:8px;
-		border-radius:12px;
-		background-color:var(--bg-color-light);
-		border: 1px solid var(--border-color);
-	}
-
-	.holder::before {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 20px solid var(--border-color);
-  top: -2px;
-  left: 50%;
-  z-index: 10000;
-  transform: translateX(-50%);
-}
-
-.holder::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-bottom: 18px solid var(--bg-color-light);
-  top: 1px;
-  left: 50%;
-  z-index: 10000;
-  transform: translateX(-50%);
-}
-
-	.post:hover {
-		background-color: var(--bg-color-secondary);
-		transition: 0.2s;
-	}
-
-	.post:active {
-		transform:scale(0.98);
-		transition: 0.2s;
-	}
-
-	#dropdownMore {
-		right:0;
-		top:100%;
-		width: 300px;
-		max-height: calc(100vh - 150px);
-		overflow-y: scroll;
-		display:flex;
-		flex-direction: column;
-		gap:5px;
-		padding:8px;
-		background-color: var(--bg-color-light);
-		border: 1px solid var(--border-color);
-		border-radius:12px;
-		z-index: 1;
-		display: none;
-		position: absolute;
-	}
-
-	.dropdown-element {
-		width:100%;
-		position:relative;
-	}
-
-	.dropdown-item {
-		padding:8px;
-		border-radius:4px;
-	}
-
-	.header-link {
-	height:50px;
-	font-size:18px;
-	margin-left:8px;
-	display:flex;
-	justify-content:center;
-	align-items:center;
-      transition: 0.3s;
-      padding-left: 5px;
-      padding-right: 5px;
-      border-radius: 8px;
+    /* Header Links */
+    .header-link {
+      height: 50px;
+      font-size: 18px;
+      margin-left: var(--spacing-standard);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: var(--transition-slow);
+      padding: 5px;
+      border-radius: var(--border-radius-standard);
       position: relative;
       overflow: hidden;
     }
@@ -588,16 +494,14 @@ function checkPageScroll() {
       background-color: var(--bg-opaque-1);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
-      padding-left: 15px;
-      padding-right: 15px;
-      border-radius: 8px;
-      transition: 0.3s;
+      padding: 15px;
+      transition: var(--transition-slow);
     }
 
     .header-link:active {
       transform: scale(0.97);
       background-color: #ffffff40;
-      transition: 0.1s;
+      transition: var(--transition-standard);
     }
 
     .header-link::after {
@@ -607,174 +511,252 @@ function checkPageScroll() {
       left: 0;
       right: 0;
       height: 4px;
-	  opacity:0.3;
-      background: var(--color);
-      transition: 0.2s;
+      opacity: 0.3;
+      background: #ffffff60;
+      transition: var(--transition-standard);
     }
 
     .header-link:hover::after {
+      bottom: 0;
+      opacity: 1;
+    }
+
+    /* Dropdown Styles */
+    #dropdownMore {
+      right: 15px;
+      top: 100%;
+      width: 300px;
+      max-height: calc(100vh - 150px);
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      padding: var(--spacing-standard);
+      background-color: var(--bg-color-light);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-large);
+      z-index: 1;
+      display: none;
+      position: absolute;
+    }
+
+    .dropdown-element {
+      width: 100%;
+      position: relative;
+    }
+
+    .dropdown-item {
+      padding: var(--spacing-standard);
+      border-radius: 4px;
+      white-space: wrap !important;
+    }
+
+    /* Popover Header */
+    .popover-header {
+      top: 100%;
+      animation: opin var(--transition-standard) ease-in-out forwards;
+      z-index: 1;
+      display: none;
+      position: absolute;
+    }
+
+    .holder {
+      margin-top: 18px;
+      padding: 8px;
+      border-radius: 12px;
+      background-color: var(--bg-color-light);
+      border: 1px solid var(--border-color);
+    }
+
+    .holder::before {
       content: "";
       position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--color);
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 20px solid var(--border-color);
+      top: -2px;
+      left: 50%;
+      z-index: 10000;
+      transform: translateX(-50%);
+    }
+
+    .holder::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 18px solid var(--bg-color-light);
+      top: 1px;
+      left: 50%;
+      z-index: 10000;
+      transform: translateX(-50%);
+    }
+
+    .post:hover {
+      background-color: var(--bg-color-secondary);
       transition: 0.2s;
     }
 
-  .optDisplay::-webkit-scrollbar{
-		display:none;
-	}
+    .post:active {
+      transform: scale(0.98);
+      transition: 0.2s;
+    }
 
-	ul {
-		list-style-type: none;
-		padding:0px;
-		margin:0px;
-	}
+    #newsheader {
+      width: 500px;
+      transform: translate(-163px, 0);
+    }
 
-a:link{
-	text-decoration: none;
-	color: white;
-}
+    #guideheader {
+      width: 400px;
+      transform: translate(-70px, 0);
+    }
 
-a:visited{
-	text-decoration: none;
-	color: white;
-}
+    /* Utility Classes */
+    .emoji:nth-child(1) {
+      width: 33px;
+      transform: translate(0, -3px);
+    }
 
-.bannerholder{
-    top:0;
-    left:0;
-	width:100%;
-	height:128px;
-	display:block;
-	background-color: rgba(255, 255, 255, 0);
-    z-index: 80;
-    position: sticky;
-}
+    .emoji2 {
+      width: 20px;
+      margin-right: 5px;
+      transform: translate(0, -3px);
+    }
 
-.logo{
-	top:50%;
-	left:50px;
-	transform: translate(0,-50%);
-	filter: invert(1);
-	position: absolute;
-}
+    .no-transitions * {
+      transition: none !important;
+      animation: none !important;
+    }
 
-@keyframes opin{
-	0%{
-		opacity:0;
-		top:110%;
-	}
-	100%{
-		opacity:1;
-		top:100%;
-	}
-}
+    #moreHeader:hover {
+      transform: scale(1.02);
+      transition: 0.2s;
+    }
 
-@keyframes opout{
-	0%{
-		opacity:1;
-	}
-	100%{
-		opacity:0;
-	}
-}
+    #moreHeader:active {
+      transform: scale(0.97);
+      transition: 0.2s;
+    }
 
-@keyframes langon{
-	0%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-	100%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -12px);
-	}
-}
+    /* Gradients */
+    #grad {
+      background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(32, 32, 32, 0.5) 100%
+      );
+    }
 
-@keyframes langoff{
-	0%{
-		opacity:1;
-		height:320px;
-		transform: translate(50px, -12px);
-	}
-	100%{
-		opacity:0;
-		height:0px;
-		transform: translate(50px, -15px);
-	}
-}
+    /* Responsive Design */
+    @media (max-width: 1400px) {
+      .btn2 {
+        opacity: 1;
+      }
+    }
 
-#links, #dropMenu{
-	display: flex;
-	gap:10px;
-	width:auto;
-	right:50px;
-	top:60px;
-	transform: translate(0, -50%);
-	align-items:center;
-	justify-content:center;
-	font-family: systemui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	color:rgba(255, 255, 255, 0.53);
-	position: absolute;
-}
+    @media (max-width: 1000px) {
+      .bannerholder {
+        height: var(--header-mobile-height);
+        opacity: 0;
+        pointer-events: none;
+      }
 
-@media (max-width:1400px){
-		.btn2{
-			opacity:1;
-		}
-	}
+      .lang {
+        display: none;
+      }
 
-@media (max-width:1000px){
-	.container{
-		top:0;
-		left:0;
-		width:100%;
-		height:100%;
-		transform: translate(0, 0);
-		border: 0px;
-		border-radius: 0px;
-		animation: none;
-		position: fixed;
-	}
+      span {
+        display: none;
+      }
 
-	.osimg{
-		left:90%;
-		transform: translate(-50%, 0);
-		position: relative;
-	}
-	
-	.bannerholder{
-		height:98px;
-		opacity:0;
-		pointer-events: none;
-	}
+      .btn1 {
+        display: none;
+      }
+    }
 
-	.lang{
-		display: none;
-	}
+    @media (min-width: 2000px) {
+      .bannerholder {
+        width: var(--max-width);
+        left: 50%;
+        transform: translate(-50%, 0);
+        border-bottom-left-radius: var(--border-radius-standard);
+        border-bottom-right-radius: var(--border-radius-standard);
+        position: fixed;
+      }
+    }
 
-	span{
-		display:none;
-	}
+    /* Animations */
+    @keyframes opin {
+      from {
+        opacity: 0;
+        top: 110%;
+      }
+      to {
+        opacity: 1;
+        top: 100%;
+      }
+    }
 
-	.btn1{
-		display:none;
-	}
-}
+    @keyframes opout {
+      from {
+        opacity: 1;
+      }
+      to {
+        opacity: 0;
+      }
+    }
 
+    @keyframes langon {
+      from {
+        opacity: 0;
+        height: 0;
+        transform: translate(50px, -15px);
+      }
+      to {
+        opacity: 1;
+        height: 320px;
+        transform: translate(50px, -12px);
+      }
+    }
 
-@media (min-width:2000px) {
-		.bannerholder{
-			width:2000px;
-			left:50%;
-			top:0px;
-			transform: translate(-50%, 0);
-			border-bottom-left-radius: 8px;
-			border-bottom-right-radius: 8px;
-			position: fixed;
+    @keyframes langoff {
+      from {
+        opacity: 1;
+        height: 320px;
+        transform: translate(50px, -12px);
+      }
+      to {
+        opacity: 0;
+        height: 0;
+        transform: translate(50px, -15px);
+      }
+    }
+  </style>
+
+  <style is:global>
+    /* Global Styles */
+    .no-transitions * {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    .dropdown-item {
+      white-space: wrap !important;
+    }
+
+	.dropdownpfp:hover {
+      border: 2px solid #ffffff30;
+      transition: 0.1s;
+    }
+
+	.dropdownpfp {
+	  border: 0px solid #ffffff30;
+	  transition: 0.1s;
 	}
-</style>
+  </style>
+</r>

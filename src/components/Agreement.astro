@@ -1,10 +1,7 @@
 ---
-import { changeLanguage } from "i18next";
-import { SITE_TITLE, SITE_DESCRIPTION } from "/consts";
-import FormattedDate from "../components/FormattedDate.astro";
-import i18next, { t, changeLanguage } from "i18next";
+import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
-import { LanguageSelector } from "astro-i18next/components"
+import LanguageDropdown from "./LanguageDropdown.astro";
 ---
 
 <div class="holder">
@@ -13,7 +10,14 @@ import { LanguageSelector } from "astro-i18next/components"
     aria-label="Home Link"
     class="logohold"
     style="transform:translate(-50px,0);"
-    ><img loading="lazy" alt="WiiLink Logo" class="logo" src="/img/Wii_Link_Logo.webp" width="140px" height="50px" /></a
+    ><img
+      loading="lazy"
+      alt="WiiLink Logo"
+      class="logo"
+      src="/img/Wii_Link_Logo.webp"
+      width="140px"
+      height="50px"
+    /></a
   >
   <button
     style="z-index:1000;"
@@ -33,26 +37,20 @@ import { LanguageSelector } from "astro-i18next/components"
   id="offcanvasTop"
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
-    <img
-    loading="lazy"
-      alt="WiiLink Logo"
-      src="/img/Wii_Link_Logo.webp"
-      width="140px"
-      height="50px"
-      class="invert"
-      style="margin: 0 auto; filter:invert(1); display: block;"
-    />
+    <span style="display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px; padding:8px;">
+    <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"><div id="pfp-container" style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)"><i class="fa fa-user"></i></div></a>
+    <img src="/img/Wii_Link_Logo.webp" width="140px" height="50px" />
     <button
       type="button"
       class="btn-close"
-      style="top:23px; right:20px; z-index: 100; position:absolute;"
+      style=""
       data-bs-dismiss="offcanvas"
       aria-label="Close">
     </button>
+    </span>
 
     <div class="buttons">
-      <a href="/"
-      aria-label="Home Link"
+      <a href="/" aria-label="Home Link"
         ><button
           type="button"
           class="btn btn-success"
@@ -66,84 +64,161 @@ import { LanguageSelector } from "astro-i18next/components"
         type="button"
         class="btn btn-light"
         style="border-radius: 4px 16px 16px 4px; background-color: var(--color);"
-        onclick="darkToggle()"
+        onclick="themeToggle()"
         ><i class="fa-solid fa-sun" style="color: var(--bg-color-absolute);"
         ></i></button
       >
     </div>
     <hr />
+    <LanguageDropdown ismobile/>
     <div class="holdcontainer"></div>
     <div class="elements">
-      <a class="link" href="/" aria-label="Home Link" style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/"
+        aria-label="Home Link"
+        style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
         <i class="fas fa-home"></i>
         {t("header.home")}
       </a>
-      <a class="link" href="/news" aria-label="News Link" style="z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/news"
+        aria-label="News Link"
+        style="z-index: 1; position:relative">
         <i class="fas fa-newspaper"></i>
         {t("header.news")}
       </a>
-      <a class="link" href="/guide" aria-label="Guide Link" style="z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/guide"
+        aria-label="Guide Link"
+        style="z-index: 1; position:relative">
         <i class="fas fa-book"></i>
         {t("header.guide")}
       </a>
-      <a class="link" href="/status" aria-label="Status Link" style="z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/status"
+        aria-label="Status Link"
+        style="z-index: 1; position:relative">
         <i class="fas fa-info-circle"></i>
         {t("header.status")}
       </a>
-      <a class="link" href="/services" aria-label="Services Link" style="z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/services"
+        aria-label="Services Link"
+        style="z-index: 1; position:relative">
         <i class="fas fa-cogs"></i>
         {t("header.services")}
       </a>
-      <a class="link" href="/extras" aria-label="Extras Link" style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
+      <a
+        class="link"
+        href="/extras"
+        aria-label="Extras Link"
+        style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
         <i class="fas fa-gift"></i>
         {t("header.extras")}
       </a>
     </div>
     <br />
     <li style="padding:12px; opacity:1 !important;">
-      <a href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><i class="fa-solid fa-globe"></i> WiiLink WFC</div><span class="p-1 bg-danger rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;"><i class="fa-solid fa-fire"></i></span></a
+      <a
+        href="https://wfc.wiilink24.com"
+        aria-label="WiiLink WFC Link"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        ><div><i class="fa-solid fa-globe"></i> WiiLink WFC</div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a href="https://miicontest.wiilink.ca" aria-label="CMOC Viewing Tool Link" style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+      <a
+        href="https://miicontest.wiilink.ca"
+        aria-label="CMOC Viewing Tool Link"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://evc.wiilink.ca" aria-label="EVC Viewing Tool Link">
-        <div><i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel</div>
-        <span class="p-1 bg-info rounded" style="width:30px; height:30px; text-align:center; color:white; display:flex; align-items:center; justify-content:center;">
-          <i class="fa-solid fa-star"></i>
-        </span>
+      <a
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://evc.wiilink.ca"
+        aria-label="EVC Viewing Tool Link">
+        <div>
+          <i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel
+        </div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://tag.rc24.xyz/" aria-label="LinkTag">
+      <a
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://tag.rc24.xyz/"
+        aria-label="LinkTag">
         <div><i class="fa-solid fa-tag"></i> LinkTag</div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://card.wiilink24.com/" aria-label="LinkTag">
+      <a
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://card.wiilink24.com/"
+        aria-label="LinkTag">
         <div><i class="fa-solid fa-address-card"></i> Digicard</div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
-      <a style="display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://stamp.wiilink.ca/" aria-label="LinkTag">
+      <a
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://stamp.wiilink.ca/"
+        aria-label="LinkTag">
         <div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div>
       </a>
     </li>
-    <hr>
+    <hr />
 
-			<div style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
-				<a href="https://bookmark.rc24.xyz" style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Wii Bookmarks" title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a>
-				<a href="http://disc.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured." title="Get the date your GameCube, Wii, or Wii U disc was manufactured."><i class="fa-solid fa-compact-disc"></i></a>
-				<a href="http://interviews.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Nintendo dev interviews" title="Nintendo dev interviews"><i class="fa-solid fa-comments"></i></a>
-				<a href="http://wiiremote.rc24.xyz/" style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;" aria-label="Get the date your Wii Remote was manufactured." title="Get the date your Wii Remote was manufactured."><i class="fa-solid fa-gamepad"></i></a>
-			</div>
-			<a style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;" href="https://forum.wiilink.ca/" aria-label="LinkTag"><div style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;"><img src="/img/favicon.webp" style="filter:brightness(10000);" height="20px"> WiiLink Forum</div></a>
+    <div
+      style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
+      <a
+        href="https://bookmark.rc24.xyz"
+        style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
+        aria-label="Wii Bookmarks"
+        title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a
+      >
+      <a
+        href="http://disc.rc24.xyz/"
+        style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+        aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+        title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+        ><i class="fa-solid fa-compact-disc"></i></a
+      >
+      <a
+        href="http://interviews.rc24.xyz/"
+        style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+        aria-label="Nintendo dev interviews"
+        title="Nintendo dev interviews"><i class="fa-solid fa-comments"></i></a
+      >
+      <a
+        href="http://wiiremote.rc24.xyz/"
+        style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
+        aria-label="Get the date your Wii Remote was manufactured."
+        title="Get the date your Wii Remote was manufactured."
+        ><i class="fa-solid fa-gamepad"></i></a
+      >
+    </div>
+    <a
+      style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;"
+      href="https://forum.wiilink.ca/"
+      aria-label="LinkTag"
+      ><div
+        style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;">
+        <img
+          src="/img/favicon.webp"
+          style="filter:brightness(10000);"
+          height="20px"
+        /> WiiLink Forum
+      </div></a
+    >
 
-    <hr>
+    <hr />
 
     <li>
       <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
@@ -156,10 +231,14 @@ import { LanguageSelector } from "astro-i18next/components"
       >
     </li>
     <li>
-      <a href="/tos" aria-label="Terms of Service Link"><i class="fa-solid fa-feather"></i> {t("header.tos")}</a>
+      <a href="/tos" aria-label="Terms of Service Link"
+        ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
+      >
     </li>
     <li>
-      <a href="/eula" aria-label="EULA Link"><i class="fa-solid fa-book"></i> EULA</a>
+      <a href="/eula" aria-label="EULA Link"
+        ><i class="fa-solid fa-book"></i> EULA</a
+      >
     </li>
   </div>
 </div>
@@ -232,12 +311,12 @@ import { LanguageSelector } from "astro-i18next/components"
 
   .link:active {
     transform: scale(0.95);
-    transition:0.2s;
+    transition: 0.2s;
   }
 
   li {
     padding: 4px;
-    padding-left:8px;
+    padding-left: 8px;
     border-radius: 4px;
     list-style-type: none;
     opacity: 0.5;
