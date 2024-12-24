@@ -39,7 +39,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
   <div class="offcanvas-body">
     <span style="display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px; padding:8px;">
     <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"><div id="pfp-container" style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)"><i class="fa fa-user"></i></div></a>
-    <img src="/img/Wii_Link_Logo.webp" width="140px" height="50px" />
+    <img src="/img/Wii_Link_Logo.webp" style="filter:invert(var(--invert));" width="140px" height="50px" />
     <button
       type="button"
       class="btn-close"
@@ -54,7 +54,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         ><button
           type="button"
           class="btn btn-success"
-          style="border-radius: 16px 4px 4px 16px; width:100%; height:60px;"
+          style="border-radius: 16px 4px 4px 4px; width:100%; height:60px;"
           ><i class="fa-solid fa-download" style="color: white !important;"
           ></i></button
         ></a
@@ -63,14 +63,14 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         id="themeColorMobile"
         type="button"
         class="btn btn-light"
-        style="border-radius: 4px 16px 16px 4px; background-color: var(--color);"
+        style="border-radius: 4px 16px 4px 4px; background-color: var(--color);"
         onclick="themeToggle()"
         ><i class="fa-solid fa-sun" style="color: var(--bg-color-absolute);"
         ></i></button
       >
     </div>
-    <hr />
     <LanguageDropdown ismobile/>
+    <hr />
     <div class="holdcontainer"></div>
     <div class="elements">
       <a
@@ -204,19 +204,6 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         ><i class="fa-solid fa-gamepad"></i></a
       >
     </div>
-    <a
-      style="padding:8px; margin-top:6px; border-radius:8px; background-color:#3aa01d; border: 1px solid #3aa01d60; display:flex; align-items:center; justify-content:space-between; gap:8px;"
-      href="https://forum.wiilink.ca/"
-      aria-label="LinkTag"
-      ><div
-        style="width:100%; display:flex; flex-direction:row; align-items:center; justify-content:center; gap:6px; color:white!important; position:relative;">
-        <img
-          src="/img/favicon.webp"
-          style="filter:brightness(10000);"
-          height="20px"
-        /> WiiLink Forum
-      </div></a
-    >
 
     <hr />
 

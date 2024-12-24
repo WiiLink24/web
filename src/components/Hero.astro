@@ -281,7 +281,7 @@ import { Trans } from "astro-i18next/components";
   </div>
 
   <h1 id="fetcherHero" style="display:none;">
-    json{localizePath("/hero.json")}
+    ../json{localizePath("/hero.json")}
   </h1>
 
   <script is:inline>
@@ -290,7 +290,7 @@ import { Trans } from "astro-i18next/components";
     function downloadPatcher() {
       if (document.getElementById("flexCheckDefault").checked) {
         let userAgent = window.navigator.userAgent;
-        let os = "Unknown OS";
+        let os = "Download Patcher";
 
         if (userAgent.indexOf("Win") != -1) os = "Windows";
         if (userAgent.indexOf("Mac") != -1) os = "MacOS";
@@ -475,8 +475,133 @@ import { Trans } from "astro-i18next/components";
       const os = osdetect();
       const downloadBtn = document.getElementById("download-btn");
       const icon = osIcons[os] || "fa-download";
-      const osName = os === "Unknown" ? downloadPrompt : `${downloadFor} ${os}`;
-      downloadBtn.innerHTML = `<i class='fa-brands ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+      const osName = os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
+      const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
+      downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+    });
+
+    (function() {
+        updateTagline();
+        updateHero();
+        
+        setTimeout(() => {
+            setInterval(updateHero, 10000);
+        }, 10000);
+        
+        window.requestIdleCallback = window.requestIdleCallback || function(cb) {
+            return setTimeout(cb, 1);
+        };
+        
+        requestIdleCallback(() => {
+            loadGitHubData();
+            updateButtons();
+        });
+    })();
+
+    async function loadGitHubData() {
+        const octokit = new Octokit({ auth: "" });
+        try {
+            const { data: release } = await octokit.request(
+                "GET /repos/{owner}/{repo}/releases/latest",
+                { owner: "WiiLink24", repo: "WiiLink24-Patcher" }
+            );
+            
+            if (release?.assets) {
+                document.getElementById("verno").textContent = release.tag_name;
+                assets = release.assets.map(asset => asset.browser_download_url);
+                
+                const downloadElements = {
+                    "download-windows": assets[4],
+                    "download-macos-arm": assets[2],
+                    "download-macos-x64": assets[3],
+                    "download-linux-arm": assets[0],
+                    "download-linux-x64": assets[1]
+                };
+                
+                for (const [id, url] of Object.entries(downloadElements)) {
+                    if (url) document.getElementById(id).href = url;
+                }
+            }
+        } catch (error) {
+            console.error("Error fetching GitHub release:", error);
+        }
+    }
+
+    // Single function to handle all GitHub data fetching and UI updates
+    async function handleGitHubData() {
+      const octokit = new Octokit({ auth: "" });
+      const owner = "WiiLink24";
+      const repo = "WiiLink24-Patcher";
+
+      try {
+        const { data: release } = await octokit.request(
+          "GET /repos/{owner}/{repo}/releases/latest",
+          { owner, repo, headers: { "X-GitHub-Api-Version": "2022-11-28" } }
+        );
+
+        if (release?.assets) {
+          // Update version number
+          const versionNumber = release.tag_name;
+          document.getElementById("verno").textContent = versionNumber;
+
+          // Map asset URLs
+          const assetUrls = release.assets.map(asset => asset.browser_download_url);
+          
+          // Store assets globally for download function
+          window.assets = assetUrls;
+
+          // Configure download buttons
+          const downloadElements = {
+            "download-windows": assetUrls[4],
+            "download-macos-arm": assetUrls[2], 
+            "download-macos-x64": assetUrls[3],
+            "download-linux-arm": assetUrls[0],
+            "download-linux-x64": assetUrls[1]
+          };
+
+          // Update all download links
+          for (const [id, url] of Object.entries(downloadElements)) {
+            if (url) document.getElementById(id).href = url;
+          }
+
+          // Update main download button
+          const downloadFor = document.getElementById("downloadFor").textContent;
+          const downloadPrompt = document.getElementById("downloadPrompt").textContent;
+
+          const osIcons = {
+            MacOS: "fa-apple",
+            Windows: "fa-microsoft", 
+            Linux: "fa-linux"
+          };
+
+          const os = osdetect();
+          const downloadBtn = document.getElementById("download-btn");
+          const icon = osIcons[os] || "fa-download";
+          const osName = os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
+          const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
+          downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+        }
+      } catch (error) {
+        console.error("Error fetching GitHub release:", error);
+      }
+    }
+
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", async function() {
+      updateTagline();
+      updateHero();
+      updateButtons();
+      await handleGitHubData();
+      setInterval(updateHero, 10000);
+    });
+
+    // On idle initialization 
+    window.requestIdleCallback = window.requestIdleCallback || function(cb) {
+      return setTimeout(cb, 1);
+    };
+
+    requestIdleCallback(() => {
+      updateButtons();
     });
   </script>
 
