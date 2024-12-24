@@ -90,14 +90,14 @@
     "socials": {
       "title": "Check out the project's <0>socials</0>!",
       "subtitle": "Keep up with all service <0>updates</0> and <1>general announcements</1> or come join the Discord server.",
-      "twFollowers": "500+ followers",
+      "twFollowers": "followers",
       "twFollow": "Follow",
       "twTweets": "Tweets by WiiLink24",
-      "dcMembers": "26.3K members",
+      "dcMembers": "members",
       "dcJoin": "Join",
-      "ghFollowers": "133 followers",
+      "ghFollowers": "followers",
       "ghFollow": "Follow",
-      "ytSubscribers": "2.3K subscribers",
+      "ytSubscribers": "subscribers",
       "ytSubscribe": "Subscribe"
     },
     "team": {

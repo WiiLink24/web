@@ -1,6 +1,79 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+
+async function fetchCounts() {
+  const results = {};
+  
+  async function fetchGitHub() {
+    try {
+      const response = await fetch('https://api.github.com/users/wiilink24');
+      const data = await response.json();
+      return data.followers || 0;
+    } catch (error) {
+      console.error('GitHub Error:', error);
+      return 'Error';
+    }
+  }
+
+  async function fetchDiscord() {
+    try {
+      const response = await fetch('https://discord.com/api/v9/invites/wiilink?with_counts=true');
+      const data = await response.json();
+      return data.approximate_member_count || 0;
+    } catch (error) {
+      console.error('Discord Error:', error);
+      return 'Error';
+    }
+  }
+
+  async function fetchYouTube() {
+    try {
+      const response = await fetch('https://mixerno.space/api/youtube-channel-counter/user/UC_14J0EMfli2hVoBaQq0d3w');
+      const data = await response.json();
+      return data.counts[0].count || 0;
+    } catch (error) {
+      console.error('YouTube Error:', error);
+      return 'Error';
+    }
+  }
+
+  async function fetchBluesky() {
+    try {
+      const response = await fetch('https://api-v2.nextcounts.com/api/bluesky/user/wiilink.ca');
+      const data = await response.json();
+      return data.followers || 0;
+    } catch (error) {
+      console.error('Bluesky Error:', error);
+      return 'Error';
+    }
+  }
+
+  try {
+    const [github, discord, youtube, bluesky] = await Promise.all([
+      fetchGitHub(),
+      fetchDiscord(),
+      fetchYouTube(),
+      fetchBluesky()
+    ]);
+
+    return {
+      github,
+      discord,
+      youtube,
+      bluesky
+    };
+  } catch (error) {
+    return {
+      github: 'Error',
+      discord: 'Error',
+      youtube: 'Error',
+      bluesky: 'Error'
+    };
+  }
+}
+
+const counts = await fetchCounts();
 ---
 
 <div class="build">
@@ -22,119 +95,142 @@ import { Trans } from "astro-i18next/components";
         <div class="follow">
           <span
             style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-            class="badge bg-primary">{t("socials.twFollowers")}</span
+            class="badge bg-primary">{counts.bluesky} {t("socials.twFollowers")}</span
           >
-          <img loading="lazy" alt="Bluesky Logo" class="socials-logo" src="img/bluesky_logo.png" height="40px" />
+          <img
+            loading="lazy"
+            alt="Bluesky Logo"
+            class="socials-logo"
+            src="img/bluesky_logo.png"
+            height="40px"
+          />
           <div class="buttons">
-            <div class="dropdown" style="width:100%; position:relative; ">
+            <div class="dropdown" style="width:100%; position:relative;">
               <button
                 class="btn btn-primary dropdown-toggle"
                 style="background-color:var(--bg-color-secondary); margin-bottom:8px; width:100%; position:relative; color:#289bff;"
                 type="button"
                 data-bs-toggle="dropdown"
-                aria-expanded="false"
-              > 
+                aria-expanded="false">
                 {t("socials.twFollow")}
               </button>
               <ul
                 class="dropdown-menu"
-                style="width:250%; padding:10px; background-color:var(--bg-color-secondary);"
-              >
+                style="width:250%; padding:10px; background-color:var(--bg-color-secondary);">
                 <li>
-                  <a class="dropdown-item center" aria-label="English Twitter Link" href="https://bsky.app/profile/wiilink24.com"
-                    ><img alt="American Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg" style="margin-right:5px;" width="20" height="25"></i> English</a
+                  <a
+                    class="dropdown-item center"
+                    aria-label="English Twitter Link"
+                    href="https://bsky.app/profile/wiilink24.com"
+                    ><img
+                      alt="American Flag"
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1fa-1f1f8.svg"
+                      style="margin-right:5px;"
+                      width="20"
+                      height="25"
+                    /> English</a
                   >
                 </li>
                 <li>
-                  <a class="dropdown-item center" aria-label="Japanese Twitter Link" href="https://bsky.app/profile/did:plc:sxhc44x5ouhdmyzspe26meop"
-                    ><img alt="Japanese Flag" src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg" style="margin-right:5px;" width="20" height="25"></i> 日本語</a
+                  <a
+                    class="dropdown-item center"
+                    aria-label="Japanese Twitter Link"
+                    href="https://bsky.app/profile/did:plc:sxhc44x5ouhdmyzspe26meop"
+                    ><img
+                      alt="Japanese Flag"
+                      src="https://abs-0.twimg.com/emoji/v2/svg/1f1ef-1f1f5.svg"
+                      style="margin-right:5px;"
+                      width="20"
+                      height="25"
+                    /> 日本語</a
                   >
                 </li>
               </ul>
+        </div>
+      </div>
+    </div>
+    <bsky-embed username="wiilink.ca" mode="dark" limit="5"> </bsky-embed>
+  </div>
+  <div class="discord" style="border-radius:8px 16px 8px 8px;">
+    <div class="follow dsc">
+      <img
+        alt="Discord Logo"
+        loading="lazy"
+        class="socials-logo"
+        src="img/discord_logo.webp"
+        height="30px"
+      />
+      <span
+        style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+        class="badge bg-info">{counts.discord} {t("socials.dcMembers")}</span
+      >
+      <div class="buttons">
+        <a href="https://discord.gg/wiilink" aria-label="Discord Link"
+          ><div
+            style="background-color:var(--bg-color-secondary); color:#004078;"
+            class="btn">
+            {t("socials.dcJoin")}
+          </div></a
+        >
+      </div>
+    </div>
+    <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
+      <iframe
+        loading="lazy"
+        title="Discord Widget"
+        src="https://discord.com/widget?id=206934458954153984&theme=dark"
+        style="top:-20px; position:absolute;"
+        width="100%"
+        height="580px"
+        allowtransparency="true"
+        frameborder="0"></iframe>
+    </div>
+    <img
+      alt="Loading..."
+      style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;"
+      src="img/loading.gif"
+      width="30px"
+    />
+  </div>
+  <div class="social github" style="border-radius:8px 8px 8px 16px;">
+    <div class="inner">
+      <i class="fa-brands fa-github"></i>
+      <a href="https://github.com/WiiLink24" aria-label="GitHub Link"
+        ><span
+          style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+          class="badge bg-dark">{counts.github} {t("socials.ghFollowers")}</span
+        >
+        <div
+          style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
+          class="buttons">
+          <div
+            style="top:0; margin:0px; position:relative;"
+            class="btn bg-dark text-white">
+            {t("socials.ghFollow")}
           </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="social youtube" style="border-radius:8px 8px 16px 8px;">
+    <div class="inner">
+      <i class="fa-brands fa-youtube" style="color:rgb(206, 47, 47);"></i><a
+        href="https://www.youtube.com/@wiilink"
+        aria-label="YouTube Link"
+        ><span
+          style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+          class="badge bg-danger">{counts.youtube} {t("socials.ytSubscribers")}</span
+        >
+        <div
+          style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
+          class="buttons">
+          <div
+            style="top:0; margin:0px; position:relative;"
+            class="btn bg-danger text-white">
+            {t("socials.ytSubscribe")}
           </div>
         </div>
-        <bsky-embed
-  username="wiilink.ca"
-  mode="dark"
-  limit="5"
->
-</bsky-embed>
-      </div>
-      <div class="discord" style="border-radius:8px 16px 8px 8px;">
-        <div class="follow dsc">
-          <img alt="Discord Logo" loading="lazy" class="socials-logo" src="img/discord_logo.webp" height="30px" />
-          <span
-            style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-            class="badge bg-info">{t("socials.dcMembers")}</span
-          >
-          <div class="buttons">
-            <a href="https://discord.gg/wiilink" aria-label="Discord Link"
-              ><div style="background-color:var(--bg-color-secondary); color:#004078;" class="btn">
-                {t("socials.dcJoin")}
-              </div></a
-            >
-          </div>
-        </div>
-        <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
-          <iframe
-          loading="lazy"
-          title="Discord Widget"
-            src="https://discord.com/widget?id=206934458954153984&theme=dark"
-            style="top:-20px; position:absolute;"
-            width="100%"
-            height="580px"
-            allowtransparency="true"
-            frameborder="0"
-          ></iframe>
-        </div>
-        <img
-        alt="Loading..."
-          style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;"
-          src="img/loading.gif"
-          width="30px"
-        />
-      </div>
-      <div class="social github" style="border-radius:8px 8px 8px 16px;">
-        <div class="inner">
-          <i class="fa-brands fa-github"></i>
-          <a href="https://github.com/WiiLink24" aria-label="GitHub Link"
-            ><span
-              style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-              class="badge bg-dark">{t("socials.ghFollowers")}</span
-            >
-            <div
-              style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
-              class="buttons">
-              <div
-                style="top:0; margin:0px; position:relative;"
-                class="btn bg-dark text-white">
-                {t("socials.ghFollow")}
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="social youtube" style="border-radius:8px 8px 16px 8px;">
-        <div class="inner">
-          <i class="fa-brands fa-youtube" style="color:rgb(206, 47, 47);"></i><a
-            href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
-            ><span
-              style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-              class="badge bg-danger">{t("socials.ytSubscribers")}</span
-            >
-            <div
-              style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
-              class="buttons">
-              <div
-                style="top:0; margin:0px; position:relative;"
-                class="btn bg-danger text-white">
-                {t("socials.ytSubscribe")}
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -168,18 +264,18 @@ import { Trans } from "astro-i18next/components";
     position: relative;
   }
   .dropdown-item {
-      color: white;
-      border-radius: 8px;
-      padding: 10px;
-    }
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+  }
   .dropdown-item:hover {
     background-color: #ffffff10;
     color: white;
-     transition: 0.3s;
+    transition: 0.3s;
   }
   .dropdown-toggle::after {
     display: none;
-   }
+  }
   .inner {
     top: 50%;
     left: 10px;
@@ -326,11 +422,12 @@ import { Trans } from "astro-i18next/components";
 
     .twitter {
       height: 80px;
-      background-color:#289bff;
+      background-color: #289bff;
       border-radius: 16px 16px 8px 8px !important;
     }
 
-    .discord, .github {
+    .discord,
+    .github {
       border-radius: 8px !important;
     }
 
