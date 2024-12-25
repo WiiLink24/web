@@ -1,7 +1,7 @@
 ---
 title: Game Nights
 pubDate: 2024-01-24
-icon: fa-solid fa-gamepad
+icon: lucide:gamepad-2
 description: Play a Wii game on Wiimmfi and WiiLink WFC every week!
 type: "Extra"
 color: 35418f60

@@ -1,7 +1,7 @@
 ---
 title: Wii Speak Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-microphone
+icon: lucide:mic
 description: Voice chat with people on your Wii!
 heroImage: "speak.webp"
 type: "WiiConnect24"

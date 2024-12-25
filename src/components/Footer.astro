@@ -3,6 +3,7 @@ const today = new Date();
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
+import { Icon } from "astro-icon/components";
 
 let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
 ---
@@ -15,13 +16,13 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           alt="WiiLink Logo"
           loading="lazy"
           class="footer-logo logo"
-          src="../../img/logo.webp"
+          src="/img/logo.webp"
           width="150px"
           height="97px"
         />
         <p
           style="margin:0; margin-top:12px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
-          <i class="fa-solid fa-globe-americas" style="margin-right:5px;"></i>
+          <Icon name="lucide:globe" style="margin-right:5px; margin-bottom:5px;" />
           {t("footer.siteby")}
           <a href="https://github.com/humanoidear" aria-label="Alex's GitHub"
             ><button
@@ -43,14 +44,14 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
-          <i class="fa-solid fa-envelope-open" style="margin-right:5px;"></i>
+          <Icon name="lucide:mail-open" style="margin-right:5px; margin-bottom:5px;" />
           <a href="mailto:support@wiilink.ca" aria-label="Contact Link"><u>support@wiilink.ca</u></a
           >
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
           <a href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link" style="margin-right:5px;"
-            ><i class="fas fa-wifi"></i> WiiLink WFC</a
+            ><Icon name="lucide:wifi" style="margin-bottom:5px;" /> WiiLink WFC</a
           >
         </p>
       </div>
@@ -101,13 +102,13 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="discord.gg/wiilink"
-            ><i style="margin-right:5px;" class="fa-brands fa-discord"
-            ></i>Discord</a
+            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:discord"
+             />Discord</a
           >
           <div class="dropdown">
             <a href="#" aria-label="Language Dropdown" class="dropdown-toggle" data-bs-toggle="dropdown">
-              <i style="margin-right:10px;" class="fa-brands fa-twitter"
-              ></i>Twitter
+              <Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:twitter"
+               />Twitter
             </a>
             <ul
               class="dropdown-menu"
@@ -180,8 +181,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           </div>
           <div class="dropdown">
             <a href="#" aria-label="Language Dropdown" class="dropdown-toggle" data-bs-toggle="dropdown">
-              <i style="margin-right:10px;" class="fa-brands fa-bluesky"
-              ></i>Bluesky
+              <Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:bluesky"
+               />Bluesky
             </a>
             <ul
               class="dropdown-menu"
@@ -221,24 +222,24 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
-            ><i style="margin-right:10px;" class="fa-brands fa-github"
-            ></i>GitHub</a
+            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:github"
+             />GitHub</a
           >
           <a
             href="https://www.instagram.com/_wiilink" aria-label="Instagram Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title={t("site.donate")}
-            ><i style="margin-right:10px;" class="fa-brands fa-instagram"
-            ></i>Instagram</a
+            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:instagram"
+             />Instagram</a
           >
           <a
             href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
-            ><i style="margin-right:5px;" class="fa-brands fa-youtube"
-            ></i>YouTube</a
+            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:youtube"
+             />YouTube</a
           >
         </div>
         <div class="column">
@@ -288,21 +289,21 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
 
     <div class="footer-holder legal" style={display}>
       <a href="/tos" aria-label="Terms of Service Link">
-        <i class="fas fa-arrow-right" style="margin-right:5px;"></i>{
+        <Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />{
           t("header.tos")
         }</a
       >
       <a href="/privacy-policy" aria-label="Privacy Policy Link"
-        ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
+        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />
         {t("header.privacyPolicy")}</a
       >
       <a href="/eula" aria-label="EULA Link"
-        ><i class="fas fa-arrow-right" style="margin-right:5px;"></i>
+        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />
         {t("header.eula-long")}</a
       >
       <a
         href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" aria-label="Cookies Message Popup"
-        ><i class="fas fa-arrow-right" style="margin-right:5px;"></i> Privacy and
+        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" /> Privacy and
         cookie settings</a
       >
     </div>

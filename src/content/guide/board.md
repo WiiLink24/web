@@ -2,7 +2,7 @@
 title: Wii Message Board
 pubDate: 2024-12-23
 description: Get up-to-date instructions on how to patch the Wii Message Board!
-icon: fa-solid fa-chalkboard
+icon: lucide:presentation
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">

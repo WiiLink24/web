@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
@@ -9,6 +8,7 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import Ad from "../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 
@@ -51,25 +51,25 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
       <a href="#wiiconnect24">
         <div class="link bg-1" style="border-radius:16px 4px 4px 16px">
-          <i class="fa-solid fa-globe"></i>
+          <Icon name="lucide:globe" style="margin-bottom:5px;" />
           {t("svc-site.wc24-min")}
         </div>
       </a>
       <a href="#japanese">
         <div class="link bg-2">
-          <i class="fa-solid fa-earth-asia"></i>
+          <Icon name="lucide:earth" style="margin-bottom:5px;" />
           {t("svc-site.jp-min")}
         </div>
       </a>
       <a href="#european">
         <div class="link bg-3">
-          <i class="fa-solid fa-earth-europe"></i>
+          <Icon name="lucide:earth" style="margin-bottom:5px;" />
           {t("svc-site.eu-min")}
         </div>
       </a>
       <a href="#extra">
         <div class="link bg-4" style="border-radius:4px 16px 16px 4px">
-          <i class="fa-solid fa-box-open"></i>
+          <Icon name="lucide:package-open" style="margin-bottom:5px;" />
           {t("svc-site.extra-min")}
         </div>
       </a>
@@ -82,7 +82,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       id="wiiconnect24"
       onclick="toggle2('wc24', 'wiiconnect24');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-globe"></i>
+        <Icon name="lucide:globe" style="margin-bottom:5px;" />
         <Trans i18nKey="svc-site.wc24"
           ><b style="font-family:Gilroy;">WiiConnect24</b> services</Trans
         >
@@ -128,7 +128,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       id="japanese"
       onclick="toggle2('jp', 'japanese');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-earth-asia"></i>
+        <Icon name="lucide:earth" style="margin-bottom:5px;" />
         <Trans i18nKey="svc-site.jp"
           ><b style="font-family:Gilroy;">Japanese exclusive</b> services</Trans
         >
@@ -174,7 +174,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       id="european"
       onclick="toggle2('eu', 'european');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-earth-europe"></i>
+        <Icon name="lucide:earth" style="margin-bottom:5px;" />
         <Trans i18nKey="svc-site.eu"
           ><b style="font-family:Gilroy;">European exclusive</b> services</Trans
         >
@@ -220,7 +220,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       id="extra"
       onclick="toggle2('ex', 'extra');">
       <h2 style="padding:0px 17px 0px 17px; margin-bottom:0;">
-        <i class="fa-solid fa-box-open"></i>
+        <Icon name="lucide:package-open" style="margin-bottom:5px;" />
         <Trans i18nKey="svc-site.extra"
           ><b style="font-family:Gilroy;">Extra</b> services</Trans
         >
@@ -274,13 +274,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     <div class="btn-wrapper">
       <a href="mailto:support@wiilink.ca"
         ><div class="btn btn-success" style="padding:10px;">
-          <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
+          <Icon name="lucide:mail" style="margin-right:5px; margin-bottom:3px;" />
           {t("guide.helpButton1")}
         </div></a
       >
       <a href="https://discord.gg/wiilink"
         ><div class="btn btn-primary" style="padding:10px;">
-          <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
+          <Icon name="simple-icons:discord" style="margin-right:5px; margin-bottom:3px;" />
           {t("guide.helpButton2")}
         </div></a
       >

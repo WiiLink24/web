@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -160,7 +161,7 @@ changeLanguage("en");
 
 <body>
   <div class="container">
-<h1 class="header"><i class="fas fa-download" aria-hidden="true"></i> Theme Downloads</h1>
+<h1 class="header"><Icon name="lucide:download" aria-hidden="true" style="margin-bottom:10px;" /> Theme Downloads</h1>
 <h5 class="header">Here's our collection of themes you can download.</h5>
 
 	<br>

@@ -1,6 +1,6 @@
 ---
 title: Problem solving
-icon: fa-solid fa-circle-exclamation
+icon: lucide:circle-alert
 pubDate: 2024-10-20
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "../../img/guidebg-3.webp"

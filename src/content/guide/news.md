@@ -2,7 +2,7 @@
 title: News Channel
 pubDate: 2024-10-02
 description: Get up-to-date instructions on how to patch the News Channel!
-icon: fa-solid fa-newspaper
+icon: lucide:newspaper
 ---
 <div style="display: flex; gap:8px; align-items: center;">
   <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>

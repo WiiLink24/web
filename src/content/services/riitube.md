@@ -1,7 +1,7 @@
 ---
 title: RiiTube
 pubDate: 2024-01-24
-icon: fa-solid fa-video
+icon: lucide:video
 description: Watch YouTube on your Wii.
 heroImage: "riitube.webp"
 type: "Extra"

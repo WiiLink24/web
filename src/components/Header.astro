@@ -4,6 +4,7 @@ import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
 import { getCollection } from "astro:content";
 import LanguageDropdown from "../components/LanguageDropdown.astro";
+import { Icon } from "astro-icon/components";
 const posts = (await getCollection("blog")).sort(
   (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -57,14 +58,13 @@ const { isMain } = Astro.props;
       class="logo"
       alt="WiiLink Logo"
       style={isMain}
-      src=" /img/Wii_Link_Logo.webp"
-      width="190px"
+      src=" /img/logo.webp"
       height="69px"
     /></a
   >
   <div id="links">
     <a class="header-link" href={localizePath("/")} aria-label="Home Link"
-      ><i class="fa fa-home" style="margin-right:5px;"></i>
+      ><Icon name="lucide:house" style="margin-right:5px;" />
       {t("header.home")}</a
     >
     <a
@@ -73,7 +73,7 @@ const { isMain } = Astro.props;
       onmouseout="toggle('newsheader');"
       href={localizePath("/news")}
       aria-label="News Link"
-      ><i class="fa fa-newspaper" style="margin-right:5px;"></i>
+      ><Icon name="lucide:newspaper" style="margin-right:5px;" />
       {t("header.news")}</a
     >
     <div
@@ -111,7 +111,7 @@ const { isMain } = Astro.props;
         <hr style="border-top: 1px solid var(--border-color);" />
         <div
           style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
-          <i class="fa fa-circle-info"></i>
+          <Icon name="lucide:info" style="margin-right:5px; margin-bottom:2px;" />
           {t("header.news-info")}
         </div>
       </div>
@@ -122,7 +122,7 @@ const { isMain } = Astro.props;
       onmouseout="toggle('guideheader');"
       href={localizePath("/guide/")}
       aria-label="Guide Link"
-      ><i class="fa fa-book" style="margin-right:5px;"></i>
+      ><Icon name="lucide:book" style="margin-right:5px;" />
       {t("header.guide")}</a
     >
     <div
@@ -135,10 +135,10 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/install"
             aria-label="Install Guide Link">
-            <i
-              class="fa fa-download"
+            <Icon
+              name="lucide:download"
               style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
-            ></i>
+             />
             <div>
               <div class="title">
                 <b
@@ -151,7 +151,7 @@ const { isMain } = Astro.props;
                 {t("guidePost.installGuide-info")}
               </div>
             </div>
-            <i class="fa fa-arrow-right"></i>
+            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <div class="post" style="padding:8px; border-radius:4px;">
@@ -159,10 +159,10 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/problemsolving"
             aria-label="Troubleshooting Guide Link">
-            <i
-              class="fa fa-circle-exclamation"
+            <Icon
+              name="lucide:circle-alert"
               style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
-            ></i>
+             />
             <div>
               <div class="title">
                 <b
@@ -175,7 +175,7 @@ const { isMain } = Astro.props;
                 {t("guidePost.problemSolving-info")}
               </div>
             </div>
-            <i class="fa fa-arrow-right"></i>
+            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <div class="post" style="padding:8px; border-radius:4px;">
@@ -183,10 +183,10 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/faq"
             aria-label="FAQ Link">
-            <i
-              class="fa fa-circle-question"
+            <Icon
+              name="lucide:circle-help"
               style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
-            ></i>
+             />
             <div>
               <div class="title">
                 <b
@@ -199,13 +199,13 @@ const { isMain } = Astro.props;
                 {t("guidePost.faq-info")}
               </div>
             </div>
-            <i class="fa fa-arrow-right"></i>
+            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <hr style="border-top: 1px solid var(--border-color);" />
         <div
           style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
-          <i class="fa fa-circle-info"></i>
+          <Icon name="lucide:info" style="margin-bottom:3px;" />
           {t("header.guide-info")}
         </div>
       </div>
@@ -214,14 +214,14 @@ const { isMain } = Astro.props;
       class="header-link"
       href={localizePath("/status")}
       aria-label="Status Link"
-      ><i class="fa fa-server" style="margin-right:5px;"></i>
+      ><Icon name="lucide:server" style="margin-right:5px;" />
       {t("header.status")}</a
     >
     <a
       class="header-link"
       href={localizePath("/services")}
       aria-label="Services Link"
-      ><i class="fa fa-box" style="margin-right:5px;"></i>
+      ><Icon name="lucide:package" style="margin-right:5px;" />
       {t("header.services")}</a
     >
     <button
@@ -230,9 +230,9 @@ const { isMain } = Astro.props;
       class="btn"
       style="border: 0px !important;"
       aria-label="More button"
-      ><i
-        class="fa-solid fa-chevron-down"
-        style="font-size:20px; pointer-events:none;"></i>
+      ><Icon
+        name="lucide:chevron-down"
+        style="font-size:20px; pointer-events:none;" />
     </button>
     <div id="dropdownMore">
       <a
@@ -241,7 +241,7 @@ const { isMain } = Astro.props;
         id="account"
         href="https://accounts.wiilink.ca"
         aria-label="Extras Link"
-        ><i class="fa-solid fa-user"></i>Log into WiiLink Accounts</a
+        ><Icon name="lucide:user" />Log into WiiLink Accounts</a
       >
       <hr
         style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
@@ -251,20 +251,20 @@ const { isMain } = Astro.props;
         class="dropdown-item"
         href={localizePath("/extras")}
         aria-label="Extras Link"
-        ><i class="fa-solid fa-box-open"></i> {t("header.extras")}</a
+        ><Icon name="lucide:package-open" style="margin-bottom:5px;" /> {t("header.extras")}</a
       >
       <a
         class="dropdown-item"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://wfc.wiilink24.com"
         aria-label="WiiLink WFC Link"
-        ><div><i class="fa-solid fa-wifi"></i> WiiLink WFC</div>
+        ><div><Icon name="lucide:wifi" style="margin-bottom:5px;" /> WiiLink WFC</div>
         <a
           class="dropdown-item"
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://miicontest.wiilink.ca"
           aria-label="CMOC Viewing Tool Link"
-          ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a
+          ><div><Icon name="lucide:users" style="margin-bottom:5px;" /> Check Mii Out Channel</div></a
         >
         <a
           class="dropdown-item"
@@ -272,7 +272,7 @@ const { isMain } = Astro.props;
           href="https://evc.wiilink.ca"
           aria-label="EVC Viewing Tool Link"
           ><div>
-            <i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel
+            <Icon name="lucide:chart-no-axes-column" style="margin-bottom:5px;" /> Everybody Votes Channel
           </div></a
         >
         <a
@@ -280,21 +280,21 @@ const { isMain } = Astro.props;
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://tag.rc24.xyz/"
           aria-label="LinkTag"
-          ><div><i class="fa-solid fa-tag"></i> LinkTag</div></a
+          ><div><Icon name="lucide:tag" style="margin-bottom:5px;" /> LinkTag</div></a
         >
         <a
           class="dropdown-item"
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://card.wiilink24.com/"
           aria-label="LinkTag"
-          ><div><i class="fa-solid fa-address-card"></i> Digicard</div></a
+          ><div><Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard</div></a
         >
         <a
           class="dropdown-item"
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://stamp.wiilink.ca/"
           aria-label="LinkTag"
-          ><div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div></a
+          ><div><Icon name="lucide:stamp" style="margin-bottom:5px;" /> Mii Stamp Generator</div></a
         >
         <hr
           style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
@@ -305,28 +305,28 @@ const { isMain } = Astro.props;
             href="https://bookmark.rc24.xyz"
             style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
             aria-label="Wii Bookmarks"
-            title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a
+            title="Wii Bookmarks"><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
           >
           <a
             href="http://disc.rc24.xyz/"
             style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
             aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
             title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-            ><i class="fa-solid fa-compact-disc"></i></a
+            ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
           >
           <a
             href="http://interviews.rc24.xyz/"
             style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
             aria-label="Nintendo dev interviews"
             title="Nintendo dev interviews"
-            ><i class="fa-solid fa-comments"></i></a
+            ><Icon name="lucide:message-circle" style="margin-bottom:3px;" /></a
           >
           <a
             href="http://wiiremote.rc24.xyz/"
             style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
             aria-label="Get the date your Wii Remote was manufactured."
             title="Get the date your Wii Remote was manufactured."
-            ><i class="fa-solid fa-gamepad"></i></a
+            ><Icon name="lucide:gamepad-2" style="margin-bottom:3px;" /></a
           >
         </div>
         <hr
@@ -336,13 +336,13 @@ const { isMain } = Astro.props;
           class="dropdown-item"
           href="/privacy-policy"
           aria-label="Privacy Policy Link"
-          ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
+          ><Icon name="lucide:shield" style="margin-bottom:3px;" /> {t("header.privacyPolicy")}</a
         >
         <a class="dropdown-item" href="/tos" aria-label="Terms of Service Link"
-          ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
+          ><Icon name="lucide:feather" style="margin-bottom:3px;" /> {t("header.tos")}</a
         >
         <a class="dropdown-item" href="/eula" aria-label="EULA Link"
-          ><i class="fa-solid fa-book"></i> {t("header.eula")}</a
+          ><Icon name="lucide:book" style="margin-bottom:3px;" /> {t("header.eula")}</a
         >
         <hr
           style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
@@ -355,16 +355,16 @@ const { isMain } = Astro.props;
             class="btn btn-light dropdown-element"
             aria-label="Theme Button"
             onclick="themeToggle()"
-            ><i class="fa-solid fa-moon" style="pointer-events:none;"
-            ></i></button
+            ><Icon name="lucide:moon" style="pointer-events:none;"
+             /></button
           >
           <a href={localizePath("/")} aria-label="Home Link"
             ><button
               type="button"
               class="btn btn-success dropdown-element"
               aria-label="Download Button"
-              ><i class="fa-solid fa-download" style="color:white !important"
-              ></i></button
+              ><Icon name="lucide:download" style="color:white !important; margin-bottom:3px;"
+               /></button
             ></a
           >
           <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
@@ -372,8 +372,8 @@ const { isMain } = Astro.props;
               type="button"
               class="btn btn-primary dropdown-element"
               aria-label="Discord Button"
-              ><i class="fa-brands fa-discord" style="color:white !important"
-              ></i></button
+              ><Icon name="simple-icons:discord" style="color:white !important; margin-bottom:3px;"
+               /></button
             ></a
           >
         </div>

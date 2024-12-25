@@ -1,6 +1,7 @@
 ---
 import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -15,7 +16,7 @@ changeLanguage("en");
           style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; position:relative;">
           <h4>
             <b>
-              <i class="fa fa-brush" style="margin-right:8px;"></i> Thanks for using
+              <Icon name="lucide:brush" style="margin-right:8px; margin-bottom:3px;" /> Thanks for using
               the WiiLink Animated Wallpaper
             </b>
           </h4>

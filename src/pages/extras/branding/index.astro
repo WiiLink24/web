@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -149,7 +150,7 @@ changeLanguage("en");
 
   <div class="container">
     <h1 class="header" style="text-align:left;">
-      <i aria-hidden="true" class="fas fa-palette"></i> Branding
+      <Icon name="lucide:palette" aria-hidden="true" style="margin-bottom:10px;" /> Branding
     </h1><br />
   </div>
 

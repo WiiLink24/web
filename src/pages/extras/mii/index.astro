@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -12,7 +13,7 @@ changeLanguage("en");
 
 	<div class="section no-pad-bot">
 		<div class="container">
-			<h1 class="header"><i class="fas fa-smile" aria-hidden="true"></i> My Avatar Editor</h1>
+			<h1 class="header"><Icon name="lucide:smile" aria-hidden="true" style="margin-bottom:10px;" /> My Avatar Editor</h1>
 			<div class="row">
 				<h5 class="col s12">You can use this tool called My Avatar Editor to make and edit Miis. It runs on Adobe Flash, which was discontinued at the end of 2020. However, there are still a few ways to use it.</h5>
 			</div>
@@ -22,12 +23,12 @@ changeLanguage("en");
 	<br>
 	<div class="section">
 		<div class="container">
-			<h3 class="header"><i class="fas fa-desktop"></i> Install for Desktop</h2>
+			<h3 class="header"><Icon name="lucide:monitor" style="margin-bottom:5px;" /> Install for Desktop</h2>
 			<div class="row ">
 				<h6 class="header col s12">It's possible to install My Avatar Editor on your computer as an application. Follow these instructions:</h5>
 			</div>
 			<ol class="collection" style="border-radius: 8px;">
-				<li class="collection-item">Download and install Adobe AIR. (<a href="http://web.archive.org/web/20201217075800/https://fpdownload.macromedia.com/pub/labs/flashruntimes/air/AdobeAIR.dmg"><i class="fab fa-apple"></i> macOS</a> / <a href="http://web.archive.org/web/20201217075810/https://fpdownload.macromedia.com/pub/labs/flashruntimes/air/AdobeAIRInstaller.exe"><i class="fab fa-windows"></i> Windows</a>) AIR is discontinued by Adobe, but it's still possible to use it.</li>
+				<li class="collection-item">Download and install Adobe AIR. (<a href="http://web.archive.org/web/20201217075800/https://fpdownload.macromedia.com/pub/labs/flashruntimes/air/AdobeAIR.dmg"><Icon name="simple-icons:apple" style="margin-bottom:5px;" /> macOS</a> / <a href="http://web.archive.org/web/20201217075810/https://fpdownload.macromedia.com/pub/labs/flashruntimes/air/AdobeAIRInstaller.exe"><Icon name="simple-icons:microsoft" style="margin-bottom:5px;" /> Windows</a>) AIR is discontinued by Adobe, but it's still possible to use it.</li>
 				<li class="collection-item"><a href="MyAvatarEditor.air">Download MyAvatarEditor.air, but don't open it yet.</a></li>
 				<li class="collection-item">Set your computer's clock sometime before October 31, 2017. If you don't do this step, Adobe AIR will say the installer file is damaged.</li>
 				<li class="collection-item">Open MyAvatarEditor.air and install it.</li>
@@ -40,7 +41,7 @@ changeLanguage("en");
 	<br>
 	<div class="section">
 		<div class="container">
-			<h3 class="header "><i class="fas fa-bolt"></i> Flashpoint</h2>
+			<h3 class="header "><Icon name="lucide:zap" style="margin-bottom:5px;" /> Flashpoint</h2>
 			<div class="row ">
 				<h6 class="header col s12">You can use BlueMaxima's Flashpoint to use My Avatar Editor again. It's a project to preserve old Flash games. For more information, <a href="https://bluemaxima.org/flashpoint/">please see the official Flashpoint website</a>.</h5>
 			</div>
@@ -50,7 +51,7 @@ changeLanguage("en");
 	<br>
 	<div class="section">
 		<div class="container">
-			<h3 class="header "><i class="fas fa-globe-americas"></i> Use in Browser</h2>
+			<h3 class="header "><Icon name="lucide:globe" style="margin-bottom:5px;" /> Use in Browser</h2>
 			<div class="row ">
 				<h6 class="header ">This won't load nor show up unless you're somehow using a legacy browser. (It will work with SeaMonkey)</h5>
 			

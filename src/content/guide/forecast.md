@@ -2,7 +2,7 @@
 title: Forecast Channel
 pubDate: 2024-10-02
 description: Get up-to-date instructions on how to patch the Forecast Channel!
-icon: fa-solid fa-umbrella
+icon: lucide:umbrella
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">

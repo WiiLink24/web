@@ -9,6 +9,7 @@ import Ad from "../components/Ad.astro";
 import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 
 const posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
@@ -41,7 +42,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
               <button
                 class="btn"
                 style="top:18px; right:18px; background-color: var(--bg-opaque-1); position:absolute;"
-                >Go to <i class="fa fa-server" style="margin-left:8px;"></i> Status</button
+                >Go to <Icon name="lucide:server" style="margin-left:8px; margin-bottom:3px" /> Status</button
               >
             </a>
             <h2 class="title" id="titleData">{title}</h2>
@@ -69,7 +70,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
                 <r
                   style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
                   datetime={pubDate.toISOString()}>
-                  <i class={icon}></i>
+                  <Icon name={icon} style="margin-bottom:3px" />
                 </r>
               </div>
               <div>
@@ -91,7 +92,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
               id="btncolor"
               class="btn"
               style="width:100%; position:relative;"
-              >Open the <i class={icon}></i> {title} guide</button
+              >Open the <Icon name="lucide:book" style="margin-bottom:3px" /> {title} guide</button
             >
           </div>
         </div>

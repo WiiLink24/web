@@ -2,7 +2,7 @@
 title: WiiLink Accounts
 pubDate: 2024-12-23
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
-icon: fa-solid fa-id-card
+icon: lucide:id-card
 ---
 <div style="display: flex; gap:8px; align-items: center;">
   <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>

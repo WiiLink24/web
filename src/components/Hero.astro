@@ -2,6 +2,7 @@
 import i18next, { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 ---
 
 <head>
@@ -28,7 +29,7 @@ import { Trans } from "astro-i18next/components";
         alt="logo"
         width="150px"
       />
-    <!--<marquee
+    <marquee
         onclick="window.location.href='https://stamp.wiilink.ca'"
         scrollamount="1"
         scrolldelay="20"
@@ -38,9 +39,9 @@ import { Trans } from "astro-i18next/components";
         data-bs-title="Click here for more information"
         class="badge notice-mobile"
         style="font-size: 18px; text-align: left; background-color: var(--bg-color-secondary); border: 1px solid var(--border-color); color: var(--color); margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; cursor:pointer; text-overflow: ellipsis; line-height: 25px;"
-        ><i class="fa-solid fa-stamp" style="margin-right:8px;"
-        ></i> Create your own Mii Stamps here!</marquee
-      >-->
+        ><Icon name="lucide:stamp" style="margin-right:8px; margin-bottom:3px;"
+         /> Create your own Mii Stamps here!</marquee
+      >
     </div>
     <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
     <p style="font-size:20px; opacity:0.7;">
@@ -48,7 +49,7 @@ import { Trans } from "astro-i18next/components";
     </p>
     <div class="line-container">
       <p style="opacity:0.5;">
-        <i class="fa fa-circle-info" style="margin-right:5px;"></i>
+        <Icon name="lucide:info" style="margin-right:5px; margin-bottom:3px;" />
         <a
           href="https://github.com/WiiLink24/WiiLink24-Patcher"
           aria-label="WiiLink Patcher"
@@ -96,7 +97,7 @@ import { Trans } from "astro-i18next/components";
               href=""
               aria-label="Download for Windows"
               ><div>
-                <i class="fa-brands fa-microsoft" style="margin-right:5px;"></i>
+                <Icon name="simple-icons:microsoft" style="margin-right:5px; margin-bottom:3px;" />
                 {t("site.downloadFor")} Windows
               </div>
               <p style="margin-bottom:0;">64bit</p></a
@@ -106,7 +107,7 @@ import { Trans } from "astro-i18next/components";
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa-brands fa-apple" style="margin-right:5px;"></i>
+                <Icon name="simple-icons:apple" style="margin-right:5px; margin-bottom:3px;" />
                 {t("site.downloadFor")} macOS
                 <div
                   class="horizontal-line"
@@ -136,7 +137,7 @@ import { Trans } from "astro-i18next/components";
             <div class="line-container">
               <p
                 style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
-                <i class="fa fa-linux" style="margin-right:5px;"></i>
+                <Icon name="simple-icons:linux" style="margin-right:5px; margin-bottom:3px;" />
                 {t("site.downloadFor")}
                 Linux
                 <div
@@ -190,8 +191,8 @@ import { Trans } from "astro-i18next/components";
                 {t("site.legacyPatcher")}
               </div>
               <p style="margin-bottom:0;">
-                64bit <i class="fa-brands fa-microsoft" style="margin-left:8px;"
-                ></i>
+                64bit <Icon name="simple-icons:microsoft" style="margin-left:8px; margin-bottom:3px;"
+                 />
               </p></a
             >
           </li>
@@ -203,7 +204,8 @@ import { Trans } from "astro-i18next/components";
               href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid"
               aria-label="Download for Android"
               ><div>
-                <i class="fa-brands fa-android" style="margin-right:5px;"></i>
+                <Icon name="simple-icons:android" style="margin-right:5px; margin-bottom:3px;"
+                 />
                 {t("site.downloadFor")} Android
               </div>
               <p style="margin:0; opacity:0.3;">Unofficial</p></a
@@ -215,7 +217,7 @@ import { Trans } from "astro-i18next/components";
               href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
               aria-label="Changelog"
               style="color:var(--color) !important;"
-              ><i class="fa fa-book" style="margin-right:5px;"></i>
+              ><Icon name="lucide:book" style="margin-right:5px; margin-bottom:3px;" />
               {t("site.changelog")}</a
             >
           </li>
@@ -226,9 +228,9 @@ import { Trans } from "astro-i18next/components";
         class="btn btn-prmiary guidebtn btn-lg"
         style="padding-top:11px; padding-bottom:11px; border:1px solid #0d6efd; border:1px solid AccentColor; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
-        <i
-          class="fa-solid fa-arrow-up fa-rotate-by"
-          style="margin-right:5px; --fa-rotate-angle: 45deg;"></i>
+        <Icon
+          name="lucide:arrow-up-right"
+          style="margin-right:5px; margin-bottom:3px;" />
         {t("site.installGuide")}
       </button>
     </div>
@@ -268,7 +270,7 @@ import { Trans } from "astro-i18next/components";
       </div>
       <a href="#intro" aria-label="Jump to Services List" class="more">
         {t("site.heroMorePrompt")}
-        <i class="fa-solid fa-chevron-right"></i>
+        <Icon name="lucide:chevron-right" />
       </a>
     </div>
   </div>

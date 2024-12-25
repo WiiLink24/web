@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -158,14 +159,14 @@ changeLanguage("en");
 <div class="section no-pad-bot">
   <div class="container">
     <h1 class="header">
-      <i class="fas fa-download" aria-hidden="true"></i> Photo Channel Puzzle Cheats
+      <Icon name="lucide:download" aria-hidden="true" style="margin-bottom:10px;" /> Photo Channel Puzzle Cheats
     </h1>
     <div class="row">
       <h5 class="header col s12">
         These are intended to help get fast puzzle records on the Photo Channel, every number on the puzzle piece corresponds to where it fits.
       </h5>
       <a href="puzzle_all.zip" id="download-button" class="btn">
-        <i class="fa fa-download"></i> Download Puzzle Cheats
+        <Icon name="lucide:download" style="margin-bottom:3px;" /> Download Puzzle Cheats
       </a>
     </div>
   </div>

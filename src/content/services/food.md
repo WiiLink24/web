@@ -1,7 +1,7 @@
 ---
 title: Food Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-cutlery
+icon: lucide:utensils
 description: The food channel, for all your culinary needs!
 heroImage: "demaebanner.png"
 type: "Japanese"

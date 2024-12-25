@@ -1,6 +1,6 @@
 ---
 title: Installation guide
-icon: fa-solid fa-download
+icon: lucide:download
 pubDate: 2024-07-25
 description: Get up-to-date instructions on how to install all of our services!
 heroImage: "../../img/guidebg-install.webp"

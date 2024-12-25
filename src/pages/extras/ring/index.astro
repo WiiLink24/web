@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -10,7 +11,7 @@ changeLanguage("en");
 <Header isGuide="display:none;"/>
 	<div class="section no-pad-bot">
 		<div class="container center">
-			<h1 class="header center"><i class="fas fa-shopping-basket" aria-hidden="true"></i> Wii Shop Channel with Lyrics</h1>
+			<h1 class="header center"><Icon name="lucide:shopping-basket" aria-hidden="true" style="margin-bottom:10px;" /> Wii Shop Channel with Lyrics</h1>
 			<iframe width="560" height="315" src="https://www.youtube.com/embed/3ruNfajgUr0?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="border-radius: 8px; overflow: hidden;"></iframe>
 			<br>
 			<img class="spin" src="https://www.rc24.xyz/images/wiimenu/ring.png" alt="Wii Shop Channel Ring">

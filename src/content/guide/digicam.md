@@ -2,7 +2,7 @@
 title: Photo Prints Channel
 pubDate: 2024-10-02
 description: Get up-to-date instructions on how to patch the Photo Prints Channel!
-icon: fa-solid fa-camera
+icon: lucide:camera
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">

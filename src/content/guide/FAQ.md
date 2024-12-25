@@ -1,6 +1,6 @@
 ---
 title: Frequently asked questions
-icon: fa-solid fa-circle-question
+icon: lucide:circle-help
 pubDate: 2024-10-02
 description: Some frequently asked questions you might be interested in...
 heroImage: "../../img/guidebg-2.webp"

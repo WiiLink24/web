@@ -1,7 +1,7 @@
 ---
 title: TV Guide Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-television
+icon: lucide:tv
 description: Get live EPG guides right on your Wii!
 heroImage: "tvnotomobanner.webp"
 type: "Japanese"

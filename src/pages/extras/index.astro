@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Ad from "../../components/Ad.astro";
@@ -9,6 +8,7 @@ import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 
@@ -64,7 +64,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
         ><div
           class="btn btn-success"
           style="color:white !important; padding:10px;">
-          <i class="fa-solid fa-envelope" style="margin-right:5px;"></i>
+          <Icon name="lucide:mail" style="margin-right:5px; margin-bottom:3px;" />
           {t("extras.contact")}
         </div></a
       >
@@ -72,7 +72,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
         ><div
           class="btn btn-primary"
           style="color:white !important; padding:10px;">
-          <i class="fa-brands fa-discord" style="margin-right:5px;"></i>
+          <Icon name="simple-icons:discord" style="margin-right:5px; margin-bottom:3px;" />
           {t("extras.joinDiscord")}
         </div></a
       >

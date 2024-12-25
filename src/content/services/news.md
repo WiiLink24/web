@@ -1,7 +1,7 @@
 ---
 title: News Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-newspaper
+icon: lucide:newspaper
 description: Read the global news on your Wii!
 heroImage: "newsbanner.webp"
 type: "WiiConnect24"

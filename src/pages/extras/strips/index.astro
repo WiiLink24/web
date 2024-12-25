@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -157,7 +158,7 @@ changeLanguage("en");
 
     <div class="container">
       <h1 class="header">
-        <i class="fas fa-book" aria-hidden="true"></i> Comic Strips Gallery
+        <Icon name="lucide:book" aria-hidden="true" style="margin-bottom:10px;" /> Comic Strips Gallery
       </h1>
       <div class="row">
         <h5 class="header col s12">

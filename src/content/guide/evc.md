@@ -2,7 +2,7 @@
 title: Everybody Votes Channel
 pubDate: 2024-10-02
 description: Get up-to-date instructions on how to patch the Everybody Votes Channel!
-icon: fa-solid fa-square-poll-vertical
+icon: lucide:chart-no-axes-column
 ---
 
 <script src="https://www.w3schools.com/lib/w3.js"></script>

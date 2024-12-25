@@ -1,6 +1,5 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { changeLanguage } from "i18next";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
@@ -9,6 +8,7 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import Ad from "../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 
@@ -138,7 +138,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     ><buton
       class="btn center btn-success"
       style="left:50%; transform:translate(-50%, 0); margin-top:8px; z-index:1000; position:relative;">
-      <i class="fa-solid fa-square-rss" style="margin-right:5px;"></i>
+      <Icon name="lucide:rss" style="margin-right:5px; margin-bottom:3px;" />
       {t("news.rssButton")}
     </buton></a
   >

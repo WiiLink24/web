@@ -1,7 +1,7 @@
 ---
 title: Kirby TV Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-circle
+icon: lucide:circle
 description: Watch episodes of Kirby Right Back At Ya! on your Wii!
 heroImage: "kirbytvbanner.webp"
 type: "European"

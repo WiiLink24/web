@@ -1,7 +1,7 @@
 ---
 title: RiiTag
 pubDate: 2024-05-17
-icon: fa-solid fa-tag
+icon: lucide:tag
 description: Get your own Nintendo gamertag!
 heroImage: "riitag.webp"
 type: "Extra"

@@ -1,7 +1,7 @@
 ---
 title: WiiLink Bot
 pubDate: 2024-10-02
-icon: fa-solid fa-robot
+icon: lucide:bot
 description: Our nifty multi-purpose bot!
 type: "Extra"
 color: 35418f60

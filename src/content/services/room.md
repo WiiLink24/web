@@ -1,7 +1,7 @@
 ---
 title: Wii Room
 pubDate: 2024-01-24
-icon: fa-solid fa-home
+icon: lucide:house
 description: Feel right at home whilst watching videos on your Wii!
 heroImage: "wiinomabanner.webp"
 type: "Japanese"

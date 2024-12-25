@@ -1,7 +1,7 @@
 ---
 title: Discross
 pubDate: 2024-01-24
-icon: fa-solid fa-comment
+icon: lucide:message-circle
 description: A tool to send and receive discord messages on your Wii (and other devices)!
 type: "Extra"
 color: 1496e0

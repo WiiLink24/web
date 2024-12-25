@@ -2,7 +2,7 @@
 title: Food Channel
 pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install the Food Channel!
-icon: fa-solid fa-utensils
+icon: lucide:utensils
 ---
 <div style="display: flex; gap:8px; align-items: center;">
   <h5 style="font-family: system-ui; font-size:20px;">Requirements</h5>

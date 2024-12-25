@@ -1,6 +1,6 @@
 ---
 title: Wii Installation
-icon: fa-solid fa-download
+icon: lucide:download
 pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install all of our services on Wii!
 heroImage: "../../img/guidebg-1.webp"

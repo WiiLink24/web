@@ -2,6 +2,7 @@
 import i18next, { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import LanguageDropdown from "./LanguageDropdown.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="holder">
@@ -14,8 +15,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
       loading="lazy"
       alt="WiiLink Logo"
       class="logo"
-      src="/img/Wii_Link_Logo.webp"
-      width="140px"
+      src="/img/logo.webp"
       height="50px"
     /></a
   >
@@ -27,8 +27,8 @@ import LanguageDropdown from "./LanguageDropdown.astro";
     data-bs-target="#offcanvasTop"
     aria-label="Menu"
     aria-controls="offcanvasTop"
-    ><i style="font-size:30px; filter:opacity(0.9);" class="fa-solid fa-bars"
-    ></i></button
+    ><Icon style="font-size:30px; filter:opacity(0.9);" name="lucide:menu"
+     /></button
   >
 </div>
 
@@ -38,8 +38,8 @@ import LanguageDropdown from "./LanguageDropdown.astro";
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
     <span style="display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px; padding:8px;">
-    <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"><div id="pfp-container" style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)"><i class="fa fa-user"></i></div></a>
-    <img src="/img/Wii_Link_Logo.webp" style="filter:invert(var(--invert));" width="140px" height="50px" />
+    <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"><div id="pfp-container" style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)"><Icon name="lucide:user" /></div></a>
+    <img src="/img/logo.webp" style="filter:invert(var(--invert));" height="50px" />
     <button
       type="button"
       class="btn-close"
@@ -55,8 +55,8 @@ import LanguageDropdown from "./LanguageDropdown.astro";
           type="button"
           class="btn btn-success"
           style="border-radius: 16px 4px 4px 4px; width:100%; height:60px;"
-          ><i class="fa-solid fa-download" style="color: white !important;"
-          ></i></button
+          ><Icon name="lucide:download" style="color: white !important; margin-bottom:3px;"
+           /></button
         ></a
       >
       <button
@@ -65,8 +65,8 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         class="btn btn-light"
         style="border-radius: 4px 16px 4px 4px; background-color: var(--color);"
         onclick="themeToggle()"
-        ><i class="fa-solid fa-sun" style="color: var(--bg-color-absolute);"
-        ></i></button
+        ><Icon name="lucide:sun" style="color: var(--bg-color-absolute); margin-bottom:3px;"
+         /></button
       >
     </div>
     <LanguageDropdown ismobile/>
@@ -78,7 +78,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="/"
         aria-label="Home Link"
         style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
-        <i class="fas fa-home"></i>
+        <Icon name="lucide:home" style="margin-bottom:3px;" />
         {t("header.home")}
       </a>
       <a
@@ -86,7 +86,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="/news"
         aria-label="News Link"
         style="z-index: 1; position:relative">
-        <i class="fas fa-newspaper"></i>
+        <Icon name="lucide:newspaper" style="margin-bottom:3px;" />
         {t("header.news")}
       </a>
       <a
@@ -94,7 +94,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="/guide"
         aria-label="Guide Link"
         style="z-index: 1; position:relative">
-        <i class="fas fa-book"></i>
+        <Icon name="lucide:book" style="margin-bottom:3px;" />
         {t("header.guide")}
       </a>
       <a
@@ -102,33 +102,33 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="/status"
         aria-label="Status Link"
         style="z-index: 1; position:relative">
-        <i class="fas fa-info-circle"></i>
+        <Icon name="lucide:info" style="margin-bottom:3px;" />
         {t("header.status")}
       </a>
       <a
         class="link"
         href="/services"
         aria-label="Services Link"
-        style="z-index: 1; position:relative">
-        <i class="fas fa-cogs"></i>
-        {t("header.services")}
-      </a>
-      <a
-        class="link"
-        href="/extras"
-        aria-label="Extras Link"
         style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
-        <i class="fas fa-gift"></i>
-        {t("header.extras")}
+        <Icon name="lucide:package" style="margin-bottom:3px;" />
+        {t("header.services")}
       </a>
     </div>
     <br />
     <li style="padding:12px; opacity:1 !important;">
       <a
+        href="/extras"
+        aria-label="Extras Link"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        ><div><Icon name="lucide:package-open" style="margin-bottom:3px;" /> {t("header.extras")}</div></a
+      >
+    </li>
+    <li style="padding:12px; opacity:1 !important;">
+      <a
         href="https://wfc.wiilink24.com"
         aria-label="WiiLink WFC Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><i class="fa-solid fa-globe"></i> WiiLink WFC</div></a
+        ><div><Icon name="lucide:wifi" style="margin-bottom:3px;" /> WiiLink WFC</div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -136,7 +136,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="https://miicontest.wiilink.ca"
         aria-label="CMOC Viewing Tool Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><i class="fa-solid fa-users"></i> Check Mii Out Channel</div></a
+        ><div><Icon name="lucide:users" style="margin-bottom:3px;" /> Check Mii Out Channel</div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -145,7 +145,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="https://evc.wiilink.ca"
         aria-label="EVC Viewing Tool Link">
         <div>
-          <i class="fa-solid fa-chart-simple"></i> Everybody Votes Channel
+          <Icon name="lucide:chart-no-axes-column" style="margin-bottom:3px;" /> Everybody Votes Channel
         </div>
       </a>
     </li>
@@ -154,7 +154,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://tag.rc24.xyz/"
         aria-label="LinkTag">
-        <div><i class="fa-solid fa-tag"></i> LinkTag</div>
+        <div><Icon name="lucide:tag" style="margin-bottom:3px;" /> LinkTag</div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -162,7 +162,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://card.wiilink24.com/"
         aria-label="LinkTag">
-        <div><i class="fa-solid fa-address-card"></i> Digicard</div>
+        <div><Icon name="lucide:id-card" style="margin-bottom:3px;" /> Digicard</div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -170,7 +170,7 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://stamp.wiilink.ca/"
         aria-label="LinkTag">
-        <div><i class="fa-solid fa-stamp"></i> Mii Stamp Generator</div>
+        <div><Icon name="lucide:stamp" style="margin-bottom:3px;" /> Mii Stamp Generator</div>
       </a>
     </li>
     <hr />
@@ -181,27 +181,27 @@ import LanguageDropdown from "./LanguageDropdown.astro";
         href="https://bookmark.rc24.xyz"
         style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Wii Bookmarks"
-        title="Wii Bookmarks"><i class="fa-solid fa-bookmark"></i></a
+        title="Wii Bookmarks"><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
       >
       <a
         href="http://disc.rc24.xyz/"
         style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
         title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-        ><i class="fa-solid fa-compact-disc"></i></a
+        ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
       >
       <a
         href="http://interviews.rc24.xyz/"
         style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Nintendo dev interviews"
-        title="Nintendo dev interviews"><i class="fa-solid fa-comments"></i></a
+        title="Nintendo dev interviews"><Icon name="lucide:message-circle" style="margin-bottom:3px;" /></a
       >
       <a
         href="http://wiiremote.rc24.xyz/"
         style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Get the date your Wii Remote was manufactured."
         title="Get the date your Wii Remote was manufactured."
-        ><i class="fa-solid fa-gamepad"></i></a
+        ><Icon name="lucide:gamepad-2" style="margin-bottom:3px;" /></a
       >
     </div>
 
@@ -209,22 +209,22 @@ import LanguageDropdown from "./LanguageDropdown.astro";
 
     <li>
       <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-        ><i class="fa-brands fa-discord"></i> Join our Discord server!</a
+        ><Icon name="simple-icons:discord" style="margin-bottom:3px;" /> Join our Discord server!</a
       >
     </li>
     <li>
       <a href="/privacy-policy" aria-label="Privacy Policy Link"
-        ><i class="fa-solid fa-shield"></i> {t("header.privacyPolicy")}</a
+        ><Icon name="lucide:shield" style="margin-bottom:3px;" /> {t("header.privacyPolicy")}</a
       >
     </li>
     <li>
       <a href="/tos" aria-label="Terms of Service Link"
-        ><i class="fa-solid fa-feather"></i> {t("header.tos")}</a
+        ><Icon name="lucide:feather" style="margin-bottom:3px;" /> {t("header.tos")}</a
       >
     </li>
     <li>
       <a href="/eula" aria-label="EULA Link"
-        ><i class="fa-solid fa-book"></i> EULA</a
+        ><Icon name="lucide:book" style="margin-bottom:3px;" /> EULA</a
       >
     </li>
   </div>

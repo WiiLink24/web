@@ -2,7 +2,7 @@
 title: Wii Room
 pubDate: 2023-10-02
 description: Get up-to-date instructions on how to patch Wii Room!
-icon: fa-solid fa-house
+icon: lucide:house
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">

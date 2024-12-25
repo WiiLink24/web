@@ -1,7 +1,7 @@
 ---
 title: Photo Prints Channel
 pubDate: 2024-01-24
-icon: fa-solid fa-camera
+icon: lucide:camera
 description: Get up-to-date instructions on how to install all of our services!
 heroImage: "digicambanner.webp"
 type: "Japanese"

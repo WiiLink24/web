@@ -7,6 +7,7 @@ import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 
 const url = new URL(Astro.request.url);
 let currentPath = url.pathname;
@@ -27,24 +28,24 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     <Header />
     <div
       class="holder"
-      style="width: 95%; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative;">
+      style="width:95%; height:175px; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative; margin-top:50px;">
       <a href="/" class="logohold"
         ><img
-          src="/img/Wii_Link_Logo.webp"
+          src="/img/logo.webp"
           class="logo"
-          style="width:140px !important"
+          style="width:140px !important;"
         /></a
       >
       <button
         class="btn dropdownbtn btn-black-50"
-        style="z-index:1000; position:relative;"
+        style="z-index:1000; position:relative; height:50%;"
         type="button"
         data-bs-toggle="offcanvas"
         data-bs-target="#offcanvasTop"
         aria-controls="offcanvasTop"
-        ><i
+        ><Icon
           style="font-size:30px; filter:opacity(0.9);"
-          class="fa-solid fa-bars"></i></button
+          name="lucide:menu" /></button
       >
     </div>
     <div class="flex">
@@ -71,8 +72,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                   <div
                     class="title-main"
                     style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <i class="fa-solid fa-download" style="margin-right:5px;"
-                    ></i>
+                    <Icon
+                      name="lucide:download"
+                      style="margin-right:5px; margin-bottom:3px;"
+                     />
                     {t("guidePost.installGuide")}
                   </div>
                 </a>
@@ -83,9 +86,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                   <div
                     class="title-main"
                     style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <i
-                      class="fa-solid fa-circle-exclamation"
-                      style="margin-right:5px;"></i>
+                    <Icon
+                      name="lucide:circle-alert"
+                      style="margin-right:5px; margin-bottom:3px;"
+                     />
                     {t("guidePost.problemSolving")}
                   </div>
                 </a>
@@ -96,9 +100,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                   <div
                     class="title-main"
                     style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <i
-                      class="fa-solid fa-circle-question"
-                      style="margin-right:5px;"></i>
+                    <Icon
+                      name="lucide:circle-help"
+                      style="margin-right:5px; margin-bottom:3px;"
+                     />
                     {t("guidePost.faq")}
                   </div>
                 </a>
@@ -115,7 +120,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                       class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
                       <a href={`/guide/${post.slug}/`}>
                         <div class="title2">
-                          <i class={post.data.icon} style="margin-right:8px;" />{" "}
+                          <Icon name={post.data.icon} style="margin-right:8px; margin-bottom:3px;" />{" "}
                           {post.data.title}
                         </div>
                       </a>
@@ -144,7 +149,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         </div>
         <img class="topImage" id="parallax" src={heroImage} />
         <div class="title">
-          <i class={icon} style="margin-right:18px;"></i>
+          <Icon name={icon} style="margin-right:18px; margin-bottom:10px;" />
           {title}
         </div>
         <div class="guidecontent" id="container2">

@@ -1,7 +1,7 @@
 ---
 title: RSSMii
 pubDate: 2024-01-24
-icon: fa-solid fa-rss-square
+icon: lucide:rss
 description: Get RSS updates on your Wii!
 heroImage: "rssmii.webp"
 type: "Extra"

@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -12,7 +13,7 @@ changeLanguage("en");
 <div class="section no-pad-bot">
   <div class="container center">
     <h1 class="header center">
-      <i class="fas fa-cat" aria-hidden="true"></i> Nyan Help Cat
+      <Icon name="lucide:cat" aria-hidden="true" style="margin-bottom:10px;" /> Nyan Help Cat
     </h1>
     <iframe
       width="560"
