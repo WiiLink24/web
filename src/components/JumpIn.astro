@@ -1,40 +1,47 @@
 ---
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="promptholder">
-  <div class="dots"></div>
-  <div style="left:1030px; top:400px; rotate:350deg;" class="dots"></div>
-  <h1>
-    <Trans i18nKey="jumpin.title">
-      Are you ready to <b class="color">jump</b>?
-    </Trans>
-  </h1>
-  <h2>{t("jumpin.slogan")}</h2>
-  <div
-    style="display:flex; flex-wrap:wrap; gap:4px; align-items: center; justify-content: center;">
-    <a href="#top" aria-label="Jump to top"
-      ><button
-        type="button"
-        class="btn btn-lg"
-        style="background-color:AccentColor; border-radius:8px 4px 4px 8px;"
-        >{t("jumpin.install")}</button
-      ></a
-    >
-    <a href="https://wfc.wiilink24.com" aria-label="Go to WiiLink WFC"
-      ><button
-        type="button"
-        class="btn btn-dark btn-lg"
-        style="border-radius:4px 8px 8px 4px;">{t("site.wfcPrompt")}</button
-      ></a
-    >
+  <div class="images-container">
+    <div class="images-wrapper">
+      <div class="image-box">
+        <img src="/img/acc-bg-1.webp" class="scroll-down" alt="Background 1" />
+        <img src="/img/acc-bg-1.webp" class="scroll-down" alt="Background 1" />
+      </div>
+      <div class="image-box">
+        <img src="/img/acc-bg-2.webp" class="scroll-up" alt="Background 2" />
+        <img src="/img/acc-bg-2.webp" class="scroll-up" alt="Background 2" />
+      </div>
+      <div class="image-box">
+        <img src="/img/acc-bg-3.webp" class="scroll-down" alt="Background 3" />
+        <img src="/img/acc-bg-3.webp" class="scroll-down" alt="Background 3" />
+      </div>
+    </div>
   </div>
+
+  <div class="innertext">
+    <img 
+      src="https://accounts.wiilink.ca/assets/img/account-logo.png" 
+      alt="WiiLink24 Logo" 
+      class="account-logo"
+    />
+  <h1>
+    Get your WiiLink Account!
+  </h1>
+  <h2>Everything's more fun with a WiiLink Account, get access to all our services and personalized data by creating one now!</h2>
+  <button class="btn account-btn">
+    <Icon name="lucide:user" class="btn-icon" /> 
+    Access your Account
+  </button>
+</div>
 </div>
 
 <div
   class="bottomHelper"
-  style=" top:100%; width:100%; height:20px; position:relative;">
+  style="top:100%; width:100%; height:20px; position:relative;">
 </div>
 
 <style>
@@ -43,28 +50,22 @@ import { Trans } from "astro-i18next/components";
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
+    height:600px;
     background: var(--bg-color-secondary);
-    padding: 15px;
-    padding-top: 150px;
-    padding-bottom: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     overflow: hidden;
     z-index: 1;
     position: relative;
   }
 
   h1 {
-    font-size: 4rem;
+    max-width: 600px;
+    font-size: 3.5rem;
     font-family: Gilroy;
     font-weight: 700;
     line-height: 1;
     pointer-events: none;
-    text-align: center;
+    text-align: left;
     z-index: 10000;
-    margin-bottom: 20px;
     transition: 0.5s;
     position: relative;
   }
@@ -73,26 +74,23 @@ import { Trans } from "astro-i18next/components";
     color: white !important;
   }
 
-  .dots {
-    top: 100px;
-    left: 330px;
-    rotate: 25deg;
-    width: 150px;
-    height: 150px;
-    opacity: 0.5;
-    background-image: radial-gradient(var(--border-color) 2px, transparent 2px);
-    background-size: 15px 15px;
-    z-index: 0;
-    position: absolute;
-  }
-
-  .dots:nth-child(2) {
-    right: 0;
-    top: -5px;
+  .innertext {
+    width: 100%;
+    height:100%;
+    background: linear-gradient(to right, var(--bg-color-secondary) 20%, transparent 100%);
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding-left:80px;
+    gap:18px;
+    z-index: 100;
+    position: relative;
   }
 
   h2 {
-    text-align: center;
+    max-width: 800px;
+    text-align: left;
     transition: 0.5s;
     pointer-events: none;
     margin-bottom: 20px;
@@ -108,15 +106,117 @@ import { Trans } from "astro-i18next/components";
     filter: brightness(150%);
   }
 
-  @media only screen and (max-width: 1000px) {
-    .promptholder {
-      width: 100%;
-      border: 0px;
-      border-radius: 0px;
-    }
+  .images-container {
+    top:-20px;
+    left:0;
+    width: 120%;
+    min-width: 1000px;
+    height:100%;
+    perspective: 1000px;
+    opacity:0.6;
+    padding: 20px;
+    overflow: hidden;
+    position:absolute;
+  }
 
-    .bottomHelper {
-      display: none;
+  .images-wrapper {
+    height:100%;
+    transform: rotateX(20deg);
+    filter: blur(4px);
+    transform-style: preserve-3d;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+  }
+
+  .image-box {
+    height: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    position: relative;
+  }
+
+  .image-box::before,
+  .image-box::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .image-box::before {
+    top: 0;
+    background: linear-gradient(to bottom, 
+      var(--bg-color-secondary) 0%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+
+  .image-box::after {
+    bottom: 0;
+    background: linear-gradient(to top, 
+      var(--bg-color-secondary) 0%,
+      rgba(0,0,0,0) 100%
+    );
+  }
+
+  .image-box img {
+    width: 100%;
+    object-fit: cover;
+    will-change: transform;
+    position: relative;
+    z-index: 1;
+  }
+
+  .scroll-down {
+    animation: scrollDown 15s linear infinite;
+  }
+
+  .scroll-up {
+    animation: scrollUp 15s linear infinite;
+  }
+
+  @keyframes scrollDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0%); }
+  }
+
+  @keyframes scrollUp {
+    from { transform: translateY(0%); }
+    to { transform: translateY(-100%); }
+  }
+
+  .account-logo {
+    width: 200px;
+    filter: invert(var(--invert));
+  }
+
+  .account-btn {
+    background-color: var(--bg-opaque-1);
+    padding: 12px 18px;
+    font-size: 18px;
+    color: var(--color) !important;
+    transition: 0.2s;
+  }
+
+  .account-btn:hover {
+    background-color: var(--accent-color, AccentColor);
+    color: white !important;
+  }
+
+  .btn-icon {
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .innertext {
+      padding-left: 20px;
     }
   }
 </style>
