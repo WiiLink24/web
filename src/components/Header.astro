@@ -135,10 +135,12 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/install"
             aria-label="Install Guide Link">
+            <span style="padding:10px; border-radius:4px; background-color:var(--bg-color-tertiary);">
             <Icon
               name="lucide:download"
-              style="width:85px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
+              style="width:25px !important; height:25px !important;"
              />
+            </span>
             <div>
               <div class="title">
                 <b
@@ -151,7 +153,6 @@ const { isMain } = Astro.props;
                 {t("guidePost.installGuide-info")}
               </div>
             </div>
-            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <div class="post" style="padding:8px; border-radius:4px;">
@@ -159,10 +160,12 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/problemsolving"
             aria-label="Troubleshooting Guide Link">
-            <Icon
-              name="lucide:circle-alert"
-              style="width:65px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
-             />
+            <span style="padding:10px; border-radius:4px; background-color:var(--bg-color-tertiary);">
+              <Icon
+                name="lucide:circle-alert"
+                style="width:25px !important; height:25px !important;"
+               />
+              </span>
             <div>
               <div class="title">
                 <b
@@ -175,7 +178,6 @@ const { isMain } = Astro.props;
                 {t("guidePost.problemSolving-info")}
               </div>
             </div>
-            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <div class="post" style="padding:8px; border-radius:4px;">
@@ -183,10 +185,12 @@ const { isMain } = Astro.props;
             style="display:flex; flex-direction:row; align-items:center; gap:8px;"
             href="/guide/faq"
             aria-label="FAQ Link">
-            <Icon
-              name="lucide:circle-help"
-              style="width:80px !important; height:50px; text-align:center; line-height:50px; border-radius:4px; background-color:var(--bg-color-tertiary);"
-             />
+            <span style="padding:10px; border-radius:4px; background-color:var(--bg-color-tertiary);">
+              <Icon
+                name="lucide:circle-help"
+                style="width:25px !important; height:25px !important;"
+               />
+              </span>
             <div>
               <div class="title">
                 <b
@@ -199,7 +203,6 @@ const { isMain } = Astro.props;
                 {t("guidePost.faq-info")}
               </div>
             </div>
-            <Icon name="lucide:arrow-right" />
           </a>
         </div>
         <hr style="border-top: 1px solid var(--border-color);" />
