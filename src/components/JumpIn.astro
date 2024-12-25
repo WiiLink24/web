@@ -5,6 +5,7 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div class="promptholder">
+  <span style="height:100%; max-width:1500px;">
   <div class="images-container">
     <div class="images-wrapper">
       <div class="image-box">
@@ -36,6 +37,7 @@ import { Icon } from "astro-icon/components";
     <Icon name="lucide:user" class="btn-icon" /> 
     Access your Account
   </a>
+</span>
 </div>
 </div>
 
@@ -49,9 +51,12 @@ import { Icon } from "astro-icon/components";
     top: 480px;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 100%;
+    width: calc(100% - 20px);
+    max-width: 1500px;
     height:600px;
     background: var(--bg-color-secondary);
+    border: 2px solid #ffffff05;
+    border-radius: 18px;
     overflow: hidden;
     z-index: 1;
     position: relative;
@@ -82,7 +87,7 @@ import { Icon } from "astro-icon/components";
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    padding-left:80px;
+    padding-left:60px;
     gap:18px;
     z-index: 100;
     position: relative;
@@ -108,9 +113,11 @@ import { Icon } from "astro-icon/components";
 
   .images-container {
     top:-20px;
-    left:0;
+    left:50%;
+    transform: translate(-50%, 0);
     width: 120%;
     min-width: 1000px;
+    max-width: 2000px;
     height:100%;
     perspective: 1000px;
     opacity:0.6;
@@ -215,8 +222,14 @@ import { Icon } from "astro-icon/components";
   }
 
   @media screen and (max-width: 1000px) {
+    .promptholder {
+      width: calc(100% - 20px);
+    }
     .innertext {
       padding-left: 20px;
+    }
+    .bottomHelper {
+      height:160px !important;
     }
   }
 </style>
