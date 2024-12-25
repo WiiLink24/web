@@ -1,7 +1,7 @@
 ---
 title: Check Mii Out Channel
 pubDate: 2024-01-24
-icon: lucideuser
+icon: lucide:user
 description: Share Miis with the community and enter them in contests.
 heroImage: "miioutbanner.webp"
 type: "WiiConnect24"
