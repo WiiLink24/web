@@ -39,7 +39,7 @@ changeLanguage("ja");
                 role="alert">
               </div>
 
-            <Hero />
+              <Hero />
             </div>
             <Services />
 
@@ -107,20 +107,33 @@ changeLanguage("ja");
   document.getElementById("footer").style.animation =
     "fadeout 0.2s linear forwards";
 
-  document.getElementById("square2").addEventListener('scroll', function() {
+  document.getElementById("square2").addEventListener("scroll", function () {
     const scrollableDiv = document.getElementById("square2");
     const scrollPosition = scrollableDiv.scrollTop;
     const width = window.innerWidth;
     const isScrolled = scrollPosition > 0;
-    const isNearBottom = scrollableDiv.scrollHeight - scrollableDiv.scrollTop <= scrollableDiv.clientHeight + 30;
-  
-    document.querySelector(".square").style.animationPlayState = isScrolled ? "paused" : "running";
-    document.querySelector(".bottomleftcorner").style.animationPlayState = isScrolled ? "paused" : "running";
-    scrollableDiv.style.setProperty("background-color", isScrolled ? "var(--bg-color)" : "var(--bg-color-hero)");
-  
+    const isNearBottom =
+      scrollableDiv.scrollHeight - scrollableDiv.scrollTop <=
+      scrollableDiv.clientHeight + 30;
+
+    document.querySelector(".square").style.animationPlayState = isScrolled
+      ? "paused"
+      : "running";
+    document.querySelector(".bottomleftcorner").style.animationPlayState =
+      isScrolled ? "paused" : "running";
+    scrollableDiv.style.setProperty(
+      "background-color",
+      isScrolled ? "var(--bg-color)" : "var(--bg-color-hero)"
+    );
+
     if (width >= 1000) {
-      scrollableDiv.style.setProperty("height", isNearBottom ? "calc(100% - 300px)" : "calc(100% - 30px)");
-      document.getElementById("footer").style.animation = isNearBottom ? "fadein 0.2s linear forwards" : "fadeout 0.2s linear forwards";
+      scrollableDiv.style.setProperty(
+        "height",
+        isNearBottom ? "calc(100% - 300px)" : "calc(100% - 30px)"
+      );
+      document.getElementById("footer").style.animation = isNearBottom
+        ? "fadein 0.2s linear forwards"
+        : "fadeout 0.2s linear forwards";
     } else {
       scrollableDiv.style.setProperty("height", "100%");
     }
@@ -129,48 +142,54 @@ changeLanguage("ja");
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-  function getUrlParameter(name) {
-    name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
-    var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
-    var results = regex.exec(location.hash);
-    return results ? decodeURIComponent(results[1].replace(/\+/g, " ")) : "";
-  }
-
-  function showWarning(icon, message) {
-    const warnElement = document.getElementById("warn");
-    warnElement.style.display = "block";
-    warnElement.innerHTML = `<i class='fa ${icon}'></i> <b>${message}</b>`;
-  }
-
-  const parameters = {
-    fromRiiConnect24: getUrlParameter("from-riiconnect24"),
-    kawaii: getUrlParameter("kawaii")
-  };
-
-  if (parameters.fromRiiConnect24 === "true") {
-    showWarning("fa-triangle-exclamation", "You were redirected from RC24.xyz!<br /><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>");
-  }
-
-  if (parameters.kawaii === "true") {
-    showWarning("fa-heart", "Haiiiiiii :3<br /><hr style='margin:8px 0;'/>We hope you like our vtuber debut!");
-    let logos = document.getElementsByClassName("logo");
-    for (let logo of logos) {
-      logo.setAttribute("src", "/img/logo-kawaii.webp");
-      logo.classList.add("kawaii");
+    function getUrlParameter(name) {
+      name = name.replace(/[[]/, "\\[").replace(/[\]]/, "\\]");
+      var regex = new RegExp("[\\#?&]" + name + "=([^&#]*)");
+      var results = regex.exec(location.hash);
+      return results ? decodeURIComponent(results[1].replace(/\+/g, " ")) : "";
     }
-  }
-});
 
-  const tooltipTriggerList = document.querySelectorAll(
-    '[data-bs-toggle="tooltip"]'
-  );
-  const tooltipList = [...tooltipTriggerList].map(
-    tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
-  );
-  const toastElList = document.querySelectorAll(".toast");
-  const toastList = [...toastElList].map(
-    toastEl => new bootstrap.Toast(toastEl, option)
-  );
+    function showWarning(icon, message) {
+      const warnElement = document.getElementById("warn");
+      warnElement.style.display = "block";
+      warnElement.innerHTML = `<i class='fa ${icon}'></i> <b>${message}</b>`;
+    }
+
+    const parameters = {
+      fromRiiConnect24: getUrlParameter("from-riiconnect24"),
+      kawaii: getUrlParameter("kawaii")
+    };
+
+    if (parameters.fromRiiConnect24 === "true") {
+      showWarning(
+        "fa-triangle-exclamation",
+        "You were redirected from RC24.xyz!<br /><hr style='margin:8px 0;'/>Following the WiiLink and RiiConnect24 merge, all services have been unified under this site. <br /><u>Please proceed with your installation from here!</u>"
+      );
+    }
+
+    if (parameters.kawaii === "true") {
+      showWarning(
+        "fa-heart",
+        "Haiiiiiii :3<br /><hr style='margin:8px 0;'/>We hope you like our vtuber debut!"
+      );
+      let logos = document.getElementsByClassName("logo");
+      for (let logo of logos) {
+        logo.setAttribute("src", "/img/logo-kawaii.webp");
+        logo.classList.add("kawaii");
+      }
+    }
+
+    const tooltipTriggerList = document.querySelectorAll(
+      '[data-bs-toggle="tooltip"]'
+    );
+    const tooltipList = [...tooltipTriggerList].map(
+      tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl)
+    );
+    const toastElList = document.querySelectorAll(".toast");
+    const toastList = [...toastElList].map(
+      toastEl => new bootstrap.Toast(toastEl, option)
+    );
+  });
 </script>
 
 <style>
