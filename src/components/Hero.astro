@@ -417,6 +417,7 @@ import { Icon } from "astro-icon/components";
     const owner = "WiiLink24";
     const repo = "WiiLink24-Patcher";
 
+    let assets = [];
     try {
       const { data: release } = await octokit.request(
         "GET /repos/{owner}/{repo}/releases/latest",
