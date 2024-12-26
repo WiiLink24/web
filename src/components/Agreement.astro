@@ -27,8 +27,10 @@ import { Icon } from "astro-icon/components";
     data-bs-target="#offcanvasTop"
     aria-label="Menu"
     aria-controls="offcanvasTop"
-    ><Icon style="font-size:30px; filter:opacity(0.9);" name="lucide:menu"
-     /></button
+    ><Icon
+      style="font-size:30px; filter:opacity(0.9);"
+      name="lucide:menu"
+    /></button
   >
 </div>
 
@@ -37,16 +39,27 @@ import { Icon } from "astro-icon/components";
   id="offcanvasTop"
   aria-labelledby="offcanvasTopLabel">
   <div class="offcanvas-body">
-    <span style="display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px; padding:8px;">
-    <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"><div id="pfp-container" style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)"><Icon name="lucide:user" /></div></a>
-    <img src="/img/logo.webp" style="filter:invert(var(--invert));" height="50px" />
-    <button
-      type="button"
-      class="btn-close"
-      style=""
-      data-bs-dismiss="offcanvas"
-      aria-label="Close">
-    </button>
+    <span
+      style="display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px; padding:8px;">
+      <a href="https://accounts.wiilink.ca" id="mobileaccountbtn"
+        ><div
+          id="pfp-container"
+          style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)">
+          <Icon name="lucide:user" />
+        </div></a
+      >
+      <img
+        src="/img/logo.webp"
+        style="filter:invert(var(--invert));"
+        height="50px"
+      />
+      <button
+        type="button"
+        class="btn-close"
+        style=""
+        data-bs-dismiss="offcanvas"
+        aria-label="Close">
+      </button>
     </span>
 
     <div class="buttons">
@@ -55,8 +68,10 @@ import { Icon } from "astro-icon/components";
           type="button"
           class="btn btn-success"
           style="border-radius: 16px 4px 4px 4px; width:100%; height:60px;"
-          ><Icon name="lucide:download" style="color: white !important; margin-bottom:3px;"
-           /></button
+          ><Icon
+            name="lucide:download"
+            style="color: white !important; margin-bottom:3px;"
+          /></button
         ></a
       >
       <button
@@ -65,13 +80,13 @@ import { Icon } from "astro-icon/components";
         class="btn btn-light"
         style="border-radius: 4px 16px 4px 4px; background-color: var(--color);"
         onclick="themeToggle()"
-        ><Icon name="lucide:sun" style="color: var(--bg-color-absolute); margin-bottom:3px;"
-         /></button
+        ><Icon
+          name="lucide:sun"
+          style="color: var(--bg-color-absolute); margin-bottom:3px;"
+        /></button
       >
     </div>
-    <LanguageDropdown ismobile/>
-    <hr />
-    <div class="holdcontainer"></div>
+    <LanguageDropdown ismobile />
     <div class="elements">
       <a
         class="link"
@@ -114,13 +129,16 @@ import { Icon } from "astro-icon/components";
         {t("header.services")}
       </a>
     </div>
-    <br />
+    <div class="holdcontainer"></div>
     <li style="padding:12px; opacity:1 !important;">
       <a
         href="/extras"
         aria-label="Extras Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><Icon name="lucide:package-open" style="margin-bottom:3px;" /> {t("header.extras")}</div></a
+        ><div>
+          <Icon name="lucide:package-open" style="margin-bottom:3px;" />
+          {t("header.extras")}
+        </div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -128,7 +146,9 @@ import { Icon } from "astro-icon/components";
         href="https://wfc.wiilink24.com"
         aria-label="WiiLink WFC Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><Icon name="lucide:wifi" style="margin-bottom:3px;" /> WiiLink WFC</div></a
+        ><div>
+          <Icon name="lucide:wifi" style="margin-bottom:3px;" /> WiiLink WFC
+        </div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -136,7 +156,9 @@ import { Icon } from "astro-icon/components";
         href="https://miicontest.wiilink.ca"
         aria-label="CMOC Viewing Tool Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        ><div><Icon name="lucide:users" style="margin-bottom:3px;" /> Check Mii Out Channel</div></a
+        ><div>
+          <Icon name="lucide:users" style="margin-bottom:3px;" /> Check Mii Out Channel
+        </div></a
       >
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -145,7 +167,8 @@ import { Icon } from "astro-icon/components";
         href="https://evc.wiilink.ca"
         aria-label="EVC Viewing Tool Link">
         <div>
-          <Icon name="lucide:chart-no-axes-column" style="margin-bottom:3px;" /> Everybody Votes Channel
+          <Icon name="lucide:chart-no-axes-column" style="margin-bottom:3px;" />
+          Everybody Votes Channel
         </div>
       </a>
     </li>
@@ -162,7 +185,9 @@ import { Icon } from "astro-icon/components";
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://card.wiilink24.com/"
         aria-label="LinkTag">
-        <div><Icon name="lucide:id-card" style="margin-bottom:3px;" /> Digicard</div>
+        <div>
+          <Icon name="lucide:id-card" style="margin-bottom:3px;" /> Digicard
+        </div>
       </a>
     </li>
     <li style="padding:12px; opacity:1 !important;">
@@ -170,10 +195,13 @@ import { Icon } from "astro-icon/components";
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         href="https://stamp.wiilink.ca/"
         aria-label="LinkTag">
-        <div><Icon name="lucide:stamp" style="margin-bottom:3px;" /> Mii Stamp Generator</div>
+        <div>
+          <Icon name="lucide:stamp" style="margin-bottom:3px;" /> Mii Stamp Generator
+        </div>
       </a>
     </li>
-    <hr />
+
+    <br />
 
     <div
       style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
@@ -181,7 +209,8 @@ import { Icon } from "astro-icon/components";
         href="https://bookmark.rc24.xyz"
         style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Wii Bookmarks"
-        title="Wii Bookmarks"><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
+        title="Wii Bookmarks"
+        ><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
       >
       <a
         href="http://disc.rc24.xyz/"
@@ -194,7 +223,8 @@ import { Icon } from "astro-icon/components";
         href="http://interviews.rc24.xyz/"
         style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Nintendo dev interviews"
-        title="Nintendo dev interviews"><Icon name="lucide:message-circle" style="margin-bottom:3px;" /></a
+        title="Nintendo dev interviews"
+        ><Icon name="lucide:message-circle" style="margin-bottom:3px;" /></a
       >
       <a
         href="http://wiiremote.rc24.xyz/"
@@ -205,21 +235,24 @@ import { Icon } from "astro-icon/components";
       >
     </div>
 
-    <hr />
+    <br />
 
     <li>
       <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-        ><Icon name="simple-icons:discord" style="margin-bottom:3px;" /> Join our Discord server!</a
+        ><Icon name="simple-icons:discord" style="margin-bottom:3px;" /> Join our
+        Discord server!</a
       >
     </li>
     <li>
       <a href="/privacy-policy" aria-label="Privacy Policy Link"
-        ><Icon name="lucide:shield" style="margin-bottom:3px;" /> {t("header.privacyPolicy")}</a
+        ><Icon name="lucide:shield" style="margin-bottom:3px;" />
+        {t("header.privacyPolicy")}</a
       >
     </li>
     <li>
       <a href="/tos" aria-label="Terms of Service Link"
-        ><Icon name="lucide:feather" style="margin-bottom:3px;" /> {t("header.tos")}</a
+        ><Icon name="lucide:feather" style="margin-bottom:3px;" />
+        {t("header.tos")}</a
       >
     </li>
     <li>
@@ -260,8 +293,13 @@ import { Icon } from "astro-icon/components";
     text-decoration: none;
   }
 
+  hr {
+    border-top: 1px solid var(--bg-color-secondary) !important;
+  }
+
   .offcanvas {
     background-color: var(--bg-color);
+    border-radius: 16px 0px 0px 16px;
   }
 
   .buttons {
@@ -281,6 +319,7 @@ import { Icon } from "astro-icon/components";
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
   }
 
   .link {
@@ -340,6 +379,11 @@ import { Icon } from "astro-icon/components";
     .dropdownbtn,
     .logohold {
       display: block;
+    }
+  }
+  @media only screen and (max-width: 430px) {
+    .offcanvas {
+      border-radius: 0px;
     }
   }
 </style>

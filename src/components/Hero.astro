@@ -29,21 +29,18 @@ import { Icon } from "astro-icon/components";
         alt="logo"
         width="150px"
       />
-      <!--
-    <marquee
-        onclick="window.location.href='https://stamp.wiilink.ca'"
+      <marquee
         scrollamount="1"
         scrolldelay="20"
         truespeed
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        data-bs-title="Click here for more information"
         class="badge notice-mobile"
-        style="font-size: 18px; text-align: left; background-color: var(--bg-color-secondary); border: 1px solid var(--border-color); color: var(--color); margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; cursor:pointer; text-overflow: ellipsis; line-height: 25px;"
-        ><Icon name="lucide:stamp" style="margin-right:8px; margin-bottom:3px;"
-         /> Create your own Mii Stamps here!</marquee
+        style="font-size: 18px; text-align: left; background-color: #e73434; border: 1px solid #fe3636b9; color: white; margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; cursor:pointer; text-overflow: ellipsis; line-height: 25px;"
+        ><Icon
+          name="lucide:circle-alert"
+          style="margin-right:8px; margin-bottom:3px;"
+        /> WiiLink Account creation is disabled while we sort out some issues. Sorry
+        for the inconveniece!</marquee
       >
-      -->
     </div>
     <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
     <p style="font-size:20px; opacity:0.7;">
@@ -243,7 +240,7 @@ import { Icon } from "astro-icon/components";
 
       <button
         class="btn btn-prmiary guidebtn btn-lg"
-        style="padding-top:11px; padding-bottom:11px; border:1px solid #0d6efd; border:1px solid AccentColor; font-size:18px; border-radius:12px;"
+        style="padding-top:11px; padding-bottom:11px; border:1px solid #0d6efd; font-size:18px; border-radius:12px;"
         onclick="window.location.href = '/guide/install';">
         <Icon
           name="lucide:arrow-up-right"
@@ -302,638 +299,487 @@ import { Icon } from "astro-icon/components";
   <h1 id="fetcherHero" style="display:none;">
     ../json{localizePath("/hero.json")}
   </h1>
+</div>
 
-  <script is:inline>
-    let assets = [];
+<script>
+  let fetcher = document.getElementById("fetcherHero").innerHTML;
 
-    function downloadPatcher() {
-      if (document.getElementById("flexCheckDefault").checked) {
-        let userAgent = window.navigator.userAgent;
-        let os = "Download Patcher";
+  function updateTagline() {
+    let tagline = document.getElementById("tagline");
+    fetch(fetcher)
+      .then(res => res.json())
+      .then(data => {
+        let taglines = data.taglines;
+        let randomTagline =
+          taglines[Math.floor(Math.random() * taglines.length)];
+        let letters = randomTagline.split("");
+        tagline.innerHTML = letters
+          .map(
+            (letter, index) =>
+              `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
+          )
+          .join("");
+      });
+  }
 
-        if (userAgent.indexOf("Win") != -1) os = "Windows";
-        if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-        if (userAgent.indexOf("Linux") != -1) os = "Linux";
+  function osdetect() {
+    let userAgent = window.navigator.userAgent;
+    let os = "Unknown OS";
 
-        switch (os) {
-          case "MacOS":
-            window.location.href = assets[3];
-            break;
-          case "Windows":
-            window.location.href = assets[4];
-            break;
-          case "Linux":
-            window.location.href = assets[1];
-            break;
-          default:
-            window.location.href =
-              "https://github.com/WiiLink24/WiiLink24-Patcher/releases";
-            break;
-        }
-      } else {
-        alert("Please accept the terms of service and the privacy policy.");
-      }
-    }
-  </script>
+    if (userAgent.indexOf("Win") != -1) os = "Windows";
+    if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+    if (userAgent.indexOf("Linux") != -1) os = "Linux";
 
-  <script>
-    let fetcher = document.getElementById("fetcherHero").innerHTML;
+    return os;
+  }
 
-    function updateTagline() {
-      let tagline = document.getElementById("tagline");
-      fetch(fetcher)
-        .then(res => res.json())
-        .then(data => {
-          let taglines = data.taglines;
-          let randomTagline =
-            taglines[Math.floor(Math.random() * taglines.length)];
-          let letters = randomTagline.split("");
-          tagline.innerHTML = letters
-            .map(
-              (letter, index) =>
-                `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
-            )
-            .join("");
-        });
-    }
+  function updateButtons() {
+    const buttons = {
+      download: document.getElementById("download-btn"),
+      extra: document.getElementById("extra-btn"),
+      extra2: document.getElementById("extra-btn-2")
+    };
 
-    function osdetect() {
-      let userAgent = window.navigator.userAgent;
-      let os = "Unknown OS";
+    const checkbox = document.getElementById("flexCheckDefault");
+    if (!checkbox) return;
 
-      if (userAgent.indexOf("Win") != -1) os = "Windows";
-      if (userAgent.indexOf("Mac") != -1) os = "MacOS";
-      if (userAgent.indexOf("Linux") != -1) os = "Linux";
+    const isEnabled = checkbox.checked;
 
-      return os;
-    }
-
-    function updateButtons() {
-      var checkbox = document.getElementById("flexCheckDefault");
-      if (checkbox.checked) {
-        document.getElementById("download-btn").classList.remove("disabled");
-        document.getElementById("extra-btn").classList.remove("disabled");
-        document.getElementById("extra-btn-2").classList.remove("disabled");
-        document.getElementById("download-btn").style.transition = "0.2s";
-        document.getElementById("extra-btn").style.transition = "0.2s";
-        document.getElementById("extra-btn-2").style.transition = "0.2s";
-      } else {
-        document.getElementById("download-btn").classList.add("disabled");
-        document.getElementById("extra-btn").classList.add("disabled");
-        document.getElementById("extra-btn-2").classList.add("disabled");
-      }
-    }
-
-    document
-      .getElementById("flexCheckDefault")
-      .addEventListener("change", updateButtons);
-
-    function updateHero() {
-      fetch(fetcher)
-        .then(res => res.json())
-        .then(data => {
-          let services = data.hero.element;
-
-          function shuffle(array) {
-            for (let i = array.length - 1; i > 0; i--) {
-              const j = Math.floor(Math.random() * (i + 1));
-              [array[i], array[j]] = [array[j], array[i]];
-            }
-            return array;
-          }
-
-          services = shuffle(services);
-
-          let randomServices = services.slice(0, 3);
-          let withThe = document.getElementById("withThe").innerHTML;
-          let html = "";
-
-          randomServices.forEach((service, index) => {
-            html += `
-            <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
-              <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
-              <div style="z-index: 1; position:relative;">
-                <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
-                <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
-                <a href="${service.link}" aria-label="${service.name} Link">${service.name}</a>
-                </p>
-              </div>
-              <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
-                <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
-              </div>
-            </div>
-          `;
-          });
-          document.getElementById("hero-services").innerHTML = html;
-
-          const bar = document.getElementById("bar");
-          bar.style.animation = "none";
-          void bar.offsetWidth;
-          bar.style.animation = "bar 10s linear forwards";
-          setTimeout(() => {
-            document
-              .querySelectorAll(".element")
-              .forEach(el => el.classList.add("fadeOut"));
-          }, 9500);
-        });
-    }
-
-    import { Octokit } from "https://esm.sh/octokit";
-
-    document.addEventListener("DOMContentLoaded", async function () {
-      updateTagline();
-      updateHero();
-      updateButtons();
-      setInterval(updateHero, 10000);
-
-      const octokit = new Octokit({ auth: "" });
-      const owner = "WiiLink24";
-      const repo = "WiiLink24-Patcher";
-
-      try {
-        const { data: release } = await octokit.request(
-          "GET /repos/{owner}/{repo}/releases/latest",
-          { owner, repo }
-        );
-
-        if (release?.assets) {
-          const versionNumber = release.tag_name;
-          document.getElementById("verno").textContent = versionNumber;
-
-          const assetUrls = release.assets.map(
-            asset => asset.browser_download_url
-          );
-          const downloadElements = {
-            "download-windows": assetUrls[4],
-            "download-macos-arm": assetUrls[2],
-            "download-macos-x64": assetUrls[3],
-            "download-linux-arm": assetUrls[0],
-            "download-linux-x64": assetUrls[1]
-          };
-
-          let index = 0;
-          for (const [id, url] of Object.entries(downloadElements)) {
-            if (url) document.getElementById(id).href = url;
-          }
-          assets = assetUrls;
-        }
-      } catch (error) {
-        console.error("Error fetching GitHub release:", error);
-      }
-
-      const downloadFor = document.getElementById("downloadFor").textContent;
-      const downloadPrompt =
-        document.getElementById("downloadPrompt").textContent;
-
-      const osIcons = {
-        MacOS: "fa-apple",
-        Windows: "fa-microsoft",
-        Linux: "fa-linux"
-      };
-
-      const os = osdetect();
-      const downloadBtn = document.getElementById("download-btn");
-      const icon = osIcons[os] || "fa-download";
-      const osName =
-        os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
-      const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
-      downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+    Object.values(buttons).forEach(button => {
+      if (!button) return;
+      button.classList.toggle("disabled", !isEnabled);
+      button.style.transition = isEnabled ? "0.2s" : "";
     });
+  }
 
-    (function () {
-      updateTagline();
-      updateHero();
+  document
+    .getElementById("flexCheckDefault")
+    ?.addEventListener("change", updateButtons);
 
-      setTimeout(() => {
-        setInterval(updateHero, 10000);
-      }, 10000);
+  function updateHero() {
+    fetch(fetcher)
+      .then(res => res.json())
+      .then(data => {
+        let services = data.hero.element;
+        let randomServices = [];
+        let used = new Set();
 
-      window.requestIdleCallback =
-        window.requestIdleCallback ||
-        function (cb) {
-          return setTimeout(cb, 1);
+        while (randomServices.length < 3) {
+          const index = Math.floor(Math.random() * services.length);
+          if (!used.has(index)) {
+            used.add(index);
+            randomServices.push(services[index]);
+          }
+        }
+
+        let withThe = document.getElementById("withThe").innerHTML;
+        let html = "";
+
+        randomServices.forEach((service, index) => {
+          html += `
+          <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
+            <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
+            <div style="z-index: 1; position:relative;">
+              <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
+              <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
+              <a href="${service.link}" aria-label="${service.name} Link">${service.name}</a>
+              </p>
+            </div>
+            <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
+              <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
+            </div>
+          </div>
+        `;
+        });
+        document.getElementById("hero-services").innerHTML = html;
+
+        const bar = document.getElementById("bar");
+        bar.style.animation = "none";
+        void bar.offsetWidth;
+        bar.style.animation = "bar 10s linear forwards";
+        setTimeout(() => {
+          document
+            .querySelectorAll(".element")
+            .forEach(el => el.classList.add("fadeOut"));
+        }, 9500);
+      });
+  }
+
+  import { Octokit } from "https://esm.sh/octokit";
+
+  document.addEventListener("DOMContentLoaded", async function () {
+    updateTagline();
+    updateHero();
+    updateButtons();
+    setInterval(updateHero, 10000);
+
+    const octokit = new Octokit({ auth: "" });
+    const owner = "WiiLink24";
+    const repo = "WiiLink24-Patcher";
+
+    try {
+      const { data: release } = await octokit.request(
+        "GET /repos/{owner}/{repo}/releases/latest",
+        { owner, repo }
+      );
+
+      if (release?.assets) {
+        const versionNumber = release.tag_name;
+        document.getElementById("verno").textContent = versionNumber;
+
+        const assetUrls = release.assets.map(
+          asset => asset.browser_download_url
+        );
+        const downloadElements = {
+          "download-windows": assetUrls[4],
+          "download-macos-arm": assetUrls[2],
+          "download-macos-x64": assetUrls[3],
+          "download-linux-arm": assetUrls[0],
+          "download-linux-x64": assetUrls[1]
         };
 
-      requestIdleCallback(() => {
-        loadGitHubData();
-        updateButtons();
+        let index = 0;
+        for (const [id, url] of Object.entries(downloadElements)) {
+          if (url) document.getElementById(id).href = url;
+        }
+        assets = assetUrls;
+      }
+    } catch (error) {
+      console.error("Error fetching GitHub release:", error);
+    }
+
+    const downloadFor = document.getElementById("downloadFor").textContent;
+    const downloadPrompt =
+      document.getElementById("downloadPrompt").textContent;
+
+    const osIcons = {
+      MacOS: "fa-apple",
+      Windows: "fa-microsoft",
+      Linux: "fa-linux"
+    };
+    const os = osdetect();
+    const downloadBtn = document.getElementById("download-btn");
+
+    if (downloadBtn) {
+      let downloadFile;
+
+      switch (os) {
+        case "MacOS":
+          downloadFile = assets?.[2];
+          break;
+        case "Windows":
+          downloadFile = assets?.[4];
+          break;
+        case "Linux":
+          downloadFile = assets?.[1];
+          break;
+        default:
+          downloadFile =
+            "https://www.github.com/WiiLink24/WiiLink24-Patcher/releases";
+      }
+
+      downloadBtn.addEventListener("click", e => {
+        e.preventDefault();
+        if (downloadFile) {
+          window.location.href = downloadFile;
+        }
       });
-    })();
-
-    async function loadGitHubData() {
-      const octokit = new Octokit({ auth: "" });
-      try {
-        const { data: release } = await octokit.request(
-          "GET /repos/{owner}/{repo}/releases/latest",
-          { owner: "WiiLink24", repo: "WiiLink24-Patcher" }
-        );
-
-        if (release?.assets) {
-          document.getElementById("verno").textContent = release.tag_name;
-          assets = release.assets.map(asset => asset.browser_download_url);
-
-          const downloadElements = {
-            "download-windows": assets[4],
-            "download-macos-arm": assets[2],
-            "download-macos-x64": assets[3],
-            "download-linux-arm": assets[0],
-            "download-linux-x64": assets[1]
-          };
-
-          for (const [id, url] of Object.entries(downloadElements)) {
-            if (url) document.getElementById(id).href = url;
-          }
-        }
-      } catch (error) {
-        console.error("Error fetching GitHub release:", error);
-      }
     }
+    const icon = osIcons[os] || "fa-download";
+    const osName =
+      os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
+    const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
+    downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+  });
+</script>
 
-    // Single function to handle all GitHub data fetching and UI updates
-    async function handleGitHubData() {
-      const octokit = new Octokit({ auth: "" });
-      const owner = "WiiLink24";
-      const repo = "WiiLink24-Patcher";
+<style>
+  .holder {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
 
-      try {
-        const { data: release } = await octokit.request(
-          "GET /repos/{owner}/{repo}/releases/latest",
-          { owner, repo, headers: { "X-GitHub-Api-Version": "2022-11-28" } }
-        );
+  .left {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeup 500ms 0.5s ease forwards;
+  }
 
-        if (release?.assets) {
-          // Update version number
-          const versionNumber = release.tag_name;
-          document.getElementById("verno").textContent = versionNumber;
+  .logo {
+    filter: invert(1);
+  }
 
-          // Map asset URLs
-          const assetUrls = release.assets.map(
-            asset => asset.browser_download_url
-          );
+  html.dark .logo {
+    filter: invert(0);
+  }
 
-          // Store assets globally for download function
-          window.assets = assetUrls;
+  .btn-container {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 10px;
+  }
 
-          // Configure download buttons
-          const downloadElements = {
-            "download-windows": assetUrls[4],
-            "download-macos-arm": assetUrls[2],
-            "download-macos-x64": assetUrls[3],
-            "download-linux-arm": assetUrls[0],
-            "download-linux-x64": assetUrls[1]
-          };
+  a:hover {
+    color: white !important;
+    color: AccentColor !important;
+  }
 
-          // Update all download links
-          for (const [id, url] of Object.entries(downloadElements)) {
-            if (url) document.getElementById(id).href = url;
-          }
+  .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    background-color: AccentColor;
+    border-color: AccentColor;
+  }
 
-          // Update main download button
-          const downloadFor =
-            document.getElementById("downloadFor").textContent;
-          const downloadPrompt =
-            document.getElementById("downloadPrompt").textContent;
+  .btn-group {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+  }
 
-          const osIcons = {
-            MacOS: "fa-apple",
-            Windows: "fa-microsoft",
-            Linux: "fa-linux"
-          };
+  .form-check {
+    margin-top: 15px;
+  }
 
-          const os = osdetect();
-          const downloadBtn = document.getElementById("download-btn");
-          const icon = osIcons[os] || "fa-download";
-          const osName =
-            os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
-          const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
-          downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
-        }
-      } catch (error) {
-        console.error("Error fetching GitHub release:", error);
-      }
+  li {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(var(--color) 10%, transparent 11%),
+      radial-gradient(var(--color) 10%, transparent 11%);
+    background-size: 30px 30px;
+    background-position:
+      0 0,
+      30px 30px;
+    opacity: 0.3;
+    left: -30px;
+    top: -30px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    display: none;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    padding: 8px !important;
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .dropdown-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--bg-color-tertiary);
+    border-radius: 4px;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    transition: 0.2s;
+  }
+
+  .bottom-cta {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .holder-svc {
+    max-width: 600px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    position: relative;
+  }
+
+  .more {
+    opacity: 0.7;
+    transform: translate(0, -5px);
+    font-size: 20px;
+    text-align: right;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .more:hover {
+    opacity: 1;
+    transition: 0.2s;
+  }
+
+  .more i {
+    transition: 0.2s;
+  }
+
+  .more:hover i {
+    transform: translate(5px, 0);
+    transition: 0.2s;
+  }
+
+  .guidebtn:hover {
+    background-color: #0d6efd;
+    color: white !important;
+  }
+
+  .bar-holder {
+    width: 150px;
+    height: 10px;
+    transform: translate(0, -5px);
+    border-radius: 80px;
+    background-color: var(--bg-opaque-1);
+  }
+
+  .bar {
+    width: 50%;
+    height: 100%;
+    background-color: var(--color);
+    background-color: AccentColor;
+    opacity: 0.3;
+    border-radius: 80px;
+    animation: bar 1s infinite;
+    overflow: hidden;
+  }
+
+  .line-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .line-container .horizontal-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--color);
+    opacity: 0.5;
+    margin-left: 10px;
+    transform: translate(0, -5px);
+  }
+
+  @keyframes fadeup {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-    // Initialize on page load
-    document.addEventListener("DOMContentLoaded", async function () {
-      updateTagline();
-      updateHero();
-      updateButtons();
-      await handleGitHubData();
-      setInterval(updateHero, 10000);
-    });
-
-    // On idle initialization
-    window.requestIdleCallback =
-      window.requestIdleCallback ||
-      function (cb) {
-        return setTimeout(cb, 1);
-      };
-
-    requestIdleCallback(() => {
-      updateButtons();
-    });
-  </script>
-
-  <style>
-    .holder {
-      top: 0;
-      left: 0;
+  @media only screen and (max-width: 1000px) {
+    .right {
+      display: none;
+    }
+    .logo {
+      display: none;
+    }
+    .notice-mobile {
       width: 100%;
-      height: 100%;
-      display: flex;
-      gap: 30px;
-      justify-content: space-between;
-      align-items: center;
+    }
+    .left {
+      left: 50%;
+      transform: translate(-50%, 0) !important;
       position: relative;
     }
-
-    .left {
-      width: 100%;
-      max-width: 650px;
+    .promotional-video {
+      display: block !important;
+    }
+    .btn-container {
       display: flex;
       flex-direction: column;
-      opacity: 0;
-      animation: fadeup 500ms 0.5s ease forwards;
     }
+  }
+</style>
 
-    .logo {
-      filter: invert(1);
-    }
+<style is:global>
+  #tagline span {
+    opacity: 0;
+    transform: translateY(5px);
+    display: inline-block;
+    animation: fadeUpLetter 0.2s forwards;
+    animation-delay: var(--delay);
+    transition: 0.1s;
+  }
 
-    html.dark .logo {
-      filter: invert(0);
-    }
+  #tagline:hover span {
+    opacity: 1;
+    transform: translateY(0px);
+    animation: bob 3s infinite;
+    animation-delay: var(--bob-delay);
+  }
 
-    .btn-container {
-      display: grid;
-      grid-template-columns: 4fr 2fr;
-      gap: 10px;
-    }
-
-    a:hover {
-      color: white !important;
-      color: AccentColor !important;
-    }
-
-    .form-check-input:checked {
-      background-color: #0d6efd;
-      border-color: #0d6efd;
-      background-color: AccentColor;
-      border-color: AccentColor;
-    }
-
-    .btn-group {
-      display: grid;
-      grid-template-columns: 8fr 1fr;
-    }
-
-    .btn-outline-primary:hover {
-      color: white !important;
-    }
-
-    .form-check {
-      margin-top: 15px;
-    }
-
-    li {
-      padding: 5px;
-      border-radius: 8px;
-    }
-
-    .polka-dot {
-      width: 240px;
-      height: 240px;
-      background-image: radial-gradient(var(--color) 10%, transparent 11%),
-        radial-gradient(var(--color) 10%, transparent 11%);
-      background-size: 30px 30px;
-      background-position:
-        0 0,
-        30px 30px;
-      opacity: 0.3;
-      left: -30px;
-      top: -30px;
-      background-repeat: repeat;
-      animation: rotate 240s linear infinite;
-      display: none;
-      position: absolute;
-      z-index: 0;
-    }
-
-    .dropdown-menu {
-      width: 100%;
-      padding: 8px !important;
-      background-color: var(--bg-color-secondary);
-      border-radius: 12px;
-      z-index: 1000;
-      position: relative;
-    }
-
-    .dropdown-item {
-      padding-top: 8px;
-      padding-bottom: 8px;
-      background-color: var(--bg-color-tertiary);
-      border-radius: 4px;
-    }
-
-    .disabled {
-      opacity: 0.5;
-      cursor: not-allowed !important;
-      transition: 0.2s;
-    }
-
-    .bottom-cta {
-      max-width: 600px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      margin-top: 30px;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    .holder-svc {
-      max-width: 600px;
-      height: 500px;
-      display: grid;
-      grid-template-rows: 1fr 1fr 1fr;
-      gap: 30px;
-      position: relative;
-    }
-
-    .more {
-      opacity: 0.7;
-      transform: translate(0, -5px);
-      font-size: 20px;
-      text-align: right;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-
-    .more:hover {
-      opacity: 1;
-      transition: 0.2s;
-    }
-
-    .more i {
-      transition: 0.2s;
-    }
-
-    .more:hover i {
-      transform: translate(5px, 0);
-      transition: 0.2s;
-    }
-
-    .guidebtn:hover {
-      background-color: #0d6efd;
-      background-color: AccentColor;
-      color: white !important;
-    }
-
-    .bar-holder {
-      width: 150px;
-      height: 10px;
-      transform: translate(0, -5px);
-      border-radius: 80px;
-      background-color: var(--bg-opaque-1);
-    }
-
-    .bar {
-      width: 50%;
-      height: 100%;
-      background-color: var(--color);
-      background-color: AccentColor;
-      opacity: 0.3;
-      border-radius: 80px;
-      animation: bar 1s infinite;
-      overflow: hidden;
-    }
-
-    .line-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .line-container .horizontal-line {
-      flex-grow: 1;
-      height: 1px;
-      background-color: var(--color);
-      opacity: 0.5;
-      margin-left: 10px;
-      transform: translate(0, -5px);
-    }
-
-    @keyframes fadeup {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media only screen and (max-width: 1000px) {
-      .right {
-        display: none;
-      }
-      .logo {
-        display: none;
-      }
-      .notice-mobile {
-        width: 100%;
-      }
-      .left {
-        left: 50%;
-        transform: translate(-50%, 0) !important;
-        position: relative;
-      }
-      .promotional-video {
-        display: block !important;
-      }
-      .btn-container {
-        display: flex;
-        flex-direction: column;
-      }
-    }
-  </style>
-
-  <style is:global>
-    #tagline span {
-      opacity: 0;
-      transform: translateY(5px);
-      display: inline-block;
-      animation: fadeUpLetter 0.2s forwards;
-      animation-delay: var(--delay);
-      transition: 0.1s;
-    }
-
-    #tagline:hover span {
-      opacity: 1;
+  @keyframes bob {
+    0% {
       transform: translateY(0px);
-      animation: bob 3s infinite;
-      animation-delay: var(--bob-delay);
     }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
 
-    @keyframes bob {
-      0% {
-        transform: translateY(0px);
-      }
-      50% {
-        transform: translateY(8px);
-      }
-      100% {
-        transform: translateY(0px);
-      }
+  @keyframes fadeUpLetter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
+  }
 
-    @keyframes fadeUpLetter {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+  @keyframes bar {
+    0% {
+      width: 0%;
     }
+    100% {
+      width: 100%;
+    }
+  }
 
-    @keyframes bar {
-      0% {
-        width: 0%;
-      }
-      100% {
-        width: 100%;
-      }
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
     }
+    to {
+      opacity: 0;
+    }
+  }
 
-    @keyframes fadeOut {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
+  .element.fadeOut {
+    animation-name: fadeOut !important;
+    animation-duration: 0.45s !important;
+    animation-fill-mode: both !important;
+  }
 
-    .element.fadeOut {
-      animation-name: fadeOut !important;
-      animation-duration: 0.45s !important;
-      animation-fill-mode: both !important;
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    .webkit-hide {
+      display: none;
     }
-
-    @supports (font: -apple-system-body) and (-webkit-appearance: none) {
-      .webkit-hide {
-        display: none;
-      }
-      .element {
-        background-color: var(--bg-opaque-1);
-        border: 1px solid var(--border-color);
-      }
+    .element {
+      background-color: var(--bg-opaque-1);
+      border: 1px solid var(--border-color);
     }
-  </style>
-
-  <style is:global>
-    #tagline span:hover {
-      color: #0d6efd !important;
-      color: AccentColor !important;
-    }
-  </style>
-</div>
+  }
+</style>

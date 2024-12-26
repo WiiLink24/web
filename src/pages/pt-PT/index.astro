@@ -13,8 +13,6 @@ import Footer from "../../components/Footer.astro";
 import Ad from "../../components/Ad.astro";
 import Themes from "astro-themes";
 import i18next, { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
-import { localizePath } from "astro-i18next";
 
 changeLanguage("pt-PT");
 ---
@@ -152,7 +150,7 @@ changeLanguage("pt-PT");
     function showWarning(icon, message) {
       const warnElement = document.getElementById("warn");
       warnElement.style.display = "block";
-      warnElement.innerHTML = `<i class='fa ${icon}'></i> <b>${message}</b>`;
+      warnElement.innerHTML = `<i class='fa ${icon}'></i> ${message}`;
     }
 
     const parameters = {
@@ -258,12 +256,6 @@ changeLanguage("pt-PT");
   .footer {
     height: calc(80% - 30px);
   }
-  .release-info {
-    width: 95%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: relative;
-  }
   #pathcorner {
     fill: #0d6efd;
   }
@@ -303,16 +295,6 @@ changeLanguage("pt-PT");
     position: absolute;
   }
 
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translate(0, 10px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
-  }
   @keyframes changecolor {
     0% {
       filter: hue-rotate(0deg);

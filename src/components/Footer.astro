@@ -22,15 +22,21 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         />
         <p
           style="margin:0; margin-top:12px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
-          <Icon name="lucide:globe" style="margin-right:5px; margin-bottom:5px;" />
+          <Icon
+            name="lucide:globe"
+            style="margin-right:5px; margin-bottom:5px;"
+          />
           {t("footer.siteby")}
-          <a href="https://github.com/humanoidear" aria-label="Alex's GitHub"
+          <a
+            href="https://github.com/humanoidear"
+            data-bs-toggle="tooltip"
+            data-bs-placement="right"
+            data-bs-title={t("site.creator")}
+            aria-label="Alex's GitHub"
+            style="text-decoration: none;"
             ><button
               type="button"
               class="btn1 btn btn-success"
-              data-bs-toggle="tooltip"
-              data-bs-placement="right"
-              data-bs-title={t("site.creator")}
               style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
               ><img
                 alt="Alex's GitHub PFP"
@@ -44,13 +50,20 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
-          <Icon name="lucide:mail-open" style="margin-right:5px; margin-bottom:5px;" />
-          <a href="mailto:support@wiilink.ca" aria-label="Contact Link"><u>support@wiilink.ca</u></a
+          <Icon
+            name="lucide:mail-open"
+            style="margin-right:5px; margin-bottom:5px;"
+          />
+          <a href="mailto:support@wiilink.ca" aria-label="Contact Link"
+            ><u>support@wiilink.ca</u></a
           >
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
-          <a href="https://wfc.wiilink24.com" aria-label="WiiLink WFC Link" style="margin-right:5px;"
+          <a
+            href="https://wfc.wiilink24.com"
+            aria-label="WiiLink WFC Link"
+            style="margin-right:5px;"
             ><Icon name="lucide:wifi" style="margin-bottom:5px;" /> WiiLink WFC</a
           >
         </p>
@@ -61,34 +74,53 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           <hr
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
-          <a href="/" aria-label="Home Link" class="animated-link">{t("header.home")}</a>
-          <a href="/news" aria-label="News Link" class="animated-link">{t("header.news")}</a>
-          <a href="/guide" aria-label="Guide Link" class="animated-link">{t("header.guide")}</a>
-          <a href="/status" aria-label="Status Link" class="animated-link">{t("header.status")}</a>
-          <a href="/services" aria-label="Services Link" class="animated-link">{t("header.services")}</a>
-          <a href="/extras" aria-label="Extras Link" class="animated-link">{t("header.extras")}</a>
+          <a href="/" aria-label="Home Link" class="animated-link"
+            >{t("header.home")}</a
+          >
+          <a href="/news" aria-label="News Link" class="animated-link"
+            >{t("header.news")}</a
+          >
+          <a href="/guide" aria-label="Guide Link" class="animated-link"
+            >{t("header.guide")}</a
+          >
+          <a href="/status" aria-label="Status Link" class="animated-link"
+            >{t("header.status")}</a
+          >
+          <a href="/services" aria-label="Services Link" class="animated-link"
+            >{t("header.services")}</a
+          >
+          <a href="/extras" aria-label="Extras Link" class="animated-link"
+            >{t("header.extras")}</a
+          >
         </div>
         <div class="column">
           <h4><b>{t("footer.links")}</b></h4>
           <hr
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
-          <a href="https://github.com/WiiLink24" aria-label="GitHub Link" class="animated-link">GitHub</a
+          <a
+            href="https://github.com/WiiLink24"
+            aria-label="GitHub Link"
+            class="animated-link">GitHub</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/repositories" aria-label="GitHub Repository Link"
+            href="https://github.com/orgs/WiiLink24/repositories"
+            aria-label="GitHub Repository Link"
             class="animated-link">{t("footer.repo")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/projects" aria-label="GitHub Projects Link"
+            href="https://github.com/orgs/WiiLink24/projects"
+            aria-label="GitHub Projects Link"
             class="animated-link">{t("footer.projects")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/teams" aria-label="GitHub Teams Link"
+            href="https://github.com/orgs/WiiLink24/teams"
+            aria-label="GitHub Teams Link"
             class="animated-link">{t("footer.teams")}</a
           >
           <a
-            href="https://github.com/orgs/WiiLink24/people" aria-label="GitHub People Link"
+            href="https://github.com/orgs/WiiLink24/people"
+            aria-label="GitHub People Link"
             class="animated-link">{t("footer.people")}</a
           >
         </div>
@@ -98,17 +130,26 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
           <a
-            href="https://discord.gg/wiilink" aria-label="Discord Link"
+            href="https://discord.gg/wiilink"
+            aria-label="Discord Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="discord.gg/wiilink"
-            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:discord"
-             />Discord</a
+            ><Icon
+              style="margin-right:10px; margin-bottom:5px;"
+              name="simple-icons:discord"
+            />Discord</a
           >
           <div class="dropdown">
-            <a href="#" aria-label="Language Dropdown" class="dropdown-toggle" data-bs-toggle="dropdown">
-              <Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:twitter"
-               />Twitter
+            <a
+              href="#"
+              aria-label="Language Dropdown"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown">
+              <Icon
+                style="margin-right:10px; margin-bottom:5px;"
+                name="simple-icons:twitter"
+              />Twitter
             </a>
             <ul
               class="dropdown-menu"
@@ -120,9 +161,10 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink24" aria-label="English Twitter Link"
+                    href="https://twitter.com/WiiLink24"
+                    aria-label="English Twitter Link"
                     ><img
-                    alt="Flag of United States"
+                      alt="Flag of United States"
                       src="/img/flags/en.webp"
                       width="25"
                     /></a
@@ -132,7 +174,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_es" aria-label="Spanish Twitter Link"
+                    href="https://twitter.com/WiiLink_es"
+                    aria-label="Spanish Twitter Link"
                     ><img
                       alt="Flag of Spain"
                       src="/img/flags/es.webp"
@@ -144,7 +187,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_fr" aria-label="French Twitter Link"
+                    href="https://twitter.com/WiiLink_fr"
+                    aria-label="French Twitter Link"
                     ><img
                       alt="Flag of France"
                       src="/img/flags/fr.webp"
@@ -156,7 +200,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_ptbr" aria-label="Portuguese Twitter Link"
+                    href="https://twitter.com/WiiLink_ptbr"
+                    aria-label="Portuguese Twitter Link"
                     ><img
                       alt="Flag of Brazil"
                       src="/img/flags/pt-BR.webp"
@@ -168,7 +213,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://twitter.com/WiiLink_jp" aria-label="Japanese Twitter Link"
+                    href="https://twitter.com/WiiLink_jp"
+                    aria-label="Japanese Twitter Link"
                     ><img
                       alt="Flag of Japan"
                       src="/img/flags/ja.webp"
@@ -180,9 +226,15 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             </ul>
           </div>
           <div class="dropdown">
-            <a href="#" aria-label="Language Dropdown" class="dropdown-toggle" data-bs-toggle="dropdown">
-              <Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:bluesky"
-               />Bluesky
+            <a
+              href="#"
+              aria-label="Language Dropdown"
+              class="dropdown-toggle"
+              data-bs-toggle="dropdown">
+              <Icon
+                style="margin-right:10px; margin-bottom:5px;"
+                name="simple-icons:bluesky"
+              />Bluesky
             </a>
             <ul
               class="dropdown-menu"
@@ -194,9 +246,10 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://bsky.app/profile/wiilink.ca" aria-label="English Bluesky Link"
+                    href="https://bsky.app/profile/wiilink.ca"
+                    aria-label="English Bluesky Link"
                     ><img
-                    alt="Flag of United States"
+                      alt="Flag of United States"
                       src="/img/flags/en.webp"
                       width="25"
                     /></a
@@ -206,7 +259,8 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
                   <a
                     class="dropdown-item"
                     style="text-decoration:none;"
-                    href="https://bsky.app/profile/jp.wiilink.ca" aria-label="Japanese Bluesky Link"
+                    href="https://bsky.app/profile/jp.wiilink.ca"
+                    aria-label="Japanese Bluesky Link"
                     ><img
                       alt="Flag of Japan"
                       src="/img/flags/ja.webp"
@@ -218,28 +272,37 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             </ul>
           </div>
           <a
-            href="https://github.com/WiiLink24" aria-label="Github Link"
+            href="https://github.com/WiiLink24"
+            aria-label="Github Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
-            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:github"
-             />GitHub</a
+            ><Icon
+              style="margin-right:10px; margin-bottom:5px;"
+              name="simple-icons:github"
+            />GitHub</a
           >
           <a
-            href="https://www.instagram.com/_wiilink" aria-label="Instagram Link"
+            href="https://www.instagram.com/_wiilink"
+            aria-label="Instagram Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title={t("site.donate")}
-            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:instagram"
-             />Instagram</a
+            ><Icon
+              style="margin-right:10px; margin-bottom:5px;"
+              name="simple-icons:instagram"
+            />Instagram</a
           >
           <a
-            href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
+            href="https://www.youtube.com/@wiilink"
+            aria-label="YouTube Link"
             data-bs-toggle="tooltip"
             data-bs-placement="left"
             data-bs-title="WiiLink24"
-            ><Icon style="margin-right:10px; margin-bottom:5px;" name="simple-icons:youtube"
-             />YouTube</a
+            ><Icon
+              style="margin-right:10px; margin-bottom:5px;"
+              name="simple-icons:youtube"
+            />YouTube</a
           >
         </div>
         <div class="column">
@@ -248,22 +311,28 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
           <a
-            href="https://github.com/WiiLink24/WiiLink24-Patcher" aria-label="WiiLink Patcher Repository Link"
+            href="https://github.com/WiiLink24/WiiLink24-Patcher"
+            aria-label="WiiLink Patcher Repository Link"
             class="animated-link">WiiLink Patcher</a
           >
           <a
-            href="https://github.com/WiiLink24/wfc-server" aria-label="WiiLink WFC Repository Link"
+            href="https://github.com/WiiLink24/wfc-server"
+            aria-label="WiiLink WFC Repository Link"
             class="animated-link">WiiLink WFC</a
           >
-          <a href="https://github.com/WiiLink24/web" aria-label="WiiLink Website Repository Link" class="animated-link"
-            >Website</a
+          <a
+            href="https://github.com/WiiLink24/web"
+            aria-label="WiiLink Website Repository Link"
+            class="animated-link">Website</a
           >
           <a
-            href="https://github.com/WiiLink24/food-server" aria-label="WiiLink Food Channel Repository Link"
+            href="https://github.com/WiiLink24/food-server"
+            aria-label="WiiLink Food Channel Repository Link"
             class="animated-link">Food Channel</a
           >
           <a
-            href="https://github.com/WiiLink24/room-server" aria-label="WiiLink Wii Room Repository Link"
+            href="https://github.com/WiiLink24/room-server"
+            aria-label="WiiLink Wii Room Repository Link"
             class="animated-link">Wii Room</a
           >
         </div>
@@ -289,22 +358,32 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
 
     <div class="footer-holder legal" style={display}>
       <a href="/tos" aria-label="Terms of Service Link">
-        <Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />{
-          t("header.tos")
-        }</a
+        <Icon
+          name="lucide:arrow-right"
+          style="margin-right:5px; margin-bottom:5px;"
+        />{t("header.tos")}</a
       >
       <a href="/privacy-policy" aria-label="Privacy Policy Link"
-        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />
+        ><Icon
+          name="lucide:arrow-right"
+          style="margin-right:5px; margin-bottom:5px;"
+        />
         {t("header.privacyPolicy")}</a
       >
       <a href="/eula" aria-label="EULA Link"
-        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" />
+        ><Icon
+          name="lucide:arrow-right"
+          style="margin-right:5px; margin-bottom:5px;"
+        />
         {t("header.eula-long")}</a
       >
       <a
-        href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)" aria-label="Cookies Message Popup"
-        ><Icon name="lucide:arrow-right" style="margin-right:5px; margin-bottom:5px;" /> Privacy and
-        cookie settings</a
+        href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)"
+        aria-label="Cookies Message Popup"
+        ><Icon
+          name="lucide:arrow-right"
+          style="margin-right:5px; margin-bottom:5px;"
+        /> Privacy and cookie settings</a
       >
     </div>
   </div>

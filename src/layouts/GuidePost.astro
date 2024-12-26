@@ -28,7 +28,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     <Header />
     <div
       class="holder"
-      style="width:95%; left:50%; transform:translate(-50%, 30px); display:flex; justify-content:space-between; display:none; z-index:100; position:relative; margin-top:50px;">
+      style="width:95%; left:50%; transform:translate(-50%, 0); display:flex; justify-content:space-between; display:none; z-index:100; position:relative; margin-top:30px;">
       <a href="/" class="logohold" style="height:50%"
         ><img
           src="/img/logo.webp"
@@ -55,10 +55,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         <div
           class="offcanvas-body"
           style="overflow-y:visible; position:relative;">
-          <h4
-            style="top:30px; left:0px; font-family: Gilroy; z-index: 100; position:relative;">
-            {t("guidePost.whereTo")}
-          </h4>
           <div>
             <script
               is:inline
@@ -66,7 +62,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
               src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
             ></script>
             <div class="sidebarcontent">
-              <div class="post" style="border-radius: 8px 8px 4px 4px;">
+              <div class="post" style="border-radius: 16px 16px 4px 4px;">
                 <a href={`/guide/install/`}>
                   <img class="mainimg" src="../../img/guidebg-1.webp" />
                   <div
@@ -94,7 +90,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
                   </div>
                 </a>
               </div>
-              <div class="post" style="border-radius: 4px 4px 8px 8px;">
+              <div class="post" style="border-radius: 4px 4px 16px 16px;">
                 <a href={`/guide/faq/`}>
                   <img class="mainimg" src="../../img/guidebg-2.webp" />
                   <div
@@ -133,8 +129,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
               }
             </div>
 
-            <a href="https://wii.hacks.guide"
-              ><div class="wiiguide">
+            <a href="https://wii.hacks.guide">
+              <div class="wiiguide" style="margin-bottom:60px !important;">
                 <Trans i18nKey="guidePost.visitWiiHacks">
                   Visit wii.hacks.guide
                 </Trans>
@@ -149,15 +145,20 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
         </div>
         <img class="topImage" id="parallax" src={heroImage} />
         <div class="title">
-          <Icon name={icon} style="margin-right:18px; margin-bottom:10px;" />
-          {title}
+          <span class="dateShow" style="flex-direction: row; align-items:center; gap: 8px; display:none;">
+          <Icon name={icon}/>
+          <div style="width:245px; transform:translate(0, -30px); position:relative;">
+            <FormattedDate pre="Last updated on: " date={pubDate} />
+          </div>
+        </span>
+        <span class="dateRemove"><Icon name={icon}/></span> {title}
         </div>
         <div class="guidecontent" id="container2">
           <slot />
         </div>
         <div>
           <Footer
-            top="top:17px; border-radius:8px 8px 0px 0px; overflow:hidden;"
+            top="top:17px; border-radius:16px 16px 0px 0px; overflow:hidden;"
           />
         </div>
       </div>
@@ -182,11 +183,9 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     let guidehold = document.querySelector(".guidehold");
     guidehold.style.display = "block";
     let offcanvasBody = document.querySelector(".holdcontainer");
-    offcanvasBody.innerHTML +=
-      "<a href='#skip' style='width:100%; padding:8px; border-radius:4px; background-color: var(--bg-color-tertiary); transform:translate(0, -18px); text-decoration:none; text-align:center; display:block; position:relative;'><i class='fa-solid fa-arrow-down'></i> Skip to links</a>";
     offcanvasBody.appendChild(guidehold);
-    offcanvasBody.innerHTML +=
-      "<hr id='skip' style='border-top: 2px solid var(--border-color);'>";
+    offcanvasBody.style.marginBottom = "30px";
+    offcanvasBody.style.borderBottom = "2px solid var(--border-color)";
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -243,14 +242,17 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   }
 
   .title {
+    top: 80px;
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
     font-size: 45px;
     font-family: Gilroy;
     z-index: 100;
-    top: 80px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     position: relative;
   }
 
@@ -337,7 +339,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   .guidehold {
     width: 380px;
     height: 100%;
-    border-radius: 8px;
+
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow: scroll;
@@ -358,8 +360,8 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     backdrop-filter: blur(8px);
     perspective: 1px;
     scroll-behavior: smooth;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
     z-index: 1;
     resize: horizontal;
     overflow: scroll;
@@ -476,7 +478,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     height: 87%;
     bottom: 0;
     left: 8%;
-    border-radius: 8px;
+    border-radius: 16px;
     position: absolute;
     overflow: scroll;
   }
@@ -510,7 +512,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     height: 60px;
     padding: 15px;
     overflow: hidden;
-    border-radius: 8px;
+    border-rad16px;
     margin-bottom: 6px;
     transition: 0.2s;
     position: relative;
@@ -519,7 +521,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   .post2 {
     width: 100%;
     padding: 10px 10px;
-    border-radius: 8px;
+    border-radius: 16px;
     margin-bottom: 8px;
     overflow: hidden;
     transition: 0.2s;
@@ -529,7 +531,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   .post2.active {
     padding: 20px 18px;
     background-color: var(--bg-color-tertiary);
-    border-radius: 8px;
+    border-radius: 16px;
     transition: 0.2s;
   }
 
@@ -577,7 +579,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     top: 18px;
     width: 100%;
     background-color: rgb(79, 79, 211);
-    border-radius: 8px;
+    border-radius: 16px;
     font-family: Gilroy;
     font-size: 25px;
     text-align: center;
@@ -607,8 +609,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   }
 
   @media (max-width: 1000px) {
+    h2 {
+      font-size: 30px !important;
+    }
     .flex {
-      top: -40px;
       width: 100%;
       height: calc(100% + 12px);
       align-items: flex-start;
@@ -616,18 +620,20 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       z-index: 0;
     }
     .guideholder {
-      height: 100%;
-      width: 100%;
-      top: 0;
+      height: 100vh;
+      width: 100vw;
+      top: 10px;
       border: 0px solid rgba(255, 0, 0, 0) !important;
       background-color: rgba(200, 200, 200, 0) !important;
       backdrop-filter: blur(0px);
       perspective: 0px;
       scroll-behavior: smooth;
-      border-radius: 8px;
+      border-radius: 0px;
+      resize: none;
       z-index: 1;
       overflow: scroll;
       overflow-x: hidden;
+      position: absolute;
     }
     .offcanvas-body {
       padding: 0px !important;
@@ -642,14 +648,23 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       display: none;
     }
     .topImage {
-      display: none;
+      height: 600px;
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+      overflow: hidden;
+      background-position: center;
+      background-repeat: no-repeat;
     }
     .holder {
       display: flex !important;
-      position: fixed;
+      position: fixed !important;
     }
     .dateRemove {
       display: none;
+    }
+    .dateShow {
+      display: flex !important;
     }
     #togglebtn {
       display: none;
@@ -660,13 +675,26 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     .title {
       left: 50%;
       transform: translate(-50%, 0);
-      width: 90%;
-      font-size: 45px;
+      width: 95%;
+      font-size: 40px;
       font-family: Gilroy;
       z-index: 100;
       top: 120px;
-      text-align: center;
+      text-align: left;
       position: relative;
     }
+    .sidebarcontent {
+      top: 0;
+    }
+    #container1, #google_translate_element {
+      display: none;
+    }
   }
+</style>
+<style is:global>
+    @media (max-width: 1000px) {
+    h2 {
+      font-size: 30px !important;
+    }
+    }
 </style>
