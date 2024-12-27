@@ -18,18 +18,23 @@ posts = posts.slice(3);
 posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
 let { title, description, icon, pubDate, heroImage, body } = Astro.props;
 
-pubDate = new Date(pubDate).toLocaleDateString(i18next.language, {
+pubDate = new Date(pubDate).toLocaleDateString('en-US', {
   year: "numeric",
-  month: "long",
-  day: "numeric"
+  month: "2-digit",
+  day: "2-digit"
 });
 
-const readingTime = (content: string) => {
-  console.log(body);
+const readingTime = (content) => {
+  if (!content) {
+    console.error('Content is undefined');
+    return 0;
+  }
   const wordsPerMinute = 200;
-  const textLength = body.split(" ").length;
+  const textLength = content.split(" ").length;
   return Math.ceil(textLength / wordsPerMinute);
 };
+
+console.log(readingTime(body));
 ---
 
 <Layout
@@ -47,7 +52,7 @@ const readingTime = (content: string) => {
           <div class="sidebarcontent">
             <div class="post" style="border-radius: 16px 16px 8px 8px;">
               <a href={`/guide/install/`}>
-                <img class="mainimg" src="../../img/guidebg-1.webp" />
+                <img class="mainimg" src="/img/guidebg-1.webp" />
                 <div
                   class="title-main"
                   style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
@@ -61,7 +66,7 @@ const readingTime = (content: string) => {
             </div>
             <div class="post" style="border-radius: 8px;">
               <a href={`/guide/problemsolving/`}>
-                <img class="mainimg" src="../../img/guidebg-3.webp" />
+                <img class="mainimg" src="/img/guidebg-3.webp" />
                 <div
                   class="title-main"
                   style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
@@ -75,7 +80,7 @@ const readingTime = (content: string) => {
             </div>
             <div class="post" style="border-radius: 8px 8px 16px 16px;">
               <a href={`/guide/faq/`}>
-                <img class="mainimg" src="../../img/guidebg-2.webp" />
+                <img class="mainimg" src="/img/guidebg-2.webp" />
                 <div
                   class="title-main"
                   style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
@@ -236,20 +241,18 @@ const readingTime = (content: string) => {
     });
   }
 
-  const progressBar = document.querySelector(".progress-bar");
-  const opacityLeave = document.querySelector(".opacityleave");
-  const opacityShow = document.querySelector(".opacityshow");
-
   if (CSS.supports('animation-timeline: scroll()')) {
     const guideholder = document.querySelector('.guideholder');
     const progressBar = document.querySelector('.progress-bar');
     const opacityLeave = document.querySelector('.opacityleave');
+    const opacityShow = document.querySelector('.opacityshow');
   
     guideholder.addEventListener('scroll', () => {
       const scrolled = guideholder.scrollTop;
       const maxScroll = 300; // 300px scroll threshold
       const opacity = Math.max(0, 1 - (scrolled / maxScroll));
       opacityLeave.style.opacity = opacity;
+      opacityShow.style.opacity = 1 - opacity;
   
       const maxScroll1 = guideholder.scrollHeight - guideholder.clientHeight;
       const progress = (scrolled / maxScroll1) * 100;

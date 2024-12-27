@@ -3,7 +3,7 @@ title: Problem solving
 icon: lucide:circle-alert
 pubDate: 2024-10-20
 description: Got any issues? Let's see if we can sort them out!
-heroImage: "../../img/guidebg-3.webp"
+heroImage: "/img/guidebg-3.webp"
 ---
 
 ### Get some info on common errors!

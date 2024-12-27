@@ -3,7 +3,7 @@ title: Wii U Installation
 icon: lucide:download
 pubDate: 2024-12-23
 description: Get up-to-date instructions on how to install all of our services on Wii U!
-heroImage: "../../img/guidebg-3.webp"
+heroImage: "/img/guidebg-3.webp"
 ---
 
 <div style="display: flex; gap:8px; align-items: center;">

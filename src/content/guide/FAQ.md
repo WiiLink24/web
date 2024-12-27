@@ -3,7 +3,7 @@ title: Frequently asked questions
 icon: lucide:circle-help
 pubDate: 2024-10-02
 description: Some frequently asked questions you might be interested in...
-heroImage: "../../img/guidebg-2.webp"
+heroImage: "/img/guidebg-2.webp"
 ---
 ## WiiLink
 #### Information about the service itself.
