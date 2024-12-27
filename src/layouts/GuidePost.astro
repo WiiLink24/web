@@ -16,8 +16,20 @@ let posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
 posts = posts.slice(3);
 posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
-const { title, description, icon, pubDate, updatedDate, heroImage } =
-  Astro.props;
+let { title, description, icon, pubDate, heroImage, body } = Astro.props;
+
+pubDate = new Date(pubDate).toLocaleDateString(i18next.language, {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
+
+const readingTime = (content: string) => {
+  console.log(body);
+  const wordsPerMinute = 200;
+  const textLength = body.split(" ").length;
+  return Math.ceil(textLength / wordsPerMinute);
+};
 ---
 
 <Layout
@@ -25,115 +37,157 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   description={`${title} - ${description}`}
   image="/img/Guide_embed.webp">
   <Header />
-    <div class="flex">
-      <div class="guidehold">
-        <div id="container1" style="margin-bottom: 18px;"></div>
-        <div
-          class="offcanvas-body"
-          style="overflow-y:visible; position:relative;">
-          <div>
-            <div class="sidebarcontent">
-              <div class="post" style="border-radius: 16px 16px 4px 4px;">
-                <a href={`/guide/install/`}>
-                  <img class="mainimg" src="../../img/guidebg-1.webp" />
-                  <div
-                    class="title-main"
-                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <Icon
-                      name="lucide:download"
-                      style="margin-right:5px; margin-bottom:3px;"
-                     />
-                    {t("guidePost.installGuide")}
-                  </div>
-                </a>
-              </div>
-              <div class="post" style="border-radius: 4px;">
-                <a href={`/guide/problemsolving/`}>
-                  <img class="mainimg" src="../../img/guidebg-3.webp" />
-                  <div
-                    class="title-main"
-                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <Icon
-                      name="lucide:circle-alert"
-                      style="margin-right:5px; margin-bottom:3px;"
-                     />
-                    {t("guidePost.problemSolving")}
-                  </div>
-                </a>
-              </div>
-              <div class="post" style="border-radius: 4px 4px 16px 16px;">
-                <a href={`/guide/faq/`}>
-                  <img class="mainimg" src="../../img/guidebg-2.webp" />
-                  <div
-                    class="title-main"
-                    style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
-                    <Icon
-                      name="lucide:circle-help"
-                      style="margin-right:5px; margin-bottom:3px;"
-                     />
-                    {t("guidePost.faq")}
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="sidebarcontent" style="margin-bottom:40px;">
-              {
-                posts.map((post, index) => (
-                  <>
-                    {index === 0 && currentPath !== `/guide/${post.slug}/` && (
-                      <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
-                    )}
-                    <div
-                      class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
-                      <a href={`/guide/${post.slug}/`}>
-                        <div class="title2">
-                          <Icon name={post.data.icon} style="margin-right:8px; margin-bottom:3px;" />{" "}
-                          {post.data.title}
-                        </div>
-                      </a>
-                    </div>
-                    {index === 0 && currentPath === `/guide/${post.slug}/` && (
-                      <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
-                    )}
-                  </>
-                ))
-              }
-            </div>
-
-            <a href="https://wii.hacks.guide">
-              <div class="wiiguide" style="margin-bottom:60px !important;">
-                <Trans i18nKey="guidePost.visitWiiHacks">
-                  Visit wii.hacks.guide
-                </Trans>
-              </div></a
-            >
-          </div>
-        </div>
-      </div>
-      <div class="guideholder">
-        <div class="dateRemove">
-          <FormattedDate pre="Last updated on: " date={pubDate} />
-        </div>
-        <img class="topImage" id="parallax" src={heroImage} />
-        <div class="title">
-          <span class="dateShow" style="flex-direction: row; align-items:center; gap: 8px; display:none;">
-          <Icon name={icon}/>
-          <div style="width:245px; transform:translate(0, -30px); position:relative;">
-            <FormattedDate pre="Last updated on: " date={pubDate} />
-          </div>
-        </span>
-        <span class="dateRemove"><Icon name={icon}/></span> {title}
-        </div>
-        <div class="guidecontent" id="container2">
-          <slot />
-        </div>
+  <div class="flex">
+    <div class={`guidehold ${heroImage ? 'text-white' : ''}`}>
+      <div id="container1" style="margin-bottom: 18px;"></div>
+      <div
+        class="offcanvas-body"
+        style="overflow-y:visible; position:relative;">
         <div>
-          <Footer
-            top="top:17px; border-radius:16px 16px 0px 0px; overflow:hidden;"
-          />
+          <div class="sidebarcontent">
+            <div class="post" style="border-radius: 16px 16px 8px 8px;">
+              <a href={`/guide/install/`}>
+                <img class="mainimg" src="../../img/guidebg-1.webp" />
+                <div
+                  class="title-main"
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                  <Icon
+                    name="lucide:download"
+                    style="margin-right:5px; margin-bottom:3px;"
+                  />
+                  {t("guidePost.installGuide")}
+                </div>
+              </a>
+            </div>
+            <div class="post" style="border-radius: 8px;">
+              <a href={`/guide/problemsolving/`}>
+                <img class="mainimg" src="../../img/guidebg-3.webp" />
+                <div
+                  class="title-main"
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                  <Icon
+                    name="lucide:circle-alert"
+                    style="margin-right:5px; margin-bottom:3px;"
+                  />
+                  {t("guidePost.problemSolving")}
+                </div>
+              </a>
+            </div>
+            <div class="post" style="border-radius: 8px 8px 16px 16px;">
+              <a href={`/guide/faq/`}>
+                <img class="mainimg" src="../../img/guidebg-2.webp" />
+                <div
+                  class="title-main"
+                  style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
+                  <Icon
+                    name="lucide:circle-help"
+                    style="margin-right:5px; margin-bottom:3px;"
+                  />
+                  {t("guidePost.faq")}
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="sidebarcontent" style="margin-bottom:40px;">
+            {
+              posts.map((post, index) => (
+                <>
+                  {index === 0 && currentPath !== `/guide/${post.slug}/` && (
+                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                  )}
+                  <div
+                    class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
+                    <a href={`/guide/${post.slug}/`}>
+                      <div class="title2">
+                        <Icon
+                          name={post.data.icon}
+                          style="margin-right:8px; margin-bottom:3px;"
+                        />{" "}
+                        {post.data.title}
+                      </div>
+                    </a>
+                  </div>
+                  {index === 0 && currentPath === `/guide/${post.slug}/` && (
+                    <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
+                  )}
+                </>
+              ))
+            }
+          </div>
+
+          <a href="https://wii.hacks.guide">
+            <div class="wiiguide" style="margin-bottom:60px !important;">
+              <Trans i18nKey="guidePost.visitWiiHacks">
+                Visit wii.hacks.guide
+              </Trans>
+            </div></a
+          >
         </div>
       </div>
     </div>
+    <div class="guideholder">
+      <div class="guidetop">
+        <div class="guidetopholder">
+          <div
+            style={ `${heroImage ? "color: white;" : ""} padding:18px; display:flex; flex-direction: row; align-items:center; justify-content:space-between; gap:8px;`}>
+            <span
+              style="display:flex; flex-direction: row; align-items:center; gap:28px;">
+              <button
+                id="sidebarToggle"
+                class="sidebar-toggle"
+                style={ `${heroImage ? "color: white !important;" : ""}`}
+                aria-label="Toggle Sidebar">
+                <Icon name="lucide:chevron-left" />
+              </button>
+              <div class="opacityshow" style="opacity: 0;">
+                <h2
+                  style={ `${heroImage ? "color: white !important;" : ""} margin-bottom:0; font-size:28px; font-family: Gilroy; display:flex; flex-direction: row; align-items:center; gap: 8px;`}>
+                  <Icon name={icon} style="font-size: 28px;" />
+                  {title}
+                </h2>
+              </div>
+            </span>
+            <span
+              class="datehide"
+              style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; background: var(--bg-opaque-1); border: none; border-radius: 8px; padding: 12px 18px; cursor: pointer; transition: 0.3s;`}>
+              Last updated on {pubDate}
+            </span>
+            <div class="progress-bar"></div>
+          </div>
+          <img src={heroImage} class="topImage" />
+          <div
+            class="opacityleave"
+            style={ `${heroImage ? "color: white !important;" : ""} padding:18px; display:flex; flex-direction: column; gap:8px;"`}>
+            <Icon name={icon} style="font-size: 40px;" />
+            <h1 class="title" style={ `${heroImage ? "color: white !important;" : ""}`}>
+              {title}
+              <span
+                style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; font-family: system-ui; text-align:right; display:flex; flex-direction:row; align-items:center; gap:3px;`}>
+                <Icon name="lucide:clock" class="datehide" style="margin-right:8px;" />
+                {readingTime(description)} min read
+              </span>
+            </h1>
+          </div>
+        </div>
+        <div style="bottom:0; left:0; width:100%; position:absolute;">
+          <div
+            style="bottom:0; width:100%; height: 24px; background-color: var(--bg-color); z-index:0; position:absolute;">
+          </div>
+          <div
+            style="width:100%; height: 8px; border-radius: 8px 8px 0px 0px; background-color: var(--bg-color-secondary); z-index:1; position:relative;">
+          </div>
+        </div>
+      </div>
+      <div class="guidecontent" id="container2">
+        <slot />
+      </div>
+      <div>
+        <Footer
+          top="top:8px; border-radius: 8px 8px 0px 0px; overflow:hidden;"
+        />
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <script is:inline>
@@ -158,19 +212,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     offcanvasBody.style.borderBottom = "2px solid var(--border-color)";
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    let guideholder = document.querySelector(".guideholder");
-    if (guideholder) {
-      guideholder.addEventListener("scroll", function () {
-        let parallax = document.getElementById("parallax");
-        if (parallax) {
-          let offset = guideholder.scrollTop;
-          parallax.style.transform = "translateY(" + offset * 0.5 + "px)";
-        }
-      });
-    }
-  });
-
   var flex = document.getElementsByClassName("flex")[0];
   const observer = new MutationObserver(function (mutations, observer) {
     flex.style.height = "";
@@ -179,14 +220,41 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     attributes: true,
     attributeFilter: ["style"]
   });
-</script>
 
-<script is:inline type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement(
-      { pageLanguage: "en" },
-      "google_translate_element"
-    );
+  const sidebarToggle = document.getElementById("sidebarToggle");
+  const guidehold = document.querySelector(".guidehold");
+  const guideholder = document.querySelector(".guideholder");
+  let isOpen = true;
+
+  if (window.innerWidth > 1000) {
+    sidebarToggle?.addEventListener("click", () => {
+      isOpen = !isOpen;
+      guidehold.style.width = isOpen ? "380px" : "0px";
+      guidehold.style.opacity = isOpen ? "1" : "0";
+      sidebarToggle.classList.toggle("closed");
+      guideholder.style.width = isOpen ? "90%" : "95%";
+    });
+  }
+
+  const progressBar = document.querySelector(".progress-bar");
+  const opacityLeave = document.querySelector(".opacityleave");
+  const opacityShow = document.querySelector(".opacityshow");
+
+  if (CSS.supports('animation-timeline: scroll()')) {
+    const guideholder = document.querySelector('.guideholder');
+    const progressBar = document.querySelector('.progress-bar');
+    const opacityLeave = document.querySelector('.opacityleave');
+  
+    guideholder.addEventListener('scroll', () => {
+      const scrolled = guideholder.scrollTop;
+      const maxScroll = 300; // 300px scroll threshold
+      const opacity = Math.max(0, 1 - (scrolled / maxScroll));
+      opacityLeave.style.opacity = opacity;
+  
+      const maxScroll1 = guideholder.scrollHeight - guideholder.clientHeight;
+      const progress = (scrolled / maxScroll1) * 100;
+      progressBar.style.width = `${progress}%`;
+    });
   }
 </script>
 
@@ -196,18 +264,13 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   }
 
   .title {
-    top: 80px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 100%;
     font-size: 45px;
     font-family: Gilroy;
-    z-index: 100;
-    text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-between;
     gap: 8px;
-    position: relative;
   }
 
   .image {
@@ -221,13 +284,10 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     top: 0;
     left: 0;
     width: 100%;
-    opacity: 0.3;
+    transform: scale(1.1);
+    filter: blur(8px) brightness(0.7);
+    z-index: -1000;
     pointer-events: none;
-    -webkit-mask-image: linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 1) 0%,
-      transparent 58%
-    );
     position: absolute;
   }
 
@@ -261,18 +321,88 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     display: none;
   }
 
+  .guidetop {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: height 0.3s;
+  }
+
+  @supports (animation-timeline: scroll()) {
+    .guidetop {
+      animation: heightChange 1s linear both;
+      animation-timeline: scroll();
+      animation-range: entry 0% entry 300px;
+    }
+
+    @keyframes heightChange {
+      from {
+        height: 300px;
+      }
+      to {
+        height: 100px;
+      }
+    }
+  }
+
+  @supports not (animation-timeline: scroll()) {
+    .guidetop {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 300px;
+      transition: height 0.3s;
+    }
+
+    .guideholder {
+      padding-top: 300px; /* Ensure content is not hidden behind the fixed header */
+    }
+
+    .guideholder.scroll {
+      height: 100px;
+    }
+  }
+
+  .guidetopholder {
+    width: 100%;
+    height: calc(100% - 16px);
+    border-radius: 16px 16px 8px 8px;
+    background-color: var(--bg-color-tertiary);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 8px;
+    background: var(--bg-opaque-2);
+    transform-origin: 0%;
+    z-index: -100;
+  }
+
   .guidecontent {
-    width: 95%;
+    width: 100%;
+    padding: 20px;
     left: 50%;
     scroll-behavior: smooth;
+    border: 0px solid rgba(255, 0, 0, 0.055) !important;
+    border-radius: 0px 0px 8px 8px;
+    background-color: var(--bg-color-secondary) !important;
     transform: translate(-50%, 0);
-    position: relative;
     font-family: Cafe;
-    margin-top: 120px;
     text-align: justify;
-    animation-name: fadeup;
-    animation-duration: 0.5s;
-    animation-fill-mode: forwards;
+    position: relative;
   }
 
   .flex {
@@ -293,11 +423,12 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   .guidehold {
     width: 380px;
     height: 100%;
-
+    border-radius: 16px 16px 0px 0px;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow: scroll;
     overflow-x: hidden;
+    transition: all 0.3s ease;
   }
 
   .holder::-webkit-scrollbar {
@@ -309,8 +440,6 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     height: 100%;
     max-width: 1200px;
     top: 130px;
-    border: 0px solid rgba(255, 0, 0, 0.055) !important;
-    background-color: var(--bg-color-secondary) !important;
     backdrop-filter: blur(8px);
     perspective: 1px;
     scroll-behavior: smooth;
@@ -318,6 +447,9 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     border-top-right-radius: 16px;
     z-index: 1;
     resize: horizontal;
+    animation-name: fadeup;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
     overflow: scroll;
     overflow-x: hidden;
   }
@@ -333,11 +465,11 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   @keyframes fadeup {
     0% {
       opacity: 0;
-      transform: translate(-50%, 28px);
+      transform: translate(0, 28px);
     }
     100% {
       opacity: 1;
-      transform: translate(-50%, 0px);
+      transform: translate(0, 0px);
     }
   }
 
@@ -473,7 +605,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
 
   .post2 {
     width: 100%;
-    padding: 10px 10px;
+    padding: 15px;
     border-radius: 16px;
     margin-bottom: 8px;
     overflow: hidden;
@@ -482,7 +614,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   }
 
   .post2.active {
-    padding: 20px 18px;
+    padding: 20px 15px;
     background-color: var(--bg-color-tertiary);
     border-radius: 16px;
     transition: 0.2s;
@@ -514,8 +646,20 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
   }
 
   .post2:hover {
-    padding: 20px 18px;
+    padding: 20px 15px;
     background-color: var(--bg-color-secondary);
+    transition: 0.2s;
+    position: relative;
+  }
+
+  .post2:hover + .post2 {
+    padding: 12.5px 15px;
+    transition: 0.2s;
+  }
+
+  /* Adjust next sibling */
+  .post2:has(+ .post2:hover) {
+    padding: 12.5px 15px;
     transition: 0.2s;
   }
 
@@ -561,40 +705,77 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     transition: 0.2s;
   }
 
+  .sidebar-toggle {
+    display: none;
+    left: 0;
+    z-index: 1000;
+    background: var(--bg-opaque-1);
+    border: none;
+    border-radius: 8px;
+    padding: 12px 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .sidebar-toggle.closed svg {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: 1000px) {
+    .sidebar-toggle {
+      display: flex;
+    }
+  }
+
   @media (max-width: 1000px) {
     h2 {
       font-size: 30px !important;
     }
     .flex {
-      top:0;
-      left:0;
-    width: 100%;
-    height: 100% !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-    transform: none;
-    margin-top: 0px;
-    position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100% !important;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      transform: none;
+      margin-top: 0px;
+      position: absolute;
+    }
+    .title {
+      font-size: 38px;
+      flex-direction: column !important;
+      align-items: start;
+      justify-content: start;
     }
     .guideholder {
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    border: 0px solid rgba(255, 0, 0, 0.055) !important;
-    background-color: var(--bg-color-secondary) !important;
-    backdrop-filter: blur(8px);
-    perspective: 1px;
-    scroll-behavior: smooth;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
-    z-index: 1;
-    resize: none;
-    overflow: scroll;
-    overflow-x: hidden;
-    position: relative;
-  }
+      width: 100% !important;
+      top: 0px;
+      border: 0px solid rgba(255, 0, 0, 0.055) !important;
+      background-color: var(--bg-color) !important;
+      backdrop-filter: blur(8px);
+      perspective: 1px;
+      scroll-behavior: smooth;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      z-index: 1;
+      resize: none;
+      overflow: scroll;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .opacityshow {
+      display: none !important;
+    }
+    .guidetop {
+      border-radius: 0px;
+    }
+    .guidetopholder {
+      border-radius: 0px 0px 8px 8px;
+      position: relative;
+    }
     .offcanvas-body {
       padding: 0px !important;
     }
@@ -620,7 +801,7 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
       display: flex !important;
       position: fixed !important;
     }
-    .dateRemove {
+    .datehide {
       display: none;
     }
     .dateShow {
@@ -629,32 +810,22 @@ const { title, description, icon, pubDate, updatedDate, heroImage } =
     #togglebtn {
       display: none;
     }
-    .guidecontent {
-      margin-top: 168px;
-    }
-    .title {
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: 95%;
-      font-size: 40px;
-      font-family: Gilroy;
-      z-index: 100;
-      top: 120px;
-      text-align: left;
-      position: relative;
+    .post2 {
+      padding: 10px;
     }
     .sidebarcontent {
       top: 0;
     }
-    #container1, #google_translate_element {
+    #container1,
+    #google_translate_element {
       display: none;
     }
   }
 </style>
 <style is:global>
-    @media (max-width: 1000px) {
+  @media (max-width: 1000px) {
     h2 {
       font-size: 30px !important;
     }
-    }
+  }
 </style>
