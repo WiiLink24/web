@@ -24,17 +24,14 @@ pubDate = new Date(pubDate).toLocaleDateString('en-US', {
   day: "2-digit"
 });
 
-const readingTime = (content) => {
-  if (!content) {
-    console.error('Content is undefined');
+const readingTime = (body: string) => {
+  if (!body) {
     return 0;
   }
   const wordsPerMinute = 200;
-  const textLength = content.split(" ").length;
+  const textLength = body.split(" ").length;
   return Math.ceil(textLength / wordsPerMinute);
 };
-
-console.log(readingTime(body));
 ---
 
 <Layout
@@ -169,7 +166,7 @@ console.log(readingTime(body));
               <span
                 style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; font-family: system-ui; text-align:right; display:flex; flex-direction:row; align-items:center; gap:3px;`}>
                 <Icon name="lucide:clock" class="datehide" style="margin-right:8px;" />
-                {readingTime(description)} min read
+                {readingTime(body)} min read
               </span>
             </h1>
           </div>
