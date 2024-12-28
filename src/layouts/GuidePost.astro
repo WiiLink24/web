@@ -118,7 +118,8 @@ const readingTime = (body: string) => {
           </div>
 
           <a href="https://wii.hacks.guide">
-            <div class="wiiguide" style="margin-bottom:60px !important;">
+            <div class="wiiguide" style="margin-bottom:60px !important; display:flex; flex-direction: row; align-items: center; justify-content: center; gap:3px;">
+              <Icon name="lucide:earth" />
               <Trans i18nKey="guidePost.visitWiiHacks">
                 Visit wii.hacks.guide
               </Trans>
@@ -145,7 +146,7 @@ const readingTime = (body: string) => {
                 <h2
                   style={ `${heroImage ? "color: white !important;" : ""} margin-bottom:0; font-size:28px; font-family: Gilroy; display:flex; flex-direction: row; align-items:center; gap: 8px;`}>
                   <Icon name={icon} style="font-size: 28px;" />
-                  {title}
+                  {title} <span style="margin-left:8px; padding:8px 8px; background-color: var(--bg-opaque-1); border-radius:8px; font-size: 18px; font-family: system-ui; display:flex; flex-direction:row; align-items:center; gap:3px;"><Icon name="lucide:clock"/> {readingTime(body)} min read</span>
                 </h2>
               </div>
             </span>
@@ -164,9 +165,9 @@ const readingTime = (body: string) => {
             <h1 class="title" style={ `${heroImage ? "color: white !important;" : ""}`}>
               {title}
               <span
-                style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; font-family: system-ui; text-align:right; display:flex; flex-direction:row; align-items:center; gap:3px;`}>
-                <Icon name="lucide:clock" class="datehide" style="margin-right:8px;" />
-                {readingTime(body)} min read
+                style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; font-family: system-ui; text-align:right; display:flex; flex-direction:row; align-items:center; justify-content:start; gap:3px;`}>
+                <Icon name="lucide:clock" style="margin-right:8px;" />
+                {readingTime(body)} min read<span class="dateShow" style="display:none;"> | Last updated on {pubDate}</span>
               </span>
             </h1>
           </div>
@@ -246,7 +247,7 @@ const readingTime = (body: string) => {
   
     guideholder.addEventListener('scroll', () => {
       const scrolled = guideholder.scrollTop;
-      const maxScroll = 300; // 300px scroll threshold
+      const maxScroll = 100; // 300px scroll threshold
       const opacity = Math.max(0, 1 - (scrolled / maxScroll));
       opacityLeave.style.opacity = opacity;
       opacityShow.style.opacity = 1 - opacity;
@@ -408,7 +409,8 @@ const readingTime = (body: string) => {
   .flex {
     bottom: 0;
     left: 50%;
-    width: 98%;
+    width: calc(100% - 20px);
+    max-width: 1600px;
     height: calc(100% - 120px) !important;
     display: flex;
     transform: translate(-50%, 0);
@@ -436,9 +438,9 @@ const readingTime = (body: string) => {
   }
 
   .guideholder {
-    width: 90%;
+    width: 100%;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     top: 130px;
     backdrop-filter: blur(8px);
     perspective: 1px;
@@ -446,7 +448,6 @@ const readingTime = (body: string) => {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     z-index: 1;
-    resize: horizontal;
     animation-name: fadeup;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
@@ -677,8 +678,8 @@ const readingTime = (body: string) => {
     width: 100%;
     background-color: rgb(79, 79, 211);
     border-radius: 16px;
-    font-family: Gilroy;
-    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
     text-align: center;
     color: white !important;
     padding-top: 20px;
