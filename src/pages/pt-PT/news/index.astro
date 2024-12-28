@@ -48,42 +48,60 @@ const sliceDescription = description => {
       </Trans>
     </h3>
   </div>
-  <a href={`/news/${posts[0].slug}/`} class="newsHero" style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block;`}>
-      <div
-        style="top:20px; right:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); color: white !important; z-index: 1000000; position:absolute;">
-        <FormattedDate date={posts[0].data.pubDate} />
-      </div>
-      <img
+  <a
+    href={`/news/${posts[0].slug}/`}
+    class="newsHero"
+    style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block;`}>
+    <img
       class="mainimg2"
       style="width:100%; height:100%; filter:blur(80px) brightness(0.5); transform: translate(0, -25%) scale(1.5); position:absolute;"
-      src={posts[0].data.heroImage ? posts[0].data.heroImage : "/img/branding_bg.webp"}
+      src={posts[0].data.heroImage
+        ? posts[0].data.heroImage
+        : "/img/branding_bg.webp"}
       alt=""
       width="200px"
     />
-      <div class="herodatahold">
-        <img
-          src={posts[0].data.heroImage}
-          style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
-          class="mobileimg"
-          height="200px"
-        />
-        <div class="innerdata">
-          <h1
-            style="font-family: Gilroy; color:white !important; font-size:50px;">
-            {posts[0].data.title}
-          </h1>
-          <h5 style="color:white !important;">
-            <img
-              src={posts[0].data.authImage}
-              style="margin-right:5px; border-radius:8px;"
-              height="40px"
-            />
-            {posts[0].data.author} | {posts[0].data.authTitle}
-          </h5>
-          <p style="color:white !important;">{posts[0].data.description}</p>
-        </div>
+    <div class="herodatahold">
+      <img
+        src={posts[0].data.heroImage}
+        style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
+        class="mobileimg"
+        height="200px"
+      />
+      <div class="innerdata">
+        <h1
+          style="font-family: Gilroy; color:white !important; font-size:50px;">
+          {posts[0].data.title}
+        </h1>
+        <h5
+          class="mainpostflex"
+          style="color:white !important; display:flex; flex-direction: row; align-items:center; gap:5px;">
+          <img
+            src={posts[0].data.authImage}
+            class="mobilehide"
+            style="border-radius:8px 4px 4px 8px;"
+            height="45px"
+          />
+          <r
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;`}
+            ><FormattedDate date={posts[0].data.pubDate} />
+          </r>
+          <r
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;`}
+            >{posts[0].data.author}</r
+          >
+          <r
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
+            >{posts[0].data.authTitle}</r
+          >
+        </h5>
+        <p
+          style="margin: 0 !important; margin-top: 18px !important; color:white !important; font-size: 28px;">
+          {posts[0].data.description}
+        </p>
       </div>
-    </a>
+    </div>
+  </a>
   <div class="postholder">
     {
       posts.slice(1, 7).map(post => (
@@ -155,13 +173,18 @@ const sliceDescription = description => {
                   style="border-radius: 8px; width: 33px; height: 33px;"
                 />
               )}
-              <div style={`padding: 3px 8px; border-radius: 8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px);`}>
-               <span style={`${post.data.heroImage ? 'color: white !important;' : ''}`}>
-                <FormattedDate date={post.data.pubDate} />
+              <div
+                style={`padding: 3px 8px; border-radius: 8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px);`}>
+                <span
+                  style={`${post.data.heroImage ? "color: white !important;" : ""}`}>
+                  <FormattedDate date={post.data.pubDate} />
                 </span>
               </div>
             </span>
-            <div style={`font-size: 23px; ${post.data.heroImage ? 'color: white !important;' : ''}`}>{post.data.title}</div>
+            <div
+              style={`font-size: 23px; ${post.data.heroImage ? "color: white !important;" : ""}`}>
+              {post.data.title}
+            </div>
           </div>
         </a>
       ))
@@ -223,7 +246,7 @@ const sliceDescription = description => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 28px;
     padding: 20px;
     position: relative;
   }
@@ -490,6 +513,7 @@ const sliceDescription = description => {
     }
 
     .herodatahold {
+      padding: 0px;
       flex-direction: column;
       align-items: center;
       gap: 20px;
@@ -517,11 +541,22 @@ const sliceDescription = description => {
       top: 30px;
       max-width: 1800px;
       height: auto;
-      padding: 20px;
+      padding: 8px;
+      padding-top: 28px;
+      padding-bottom: 28px;
       border-radius: 16px;
       overflow: hidden;
       position: relative;
       transition: 0.2s;
+    }
+
+    .mainpostflex {
+      flex-direction: column !important;
+    }
+
+    .mainpostflex r {
+      width: 100%;
+      border-radius: 8px !important;
     }
 
     .heroimg {
@@ -552,5 +587,13 @@ const sliceDescription = description => {
       filter: opacity(0.1) invert(0);
       position: absolute;
     }
+  }
+</style>
+
+<style is:global>
+  .mainpostflex r time h3 {
+    margin: 0 !important;
+    font-size: 25px !important;
+    font-weight: bold;
   }
 </style>
