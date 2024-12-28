@@ -252,27 +252,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     overflow: hidden !important;
   }
 
-  .posthold::before {
-    width: 100%;
-    height: 100%;
-    content: "";
-    position: absolute;
-    border: 3px solid #ffffff30;
-    z-index: 1;
-  }
-
-  .posthold:nth-child(1)::before {
-    border-radius: 16px 8px 8px 16px;
-  }
-
-  .posthold:nth-child(2)::before {
-    border-radius: 8px;
-  }
-
-  .posthold:nth-child(3)::before {
-    border-radius: 8px 16px 16px 8px;
-  }
-
   .postmini {
     position: relative;
     height: 70px;
@@ -326,13 +305,13 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .posthold:hover,
   .postmini:hover {
-    transform: scale(1.02);
+    transform: scale(1.02) !important;
     transition: 0.2s;
   }
 
   .posthold:active,
   .postmini:active {
-    transform: scale(0.98);
+    transform: scale(0.98) !important;
     transition: 0.2s;
   }
 
