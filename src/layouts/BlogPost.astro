@@ -109,7 +109,7 @@ const {
       {
         authImage && (
           <img
-            class="authimage"
+            class="authimage mobilehide"
             width={50}
             height={50}
             src={authImage}
@@ -119,8 +119,21 @@ const {
       }
       <div class="titles">
         <div class="hold">
+          {
+            authImage && (
+              <img
+                class="authimage mobileshow"
+                width={50}
+                height={50}
+                src={authImage}
+                alt=""
+              />
+            )
+          }
+          <span class="holdtext">
           <div class="authtitle">{author}</div>
           <div class="authtitle2">{authTitle}</div>
+        </span>
         </div>
         <div class="authdesc">{authDesc}</div>
       </div>
@@ -241,6 +254,12 @@ const {
       gap: 10px;
     }
 
+    .holdtext {
+      display:flex;
+      flex-direction:row;
+      gap:8px;
+    }
+
     .authtitle2 {
       position: relative;
       padding: 2px 10px 2px 10px;
@@ -304,6 +323,10 @@ const {
     }
     .last-updated-on {
       font-style: italic;
+    }
+
+    .mobileshow {
+      display: none !important;
     }
 
     .postexpand {
@@ -442,6 +465,22 @@ const {
       .title {
         margin-top: 30px;
         font-size: 40px;
+      }
+      .hold {
+        align-items:end;
+      }
+      .holdtext {
+       flex-direction:column;
+       gap:4px;
+      }
+      .mobileshow {
+        display: block !important;
+      }
+      .mobilehide {
+        display: none !important;
+      }
+      .authdesc {
+        margin-top: 8px;
       }
       .mobileHeadAuth {
         width: 100%;
