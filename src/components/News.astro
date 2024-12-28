@@ -17,7 +17,9 @@ posts = posts.slice(0, 3);
       posts.map(post => (
         <div class="post">
           <a href={`/news/${post.slug}/`} aria-label={post.data.title + ' Link'}>
+            <div style="top:20px; right:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px); color: white !important; z-index: 1000000; position:absolute;">
             <FormattedDate date={post.data.pubDate} />
+            </div>
             <div class="faded" />
             {post.data.heroImage && (
               <img alt={post.data.title} loading="lazy" class="heroImage" src={post.data.heroImage} />
@@ -112,7 +114,6 @@ posts = posts.slice(0, 3);
     width: 40px;
     height: 40px;
     border-radius: 8px;
-    border: 1px solid #ffffff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.297);
     z-index: 10000000000;
   }
