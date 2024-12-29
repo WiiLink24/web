@@ -70,6 +70,7 @@ const sliceDescription = description => {
       />
       <div class="innerdata">
         <h1
+          class="maintitle"
           style="font-family: Gilroy; color:white !important; font-size:50px;">
           {posts[0].data.title}
         </h1>
@@ -82,20 +83,23 @@ const sliceDescription = description => {
             style="border-radius:8px 4px 4px 8px;"
             height="45px"
           />
+          <span class="innerflexmobile" style="display:flex; flex-direction: row; align-items:center; gap: 5px;">
           <r
-            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;`}
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
             ><FormattedDate date={posts[0].data.pubDate} />
           </r>
           <r
-            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;`}
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
             >{posts[0].data.author}</r
           >
+        </span>
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
             >{posts[0].data.authTitle}</r
           >
         </h5>
         <p
+          class="maindesc"
           style="margin: 0 !important; margin-top: 18px !important; color:white !important; font-size: 28px;">
           {posts[0].data.description}
         </p>
@@ -512,6 +516,20 @@ const sliceDescription = description => {
       height: 200px;
     }
 
+    .maintitle {
+      font-size: 28px !important;
+    }
+
+    .maindesc {
+      display: none;
+    }
+
+    .mobileimg {
+      width:100%;
+      max-width: 400px;
+      object-fit: cover;
+    }
+
     .herodatahold {
       padding: 0px;
       flex-direction: column;
@@ -541,13 +559,16 @@ const sliceDescription = description => {
       top: 30px;
       max-width: 1800px;
       height: auto;
-      padding: 8px;
+      padding: 18px;
       padding-top: 28px;
-      padding-bottom: 28px;
       border-radius: 16px;
       overflow: hidden;
       position: relative;
       transition: 0.2s;
+    }
+
+    .innerflexmobile {
+      width: 100%;
     }
 
     .mainpostflex {
@@ -557,6 +578,7 @@ const sliceDescription = description => {
     .mainpostflex r {
       width: 100%;
       border-radius: 8px !important;
+      font-size: 13px !important;
     }
 
     .heroimg {
@@ -595,5 +617,16 @@ const sliceDescription = description => {
     margin: 0 !important;
     font-size: 25px !important;
     font-weight: bold;
+    text-align:center;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .mainpostflex r {
+      padding: 8px 20px !important;
+    }
+
+    .mainpostflex r time h3 {
+      font-size: 13px !important;
+    }
   }
 </style>
