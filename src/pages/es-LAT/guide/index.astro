@@ -82,7 +82,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
                 <div class="innerData">
                   <div
                     class="title"
-                    style="display:flex; flex-direction:row; align-items:center; gap:8px;">
+                    style="display:flex; flex-direction:row; align-items:center; gap:8px; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
                     <Icon name={post.data.icon} /> {post.data.title}
                   </div>
                   <div class="desc">{post.data.description}</div>
