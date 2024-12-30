@@ -9,7 +9,7 @@
         "isArea": "전세계",
         "status": "정식 출시",
         "icon": "forecast_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요! <br><br> <b>RiiConnect24 사용자</b>는 WiiLink Patcher의 최신 버전으로 업데이트해야 서비스를 계속 이용할 수 있어요.",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요! <br><br> <b>RiiConnect24 사용자</b>는 WiiLink Patcher의 최신 버전으로 업데이트해야 서비스를 계속 이용할 수 있어요.",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "전세계",
         "status": "정식 출시",
         "icon": "news_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "전세계",
         "status": "정식 출시",
         "icon": "nintendo_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "전세계",
         "status": "정식 출시",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요! <br> 백엔드를 개선 중이에요. 준비 되면 새 콘테스트를 배포할 예정이에요.",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요! <br> 백엔드를 개선 중이에요. 준비 되면 새 콘테스트를 배포할 예정이에요.",
         "completed": "90"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "전세계",
         "status": "정식 출시",
         "icon": "democracy_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "기존엔 일본 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "기존엔 일본 한정",
         "status": "비공개 베타",
-        "todo": "<i class='fa fa-hard-hat'></i> 이 프로젝트는 아직 개발중이에요",
+        "todo": "<img src='/icons/hard-hat.svg' style='margin-bottom:5px;'/> 이 프로젝트는 아직 개발중이에요",
         "icon": "tvnotomo_icon.webp",
         "completed": "40"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "기존엔 몇몇 유럽 국가 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "기존엔 일본 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> 이 서비스는 정상적으로 작동 중이에요!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 이 서비스는 정상적으로 작동 중이에요!",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "기존엔 일본 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly!",
         "icon": "room_icon.webp",
         "completed": "90"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "기존엔 일본 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "지역 제한 없음",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br> Mail-Wii service suspended temporarily.",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly! <br> Mail-Wii service suspended temporarily.",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "기존엔 미국 및 유럽 한정",
         "status": "정식 출시",
-        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> This service's development has been halted.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "기존엔 일본 한정",
         "status": "비공개 베타",
-        "todo": "<i class='fa-solid fa-circle-question'></i> You can access this service by donating on our Stripe!",
+        "todo": "<img src='/icons/circle-help.svg' style='margin-bottom:5px;'/> You can access this service by donating on our Stripe!",
         "icon": "",
         "completed": "50"
       }

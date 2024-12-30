@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Articllos de la mârca",
+        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Articllos de la mârca",
         "desc": "Noutres ressôrses de mârca por un usâjo èxtèrno !",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Fonds d'ècran",
+        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Fonds d'ècran",
         "desc": "Des fonds d'ècran WiiLink por voutron PC !",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Archives des sondâjos",
+        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Archives des sondâjos",
         "desc": "Consultâd los rèsultats des sondâjos de l'Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> Tèmos WiiLink",
+        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Tèmos WiiLink",
         "desc": "Des tèmos supèrbos por voutra Wii !",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
         "desc": "Un sèrvicio en cors por la Nintendo Wi-Fi Connection !",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Bendes dèssinâyes",
+        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Bendes dèssinâyes",
         "desc": "Ancianes bendes dèssinâyes de RiiConnect24",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Tèst Wii Remote",
+        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Tèst Wii Remote",
         "desc": "Una pâge simpla por tèstar voutra Wii Remote",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Astuces Photo Channel",
+        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Astuces Photo Channel",
         "desc": "Des astuces por obtenir des rèsultats rapidos !",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Chançon de la Wii Shop Channel",
+        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Chançon de la Wii Shop Channel",
         "desc": "Meme song for the Wii Shop Channel",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> News cat",
+        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> News cat",
         "desc": "Un sèrvicio en cors por la Nintendo Wi-Fi Connection !",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

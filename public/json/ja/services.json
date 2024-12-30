@@ -9,7 +9,7 @@
         "isArea": "国際",
         "status": "配信中",
         "icon": "forecast_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！ <br><br> <b>RiiConnect24を利用していた方は</b>最新のWiiLinkパッチャーを使ってアップデートが必要です。",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！ <br><br> <b>RiiConnect24を利用していた方は</b>最新のWiiLinkパッチャーを使ってアップデートが必要です。",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "国際",
         "status": "配信中",
         "icon": "news_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "国際",
         "status": "配信中",
         "icon": "nintendo_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "国際",
         "status": "配信中",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "completed": "90"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "国際",
         "status": "配信中",
         "icon": "democracy_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "日本限定",
         "status": "配信中",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "日本限定",
         "status": "閉鎖ベータ",
-        "todo": "<i class='fa fa-hard-hat'></i> 現在まだ開発中です。",
+        "todo": "<img src='/icons/hard-hat.svg' style='margin-bottom:5px;'/> 現在まだ開発中です。",
         "icon": "tvnotomo_icon.webp",
         "completed": "40"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "ヨーロッパ限定",
         "status": "配信中",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "日本限定",
         "status": "配信中",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "日本限定",
         "status": "配信中",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！",
         "icon": "room_icon.webp",
         "completed": "90"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "国際",
         "status": "配信中",
-        "todo": "<i class='fa fa-circle-check'></i> 通常通りです！ <br> メールからWiiに送る作用が一時停止されています。",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> 通常通りです！ <br> メールからWiiに送る作用が一時停止されています。",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "欧米",
         "status": "停止",
-        "todo": "<i class='fa fa-bomb'></i>開発は停止されています。",
+        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/>開発は停止されています。",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "日本限定",
         "status": "閉鎖ベータ",
-        "todo": "<i class='fa-solid fa-circle-question'></i> Stripeに募金することでテストできます！",
+        "todo": "<img src='/icons/circle-help.svg' style='margin-bottom:5px;'/> Stripeに募金することでテストできます！",
         "icon": "",
         "completed": "50"
       }

@@ -3,7 +3,7 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "<i class='fa fa-crown'></i> Team Lead",
+        "title": "<img src='/icons/crown.svg' style='margin-bottom:10px;'/> Team Lead",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",

@@ -9,7 +9,7 @@
         "isArea": "Kansainvälinen",
         "status": "Täysi Julkaisu",
         "icon": "forecast_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "Kansainvälinen",
         "status": "Täysi Julkaisu",
         "icon": "news_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "Kansainvälinen",
         "status": "Täysi Julkaisu",
         "icon": "nintendo_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "Kansainvälinen",
         "status": "Täysi Julkaisu",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Kansainvälinen",
         "status": "Täysi Julkaisu",
         "icon": "democracy_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/fi/guide/demae",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/fi/status",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Yksityinen Beta",
-        "todo": "<i class='fa fa-hard-hat'></i> Tämä palvelu on silti kehityksessä",
+        "todo": "<img src='/icons/hard-hat.svg' style='margin-bottom:5px;'/> Tämä palvelu on silti kehityksessä",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/fi/guide/kirbytv",
         "isArea": "Alkuperältä tietyt Euroopan maat",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/fi/guide/digicam",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/fi/guide/wiinoma",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/fi/guide/install/#adding-personal-information",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/fi/guide/board",
         "isArea": "Aluevapaa (Kansainvälinen)",
         "status": "Täysi Julkaisu",
-        "todo": "<i class='fa fa-circle-check'></i> Palvelu toimii kuten odotettu!",
+        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Palvelu toimii kuten odotettu!",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/fi/status",
         "isArea": "Alkuperältä Amerikka ja Eurooppa",
         "status": "Kehitys lakkautettu",
-        "todo": "<i class='fa fa-bomb'></i> Tämän palvelun kehitys on lakkautettu.",
+        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> Tämän palvelun kehitys on lakkautettu.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/fi/status",
         "isArea": "Alkuperältä Japani eksklusiivi",
         "status": "Kehitys lakkautettu",
-        "todo": "<i class='fa fa-bomb'></i> Tämän palvelun kehitys on lakkautettu.",
+        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> Tämän palvelun kehitys on lakkautettu.",
         "icon": "",
         "completed": "15"
       }

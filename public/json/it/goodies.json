@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Asset di branding",
+        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Asset di branding",
         "desc": "Asset di branding per uso esterno!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Sfondi",
+        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Sfondi",
         "desc": "Sfondi WiiLink per il tuo PC!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Visualizzatore di sondaggi",
+        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Visualizzatore di sondaggi",
         "desc": "Visualizza i risultati dei sondaggi per il Canale Vota Anche Tu!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> Temi WiiLink",
+        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Temi WiiLink",
         "desc": "Temi belli per la tua Wii!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
         "desc": "Un servizio Nintendo Wi-Fi Connection in sviluppo!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Vignette comiche",
+        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Vignette comiche",
         "desc": "Vecchi fumetti RiiConnect24",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Test del telecomando Wii",
+        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Test del telecomando Wii",
         "desc": "Una semplice pagina per testare il tuo telecomando Wii",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Trucchi Canale Foto",
+        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Trucchi Canale Foto",
         "desc": "Immagini per ottenere risultati rapidi!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Musica Canale Wii Shop",
+        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Musica Canale Wii Shop",
         "desc": "Canzone meme per il Canale Wii Shop",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> Gatto delle notizie",
+        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Gatto delle notizie",
         "desc": "Un servizio Nintendo Wi-Fi Connection in sviluppo!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
