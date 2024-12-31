@@ -2,67 +2,67 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> ブランド素材",
+        "title": "<span class='palette'></span> ブランド素材",
         "desc": "外部サイトで使えるブランド素材",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> 壁紙",
+        "title": "<span class='image'></span> 壁紙",
         "desc": "PC用のWiiLink壁紙",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> 投票ビューア",
+        "title": "<span class='chart-no-axes-column'></span> 投票ビューア",
         "desc": "みんなで投票チャンネルの結果一覧",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLinkテーマ",
+        "title": "<span class='paintbrush'></span> WiiLinkテーマ",
         "desc": "機種、ブラウザその他のWiiLinkテーマ",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Nintendo Wi-Fi Connectionの復帰サービス",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> マンガ",
+        "title": "<span class='drama'></span> マンガ",
         "desc": "RiiConnect24のマンガ",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Wiiリモコンテスター",
+        "title": "<span class='gamepad-2'></span> Wiiリモコンテスター",
         "desc": "Wiiリモコンをテストするサイト",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii編集",
+        "title": "<span class='user'></span> Mii編集",
         "desc": "Miiを編集するサイト",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> 写真チャンネルチート",
+        "title": "<span class='image'></span> 写真チャンネルチート",
         "desc": "早くパズルを解くための画像",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Wiiショップチャンネルの歌",
+        "title": "<span class='store'></span> Wiiショップチャンネルの歌",
         "desc": "Wiiショップについての古い歌",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> ニュースキャット",
+        "title": "<span class='cat'></span> ニュースキャット",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

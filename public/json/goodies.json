@@ -2,67 +2,67 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Branding assets",
+        "title": "<span class='palette'></span> Branding assets",
         "desc": "Brand assets for external usage!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Wallpapers",
+        "title": "<span class='image'></span> Wallpapers",
         "desc": "WiiLink wallpapers for your PC!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Poll Viewer",
+        "title": "<span class='chart-no-axes-column'></span> Poll Viewer",
         "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> Themes",
+        "title": "<span class='paintbrush'></span> Themes",
         "desc": "Nice themes for your consoles!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "An in progress Nintendo Wi-Fi Connection service!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Comic Strips",
+        "title": "<span class='drama'></span> Comic Strips",
         "desc": "Old RiiConnect24 comic strips",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Wii Remote Testing",
+        "title": "<span class='gamepad-2'></span> Wii Remote Testing",
         "desc": "A simple page for testing your Wii Remote",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii Avatar Editor",
+        "title": "<span class='user'></span> Mii Avatar Editor",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Photo Channel Cheats",
+        "title": "<span class='image'></span> Photo Channel Cheats",
         "desc": "Images for getting fast time results!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Wii Shop Channel song",
+        "title": "<span class='store'></span> Wii Shop Channel song",
         "desc": "Meme song for the Wii Shop Channel",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> News cat",
+        "title": "<span class='cat'></span> News cat",
         "desc": "An in progress Nintendo Wi-Fi Connection service!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

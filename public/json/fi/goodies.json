@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Brändi-resurssit",
+        "title": "<span class='palette'></span> Brändi-resurssit",
         "desc": "Brandi resursseja ulkoiseen käyttöön!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Taustakuvia",
+        "title": "<span class='image'></span> Taustakuvia",
         "desc": "WiiLink taustakuvia tietokoneellesi!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Äänestykset",
+        "title": "<span class='chart-no-axes-column'></span> Äänestykset",
         "desc": "Katso äänestysvastauksia Everybody Votes -kanava:lta!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Teemoja",
+        "title": "<span class='paintbrush'></span> WiiLink Teemoja",
         "desc": "Kivoja teemoja sinun Wii:llesi!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Keskeneräinen Nintendo Wi-Fi Connection palvelu!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Sarjakuvia",
+        "title": "<span class='drama'></span> Sarjakuvia",
         "desc": "Vanhoja RiiConnect24 mini-sarjakuvia",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Wii Ohjain Testausta",
+        "title": "<span class='gamepad-2'></span> Wii Ohjain Testausta",
         "desc": "Simppeli sivu sinun Wii Ohjaimen testaamiselle",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Photo -kanava Cheats",
+        "title": "<span class='image'></span> Photo -kanava Cheats",
         "desc": "Kuvia nopeille tuloksille!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Wii Shop -kanava laulu",
+        "title": "<span class='store'></span> Wii Shop -kanava laulu",
         "desc": "Meemi laulu Wii Shop -kanavalle",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> Uutis kissa",
+        "title": "<span class='cat'></span> Uutis kissa",
         "desc": "Keskeneräinen Nintendo Wi-Fi Connection palvelu!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

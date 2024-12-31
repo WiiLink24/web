@@ -9,7 +9,7 @@
         "isArea": "International",
         "status": "Sortie complète",
         "icon": "forecast_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "International",
         "status": "Sortie complète",
         "icon": "news_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "International",
         "status": "Sortie complète",
         "icon": "nintendo_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "International",
         "status": "Sortie complète",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "International",
         "status": "Sortie complète",
         "icon": "democracy_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "Exclusif Japon",
         "status": "Bêta privée",
-        "todo": "<i class='fa fa-hard-hat'></i> Ce service est en cours de développement",
+        "todo": "<span class='hard-hat'></span> Ce service est en cours de développement",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Exclusif à certains pays européens",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Exclusif Japon",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Toutes régions",
         "status": "Sortie complète",
-        "todo": "<i class='fa fa-circle-check'></i> Ce service fonctionne correctement !",
+        "todo": "<span class='circle-check'></span> Ce service fonctionne correctement !",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "Exclusif Amérique et Europe",
         "status": "Interrompu",
-        "todo": "<i class='fa fa-bomb'></i> Le développement de ce service a été interrompu.",
+        "todo": "<span class='bomb'></span> Le développement de ce service a été interrompu.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "Un exclusif du Japon originellement",
         "status": "Suspendu",
-        "todo": "<i class='fa fa-bomb'></i> Le développement de ce service a été suspendu.",
+        "todo": "<span class='bomb'></span> Le développement de ce service a été suspendu.",
         "icon": "",
         "completed": "15"
       }

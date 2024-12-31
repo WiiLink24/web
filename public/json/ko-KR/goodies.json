@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> 브랜딩 요소",
+        "title": "<span class='palette'></span> 브랜딩 요소",
         "desc": "외부 사용을 위한 브랜딩 요소!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> 배경화면",
+        "title": "<span class='image'></span> 배경화면",
         "desc": "PC를 위한 배경화면!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -20,7 +20,7 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> 설문 보기",
+        "title": "<span class='chart-no-axes-column'></span> 설문 보기",
         "desc": "모두의 투표 채널에서 집계된 설문 결과를 확인하세요!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -32,49 +32,49 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink 테마",
+        "title": "<span class='paintbrush'></span> WiiLink 테마",
         "desc": "Wii를 위한 멋진 테마!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> 만화",
+        "title": "<span class='drama'></span> 만화",
         "desc": "RiiConnect24 시절의 만화",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Wii 리모컨 테스트",
+        "title": "<span class='gamepad-2'></span> Wii 리모컨 테스트",
         "desc": "Wii 리모컨을 테스트하기 위한 간단한 페이지",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> 사진 채널 꿀팁",
+        "title": "<span class='image'></span> 사진 채널 꿀팁",
         "desc": "빠른 결과를 받기 위한 사진!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Wii 쇼핑 채널 음악",
+        "title": "<span class='store'></span> Wii 쇼핑 채널 음악",
         "desc": "Wii 쇼핑 채널을 위한 밈 음악",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> 뉴스냥",
+        "title": "<span class='cat'></span> 뉴스냥",
         "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

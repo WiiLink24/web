@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Marka varlıkları",
+        "title": "<span class='palette'></span> Marka varlıkları",
         "desc": "Haricî kullanım için marka varlıkları!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Duvar kâğıtları",
+        "title": "<span class='image'></span> Duvar kâğıtları",
         "desc": "PC'niz için WiiLink duvar kâğıtları!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Anket Görüntüleyici",
+        "title": "<span class='chart-no-axes-column'></span> Anket Görüntüleyici",
         "desc": "Everybody Votes Channel'ın anket sonuçlarını görüntüleyin!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> WiiLink Temaları",
+        "title": "<span class='paintbrush'></span> WiiLink Temaları",
         "desc": "Wii'niz için güzel temalar!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Devam eden bir Nintendo Kablosuz Bağlantı hizmeti!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<i class='fa-solid fa-mask'></i> Çizgi Romanlar",
+        "title": "<span class='drama'></span> Çizgi Romanlar",
         "desc": "Eski RiiConnect24 çizgi romanları",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<i class='fa-solid fa-gamepad'></i> Wii Kumandası Testi",
+        "title": "<span class='gamepad-2'></span> Wii Kumandası Testi",
         "desc": "Wii Kumandanızı test etmek için basit bir sayfa",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<i class='fa-solid fa-user'></i> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Photo Channel Hileleri",
+        "title": "<span class='image'></span> Photo Channel Hileleri",
         "desc": "Hızlı sonuçlar elde etmek için resimler!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<i class='fa-solid fa-shop'></i> Wii Shop Channel şarkısı",
+        "title": "<span class='store'></span> Wii Shop Channel şarkısı",
         "desc": "Wii Shop Channel için meme şarkısı",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<i class='fa-solid fa-cat'></i> Haber kedisi",
+        "title": "<span class='cat'></span> Haber kedisi",
         "desc": "Devam eden bir Nintendo Kablosuz Bağlantı hizmeti!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

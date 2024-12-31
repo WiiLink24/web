@@ -9,7 +9,7 @@
         "isArea": "Internacional",
         "status": "Llançament complet",
         "icon": "forecast_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> The service is working properly! <br><br> <b>RiiConnect24 users</b> will need to update using the latest version of the WiiLink Patcher to resume service.",
+        "todo": "<span class='circle-check'></span> The service is working properly! <br><br> <b>RiiConnect24 users</b> will need to update using the latest version of the WiiLink Patcher to resume service.",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "Internacional",
         "status": "Llançament complet",
         "icon": "news_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "Internacional",
         "status": "Llançament complet",
         "icon": "nintendo_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "Internacional",
         "status": "Llançament complet",
         "icon": "miicontest_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Internacional",
         "status": "Llançament complet",
         "icon": "democracy_icon.webp",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originàriament només al Japó",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "Originàriament només al Japó",
         "status": "Beta privada",
-        "todo": "<i class='fa fa-hard-hat'></i>> Aquest servei encara està en desenvolupament",
+        "todo": "<span class='hard-hat'></span>> Aquest servei encara està en desenvolupament",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Originàriament només part d'Europa",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originàriament només al Japó",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Originàriament només al Japó",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Originàriament només al Japó",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Regió lliure",
         "status": "Llançament complet",
-        "todo": "<i class='fa fa-circle-check'></i> Aquest servei està funcionant correctament!",
+        "todo": "<span class='circle-check'></span> Aquest servei està funcionant correctament!",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "Originàriament Amèrica i Europa",
         "status": "Halted",
-        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "Originàriament només al Japó",
         "status": "Halted",
-        "todo": "<i class='fa fa-bomb'></i> This service's development has been halted.",
+        "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
         "completed": "15"
       }

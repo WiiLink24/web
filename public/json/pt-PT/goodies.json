@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<i class='fa-solid fa-palette'></i> Materiais de marca",
+        "title": "<span class='palette'></span> Materiais de marca",
         "desc": "Materiais de marca para utilização externa.",
         "img": "/img/branding_bg.webp",
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-image'></i> Papéis de parede",
+        "title": "<span class='image'></span> Papéis de parede",
         "desc": "Papéis de parede WiiLink para o teu computador!",
         "img": "/img/wallpaper_bg.webp",
         "link": "404"
@@ -26,7 +26,7 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-poll'></i> Visualizador de sondagens",
+        "title": "<span class='chart-no-axes-column'></span> Visualizador de sondagens",
         "desc": "Vê os resultados da sondagem do Canal de Opiniões!",
         "img": "/img/guidebg-2.webp",
         "link": "404"
@@ -38,13 +38,13 @@
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-paintbrush'></i> Temas WiiLink",
+        "title": "<span class='paintbrush'></span> Temas WiiLink",
         "desc": "Temas com a marca WiiLink para a Wii!",
         "img": "/img/guidebg-3.webp",
         "link": "404"
       },
       {
-        "title": "<i class='fa-solid fa-wifi'></i> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Um serviço de ligação Wi-Fi da Nintendo em curso!",
         "img": "/img/guidebg-1.webp",
         "link": "404"

@@ -1,6 +1,6 @@
 ---
 title: WiiLink Accounts
-pubDate: 2024-12-23
+pubDate: 2024-12-30
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
 icon: lucide:id-card
 ---
@@ -20,6 +20,8 @@ icon: lucide:id-card
 WiiLink Accounts are a brand-new way to do all things WiiLink! At present, they just allow you to enable Domino's food ordering, however they will allow you to use extra services such as the WiiLink Forum in the future.
 
 ## Linking your console
+
+<l class="notice warn">To link a console, it will need to have patched Wii Mail. Refer to [this guide](/guide/board/) for instructions on how to do that.</l>
 
 1. Log into or create a [**WiiLink Account**](https://accounts.wiilink.ca) on the device you will use to scan the QR code.
 
