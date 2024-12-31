@@ -1,0 +1,298 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { changeLanguage } from "i18next";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
+
+changeLanguage("ja");
+---
+
+<Layout
+  title="WiiLink | Year in Review 2024"
+  description="WiiLink's Year in Review for 2024, including all the major events and updates that happened throughout the year."
+  image="/img/news_post_welcome_back.webp"
+/>
+<Header />
+
+<img src="" alt="" id="storybgimage">
+
+<div class="story-container">
+  <div class="progress-container" id="progressContainer"></div>
+
+  <button class="play-pause" id="playPauseBtn">
+    <svg viewBox="0 0 24 24" id="playPauseIcon">
+      <path d="M6 4h4v16H6zm8 0h4v16h-4z"></path>
+    </svg>
+  </button>
+
+  <img id="storyImage" class="story-image" alt="Story image" />
+
+  <div class="controls">
+    <div class="nav-left" id="navLeft"></div>
+    <div class="nav-right" id="navRight"></div>
+  </div>
+</div>
+
+<Footer />
+
+<style is:global>
+  .story-container {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 98%;
+    max-width: 400px;
+    aspect-ratio: 9 / 16;
+    box-shadow: 0px 0px 67px #ffffff30;
+    border-radius: 8px;
+    background: #000;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .progress-container {
+    position: absolute;
+    top: 16px;
+    left: 0;
+    right: 0;
+    display: flex;
+    gap: 4px;
+    padding: 0 16px;
+    z-index: 10;
+  }
+
+  .story-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0)
+    );
+    z-index: 5;
+  }
+
+  .progress-pill {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    width: 0;
+    background: white;
+    transition: width 100ms linear;
+  }
+
+  .story-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .controls {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  .play-pause {
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    z-index: 20;
+    padding: 8px;
+    padding-top: 5px;
+    transition: 0.2s;
+  }
+
+  .play-pause:hover {
+    background-color: #12121230;
+    backdrop-filter: blur(8px);
+    transform: scale(1.1);
+    transition: 0.2s;
+  }
+
+  #storybgimage {
+    top: 0;
+    width: 100vw;
+    height: 150%;
+    object-fit: cover;
+    filter: blur(16px) brightness(0.3) grayscale(0.6);
+    opacity: 0.6;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .play-pause:active {
+    transform: scale(0.95);
+    transition: 0.2s;
+  }
+
+  .play-pause svg {
+    width: 24px;
+    height: 24px;
+    fill: white;
+  }
+
+  .nav-left,
+  .nav-right {
+    position: absolute;
+    top: 0;
+    width: 33.33%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .nav-left {
+    left: 0;
+  }
+
+  .nav-right {
+    right: 0;
+  }
+</style>
+
+<script is:inline>
+  class StoryViewer {
+    constructor() {
+      // Sample images - replace with your actual URLs
+      this.stories = [
+        "/img/review2024/1.png",
+        "/img/review2024/2.png",
+        "/img/review2024/3.png",
+        "/img/review2024/4.png",
+        "/img/review2024/5.png",
+        "/img/review2024/6.png",
+        "/img/review2024/7.png",
+        "/img/review2024/8.png",
+        "/img/review2024/9.png"
+      ];
+
+      this.currentIndex = 0;
+      this.progress = 0;
+      this.isPaused = false;
+      this.interval = null;
+
+      this.initializeElements();
+      this.createProgressPills();
+      this.setupEventListeners();
+      this.loadCurrentStory();
+      this.startProgress();
+    }
+
+    initializeElements() {
+      this.storyImage = document.getElementById("storyImage");
+      this.playPauseBtn = document.getElementById("playPauseBtn");
+      this.playPauseIcon = document.getElementById("playPauseIcon");
+      this.progressContainer = document.getElementById("progressContainer");
+      this.navLeft = document.getElementById("navLeft");
+      this.navRight = document.getElementById("navRight");
+    }
+
+    createProgressPills() {
+      this.progressPills = this.stories.map((_, index) => {
+        const pill = document.createElement("div");
+        pill.className = "progress-pill";
+
+        const fill = document.createElement("div");
+        fill.className = "progress-fill";
+        pill.appendChild(fill);
+
+        this.progressContainer.appendChild(pill);
+        return fill;
+      });
+    }
+
+    setupEventListeners() {
+      this.storyImage.addEventListener("click", () => this.togglePause());
+      this.playPauseBtn.addEventListener("click", () => this.togglePause());
+      this.navLeft.addEventListener("click", e => {
+        e.stopPropagation();
+        this.previous();
+      });
+      this.navRight.addEventListener("click", e => {
+        e.stopPropagation();
+        this.next();
+      });
+    }
+
+    togglePause() {
+      this.isPaused = !this.isPaused;
+      this.playPauseIcon.innerHTML = this.isPaused
+        ? '<path d="M8 5v14l11-7z"/>'
+        : '<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>';
+    }
+
+    startProgress() {
+      this.interval = setInterval(() => {
+        if (!this.isPaused) {
+          this.progress += 2;
+          if (this.progress >= 100) {
+            if (this.currentIndex < this.stories.length - 1) {
+              this.next();
+            } else {
+              this.currentIndex = 0;
+              this.loadCurrentStory();
+            }
+          }
+          this.updateProgress();
+        }
+      }, 100);
+    }
+
+    updateProgress() {
+      this.progressPills.forEach((fill, index) => {
+        if (index < this.currentIndex) {
+          fill.style.width = "100%";
+        } else if (index === this.currentIndex) {
+          fill.style.width = `${this.progress}%`;
+        } else {
+          fill.style.width = "0%";
+        }
+      });
+    }
+
+    loadCurrentStory() {
+      this.storyImage.src = this.stories[this.currentIndex];
+      document.getElementById("storybgimage").src = this.stories[this.currentIndex];
+      this.progress = 0;
+      this.updateProgress();
+    }
+
+    next() {
+      if (this.currentIndex < this.stories.length - 1) {
+        this.currentIndex++;
+        this.loadCurrentStory();
+      }
+    }
+
+    previous() {
+      if (this.currentIndex > 0) {
+        this.currentIndex--;
+        this.loadCurrentStory();
+      }
+    }
+  }
+
+  // Initialize the story viewer when the page loads
+  window.addEventListener("DOMContentLoaded", () => {
+    new StoryViewer();
+  });
+</script>
