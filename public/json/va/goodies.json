@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Recursos de marca",
+        "title": "<span class='palette'></span> Recursos de marca",
         "desc": "Recursos de marca per utilitzar externament!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Fons de pantalla",
+        "title": "<span class='image'></span> Fons de pantalla",
         "desc": "Fons de pantalla del WiiLink per a l'ordinador!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Arxiu de preguntes",
+        "title": "<span class='chart-no-axes-column'></span> Arxiu de preguntes",
         "desc": "Consulteu els resultats de les preguntes del Canal Tothom Vota!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Themes",
+        "title": "<span class='paintbrush'></span> Themes",
         "desc": "Temes macos per la teva Wii!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Un servei en curs per a la Connexió Wi-Fi de Nintendo!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Vinyetes de còmic",
+        "title": "<span class='drama'></span> Vinyetes de còmic",
         "desc": "Vinyetes de còmic antigues de RiiConnect24",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Comprovació del Comandament Wii",
+        "title": "<span class='gamepad-2'></span> Comprovació del Comandament Wii",
         "desc": "Una pàgina simple per provar el teu Comandament Wii",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Trucs per al Canal Fotos",
+        "title": "<span class='image'></span> Trucs per al Canal Fotos",
         "desc": "Imatges per obtenir bons resultats!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Cançó del Canal Botiga Wii",
+        "title": "<span class='store'></span> Cançó del Canal Botiga Wii",
         "desc": "Mem del Canal Botiga Wii",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Gat de Notícies",
+        "title": "<span class='cat'></span> Gat de Notícies",
         "desc": "Un servei en curs per a la Connexió Wi-Fi de Nintendo!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

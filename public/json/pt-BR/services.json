@@ -9,7 +9,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "forecast_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "news_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "nintendo_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "miicontest_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Internacional",
         "status": "Lançado",
         "icon": "democracy_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "Antes exclusivo do Japão",
         "status": "Em testes privados",
-        "todo": "<img src='/icons/hard-hat.svg' style='margin-bottom:5px;'/> Ainda está em desenvolvimento",
+        "todo": "<span class='hard-hat'></span> Ainda está em desenvolvimento",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Antes exclusivo da Europa",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Antes exclusivo do Japão",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Livre de região",
         "status": "Lançado",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Está funcionando bem!",
+        "todo": "<span class='circle-check'></span> Está funcionando bem!",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "Antes exclusivo da América e Europa",
         "status": "Pausado",
-        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> Não está mais em desenvolvimento por enquanto.",
+        "todo": "<span class='bomb'></span> Não está mais em desenvolvimento por enquanto.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "Antes exclusivo do Japão",
         "status": "Pausado",
-        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> Não está mais em desenvolvimento por enquanto.",
+        "todo": "<span class='bomb'></span> Não está mais em desenvolvimento por enquanto.",
         "icon": "",
         "completed": "15"
       }

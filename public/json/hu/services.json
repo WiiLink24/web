@@ -9,7 +9,7 @@
         "isArea": "Nemzetközi",
         "status": "Kész",
         "icon": "forecast_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "Nemzetközi",
         "status": "Kész",
         "icon": "news_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "Nemzetközi",
         "status": "Kész",
         "icon": "nintendo_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "Nemzetközi",
         "status": "Kész",
         "icon": "miicontest_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Nemzetközi",
         "status": "Kész",
         "icon": "democracy_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Zártkörű próba",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás fejlesztés alatt áll.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás fejlesztés alatt áll.",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "Eredetileg csak bizonyos európai országokban volt elérhető",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Régiózár-mentes",
         "status": "Kész",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ez a szolgáltatás rendben működik.",
+        "todo": "<span class='circle-check'></span> Ez a szolgáltatás rendben működik.",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "Eredetileg csak Amerikában és Európában volt elérhető",
         "status": "Szüneteltetve",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> A szolgáltatás fejlesztése szünetel.",
+        "todo": "<span class='circle-check'></span> A szolgáltatás fejlesztése szünetel.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "Eredetileg csak Japánban volt elérhető",
         "status": "Szüneteltetve",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> A szolgáltatás fejlesztése szünetel.",
+        "todo": "<span class='circle-check'></span> A szolgáltatás fejlesztése szünetel.",
         "icon": "",
         "completed": "15"
       }

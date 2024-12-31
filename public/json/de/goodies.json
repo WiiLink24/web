@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Branding-Assets",
+        "title": "<span class='palette'></span> Branding-Assets",
         "desc": "Brand-Assets zur externen Nutzung!",
         "img": "/img/branding_bg.webp",
         "link": "404"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Hintergrundbilder",
+        "title": "<span class='image'></span> Hintergrundbilder",
         "desc": "WiiLink-Hintergrundbilder für deinen Computer!",
         "img": "/img/wallpaper_bg.webp",
         "link": "404"
@@ -26,7 +26,7 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Umfrage-Viewer",
+        "title": "<span class='chart-no-axes-column'></span> Umfrage-Viewer",
         "desc": "Schau dir die Ergebnisse der Umfragen des Meinungskanals an!",
         "img": "/img/guidebg-2.webp",
         "link": "404"
@@ -38,13 +38,13 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> WiiLink-Themen",
+        "title": "<span class='paintbrush'></span> WiiLink-Themen",
         "desc": "Wii-Themen von WiiLink!",
         "img": "/img/guidebg-3.webp",
         "link": "404"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Ein neuer Nintendo Wi-Fi Connection-Service!",
         "img": "/img/guidebg-1.webp",
         "link": "404"

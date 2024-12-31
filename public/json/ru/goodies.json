@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Материалы брендинга",
+        "title": "<span class='palette'></span> Материалы брендинга",
         "desc": "Наш брендинг для сторонних использований!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Обои",
+        "title": "<span class='image'></span> Обои",
         "desc": "Обои WiiLink для вашего ПК!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Просмотр опросов",
+        "title": "<span class='chart-no-axes-column'></span> Просмотр опросов",
         "desc": "Смотрите результаты опросов Канала Голосований!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Темы WiiLink",
+        "title": "<span class='paintbrush'></span> Темы WiiLink",
         "desc": "Милые темы для вашей Wii!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Классная замена для службы<br>Nintendo Wi-Fi Connection!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Комиксы",
+        "title": "<span class='drama'></span> Комиксы",
         "desc": "Старые комиксы RiiConnect24<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Тест Wii Remote",
+        "title": "<span class='gamepad-2'></span> Тест Wii Remote",
         "desc": "Простая страница для тестирования вашего Wii Remote<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Чит для Фотоканала",
+        "title": "<span class='image'></span> Чит для Фотоканала",
         "desc": "Изображения для получения лучших результатов!<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Песня Wii Shop Channel",
+        "title": "<span class='store'></span> Песня Wii Shop Channel",
         "desc": "Мемная песня с канала Wii Shop Channel<br><span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Котик с новостей",
+        "title": "<span class='cat'></span> Котик с новостей",
         "desc": "Тако-о-ой милашка!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

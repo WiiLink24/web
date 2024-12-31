@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Márkaeszközök",
+        "title": "<span class='palette'></span> Márkaeszközök",
         "desc": "Márkaeszközök külső használatra.",
         "img": "/img/branding_bg.webp",
         "link": "//extras/branding"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Háttérképek",
+        "title": "<span class='image'></span> Háttérképek",
         "desc": "WiiLinkes háttérképek számítógépre.",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Korábbi szavazások",
+        "title": "<span class='chart-no-axes-column'></span> Korábbi szavazások",
         "desc": "Az Everybody Votes Channel korábbi szavazásainak eredményei.",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> WiiLinkes témák",
+        "title": "<span class='paintbrush'></span> WiiLinkes témák",
         "desc": "A WiiLinkkel kapcsolatos témák tárháza.",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Egy fejlesztés alatt álló Nintendo Wi-Fi Connection-szolgáltatás.",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Képregények",
+        "title": "<span class='drama'></span> Képregények",
         "desc": "A korábbi RiiConnect24-képregények.",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Wii Remote-próba",
+        "title": "<span class='gamepad-2'></span> Wii Remote-próba",
         "desc": "Egy honlap, ahol kipróbálhatod a Wii Remote-odat.",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Miik",
+        "title": "<span class='user'></span> Miik",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Photo Channel-csalások",
+        "title": "<span class='image'></span> Photo Channel-csalások",
         "desc": "A gyorsaságot elősegítő puskák.",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Wii Shop Channel-dal",
+        "title": "<span class='store'></span> Wii Shop Channel-dal",
         "desc": "Egy mémdal a Wii Shop Channelről.",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Hírmacska",
+        "title": "<span class='cat'></span> Hírmacska",
         "desc": "Egy fejlesztés alatt álló Nintendo Wi-Fi Connection-szolgáltatás.",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

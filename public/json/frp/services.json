@@ -9,7 +9,7 @@
         "isArea": "Entèrnacionâl",
         "status": "Sortia complèta",
         "icon": "forecast_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "completed": "95"
       },
       {
@@ -20,7 +20,7 @@
         "isArea": "Entèrnacionâl",
         "status": "Sortia complèta",
         "icon": "news_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "completed": "100"
       },
       {
@@ -31,7 +31,7 @@
         "isArea": "Entèrnacionâl",
         "status": "Sortia complèta",
         "icon": "nintendo_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "completed": "90"
       },
       {
@@ -42,7 +42,7 @@
         "isArea": "Entèrnacionâl",
         "status": "Sortia complèta",
         "icon": "miicontest_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "completed": "80"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "Entèrnacionâl",
         "status": "Sortia complèta",
         "icon": "democracy_icon.webp",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "completed": "80"
       },
       {
@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "A l'origina èxclusif u Japon",
         "status": "Sortia complèta",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
@@ -74,7 +74,7 @@
         "link": "/status",
         "isArea": "A l'origina èxclusif u Japon",
         "status": "Bèta privâ",
-        "todo": "<img src='/icons/hard-hat.svg' style='margin-bottom:5px;'/> Ceti sèrvicio est adés en dèvelopament.",
+        "todo": "<span class='hard-hat'></span> Ceti sèrvicio est adés en dèvelopament.",
         "icon": "tvnotomo_icon.webp",
         "completed": "30"
       },
@@ -85,7 +85,7 @@
         "link": "/guide/kirbytv",
         "isArea": "A l'origina dens des parties de l'Eropa",
         "status": "Sortia complèta",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "icon": "kirby_icon.webp",
         "completed": "90"
       },
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "A l'origina èxclusif u Japon",
         "status": "Sortia complèta",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
@@ -107,7 +107,7 @@
         "link": "/guide/wiinoma",
         "isArea": "A l'origina èxclusif u Japon",
         "status": "Sortia complèta",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> Ceti sèrvicio fonccione corrèctament !",
+        "todo": "<span class='circle-check'></span> Ceti sèrvicio fonccione corrèctament !",
         "icon": "room_icon.webp",
         "completed": "85"
       },
@@ -118,7 +118,7 @@
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly!",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
@@ -129,7 +129,7 @@
         "link": "/guide/board",
         "isArea": "Region Free",
         "status": "Full Release",
-        "todo": "<img src='/icons/circle-check.svg' style='margin-bottom:5px;'/> The service is working properly!",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "",
         "completed": "100"
       },
@@ -140,7 +140,7 @@
         "link": "/status",
         "isArea": "Originally America and Europe",
         "status": "Halted",
-        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> This service's development has been halted.",
+        "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
         "completed": "8"
       },
@@ -151,7 +151,7 @@
         "link": "/status",
         "isArea": "Originally Japan exclusive",
         "status": "Halted",
-        "todo": "<img src='/icons/bomb.svg' style='margin-bottom:5px;'/> This service's development has been halted.",
+        "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
         "completed": "15"
       }

@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Nội dung thương hiệu",
+        "title": "<span class='palette'></span> Nội dung thương hiệu",
         "desc": "Nội dung thương hiệu cho sử dụng bên ngoài!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Hình nền",
+        "title": "<span class='image'></span> Hình nền",
         "desc": "Hình nền cho PC của bạn!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Trình Xem Thăm Dò Ý Kiến",
+        "title": "<span class='chart-no-axes-column'></span> Trình Xem Thăm Dò Ý Kiến",
         "desc": "Xem kết quả bình chọn cho Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Giao Diện Wiilink",
+        "title": "<span class='paintbrush'></span> Giao Diện Wiilink",
         "desc": "Giao diện ấn tượng cho Wii của bạn!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "Dịch vụ kết nối Wi-Fi của Nintendo đang được tiến hành!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> truyện tranh",
+        "title": "<span class='drama'></span> truyện tranh",
         "desc": "Truyện tranh cũ của Riiconnect24",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Kiểm tra WiiMote",
+        "title": "<span class='gamepad-2'></span> Kiểm tra WiiMote",
         "desc": "Một trang đơn giản cho kiểm tra WiiMote của bạn",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Gian Lận Cho Photo Channel",
+        "title": "<span class='image'></span> Gian Lận Cho Photo Channel",
         "desc": "Hình ảnh để nhận được kết quả thời gian nhanh chóng!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Nhạc cho Wii Shop Channel",
+        "title": "<span class='store'></span> Nhạc cho Wii Shop Channel",
         "desc": "Nhạc Meme cho Wii Shop Channel",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Mèo Tin Tức",
+        "title": "<span class='cat'></span> Mèo Tin Tức",
         "desc": "Dịch vụ kết nối Wi-Fi của Nintendo đang được tiến hành!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"

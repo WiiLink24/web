@@ -2,13 +2,13 @@
   "goodies": {
     "goodie": [
       {
-        "title": "<img src='/icons/palette.svg' style='margin-bottom:10px;'/> Recursos de marca",
+        "title": "<span class='palette'></span> Recursos de marca",
         "desc": "¡Recursos de marca para uso externo!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Fondos de pantalla",
+        "title": "<span class='image'></span> Fondos de pantalla",
         "desc": "¡Fondos de pantalla de WiiLink para tu PC!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
@@ -26,7 +26,7 @@
         "link": "https://tag.rc24.xyz/"
       },
       {
-        "title": "<img src='/icons/chart-no-axes-column.svg' style='margin-bottom:10px;'/> Visualizador de encuestas",
+        "title": "<span class='chart-no-axes-column'></span> Visualizador de encuestas",
         "desc": "¡Mira los resultados de la encuesta del canal Opiniones!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
@@ -38,49 +38,49 @@
         "link": "404"
       },
       {
-        "title": "<img src='/icons/paintbrush.svg' style='margin-bottom:10px;'/> Temas de WiiLink",
+        "title": "<span class='paintbrush'></span> Temas de WiiLink",
         "desc": "¡Temas geniales para tu Wii!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<img src='/icons/wifi.svg' style='margin-bottom:10px;'/> WiiLink WFC",
+        "title": "<span class='wifi'></span> WiiLink WFC",
         "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<img src='/icons/drama.svg' style='margin-bottom:10px;'/> Tiras Cómicas",
+        "title": "<span class='drama'></span> Tiras Cómicas",
         "desc": "Antiguas tiras cómicas de RiiConnect24",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/strips"
       },
       {
-        "title": "<img src='/icons/gamepad-2.svg' style='margin-bottom:10px;'/> Prueba del Wii Remote",
+        "title": "<span class='gamepad-2'></span> Prueba del Wii Remote",
         "desc": "Una simple página para probar tu Wii Remote",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<img src='/icons/user.svg' style='margin-bottom:10px;'/> Mii",
+        "title": "<span class='user'></span> Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<img src='/icons/image.svg' style='margin-bottom:10px;'/> Trucos del Canal Foto",
+        "title": "<span class='image'></span> Trucos del Canal Foto",
         "desc": "¡Imágenes para obtener resultados rápidos!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<img src='/icons/store.svg' style='margin-bottom:10px;'/> Música del Canal Tienda Wii",
+        "title": "<span class='store'></span> Música del Canal Tienda Wii",
         "desc": "Canción meme para el Canal Tienda Wii",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/ring"
       },
       {
-        "title": "<img src='/icons/cat.svg' style='margin-bottom:10px;'/> Gato del Canal Noticias",
+        "title": "<span class='cat'></span> Gato del Canal Noticias",
         "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
