@@ -28,6 +28,10 @@ changeLanguage("fr");
     </svg>
   </button>
 
+  <button class="mute-unmute" id="muteUnmuteBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"/></svg>
+  </button>
+
   <img id="storyImage" class="story-image" alt="Story image" />
 
   <div class="controls">
@@ -108,10 +112,10 @@ changeLanguage("fr");
     bottom: 0;
   }
 
-  .play-pause {
+  .play-pause,
+  .mute-unmute {
     position: absolute;
     top: 32px;
-    right: 16px;
     background: none;
     border: none;
     cursor: pointer;
@@ -122,7 +126,16 @@ changeLanguage("fr");
     transition: 0.2s;
   }
 
-  .play-pause:hover {
+  .play-pause {
+    right: 56px;
+  }
+
+  .mute-unmute {
+    right: 16px;
+  }
+
+  .play-pause:hover,
+  .mute-unmute:hover {
     background-color: #12121230;
     backdrop-filter: blur(8px);
     transform: scale(1.1);
@@ -140,12 +153,14 @@ changeLanguage("fr");
     position: absolute;
   }
 
-  .play-pause:active {
+  .play-pause:active,
+  .mute-unmute:active {
     transform: scale(0.95);
     transition: 0.2s;
   }
 
-  .play-pause svg {
+  .play-pause svg,
+  .mute-unmute svg {
     width: 24px;
     height: 24px;
     fill: white;
@@ -188,19 +203,24 @@ changeLanguage("fr");
       this.currentIndex = 0;
       this.progress = 0;
       this.isPaused = false;
+      this.isMuted = false;
       this.interval = null;
+      this.audio = new Audio("/img/review2024/music.mp3");
 
       this.initializeElements();
       this.createProgressPills();
       this.setupEventListeners();
       this.loadCurrentStory();
       this.startProgress();
+      this.audio.play();
     }
 
     initializeElements() {
       this.storyImage = document.getElementById("storyImage");
+      this.storyBgImage = document.getElementById("storybgimage");
       this.playPauseBtn = document.getElementById("playPauseBtn");
       this.playPauseIcon = document.getElementById("playPauseIcon");
+      this.muteUnmuteBtn = document.getElementById("muteUnmuteBtn");
       this.progressContainer = document.getElementById("progressContainer");
       this.navLeft = document.getElementById("navLeft");
       this.navRight = document.getElementById("navRight");
@@ -223,6 +243,7 @@ changeLanguage("fr");
     setupEventListeners() {
       this.storyImage.addEventListener("click", () => this.togglePause());
       this.playPauseBtn.addEventListener("click", () => this.togglePause());
+      this.muteUnmuteBtn.addEventListener("click", () => this.toggleMute());
       this.navLeft.addEventListener("click", e => {
         e.stopPropagation();
         this.previous();
@@ -238,6 +259,14 @@ changeLanguage("fr");
       this.playPauseIcon.innerHTML = this.isPaused
         ? '<path d="M8 5v14l11-7z"/>'
         : '<path d="M6 4h4v16H6zm8 0h4v16h-4z"/>';
+    }
+
+    toggleMute() {
+      this.isMuted = !this.isMuted;
+      this.audio.muted = this.isMuted;
+      this.muteUnmuteBtn.innerHTML = this.isMuted
+        ? '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M792-56 671-177q-25 16-53 27.5T560-131v-82q14-5 27.5-10t25.5-12L480-368v208L280-360H120v-240h128L56-792l56-56 736 736-56 56Zm-8-232-58-58q17-31 25.5-65t8.5-70q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 53-14.5 102T784-288ZM650-422l-90-90v-130q47 22 73.5 66t26.5 96q0 15-2.5 29.5T650-422ZM480-592 376-696l104-104v208Zm-80 238v-94l-72-72H200v80h114l86 86Zm-36-130Z"/></svg>'
+        : '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M560-131v-82q90-26 145-100t55-168q0-94-55-168T560-749v-82q124 28 202 125.5T840-481q0 127-78 224.5T560-131ZM120-360v-240h160l200-200v640L280-360H120Zm440 40v-322q47 22 73.5 66t26.5 96q0 51-26.5 94.5T560-320ZM400-606l-86 86H200v80h114l86 86v-252ZM300-480Z"/></svg>';
     }
 
     startProgress() {
@@ -271,7 +300,7 @@ changeLanguage("fr");
 
     loadCurrentStory() {
       this.storyImage.src = this.stories[this.currentIndex];
-      document.getElementById("storybgimage").src = this.stories[this.currentIndex];
+      this.storyBgImage.src = this.stories[this.currentIndex];
       this.progress = 0;
       this.updateProgress();
     }
