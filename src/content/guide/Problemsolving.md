@@ -18,6 +18,8 @@ heroImage: "/img/guidebg-3.webp"
 <div class="errorCodes" id="error-codes">
 
 
+<div class="error">Invaild Wii Console <span class="badge bg-success">WiiLink Accounts</span><h4>Ensure that you registered your Wii Console with the Mail Patcher. If you gotten a Duplication Error or a Internet Error. Go to <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> and we can help you solve your problem.</h4><hr></div>
+
 <div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a>, and send a picture of your error.</h4><hr></div>
 
 <div class="error">Error Code: 107245 <span class="badge bg-warning">Any Channel</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
