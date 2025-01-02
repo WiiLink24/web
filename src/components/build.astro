@@ -71,11 +71,11 @@ import { Trans } from "astro-i18next/components";
               <span style='scale:60%; transform:translate(-30px, -20px);' class='badge rounded-pill bg-secondary'>${versionNumber}</span>
             </h2>
             <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
-              <i class='fa-solid fa-code-branch'></i> <b>${relBranch}</b>
+              <span class='git-branch'></span> <b>${relBranch}</b>
               <span style='top:-2px; box-shadow:0px 0px 10px #4c97ed60; position:relative;' class='badge pill bg-primary'>${release.target_commitish}</span>
             </h2>
             <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
-              <i class='fa-solid fa-calendar-days'></i> <b>${relDate}</b> ${dateArray}
+              <span class='calendar-days'></span> <b>${relDate}</b> ${dateArray}
               <span style='top:-2px; left:5px; box-shadow:0px 0px 20px #4ced9a60; position:relative;' class='badge pill bg-success'>@ ${timeArray}</span>
             </h2>
           </a>
@@ -86,14 +86,14 @@ import { Trans } from "astro-i18next/components";
             </span>
             <span style="display:flex; flex-direction: row; align-items:center; gap:6px;">
             <h2 style='font-size:23px;'><span style='transform:translate(0, -2px); font-size:14px; background-color:var(--bg-opaque-2);' class='badge rounded'>${relTotal}${release.reactions.total_count}</span></h2>
-            <h2 style='font-size:23px;'><i class='fa-solid fa-star'></i> ${release.reactions.hooray}</h2>
-            <h2 style='font-size:23px;'><i class='fa-solid fa-heart'></i> ${release.reactions.heart}</h2>
-            <h2 style='font-size:23px;'><i class='fa-solid fa-rocket'></i> ${release.reactions.rocket}</h2>
-            <h2 style='font-size:23px;'><i class='fa-solid fa-eye'></i> ${release.reactions.eyes}</h2>
+            <h2 style='font-size:23px;'><span class='star'></span> ${release.reactions.hooray}</h2>
+            <h2 style='font-size:23px;'><span class='heart'></span> ${release.reactions.heart}</h2>
+            <h2 style='font-size:23px;'><span class='rocket'></span> ${release.reactions.rocket}</h2>
+            <h2 style='font-size:23px;'><span class='eye'></span> ${release.reactions.eyes}</h2>
             </span>
             <div class="btn btn-success" style="width:100%; font-size:16px; padding:6px; border-radius:10px; box-shadow:0px 0px 20px #00000020; text-align:center;">
             <a style="color:white; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest" aria-label="Download WiiLink Patcher">
-              <i class="fa-brands fa-github"></i> View on GitHub
+              <span class='github'></span> View on GitHub
             </a>
           </div>
           </div>

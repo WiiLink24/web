@@ -454,9 +454,9 @@ import { Icon } from "astro-icon/components";
       document.getElementById("downloadPrompt").textContent;
 
     const osIcons = {
-      MacOS: "fa-apple",
-      Windows: "fa-microsoft",
-      Linux: "fa-linux"
+      MacOS: "apple",
+      Windows: "microsoft",
+      Linux: "linux"
     };
     const os = osdetect();
     const downloadBtn = document.getElementById("download-btn");
@@ -486,11 +486,10 @@ import { Icon } from "astro-icon/components";
         }
       });
     }
-    const icon = osIcons[os] || "fa-download";
+    const icon = osIcons[os] || "download";
     const osName =
       os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
-    const iconClass = os === "Unknown OS" ? "fa" : "fa-brands";
-    downloadBtn.innerHTML = `<i class='${iconClass} ${icon}' style='font-size:20px; margin-right:5px;'></i> ${osName}`;
+    downloadBtn.innerHTML = `<span class='${icon}'></span> ${osName}`;
   });
 </script>
 

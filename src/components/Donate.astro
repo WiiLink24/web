@@ -70,9 +70,9 @@ donators = await fetchData();
               <h5 style="margin-top:50px; opacity:0.8;">
                 <Trans i18nKey="donate.info-tier-1">
                   Get access to the <b
-                    ><i class="fa-solid fa-message"></i> donators channel</b
+                    ><span class="discord"></span> donators channel</b
                   >, as well as <b
-                    ><i class="fa-solid fa-globe"></i> recognition on our website</b
+                    ><span class="globe"></span> recognition on our website</b
                   >!
                 </Trans>
               </h5>
@@ -125,9 +125,9 @@ donators = await fetchData();
               <h5 style="margin-top:50px; opacity:0.8;">
                 <Trans i18nKey="donate.info-tier-2">
                   Have your very own <b
-                    ><i class="fa-solid fa-film"></i> movie poster</b
+                    ><span class="film"></span> movie poster</b
                   > inside of Wii Room, <b
-                    ><i class="fa fa-cutlery"></i> restaurant</b
+                    ><span class="utensils"></span> restaurant</b
                   > inside of the Food Channel, as well as <b
                     >all the perks of Violet</b
                   >!
@@ -181,9 +181,9 @@ donators = await fetchData();
             <div>
               <h5 style="margin-top:50px; opacity:0.8;">
                 <Trans i18nKey="donate.info-tier-3">
-                  Have your very own <b><i class="fa fa-user"></i> Mii</b> inside
+                  Have your very own <b><span class="user"></span> Mii</b> inside
                   of Wii Room, access to the <b
-                    ><i class="fa-brands fa-discord"></i> Tester Discord chat</b
+                    ><span class="discord"></span> Tester Discord chat</b
                   >, and <b>all the perks of Lilac</b>!
                 </Trans>
               </h5>
@@ -236,7 +236,7 @@ donators = await fetchData();
               <h5 style="margin-top:50px; opacity:0.8;">
                 <Trans i18nKey="donate.info-tier-4">
                   Create your very own <b
-                    ><i class="fa fa-sign-hanging"></i> Room</b
+                    ><span class="milestone"></span> Room</b
                   > inside of Wii Room, as well as <b>all the perks of Tulip</b
                   >!
                 </Trans>
@@ -506,5 +506,95 @@ donators = await fetchData();
     .subtitle {
       display: none;
     }
+  }
+
+  .globe {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/globe.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
+
+  .film {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/film.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
+
+  .utensils {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/utensils.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
+
+  .user {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/user.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
+
+  .discord {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/discord.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
+
+  .milestone {
+   display: inline-block;
+   width: 22px;
+   height: 22px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/milestone.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
   }
 </style>
