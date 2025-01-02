@@ -21,6 +21,7 @@ const {
   authImage,
   authDesc,
   authTitle,
+  ogImage,
   color
 } = Astro.props;
 ---
@@ -29,7 +30,7 @@ const {
   <Layout
     title={`WiiLink - ${t("newsPost.name")} (${title})`}
     description={`${title} - ${description}`}
-    image="/img/News_embed.webp"
+    image={ogImage}
   />
 
   <Header isGuide="display:none;" />
