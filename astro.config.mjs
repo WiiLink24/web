@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [mdx({
     ...markdownConfig,
     extendPlugins: false
-  }), partytown(), purgecss(), playformCompress(), astroI18next(), (await import("@playform/compress")).default({
+  }), partytown(), purgecss(), astroI18next(), (await import("@playform/compress")).default({
     CSS: true,
     HTML: {
       "html-minifier-terser": {
