@@ -54,7 +54,7 @@ const readingTime = (body: string) => {
                   class="title-main"
                   style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
                   <Icon
-                    name="lucide:download"
+                    name="download"
                     style="margin-right:5px; margin-bottom:3px;"
                   />
                   {t("guidePost.installGuide")}
@@ -82,7 +82,7 @@ const readingTime = (body: string) => {
                   class="title-main"
                   style="color:white !important; text-align: left; font-size:20px; font-family:Gilroy;">
                   <Icon
-                    name="lucide:circle-help"
+                    name="circle-help"
                     style="margin-right:5px; margin-bottom:3px;"
                   />
                   {t("guidePost.faq")}
@@ -146,7 +146,7 @@ const readingTime = (body: string) => {
                 <h2
                   style={ `${heroImage ? "color: white !important;" : ""} margin-bottom:0; font-size:28px; font-family: Gilroy; display:flex; flex-direction: row; align-items:center; gap: 8px;`}>
                   <Icon name={icon} style="font-size: 28px;" />
-                  {title} <span style="margin-left:8px; padding:8px 8px; background-color: var(--bg-opaque-1); border-radius:8px; font-size: 18px; font-family: system-ui; display:flex; flex-direction:row; align-items:center; gap:3px;"><Icon name="lucide:clock"/> {readingTime(body)} min read</span>
+                  {title} <span style="margin-left:8px; padding:8px 8px; background-color: var(--bg-opaque-1); border-radius:8px; font-size: 18px; font-family: system-ui; display:flex; flex-direction:row; align-items:center; gap:3px;"><Icon name="clock"/> {readingTime(body)} min read</span>
                 </h2>
               </div>
             </span>
@@ -166,7 +166,7 @@ const readingTime = (body: string) => {
               {title}
               <span
                 style={ `${heroImage ? "color: white !important;" : ""} font-size: 18px; font-family: system-ui; text-align:right; display:flex; flex-direction:row; align-items:center; justify-content:start; gap:3px;`}>
-                <Icon name="lucide:clock" style="margin-right:8px;" />
+                <Icon name="clock" style="margin-right:8px;" />
                 {readingTime(body)} min read<span class="dateShow" style="display:none;"> | Last updated on {pubDate}</span>
               </span>
             </h1>

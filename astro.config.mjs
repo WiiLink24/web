@@ -14,9 +14,10 @@ export default defineConfig({
     ...markdownConfig,
     extendPlugins: false
   }), partytown(), astroI18next(), icon({
+    iconDir: "public/icons",
     include: {
-      "lucide": ["info", "message-circle", "globe", "film", "utensils", "user", "download", "house", "mail-open", "wifi", "newspaper", "book", "arrow-right", "circle-alert", "circle-help", "server", "package", "package-open", "users", "chart-no-axes-column", "tag", "id-card", "stamp", "bookmark", "disc", "gamepad-2", "shield", "feather", "moon", "sun", "arrow-up-right", "menu", "earth", "shopping-basket", "smile", "zap", "monitor", "cat", "palette", "chart-pie", "film", "video", "mic", "tv", "circle", "truck", "camera", "bot", "leaf", "chevron-down", "presentation", "umbrella", "mail", "rss","chevron-left", "chevron-right", "brush", "clock"],
-      "simple-icons": ["twitter", "bluesky", "github", "instagram", "youtube", "discord", "microsoft", "apple", "linux", "android"]
+      "lucide": ["info", "film", "house", "mail-open", "newspaper", "book", "arrow-right", "circle-alert", "server", "package", "package-open", "users", "tag", "id-card", "stamp", "bookmark", "disc", "shield", "feather", "moon", "sun", "arrow-up-right", "menu", "earth", "shopping-basket", "smile", "zap", "chart-pie", "video", "mic", "tv", "circle", "truck", "camera", "bot", "leaf", "chevron-down", "presentation", "umbrella", "mail", "rss","chevron-left", "chevron-right", "brush"],
+      "simple-icons": ["twitter", "bluesky", "instagram", "youtube"]
     }
   })],
   markdown: markdownConfig
