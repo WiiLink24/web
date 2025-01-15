@@ -164,7 +164,7 @@ const {
       let wordCount = post.innerHTML.split(" ");
       let readingTime = Math.ceil(wordCount.length / 200);
       document.getElementById("readingTime").innerHTML =
-        `<i class="fa fa-clock"></i> ${readingTime} min read`;
+        `<span class="clock"></span> ${readingTime} min read`;
 
       var nav = document.querySelector("nav");
       if (nav) nav.remove();
