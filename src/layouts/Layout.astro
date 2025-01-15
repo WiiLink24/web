@@ -1040,4 +1040,19 @@ const { title, description, image } = Astro.props;
    -webkit-mask-size: 100% 100%;
    mask-size: 100% 100%;
   }
+
+  .clock {
+   display: inline-block;
+   width: 24px;
+   height: 24px;
+   margin-bottom: -5px;
+   background-color: currentColor;
+   --svg: url('/icons/clock.svg');
+   -webkit-mask-image: var(--svg);
+   mask-image: var(--svg);
+   -webkit-mask-repeat: no-repeat;
+   mask-repeat: no-repeat;
+   -webkit-mask-size: 100% 100%;
+   mask-size: 100% 100%;
+  }
 </style>
