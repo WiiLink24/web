@@ -133,73 +133,82 @@ const { isMain } = Astro.props;
         <div class="post" style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
           <img 
           src="/img/guidebg-install.webp" 
-          style="height:100%; width: 80%; top:0; left:0; z-index:0; position:absolute; mask-image: linear-gradient(to left, transparent, black); object-fit: cover; opacity: 0; transition:0.2s;" 
+          style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;" 
         />
           <a
-            style="padding:8px; display:flex; flex-direction:column; align-items:start; gap:8px; z-index:10;"
+            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
             href="/guide/install"
             aria-label="Install Guide Link">
+            <Icon
+                  name="download"
+                  style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+                /> 
+                <span style="width:85%; z-index:1000;">
             <div class="title">
               <b
                 style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                <Icon
-                  name="download"
-                  style="width:25px !important; height:25px !important;"
-                /> {t("guidePost.installGuide")}
+                {t("guidePost.installGuide")}
               </b>
             </div>
             <div
               style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
               {t("guidePost.installGuide-info")}
             </div>
+            </span>
           </a>
         </div>
         <div class="post" style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
           <img 
           src="/img/guidebg-3.webp" 
-          style="height:100%; width: 80%; top:0; left:0; z-index:0; position:absolute; mask-image: linear-gradient(to left, transparent, black); object-fit: cover; opacity: 0; transition:0.2s;" 
+          style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;" 
         />
           <a
-            style="padding:8px; display:flex; flex-direction:column; align-items:start; gap:8px; z-index:10;"
+            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
             href="/guide/problemsolving"
             aria-label="Troubleshooting Guide Link">
+            <Icon
+                  name="lucide:circle-alert"
+                  style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+                />
+          <span style="width: 85%; z-index:1000;">
             <div class="title">
               <b
                 style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                <Icon
-                  name="lucide:circle-alert"
-                  style="width:25px !important; height:25px !important;"
-                /> {t("guidePost.problemSolving")}
+                 {t("guidePost.problemSolving")}
               </b>
             </div>
             <div
               style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
               {t("guidePost.problemSolving-info")}
             </div>
+            </span>
           </a>
         </div>
         <div class="post" style="border-radius:4px; display:block; overflow:hidden; position:relative;">
           <img 
           src="/img/guidebg-2.webp" 
-          style="height:100%; width: 80%; top:0; left:0; z-index:0; position:absolute; mask-image: linear-gradient(to left, transparent, black); object-fit: cover; opacity: 0; transition: 0.2s;" 
+          style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition: 0.2s;" 
         />
           <a
-            style="padding:8px; display:flex; flex-direction:column; align-items:start; gap:8px; z-index:10;"
+            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
             href="/guide/faq"
             aria-label="FAQ Link">
+            <Icon
+                  name="circle-help"
+                  style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+                />
+            <span style="width: 85%; z-index:1000;">
             <div class="title">
               <b
                 style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                <Icon
-                  name="circle-help"
-                  style="width:25px !important; height:25px !important;"
-                /> {t("guidePost.faq")}
+                 {t("guidePost.faq")}
               </b>
             </div>
             <div
               style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
               {t("guidePost.faq-info")}
             </div>
+            </span>
           </a>
         </div>
         <hr style="border-top: 1px solid var(--border-color);" />
@@ -830,11 +839,6 @@ const { isMain } = Astro.props;
       left: 50%;
       z-index: 10000;
       transform: translateX(-50%);
-    }
-
-    .post:hover {
-      background-color: var(--bg-color-secondary);
-      transition: 0.2s;
     }
 
     .post:active {
