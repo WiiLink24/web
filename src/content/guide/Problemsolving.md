@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: lucide:circle-alert
-pubDate: 2024-10-20
+pubDate: 2025-01-21
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -18,13 +18,13 @@ heroImage: "/img/guidebg-3.webp"
 <div class="errorCodes" id="error-codes">
 
 
-<div class="error">Invaild Wii Console <span class="badge bg-success">WiiLink Accounts</span><h4>Ensure that you registered your Wii Console with the Mail Patcher. If you gotten a Duplication Error or a Internet Error. Go to <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> and we can help you solve your problem.</h4><hr></div>
+<div class="error">Invaild Wii Console <span class="badge bg-success">WiiLink Accounts</span><h4>Ensure that you have patched your Wii Mail as per <a href="/guide/board" class="text-info">these instructions</a>. If you have, and you still receive the error, head on over to <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further assistance.</h4><hr></div>
 
-<div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a>, and send a picture of your error.</h4><hr></div>
+<div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a>, and send a picture of your error, making sure to include your Wii Number.</h4><hr></div>
 
 <div class="error">Error Code: 107245 <span class="badge bg-warning">Any Channel</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
 
-<div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock">here</a> to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> for further help with diagnosing your issue!</h4><hr></div>
+<div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock" class="text-info">here</a> to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask on <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further help with diagnosing your issue!</h4><hr></div>
 
 <div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and improve general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><span class="download"></span> WiiFlow WFL</a>.</h4><hr></div>
 
@@ -35,7 +35,9 @@ heroImage: "/img/guidebg-3.webp"
 
 <div class="error">Error Code: -1022/-1029 <span class="badge bg-warning">Any Channel</span><h4>Using your favorite WAD manager, uninstall the channel, and install again. For yawmME, this means locating the channel WAD, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
 
-<div class="error">Adding Food to Basket <span class="badge bg-warning">Food Channel</span><h4>Please ensure your console ID is registered as per the instructions <a href="/guide/demae/#section-ii---registering-your-console-id">here</a>, then try erasing save data for the Demae Channel, and setting it up again! Let us know in <a href="https://discord.gg/wiilink" class="text-info"><i class="fa-solid fa-message" style="margin-right:5px;"></i>#support-text</a> if you continue to experience issues.</h4><hr></div>
+<div class="error">No rows in result set <span class="badge bg-warning">Food Channel</span><h4>Please ensure your console is linked to an account as per the instructions <a href="/guide/accounts" class="text-info">here</a>, then try erasing save data for the Demae Channel, and setting it up again! Let us know on <a href="https://forum.wiilink.ca/c/support/support-regional" class="text-info">our forum</a> if you continue to experience issues.</h4><hr></div>
+
+<div class="error">Invalid country coode <span class="badge bg-warning">Food Channel</span><h4>Go into your Wii Settings, and change your country to either the US or Canada, as Demae Domino's is only offered in these countries.</h4><hr></div>
 
 <div class="error">Error Code: 51330 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your internet connection to your Wii is working by doing a connection test. If it's successful, run the Mail Patcher again. If it fails, your router is incompatible with the Wii. You can potentially fix this by configuring your router to use the 802.11g or 802.11b band alongside the other bands that it uses.</h4><hr></div>
 
@@ -43,7 +45,7 @@ heroImage: "/img/guidebg-3.webp"
 
 <div class="error">Error Code: 221001 <span class="badge bg-warning">EULA</span><h4>Try changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you can use AnyGlobe Changer to switch back to your country.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24 settings, and “Parental Controls” are turned off.</h4><hr></div>
 
-<div class="error">Error Code: 354xxx <span class="badge bg-primary">Wii Room</span><h4>Please <a href="https://discord.gg/wiilink" class="text-primary"><i class="fa-brands fa-discord" style="margin-right:5px;"></i> Join our Discord</a> server or message us on our Twitter account with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
+<div class="error">Error Code: 354xxx <span class="badge bg-primary">Wii Room</span><h4>Please join <a href="https://discord.gg/wiilink" class="text-info">our Discord server</a> or create a thread on <a href="https://forum.wiilink.ca/c/support/support-regional" class="text-primary">our forum</a> with more information. This error is server-side, so please let us know what happened for it to occur!</h4><hr></div>
 
 <div class="error">PAL crashes <span class="badge bg-danger">Japanese channels</span><h4>Unfortunately, this is a known issue. We're aware of many crashes for PAL Region consoles. We continue to work on a solution for this, thank you for your patience.</h4><hr></div>
 
