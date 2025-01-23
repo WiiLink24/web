@@ -1,5 +1,5 @@
 <p align="center">
-<a href="https://wiilink24.com"><img height="100px" src="https://www.wiilink24.com/img/Wii_Link_Logo.png" alt="Logo"/></a>
+<a href="https://wiilink24.com"><img height="100px" src="https://wiilink.ca/img/logo.webp" alt="Logo"/></a>
   <h2 align="center"><b><i>The front-facing website of the WiiLink project.</i></b></h2>
 </p>
 
