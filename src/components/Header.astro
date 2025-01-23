@@ -785,6 +785,15 @@ const { isMain } = Astro.props;
       display: none;
       position: absolute;
     }
+    
+    #dropdownMore::-webkit-scrollbar {
+      display: none;
+    }
+    
+    #dropdownMore {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
 
     .dropdown-element {
       width: 100%;
@@ -840,6 +849,16 @@ const { isMain } = Astro.props;
       left: 50%;
       z-index: 10000;
       transform: translateX(-50%);
+    }
+
+    .post {
+      transition: 0.2s;
+    }
+
+    .post:hover {
+      transform: scale(1.005);
+      background-color: var(--bg-color-secondary);
+      transition: 0.2s;
     }
 
     .post:active {
