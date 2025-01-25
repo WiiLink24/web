@@ -1,4 +1,6 @@
 ---
+import i18next from "i18next";
+
 export interface Props {
   title: string;
   description: string;
@@ -65,7 +67,7 @@ const { title, description, image } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image} />
 
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     <meta name="darkreader-lock" />
