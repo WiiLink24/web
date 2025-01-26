@@ -63,7 +63,7 @@
         "link": "/guide/demae",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<span class='bomb'></span> Domino's ordering is currently unavailable due to changes with the Domino's API.",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "demae_icon.webp",
         "completed": "90"
       },
