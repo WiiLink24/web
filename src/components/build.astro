@@ -28,7 +28,7 @@ import { Trans } from "astro-i18next/components";
 <h1 id="relTotal" style="display:none;">{t("build.releaseTotal")}</h1>
 
 <script>
-  import { Octokit } from "https://esm.sh/octokit";
+  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
 
   document.addEventListener("DOMContentLoaded", async function () {
     const octokit = new Octokit({
