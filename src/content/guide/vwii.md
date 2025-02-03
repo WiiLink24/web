@@ -1,7 +1,7 @@
 ---
 title: Wii U Installation
 icon: download
-pubDate: 2024-12-23
+pubDate: 2025-02-02
 description: Get up-to-date instructions on how to install all of our services on Wii U!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -42,7 +42,7 @@ heroImage: "/img/guidebg-3.webp"
 1. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Visit [this site](https://garyodernichts.github.io/priiloader-patch-gen/) to generate a Priiloader patch that will fix a timestamp issue.
 2. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Follow the instructions on the page then copy the result.
 3. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> On your SD Card or USB Drive, traverse to `apps/priiloader` and open `hacks_hash.ini`
-4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` into a new line at the bottom of the `hacks_hash.ini`
+4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` into a new line at the bottom of the `hacks_hash.ini`, and save the file.
 5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
 6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
 7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button` from the menu. (Feel free to enable other options while you're in this menu)

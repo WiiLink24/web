@@ -1,6 +1,6 @@
 ---
 title: Everybody Votes Channel
-pubDate: 2024-10-02
+pubDate: 2025-02-02
 description: Get up-to-date instructions on how to patch the Everybody Votes Channel!
 icon: chart-no-axes-column
 ---
@@ -20,9 +20,12 @@ icon: chart-no-axes-column
 
 ## Installation guide
 
+</br>
+
 <l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="/guide/install/">here</a>.</l>
 
-</br>
+<l class="notice warn smallwidth">With a default Dolphin NAND, the Everybody Votes Channel is disabled to prevent abuse. To use this service in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
+
 
 1. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
 

@@ -1,6 +1,6 @@
 ---
 title: Check Mii Out Channel
-pubDate: 2024-10-02
+pubDate: 2025-02-02
 description: Get up-to-date instructions on how to patch the Check Mii Out Channel!
 icon: lucide:users
 ---
@@ -17,7 +17,11 @@ icon: lucide:users
 
 ## Installation guide
 
+</br>
+
 <l class="notice info smallwidth">This software is standardly included after using the "Express" option on the WiiLink Patcher. To figure out how to use it, click <a href="/guide/install/">here</a>.</l>
+
+<l class="notice warn smallwidth">With a default Dolphin NAND, the Check Mii Out Channel Channel is disabled to prevent abuse. To use this service in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
 1. Start up the Homebrew Channel and enter yawmME (YAWM ModMii Edition).
 2. Highlight the WAD `Check Mii Out Channel` or `Mii Contest Channel` as its name and press + to select it. When it is selected, press A twice to install the WADs.

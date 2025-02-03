@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: download
-pubDate: 2024-12-23
+pubDate: 2025-02-02
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -19,6 +19,8 @@ heroImage: "/img/guidebg-1.webp"
 ## Section I - Patching WADs
 
 </br>
+
+<l class="notice warn smallwidth">With a default Dolphin NAND, the Check Mii Out Channel and Everybody Votes Channel are disabled to prevent abuse. To use these services in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
 1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
 2. On `Windows`, run `WiiLink_Patcher_Windows_vXXX.exe`\*. <br>
