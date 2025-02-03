@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Historietas",
-        "desc": "Viejas historietas de RiiConnect24",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Prueba del Wiimote",
         "desc": "Una página sencilla para probar tu Wiimote",
         "img": "/img/guidebg-1.webp",

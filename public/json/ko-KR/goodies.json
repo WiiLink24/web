@@ -44,12 +44,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> 만화",
-        "desc": "RiiConnect24 시절의 만화",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Wii 리모컨 테스트",
         "desc": "Wii 리모컨을 테스트하기 위한 간단한 페이지",
         "img": "/img/guidebg-1.webp",

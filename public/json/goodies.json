@@ -9,7 +9,7 @@
       },
       {
         "title": "<span class='image'></span> Wallpapers",
-        "desc": "WiiLink wallpapers for your PC!",
+        "desc": "WiiLink wallpapers for your devices!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
       },
@@ -30,12 +30,6 @@
         "desc": "An in progress Nintendo Wi-Fi Connection service!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
-      },
-      {
-        "title": "<span class='drama'></span> Comic Strips",
-        "desc": "Old RiiConnect24 comic strips",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
       },
       {
         "title": "<span class='gamepad-2'></span> Wii Remote Testing",

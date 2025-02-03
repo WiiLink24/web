@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Quadrinhos",
-        "desc": "Histórias em quadrinhos antigas do RiiConnect24",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Teste de Wii Remote",
         "desc": "Uma página simples para testar seu Wii Remote",
         "img": "/img/guidebg-1.webp",

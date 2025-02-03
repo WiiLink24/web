@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Sarjakuvia",
-        "desc": "Vanhoja RiiConnect24 mini-sarjakuvia",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Wii Ohjain Testausta",
         "desc": "Simppeli sivu sinun Wii Ohjaimen testaamiselle",
         "img": "/img/guidebg-1.webp",

@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Képregények",
-        "desc": "A korábbi RiiConnect24-képregények.",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Wii Remote-próba",
         "desc": "Egy honlap, ahol kipróbálhatod a Wii Remote-odat.",
         "img": "/img/guidebg-1.webp",

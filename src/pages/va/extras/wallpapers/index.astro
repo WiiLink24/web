@@ -5,16 +5,6 @@ import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 
 changeLanguage("va");
-
-const data = await fetch("/json/wallpapers.json")
-    .then(response => response.json())
-    .then(data => {
-    console.log(data);
-    return data;
-})
-    .catch(error => {
-    console.error("Error fetching wallpapers:", error);
-});
 ---
 
 <Layout title="Wallpapers - WiiLink" description="WiiLink Extra content." image="/img/Extras_embed.png" />
@@ -155,115 +145,180 @@ const data = await fetch("/json/wallpapers.json")
   <h5 class="header">Here's our collection of wallpapers you can download.</h5>
 
   <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-  <h3>RiiConnect24 Wallpapers</h3>
-  <p>Made by Larsenv</p>
+  <h3>Desktop Wallpapers</h3>
+  <p>Made by Alex</p>
 </div>
   <div class="row">
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers//riiconnect24_background_1_1920x1080.png" alt="Wallpaper 1">
-      <img src="https://rc24.xyz/goodies/wallpapers//riiconnect24_background_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Pulse_Dark.png" alt="Pulse Dark">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Pulse_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Pulse Dark">
       <div class="card-content">
-        <span class="card-title">Wallpaper 1</span>
+        <span class="card-title">Pulse Dark</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_1_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Pulse_Dark.png">3818x2158</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png" alt="Wallpaper 2">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 2">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Pulse_Light.png" alt="Pulse Light">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Pulse_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Pulse Light">
       <div class="card-content">
-        <span class="card-title">Wallpaper 2</span>
+        <span class="card-title">Pulse Light</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_background_2_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Pulse_Light.png">3818x2158</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png" alt="Wallpaper Quote 1">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 1">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Ribbon_Dark.png" alt="Ribbon Dark">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Ribbon_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Ribbon Dark">
       <div class="card-content">
-        <span class="card-title">Wallpaper Quote 1</span>
+        <span class="card-title">Ribbon Dark</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_1_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Ribbon_Dark.png">3818x2158</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png" alt="Wallpaper Quote 2">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 2">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Ribbon_Light.png" alt="Ribbon Light">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Ribbon_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Ribbon Light">
       <div class="card-content">
-        <span class="card-title">Wallpaper Quote 2</span>
+        <span class="card-title">Ribbon Light</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kouichi_2_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Ribbon_Light.png">3818x2158</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png" alt="Wallpaper Quote 3">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 3">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Stripe_Dark.png" alt="Stripe Dark">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Stripe_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Stripe Dark">
       <div class="card-content">
-        <span class="card-title">Wallpaper Quote 3</span>
+        <span class="card-title">Stripe Dark</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_1_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Stripe_Dark.png">3818x2158</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png" alt="Wallpaper Quote 4">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper Quote 4">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Stripe_Light.png" alt="Stripe Light">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Stripe_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Stripe Light">
       <div class="card-content">
-        <span class="card-title">Wallpaper Quote 4</span>
+        <span class="card-title">Stripe Light</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_kuniharu_2_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/WiiLink_Stripe_Light.png">3818x2158</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Console_Dark.png" alt="Console Dark">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Console_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Console Dark">
+      <div class="card-content">
+        <span class="card-title">Console Dark</span>
+      </div>
+      <div class="card-action">
+        <a href="/extras/wallpapers/Desktop/WiiLink_Console_Dark.png">3818x2158</a>
+      </div>
+    </div>
+    <div class="card">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Console_Light.png" alt="Console Light">
+      <img src="/extras/wallpapers/Desktop/WiiLink_Console_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Console Light">
+      <div class="card-content">
+        <span class="card-title">Console Light</span>
+      </div>
+      <div class="card-action">
+        <a href="/extras/wallpapers/Desktop/WiiLink_Console_Light.png">3818x2158</a>
       </div>
     </div>
   </div>
+
   <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
   <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-  <h3>Wii Front Wallpapers</h3>
-  <p>Made by 466</p>
+    <h3>Mobile Wallpapers</h3>
+    <p>Made by Alex</p>
   </div>
-  <div class="row">
-    <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png" alt="Black Wallpaper">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Black Wallpaper">
-      <div class="card-content">
-        <span class="card-title">Black Wallpaper</span>
+    <div class="row">
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Pulse_Dark.png" alt="Pulse Dark">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Pulse_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Pulse Dark">
+        <div class="card-content">
+          <span class="card-title">Pulse Dark</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Pulse_Dark.png">2161x3841</a>
+        </div>
       </div>
-      <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_black_wii_1920x1080.png">1920x1080</a>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Pulse_Light.png" alt="Pulse Light">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Pulse_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Pulse Light">
+        <div class="card-content">
+          <span class="card-title">Pulse Light</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Pulse_Light.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Ribbon_Dark.png" alt="Ribbon Dark">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Ribbon_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Ribbon Dark">
+        <div class="card-content">
+          <span class="card-title">Ribbon Dark</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Ribbon_Dark.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Ribbon_Light.png" alt="Ribbon Light">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Ribbon_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Ribbon Light">
+        <div class="card-content">
+          <span class="card-title">Ribbon Light</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Ribbon_Light.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Stripe_Dark.png" alt="Stripe Dark">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Stripe_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Stripe Dark">
+        <div class="card-content">
+          <span class="card-title">Stripe Dark</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Stripe_Dark.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Stripe_Light.png" alt="Stripe Light">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Stripe_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Stripe Light">
+        <div class="card-content">
+          <span class="card-title">Stripe Light</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Stripe_Light.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Console_Dark.png" alt="Console Dark">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Console_Dark.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Console Dark">
+        <div class="card-content">
+          <span class="card-title">Console Dark</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Console_Dark.png">2161x3841</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Console_Light.png" alt="Console Light">
+        <img src="/extras/wallpapers/Mobile/WiiLink_Console_Light.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Console Light">
+        <div class="card-content">
+          <span class="card-title">Console Light</span>
+        </div>
+        <div class="card-action">
+          <a href="/extras/wallpapers/Mobile/WiiLink_Console_Light.png">2161x3841</a>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png" alt="White Wallpaper">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="White Wallpaper">
-      <div class="card-content">
-        <span class="card-title">White Wallpaper</span>
-      </div>
-      <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_white_wii_1920x1080.png">1920x1080</a>
-      </div>
-    </div>
-  </div>
-  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
-  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-  <h3>Wii Wallpapers</h3>
-  <p>Made by KcrPL</p>
-  </div>
-  <div class="row">
-    <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg" alt="Wii Disc Slot Light Wallpaper">
-      <img src="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wii Disc Slot Light Wallpaper">
-      <div class="card-content">
-        <span class="card-title">Wii Disc Slot Light Wallpaper</span>
-      </div>
-      <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/WiiDiscSlotLight.jpg">1920x1080</a>
-      </div>
-    </div>
-  </div>
+  
   <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
   <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
   <h3>Check Mii Out Channel Wallpapers</h3>
@@ -271,50 +326,33 @@ const data = await fetch("/json/wallpapers.json")
   </div>
   <div class="row">
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png" alt="Wallpaper 1">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_1600x900.png" alt="Wallpaper 1">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
       <div class="card-content">
         <span class="card-title">Wallpaper 1</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_1600x900.png">1600x900</a>
+        <a href="/extras/wallpapers/Desktop/CMO_Channel_BG_1600x900.png">1600x900</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png" alt="Wallpaper 2">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 2">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_blue_1600x900.png" alt="Wallpaper 2">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_blue_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 2">
       <div class="card-content">
         <span class="card-title">Wallpaper 2</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_blue_1600x900.png">1600x900</a>
+        <a href="/extras/wallpapers/Desktop/CMO_Channel_BG_blue_1600x900.png">1600x900</a>
       </div>
     </div>
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png" alt="Wallpaper 3">
-      <img src="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 3">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_orange_1600x900.png" alt="Wallpaper 3">
+      <img src="/extras/wallpapers/Desktop/CMO_Channel_BG_orange_1600x900.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 3">
       <div class="card-content">
         <span class="card-title">Wallpaper 3</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/CMO_Channel_BG_orange_1600x900.png">1600x900</a>
-      </div>
-    </div>
-  </div>
-  <hr style="margin-top:60px; border-top:2px solid var(--border-color);">
-  <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
-  <h3>Everybody Votes Channel Wallpaper</h3>
-  <p>Made by Larsenv</p>
-  </div>
-  <div class="row">
-    <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png" alt="Wallpaper 1">
-      <img src="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="Wallpaper 1">
-      <div class="card-content">
-        <span class="card-title">Wallpaper 1</span>
-      </div>
-      <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/EVC_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/CMO_Channel_BG_orange_1600x900.png">1600x900</a>
       </div>
     </div>
   </div>
@@ -324,27 +362,17 @@ const data = await fetch("/json/wallpapers.json")
   </div>
   <div class="row">
     <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png" alt="The system files are corrupted">
-      <img src="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="The system files are corrupted">
+      <img src="/extras/wallpapers/Desktop/SystemFilesCorrupted_3840x2160.png" alt="The system files are corrupted">
+      <img src="/extras/wallpapers/Desktop/SystemFilesCorrupted_3840x2160.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="The system files are corrupted">
       <div class="card-content">
         <span class="card-title">The system files are corrupted</span>
       </div>
       <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/SystemFilesCorrupted_3840x2160.png">3840x2160</a>
-      </div>
-    </div>
-    <div class="card">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png" alt="RiiConnect24 Discord Invite Wallpaper">
-      <img src="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png" style="transform:translate(-10px, -5px) scale(0.9); filter:blur(16px); opacity:0.3; z-index:0; position:absolute;" alt="RiiConnect24 Discord Invite Wallpaper">
-      <div class="card-content">
-        <span class="card-title">RiiConnect24 Discord Invite Wallpaper</span>
-      </div>
-      <div class="card-action">
-        <a href="https://rc24.xyz/goodies/wallpapers/riiconnect24_invite_background_1920x1080.png">1920x1080</a>
+        <a href="/extras/wallpapers/Desktop/SystemFilesCorrupted_3840x2160.png">3840x2160</a>
       </div>
     </div>
   </div>
 </div>
 </body>
 
-  <Footer />
+<Footer />

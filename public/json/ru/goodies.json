@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Комиксы",
-        "desc": "Старые комиксы RiiConnect24<span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Тест Wii Remote",
         "desc": "Простая страница для тестирования вашего Wii Remote<span style='font-size: .8rem;'> (на англ.)</span>",
         "img": "/img/guidebg-1.webp",

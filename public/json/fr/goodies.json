@@ -50,12 +50,6 @@
         "link": "https://wfc.wiilink24.com"
       },
       {
-        "title": "<span class='drama'></span> Bandes dessinées",
-        "desc": "Anciennes bandes dessinées RiiConnect24",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/strips"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Testeur télécommande Wii",
         "desc": "Une simple page pour tester votre télécommande Wii",
         "img": "/img/guidebg-1.webp",
