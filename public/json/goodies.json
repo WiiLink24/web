@@ -50,16 +50,16 @@
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='store'></span> Wii Shop Channel song",
-        "desc": "Meme song for the Wii Shop Channel",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/ring"
-      },
-      {
         "title": "<span class='cat'></span> News cat",
         "desc": "An in progress Nintendo Wi-Fi Connection service!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
+      },
+      {
+        "title": "<span class='rc24'></span> RC24 Goodies",
+        "desc": "Legacy goodies on the RiiConnect24 site!",
+        "img": "/img/guidebg-1.webp",
+        "link": "https://rc24.xyz/goodies"
       }
     ]
   }

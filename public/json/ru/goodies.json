@@ -68,12 +68,6 @@
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='store'></span> Песня Wii Shop Channel",
-        "desc": "Мемная песня с канала Wii Shop Channel<br><span style='font-size: .8rem;'> (на англ.)</span>",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/ring"
-      },
-      {
         "title": "<span class='cat'></span> Котик с новостей",
         "desc": "Тако-о-ой милашка!",
         "img": "/img/guidebg-1.webp",

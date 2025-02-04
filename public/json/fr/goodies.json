@@ -68,12 +68,6 @@
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='store'></span> Chanson de la chaîne boutique Wii",
-        "desc": "Musique meme pour la chaîne boutique Wii",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/ring"
-      },
-      {
         "title": "<span class='cat'></span> Chat des infos",
         "desc": "Un service de Connexion Wi-Fi Nintendo en développement !",
         "img": "/img/guidebg-1.webp",

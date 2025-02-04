@@ -68,12 +68,6 @@
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='store'></span> Wii Shop Channel-dal",
-        "desc": "Egy mémdal a Wii Shop Channelről.",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/ring"
-      },
-      {
         "title": "<span class='cat'></span> Hírmacska",
         "desc": "Egy fejlesztés alatt álló Nintendo Wi-Fi Connection-szolgáltatás.",
         "img": "/img/guidebg-1.webp",
