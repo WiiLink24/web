@@ -86,7 +86,7 @@ const sliceDescription = description => {
           <span class="innerflexmobile" style="display:flex; flex-direction: row; align-items:center; gap: 5px;">
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
-            ><FormattedDate date={posts.data.pubDate} />
+            ><FormattedDate date={posts[0].data.pubDate} />
           </r>
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
@@ -117,7 +117,7 @@ const sliceDescription = description => {
             href={`/news/${post.slug}/`}
             aria-label={post.data.title + " Link"}>
             <div style="top:20px; right:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px); color: white !important; z-index: 1000000; position:absolute;">
-              <FormattedDate date={posts[0].data.pubDate} />
+              <FormattedDate date={post.data.pubDate} />
             </div>
             {post.data.heroImage && (
               <img
