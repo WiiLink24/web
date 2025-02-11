@@ -5,11 +5,14 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "cd public/og-gen && node og-gen.js && cd ../.. && astro build",
+    "build": "cd public/og-gen && npm i && node og-gen.js && cd ../.. && astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "puppeteer": "^23.11.1",
     "npm-run-all": "^4.1.5",
     "@astrojs/mdx": "^1.1.5",
     "@astrojs/partytown": "^2.0.4",
