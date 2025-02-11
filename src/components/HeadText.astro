@@ -1,0 +1,33 @@
+---
+const { text } = Astro.props;
+---
+
+<h1 class="newstop">{text}</h1>
+
+<style>
+  .newstop {
+    left: -30px;
+    top: 50px;
+    transform: translate(0, -50%);
+    width: calc(100% + 30px);
+    height: 260px;
+    font-size: 250px;
+    font-weight: 900;
+    font-family: rubik;
+    color: transparent !important;
+    -webkit-text-stroke: 4px var(--color);
+    opacity: 0.1;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    z-index: 0;
+    position: absolute;
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .newstop {
+      display: none;
+    }
+  }
+</style>

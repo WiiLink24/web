@@ -1,7 +1,6 @@
 ---
-const today = new Date();
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { t } from "i18next";
+import { Trans } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
 import { Icon } from "astro-icon/components";
 
@@ -74,22 +73,22 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           <hr
             style="width: 60px; border-top:2px solid white; transform:translate(0, -5px); margin:0px;"
           />
-          <a href="/" aria-label="Home Link" class="animated-link"
+          <a href={localizePath("/")} aria-label="Home Link" class="animated-link"
             >{t("header.home")}</a
           >
-          <a href="/news" aria-label="News Link" class="animated-link"
+          <a href={localizePath("/news")} aria-label="News Link" class="animated-link"
             >{t("header.news")}</a
           >
-          <a href="/guide" aria-label="Guide Link" class="animated-link"
+          <a href={localizePath("/guide")} aria-label="Guide Link" class="animated-link"
             >{t("header.guide")}</a
           >
-          <a href="/status" aria-label="Status Link" class="animated-link"
+          <a href={localizePath("/status")} aria-label="Status Link" class="animated-link"
             >{t("header.status")}</a
           >
-          <a href="/services" aria-label="Services Link" class="animated-link"
+          <a href={localizePath("/services")} aria-label="Services Link" class="animated-link"
             >{t("header.services")}</a
           >
-          <a href="/extras" aria-label="Extras Link" class="animated-link"
+          <a href={localizePath("/extras")} aria-label="Extras Link" class="animated-link"
             >{t("header.extras")}</a
           >
         </div>
@@ -357,20 +356,20 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     </div>
 
     <div class="footer-holder legal" style={display}>
-      <a href="/tos" aria-label="Terms of Service Link">
+      <a href={localizePath("/tos")} aria-label="Terms of Service Link">
         <Icon
           name="lucide:arrow-right"
           style="margin-right:5px; margin-bottom:5px;"
         />{t("header.tos")}</a
       >
-      <a href="/privacy-policy" aria-label="Privacy Policy Link"
+      <a href={localizePath("/privacy-policy")} aria-label="Privacy Policy Link"
         ><Icon
           name="lucide:arrow-right"
           style="margin-right:5px; margin-bottom:5px;"
         />
         {t("header.privacyPolicy")}</a
       >
-      <a href="/eula" aria-label="EULA Link"
+      <a href={localizePath("/eula")} aria-label="EULA Link"
         ><Icon
           name="lucide:arrow-right"
           style="margin-right:5px; margin-bottom:5px;"

@@ -1,27 +1,33 @@
 import rss from '@astrojs/rss';
-import { getCollection } from 'astro:content';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { contentfulClient } from "../lib/contentful";
 
 export async function GET(context) {
-  const posts = await getCollection('blog');
-  return rss({
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-    site: context.site,
-    items: posts.map((post) => ({
-      title: post.data.title,
-      description: post.data.description,
-      pubDate: post.data.pubDate,
-      link: `/blog/${post.id}/`,
-      content: post.body,
-      heroImage: post.data.heroImage,
-      old_news: post.data.old_news,
-      author: post.data.author,
-      authImage: post.data.authImage,
-      authDesc: post.data.authDesc,
-      authTitle: post.data.authTitle,
-      ogImage: post.data.ogImage,
-    })),
-    customData: `<language>en-us</language>`,
-  });
+  try {
+    const entries = await contentfulClient.getEntries({
+      content_type: "newsPost",
+      order: '-sys.createdAt',
+    });
+
+    if (!entries?.items) {
+      throw new Error('No entries found');
+    }
+
+    return rss({
+      title: 'WiiLink News',
+      description: 'All the latest news from the WiiLink project!',
+      site: context.site,
+      items: entries.items.map(entry => ({
+        title: entry.fields.title,
+        pubDate: new Date(entry.sys.createdAt),
+        description: entry.fields.description,
+        link: `/news/${entry.fields.slug}/`,
+        content: entry.fields.content?.content?.[0]?.content?.[0]?.value || '',
+        author: entry.fields.author?.fields?.name
+      })),
+      customData: `<language>es</language>`
+    });
+  } catch (error) {
+    console.error('RSS generation error:', error);
+    throw error;
+  }
 }

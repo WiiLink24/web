@@ -1,6 +1,8 @@
 {
   "type": "module",
   "dependencies": {
+    "contentful": "^11.4.6",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "puppeteer": "^23.11.1"
   }

@@ -2,10 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import FormattedDate from "../components/FormattedDate.astro";
 import { getCollection } from "astro:content";
-import i18next, { t, changeLanguage } from "i18next";
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
 
@@ -48,7 +47,7 @@ const readingTime = (body: string) => {
         <div>
           <div class="sidebarcontent">
             <div class="post" style="border-radius: 16px 16px 8px 8px;">
-              <a href={`/guide/install/`}>
+              <a href={localizePath(`/guide/install/`)}>
                 <img class="mainimg" src="/img/guidebg-1.webp" />
                 <div
                   class="title-main"
@@ -62,7 +61,7 @@ const readingTime = (body: string) => {
               </a>
             </div>
             <div class="post" style="border-radius: 8px;">
-              <a href={`/guide/problemsolving/`}>
+              <a href={localizePath(`/guide/problemsolving/`)}>
                 <img class="mainimg" src="/img/guidebg-3.webp" />
                 <div
                   class="title-main"
@@ -76,7 +75,7 @@ const readingTime = (body: string) => {
               </a>
             </div>
             <div class="post" style="border-radius: 8px 8px 16px 16px;">
-              <a href={`/guide/faq/`}>
+              <a href={localizePath(`/guide/faq/`)}>
                 <img class="mainimg" src="/img/guidebg-2.webp" />
                 <div
                   class="title-main"
@@ -99,7 +98,7 @@ const readingTime = (body: string) => {
                   )}
                   <div
                     class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
-                    <a href={`/guide/${post.slug}/`}>
+                    <a href={localizePath(`/guide/${post.slug}/`)}>
                       <div class="title2">
                         <Icon
                           name={post.data.icon}

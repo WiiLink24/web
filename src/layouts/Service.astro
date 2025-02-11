@@ -2,13 +2,10 @@
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Sidebar from "../components/GuideSidebar.astro";
-import FormattedDate from "../components/FormattedDate.astro";
 import Ad from "../components/Ad.astro";
 import { getCollection } from "astro:content";
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
+import i18next from "i18next";
+import { localizePath } from "astro-i18next";
 import { Icon } from "astro-icon/components";
 
 const posts = await getCollection("guide");
@@ -38,7 +35,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
             )
           }
           <div>
-            <a href="/status">
+            <a href={localizePath("/status")}>
               <button
                 class="btn"
                 style="top:18px; right:18px; background-color: var(--bg-opaque-1); position:absolute;"

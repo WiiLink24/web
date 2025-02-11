@@ -2,17 +2,35 @@
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
-import { getCollection } from "astro:content";
+import HeadText from "../../../components/HeadText.astro";
 import FormattedDate from "../../../components/FormattedDate.astro";
-import Ad from "../../../components/Ad.astro";
-import i18next, { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
+import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
+import { contentfulClient } from "../../../lib/contentful";
+import type { news } from "../../../lib/contentful";
 
 changeLanguage("ca");
 
-const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+const entries = await contentfulClient.getEntries<news>({
+    content_type: "newsPost",
+});
+let postsContentful = entries.items.map((item) => {
+    const { title, slug, date, image, description, content, author } = item.fields;
+    return {
+        title,
+        slug,
+        date,
+        image,
+        description,
+        content,
+        author,
+    };
+});
+postsContentful.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
 const sliceDescription = description => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
@@ -26,7 +44,7 @@ const sliceDescription = description => {
 />
 <Header isGuide="display:none;" />
 <div class="hold">
-  <img class="newstop" src="/img/newstop.webp" />
+  <HeadText text={t("header.news")} />
   <div class="welcome-msg">
     <h2 style="font-size:40px; font-family:Gilroy;">
       <Trans i18nKey="news.title">
@@ -35,7 +53,7 @@ const sliceDescription = description => {
           style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
         ></span><b style="font-family: Rubik;">WiiLink</b><span
           class="badge bg-warning"
-          style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+          style="bottom:8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
           >news</span
         >
       </Trans>
@@ -49,21 +67,19 @@ const sliceDescription = description => {
     </h3>
   </div>
   <a
-    href={`/news/${posts[0].slug}/`}
+    href={localizePath(`/news/${postsContentful[0].slug}/`)}
     class="newsHero"
     style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block;`}>
     <img
       class="mainimg2"
       style="width:100%; height:100%; filter:blur(80px) brightness(0.5); transform: translate(0, -25%) scale(1.5); position:absolute;"
-      src={posts[0].data.heroImage
-        ? posts[0].data.heroImage
-        : "/img/branding_bg.webp"}
+      src={(postsContentful[0].image as any)?.fields?.file?.url || "/img/branding_bg.webp"}
       alt=""
       width="200px"
     />
     <div class="herodatahold">
       <img
-        src={posts[0].data.heroImage}
+        src={(postsContentful[0].image as any)?.fields?.file?.url}
         style="border-radius:8px; box-shadow:0px 0px 50px #ffffff20;"
         class="mobileimg"
         height="200px"
@@ -72,80 +88,86 @@ const sliceDescription = description => {
         <h1
           class="maintitle"
           style="font-family: Gilroy; color:white !important; font-size:50px;">
-          {posts[0].data.title}
+          {postsContentful[0].title}
         </h1>
         <h5
           class="mainpostflex"
           style="color:white !important; display:flex; flex-direction: row; align-items:center; gap:5px;">
-          <img
-            src={posts[0].data.authImage}
-            class="mobilehide"
-            style="border-radius:8px 4px 4px 8px;"
-            height="45px"
-          />
+          {(postsContentful[0].author as any)?.fields?.pfp?.fields?.file?.url ? (
+            <img
+              src={(postsContentful[0].author as any)?.fields.pfp.fields.file.url}
+              class="mobilehide"
+              style="border-radius:8px 4px 4px 8px;"
+              height="45px"
+            />
+          ) : (
+            <div 
+              class="mobilehide" 
+              style="width:45px; height:45px; border-radius:8px 4px 4px 8px; background-color:var(--bg-opaque-1);"
+            ></div>
+          )}
           <span class="innerflexmobile" style="display:flex; flex-direction: row; align-items:center; gap: 5px;">
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
-            ><FormattedDate date={posts[0].data.pubDate} />
+            ><FormattedDate date={new Date(postsContentful[0].date)} />
           </r>
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 4px 4px 4px; text-align:center; font-family:system-ui; position:relative;`}
-            >{posts[0].data.author}</r
+            >{(postsContentful[0].author as any).fields.name}</r
           >
         </span>
           <r
             style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
-            >{posts[0].data.authTitle}</r
+            >{(postsContentful[0].author as any).fields.role}</r
           >
         </h5>
         <p
           class="maindesc"
           style="margin: 0 !important; margin-top: 18px !important; color:white !important; font-size: 28px;">
-          {posts[0].data.description}
+          {postsContentful[0].description}
         </p>
       </div>
     </div>
   </a>
   <div class="postholder">
-    {
-      posts.slice(1, 7).map(post => (
+        {
+      postsContentful.slice(1, 7).map(post => (
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
           style="cursor:pointer; transition: 0.2s;">
           <a
-            href={`/news/${post.slug}/`}
-            aria-label={post.data.title + " Link"}>
+            href={localizePath(`/news/${post.slug}/`)}
+            aria-label={post.title + " Link"}>
             <div style="top:20px; right:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px); color: white !important; z-index: 1000000; position:absolute;">
-              <FormattedDate date={posts[0].data.pubDate} />
+              <FormattedDate date={new Date(post.date)} />
             </div>
-            {post.data.heroImage && (
+            {post?.image?.fields?.file?.url && (
               <img
-                alt={post.data.title}
+                alt={post.title}
                 class="heroImage"
-                src={post.data.heroImage}
+                src={post.image.fields.file.url}
               />
             )}
             <div
               class="fadebefore"
               style="width:100%; bottom: 0; padding:20px; z-index:0; position:absolute;">
               <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:18px;">
-                {post.data.authImage && (
+                {post?.author?.fields?.pfp?.fields?.file?.url && (
                   <img
                     alt="News Author PFP"
                     class="authimage"
-                    src={post.data.authImage}
-                    alt=""
+                    src={post.author.fields.pfp.fields.file.url}
                   />
                 )}
                 <b style="width:100%; color:white !important; font-size:28px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left; position:relative;">
-                  {post.data.title}
+                  {post.title}
                 </b>
               </div>
               <div
                 class="descanim"
                 style="margin-top: 8px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; color: white !important;">
-                {sliceDescription(post.data.description)}
+                {sliceDescription(post.description)}
               </div>
             </div>
           </a>
@@ -157,37 +179,35 @@ const sliceDescription = description => {
     style="left:50%; transform:translate(-50%, 0); max-width:1600px; margin-top:80px; margin-bottom:40px; border-top: 2px solid var(--bg-opaque-2); position:relative;"
   />
   <div class="postholdermini">
-    {
-      posts.slice(7).map(post => (
-        <a href={`/news/${post.slug}/`} class="postmini">
-          {post.data.heroImage && (
+       {
+      postsContentful.slice(7).map(post => (
+        <a href={localizePath(`/news/${post.slug}/`)} class="postmini">
+          {post?.image?.fields?.file?.url && (
             <img
               style="width: 100%; height: 100%; object-fit: cover; filter:brightness(0.7); z-index:0; position:absolute;"
               width="100%"
               height="100%"
-              src={post.data.heroImage}
-              alt=""
+              src={post.image.fields.file.url}
+              alt={post.title}
             />
           )}
           <div style="bottom:0; left:0; margin: 20px; display:flex; flex-direction: column; align-items:start; gap: 3px; z-index: 1000; position:absolute;">
             <span style="display:flex; flex-direction:row; align-items:center; gap: 8px;">
-              {post.data.authImage && (
+              {post?.author?.fields?.pfp?.fields?.file?.url && (
                 <img
-                  src={post.data.authImage}
+                  src={post.author.fields.pfp.fields.file.url}
                   style="border-radius: 8px; width: 33px; height: 33px;"
+                  alt={`${post.author.fields.name}'s profile picture`}
                 />
               )}
-              <div
-                style={`padding: 3px 8px; border-radius: 8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px);`}>
-                <span
-                  style={`${post.data.heroImage ? "color: white !important;" : ""}`}>
-                  <FormattedDate date={post.data.pubDate} />
+              <div style="padding: 3px 8px; border-radius: 8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px);">
+                <span style={`${post?.image?.fields?.file?.url ? "color: white !important;" : ""}`}>
+                  <FormattedDate date={new Date(post.date)} />
                 </span>
               </div>
             </span>
-            <div
-              style={`font-size: 23px; ${post.data.heroImage ? "color: white !important;" : ""}`}>
-              {post.data.title}
+            <div style={`font-size: 23px; ${post?.image?.fields?.file?.url ? "color: white !important;" : ""}`}>
+              {post.title}
             </div>
           </div>
         </a>
@@ -224,27 +244,6 @@ const sliceDescription = description => {
     position: relative;
   }
 
-  h2 {
-    font-size: calc(1.3rem + 0.6vw);
-  }
-
-  .welcome-msg {
-    top: 15px;
-    max-width: 100%%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    position: relative;
-  }
-
-  .newstop {
-    left: -30px;
-    top: 70px;
-    transform: translate(0, -50%);
-    height: 200px;
-    filter: opacity(0.1) invert(0);
-    position: absolute;
-  }
-
   .herodatahold {
     display: flex;
     flex-direction: row;
@@ -270,14 +269,6 @@ const sliceDescription = description => {
     height: 60px;
     opacity: 1;
     transition: 0.2s;
-  }
-
-  .color {
-    background: url("/img/header_bg.webp");
-    background: AccentColor;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: brightness(150%);
   }
 
   .posthold {
@@ -480,11 +471,6 @@ const sliceDescription = description => {
     }
   }
 
-  a {
-    z-index: 1;
-    color: white;
-  }
-
   @keyframes fadeup {
     0% {
       opacity: 0;
@@ -551,10 +537,6 @@ const sliceDescription = description => {
       height: 150px;
     }
 
-    .newstop {
-      display: none;
-    }
-
     .newsHero {
       top: 30px;
       max-width: 1800px;
@@ -599,34 +581,6 @@ const sliceDescription = description => {
       width: 2000px;
       margin-bottom: 80px;
       position: relative;
-    }
-
-    .newstop {
-      left: 60px;
-      top: 130px;
-      transform: translate(0, -50%);
-      height: 200px;
-      filter: opacity(0.1) invert(0);
-      position: absolute;
-    }
-  }
-</style>
-
-<style is:global>
-  .mainpostflex r time h3 {
-    margin: 0 !important;
-    font-size: 25px !important;
-    font-weight: bold;
-    text-align:center;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    .mainpostflex r {
-      padding: 8px 20px !important;
-    }
-
-    .mainpostflex r time h3 {
-      font-size: 16px !important;
     }
   }
 </style>

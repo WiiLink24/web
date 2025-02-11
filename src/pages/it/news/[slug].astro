@@ -1,22 +1,663 @@
 ---
-import { changeLanguage } from "i18next";
-import { CollectionEntry, getCollection } from "astro:content";
-import BlogPost from "../../../layouts/BlogPost.astro";
+import { contentfulClient } from "../../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+import type { news } from "../../../lib/contentful";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import News from "../../../components/News.astro";
+import Ad from "../../../components/Ad.astro";
+import i18next, { t, changeLanguage } from "i18next";
 
 changeLanguage("it");
 
 export async function getStaticPaths() {
-    const posts = await getCollection("blog");
-    return posts.map(post => ({
-        params: { slug: post.slug },
-        props: post
+    const { items } = await contentfulClient.getEntries<news>({
+        content_type: "newsPost",
+    });
+    const pages = items.map((item) => ({
+        params: { slug: item.fields.slug },
+        props: {
+            title: item.fields.title,
+            slug: item.fields.slug,
+            content: item.fields.content,
+            date: item.fields.date,
+            image: item.fields.image,
+            description: item.fields.description,
+            author: item.fields.author,
+        },
     }));
+    return pages;
 }
-type Props = CollectionEntry<"blog">;
-const post = Astro.props;
-const { Content } = await post.render();
+const { content, title, slug, date, image, description, author } = Astro.props;
+let options = {
+    renderNode: {
+        "embedded-asset-block": (node: any) => {
+            const file = node.data.target.fields?.file;
+            if (!file || !file.contentType) {
+                return `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+            }
+            const mimeType = file.contentType;
+            const url = file.url;
+            if (mimeType.startsWith("image/")) {
+                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${node.data.target.fields.title}"/>`;
+            }
+            else if (mimeType.startsWith("video/")) {
+                return `<video style="width:100%; border-radius:8px;" autoplay loop muted>
+                            <source src="${url}" type="${mimeType}">
+                            Your browser does not support the video tag.
+                        </video>`;
+            }
+            else if (mimeType === "application/pdf") {
+                return `<embed src="${url}" type="application/pdf" width="100%" height="600px" />`;
+            }
+            else {
+                return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${node.data.target.fields.title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
+            }
+        },
+    },
+};
+let parsedSEOContent = documentToPlainTextString(content);
+if (parsedSEOContent.length > 60) {
+    parsedSEOContent = parsedSEOContent.slice(0, 160) + "...";
+}
+let bodyHTML = content ? documentToHtmlString(content, options) : "";
+function parseLocalizedContent(html) {
+    const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
+    let match;
+    const localizedContent = [];
+    while ((match = regex.exec(html)) !== null) {
+        localizedContent.push({
+            lang: match[1],
+            content: match[2].trim(),
+        });
+    }
+    return localizedContent;
+}
+function parseFloatTags(html) {
+    const embedRegex = /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
+    const floatRegex = /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
+    const floatLeftRegex = /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
+    const floatRightRegex = /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
+    let match;
+    let floatHTML = html;
+    while ((match = floatRegex.exec(html)) !== null) {
+        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+        const style = styleMatch
+            ? `style="${styleMatch[1]} display:flex; justify-content:space-between;"`
+            : "style=\"display:flex; justify-content:space-between;\"";
+        let content = match[2];
+        const hasFloats = floatLeftRegex.test(content) || floatRightRegex.test(content);
+        if (hasFloats) {
+            const processedContent = content
+                .replace(floatLeftRegex, (m, s, c) => `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`)
+                .replace(floatRightRegex, (m, s, c) => `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`);
+            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${processedContent}</div>`);
+        }
+        else {
+            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${content}</div>`);
+        }
+    }
+    while ((match = embedRegex.exec(html)) !== null) {
+        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
+        const style = styleMatch
+            ? `style="${styleMatch[1]} aspect-ratio: 16/10;"`
+            : "style=\"aspect-ratio: 16/10;\"";
+        let content = match[2];
+        content = content.replace(/<\/?p>/g, ""); // Remove surrounding <p> tags
+        floatHTML = floatHTML.replace(match[0], `<iframe style="width:100%; height:100%; border-radius: 8px;" title="Embed Content" ${style} src="${content}"></iframe>`);
+    }
+    return floatHTML;
+}
+function parseCenterTags(html) {
+    const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
+    let match;
+    let centerHTML = html;
+    while ((match = centerRegex.exec(html)) !== null) {
+        centerHTML = centerHTML.replace(match[0], `<div class="center">${match[1]}</div>`);
+    }
+    return centerHTML;
+}
+const localizedContentArray = parseLocalizedContent(bodyHTML);
+const currentLanguage = i18next.language;
+const defaultLanguage = "en";
+const localizedContent = localizedContentArray.find((item) => item.lang === currentLanguage);
+const defaultContent = localizedContentArray.find((item) => item.lang === defaultLanguage);
+bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
+bodyHTML = parseFloatTags(bodyHTML); // Ensure parseFloatTags is called on the localized content
+bodyHTML = parseCenterTags(bodyHTML); // Ensure parseCenterTags is called on the localized content
 ---
 
-<BlogPost {...post.data}>
-  <Content />
-</BlogPost>
+<html lang="en">
+  <Layout
+    title={`WiiLink - ${t("newsPost.name")} (${title})`}
+    description={`${title} - ${description}`}
+    image={ `/img/news-og-img/${slug}.png` }
+  />
+
+  <Header isGuide="display:none;" />
+  <div class="headtitle" style="background-color:var(--bg-color-secondary);">
+    <div
+      style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
+      {
+        (image as any)?.fields?.file?.url && (
+          <>
+            <img
+              class="mainimg"
+              src={(image as any)?.fields?.file?.url ? (image as any)?.fields?.file?.url : "/img/branding_bg.webp"}
+              alt=""
+              width="200px"
+            />
+            <img
+              class="mainimg2"
+              style="height:100%; filter:blur(80px) brightness(0.5); transform:scale(1.2);"
+              src={(image as any)?.fields?.file?.url ? (image as any)?.fields?.file?.url : "/img/branding_bg.webp"}
+              alt=""
+              width="200px"
+            />
+          </>
+        )
+      }
+      <div>
+        <h2
+          class="title"
+          id="titleData"
+          style={`color:  ${(image as any)?.fields?.file?.url ? "white !important" : "var(--color)"};`}>
+          {title}
+        </h2>
+        <hr
+          style={`border-top: 2px solid ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"};`}
+        />
+        <div
+          style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
+          <div class="mobileHeadAuth" style="display:flex; gap:4px;">
+            <r
+              style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;`}
+              datetime={new Date(date).toISOString()}>
+              {
+                new Date(date).toLocaleDateString("en-uk", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric"
+                })
+              }
+            </r>
+            <r
+              style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:4px 4px 4px 4px; font-family:system-ui; position:relative;`}
+              >{(author as any).fields.name}</r
+            >
+            <r
+              style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
+              >{(author as any).fields.role}</r
+            >
+          </div>
+          <div>
+            <r
+              id="readingTime"
+              style={`font-family:system-ui; color:${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; position:relative;`}
+            ></r>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="article-holder">
+    <div class="postexpand" set:html={bodyHTML} />
+
+    <Ad />
+
+       <div class="auths">
+      {author?.fields?.pfp?.fields?.file?.url && (
+        <img
+          class="authimage mobilehide"
+          width={50}
+          height={50}
+          src={author.fields.pfp.fields.file.url}
+          alt={`Profile picture of ${author.fields.name}`}
+        />
+      )}
+      <div class="titles">
+        <div class="hold">
+          {author?.fields?.pfp?.fields?.file?.url && (
+            <img
+              class="authimage mobileshow"
+              width={50}
+              height={50}
+              src={author.fields.pfp.fields.file.url}
+              alt={`Profile picture of ${author.fields.name}`}
+            />
+          )}
+          <span class="holdtext">
+            <div class="authtitle">{author?.fields?.name || 'Unknown Author'}</div>
+            <div class="authtitle2">{author?.fields?.role || 'Contributor'}</div>
+          </span>
+        </div>
+        <div class="authdesc">{author?.fields?.description || 'No description available'}</div>
+      </div>
+    </div>
+  </div>
+
+  <News />
+
+  <Footer />
+
+  <script is:inline>
+    function updateTagline() {
+      let tagline = document.getElementById("titleData");
+      let words = tagline.innerText.split(" ");
+      tagline.innerHTML = words
+        .map(
+          (word, index) =>
+            `<span style="--delay: ${index * 0.2}s;">${word}</span>`
+        )
+        .join(" ");
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      updateTagline();
+
+      let post = document.querySelector(".postexpand");
+      let wordCount = post.innerHTML.split(" ");
+      let readingTime = Math.ceil(wordCount.length / 200);
+      document.getElementById("readingTime").innerHTML =
+        `<span class="clock"></span> ${readingTime} min read`;
+
+      var nav = document.querySelector("nav");
+      if (nav) nav.remove();
+    });
+  </script>
+
+  <style>
+    h3 {
+      color: var(--color) !important;
+    }
+
+    a:link {
+      color: rgba(32, 213, 136, 1);
+    }
+
+    a:hover {
+      color: rgb(22, 152, 96);
+    }
+
+    a:visited {
+      color: rgb(32, 180, 213);
+    }
+
+    .auths {
+      left: 50%;
+      width: 95%;
+      transform: translate(-50%, 0);
+      padding-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      position: relative;
+      border-top: 2px solid var(--bg-opaque-1);
+      z-index: 10000;
+    }
+
+    .titles {
+      position: relative;
+    }
+
+    time {
+      color: white;
+    }
+
+    .other {
+      left: 5%;
+      width: 50%;
+      margin-top: 50px;
+      font-family: Gilroy;
+      font-size: 50px;
+      position: relative;
+    }
+
+    .mainimg {
+      -webkit-mask-image: url(/img/mask2.svg);
+      mask-image: url(/img/mask2.svg);
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      mask-size: 100% 100%;
+      mask-position: center;
+      height: 180px;
+      width: auto;
+      filter: blur(0px);
+      transform: translate(0, 10px);
+      z-index: 10;
+      position: relative;
+    }
+
+    .color {
+      background: #0d6efd;
+      background: AccentColor;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(150%);
+    }
+
+    .authtitle {
+      font-family: Gilroy;
+      font-size: 30px;
+      position: relative;
+      float: left;
+      color: rgb(0, 0, 0);
+    }
+
+    .hold {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .holdtext {
+      display:flex;
+      flex-direction:row;
+      gap:16px;
+    }
+
+    .authtitle2 {
+      position: relative;
+      padding: 6px 10px 6px 10px;
+      border: 2px solid var(--color);
+      border-radius: 8px;
+      text-align:center;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-weight: bold;
+      font-size: 18px;
+      float: right;
+      color: rgba(0, 0, 0, 0.496);
+    }
+    .authdesc {
+      font-family:
+        systemui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen,
+        Ubuntu,
+        Cantarell,
+        "Open Sans",
+        "Helvetica Neue",
+        sans-serif;
+      bottom: 0px;
+      margin-top: 5px;
+      font-size: 20px;
+      color: rgb(0, 0, 0);
+      position: relative;
+      top: 0;
+    }
+
+    .authimage {
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.154);
+      opacity: 1 !important;
+      position: relative;
+      filter: blur(0px) brightness(1) !important;
+    }
+    .headtitle {
+      width: 95%;
+      max-width: 1500px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      padding: 80px 30px 80px 30px;
+      border-radius: 18px 18px 8px 8px;
+      margin-bottom: 8px;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+      position: relative;
+    }
+    .title {
+      font-size: 70px;
+      text-align: left;
+      font-family: Gilroy;
+      z-index: 100;
+    }
+    .last-updated-on {
+      font-style: italic;
+    }
+
+    .mobileshow {
+      display: none !important;
+    }
+
+    .postexpand {
+      top: 30px;
+      width: 95%;
+      position: relative;
+      font-family: Cafe;
+      color: white;
+      margin-bottom: 28px;
+      left: 50%;
+      text-align: justify;
+      transform: translate(-50%, 0);
+      overflow: hidden;
+    }
+
+    #heroimg {
+      height: 800px;
+      width: 100%;
+      object-fit: cover;
+      transform: scale(100%);
+      mask-image: linear-gradient(
+        to bottom,
+        rgb(255, 255, 255) 0%,
+        transparent 80%
+      );
+      opacity: 0.5;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .faded {
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+      background: linear-gradient(
+        0deg,
+        rgb(248, 248, 248) 0%,
+        rgba(244, 244, 244, 0) 100%
+      );
+      position: absolute;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      top: 0;
+      height: auto;
+      position: absolute;
+      filter: blur(8px) brightness(0.5);
+    }
+
+    .article-holder {
+      width: 95%;
+      max-width: 1500px;
+      height: auto;
+      left: 50%;
+      top: 0px;
+      perspective: 1px;
+      border: 0px solid var(--border-color);
+      background-color: var(--bg-color-secondary);
+      transform: translate(-50%, 0);
+      border-radius: 8px 8px 18px 18px;
+      overflow: hidden;
+      padding-bottom: 30px;
+      opacity: 0;
+      position: relative;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    article {
+      left: 50%;
+      border-radius: 16px;
+      background-color: rgba(244, 244, 244, 0.602);
+      position: relative;
+    }
+
+    p {
+      font-family: Gilroy;
+      color: white;
+    }
+    h2 {
+    }
+    h3 {
+      font-family: Gilroy;
+    }
+    h4 {
+      font-family: Gilroy;
+    }
+
+    .exit {
+      top: 50px;
+      right: 0;
+      width: 50px;
+      height: 50px;
+      transform: translate(-50%, -50%);
+      border: 0px solid red;
+      border-radius: 8px;
+      position: absolute;
+      z-index: 1000;
+      transition: 0.2s;
+    }
+
+    .exit:hover {
+      border: 3px solid rgba(255, 0, 0, 0.651);
+      transition: 0.2s;
+    }
+    .close {
+      filter: blur(0px) invert(1);
+      transform: scale(50%);
+    }
+
+    .exit:hover .close {
+      filter: invert(16%) sepia(86%) saturate(7500%) hue-rotate(343deg)
+        brightness(98%) contrast(108%);
+      opacity: 0.7;
+    }
+
+    @keyframes fadeup {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 38px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
+      }
+    }
+
+    @media (max-width: 1000px) {
+      .title {
+        margin-top: 30px;
+        font-size: 40px;
+      }
+      .hold {
+        align-items:end;
+      }
+      .holdtext {
+       flex-direction:column;
+       gap:4px;
+      }
+      .mobileshow {
+        display: block !important;
+      }
+      .mobilehide {
+        display: none !important;
+      }
+      .authdesc {
+        margin-top: 8px;
+      }
+      .mobileHeadAuth {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .mobileHeadAuth r {
+        border-radius: 8px !important;
+      }
+    }
+
+    @media (min-width: 2000px) {
+      main {
+        width: 2000px;
+        left: 50%;
+        top: 10px;
+        transform: translate(-50%, 0);
+        border-radius: 8px;
+        position: relative;
+      }
+    }
+
+    @media only screen and (min-width: 2000px) {
+      .headtitle {
+        top: 150px;
+        margin-bottom: 160px;
+      }
+      .other {
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 2000px;
+        position: relative;
+      }
+    }
+  </style>
+
+  <style is:global>
+    .float h2 {
+      font-family: Gilroy !important;
+      font-size: 35px;
+    }
+
+    #titleData span {
+      opacity: 0;
+      transform: translateY(5px);
+      display: inline-block;
+      animation: fadeUpLetter 0.2s forwards;
+      animation-delay: var(--delay);
+      transition: 0.1s;
+    }
+
+    @keyframes fadeUpLetter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      .float-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .float {
+        width: 100% !important;
+      }
+      .float-left {
+        float: left;
+        width: 100% !important;
+      }
+      .float-right {
+        float: right;
+        width: 100% !important;
+      }
+      .center {
+        text-align: center;
+      }
+    }
+  </style>
+</html>

@@ -2,12 +2,28 @@
 import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
-import { getCollection } from "astro:content";
 import LanguageDropdown from "../components/LanguageDropdown.astro";
 import { Icon } from "astro-icon/components";
-const posts = (await getCollection("blog")).sort(
-  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+import { contentfulClient } from "../lib/contentful";
+import type { news } from "../lib/contentful";
+
+const entries = await contentfulClient.getEntries<news>({
+  content_type: "newsPost",
+});
+
+let posts = entries.items.map((item) => {
+  const { title, slug, date, image, description } = item.fields;
+  return {
+      title,
+      slug,
+      date,
+      image,
+      description,
+  };
+});
+
+// Sort by date
+posts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 
 const { isMain } = Astro.props;
 ---
@@ -37,17 +53,6 @@ const { isMain } = Astro.props;
 <Agreement />
 
 <r lang={i18next.language} class="bannerholder">
-  <div
-    id="loadingindicator"
-    style="position:fixed; top:0; left:0; width:100%; height:5px; background-color:#377ce4; z-index:1000; transition:0.5s;">
-  </div>
-  <img
-    id="loadingspinner"
-    alt="Loading..."
-    src="/img/loading.gif"
-    style="width:30px; height:30px; top:20px; left:20px; filter:brightness(1000); z-index:1000; position:fixed;"
-  />
-
   <t
     id="grad"
     style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
@@ -86,22 +91,28 @@ const { isMain } = Astro.props;
             <div class="post" style="padding:8px; border-radius:4px;">
               <a
                 style="display:flex; flex-direction:row; gap:8px;"
-                href={`/news/${post.slug}/`}
-                aria-label={post.data.title + "News Link"}>
-                <img
-                  alt="News Post Image"
-                  loading="lazy"
-                  style="height:100px; border-radius:4px;"
-                  src={post.data.heroImage}
-                />
+                href={localizePath(`/news/${post.slug}/`)}
+                aria-label={post.title + "News Link"}>
+                {post.image?.fields?.file?.url ? (
+                  <img
+                    alt="News Post Image"
+                    loading="lazy"
+                    style="height:100px; border-radius:4px;"
+                    src={post.image.fields.file.url}
+                  />
+                ) : (
+                  <div
+                    style="height:100px; width:177.78px; border-radius:4px; background-color: var(--bg-opaque-1);"
+                  ></div>
+                )}
                 <div>
                   <div class="title">
                     <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-                      {post.data.title}
+                      {post.title}
                     </b>
                   </div>
                   <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
-                    {post.data.description}
+                    {post.description}
                   </div>
                 </div>
               </a>
@@ -137,7 +148,7 @@ const { isMain } = Astro.props;
         />
           <a
             style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href="/guide/install"
+            href={localizePath("/guide/install")}
             aria-label="Install Guide Link">
             <Icon
                   name="download"
@@ -164,7 +175,7 @@ const { isMain } = Astro.props;
         />
           <a
             style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href="/guide/problemsolving"
+            href={localizePath("/guide/problemsolving")}
             aria-label="Troubleshooting Guide Link">
             <Icon
                   name="lucide:circle-alert"
@@ -191,7 +202,7 @@ const { isMain } = Astro.props;
         />
           <a
             style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href="/guide/faq"
+            href={localizePath("/guide/faq")}
             aria-label="FAQ Link">
             <Icon
                   name="circle-help"
@@ -350,14 +361,14 @@ const { isMain } = Astro.props;
         />
         <a
           class="dropdown-item"
-          href="/privacy-policy"
+          href={localizePath("/privacy-policy")}
           aria-label="Privacy Policy Link"
           ><Icon name="lucide:shield" style="margin-bottom:3px;" /> {t("header.privacyPolicy")}</a
         >
-        <a class="dropdown-item" href="/tos" aria-label="Terms of Service Link"
+        <a class="dropdown-item" href={localizePath("/tos")} aria-label="Terms of Service Link"
           ><Icon name="lucide:feather" style="margin-bottom:3px;" /> {t("header.tos")}</a
         >
-        <a class="dropdown-item" href="/eula" aria-label="EULA Link"
+        <a class="dropdown-item" href={localizePath("/eula")} aria-label="EULA Link"
           ><Icon name="lucide:book" style="margin-bottom:3px;" /> {t("header.eula")}</a
         >
         <hr
@@ -398,38 +409,6 @@ const { isMain } = Astro.props;
   </div>
 
   <script is:inline>
-    /************************
-     * Loading Animation
-     ************************/
-    function initLoading() {
-      var loadingIndicator = document.getElementById("loadingindicator");
-      var loadingSpinner = document.getElementById("loadingspinner");
-
-      if (!loadingIndicator || !loadingSpinner) {
-        return;
-      }
-
-      loadingIndicator.style.width = "0%";
-      loadingIndicator.style.display = "block";
-      loadingSpinner.style.display = "block";
-
-      var increaseWidth = setInterval(function () {
-        var currentWidth = parseInt(loadingIndicator.style.width);
-        if (currentWidth < 80) {
-          loadingIndicator.style.width = currentWidth + 1 + "%";
-        }
-      }, 100);
-
-      window.addEventListener("load", function () {
-        clearInterval(increaseWidth);
-        loadingIndicator.style.width = "100%";
-        setTimeout(function () {
-          loadingIndicator.style.opacity = "0";
-          loadingSpinner.style.display = "none";
-        }, 500);
-      });
-    }
-
     /************************
      * Theme Management
      ************************/
@@ -612,20 +591,8 @@ const { isMain } = Astro.props;
      * Initialization
      ************************/
     document.addEventListener("DOMContentLoaded", function () {
-      initLoading();
       updateUserInterface();
       initUI();
-
-      // Theme change listeners
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", function (event) {
-          if (event.matches) {
-            enableDarkMode();
-          } else {
-            enableLightMode();
-          }
-        });
 
       if (document.documentElement.classList.contains("dark")) {
         document.getElementById("themeColor").innerHTML =
@@ -633,17 +600,6 @@ const { isMain } = Astro.props;
       } else {
         document.getElementById("themeColor").innerHTML =
           '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-      }
-
-      var darkToggleButton = document.getElementById("darkToggle");
-      if (darkToggleButton) {
-        darkToggleButton.addEventListener("click", function () {
-          if (document.documentElement.classList.contains("dark")) {
-            enableLightMode();
-          } else {
-            enableDarkMode();
-          }
-        });
       }
     });
   </script>

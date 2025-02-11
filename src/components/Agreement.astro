@@ -1,5 +1,5 @@
 ---
-import i18next, { t } from "i18next";
+import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import LanguageDropdown from "./LanguageDropdown.astro";
 import { Icon } from "astro-icon/components";
@@ -63,7 +63,7 @@ import { Icon } from "astro-icon/components";
     </span>
 
     <div class="buttons">
-      <a href="/" aria-label="Home Link"
+      <a href={localizePath("/")} aria-label="Home Link"
         ><button
           type="button"
           class="btn btn-success"
@@ -90,7 +90,7 @@ import { Icon } from "astro-icon/components";
     <div class="elements">
       <a
         class="link"
-        href="/"
+        href={localizePath("/")}
         aria-label="Home Link"
         style="border-radius:16px 16px 4px 4px; z-index: 1; position:relative">
         <Icon name="lucide:house" style="margin-bottom:3px;" />
@@ -98,7 +98,7 @@ import { Icon } from "astro-icon/components";
       </a>
       <a
         class="link"
-        href="/news"
+        href={localizePath("/news")}
         aria-label="News Link"
         style="z-index: 1; position:relative">
         <Icon name="lucide:newspaper" style="margin-bottom:3px;" />
@@ -106,7 +106,7 @@ import { Icon } from "astro-icon/components";
       </a>
       <a
         class="link"
-        href="/guide"
+        href={localizePath("/guide")}
         aria-label="Guide Link"
         style="z-index: 1; position:relative">
         <Icon name="lucide:book" style="margin-bottom:3px;" />
@@ -114,7 +114,7 @@ import { Icon } from "astro-icon/components";
       </a>
       <a
         class="link"
-        href="/status"
+        href={localizePath("/status")}
         aria-label="Status Link"
         style="z-index: 1; position:relative">
         <Icon name="lucide:info" style="margin-bottom:3px;" />
@@ -122,7 +122,7 @@ import { Icon } from "astro-icon/components";
       </a>
       <a
         class="link"
-        href="/services"
+        href={localizePath("/services")}
         aria-label="Services Link"
         style="border-radius:4px 4px 16px 16px; z-index: 1; position:relative">
         <Icon name="lucide:package" style="margin-bottom:3px;" />
@@ -132,7 +132,7 @@ import { Icon } from "astro-icon/components";
     <div class="holdcontainer"></div>
     <li style="padding:12px; opacity:1 !important;">
       <a
-        href="/extras"
+        href={localizePath("/extras")}
         aria-label="Extras Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         ><div>
@@ -254,19 +254,19 @@ import { Icon } from "astro-icon/components";
       >
     </li>
     <li>
-      <a href="/privacy-policy" aria-label="Privacy Policy Link"
+      <a href={localizePath("/privacy-policy")} aria-label="Privacy Policy Link"
         ><Icon name="lucide:shield" style="margin-bottom:3px;" />
         {t("header.privacyPolicy")}</a
       >
     </li>
     <li>
-      <a href="/tos" aria-label="Terms of Service Link"
+      <a href={localizePath("/tos")} aria-label="Terms of Service Link"
         ><Icon name="lucide:feather" style="margin-bottom:3px;" />
         {t("header.tos")}</a
       >
     </li>
     <li>
-      <a href="/eula" aria-label="EULA Link"
+      <a href={localizePath("/eula")} aria-label="EULA Link"
         ><Icon name="lucide:book" style="margin-bottom:3px;" /> EULA</a
       >
     </li>

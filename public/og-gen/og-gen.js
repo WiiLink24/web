@@ -2,22 +2,37 @@ import puppeteer from 'puppeteer';
 import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
+import * as contentful from 'contentful';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const generateImage = async (title, imageUrl, pfp, date, desc, outputPath) => {
+  const formatUrl = (url) => {
+    if (!url) return '';
+    return url.startsWith('//') ? `https:${url}` : url;
+  };
+
+  const finalImageUrl = formatUrl(imageUrl) || 'https://www.wiilink24.com/img/guidebg-install.webp';
+  const pfpFinalUrl = formatUrl(pfp);
+
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.setViewport({ width: 1966, height: 1130 });
 
-  const finalImageUrl = imageUrl.startsWith('http') ? imageUrl : (imageUrl ? `https://www.wiilink24.com${imageUrl}` : 'https://www.wiilink24.com/img/guidebg-install.webp');
-
-  const pfpHtml = pfp ? `<img src="${pfp}" style="height: 200px; width: 200px;">` : '';
+  const pfpHtml = pfpFinalUrl ? `<img src="${pfpFinalUrl}" style="height: 200px; width: 200px;">` : '';
 
   const dateObj = new Date(date);
   const month = dateObj.toLocaleString('default', { month: 'long' });
   const day = dateObj.getDate();
   const year = dateObj.getFullYear();
-  date = `${day} ${month} ${year}`;
+  const formattedDate = `${day} ${month} ${year}`;
 
   const htmlContent = `
   <html>
@@ -133,7 +148,7 @@ const generateImage = async (title, imageUrl, pfp, date, desc, outputPath) => {
           ${pfpHtml}
           <span style="display:flex; flex-direction:column;">
             <h2>${title}</h2>
-            <p><b>${date}</b> ${desc}</p>
+            <p><b>${formattedDate}</b> ${desc}</p>
           </span>
         </div>
         <div class="bottom-gradient"></div>
@@ -143,43 +158,63 @@ const generateImage = async (title, imageUrl, pfp, date, desc, outputPath) => {
   </html>
   `;
 
-  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+  await page.setContent(htmlContent, { 
+    waitUntil: 'networkidle0',
+    timeout: 30000 
+  });
 
   await page.screenshot({ path: outputPath, type: 'png' });
   await browser.close();
 };
 
-const updateMarkdownFile = (filePath, heroImagePath) => {
-  const fileContent = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContent);
+const contentfulClient = contentful.createClient({
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN,
+  host: "cdn.contentful.com",
+});
 
-  data.ogImage = heroImagePath;
+const processContentfulEntries = async () => {
+  try {
+    const entries = await contentfulClient.getEntries({
+      content_type: "newsPost",
+      order: '-sys.createdAt',
+    });
 
-  const updatedContent = matter.stringify(content, data);
-  fs.writeFileSync(filePath, updatedContent, 'utf8');
-};
+    const totalEntries = entries.items.length;
+    const outputDir = path.join('../img/news-og-img');
 
-const processMarkdownFiles = async () => {
-  const directoryPath = path.join('../../src/content/blog');
-  const files = fs.readdirSync(directoryPath).filter(file => file.endsWith('.md'));
+    // Ensure output directory exists
+    if (!fs.existsSync(outputDir)) {
+      fs.mkdirSync(outputDir, { recursive: true });
+    }
 
-  for (const file of files) {
-    const filePath = path.join(directoryPath, file);
-    const fileContent = fs.readFileSync(filePath, 'utf8');
-    const { data } = matter(fileContent);
+    for (let i = 0; i < entries.items.length; i++) {
+      const entry = entries.items[i];
+      const { title, image, author, description } = entry.fields;
+      const sanitizedTitle = entry.fields.slug || title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+      const outputPath = path.join(outputDir, `${sanitizedTitle}.png`);
+      
+      if (fs.existsSync(outputPath)) {
+        console.log(`[${i + 1}/${totalEntries}] ${title}: Already exists, skipping`);
+        continue;
+      }
+      
+      console.log(`[${i + 1}/${totalEntries}] Processing: ${title}`);
 
-    const { title, heroImage = "", authImage = "", pubDate = "", description = "" } = data;
-    const sanitizedTitle = title.replace(/[^a-z0-9]/gi, '_').toLowerCase();
-    
-    const outputPath = path.join('../img/news-og-img', `${sanitizedTitle}.png`);
+      await generateImage(
+        title,
+        image?.fields?.file?.url || '',
+        author?.fields?.pfp?.fields?.file?.url || '',
+        new Date(entry.sys.createdAt),
+        description,
+        outputPath
+      );
+    }
 
-    await generateImage(title, heroImage, authImage, pubDate, description, outputPath);
-
-    const heroImagePath = `/img/news-og-img/${sanitizedTitle}.png`;
-    updateMarkdownFile(filePath, heroImagePath);
+    console.log('Images generated successfully');
+  } catch (error) {
+    console.error('Error processing Contentful entries:', error);
   }
-
-  console.log('Images generated and markdown files updated.');
 };
 
-processMarkdownFiles();
+processContentfulEntries();

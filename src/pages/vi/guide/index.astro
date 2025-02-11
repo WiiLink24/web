@@ -3,11 +3,12 @@ import Layout from "../../../layouts/Layout.astro";
 import { changeLanguage } from "i18next";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import HeadText from "../../../components/HeadText.astro";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../../components/FormattedDate.astro";
 import Ad from "../../../components/Ad.astro";
-import i18next, { t, changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
+import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
 
@@ -25,7 +26,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
 <body>
   <div class="hold">
-    <img class="newstop" style="" src="/img/guidestop.webp" />
+    <HeadText text={t("header.guide")} />
     <div class="welcome-msg">
       <h2 style="font-size:40px; font-family:Gilroy;">
         <Trans i18nKey="guide.title">
@@ -34,7 +35,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
             style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
           ></span><b style="font-family: Rubik;">WiiLink</b><span
             class="badge bg-success"
-            style="top:-20px; left:-4px; font-size:15px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+            style="bottom:8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
             >guide</span
           >
         </Trans>
@@ -66,7 +67,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
           })
           .map(post => (
             <a
-              href={`/guide/${post.slug}/`}
+              href={localizePath(`/guide/${post.slug}/`)}
               class="posthold"
               style="cursor:pointer;">
               <div class="post">
@@ -111,7 +112,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
               ].includes(post.data.title)
           )
           .map(post => (
-            <a href={`/guide/${post.slug}/`} class="postmini">
+            <a href={localizePath(`/guide/${post.slug}/`)} class="postmini">
               <Icon name={post.data.icon} />
               {post.data.title}
             </a>

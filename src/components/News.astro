@@ -1,38 +1,60 @@
 ---
-import { getCollection } from "astro:content";
+import { localizePath } from "astro-i18next";
 import FormattedDate from "../components/FormattedDate.astro";
-let posts = (await getCollection("blog")).sort(
-  (b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+import { contentfulClient } from "../lib/contentful";
+import type { news } from "../lib/contentful";
 
-let currentPath = Astro.request.url.pathname;
-posts = posts.filter(post => `/news/${post.slug}/` !== currentPath);
-posts.sort(() => Math.random() - 0.5);
-posts = posts.slice(0, 3);
+const entries = await contentfulClient.getEntries<news>({
+    content_type: "newsPost",
+});
+
+let postsContentful = entries.items.map((item) => {
+    const { title, slug, date, image, description, content, author} = item.fields;
+    return {
+        title,
+        slug,
+        date,
+        image,
+        description,
+        content,
+        author,
+    };
+});
+
+postsContentful = postsContentful.sort(() => Math.random() - 0.5).slice(0, 3);
 ---
 
 <body>
   <div class="postholder">
-    {
-      posts.map(post => (
+        {
+      postsContentful.map(post => (
         <div class="post">
-          <a href={`/news/${post.slug}/`} aria-label={post.data.title + ' Link'}>
+          <a href={localizePath(`/news/${post.slug}/`)} aria-label={post.title + ' Link'}>
             <div style="top:20px; right:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px); color: white !important; z-index: 1000000; position:absolute;">
-            <FormattedDate date={post.data.pubDate} />
+              <FormattedDate date={new Date(post.date)} />
             </div>
             <div class="faded" />
-            {post.data.heroImage && (
-              <img alt={post.data.title} loading="lazy" class="heroImage" src={post.data.heroImage} />
+            {post?.image?.fields?.file?.url && (
+              <img 
+                alt={post.title} 
+                loading="lazy" 
+                class="heroImage" 
+                src={post.image.fields.file.url} 
+              />
             )}
             <div class="title">
-              {post.data.authImage && (
-                <img alt="News Author PFP" class="authimage" src={post.data.authImage} alt="" />
+              {post?.author?.fields?.pfp?.fields?.file?.url && (
+                <img 
+                  alt={`${post.author.fields.name}'s profile picture`}
+                  class="authimage" 
+                  src={post.author.fields.pfp.fields.file.url} 
+                />
               )}
-              <b style="color:white !important; width:80%; margin-right:10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:right; position:relative;">
-                {post.data.title}
+              <b style="color:white !important; width:80%; margin-left:10px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left; position:relative;">
+                {post.title}
               </b>
             </div>
-            <div class="desc">{post.data.description}</div>
+            <div class="desc">{post.description}</div>
           </a>
         </div>
       ))
@@ -58,38 +80,14 @@ posts = posts.slice(0, 3);
     position: relative;
     height: 230px;
     width: 100%;
+    background-color: var(--bg-color-secondary);
     font-family: Gilroy;
     hyphens: auto;
     overflow: hidden;
     transition: 0.5s;
   }
 
-  .post:hover:before {
-    box-shadow: inset 0 0 0px 3px var(--bg-opaque-2);
-    border-radius: 16px;
-    border: solid 0px transparent;
-    transition: 0.2s;
-  }
-
-  .post:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    box-shadow: inset 0 0 0px 3px var(--bg-opaque-1);
-    z-index: 1;
-    border-radius: 16px;
-    border: solid 0px transparent;
-    transition: 0.2s;
-  }
-
   .post:nth-child(1) {
-    border-radius: 18px 8px 8px 18px;
-  }
-
-  .post:nth-child(1):before {
     border-radius: 18px 8px 8px 18px;
   }
 
@@ -97,15 +95,7 @@ posts = posts.slice(0, 3);
     border-radius: 8px 8px 8px 8px;
   }
 
-  .post:nth-child(2):before {
-    border-radius: 8px 8px 8px 8px;
-  }
-
   .post:nth-child(3) {
-    border-radius: 8px 18px 18px 8px;
-  }
-
-  .post:nth-child(3):before {
     border-radius: 8px 18px 18px 8px;
   }
 
@@ -126,16 +116,15 @@ posts = posts.slice(0, 3);
   }
 
   .post:hover .heroImage {
-    filter: blur(8px) brightness(0.7);
-    rotate: -3deg;
-    scale: 120%;
+    filter: blur(4px) brightness(0.7);
+    scale: 110%;
     z-index: 0;
     transition: 0.3s;
   }
 
   .post:hover {
-    background-color: rgba(206, 206, 206, 0.117);
-    transform: translate(0, -5px);
+    background-color: var(--bg-color-tertiary);
+    transform: scale(1.02);
     transition: 0.5s;
   }
 
@@ -149,10 +138,10 @@ posts = posts.slice(0, 3);
     z-index: 11;
     display: flex;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row;
     font-size: max(20px, 30px);
     bottom: 20px;
-    right: 10px;
+    left: 20px;
     line-height: 30px;
     font-family: Gilroy;
     transition: 0.5s;
@@ -160,7 +149,7 @@ posts = posts.slice(0, 3);
   }
 
   .post:hover .title {
-    bottom: 60%;
+    bottom: 50%;
     transform: translate(0, 50%);
     transition: 0.5s;
   }
@@ -170,12 +159,12 @@ posts = posts.slice(0, 3);
     font-family: inter;
     width: 90%;
     font-size: 20px;
-    right: 20px;
+    left: 20px;
     bottom: 0;
     transform: translate(0, 50px);
     color: white !important;
     opacity: 0;
-    text-align: right;
+    text-align: left;
     transition: 0.5s;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -185,7 +174,7 @@ posts = posts.slice(0, 3);
   }
 
   .post:hover .desc {
-    bottom: 48%;
+    bottom: 38%;
     opacity: 1;
     transform: translate(0, 100%);
     transition: 0.5s;
@@ -230,24 +219,12 @@ posts = posts.slice(0, 3);
     .post:nth-child(1) {
       border-radius: 18px 18px 8px 8px;
     }
-
-    .post:nth-child(1):before {
-      border-radius: 18px 18px 8px 8px;
-    }
-
+    
     .post:nth-child(2) {
       border-radius: 8px 8px 8px 8px;
     }
 
-    .post:nth-child(2):before {
-      border-radius: 8px 8px 8px 8px;
-    }
-
     .post:nth-child(3) {
-      border-radius: 8px 8px 18px 18px;
-    }
-
-    .post:nth-child(3):before {
       border-radius: 8px 8px 18px 18px;
     }
   }
