@@ -485,7 +485,7 @@ const { isMain } = Astro.props;
         '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
         "<span>",
         '<img src="' + userData.pfp + '?d=404" ',
-        'style="width:40px; height:40px; border-radius:8px;"',
+        'style="width:40px; height:40px; border-radius:8px;" alt="' + userData.username + ' Profile Picture" ',
         "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
         userData.username.charAt(0).toUpperCase(),
         "</div>'\">",
