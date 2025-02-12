@@ -1,17 +1,13 @@
 import { defineConfig } from 'astro/config';
 import mdx from "@astrojs/mdx";
 import astroI18next from "astro-i18next";
-import markdownConfig from './markdown.config.ts';
 import partytown from "@astrojs/partytown";
-
 import sitemap from '@astrojs/sitemap';
-
 import icon from "astro-icon";
 
 export default defineConfig({
   site: "https://wiilink.ca",
   integrations: [mdx({
-    ...markdownConfig,
     extendPlugins: false
   }), partytown(), astroI18next(), sitemap(), icon({
     iconDir: "public/icons",
@@ -20,5 +16,4 @@ export default defineConfig({
       "simple-icons": ["twitter", "bluesky", "instagram", "youtube"]
     }
   })],
-  markdown: markdownConfig
 });

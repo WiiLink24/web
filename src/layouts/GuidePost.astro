@@ -7,6 +7,7 @@ import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
+import TableOfContents from "../components/TableOfContents.astro";
 
 const url = new URL(Astro.request.url);
 let currentPath = url.pathname;
@@ -31,6 +32,46 @@ const readingTime = (body: string) => {
   const textLength = body.split(" ").length;
   return Math.ceil(textLength / wordsPerMinute);
 };
+
+// Get the headings from this, it is all the ones where they have ## or ### in the markdown
+// Then we can use this to generate the table of contents
+function extractHeadings(markdown: string) {
+  const headings = [];
+  const lines = markdown.split('\n');
+  
+  lines.forEach((line) => {
+    // Match h2 (##) and h3 (###) headings
+    const h2Match = line.match(/^## (.+)/);
+    const h3Match = line.match(/^### (.+)/);
+    
+    if (h2Match) {
+      headings.push({
+        text: h2Match[1],
+        depth: 2,
+        slug: h2Match[1]
+          .toLowerCase()
+          .replace(/-/g, '-')         // Replace existing hyphens with triple hyphens
+          .replace(/[^a-z0-9---]+/g, '-') // Replace other special chars with single hyphens
+          .replace(/(^-|-$)/g, '')      // Remove leading/trailing hyphens
+      });
+    } else if (h3Match) {
+      headings.push({
+        text: h3Match[1],
+        depth: 3,
+        slug: h3Match[1]
+          .toLowerCase()
+          .replace(/-/g, '-')
+          .replace(/[^a-z0-9---]+/g, '-')
+          .replace(/(^-|-$)/g, '')
+      });
+    }
+  });
+
+  return headings;
+}
+
+const headings = extractHeadings(body);
+console.log(headings);
 ---
 
 <Layout
@@ -40,7 +81,6 @@ const readingTime = (body: string) => {
   <Header />
   <div class="flex">
     <div class={`guidehold ${heroImage ? 'text-white' : ''}`}>
-      <div id="container1" style="margin-bottom: 18px;"></div>
       <div
         class="offcanvas-body"
         style="overflow-y:visible; position:relative;">
@@ -189,22 +229,13 @@ const readingTime = (body: string) => {
         />
       </div>
     </div>
+    <div class="opacityshow" style="height:100%; margin-top: 18px;">
+      <TableOfContents headings={extractHeadings(body)} />
+    </div>
   </div>
 </Layout>
 
 <script is:inline>
-  window.onload = function () {
-    const container1 = document.getElementById("container1");
-    const container2 = document.getElementById("container2");
-    const movableDiv = document.querySelector(".toc-post");
-
-    if (movableDiv.parentElement === container1) {
-      container2.appendChild(movableDiv);
-    } else {
-      container1.appendChild(movableDiv);
-    }
-  };
-
   if (window.matchMedia("(max-width: 1000px)").matches) {
     let guidehold = document.querySelector(".guidehold");
     guidehold.style.display = "block";
@@ -426,7 +457,7 @@ const readingTime = (body: string) => {
   }
 
   .guidehold {
-    width: 380px;
+    width: 450px;
     height: 100%;
     border-radius: 16px 16px 0px 0px;
     -ms-overflow-style: none;
@@ -443,7 +474,7 @@ const readingTime = (body: string) => {
   .guideholder {
     width: 100%;
     height: 100%;
-    max-width: 1600px;
+    max-width: 1000px;
     top: 130px;
     backdrop-filter: blur(8px);
     perspective: 1px;
@@ -819,10 +850,6 @@ const readingTime = (body: string) => {
     }
     .sidebarcontent {
       top: 0;
-    }
-    #container1,
-    #google_translate_element {
-      display: none;
     }
   }
 </style>

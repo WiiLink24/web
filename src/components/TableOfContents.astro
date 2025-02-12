@@ -1,0 +1,249 @@
+---
+const { headings } = Astro.props;
+
+// Group headings by their h2 parent
+const groupedHeadings = headings.reduce((acc, heading) => {
+  if (heading.depth === 2) {
+    acc.push({ ...heading, children: [] });
+  } else if (heading.depth === 3 && acc.length > 0) {
+    acc[acc.length - 1].children.push(heading);
+  }
+  return acc;
+}, []);
+---
+
+<nav class="toc-container">
+  <h2 class="toc-title">On this page</h2>
+  <ul class="toc-list">
+    {groupedHeadings.map(heading => (
+      <li class="toc-item">
+        <div class="toc-h2-container">
+          {heading.children.length > 0 ? (
+            <button class="toggle-btn" aria-expanded="false">
+              <svg width="12" height="12" viewBox="0 0 12 12">
+                <path d="M1 4l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </button>
+            ) : (
+            <div class="toc-link" style="margin-left:3px; width: 12px; height: 12px; border:2px solid var(--color);" />
+            )
+        }
+          <a href={`#${heading.slug}`} class="toc-link" style="font-weight: semibold;" data-heading={heading.slug}>
+            {heading.text}
+          </a>
+        </div>
+        {heading.children.length > 0 && (
+          <ul class="toc-sublist">
+            {heading.children.map((subheading, index) => (
+              <li class="toc-item depth-3" style={`animation-delay: ${index * 0.1}s`}>
+                <a href={`#${subheading.slug}`} class="toc-link" data-heading={subheading.slug}>
+                  {subheading.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<script>
+  class TOC {
+    constructor() {
+      this.tocLinks = document.querySelectorAll(".toc-link");
+      this.headings = Array.from(document.querySelectorAll("h2, h3"));
+      this.activeLinks = new Set();
+      this.currentH2 = null;
+      this.init();
+    }
+
+    init() {
+      this.setupIntersectionObserver();
+      this.setupClickHandlers();
+      this.setupMutationObserver();
+    }
+
+    setupIntersectionObserver() {
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            const headingId = entry.target.id;
+            const link = document.querySelector(`[data-heading="${headingId}"]`);
+            const h2Container = link?.closest(".toc-h2-container");
+            const sublist = h2Container?.nextElementSibling;
+            const toggleBtn = h2Container?.querySelector(".toggle-btn");
+
+            if (entry.isIntersecting) {
+              link?.classList.add("active");
+              this.activeLinks.add(link);
+
+              // Expand parent h2 section if h3 is visible
+              if (link?.closest(".depth-3")) {
+                sublist?.classList.add("expanded");
+                toggleBtn?.setAttribute("aria-expanded", "true");
+              } else if (sublist) {
+                if (this.currentH2 && this.currentH2 !== sublist) {
+                  this.currentH2.classList.remove("expanded");
+                  this.currentH2.previousElementSibling.querySelector(".toggle-btn").setAttribute("aria-expanded", "false");
+                }
+                sublist.classList.add("expanded");
+                toggleBtn?.setAttribute("aria-expanded", "true");
+                this.currentH2 = sublist;
+              }
+            } else {
+              link?.classList.remove("active");
+              this.activeLinks.delete(link);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px" }
+      );
+
+      this.headings.forEach(heading => observer.observe(heading));
+    }
+
+    setupClickHandlers() {
+      document.querySelectorAll(".toggle-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const sublist = btn.closest(".toc-h2-container").nextElementSibling;
+          const isExpanded = btn.getAttribute("aria-expanded") === "true";
+          btn.setAttribute("aria-expanded", !isExpanded);
+          sublist?.classList.toggle("expanded");
+        });
+      });
+
+      this.tocLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").slice(1);
+          const targetHeading = document.getElementById(targetId);
+          if (targetHeading) {
+            targetHeading.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    }
+
+    setupMutationObserver() {
+      const observer = new MutationObserver(() => {
+        this.headings = Array.from(document.querySelectorAll("h2, h3"));
+        this.setupIntersectionObserver();
+      });
+
+      observer.observe(document.querySelector(".guidecontent"), {
+        childList: true,
+        subtree: true
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => new TOC());
+</script>
+
+<style>
+  .toc-container {
+    position: sticky;
+    width:300px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+  }
+
+  .toc-title {
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    font-family: Gilroy;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc-item {
+    margin: 0.5em 0;
+  }
+
+  .depth-3 {
+    position: relative;
+    margin-left: 0;
+    margin-top:8px;
+    padding-left: 8px;
+    opacity: 0;
+    animation: fadeIn 0.3s forwards;
+  }
+
+  .toc-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9em;
+    opacity: 0.6;
+    transition: all 0.2s;
+    border-right: 3px solid transparent;
+  }
+
+  .toc-link:hover {
+    opacity: 1;
+  }
+
+  .toc-link.active {
+    color: var(--accent-color);
+    opacity: 1;
+    border-left: 3px solid var(--accent-color);
+  }
+
+  @media (max-width: 1000px) {
+    .toc-container {
+      display: none;
+    }
+  }
+
+  .toc-h2-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+  }
+
+  .toggle-btn {
+    padding: 2px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: 0.6;
+    transition: 0.2s;
+  }
+
+  .toggle-btn svg {
+    transform: rotate(-90deg);
+    transition: 0.2s;
+  }
+
+  .toggle-btn[aria-expanded="true"] svg {
+    transform: rotate(0deg);
+    transition: 0.2s;
+  }
+
+  .toc-sublist {
+    display: none;
+    margin-left: 18px;
+    margin-bottom: 26px;
+  }
+
+  .toc-sublist.expanded {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
