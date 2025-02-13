@@ -20,6 +20,7 @@ const releaseData = await fetchGitHub();
 const assets = releaseData.assets;
 
 const fetcher = 'https://wiilink.ca/json' + localizePath("/hero.json");
+console.log(fetcher);
 
 // Fetch the hero.json file
 async function fetchHero() {
