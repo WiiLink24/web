@@ -1,8 +1,5 @@
 ---
-import i18next, { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
-import { localizePath } from "astro-i18next";
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 
@@ -13,8 +10,6 @@ changeLanguage("es-LAT");
   title={t("404.mainTitle")}
   description={t("404.mainDesc")}
   image={t("site.img")}>
-  <html>
-    <body>
       <div class="symbolholder">
         <div class="backsymbol" id="movable">
           <div class="square2" id="square2">
@@ -67,8 +62,6 @@ changeLanguage("es-LAT");
           />
         </div>
       </div>
-    </body>
-  </html>
 </Layout>
 
 <style>

@@ -21,8 +21,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
     image="/img/default.webp"
   />
   <Header isGuide="display:none;" />
-  <body>
-    <main>
       <div
         class="headtitle"
         style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
@@ -104,8 +102,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
       </div>
 
       <Ad />
-
-    </main>
     <Footer />
     <script is:inline>
       function updateTagline() {
@@ -352,5 +348,3 @@ const { title, description, icon, color, pubDate, type, heroImage } =
         }
       }
     </style>
-  </body>
-</html>

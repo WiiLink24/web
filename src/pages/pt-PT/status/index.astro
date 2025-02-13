@@ -1,5 +1,4 @@
 ---
-import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
@@ -17,7 +16,6 @@ changeLanguage("pt-PT");
   description={t("status.mainDesc")}
   image="/img/Status_embed.webp"
 />
-<body>
   <Header isGuide="display:none;" />
 
   <section>
@@ -64,7 +62,6 @@ changeLanguage("pt-PT");
   <h1 id="fetcherStatus" style="display:none;">
     /json{localizePath("/services.json")}
   </h1>
-</body>
 
 <Footer />
 

@@ -21,8 +21,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
   image="/img/default.webp"
 />
 <Header isGuide="display:none;" />
-
-<body>
   <div class="hold">
     <div class="welcome-msg">
       <HeadText text={t("header.services")} />
@@ -287,8 +285,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       >
     </div>
   </div>
-</body>
-
 <Footer />
 
 <script is:inline>

@@ -21,8 +21,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   image="/img/Extras_embed.webp"
 />
 <Header isGuide="display:none;" />
-
-<body>
   <div class="hold">
     <div class="welcome-msg">
       <HeadText text={t("header.extras")} />
@@ -79,7 +77,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     </div>
     <div class="dots"></div>
   </div>
-</body>
 
 <h1 id="fetcherExtras" style="display:none;">
   /json{localizePath("/goodies.json")}
