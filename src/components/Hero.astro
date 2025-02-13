@@ -20,12 +20,14 @@ const releaseData = await fetchGitHub();
 const assets = releaseData.assets;
 
 const fetcher = 'https://wiilink.ca/json' + localizePath("/hero.json");
-console.log(fetcher);
 
-// Fetch the hero.json file
 async function fetchHero() {
   try {
     const response = await fetch(fetcher);
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new TypeError("Response is not JSON");
+    }
     const data = await response.json();
     return data.hero || {};
   } catch (error) {
@@ -36,7 +38,13 @@ async function fetchHero() {
 
 function updateTagline() {
   return fetch(fetcher)
-    .then(res => res.json())
+    .then(res => {
+      const contentType = res.headers.get("content-type");
+      if (!contentType || !contentType.includes("application/json")) {
+        throw new TypeError("Response is not JSON");
+      }
+      return res.json();
+    })
     .then(data => {
       let taglines = data.taglines;
       let randomTagline = taglines[Math.floor(Math.random() * taglines.length)];
@@ -47,6 +55,10 @@ function updateTagline() {
             `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
         )
         .join("");
+    })
+    .catch(error => {
+      console.error('Tagline Error:', error);
+      return "Error loading tagline";
     });
 }
 
