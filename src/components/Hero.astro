@@ -17,7 +17,15 @@ async function fetchGitHub() {
 
 const releaseData = await fetchGitHub();
 
-const assets = releaseData.assets;
+// const assets = releaseData.assets;
+//Dummy assets data (1 Windows, 2 MacOS, 2 Linux)
+const assets = [
+   "Linux ARM Link",
+    "Linux 64bit Link",
+    "Apple Silicon Link",
+    "Apple 64bit Link",
+    "Windows 64bit Link"
+]
 
 const fetcher = 'https://wiilink.ca/json' + localizePath("/hero.json");
 

@@ -95,8 +95,8 @@ changeLanguage("ko-KR");
 </Layout>
 
 <script is:inline>
-  document.getElementById("footer").style.animation =
-    "fadeout 0.2s linear forwards";
+  document.getElementById("footer").style.opacity = "0";
+  document.getElementById("footer").style.transition = "opacity 0.2s linear";
 
   document.getElementById("square2").addEventListener("scroll", function () {
     const scrollableDiv = document.getElementById("square2");
@@ -122,9 +122,10 @@ changeLanguage("ko-KR");
         "height",
         isNearBottom ? "calc(100% - 300px)" : "calc(100% - 30px)"
       );
+      document.getElementById("footer").style.opacity = isNearBottom ? "1" : "0";
       document.getElementById("footer").style.animation = isNearBottom
-        ? "fadein 0.2s linear forwards"
-        : "fadeout 0.2s linear forwards";
+        ? "fadein 0.2s linear"
+        : "fadeout 0.2s linear";
     } else {
       scrollableDiv.style.setProperty("height", "100%");
     }
