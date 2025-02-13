@@ -3,6 +3,53 @@ import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
+
+async function fetchGitHub() {
+  try {
+    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest');
+    const data = await response.json();
+    return data || 0;
+  } catch (error) {
+    console.error('GitHub Error:', error);
+    return 'Error';
+  }
+}
+
+const releaseData = await fetchGitHub();
+
+const assets = releaseData.assets;
+
+const fetcher = 'https://wiilink.ca/json' + localizePath("/hero.json");
+
+// Fetch the hero.json file
+async function fetchHero() {
+  try {
+    const response = await fetch(fetcher);
+    const data = await response.json();
+    return data.hero || {};
+  } catch (error) {
+    console.error('Hero Error:', error);
+    return {};
+  }
+}
+
+function updateTagline() {
+  return fetch(fetcher)
+    .then(res => res.json())
+    .then(data => {
+      let taglines = data.taglines;
+      let randomTagline = taglines[Math.floor(Math.random() * taglines.length)];
+      let letters = randomTagline.split("");
+      return letters
+        .map(
+          (letter, index) =>
+            `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
+        )
+        .join("");
+    });
+}
+
+const heroTitles = await fetchHero();
 ---
 
 <head>
@@ -49,7 +96,8 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
       >
       -->
     </div>
-    <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;"></h2>
+    <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;" set:html={updateTagline()}
+    ></h2>
     <p style="font-size:20px; opacity:0.7;">
       {t("site.heroDesc")}
     </p>
@@ -59,7 +107,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
         <a
           href="https://github.com/WiiLink24/WiiLink24-Patcher"
           aria-label="WiiLink Patcher"
-          style="text-decoration: none;">WiiLink Patcher <l id="verno"></l></a
+          style="text-decoration: none;">WiiLink Patcher {releaseData.tag_name}</a
         > | {t("site.heroDev")}
         <a
           href="https://github.com/PablosCorner"
@@ -73,7 +121,6 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
         <button
           type="button"
           id="download-btn"
-          onclick="downloadPatcher();"
           class="btn btn-primary btn-lg"
           style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
           ><img
@@ -99,7 +146,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
               id="download-windows"
               class="dropdown-item"
               style="display:flex; align-items:center; justify-content:space-between;"
-              href=""
+              href={releaseData.assets?.[4].browser_download_url}
               aria-label="Download for Windows"
               ><div>
                 <Icon
@@ -130,14 +177,14 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
               <a
                 class="dropdown-item"
-                href=""
+                href={releaseData.assets?.[2].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-macos-arm"
                 aria-label="Apple Silicon Download">Apple Silicon</a
               >
               <a
                 class="dropdown-item"
-                href=""
+                href={releaseData.assets?.[3].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-macos-x64"
                 aria-label="Apple 64bit Download">64bit</a
@@ -164,14 +211,14 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
               <a
                 class="dropdown-item"
-                href=""
+                href={releaseData.assets?.[0].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-linux-arm"
                 aria-label="Linux ARM64 Link">ARM64</a
               >
               <a
                 class="dropdown-item"
-                href=""
+                href={releaseData.assets?.[1].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-linux-x64"
                 aria-label="Linux 64bit Link">64bit</a
@@ -298,37 +345,12 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
   </div>
 
   <div id="withThe" style="display:none;">{t("site.withThe")}</div>
-  <div id="downloadFor" style="display:none;">{t("site.downloadFor")}</div>
   <div id="downloadPrompt" style="display:none;">
     {t("site.downloadPrompt")}
   </div>
-
-  <h1 id="fetcherHero" style="display:none;">
-    ../json{localizePath("/hero.json")}
-  </h1>
 </div>
 
-<script>
-  let fetcher = document.getElementById("fetcherHero").innerHTML;
-
-  function updateTagline() {
-    let tagline = document.getElementById("tagline");
-    fetch(fetcher)
-      .then(res => res.json())
-      .then(data => {
-        let taglines = data.taglines;
-        let randomTagline =
-          taglines[Math.floor(Math.random() * taglines.length)];
-        let letters = randomTagline.split("");
-        tagline.innerHTML = letters
-          .map(
-            (letter, index) =>
-              `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
-          )
-          .join("");
-      });
-  }
-
+<script is:inline define:vars={{ assets, heroTitles }}>
   function osdetect() {
     let userAgent = window.navigator.userAgent;
     let os = "Unknown OS";
@@ -347,6 +369,24 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
       extra2: document.getElementById("extra-btn-2")
     };
 
+    switch (osdetect()) {
+      case "Windows":
+        buttons.download.innerHTML = `<span class="microsoft"></span> Download for Windows`;
+        buttons.download.onclick = () => window.location.href = assets[4];
+        break;
+      case "MacOS":
+        buttons.download.innerHTML = `<span class="apple"></span> Download for macOS`;
+        buttons.download.onclick = () => window.location.href = assets[2];
+        break;
+      case "Linux":
+        buttons.download.innerHTML = `<span class="linux"></span> Download for Linux`;
+        buttons.download.onclick = () => window.location.href = assets[1];
+        break;
+      default:
+        buttons.download.innerHTML = `<span class="download"></span> ${document.getElementById("downloadPrompt").textContent}`;
+        buttons.download.onclick = () => window.location.href = "https://www.github.com/WiiLink24/WiiLink24-Patcher/releases";
+    }
+
     const checkbox = document.getElementById("flexCheckDefault");
     if (!checkbox) return;
 
@@ -363,141 +403,53 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
     .getElementById("flexCheckDefault")
     ?.addEventListener("change", updateButtons);
 
+    let currentIndex = 0;
+  
   function updateHero() {
-    fetch(fetcher)
-      .then(res => res.json())
-      .then(data => {
-        let services = data.hero.element;
-        let randomServices = [];
-        let used = new Set();
-
-        while (randomServices.length < 3) {
-          const index = Math.floor(Math.random() * services.length);
-          if (!used.has(index)) {
-            used.add(index);
-            randomServices.push(services[index]);
-          }
-        }
-
-        let withThe = document.getElementById("withThe").innerHTML;
-        let html = "";
-
-        randomServices.forEach((service, index) => {
-          html += `
-          <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
-            <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
-            <div style="z-index: 1; position:relative;">
-              <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
-              <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
-              <a href="${service.link}" aria-label="${service.name} Link">${service.name}</a>
-              </p>
-            </div>
-            <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
-              <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
-            </div>
-          </div>
-        `;
-        });
-        document.getElementById("hero-services").innerHTML = html;
-
-        const bar = document.getElementById("bar");
-        bar.style.animation = "none";
-        void bar.offsetWidth;
-        bar.style.animation = "bar 10s linear forwards";
-        setTimeout(() => {
-          document
-            .querySelectorAll(".element")
-            .forEach(el => el.classList.add("fadeOut"));
-        }, 9500);
-      });
+    let services = heroTitles.element;
+    let randomServices = [];
+  
+    for (let i = 0; i < 3; i++) {
+      randomServices.push(services[(currentIndex + i) % services.length]);
+    }
+  
+    currentIndex = (currentIndex + 3) % services.length;
+  
+    let withThe = document.getElementById("withThe").innerHTML;
+    let html = "";
+  
+    randomServices.forEach((service, index) => {
+      html += `
+      <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s;">
+        <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
+        <div style="z-index: 1; position:relative;">
+          <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
+          <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
+          <a href="${service.link}" aria-label="${service.name} Link">${service.name}</a>
+          </p>
+        </div>
+        <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
+          <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
+        </div>
+      </div>
+    `;
+    });
+    document.getElementById("hero-services").innerHTML = html;
+  
+    const bar = document.getElementById("bar");
+    bar.style.animation = "none";
+    void bar.offsetWidth;
+    bar.style.animation = "bar 10s linear forwards";
+    setTimeout(() => {
+      document
+        .querySelectorAll(".element")
+        .forEach(el => el.classList.add("fadeOut"));
+    }, 9500);
   }
 
-  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
-
-  document.addEventListener("DOMContentLoaded", async function () {
-    updateTagline();
     updateHero();
     updateButtons();
     setInterval(updateHero, 10000);
-
-    const octokit = new Octokit();
-    const owner = "WiiLink24";
-    const repo = "WiiLink24-Patcher";
-
-    let assets = [];
-    try {
-      const { data: release } = await octokit.request(
-        "GET /repos/{owner}/{repo}/releases/latest",
-        { owner, repo }
-      );
-
-      if (release?.assets) {
-        const versionNumber = release.tag_name;
-        document.getElementById("verno").textContent = versionNumber;
-
-        const assetUrls = release.assets.map(
-          asset => asset.browser_download_url
-        );
-        const downloadElements = {
-          "download-windows": assetUrls[4],
-          "download-macos-arm": assetUrls[2],
-          "download-macos-x64": assetUrls[3],
-          "download-linux-arm": assetUrls[0],
-          "download-linux-x64": assetUrls[1]
-        };
-
-        let index = 0;
-        for (const [id, url] of Object.entries(downloadElements)) {
-          if (url) document.getElementById(id).href = url;
-        }
-        assets = assetUrls;
-      }
-    } catch (error) {
-      console.error("Error fetching GitHub release:", error);
-    }
-
-    const downloadFor = document.getElementById("downloadFor").textContent;
-    const downloadPrompt =
-      document.getElementById("downloadPrompt").textContent;
-
-    const osIcons = {
-      MacOS: "apple",
-      Windows: "microsoft",
-      Linux: "linux"
-    };
-    const os = osdetect();
-    const downloadBtn = document.getElementById("download-btn");
-
-    if (downloadBtn) {
-      let downloadFile;
-
-      switch (os) {
-        case "MacOS":
-          downloadFile = assets?.[2];
-          break;
-        case "Windows":
-          downloadFile = assets?.[4];
-          break;
-        case "Linux":
-          downloadFile = assets?.[1];
-          break;
-        default:
-          downloadFile =
-            "https://www.github.com/WiiLink24/WiiLink24-Patcher/releases";
-      }
-
-      downloadBtn.addEventListener("click", e => {
-        e.preventDefault();
-        if (downloadFile) {
-          window.location.href = downloadFile;
-        }
-      });
-    }
-    const icon = osIcons[os] || "download";
-    const osName =
-      os === "Unknown OS" ? downloadPrompt : `${downloadFor} ${os}`;
-    downloadBtn.innerHTML = `<span class='${icon}'></span> ${osName}`;
-  });
 </script>
 
 <style>

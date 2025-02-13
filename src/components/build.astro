@@ -1,6 +1,35 @@
 ---
 import { t } from "i18next";
 import { Trans } from "astro-i18next/components";
+
+async function fetchGitHub() {
+  try {
+    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest');
+    const data = await response.json();
+    return data || {};
+  } catch (error) {
+    console.error('GitHub Error:', error);
+    return {};
+  }
+}
+
+const releaseData = await fetchGitHub();
+
+const formatDate = (date) => {
+  return date ? new Intl.DateTimeFormat('en-UK', {
+    year: 'numeric',
+    month: 'long',
+    day: '2-digit'
+  }).format(new Date(date)) : 'Unknown';
+};
+
+const formatTime = (date) => {
+  return date ? new Intl.DateTimeFormat('en-UK', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  }).format(new Date(date)) : 'Unknown';
+};
 ---
 
 <div class="build">
@@ -11,85 +40,32 @@ import { Trans } from "astro-i18next/components";
       </Trans>
     </h1>
     <div id="inner-data" class="build-square">
-      <img
-        alt="Loading..."
-        style="transform:translate(0, -3px); filter: brightness(0);"
-        src="img/loading.gif"
-        width="30px"
-      />
-    </div>
-    <div class="dots"></div>
-  </div>
-</div>
-
-<h1 id="relBy" style="display:none;">{t("build.releasedBy")}</h1>
-<h1 id="relBranch" style="display:none;">{t("build.releaseBranch")}</h1>
-<h1 id="relDate" style="display:none;">{t("build.releaseDate")}</h1>
-<h1 id="relTotal" style="display:none;">{t("build.releaseTotal")}</h1>
-
-<script>
-  import { Octokit } from "https://cdn.skypack.dev/@octokit/rest";
-
-  document.addEventListener("DOMContentLoaded", async function () {
-    const octokit = new Octokit({
-      auth: ""
-    });
-
-    const owner = "WiiLink24";
-    const repo = "WiiLink24-Patcher";
-
-    try {
-      const { data: release } = await octokit.request(
-        "GET /repos/{owner}/{repo}/releases/latest",
-        {
-          owner,
-          repo,
-          headers: {
-            "X-GitHub-Api-Version": "2022-11-28"
-          }
-        }
-      );
-
-      const getData = document.getElementById("inner-data");
-
-      const relBy = document.getElementById("relBy").innerHTML;
-      const relBranch = document.getElementById("relBranch").innerHTML;
-      const relDate = document.getElementById("relDate").innerHTML;
-      const relTotal = document.getElementById("relTotal").innerHTML;
-
-      let dateArray = release.published_at.split("T");
-      let timeArray = dateArray[1].slice(0, -1);
-      dateArray = dateArray[0];
-      let versionNumber = release.tag_name;
-
-      if (getData) {
-        getData.innerHTML = `
-          <img loading="lazy" alt="WiiLink Box" src='/img/WiiLink_pack.webp' style='filter:drop-shadow(0 0 20px #138aa820);' width=150px' height='150px'>
-          <a style='color:black; text-decoration:none;' href='https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest' aria-label='WiiLink Patcher Link'>
+      <img loading="lazy" alt="WiiLink Box" src='/img/WiiLink_pack.webp' style='filter:drop-shadow(0 0 20px #138aa820);' width='150px' height='150px'>
+          <a style='color:black; text-decoration:none;' href={releaseData.html_url || '#'} aria-label='WiiLink Patcher Link'>
             <h2 class='release-name' style='animation:fadeup 0.2s forwards;'>
               <o style='font-family:Rubik; font-weight:600;'>WiiLink</o> Patcher 
-              <span style='scale:60%; transform:translate(-30px, -20px);' class='badge rounded-pill bg-secondary'>${versionNumber}</span>
+              <span style='scale:60%; transform:translate(-30px, -20px);' class='badge rounded-pill bg-secondary'>{releaseData.tag_name || 'Unknown'}</span>
             </h2>
             <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
-              <span class='git-branch'></span> <b>${relBranch}</b>
-              <span style='top:-2px; box-shadow:0px 0px 10px #4c97ed60; position:relative;' class='badge pill bg-primary'>${release.target_commitish}</span>
+              <span class='git-branch'></span> <b>{t("build.releaseBranch")}</b>
+              <span style='top:-2px; box-shadow:0px 0px 10px #4c97ed60; position:relative;' class='badge pill bg-primary'>{releaseData.target_commitish || 'Unknown'}</span>
             </h2>
             <h2 style='top:-5px; font-size:20px; filter:opacity(0.7); position:relative;'>
-              <span class='calendar-days'></span> <b>${relDate}</b> ${dateArray}
-              <span style='top:-2px; left:5px; box-shadow:0px 0px 20px #4ced9a60; position:relative;' class='badge pill bg-success'>@ ${timeArray}</span>
+              <span class='calendar-days'></span> <b>{t("build.releaseDate")}</b> {formatDate(releaseData.created_at)}
+              <span style='top:-2px; left:5px; box-shadow:0px 0px 20px #4ced9a60; position:relative;' class='badge pill bg-success'>@ {formatTime(releaseData.created_at)}</span>
             </h2>
           </a>
           <div class="gitbuilddata" style='width:300px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px; position:relative;'>
             <span style="display:flex; flex-direction: row; align-items:center; gap:12px;">
-            <img alt="${release.author.login}'s PFP" src='${release.author.avatar_url}' width='60px' height='60px' style='border-radius:8px;'> 
-            <h2 style='width:220px;'><p style="font-size:15px; margin:0px;">${relBy}</p>${release.author.login}</h2>
+            <img alt={`${releaseData.author?.login || 'Unknown'}'s PFP`} src={releaseData.author?.avatar_url || '/img/default-avatar.png'} width='60px' height='60px' style='border-radius:8px;'> 
+            <h2 style='width:220px;'><p style="font-size:15px; margin:0px;">{t("build.releasedBy")}</p>{releaseData.author?.login || 'Unknown'}</h2>
             </span>
             <span style="display:flex; flex-direction: row; align-items:center; gap:6px;">
-            <h2 style='font-size:23px;'><span style='transform:translate(0, -2px); font-size:14px; background-color:var(--bg-opaque-2);' class='badge rounded'>${relTotal}${release.reactions.total_count}</span></h2>
-            <h2 style='font-size:23px;'><span class='star'></span> ${release.reactions.hooray}</h2>
-            <h2 style='font-size:23px;'><span class='heart'></span> ${release.reactions.heart}</h2>
-            <h2 style='font-size:23px;'><span class='rocket'></span> ${release.reactions.rocket}</h2>
-            <h2 style='font-size:23px;'><span class='eye'></span> ${release.reactions.eyes}</h2>
+            <h2 style='font-size:23px;'><span style='transform:translate(0, -2px); font-size:14px; background-color:var(--bg-opaque-2);' class='badge rounded'>{t("build.releaseTotal")} {releaseData.reactions?.total_count || 0}</span></h2>
+            <h2 style='font-size:23px;'><span class='star'></span> {releaseData.reactions?.hooray || 0}</h2>
+            <h2 style='font-size:23px;'><span class='heart'></span> {releaseData.reactions?.heart || 0}</h2>
+            <h2 style='font-size:23px;'><span class='rocket'></span> {releaseData.reactions?.rocket || 0}</h2>
+            <h2 style='font-size:23px;'><span class='eye'></span> {releaseData.reactions?.eyes || 0}</h2>
             </span>
             <div class="btn btn-success" style="width:100%; font-size:16px; padding:6px; border-radius:10px; box-shadow:0px 0px 20px #00000020; text-align:center;">
             <a style="color:white; text-decoration:none;" href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest" aria-label="Download WiiLink Patcher">
@@ -97,15 +73,10 @@ import { Trans } from "astro-i18next/components";
             </a>
           </div>
           </div>
-        `;
-      } else {
-        console.error("Element with id 'release-info' not found.");
-      }
-    } catch (error) {
-      console.error("Error fetching GitHub release:", error);
-    }
-  });
-</script>
+    </div>
+    <div class="dots"></div>
+  </div>
+</div>
 
 <style>
   .build-holder {
