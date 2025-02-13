@@ -385,15 +385,15 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
     switch (osdetect()) {
       case "Windows":
         buttons.download.innerHTML = `<span class="microsoft"></span> Download for Windows`;
-        buttons.download.onclick = () => window.location.href = assets[4];
+        buttons.download.onclick = () => window.location.href = assets[4].browser_download_url;
         break;
       case "MacOS":
         buttons.download.innerHTML = `<span class="apple"></span> Download for macOS`;
-        buttons.download.onclick = () => window.location.href = assets[2];
+        buttons.download.onclick = () => window.location.href = assets[2].browser_download_url;
         break;
       case "Linux":
         buttons.download.innerHTML = `<span class="linux"></span> Download for Linux`;
-        buttons.download.onclick = () => window.location.href = assets[1];
+        buttons.download.onclick = () => window.location.href = assets[1].browser_download_url;
         break;
       default:
         buttons.download.innerHTML = `<span class="download"></span> ${document.getElementById("downloadPrompt").textContent}`;
