@@ -19,16 +19,14 @@ const releaseData = await fetchGitHub();
 
 const assets = releaseData.assets;
 
-const fetcher = 'https://wiilink.ca/json' + localizePath("/hero.json");
+const fetcher = 'https://raw.githubusercontent.com/WiiLink24/web/refs/heads/main/public/json' + localizePath("/hero.json");
 
 async function fetchHero() {
   try {
     const response = await fetch(fetcher);
-    const contentType = response.headers.get("content-type");
-    if (!contentType || !contentType.includes("application/json")) {
-      throw new TypeError("Response is not JSON");
-    }
-    const data = await response.json();
+    const responseText = await response.text();
+    console.log(responseText);
+    const data = JSON.parse(responseText);
     return data.hero || {};
   } catch (error) {
     console.error('Hero Error:', error);
@@ -39,11 +37,7 @@ async function fetchHero() {
 function updateTagline() {
   return fetch(fetcher)
     .then(res => {
-      const contentType = res.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-        throw new TypeError("Response is not JSON");
-      }
-      return res.json();
+      return res.text().then(response => JSON.parse(response));
     })
     .then(data => {
       let taglines = data.taglines;
@@ -58,7 +52,7 @@ function updateTagline() {
     })
     .catch(error => {
       console.error('Tagline Error:', error);
-      return "Error loading tagline";
+      return "Party on like it's 2006!";
     });
 }
 
