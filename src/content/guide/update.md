@@ -37,24 +37,16 @@ heroImage: "/img/guidebg-1.webp"
 
 > \***For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `ARM64` depending on your system architecture, and `XXX` with the latest version on the filename.
 
-1. Choose your installation setup:
+Press `2` for `Custom Install`. Follow the steps below:
 
-</br>
+1. Select which channels you would like to update from the list.
 
-### Express Installation
-   - Press `1` for `Express Install Setup`. Follow the steps below:
-     1. Select your region for the WiiConnect24 channels.
-     2. Select whether or not you would like to install the regional channels.
-     3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
-     4. Select your platform.
+<l class="notice info smallwidth">For those migrating from RiiConnect24, you only need new `News Channel` and `Forecast Channel` WADs. Feel free to download any additional regional WiiLink WADs you want too.</l>
 
-### Custom Installation
-   - Press `2` for `Custom Install Setup`. Follow the steps below:
-     1. Select which channels you would like to install out of the list.
-     2. Select your platform.
-     3. Please wait a moment for the patcher to download and patch the files on your device.
-     4. Once it's done, you can safely close the patcher. All of the files are ready on your SD Card.
-     5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
+2. Select your platform.
+3. Please wait a moment for the patcher to download and patch the files on your device.
+4. Once it's done, press `3` to exit the patcher.
+5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
 
 </br>
 
