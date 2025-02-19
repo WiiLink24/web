@@ -64,7 +64,7 @@ heroImage: "/img/guidebg-1.webp"
 
 ## Section II - Installing WADs
 
-<l class=“notice info smallwidth”>If you’re using Dolphin, install WADs through the menu (`Tools` > `Install WAD…`) instead of following these instructions.</l>
+<l class="notice info smallwidth">If you’re using Dolphin, install WADs through the menu (`Tools` > `Install WAD…`) instead of following these instructions.</l>
 
 1. Put your SD card or USB drive in your Wii.
 2. Launch the Homebrew Channel on your Wii.
@@ -74,7 +74,7 @@ heroImage: "/img/guidebg-1.webp"
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
-<l class=“notice warn smallwidth”>If you receive error `-1022` or `-1029` while installing WADs, press `-` to uninstall the existing WAD, and try again.</l>
+<l class="notice warn smallwidth">If you receive error `-1022` or `-1029` while installing WADs, press `-` to uninstall the existing WAD, and try again.</l>
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
