@@ -12,17 +12,19 @@ const entries = await contentfulClient.getEntries<news>({
 });
 
 let posts = entries.items.map((item) => {
-  const { title, slug, date, image, description } = item.fields;
+  const { title, slug, date, image, unlist, description } = item.fields;
   return {
       title,
       slug,
       date,
       image,
+      unlist,
       description,
   };
 });
 
 // Sort by date
+posts = posts.filter(post => !post.unlist);
 posts = posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
 
 const { isMain } = Astro.props;

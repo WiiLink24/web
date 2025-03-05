@@ -9,18 +9,20 @@ const entries = await contentfulClient.getEntries<news>({
 });
 
 let postsContentful = entries.items.map((item) => {
-    const { title, slug, date, image, description, content, author} = item.fields;
+    const { title, slug, date, image, unlist, description, content, author} = item.fields;
     return {
         title,
         slug,
         date,
         image,
+        unlist,
         description,
         content,
         author,
     };
 });
 
+postsContentful = postsContentful.filter(post => !post.unlist);
 postsContentful = postsContentful.sort(() => Math.random() - 0.5).slice(0, 3);
 ---
 

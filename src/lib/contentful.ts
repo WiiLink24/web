@@ -8,6 +8,7 @@ export interface news {
     slug: EntryFieldTypes.Text;
     date: EntryFieldTypes.Date;
     image: EntryFieldTypes.AssetLink;
+    unlist: EntryFieldTypes.Boolean;
     description: EntryFieldTypes.Text;
     content: EntryFieldTypes.RichText;
     author: contentful.Entry<author>;
