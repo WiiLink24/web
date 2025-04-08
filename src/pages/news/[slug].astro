@@ -42,7 +42,7 @@ let options = {
             const mimeType = file.contentType;
             const url = file.url;
             if (mimeType.startsWith("image/")) {
-                return `<img style="width:100%; height: auto; border-radius: 8px; aspect-ratio: 16/9;" src="${url}" alt="${node.data.target.fields.title}"/>`;
+                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${node.data.target.fields.title}"/>`;
             }
             else if (mimeType.startsWith("video/")) {
                 return `<video style="width:100%; border-radius:8px;" autoplay loop muted>
