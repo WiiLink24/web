@@ -146,21 +146,37 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
-            <a
-              id="download-windows"
-              class="dropdown-item"
-              style="display:flex; align-items:center; justify-content:space-between;"
-              href={releaseData.assets?.[4].browser_download_url}
-              aria-label="Download for Windows"
-              ><div>
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
                 <Icon
                   name="microsoft"
                   style="margin-right:5px; margin-bottom:3px;"
                 />
                 {t("site.downloadFor")} Windows
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
               </div>
-              <p style="margin-bottom:0;">64bit</p></a
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[5].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-x64"
+                aria-label="Windows x64 Download">x64</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[4].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-arm"
+                aria-label="Windows ARM64 Download">ARM64</a
             >
+            </div>
           </li>
           <li>
             <div class="line-container">
@@ -191,7 +207,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
                 href={releaseData.assets?.[3].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-macos-x64"
-                aria-label="Apple 64bit Download">64bit</a
+                aria-label="Apple x64 Download">x64</a
               >
             </div>
           </li>
@@ -215,17 +231,17 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
               style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
               <a
                 class="dropdown-item"
-                href={releaseData.assets?.[0].browser_download_url}
-                style="color:var(--color) !important;"
-                id="download-linux-arm"
-                aria-label="Linux ARM64 Link">ARM64</a
-              >
-              <a
-                class="dropdown-item"
                 href={releaseData.assets?.[1].browser_download_url}
                 style="color:var(--color) !important;"
                 id="download-linux-x64"
-                aria-label="Linux 64bit Link">64bit</a
+                aria-label="Linux x64 Download">x64</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[0].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-linux-arm"
+                aria-label="Linux ARM64 Download">ARM64</a
               >
             </div>
           </li>
@@ -240,35 +256,10 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
           </div>
           <li>
             <a
-              id="download-windows"
+              id="download-android"
               class="dropdown-item"
               style="display:flex; align-items:center; justify-content:space-between;"
-              href="https://github.com/riiconnect24/RiiConnect24-Patcher/releases"
-              ><div style="transform:translate(-5px, 0);">
-                <img
-                  alt="RC24 Logo"
-                  loading="lazy"
-                  class="invert"
-                  src="/img/rc24_logo.webp"
-                  style="filter: invert(1);"
-                  width="25px"
-                />
-                {t("site.legacyPatcher")}
-              </div>
-              <p style="margin-bottom:0;">
-                64bit <Icon
-                  name="microsoft"
-                  style="margin-left:8px; margin-bottom:3px;"
-                />
-              </p></a
-            >
-          </li>
-          <li>
-            <a
-              id="download-windows"
-              class="dropdown-item"
-              style="display:flex; align-items:center; justify-content:space-between;"
-              href="https://github.com/AyeItsHarry/WiiLinkPatcherAndroid"
+              href="https://github.com/Isla-Walker/WiiLinkPatcherAndroid"
               aria-label="Download for Android"
               ><div>
                 <Icon

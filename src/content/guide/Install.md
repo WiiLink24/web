@@ -43,7 +43,9 @@ We'll get you up and running in no time, but first, where do you plan to use Wii
   </div>
 </div>
 <span style="filter:opacity(0.6); font-size:18px; font-family:system-ui;">
-Before we start, please make sure you've read and accepted our privacy policy and terms of use. WiiLink offers this software as-is with no warranties whatsoever.
+Before we start, please make sure you've read and accepted our <a href="/privacy-policy">privacy policy</a> and <a href="/tos">terms of use</a>.
+<br>
+<b>WiiLink offers this software as-is with no warranties whatsoever.</b>
 </span>
 
 <br><br><br>
