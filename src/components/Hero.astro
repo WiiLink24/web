@@ -146,21 +146,37 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
         </button>
         <ul class="dropdown-menu dropdown-menu-end">
           <li>
-            <a
-              id="download-windows"
-              class="dropdown-item"
-              style="display:flex; align-items:center; justify-content:space-between;"
-              href={releaseData.assets?.[4].browser_download_url}
-              aria-label="Download for Windows"
-              ><div>
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
                 <Icon
                   name="microsoft"
                   style="margin-right:5px; margin-bottom:3px;"
                 />
                 {t("site.downloadFor")} Windows
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
               </div>
-              <p style="margin-bottom:0;">64bit</p></a
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[5].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-x64"
+                aria-label="Windows x64 Download">x64</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[4].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-arm"
+                aria-label="Windows ARM64 Download">ARM64</a
             >
+            </div>
           </li>
           <li>
             <div class="line-container">
