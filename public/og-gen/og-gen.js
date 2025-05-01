@@ -132,6 +132,16 @@ const generateImage = async (title, imageUrl, pfp, date, desc, outputPath) => {
           background: linear-gradient(to bottom, #121212, transparent);
           z-index: 0;
         }
+
+        @font-face {
+          font-family: 'Gilroy';
+          src: url('https://www.wiilink24.com/fonts/Gilroy.otf') format('opentype');
+        }
+
+        @font-face {
+          font-family: 'FOT-RodinNTLG Pro';
+          src: url('https://www.wiilink24.com/fonts/inter.ttf') format('truetype');
+        }
       </style>
     </head>
     <body>
