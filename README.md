@@ -20,6 +20,9 @@ npm i
 npm run dev
 ```
 
+Additionally, you will need to populate the .env with your own Contentful CMS keys. To do so, generate the content models in the application to match those supplied in the contentful.ts file inside this project, and then grab the API keys.
+This is necessary to be able to preview news articles.
+
 ### You will see a live preview of your changes inside your default web browser!
 
 ## Structure
