@@ -16,9 +16,9 @@ color: 4dd14160
 
 2. Make your way to the "Auto-Obtain DNS" setting.
 
-<l class="notice info smallwidth">Take note that the "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
+<l class="notice info smallwidth">The "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
 
-3. Once you made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
+3. Once you've made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
 
 Set your Primary DNS to --> 167.235.229.36<br>
 Set your Secondary DNS to --> 1.1.1.1
@@ -29,6 +29,16 @@ Set your Secondary DNS to --> 1.1.1.1
 
 6. Go to the 1st page of the "Internet" category, then select "User Agreements", then select "Yes".
 
-7. Allow the EULA to load. If it tells you that WiiConnect24 isn't being offered in your region, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U). The developers recommended that you read the EULA, as it gives information about the service. If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/RiiConnect24/DNS-Server">DNS Server application</a>.
+7. Allow the EULA to load.
+
+<l class="notice info smallwidth">If it tells you that WiiConnect24 isn't being offered in your region, or you receive error 221001, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U).
+</br>
+After agreeing to the EULA, you can use AnyGlobe Changer in the Homebrew Channel to switch back to your actual country.</l>
+
+The developers recommended that you read the EULA, as it gives important information about the service.
+
+<l class="notice warn smallwidth">If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/WiiLink24/DNS-Server">DNS Server application</a>.</l>
 
 8. Once you read the EULA, click on "I ACCEPT".
+
+9. Navigate back to the main settings page, select WiiConnect24, and set "WiiConnect24" and "Standby Connection" to On.
