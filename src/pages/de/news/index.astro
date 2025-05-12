@@ -17,12 +17,13 @@ const entries = await contentfulClient.getEntries<news>({
     content_type: "newsPost",
 });
 let postsContentful = entries.items.map((item) => {
-    const { title, slug, date, image, description, content, author } = item.fields;
+    const { title, slug, date, image, unlist, description, content, author } = item.fields;
     return {
         title,
         slug,
         date,
         image,
+        unlist,
         description,
         content,
         author,
@@ -31,7 +32,8 @@ let postsContentful = entries.items.map((item) => {
 postsContentful.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
-const sliceDescription = description => {
+postsContentful = postsContentful.filter(post => !post.unlist);
+const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
 };
