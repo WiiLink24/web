@@ -2,19 +2,78 @@
 import { t } from "i18next";
 import { Trans } from "astro-i18next/components";
 
-import { promises as fs } from 'fs';
-import path from 'path';
+import { promises as fs } from "fs";
+import path from "path";
 
 let donators;
 
 async function fetchData() {
-  const filePath = path.join(process.cwd(), 'public', 'json', 'donators.json');
-  const fileContents = await fs.readFile(filePath, 'utf8');
+  const filePath = path.join(process.cwd(), "public", "json", "donators.json");
+  const fileContents = await fs.readFile(filePath, "utf8");
   const jsonData = JSON.parse(fileContents);
   return jsonData.donators.donator;
 }
 
 donators = await fetchData();
+
+const tiers = [
+  {
+    id: 1,
+    name: "Violet",
+    href: "https://buy.stripe.com/8wMdRF25ig3k1ry3cc",
+    icon: "/img/tier_1.webp",
+    color: "#8cb727",
+    thanksKey: "donate.thanks-tier-1",
+    thanksFallback: "Thanks for supporting us at the Violet level!",
+    infoKey: "donate.info-tier-1",
+    infoFallback: `Get access to the <b><span class="discord"></span> donators channel</b>, as well as <b><span class="globe"></span> recognition on our website</b>!`,
+    subKey: "donate.sub",
+    subFallback: `Subscribe for <br /> per month`,
+    price: 2
+  },
+  {
+    id: 2,
+    name: "Lilac",
+    href: "https://buy.stripe.com/aEUdRFbFS18qb28cMN",
+    icon: "/img/tier_2.webp",
+    color: "rgb(82, 143, 147)",
+    thanksKey: "donate.thanks-tier-2",
+    thanksFallback: "Thank you for choosing the Lilac tier!",
+    infoKey: "donate.info-tier-2",
+    infoFallback: `Have your very own <b><span class="film"></span> movie poster</b> inside Wii Room, <b><span class="utensils"></span> restaurant</b> in Food Channel, <b>plus all Violet perks</b>!`,
+    subKey: "donate.sub",
+    subFallback: `Subscribe for <br /> per month`,
+    price: 5
+  },
+  {
+    id: 3,
+    name: "Tulip",
+    href: "https://buy.stripe.com/eVa7thcJW8AS8U05km",
+    icon: "/img/tier_3.webp",
+    color: "rgb(160, 100, 186)",
+    thanksKey: "donate.thanks-tier-3",
+    thanksFallback: "Thanks for supporting at Tulip level!",
+    infoKey: "donate.info-tier-3",
+    infoFallback: `Own a <b><span class="user"></span> Mii</b> in Wii Room, access the <b><span class="discord"></span> Tester Discord</b>, <b>plus all Lilac perks</b>!`,
+    subKey: "donate.sub",
+    subFallback: `Subscribe for <br /> per month`,
+    price: 10
+  },
+  {
+    id: 4,
+    name: "Rose",
+    href: "https://buy.stripe.com/28o7th8tG4kC8U0bIL",
+    icon: "/img/tier_4.webp",
+    color: "rgb(113, 185, 103)",
+    thanksKey: "donate.thanks-tier-4",
+    thanksFallback: "You’re amazing at the Rose tier!",
+    infoKey: "donate.info-tier-4",
+    infoFallback: `Create your own <b><span class="milestone"></span> Room</b> in Wii Room, <b>plus all Tulip perks</b>!`,
+    subKey: "donate.sub",
+    subFallback: `Subscribe for <br /> per month`,
+    price: 20
+  }
+];
 ---
 
 <div class="build">
@@ -35,228 +94,66 @@ donators = await fetchData();
     </h2>
     <div class="tiers-holder">
       <div class="tiers">
-        <div class="build-square tier-1">
-          <a
-            href="https://buy.stripe.com/8wMdRF25ig3k1ry3cc"
-            aria-label="Violet Donation Tier Link"
-            style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div
-                class="mobile-gap"
-                style="display: flex; gap:8px; align-items: center;">
-                <img
-                alt="Violet Tier"
-                  loading="lazy"
-                  src="/img/tier_1.webp"
-                  class="smalltierimg"
-                  style="width:60px; display:none; position:relative;"
-                />
-                <h2 style="font-family: gilroy; margin-right: 10px;">Violet</h2>
-                <hr
-                  style="flex: 3; border: none; border-top: 2px solid var(--border-color);"
-                />
-                <p style="flex: 2; text-align:right; margin-bottom:0;">
-                  {t("donate.thanks-tier-1")}
-                </p>
-              </div>
-              <img
-              alt="Violet Tier"
-                loading="lazy"
-                src="/img/tier_1.webp"
-                style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"
-              />
+        {
+          tiers.map(tier => (
+            <div class={`build-square tier-${tier.id}`} key={tier.id}>
+              <a
+                href={tier.href}
+                aria-label={`${tier.name} Donation Tier Link`}
+                style="height:100%; display:flex; flex-direction:column; justify-content:space-between; text-decoration: none;">
+                <div style="display:flex; flex-direction:column; justify-content:center; gap:8px;">
+                  <div
+                    class="mobile-gap"
+                    style="display:flex; gap:8px; align-items:center;">
+                    <img
+                      src={tier.icon}
+                      alt={`${tier.name} Tier`}
+                      class="smalltierimg"
+                      style="width:60px; display:none;"
+                    />
+                    <h2 style="font-family:gilroy; margin-right:10px;">
+                      {tier.name}
+                    </h2>
+                    <hr style="flex:3; border:none; border-top:2px solid var(--border-color);" />
+                    <p style="flex:2; text-align:right; margin:0;">
+                      {t(tier.thanksKey, { defaultValue: tier.thanksFallback })}
+                    </p>
+                  </div>
+                  <img
+                    src={tier.icon}
+                    alt={`${tier.name} Tier`}
+                    style="margin:18px auto 0; width:150px; position:relative;"
+                  />
+                </div>
+                <div>
+                  <h5 style="margin-top:50px; margin-bottom:30px; opacity:0.8;">
+                    <Trans i18nKey={tier.infoKey} set:html={tier.infoFallback}></Trans>
+                  </h5>
+                  <button
+                    class="btn"
+                    style={`background-color:${tier.color}; width:100%; display:flex; gap:8px; align-items:center; justify-content:center; text-align:right !important;`}>
+                    <Trans i18nKey={tier.subKey} set:html={tier.subFallback}></Trans>
+                    <b style="font-size:50px">${tier.price}</b>
+                  </button>
+                </div>
+              </a>
             </div>
-            <div>
-              <h5 style="margin-top:50px; opacity:0.8;">
-                <Trans i18nKey="donate.info-tier-1">
-                  Get access to the <b
-                    ><span class="discord"></span> donators channel</b
-                  >, as well as <b
-                    ><span class="globe"></span> recognition on our website</b
-                  >!
-                </Trans>
-              </h5>
-              <br />
-              <button
-                class="btn btn-success"
-                style="background-color:#8cb727; width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"
-                ><l style="text-align:right;">
-                  <Trans i18nKey="donate.sub"
-                    >Subscribe for <br /> per month</Trans
-                  ></l
-                >
-                <b style="font-size:50px">$2</b></button
-              >
-            </div>
-          </a>
-        </div>
-        <div class="build-square tier-2">
-          <a
-            href="https://buy.stripe.com/aEUdRFbFS18qb28cMN"
-            aria-label="Lilac Donation Tier Link"
-            style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div
-                class="mobile-gap"
-                style="display: flex; gap:8px; align-items: center;">
-                <img
-                alt="Lilac Tier"
-                  loading="lazy"
-                  src="/img/tier_2.webp"
-                  class="smalltierimg"
-                  style="width:60px; display:none; position:relative;"
-                />
-                <h2 style="font-family: gilroy; margin-right: 10px;">Lilac</h2>
-                <hr
-                  style="flex: 3; border: none; border-top: 2px solid var(--border-color);"
-                />
-                <p style="flex: 2; text-align:right; margin-bottom:0;">
-                  {t("donate.thanks-tier-2")}
-                </p>
-              </div>
-              <img
-              alt="Lilac Tier"
-                loading="lazy"
-                src="/img/tier_2.webp"
-                style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"
-              />
-            </div>
-            <div>
-              <h5 style="margin-top:50px; opacity:0.8;">
-                <Trans i18nKey="donate.info-tier-2">
-                  Have your very own <b
-                    ><span class="film"></span> movie poster</b
-                  > inside of Wii Room, <b
-                    ><span class="utensils"></span> restaurant</b
-                  > inside of the Food Channel, as well as <b
-                    >all the perks of Violet</b
-                  >!
-                </Trans>
-              </h5>
-              <br />
-              <button
-                class="btn btn-success"
-                style="background-color:rgb(82, 143, 147); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"
-                ><l style="text-align:right;">
-                  <Trans i18nKey="donate.sub"
-                    >Subscribe for <br /> per month</Trans
-                  ></l
-                >
-                <b style="font-size:50px">$5</b></button
-              >
-            </div>
-          </a>
-        </div>
-        <div class="build-square tier-3">
-          <a
-            href="https://buy.stripe.com/eVa7thcJW8AS8U05km"
-            aria-label="Tulip Donation Tier Link"
-            style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div
-                class="mobile-gap"
-                style="display: flex; gap:8px; align-items: center;">
-                <img
-                alt="Tulip Tier"
-                  loading="lazy"
-                  src="/img/tier_3.webp"
-                  class="smalltierimg"
-                  style="width:60px; display:none; position:relative;"
-                />
-                <h2 style="font-family: gilroy; margin-right: 10px;">Tulip</h2>
-                <hr
-                  style="flex: 3; border: none; border-top: 2px solid var(--border-color);"
-                />
-                <p style="flex: 2; text-align:right; margin-bottom:0;">
-                  {t("donate.thanks-tier-3")}
-                </p>
-              </div>
-              <img
-              alt="Tulip Tier"
-                loading="lazy"
-                src="/img/tier_3.webp"
-                style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"
-              />
-            </div>
-            <div>
-              <h5 style="margin-top:50px; opacity:0.8;">
-                <Trans i18nKey="donate.info-tier-3">
-                  Have your very own <b><span class="user"></span> Mii</b> inside
-                  of Wii Room, access to the <b
-                    ><span class="discord"></span> Tester Discord chat</b
-                  >, and <b>all the perks of Lilac</b>!
-                </Trans>
-              </h5>
-              <br />
-              <button
-                class="btn btn-success"
-                style="background-color:rgb(160, 100, 186); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"
-                ><l style="text-align:right;">
-                  <Trans i18nKey="donate.sub"
-                    >Subscribe for <br /> per month</Trans
-                  ></l
-                >
-                <b style="font-size:50px">$10</b></button
-              >
-            </div>
-          </a>
-        </div>
-        <div class="build-square tier-4">
-          <a
-            href="https://buy.stripe.com/28o7th8tG4kC8U0bIL"
-            aria-label="Rose Donation Tier Link"
-            style="height:100%; text-decoration:none; display:flex; flex-direction:column; justify-content:space-between;">
-            <div>
-              <div
-                class="mobile-gap"
-                style="display: flex; gap:8px; align-items: center;">
-                <img
-                alt="Rose Tier"
-                  loading="lazy"
-                  src="/img/tier_4.webp"
-                  class="smalltierimg"
-                  style="width:60px; display:none; position:relative;"
-                />
-                <h2 style="font-family: gilroy; margin-right: 10px;">Rose</h2>
-                <hr
-                  style="flex: 3; border: none; border-top: 2px solid var(--border-color);"
-                />
-                <p style="flex: 2; text-align:right; margin-bottom:0;">
-                  {t("donate.thanks-tier-4")}
-                </p>
-              </div>
-              <img
-              alt="Rose Tier"
-                loading="lazy"
-                src="/img/tier_4.webp"
-                style="top:18px; left:50%; transform:translate(-50%, 0); width:150px; position:relative;"
-              />
-            </div>
-            <div>
-              <h5 style="margin-top:50px; opacity:0.8;">
-                <Trans i18nKey="donate.info-tier-4">
-                  Create your very own <b
-                    ><span class="milestone"></span> Room</b
-                  > inside of Wii Room, as well as <b>all the perks of Tulip</b
-                  >!
-                </Trans>
-              </h5>
-              <br />
-              <button
-                class="btn btn-success"
-                style="background-color:rgb(113, 185, 103); width:100%; border:0px; display:flex; flex-direction:row; gap:8px; align-items:center; justify-content:center; flex-wrap:nowrap;"
-                ><l style="text-align:right;">
-                  <Trans i18nKey="donate.sub"
-                    >Subscribe for <br /> per month</Trans
-                  ></l
-                >
-                <b style="font-size:50px">$20</b></button
-              >
-            </div>
-          </a>
-        </div>
+          ))
+        }
       </div>
     </div>
+    <div class="youtube-member-callout"
+       style="width:100%; display:flex; justify-content:space-between; align-items:center; padding:12px 16px; margin-top:20px; margin-bottom:40px; background-color:var(--bg-color-secondary); border:2px solid #ff000060; border-radius:16px;">
+     <p style="margin:0; font-size:20px;">
+       Wanna get <b>sneak peeks</b> at our shows or view their <b>pilots</b>?<br> <strong style="color: #ff000090;">Become a YouTube Member!</strong>
+     </p>
+     <a href="https://www.youtube.com/@WiiLink/join"
+       target="_blank"
+        rel="noopener"
+        style="background-color:#FF0000; color:#fff !important; padding:16px; border-radius:4px; font-weight:bold; text-decoration:none;">
+      Become a member!
+    </a>
+   </div>
     <div class="donator-holder">
       <h2
         style="top:50%; left:50px; width:250px; transform:translate(0, -50%); text-align:left; font-size: 30px; z-index: 1; position:relative;"
@@ -267,11 +164,13 @@ donators = await fetchData();
       </h2>
       <div class="slider">
         <div id="donators">
-          {donators.map(donator => (
-            <div class="donator">
-              <h2>{donator.name}</h2>
-            </div>
-          ))}
+          {
+            donators.map(donator => (
+              <div class="donator">
+                <h2>{donator.name}</h2>
+              </div>
+            ))
+          }
         </div>
       </div>
     </div>
@@ -280,7 +179,7 @@ donators = await fetchData();
       style="top:40px; margin-bottom:80px; width:100%; opacity:0.5; text-align:right; font-size: 15px; position:relative;">
       <Trans i18nKey="donate.powered">Powered by</Trans>
       <img
-      alt="Stripe Logo"
+        alt="Stripe Logo"
         loading="lazy"
         class="stripe-logo"
         src="/img/stripe_logo.webp"
@@ -308,6 +207,7 @@ donators = await fetchData();
     border-radius: 16px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     gap: 50px;
     padding: 15px;
@@ -333,7 +233,7 @@ donators = await fetchData();
     color: white !important;
   }
   .donator-holder {
-    top:20px;
+    top: 20px;
     height: 100px;
     max-width: 1500px;
     border-radius: 16px;
@@ -357,7 +257,7 @@ donators = await fetchData();
     transform: rotateZ(180deg);
   }
   #donators {
-    display:flex;
+    display: flex;
     flex-direction: row;
     position: relative;
     animation: scroll 80s linear infinite;
@@ -507,8 +407,11 @@ donators = await fetchData();
       display: none;
     }
   }
+</style>
 
-  .film {
+<style is:global>
+
+ .film {
    display: inline-block;
    width: 22px;
    height: 22px;
