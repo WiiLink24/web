@@ -148,7 +148,8 @@ const tiers = [
        Only care about getting <b>sneak peeks</b> at our content and shows or viewing their <b>pilots</b>?<br> <strong style="color: #ff000090;">Become a YouTube Member!</strong>
      </p>
      <a href="https://www.youtube.com/@WiiLink/join"
-       target="_blank"
+        target="_blank"
+        class="youtube-member-button"
         rel="noopener"
         style="background-color:#FF0000; color:#fff !important; padding:16px; border-radius:4px; font-weight:bold; text-decoration:none;">
       Become a member!
@@ -405,6 +406,12 @@ const tiers = [
     }
     .subtitle {
       display: none;
+    }
+    .youtube-member-callout {
+      flex-direction: column;
+    }
+    .youtube-member-button {
+      margin-top: 20px;
     }
   }
 </style>
