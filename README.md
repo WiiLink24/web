@@ -42,4 +42,4 @@ Alternatively you can learn how to use and generate pages with astro-i18next and
 # Also check out:
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=food-server)](https://github.com/WiiLink24/food-server)
 [![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=room-server)](https://github.com/WiiLink24/room-server)
-[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink24-Patcher)](https://github.com/WiiLink24/WiiLink24-Patcher)
+[![ReadMe Card](https://github-readme-stats.vercel.app/api/pin/?username=WiiLink24&repo=WiiLink-Patcher-GUI)](https://github.com/WiiLink24/WiiLink-Patcher-GUI)

@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: download
-pubDate: 2025-02-02
+pubDate: 2025-05-28
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -11,7 +11,7 @@ heroImage: "/img/guidebg-1.webp"
   <hr style="flex-grow: 1; border: none; opacity:0.1; border-top: 2px solid var(--color); margin-left: 10px">
 </div>
 <div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><span class="globe"></span> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><span class="monitor"></span> Windows, Mac, Linux, or Android Device</h4><div style="height:40px; border-radius:8px;  position:relative;">
-<a href="https://github.com/WiiLink24/WiiLink24-Patcher/releases"><button type="button" style="height:50px; padding-left:28px; padding-right:28px; border-radius:12px 4px 4px 12px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="download"></span> WiiLink Patcher</button></a>
+<a href="https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases"><button type="button" style="height:50px; padding-left:28px; padding-right:28px; border-radius:12px 4px 4px 12px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="download"></span> WiiLink Patcher</button></a>
 <a href="https://github.com/Isla-Walker/WiiLinkPatcherAndroid#getting-started"><button type="button" style="height:50px; padding-left:18px; padding-right:18px; border-radius:4px 12px 12px 4px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="android"></span></button></a>
 </div></div>
 </br>
@@ -22,40 +22,50 @@ heroImage: "/img/guidebg-1.webp"
 
 <l class="notice warn smallwidth">With a default Dolphin NAND, the Check Mii Out Channel and Everybody Votes Channel are disabled to prevent abuse. To use these services in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
-1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink24-Patcher/releases) and download the correct patcher for your operating system.
-2. On `Windows`, run `WiiLink_Patcher_Windows_vXXX.exe`\*. <br>
+</br>
 
-   On `MacOS`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLink_Patcher_macOS-<arch>_vXXX`\*. Afterwards, run `./WiiLink_Patcher_macOS-<arch>_vXXX`\* and the patcher will launch right on your terminal.<br>
+If you have not done so already, visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases) and download the correct patcher for your operating system.
 
-   On `Linux`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_Linux-<arch>_vXXX`\*. Afterwards, run `./WiiLinkPatcher_Linux-<arch>_v.2.X.X`\* and the patcher will launch right on your terminal.
+</br>
 
-   On `Android`, follow the guide [here](https://github.com/Isla-Walker/WiiLinkPatcherAndroid#getting-started) to launch the unofficial patcher script in Termux.
+### Launching the patcher:
 
-   <l class="notice info">Alternatively, you can rename the patcher file on MacOS or Linux to a simpler filename like `WiiLinkPatcher` and run the commands with that name in mind.</l>
+#### Windows:
+Simply download the Windows release (onefile or zip) of your choosing, and open the exe! The zip is recommended as it avoids some potential false positives from antiviruses.
 
-> \***For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `ARM64` depending on your system architecture, and `XXX` with the latest version on the filename.
+#### macOS:
+Download the macOS release for your Mac (x64 for Intel, arm64 for Apple Silicon), and extract it. Then, launch Terminal. Type in `xattr -d com.apple.quarantine ` with a trailing space, drag the patcher app file into the terminal, and press enter. After this, you can just right click the app file and choose `Open`!
 
-3. Choose your installation setup:
+#### Linux:
+Download the Linux release for your computer's architecture and extract it. Then, open a terminal, and use `cd` to change to the directory you extracted the patcher to. Run `chmod +x WiiLinkPatcherGUI` to make the patcher executable, and `./WiiLinkPatcherGUI` to run it.
+
+<l class= "notice info">On some Debian and Ubuntu based distros, the patcher may fail to launch with the following error: </br>
+`qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.` </br>
+You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
+
+</br>
+
+1. Choose your installation setup:
 
 </br>
 
 ### Express Installation
-   - Press `1` for `Express Install Setup`. Follow the steps below:
+   - Choose `Express Setup`. Follow the steps below:
      1. Select your region for the WiiConnect24 channels.
      2. Select whether or not you would like to install the regional channels.
      3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
      4. Select `Dolphin Emulator`.
 
 ### Custom Installation
-   - Press `2` for `Custom Install Setup`. Follow the steps below:
+   - Choose `Custom Setup`. Follow the steps below:
      1. Select which channels you would like to install out of the list.
      2. Select `Dolphin Emulator`.
-     3. Please wait a moment for the patcher to download and patch the files on your device.
-     4. Once it's done, you can safely close the patcher. All of the files are ready.
+     3. Select the region of the console you will be installing the channels to.
 
 </br>
 
-</br>
+Please wait a moment for the patcher to download and patch the files on your device.
+
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
@@ -70,7 +80,7 @@ heroImage: "/img/guidebg-1.webp"
 1. Open Dolphin Emulator.
 2. Select `Tools`
 3. Select `Install WAD...`
-4. If you have chosen to install regional channels, navigate to the `WAD` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
+4. If you have chosen to install regional channels, navigate to the `WAD` folder inside the `WiiLink` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
 5. Repeat the process to install all other WADs.
 6. Navigate to `Options` > `Configuration` > `Wii`, and ensure `Enable WiiConnect24 via WiiLink` is enabled.
 7. Head to `File` > `Open`, and navigate to the folder where you ran the patcher.
@@ -89,7 +99,7 @@ heroImage: "/img/guidebg-1.webp"
 ### Setting your region in AnyGlobe Changer
 <l class="notice generic smallwidth">This allows you to set your country if the WiiConnect24 settings say that it's not supported.</l>
 1. In Dolphin, head to `File` > `Open`, and navigate to the folder where you ran the patcher.
-2. Navigate to `apps` > `AnyGlobe Changer`, and open `boot.dol`.
+2. Navigate to `WiiLink` > `apps` > `AnyGlobe Changer`, and open `boot.dol`.
 3. Read the disclaimer, and press `1` to continue.
 4. Using the D-pad / arrow keys, set your region and sub-region.
 5. Highlight `Save Settings`, then press `A` / left click to save.

@@ -6,7 +6,7 @@ import { Icon } from "astro-icon/components";
 
 async function fetchGitHub() {
   try {
-    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink24-Patcher/releases/latest');
+    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink-Patcher-GUI/releases/latest');
     const data = await response.json();
     return data || 0;
   } catch (error) {
@@ -109,13 +109,13 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
       <p style="opacity:0.5;">
         <Icon name="lucide:info" style="margin-right:5px; margin-bottom:3px;" />
         <a
-          href="https://github.com/WiiLink24/WiiLink24-Patcher"
+          href="https://github.com/WiiLink24/WiiLink-Patcher-GUI"
           aria-label="WiiLink Patcher"
           style="text-decoration: none;">WiiLink Patcher {releaseData.tag_name}</a
         > | {t("site.heroDev")}
         <a
-          href="https://github.com/PablosCorner"
-          aria-label="Pablo's GitHub Link">PablosCorner</a
+          href="https://github.com/Isla-Walker"
+          aria-label="Isla's GitHub Link">Isla</a
         >
       </p>
       <div class="horizontal-line"></div>
@@ -166,15 +166,15 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
                 class="dropdown-item"
                 href={releaseData.assets?.[5].browser_download_url}
                 style="color:var(--color) !important;"
-                id="download-windows-x64"
-                aria-label="Windows x64 Download">x64</a
+                id="download-windows-zip"
+                aria-label="Windows ZIP Download">.zip</a
               >
               <a
                 class="dropdown-item"
                 href={releaseData.assets?.[4].browser_download_url}
                 style="color:var(--color) !important;"
-                id="download-windows-arm"
-                aria-label="Windows ARM64 Download">ARM64</a
+                id="download-windows-exe"
+                aria-label="Windows EXE Download">.exe</a
             >
             </div>
           </li>
@@ -274,7 +274,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
           <li>
             <a
               class="dropdown-item"
-              href="https://github.com/WiiLink24/WiiLink24-Patcher/releases/latest"
+              href="https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases/latest"
               aria-label="Changelog"
               style="color:var(--color) !important;"
               ><Icon
@@ -367,7 +367,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
     switch (osdetect()) {
       case "Windows":
         buttons.download.innerHTML = `<span class="microsoft"></span> Download for Windows`;
-        buttons.download.onclick = () => window.location.href = assets[5].browser_download_url;
+        buttons.download.onclick = () => window.location.href = assets[4].browser_download_url;
         break;
       case "MacOS":
         buttons.download.innerHTML = `<span class="apple"></span> Download for macOS`;
@@ -379,7 +379,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
         break;
       default:
         buttons.download.innerHTML = `<span class="download"></span> ${document.getElementById("downloadPrompt").textContent}`;
-        buttons.download.onclick = () => window.location.href = "https://www.github.com/WiiLink24/WiiLink24-Patcher/releases";
+        buttons.download.onclick = () => window.location.href = "https://www.github.com/WiiLink24/WiiLink-Patcher-GUI/releases";
     }
 
     const checkbox = document.getElementById("flexCheckDefault");
