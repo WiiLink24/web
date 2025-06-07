@@ -1,7 +1,7 @@
 ---
 title: Updating WiiLink
 icon: lucide:refresh-cw
-pubDate: 2025-02-19
+pubDate: 2025-06-07
 description: Get up-to-date instructions on how to update your WiiLink channels!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -24,33 +24,50 @@ heroImage: "/img/guidebg-1.webp"
 
 </br>
 
-1. Visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases) and download the correct patcher for your operating system.
-2. On `Windows`, run `WiiLinkPatcher_Windows_vXXX.exe`\*. <br>
-
-   On `MacOS`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_macOS-<arch>_vXXX`\*. Afterwards, run `./WiiLinkPatcher_macOS-<arch>_vXXX`\* and the patcher will launch right on your terminal.<br>
-
-   On `Linux`, open a terminal window on the folder where the patcher downloaded, then run `chmod +x WiiLinkPatcher_Linux-<arch>_vXXX`\*. Afterwards, run `./WiiLinkPatcher_Linux-<arch>_vXXX`\* and the patcher will launch right on your terminal.
-
-   On `Android`, follow the guide [here](https://github.com/Isla-Walker/WiiLinkPatcherAndroid#getting-started) to launch the unofficial patcher script in Termux.
-
-   <l class="notice info">Alternatively, you can rename the patcher file on MacOS or Linux to a simpler filename like `WiiLinkPatcher` and run the commands with that name in mind.</l>
-
-> \***For Linux and MacOS Users:** Replace `<arch>` with either `x64` or `ARM64` depending on your system architecture, and `XXX` with the latest version on the filename.
-
-Press `2` for `Custom Install`. Follow the steps below:
-
-1. Select which channels you would like to update from the list.
-
-<l class="notice info smallwidth">For those migrating from RiiConnect24, you only need new `News Channel` and `Forecast Channel` WADs. Feel free to download any additional regional WiiLink WADs you want too.</l>
-
-2. Select your platform.
-3. Please wait a moment for the patcher to download and patch the files on your device.
-4. Once it's done, press `3` to exit the patcher.
-5. If it did not copy everything automatically to your SD Card or USB Device, copy the `WAD` and `apps` folder in the directory where the patcher executable is located to the root of your SD Card or USB Device.
+If you have not done so already, visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases) and download the correct patcher for your operating system.
 
 </br>
 
+### Launching the patcher:
+
+#### Windows:
+Simply download the Windows release (onefile or zip) of your choosing, and open the exe! The zip is recommended as it avoids some potential false positives from antiviruses.
+
+#### macOS:
+Download the macOS release for your Mac (x64 for Intel, arm64 for Apple Silicon), and extract it. Then, launch Terminal. Type in `xattr -d com.apple.quarantine ` with a trailing space, drag the patcher app file into the terminal, and press enter. After this, you can just right click the app file and choose `Open`!
+
+#### Linux:
+Download the Linux release for your computer's architecture and extract it. Then, open a terminal, and use `cd` to change to the directory you extracted the patcher to. Run `chmod +x WiiLinkPatcherGUI` to make the patcher executable, and `./WiiLinkPatcherGUI` to run it.
+
+<l class= "notice info">On some Debian and Ubuntu based distros, the patcher may fail to launch with the following error: </br>
+`qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.` </br>
+You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
+
 </br>
+
+If you know which channels you need to update, select `Custom Setup` and follow the steps below. If you're migrating from RiiConnect24, or otherwise don't know whichbchannels need updating, use `Express Setup`.
+
+</br>
+
+### Express Installation
+   - Choose `Express Setup`. Follow the steps below:
+     1. Select your region for the WiiConnect24 channels.
+     2. Select whether or not you would like to install the regional channels.
+     3. Select what language you would like for the regional channels as well as your preferred Food Channel version if you chose to install them.
+     4. Select your platform.
+
+### Custom Installation
+   - Choose `Custom Setup`. Follow the steps below:
+     1. Select which channels you would like to install out of the list.
+     2. Select your platform.
+     3. Select the region of the console you will be installing the channels to.
+
+</br>
+
+Please wait a moment for the patcher to download and patch the files on your device. Once it's done, you can choose to copy the files to your SD Card / USB Device automatically, which we recommend.
+
+If you choose not to copy everything automatically, copy the `WAD` and `apps` folder from the `WiiLink` directory where the patcher executable is located to the root of your SD Card or USB Device.
+
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
