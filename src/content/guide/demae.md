@@ -1,6 +1,6 @@
 ---
 title: Food Channel
-pubDate: 2024-12-23
+pubDate: 2024-06-15
 description: Get up-to-date instructions on how to install the Food Channel!
 icon: utensils
 ---
@@ -100,7 +100,8 @@ If you have used the standard version of the Food Channel before, go to <br>`Wii
 2. Follow the on-screen instructions, then click `Order` in the main menu.<br><br>
 ![img2](/img/guide/success.png)<br><br>
 
-3. You will now be prompted to select your region. Be sure to select your residing country correctly. Failure to do so will result in restaurants failing to load. You will then be prompted to select your state/province, then city. If your city is not on the list, you can select any one as it does not matter.<br><br>
+3. You will now be prompted to select your region. Be sure to select your residing country correctly. Failure to do so will result in restaurants failing to load. You will then be prompted to select your state/province, then city.<br>
+<l class="notice info fullwidth">If your city is not on the list, you can select any one as it does not matter.</l><br>
 ![img2](/img/guide/country-setup.png)<br><br>
 
 4. Click the `Pizza` button. This will load all the restaurants in your area. The first restaurant in the list is the one closest to you.
