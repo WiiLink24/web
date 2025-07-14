@@ -1,6 +1,6 @@
 ---
 title: WiiLink Accounts
-pubDate: 2024-12-30
+pubDate: 2024-07-14
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
 icon: lucide:id-card
 ---
@@ -17,24 +17,20 @@ icon: lucide:id-card
 
 ## Why WiiLink Accounts?
 
-WiiLink Accounts are a brand-new way to do all things WiiLink! At present, they just allow you to enable Domino's food ordering, however they will allow you to use extra services such as the WiiLink Forum in the future.
+WiiLink Accounts are a brand-new way to do all things WiiLink! At present, they allow you to enable Domino's food ordering and use the [WiiLink Forum](https://forum.wiilink.ca). In the future, they will also be used for services such as LinkTag, and Just Eat food ordering.
 
 ## Linking your console
 
-<l class="notice warn">To link a console, it will need to have patched Wii Mail. Refer to [this guide](/guide/board/) for instructions on how to do that.</l>
-
-1. Log into or create a [**WiiLink Account**](https://accounts.wiilink.ca) on the device you will use to scan the QR code.
+1. Log into or create a [**WiiLink Account**](https://accounts.wiilink.ca).
 
 ![img2](/img/guide/loginpage.png)
 
 2. Download the [**WiiLink Account Linker**](https://oscwii.org/library/app/wiilink-account-linker) from the Open Shop Channel and extract the `apps` folder to the root of your SD Card.
 
-3. Launch the `WiiLink Account Linker` from The Homebrew Channel and scan the QR code with your mobile device.
+3. Launch the `WiiLink Account Linker` from The Homebrew Channel and enter the code it displays at https://sso.riiconnect24.net/device.
 
-<l class="notice info fullwidth">On iOS, you will need to use either Safari or Firefox. For Safari, you need to scan the code in the Camera app. For Firefox, you need to scan the code from the scan button in the address bar.</l>
+![img2](/img/guide/linkcode.png)
 
-![img2](/img/guide/qrlink.png)
-
-4. Once you have successfully linked your account, you can access the Account Tab, where you have to enable Domino's Ordering by clicking on the `Enable Domino's Ordering` button
+4. Once you have successfully linked your account, navigate back to https://accounts.wiilink.ca. There, you can access the `Food Delivery Settings` tab, select your console's Wii Number, and click on the `Enable Domino's Ordering` button.
 
 ![img2](/img/guide/enabledominos.png)
