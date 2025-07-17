@@ -20,7 +20,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "news_icon.webp",
-        "todo": "<span class='circle-check'></span> The service is working properly! <br><br> We are working on implementing sources for non-english languages.",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "completed": "100"
       },
       {
@@ -53,7 +53,7 @@
         "isArea": "International",
         "status": "Full Release",
         "icon": "democracy_icon.webp",
-        "todo": "<span class='bomb'></span> Polls may not show up for some users, the issue is being investigated.",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "completed": "80"
       },
       {
@@ -96,7 +96,7 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<span class='circle-check'></span> The service is working properly!",
+        "todo": "<span class='circle-check'></span> The service is working properly! <br><br> Sending cards to email is currently not working.",
         "icon": "digicam_icon.webp",
         "completed": "75"
       },
