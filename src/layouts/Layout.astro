@@ -89,11 +89,70 @@ const { title, description, image } = Astro.props;
       type="font/opentype"
       crossorigin
     />
+
     <link
+      rel="preload"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      media="all"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript>
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+      />
+    </noscript>
+
+    <script type="module">
+      function loadBootstrapCSS() {
+        const existingLink = document.querySelector('link[href*="bootstrap"]');
+        if (existingLink && existingLink.rel === "stylesheet") {
+          return;
+        }
+
+        const preloadedLink = document.querySelector(
+          'link[rel="preload"][href*="bootstrap"]'
+        );
+        if (preloadedLink) {
+          preloadedLink.rel = "stylesheet";
+          preloadedLink.onload = null;
+        } else {
+          const link = document.createElement("link");
+          link.rel = "stylesheet";
+          link.href =
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css";
+          link.media = "all";
+          document.head.appendChild(link);
+        }
+      }
+
+      const loadEvents = ["click", "scroll", "keydown", "touchstart"];
+      let loaded = false;
+
+      function handleLoad() {
+        if (!loaded) {
+          loaded = true;
+          loadBootstrapCSS();
+          loadEvents.forEach(event => {
+            document.removeEventListener(event, handleLoad);
+          });
+        }
+      }
+
+      loadEvents.forEach(event => {
+        document.addEventListener(event, handleLoad, {
+          passive: true,
+          once: true
+        });
+      });
+
+      setTimeout(() => {
+        if (!loaded) {
+          handleLoad();
+        }
+      }, 2000);
+    </script>
+
     <script type="module">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
@@ -830,272 +889,272 @@ const { title, description, image } = Astro.props;
   }
 
   .git-branch {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/git-branch.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/git-branch.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .calendar-days {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/calendar-days.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/calendar-days.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .star {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/star.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/star.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .heart {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/heart.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/heart.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .rocket {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/rocket.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/rocket.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask_repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .eye {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -3px;
-   background-color: currentColor;
-   --svg: url('/icons/eye.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -3px;
+    background-color: currentColor;
+    --svg: url("/icons/eye.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .github {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/github.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/github.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .linux {
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   margin-bottom: -2px;
-   background-color: currentColor;
-   --svg: url('/icons/linux.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -2px;
+    background-color: currentColor;
+    --svg: url("/icons/linux.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .microsoft {
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   margin-bottom: -2px;
-   background-color: currentColor;
-   --svg: url('/icons/microsoft.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -2px;
+    background-color: currentColor;
+    --svg: url("/icons/microsoft.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask_repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .apple {
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   margin-bottom: -2px;
-   background-color: currentColor;
-   --svg: url('/icons/apple.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -2px;
+    background-color: currentColor;
+    --svg: url("/icons/apple.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask_repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .download {
-   display: inline-block;
-   width: 20px;
-   height: 20px;
-   margin-bottom: -2px;
-   background-color: currentColor;
-   --svg: url('/icons/download.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-bottom: -2px;
+    background-color: currentColor;
+    --svg: url("/icons/download.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask_repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .clock {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/clock.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/clock.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .sd-card {
-   display: inline-block;
-   width: 24px;
-   height: 24px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/sd-card.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/sd-card.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .globe {
-   display: inline-block;
-   width: 22px;
-   height: 22px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/globe.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/globe.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .qr-code {
-   display: inline-block;
-   width: 22px;
-   height: 22px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/qr-code.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/qr-code.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .monitor {
-   display: inline-block;
-   width: 22px;
-   height: 22px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/monitor.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/monitor.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .android {
-   display: inline-block;
-   width: 22px;
-   height: 22px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/android.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/android.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 
   .user {
-   display: inline-block;
-   width: 22px;
-   height: 22px;
-   margin-bottom: -5px;
-   background-color: currentColor;
-   --svg: url('/icons/user.svg');
-   -webkit-mask-image: var(--svg);
-   mask-image: var(--svg);
-   -webkit-mask-repeat: no-repeat;
-   mask-repeat: no-repeat;
-   -webkit-mask-size: 100% 100%;
-   mask-size: 100% 100%;
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-bottom: -5px;
+    background-color: currentColor;
+    --svg: url("/icons/user.svg");
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
   }
 </style>
