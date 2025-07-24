@@ -5,48 +5,54 @@ import { Icon } from "astro-icon/components";
 
 async function fetchCounts() {
   const results = {};
-  
+
   async function fetchGitHub() {
     try {
-      const response = await fetch('https://api.github.com/users/wiilink24');
+      const response = await fetch("https://api.github.com/users/wiilink24");
       const data = await response.json();
       return data.followers || 0;
     } catch (error) {
-      console.error('GitHub Error:', error);
-      return 'Error';
+      console.error("GitHub Error:", error);
+      return "Error";
     }
   }
 
   async function fetchDiscord() {
     try {
-      const response = await fetch('https://discord.com/api/v9/invites/wiilink?with_counts=true');
+      const response = await fetch(
+        "https://discord.com/api/v9/invites/wiilink?with_counts=true"
+      );
       const data = await response.json();
       return data.approximate_member_count || 0;
     } catch (error) {
-      console.error('Discord Error:', error);
-      return 'Error';
+      console.error("Discord Error:", error);
+      return "Error";
     }
   }
 
   async function fetchYouTube() {
     try {
-      const response = await fetch('https://mixerno.space/api/youtube-channel-counter/user/UC_14J0EMfli2hVoBaQq0d3w');
+      const response = await fetch(
+        "https://mixerno.space/api/youtube-channel-counter/user/UC_14J0EMfli2hVoBaQq0d3w"
+      );
       const data = await response.json();
       return data.counts[0].count || 0;
     } catch (error) {
-      console.error('YouTube Error:', error);
-      return 'Error';
+      console.error("YouTube Error:", error);
+      return "Error";
     }
   }
 
   async function fetchBluesky() {
     try {
-      const response = await fetch('https://api-v2.nextcounts.com/api/bluesky/user/wiilink.ca');
+      const response = await fetch(
+        "https://api-v2.nextcounts.com/api/bluesky/user/wiilink.ca"
+      );
       const data = await response.json();
       return data.followers || 0;
     } catch (error) {
-      console.error('Bluesky Error:', error);
-      return 'Error';
+      console.error("Bluesky Error:", error);
+      return "Error";
     }
   }
 
@@ -66,21 +72,16 @@ async function fetchCounts() {
     };
   } catch (error) {
     return {
-      github: 'Error',
-      discord: 'Error',
-      youtube: 'Error',
-      bluesky: 'Error'
+      github: "Error",
+      discord: "Error",
+      youtube: "Error",
+      bluesky: "Error"
     };
   }
 }
 
 const counts = await fetchCounts();
 ---
-
-<script
-type="module"
-src="https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js"
-async></script>
 
 <div class="build">
   <div class="build-holder">
@@ -101,7 +102,8 @@ async></script>
         <div class="follow">
           <span
             style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-            class="badge bg-primary">{counts.bluesky} {t("socials.twFollowers")}</span
+            class="badge bg-primary"
+            >{counts.bluesky} {t("socials.twFollowers")}</span
           >
           <img
             loading="lazy"
@@ -152,297 +154,371 @@ async></script>
                   >
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+        <bsky-embed username="wiilink.ca" mode="dark" limit="5" loading="lazy">
+        </bsky-embed>
+      </div>
+      <div class="discord" style="border-radius:8px 16px 8px 8px;">
+        <div class="follow dsc">
+          <img
+            alt="Discord Logo"
+            loading="lazy"
+            class="socials-logo"
+            src="/img/discord_logo.webp"
+            height="30px"
+          />
+          <span
+            style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+            class="badge bg-info"
+            >{counts.discord} {t("socials.dcMembers")}</span
+          >
+          <div class="buttons">
+            <a href="https://discord.gg/wiilink" aria-label="Discord Link"
+              ><div
+                style="background-color:var(--bg-color-secondary); color:#004078;"
+                class="btn">
+                {t("socials.dcJoin")}
+              </div></a
+            >
+          </div>
+        </div>
+        <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
+          <iframe
+            loading="lazy"
+            title="Discord Widget"
+            src="https://discord.com/widget?id=206934458954153984&theme=dark"
+            style="top:-20px; position:absolute;"
+            width="100%"
+            height="580px"
+            allowtransparency="true"
+            frameborder="0"></iframe>
+        </div>
+        <img
+          alt="Loading..."
+          style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;"
+          src="img/loading.gif"
+          width="30px"
+        />
+      </div>
+      <div
+        class="social github-container"
+        style="border-radius:8px 8px 8px 16px;">
+        <div class="inner">
+          <Icon name="github" style="margin-bottom:8px;" />
+          <a href="https://github.com/WiiLink24" aria-label="GitHub Link"
+            ><span
+              style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+              class="badge bg-dark"
+              >{counts.github} {t("socials.ghFollowers")}</span
+            >
+            <div
+              style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
+              class="buttons">
+              <div
+                style="top:0; margin:0px; position:relative;"
+                class="btn bg-dark text-white">
+                {t("socials.ghFollow")}
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="social youtube" style="border-radius:8px 8px 16px 8px;">
+        <div class="inner">
+          <Icon
+            name="simple-icons:youtube"
+            style="color:rgb(206, 47, 47); margin-bottom:8px;"
+          /><a href="https://www.youtube.com/@wiilink" aria-label="YouTube Link"
+            ><span
+              style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
+              class="badge bg-danger"
+              >{counts.youtube} {t("socials.ytSubscribers")}</span
+            >
+            <div
+              style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
+              class="buttons">
+              <div
+                style="top:0; margin:0px; position:relative;"
+                class="btn bg-danger text-white">
+                {t("socials.ytSubscribe")}
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-    <bsky-embed username="wiilink.ca" mode="dark" limit="5" loading="lazy"> </bsky-embed>
-  </div>
-  <div class="discord" style="border-radius:8px 16px 8px 8px;">
-    <div class="follow dsc">
-      <img
-        alt="Discord Logo"
-        loading="lazy"
-        class="socials-logo"
-        src="/img/discord_logo.webp"
-        height="30px"
-      />
-      <span
-        style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-        class="badge bg-info">{counts.discord} {t("socials.dcMembers")}</span
-      >
-      <div class="buttons">
-        <a href="https://discord.gg/wiilink" aria-label="Discord Link"
-          ><div
-            style="background-color:var(--bg-color-secondary); color:#004078;"
-            class="btn">
-            {t("socials.dcJoin")}
-          </div></a
-        >
-      </div>
-    </div>
-    <div style="top:0; left:0; width:100%; z-index:1; position:absolute;">
-      <iframe
-        loading="lazy"
-        title="Discord Widget"
-        src="https://discord.com/widget?id=206934458954153984&theme=dark"
-        style="top:-20px; position:absolute;"
-        width="100%"
-        height="580px"
-        allowtransparency="true"
-        frameborder="0"></iframe>
-    </div>
-    <img
-      alt="Loading..."
-      style="top:50%; left:50%; transform:translate(-50%, -50%); z-index: 0; filter: brightness(1000%); position:absolute;"
-      src="img/loading.gif"
-      width="30px"
-    />
-  </div>
-  <div class="social github-container" style="border-radius:8px 8px 8px 16px;">
-    <div class="inner">
-      <Icon name="github" style="margin-bottom:8px;" />
-      <a href="https://github.com/WiiLink24" aria-label="GitHub Link"
-        ><span
-          style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-          class="badge bg-dark">{counts.github} {t("socials.ghFollowers")}</span
-        >
-        <div
-          style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
-          class="buttons">
-          <div
-            style="top:0; margin:0px; position:relative;"
-            class="btn bg-dark text-white">
-            {t("socials.ghFollow")}
-          </div>
-        </div>
-      </a>
-    </div>
-  </div>
-  <div class="social youtube" style="border-radius:8px 8px 16px 8px;">
-    <div class="inner">
-      <Icon name="simple-icons:youtube" style="color:rgb(206, 47, 47); margin-bottom:8px;" /><a
-        href="https://www.youtube.com/@wiilink"
-        aria-label="YouTube Link"
-        ><span
-          style="font-size:15px; top:50%; left:70px; transform:translate(0, -50%); position:absolute;"
-          class="badge bg-danger">{counts.youtube} {t("socials.ytSubscribers")}</span
-        >
-        <div
-          style="top:50%; margin-right:10px; transform:translate(0, -50%); height:60px;"
-          class="buttons">
-          <div
-            style="top:0; margin:0px; position:relative;"
-            class="btn bg-danger text-white">
-            {t("socials.ytSubscribe")}
-          </div>
-        </div>
-      </a>
-    </div>
+
+    <style>
+      .build-holder {
+        left: 50%;
+        transform: translate(-50%, 20px);
+        width: 95%;
+        max-width: 1500px;
+        padding-top: 30px;
+        position: relative;
+      }
+      .build-square {
+        width: 95%;
+        max-width: 350px;
+        box-shadow: 0px 5px 10px #00000020;
+        border: 2px solid rgb(255, 240, 240);
+        border-radius: 8px;
+        perspective: 500px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        padding: 15px;
+        min-height: 500px;
+        margin-bottom: 50px;
+        transition: 0.1s;
+        z-index: 1;
+        position: relative;
+      }
+      .dropdown-item {
+        color: white;
+        border-radius: 8px;
+        padding: 10px;
+      }
+      .dropdown-item:hover {
+        background-color: #ffffff10;
+        color: white;
+        transition: 0.3s;
+      }
+      .dropdown-toggle::after {
+        display: none;
+      }
+      .inner {
+        top: 50%;
+        left: 10px;
+        transform: translate(0, -50%);
+        position: relative;
+      }
+      .youtube {
+        border: 2px solid #ff3f3f;
+        color: #ff3f3f;
+        box-shadow: 0px 5px 10px #ff3f3f40;
+      }
+      .github-container {
+        border: 2px solid var(--color);
+        color: #121212;
+        box-shadow: 0px 5px 10px #12121240;
+      }
+
+      .social {
+        width: auto;
+        height: 80px;
+        font-size: 40px;
+        border-radius: 8px;
+        line-height: 50px;
+      }
+      .btn {
+        padding: 5px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-weight: 600;
+        margin-left: 5px;
+        background-color: #ffffff;
+        border-radius: 8px;
+        transition: 0.5s;
+      }
+      .btn:hover {
+        background-color: #a8a8a8;
+        filter: brightness(120%);
+        transition: 0.5s;
+      }
+      .buttons {
+        top: 50%;
+        right: 10px;
+        transform: translate(0, -50%);
+        position: absolute;
+      }
+      .socials-logo {
+        top: 50%;
+        left: 10px;
+        transform: translate(0, -50%);
+        position: relative;
+      }
+      .socials {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        gap: 15px;
+      }
+      .follow {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        z-index: 2;
+        background-color: #289bff;
+        position: sticky;
+      }
+      .twitter {
+        height: 500px;
+        border: 2px solid #289bff;
+        background-color: #1c1c1c;
+        box-shadow: 0px 5px 10px #289bff40;
+        border-radius: 8px;
+        overflow: scroll;
+        position: relative;
+      }
+      .twitter::-webkit-scrollbar {
+        display: none;
+      }
+      .dsc {
+        background-color: #004078;
+      }
+      .discord {
+        height: 500px;
+        border: 2px solid #004078;
+        background-color: #004078;
+        box-shadow: 0px 5px 10px #00407840;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+      .donator-holder {
+        top: -30px;
+        height: 100px;
+        max-width: 1480px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+      }
+      .build {
+        top: 300px;
+        position: relative;
+      }
+      .subtitle {
+        text-align: left;
+        margin-bottom: 20px;
+        font-size: 25px;
+      }
+      .title {
+        text-align: left;
+        width: 100%;
+        margin-bottom: 15px;
+        font-size: 50px;
+        font-family: Gilroy;
+        position: relative;
+      }
+
+      @media only screen and (max-width: 1000px) {
+        .socials {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 15px;
+        }
+
+        .follow {
+          top: 50%;
+          transform: translate(0, -50%);
+          position: absolute;
+        }
+
+        .title {
+          font-size: 40px;
+        }
+
+        iframe {
+          display: none;
+        }
+
+        bsky-embed {
+          display: none;
+        }
+
+        .build {
+          top: 400px;
+        }
+
+        .twitter {
+          height: 80px;
+          background-color: #289bff;
+          border-radius: 16px 16px 8px 8px !important;
+        }
+
+        .discord,
+        .github-container {
+          border-radius: 8px !important;
+        }
+
+        .discord {
+          height: 80px;
+        }
+
+        .youtube {
+          border-radius: 8px 8px 16px 16px !important;
+        }
+      }
+    </style>
+
+    <script>
+      // Lazy load Bluesky embed script
+      function loadBlueskyEmbed() {
+        if (document.querySelector('script[src*="bsky-embed"]')) {
+          return; // Already loaded
+        }
+
+        const script = document.createElement("script");
+        script.type = "module";
+        script.src =
+          "https://cdn.jsdelivr.net/npm/bsky-embed/dist/bsky-embed.es.js";
+        script.async = true;
+        document.head.appendChild(script);
+      }
+
+      // Load when user scrolls near the Bluesky embed
+      function setupIntersectionObserver() {
+        const bskyEmbed = document.querySelector("bsky-embed");
+        if (!bskyEmbed) return;
+
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                loadBlueskyEmbed();
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            rootMargin: "100px" // Load when element is 100px away from viewport
+          }
+        );
+
+        observer.observe(bskyEmbed);
+      }
+
+      // Initialize when DOM is ready
+      document.addEventListener("DOMContentLoaded", () => {
+        // Set up intersection observer for lazy loading
+        setupIntersectionObserver();
+
+        // Fallback: load on first user interaction
+        let interactionEvents = ["click", "scroll", "keydown", "touchstart"];
+        let loaded = false;
+
+        function handleInteraction() {
+          if (!loaded) {
+            loaded = true;
+            setTimeout(loadBlueskyEmbed, 1000); // Load after 1 second of interaction
+            interactionEvents.forEach(event => {
+              document.removeEventListener(event, handleInteraction);
+            });
+          }
+        }
+
+        interactionEvents.forEach(event => {
+          document.addEventListener(event, handleInteraction, {
+            passive: true,
+            once: true
+          });
+        });
+      });
+    </script>
   </div>
 </div>
-
-<style>
-  .build-holder {
-    left: 50%;
-    transform: translate(-50%, 20px);
-    width: 95%;
-    max-width: 1500px;
-    padding-top: 30px;
-    position: relative;
-  }
-  .build-square {
-    width: 95%;
-    max-width: 350px;
-    box-shadow: 0px 5px 10px #00000020;
-    border: 2px solid rgb(255, 240, 240);
-    border-radius: 8px;
-    perspective: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    gap: 50px;
-    padding: 15px;
-    min-height: 500px;
-    margin-bottom: 50px;
-    transition: 0.1s;
-    z-index: 1;
-    position: relative;
-  }
-  .dropdown-item {
-    color: white;
-    border-radius: 8px;
-    padding: 10px;
-  }
-  .dropdown-item:hover {
-    background-color: #ffffff10;
-    color: white;
-    transition: 0.3s;
-  }
-  .dropdown-toggle::after {
-    display: none;
-  }
-  .inner {
-    top: 50%;
-    left: 10px;
-    transform: translate(0, -50%);
-    position: relative;
-  }
-  .youtube {
-    border: 2px solid #ff3f3f;
-    color: #ff3f3f;
-    box-shadow: 0px 5px 10px #ff3f3f40;
-  }
-  .github-container {
-    border: 2px solid var(--color);
-    color: #121212;
-    box-shadow: 0px 5px 10px #12121240;
-  }
-
-  .social {
-    width: auto;
-    height: 80px;
-    font-size: 40px;
-    border-radius: 8px;
-    line-height: 50px;
-  }
-  .btn {
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 600;
-    margin-left: 5px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    transition: 0.5s;
-  }
-  .btn:hover {
-    background-color: #a8a8a8;
-    filter: brightness(120%);
-    transition: 0.5s;
-  }
-  .buttons {
-    top: 50%;
-    right: 10px;
-    transform: translate(0, -50%);
-    position: absolute;
-  }
-  .socials-logo {
-    top: 50%;
-    left: 10px;
-    transform: translate(0, -50%);
-    position: relative;
-  }
-  .socials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    gap: 15px;
-  }
-  .follow {
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60px;
-    z-index: 2;
-    background-color: #289bff;
-    position: sticky;
-  }
-  .twitter {
-    height: 500px;
-    border: 2px solid #289bff;
-    background-color: #1c1c1c;
-    box-shadow: 0px 5px 10px #289bff40;
-    border-radius: 8px;
-    overflow: scroll;
-    position: relative;
-  }
-  .twitter::-webkit-scrollbar {
-    display: none;
-  }
-  .dsc {
-    background-color: #004078;
-  }
-  .discord {
-    height: 500px;
-    border: 2px solid #004078;
-    background-color: #004078;
-    box-shadow: 0px 5px 10px #00407840;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-  }
-  .donator-holder {
-    top: -30px;
-    height: 100px;
-    max-width: 1480px;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-  }
-  .build {
-    top: 300px;
-    position: relative;
-  }
-  .subtitle {
-    text-align: left;
-    margin-bottom: 20px;
-    font-size: 25px;
-  }
-  .title {
-    text-align: left;
-    width: 100%;
-    margin-bottom: 15px;
-    font-size: 50px;
-    font-family: Gilroy;
-    position: relative;
-  }
-
-  @media only screen and (max-width: 1000px) {
-    .socials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 15px;
-    }
-
-    .follow {
-      top: 50%;
-      transform: translate(0, -50%);
-      position: absolute;
-    }
-
-    .title {
-      font-size: 40px;
-    }
-
-    iframe {
-      display: none;
-    }
-
-    bsky-embed {
-      display: none;
-    }
-
-    .build {
-      top: 400px;
-    }
-
-    .twitter {
-      height: 80px;
-      background-color: #289bff;
-      border-radius: 16px 16px 8px 8px !important;
-    }
-
-    .discord,
-    .github-container {
-      border-radius: 8px !important;
-    }
-
-    .discord {
-      height: 80px;
-    }
-
-    .youtube {
-      border-radius: 8px 8px 16px 16px !important;
-    }
-  }
-</style>
