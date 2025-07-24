@@ -25,7 +25,6 @@ async function fetchHero() {
   try {
     const response = await fetch(fetcher);
     const responseText = await response.text();
-    console.log(responseText);
     const data = JSON.parse(responseText);
     return data.hero || {};
   } catch (error) {
