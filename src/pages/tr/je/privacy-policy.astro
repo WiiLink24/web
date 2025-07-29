@@ -1,0 +1,290 @@
+---
+import { changeLanguage } from "i18next";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+changeLanguage("tr");
+---
+
+<Layout
+  title="Food Channel Just Eat - Privacy Policy"
+  description="Learn about the privacy policy for using the Food Channel Just Eat service."
+  image="/img/branding_bg.webp">
+  <Header isGuide="display:none;" />
+  
+  <div class="privacy-container">
+    <div class="privacy-content">
+              <span style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 1rem;">
+      <img src="/img/demaebanner.webp" alt="JustEat Banner" style="height:80px; margin-bottom:28px;"/>
+      <h1>Privacy Policy for Food Channel JustEat</h1>
+        <p style="text-align: center; font-size: 0.9rem; color: var(--color);">
+            Last updated: July 29, 2025
+        </p>
+        </span>
+      
+      <section class="privacy-section">
+        <div class="subsection">
+          <h3>Information We Collect</h3>
+          <p>When you use Food Channel, we collect the following personal data via your WiiLink account and our payment interface:</p>
+          <ul class="data-list">
+            <li><strong>Delivery Location:</strong> Your full address or location where you want food delivered.</li>
+            <li><strong>Order Data:</strong> Details of what you ordered (items, quantity, restaurant, etc.).</li>
+            <li><strong>Payment Token:</strong> A reference (token) from PayPal confirming your payment. We do not collect or store your PayPal login or full credit card details.</li>
+            <li><strong>Personal Identity:</strong> Your full name, email address, and any other information you entered into your WiiLink account profile.</li>
+            <li><strong>Support Data:</strong> Any messages or chat transcripts you send in our Discord support channels, if you use them.</li>
+          </ul>
+          <p>All of this data is used solely to process and fulfill your order. The precise location data is needed to find nearby restaurants. Your payment token is required to verify the PayPal payment for that order. We keep this data only as long as necessary to complete the order, minus support messages which are stored indefinitely.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Data Retention and Deletion</h3>
+          <p>We immediately delete all temporary order information (location, order details, PayPal token) once the payment is successfully completed and the restaurant has accepted the order. This means that after each transaction, only your registered name and email remain in our system to maintain your account. As an example of best practice, other services state they "will only keep a payment token to process your payment"; we similarly delete all such transactional tokens promptly. In short: we do not retain your location, order or payment details longer than needed. You may delete your account at any time (via the WiiLink interface or by contacting us) which removes all your stored data.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Use of Your Data</h3>
+          <p>We use your information only to:</p>
+          <ul class="data-list">
+            <li>Place and track your order through JustEat.</li>
+            <li>Process your payment via PayPal.</li>
+            <li>Provide support (e.g., answering your queries on Discord).</li>
+          </ul>
+          <p>We do not use your data for marketing, nor do we share or sell it to advertisers or other third parties. Except for PayPal and delivery services, no external party receives your personal details from us. We operate our own servers ("no third-party servers") and keep your data in-house for maximum privacy.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Security</h3>
+          <p>We implement reasonable security measures to protect your data. However, no system is perfectly secure, so you acknowledge the inherent risks of Internet and homebrew usage. Use strong, unique passwords for your WiiLink account and your PayPal account. We follow WiiLink's approach of commitment to privacy: "We are committed to protecting the privacy and security of your personal information". Data is transmitted over secure channels when possible.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Cookies and Tracking</h3>
+          <p>Our web UI uses minimal cookies for session management only. We do not engage in behavioral tracking or profiling. We rely on PayPal's own secure flow for payment authentication.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Third-Party Services</h3>
+          <p>We integrate with PayPal for payments, JustEat for restaurant ordering, and Discord for support. These services have their own privacy policies. For example, PayPal handles your credit card or PayPal account data directly. We only see a token confirming payment, which we delete. We have no control over these third-party data practices, but we do not share your data with any other third parties.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Children's Privacy</h3>
+          <p>Users under 16 should only use this service with parental guidance. We do not knowingly collect personal data from children under 13. If we learn that we have inadvertently collected data from a child under 13, we will delete it immediately.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Your Rights</h3>
+          <p>Depending on your jurisdiction, you may have rights to access, correct, or delete your personal data. We honor such requests to the extent required by law. To request deletion of your data or for any privacy inquiries, please contact us via our support channels. Specifically, as stated in our support terms, you can join the WiiLink Discord and ask for data deletion or help. You may also email support. We will respond to legitimate requests within a reasonable timeframe, though we note that support is provided on a case-by-case basis.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Retention of Account Data</h3>
+          <p>Even after you stop ordering, your WiiLink account (name and email) is retained until you delete it. This allows you to log in later to place new orders without re-entering information. If you wish, you can delete your account by contacting us on Discord or via email, and we will remove your profile and personal data (email and name) from our system.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>International Use</h3>
+          <p>The service is available globally. We store and process your data on our servers in Canada. By using the service, you consent to transferring data to Canada and processing it under Canadian privacy laws.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Policy Updates</h3>
+          <p>We may update this Privacy Policy over time (for example, to comply with new laws). The latest version is always available in the Food Channel and on our website. Changes become effective immediately upon posting. By continuing to use the service, you agree to the updated policy.</p>
+        </div>
+
+        <div class="subsection">
+          <h3>Contact</h3>
+          <p>For any questions or requests about privacy, data access or deletion, please join our official Discord server and post in the "support" channel, or send an email to our support team. Our support staff will assist you. Please do not share sensitive data in Discord chat; use private messages or email if needed.</p>
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <h2>Summary of Privacy Points</h2>
+        <ul class="summary-list">
+          <li>We collect location, order details, payment token, name, and email to fulfill orders.</li>
+          <li>All temporary data (location, order, payment token) is deleted once an order is paid.</li>
+          <li>We retain only your name and email (to identify your account) until you delete your account.</li>
+          <li>We do not share your personal data with advertisers or unrelated third parties.</li>
+          <li>You can request data deletion or help via our Discord support (as outlined in the WiiLink guidelines).</li>
+          <li>The service is governed by Canadian law, and we comply with its privacy requirements.</li>
+        </ul>
+        <p class="consent-text">By using Food Channel and providing your information, you consent to the data practices described above. We are committed to safeguarding your privacy while making the food-ordering process as convenient as possible.</p>
+      </section>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .privacy-container {
+    min-height: 100vh;
+    padding: 80px 20px 40px;
+    background: var(--bg-color);
+    color: var(--color);
+  }
+
+  .privacy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: 'Gilroy', sans-serif;
+  }
+
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--accent-color, #289bff);
+    margin: 2.5rem 0 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+    font-family: 'Gilroy', sans-serif;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color);
+    margin: 1.5rem 0 1rem;
+    font-family: 'Gilroy', sans-serif;
+  }
+
+  .privacy-section {
+    margin-bottom: 3rem;
+  }
+
+  .subsection p:last-child {
+    margin-bottom: 0;
+  }
+
+  .data-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  .data-list li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .data-list li::before {
+    content: "•";
+    color: #4ade80;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .data-list strong {
+    color: var(--accent-color, #289bff);
+    font-weight: 600;
+  }
+
+  .summary-section {
+    background: var(--bg-color-secondary);
+    padding: 2rem;
+    padding-top: 0rem;
+    border-radius: 16px;
+    border: 2px solid var(--border-color);
+    margin-top: 3rem;
+  }
+
+  .summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+  }
+
+  .summary-list li {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .summary-list li::before {
+    content: "✓";
+    color: #4ade80;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  .summary-list li:last-child {
+    border-bottom: none;
+  }
+
+  .consent-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    color: #4ade80;
+    margin-top: 2rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 8px;
+    border: 2px solid #4ade80;
+  }
+
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .privacy-container {
+      padding: 60px 15px 30px;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+    }
+
+    .subsection {
+      padding: 1rem;
+    }
+
+    .summary-section {
+      padding: 1.5rem;
+    }
+
+    .subsection p {
+      text-align: left;
+    }
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 1.75rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+    }
+
+    .subsection {
+      padding: 0.75rem;
+    }
+
+    .summary-section {
+      padding: 1rem;
+    }
+  }
+</style>
