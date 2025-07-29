@@ -45,7 +45,7 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 
 </br>
 
-If you know which channels you need to update, select `Custom Setup` and follow the steps below. If you're migrating from RiiConnect24, or otherwise don't know whichbchannels need updating, use `Express Setup`.
+If you know which channels you need to update, select `Custom Setup` and follow the steps below. If you're migrating from RiiConnect24, or otherwise don't know which channels need updating, use `Express Setup`.
 
 </br>
 
