@@ -4,7 +4,6 @@ import astroI18next from "astro-i18next";
 import partytown from "@astrojs/partytown";
 import sitemap from '@astrojs/sitemap';
 import icon from "astro-icon";
-import compress from "@playform/compress";
 
 export default defineConfig({
   site: "https://wiilink.ca",

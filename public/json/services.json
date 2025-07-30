@@ -10,7 +10,7 @@
         "status": "Full Release",
         "icon": "forecast_icon.webp",
         "todo": "<span class='circle-check'></span> The service is working properly!",
-        "completed": "95"
+        "completed": "100"
       },
       {
         "color": "#0C9228",
@@ -32,7 +32,7 @@
         "status": "Full Release",
         "icon": "nintendo_icon.webp",
         "todo": "<span class='circle-check'></span> The service is working properly!",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#F1E3C1",
@@ -43,7 +43,7 @@
         "status": "Full Release",
         "icon": "miicontest_icon.webp",
         "todo": "<span class='circle-check'></span> The service is working properly!",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#283688",
@@ -54,7 +54,7 @@
         "status": "Full Release",
         "icon": "democracy_icon.webp",
         "todo": "<span class='circle-check'></span> The service is working properly!",
-        "completed": "80"
+        "completed": "100"
       },
       {
         "color": "#d4a80b",
@@ -65,7 +65,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "demae_icon.webp",
-        "completed": "90"
+        "completed": "80"
       },
       {
         "color": "#173de8",
@@ -87,7 +87,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "kirby_icon.webp",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#00FFF8",
@@ -96,9 +96,9 @@
         "link": "/guide/digicam",
         "isArea": "Originally Japan exclusive",
         "status": "Full Release",
-        "todo": "<span class='circle-check'></span> The service is working properly! <br><br> Sending cards to email is currently not working.",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "digicam_icon.webp",
-        "completed": "75"
+        "completed": "80"
       },
       {
         "color": "#05AAF8",
@@ -109,7 +109,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "room_icon.webp",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
@@ -153,7 +153,7 @@
         "status": "Private Beta",
         "todo": "<span class='circle-help'></span> You can access this service by donating on our Stripe!",
         "icon": "",
-        "completed": "70"
+        "completed": "75"
       }
     ]
   }
