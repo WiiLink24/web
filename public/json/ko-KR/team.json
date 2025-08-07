@@ -3,7 +3,7 @@
     "member": [
       {
         "name": "Sketch",
-        "title": "<img src='/icons/crown.svg' style='margin-bottom:10px;'/> Team Lead",
+        "title": "<img src='/icons/crown.svg' style='margin-bottom:10px;'/> 팀장",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/yGVq4D9.png",
         "link": "https://github.com/noahpistilli",
@@ -11,7 +11,7 @@
       },
       {
         "name": "LunaValoäa",
-        "title": "Manager / Translator",
+        "title": "관리자 / 번역가",
         "color": "#FDB0C0",
         "pfp": "https://i.imgur.com/a3bzNPn.png",
         "link": "https://www.youtube.com/@LunaValoaa",
@@ -19,7 +19,7 @@
       },
       {
         "name": "Alex",
-        "title": "Developer / Designer",
+        "title": "개발자 / 디자이너",
         "color": "#5e97f2",
         "pfp": "https://i.imgur.com/cD6iFoq.png",
         "link": "https://github.com/Humanoidear",
@@ -27,7 +27,7 @@
       },
       {
         "name": "Palapeli",
-        "title": "Developer",
+        "title": "개발자",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/REE7fcy.png",
         "link": "https://github.com/mkwcat",
@@ -35,7 +35,7 @@
       },
       {
         "name": "giustino",
-        "title": "Developer",
+        "title": "개발자",
         "color": "#05ffb8",
         "pfp": "https://i.imgur.com/kOnzxx5.png",
         "link": "https://github.com/ed0nkey",
@@ -43,7 +43,7 @@
       },
       {
         "name": "oscie",
-        "title": "Developer / Manager",
+        "title": "개발자 / 관리자",
         "color": "#7289da",
         "pfp": "https://i.imgur.com/t3kmziO.png",
         "link": "https://github.com/oscie57",
@@ -51,7 +51,7 @@
       },
       {
         "name": "diego",
-        "title": "Translator (CA, ES, ZH)",
+        "title": "번역가 (카탈루냐어, 스페인어, 중국어)",
         "color": "#fc5a4e",
         "pfp": "https://i.imgur.com/XBY7Tyu.png",
         "link": "https://twitter.com/korewadiego",
@@ -59,7 +59,7 @@
       },
       {
         "name": "Matthe815",
-        "title": "LinkTag Developer",
+        "title": "링크태그 개발자",
         "color": "#4858a8",
         "pfp": "https://i.imgur.com/KTAt2o5.png",
         "link": "https://matthe815.dev/",
@@ -67,7 +67,7 @@
       },
       {
         "name": "kouacc",
-        "title": "Translator (French)",
+        "title": "번역가 (프랑스어)",
         "color": "#1389a1",
         "pfp": "https://i.imgur.com/OAaSXtn.png",
         "link": "https://github.com/kouacc",
@@ -75,7 +75,7 @@
       },
       {
         "name": "NecroNova",
-        "title": "Content Curator",
+        "title": "콘텐츠 큐레이터",
         "color": "#ff1dce",
         "pfp": "https://i.imgur.com/eNhJ6hc.jpg",
         "link": "https://github.com/NecroNovaVGitHub",
@@ -83,7 +83,7 @@
       },
       {
         "name": "bendevnull",
-        "title": "LinkTag Creator",
+        "title": "링크태크 제작자",
         "color": "#5ef2b0",
         "pfp": "https://i.imgur.com/KQD481c.png",
         "link": "https://github.com/bennyman123abc",
@@ -91,7 +91,7 @@
       },
       {
         "name": "ZAZiOs",
-        "title": "Translator (Russian)",
+        "title": "번역가 (러시아어)",
         "color": "#1c1c1c",
         "pfp": "https://i.imgur.com/6QH1xal.png",
         "link": "https://www.youtube.com/@zazios",
@@ -99,7 +99,7 @@
       },
       {
         "name": "Deoku64",
-        "title": "Translator (JP/DEU)",
+        "title": "번역가 (일본어/독일어)",
         "color": "#abc9ff",
         "pfp": "https://i.imgur.com/0LlgO2g.jpg",
         "link": "https://www.youtube.com/@Deoku64",
@@ -107,7 +107,7 @@
       },
       {
         "name": "Philemax",
-        "title": "Translator (FR, JP)",
+        "title": "번역가 (프랑스어, 일본어)",
         "color": "#45c40c",
         "pfp": "https://i.imgur.com/ONbvAAu.png",
         "link": "https://www.youtube.com/@Philemax/",
@@ -115,7 +115,7 @@
       },
       {
         "name": "Jinjo",
-        "title": "Translator (BR. PT)",
+        "title": "번역가 (브라질 포르투갈어)",
         "color": "#6a329f",
         "pfp": "https://i.imgur.com/VH3FeHN.png",
         "link": "https://twitter.com/JinjoGuy",
@@ -123,7 +123,7 @@
       },
       {
         "name": "rubinho146",
-        "title": "Translator (PT. PT)",
+        "title": "번역가 (포르투갈 포르투갈어)",
         "color": "#FB5D35",
         "pfp": "https://i.imgur.com/ZDghpDL.jpg",
         "link": "https://www.youtube.com/user/rubinho146",
@@ -131,7 +131,7 @@
       },
       {
         "name": "PablosCorner",
-        "title": "Developer",
+        "title": "개발자",
         "color": "#efc86f",
         "pfp": "https://i.imgur.com/8tgMXv7.png",
         "link": "https://github.com/PablosCorner",
@@ -139,7 +139,7 @@
       },
       {
         "name": "shoko",
-        "title": "Developer",
+        "title": "개발자",
         "color": "#81f777",
         "pfp": "https://i.imgur.com/iJaTN3U.png",
         "link": "https://youtube.com/@sh0ko64",
@@ -147,7 +147,7 @@
       },
       {
         "name": "grunt22fox",
-        "title": "Staff and Manager",
+        "title": "사원 및 관리자",
         "color": "#34ebff",
         "pfp": "https://i.imgur.com/0nR5F9m.png",
         "link": "https://www.doesn0texist.tech/",
@@ -155,7 +155,7 @@
       },
       {
         "name": "Snare-Hawk",
-        "title": "Staff",
+        "title": "사원",
         "color": "#1bcf9a",
         "pfp": "https://i.imgur.com/ztLAFMt.jpg",
         "link": "https://snare-hawk.carrd.co/",
@@ -163,7 +163,7 @@
       },
       {
         "name": "Citrus Wolf",
-        "title": "Head of Moderation / Content Curation",
+        "title": "중재 책임자 / 콘텐츠 큐레이터",
         "color": "#ffda76",
         "pfp": "https://i.imgur.com/IXphSN7.png",
         "link": "https://twitter.com/WolfCitrus",
@@ -171,7 +171,7 @@
       },
       {
         "name": "Jess Williamson",
-        "title": "Translator (Japanese)",
+        "title": "번역가 (일본어)",
         "color": "#66cdaa",
         "pfp": "https://i.imgur.com/IeOy0yO.jpg",
         "link": "https://instagram.com/jessdoesvids",
@@ -179,7 +179,7 @@
       },
       {
         "name": "GamerKGR",
-        "title": "Music Composer",
+        "title": "음악 작곡가",
         "color": "#40E0D0",
         "pfp": "https://i.imgur.com/j9HUUiv.png",
         "link": "https://gamerkgr.neocities.org/",
@@ -187,7 +187,7 @@
       },
       {
         "name": "ryaltheamazing",
-        "title": "Social Media",
+        "title": "소셜 미디어",
         "color": "#ed3939",
         "pfp": "https://i.imgur.com/fY4S9H3.png",
         "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
@@ -195,7 +195,7 @@
       },
       {
         "name": "dhtdht020",
-        "title": "Tooling Developer",
+        "title": "도구 개발자",
         "color": "#00AAAA",
         "pfp": "https://i.imgur.com/7f4mg92.png",
         "link": "https://twitter.com/dhtdht020",
@@ -203,7 +203,7 @@
       },
       {
         "name": "Jau__CR",
-        "title": "Translator (European Spanish, Valencian)",
+        "title": "번역가 (유럽 스페인어, 발렌시아어)",
         "color": "#a68a7d",
         "pfp": "https://i.imgur.com/tbBzDRO.jpg",
         "link": "https://twitter.com/Jau__CR",
