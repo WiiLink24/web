@@ -3,13 +3,13 @@
     "goodie": [
       {
         "title": "<span class='palette'></span> 브랜딩 요소",
-        "desc": "외부 사용을 위한 브랜딩 요소!",
+        "desc": "외부 사용을 위한 브랜딩 요소예요!",
         "img": "/img/branding_bg.webp",
         "link": "/extras/branding"
       },
       {
         "title": "<span class='image'></span> 배경화면",
-        "desc": "PC를 위한 배경화면!",
+        "desc": "PC를 위한 배경화면이예요!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
       },
@@ -33,19 +33,19 @@
       },
       {
         "title": "<span class='paintbrush'></span> WiiLink 테마",
-        "desc": "Wii를 위한 멋진 테마!",
+        "desc": "Wii를 위한 멋진 테마예요!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
         "title": "<span class='wifi'></span> WiiLink WFC",
-        "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스!",
+        "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스예요!",
         "img": "/img/guidebg-1.webp",
         "link": "https://wfc.wiilink24.com"
       },
       {
         "title": "<span class='gamepad-2'></span> Wii 리모컨 테스트",
-        "desc": "Wii 리모컨을 테스트하기 위한 간단한 페이지",
+        "desc": "Wii 리모컨을 테스트하기 위한 간단한 페이지예요",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
@@ -57,13 +57,13 @@
       },
       {
         "title": "<span class='image'></span> 사진 채널 꿀팁",
-        "desc": "빠른 결과를 받기 위한 사진!",
+        "desc": "빠른 결과를 받기 위한 사진이예요!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
         "title": "<span class='cat'></span> 뉴스냥",
-        "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스!",
+        "desc": "실험 중인 닌텐도 Wi-Fi 커넥션 서비스예요!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
       }
