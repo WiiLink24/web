@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: download
-pubDate: 2025-06-25
+pubDate: 2025-09-05
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -83,10 +83,7 @@ Please wait a moment for the patcher to download and patch the files on your dev
 4. If you have chosen to install regional channels, navigate to the `WAD` folder inside the `WiiLink` folder on your device, and select to install `WiiLink Address Settings.wad` before anything else.
 5. Repeat the process to install all other WADs.
 6. Navigate to `Options` > `Configuration` > `Wii`, and ensure `Enable WiiConnect24 via WiiLink` is enabled.
-7. Head to `File` > `Open`, and navigate to the folder where you ran the patcher.
-8. Navigate to `apps` > `Mail-Patcher`, and open `boot.dol`.
-9. Wait for patching to complete, then press `HOME` / `Enter` to exit the patcher.
-10. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. If it tells you that WiiConnect24 isn't being offered in your region, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U). Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](/eula).
+7. Load the Wii System Menu (`Tools` > `Load Wii System Menu`), then navigate to `Wii Options` (Wii logo in bottom left corner) > `Wii Settings` > `WiiConnect24`, and accept the EULA. If it tells you that WiiConnect24 isn't being offered in your region, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U). Note that, while this will display Nintendo's EULA, by using WiiLink services you agree to our EULA, which can be found [here](/eula).
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">
