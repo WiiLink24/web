@@ -122,6 +122,25 @@ const { isMain } = Astro.props;
           ))
         }
         <hr style="border-top: 1px solid var(--border-color);" />
+        <div class="post" style="padding:8px; border-radius:4px;">
+          <a href="/news/forming-links" style="display:flex; flex-direction:row; align-items:center; gap:18px;" aria-label="Forming Links News Link">
+            <Icon
+              name="lucide:mail-open"
+              style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+            />
+            <span>
+              <b
+                style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                Forming Links
+              </b>
+              <div
+                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                Becca interviews the people behind WiiLink
+              </div>
+            </span>
+          </a>
+        </div>
+        <hr style="border-top: 1px solid var(--border-color);" />
         <div
           style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
           <Icon
@@ -302,797 +321,794 @@ const { isMain } = Astro.props;
         aria-label="WiiLink WFC Link"
         ><div><Icon name="wifi" style="margin-bottom:5px;" /> WiiLink WFC</div>
       </a>
-        <div class="wiilink-data-container">
-          <div class="wiilink-data-button">
-            <span style="display:flex; flex-direction:row; align-items:center; gap:8px;">
+      <div class="wiilink-data-container">
+        <div class="wiilink-data-button">
+          <span
+            style="display:flex; flex-direction:row; align-items:center; gap:8px;">
             <Icon name="lucide:database" /> WiiLink Data
-            </span>
-            <Icon
-              name="lucide:chevron-down"
-              class="chevron-icon"
-              style="margin-left:auto; font-size:16px;"
-            />
-          </div>
-          <div class="wiilink-data-dropdown">
-            <a
-              href="https://miicontest.wiilink.ca"
-              class="dropdown-subitem"
-              aria-label="CMOC Viewing Tool Link">
-              <Icon name="lucide:users" /> Check Mii Out
-              Channel
-            </a>
-            <a
-              href="https://evc.wiilink.ca"
-              class="dropdown-subitem"
-              aria-label="EVC Viewing Tool Link">
-              <Icon name="chart-no-axes-column" /> Everybody
-              Votes Channel
-            </a>
-            <a
-              href="http://panel.vtp.wiilink24.com/thepollbooth/suggestions"
-              class="dropdown-subitem"
-              aria-label="EVC Suggestions Link">
-              <Icon name="circle-help" /> EVC
-              Suggestions
-            </a>
-            <a
-              href="https://prod.wiilink24.com/theunderground/votes"
-              class="dropdown-subitem"
-              aria-label="Wii Room Votes Link">
-              <Icon name="lucide:house" /> Wii Room Votes
-            </a>
-          </div>
+          </span>
+          <Icon
+            name="lucide:chevron-down"
+            class="chevron-icon"
+            style="margin-left:auto; font-size:16px;"
+          />
         </div>
-        <!-- <a
+        <div class="wiilink-data-dropdown">
+          <a
+            href="https://miicontest.wiilink.ca"
+            class="dropdown-subitem"
+            aria-label="CMOC Viewing Tool Link">
+            <Icon name="lucide:users" /> Check Mii Out Channel
+          </a>
+          <a
+            href="https://evc.wiilink.ca"
+            class="dropdown-subitem"
+            aria-label="EVC Viewing Tool Link">
+            <Icon name="chart-no-axes-column" /> Everybody Votes Channel
+          </a>
+          <a
+            href="http://panel.vtp.wiilink24.com/thepollbooth/suggestions"
+            class="dropdown-subitem"
+            aria-label="EVC Suggestions Link">
+            <Icon name="circle-help" /> EVC Suggestions
+          </a>
+          <a
+            href="https://prod.wiilink24.com/theunderground/votes"
+            class="dropdown-subitem"
+            aria-label="Wii Room Votes Link">
+            <Icon name="lucide:house" /> Wii Room Votes
+          </a>
+        </div>
+      </div>
+      <!-- <a
           class="dropdown-item"
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://tag.rc24.xyz/"
           aria-label="LinkTag"
           ><div><Icon name="lucide:tag" style="margin-bottom:5px;" /> LinkTag</div></a
         > -->
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://card.wiilink24.com/"
+        aria-label="Digicard"
+        ><div>
+          <Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard
+        </div></a
+      >
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href="https://stamp.wiilink.ca/"
+        aria-label="Mii Stamp Generator"
+        ><div>
+          <Icon name="lucide:stamp" style="margin-bottom:5px;" /> Mii Stamp Generator
+        </div></a
+      >
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <div
+        style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
         <a
-          class="dropdown-item"
-          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-          href="https://card.wiilink24.com/"
-          aria-label="Digicard"
-          ><div>
-            <Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard
-          </div></a
+          href="https://bookmark.rc24.xyz"
+          style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
+          aria-label="Wii Bookmarks"
+          title="Wii Bookmarks"
+          ><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
         >
         <a
-          class="dropdown-item"
-          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-          href="https://stamp.wiilink.ca/"
-          aria-label="Mii Stamp Generator"
-          ><div>
-            <Icon name="lucide:stamp" style="margin-bottom:5px;" /> Mii Stamp Generator
-          </div></a
-        >
-        <hr
-          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-        />
-        <div
-          style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
-          <a
-            href="https://bookmark.rc24.xyz"
-            style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Wii Bookmarks"
-            title="Wii Bookmarks"
-            ><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://disc.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-            title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-            ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://interviews.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Nintendo dev interviews"
-            title="Nintendo dev interviews"
-            ><Icon name="message-circle" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://wiiremote.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Get the date your Wii Remote was manufactured."
-            title="Get the date your Wii Remote was manufactured."
-            ><Icon name="gamepad-2" style="margin-bottom:3px;" /></a
-          >
-        </div>
-        <hr
-          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-        />
-        <a
-          class="dropdown-item"
-          href={localizePath("/privacy-policy")}
-          aria-label="Privacy Policy Link"
-          ><Icon name="lucide:shield" style="margin-bottom:3px;" />
-          {t("header.privacyPolicy")}</a
+          href="http://disc.rc24.xyz/"
+          style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+          aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+          title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
+          ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
         >
         <a
-          class="dropdown-item"
-          href={localizePath("/tos")}
-          aria-label="Terms of Service Link"
-          ><Icon name="lucide:feather" style="margin-bottom:3px;" />
-          {t("header.tos")}</a
+          href="http://interviews.rc24.xyz/"
+          style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
+          aria-label="Nintendo dev interviews"
+          title="Nintendo dev interviews"
+          ><Icon name="message-circle" style="margin-bottom:3px;" /></a
         >
         <a
-          class="dropdown-item"
-          href={localizePath("/eula")}
-          aria-label="EULA Link"
-          ><Icon name="lucide:book" style="margin-bottom:3px;" />
-          {t("header.eula")}</a
+          href="http://wiiremote.rc24.xyz/"
+          style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
+          aria-label="Get the date your Wii Remote was manufactured."
+          title="Get the date your Wii Remote was manufactured."
+          ><Icon name="gamepad-2" style="margin-bottom:3px;" /></a
         >
-        <hr
-          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-        />
-        <div
-          style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-          <button
-            id="themeColor"
+      </div>
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <a
+        class="dropdown-item"
+        href={localizePath("/privacy-policy")}
+        aria-label="Privacy Policy Link"
+        ><Icon name="lucide:shield" style="margin-bottom:3px;" />
+        {t("header.privacyPolicy")}</a
+      >
+      <a
+        class="dropdown-item"
+        href={localizePath("/tos")}
+        aria-label="Terms of Service Link"
+        ><Icon name="lucide:feather" style="margin-bottom:3px;" />
+        {t("header.tos")}</a
+      >
+      <a
+        class="dropdown-item"
+        href={localizePath("/eula")}
+        aria-label="EULA Link"
+        ><Icon name="lucide:book" style="margin-bottom:3px;" />
+        {t("header.eula")}</a
+      >
+      <hr
+        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+      />
+      <div
+        style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+        <button
+          id="themeColor"
+          type="button"
+          class="btn btn-light dropdown-element"
+          aria-label="Theme Button"
+          onclick="themeToggle()"
+          ><Icon name="lucide:moon" style="pointer-events:none;" /></button
+        >
+        <a href={localizePath("/")} aria-label="Home Link"
+          ><button
             type="button"
-            class="btn btn-light dropdown-element"
-            aria-label="Theme Button"
-            onclick="themeToggle()"
-            ><Icon name="lucide:moon" style="pointer-events:none;" /></button
-          >
-          <a href={localizePath("/")} aria-label="Home Link"
-            ><button
-              type="button"
-              class="btn btn-success dropdown-element"
-              aria-label="Download Button"
-              ><Icon
-                name="download"
-                style="color:white !important; margin-bottom:3px;"
-              /></button
-            ></a
-          >
-          <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-            ><button
-              type="button"
-              class="btn btn-primary dropdown-element"
-              aria-label="Discord Button"
-              ><Icon
-                name="discord"
-                style="color:white !important; margin-bottom:3px;"
-              /></button
-            ></a
-          >
-        </div>
-      </a>
+            class="btn btn-success dropdown-element"
+            aria-label="Download Button"
+            ><Icon
+              name="download"
+              style="color:white !important; margin-bottom:3px;"
+            /></button
+          ></a
+        >
+        <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
+          ><button
+            type="button"
+            class="btn btn-primary dropdown-element"
+            aria-label="Discord Button"
+            ><Icon
+              name="discord"
+              style="color:white !important; margin-bottom:3px;"
+            /></button
+          ></a
+        >
+      </div>
     </div>
   </div>
+</r>
 
-  <script is:inline>
-    /************************
-     * Theme Management
-     ************************/
-    var themeColorButton = document.getElementById("themeColor");
+<script is:inline>
+  /************************
+   * Theme Management
+   ************************/
+  var themeColorButton = document.getElementById("themeColor");
 
-    function enableDarkMode() {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("color-mode", "dark");
-      if (themeColorButton) {
-        themeColorButton.innerHTML =
-          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-        themeColorButton.style.filter = "invert(0)";
-      }
+  function enableDarkMode() {
+    document.documentElement.classList.add("dark");
+    localStorage.setItem("color-mode", "dark");
+    if (themeColorButton) {
+      themeColorButton.innerHTML =
+        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+      themeColorButton.style.filter = "invert(0)";
+    }
+  }
+
+  function enableLightMode() {
+    document.documentElement.classList.remove("dark");
+    localStorage.setItem("color-mode", "light");
+    if (themeColorButton) {
+      themeColorButton.innerHTML =
+        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+      themeColorButton.style.filter = "invert(1)";
+    }
+  }
+
+  function themeToggle() {
+    if (document.documentElement.classList.contains("dark")) {
+      enableLightMode();
+    } else {
+      enableDarkMode();
+    }
+  }
+
+  /************************
+   * Cookie Management
+   ************************/
+  function getCookie(name) {
+    try {
+      var value = "; " + document.cookie;
+      var parts = value.split("; " + name + "=");
+      return parts.length === 2 ? parts.pop().split(";").shift() : null;
+    } catch (error) {
+      console.error("Error reading cookie:", error);
+      return null;
+    }
+  }
+
+  function updateUserInterface() {
+    var userCookie = getCookie("wiilink_user");
+    var isLoggedIn = getCookie("is_logged_in") === "true";
+
+    if (!userCookie) {
+      return;
     }
 
-    function enableLightMode() {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("color-mode", "light");
-      if (themeColorButton) {
-        themeColorButton.innerHTML =
-          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-        themeColorButton.style.filter = "invert(1)";
+    try {
+      var userData = JSON.parse(userCookie);
+      var accountElement = document.getElementById("account");
+      var moreHeader = document.getElementById("moreHeader");
+      var mobileaccountbtn = document.getElementById("mobileaccountbtn");
+
+      if (accountElement) {
+        accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
+        mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
+        moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
       }
+    } catch (error) {
+      console.error("Error parsing user data:", error);
     }
+  }
 
-    function themeToggle() {
-      if (document.documentElement.classList.contains("dark")) {
-        enableLightMode();
-      } else {
-        enableDarkMode();
-      }
-    }
-
-    /************************
-     * Cookie Management
-     ************************/
-    function getCookie(name) {
-      try {
-        var value = "; " + document.cookie;
-        var parts = value.split("; " + name + "=");
-        return parts.length === 2 ? parts.pop().split(";").shift() : null;
-      } catch (error) {
-        console.error("Error reading cookie:", error);
-        return null;
-      }
-    }
-
-    function updateUserInterface() {
-      var userCookie = getCookie("wiilink_user");
-      var isLoggedIn = getCookie("is_logged_in") === "true";
-
-      if (!userCookie) {
-        return;
-      }
-
-      try {
-        var userData = JSON.parse(userCookie);
-        var accountElement = document.getElementById("account");
-        var moreHeader = document.getElementById("moreHeader");
-        var mobileaccountbtn = document.getElementById("mobileaccountbtn");
-
-        if (accountElement) {
-          accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
-          mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
-          moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
-        }
-      } catch (error) {
-        console.error("Error parsing user data:", error);
-      }
-    }
-
-    function createUserHTML(userData, isLoggedIn) {
-      return [
-        '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
-        "<span>",
-        '<img src="' + userData.pfp + '?d=404" ',
-        'style="width:40px; height:40px; border-radius:8px;" alt="' +
+  function createUserHTML(userData, isLoggedIn) {
+    return [
+      '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
+      "<span>",
+      '<img src="' + userData.pfp + '?d=404" ',
+      'style="width:40px; height:40px; border-radius:8px;" alt="' +
+        userData.username +
+        ' Profile Picture" ',
+      "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
+      userData.username.charAt(0).toUpperCase(),
+      "</div>'\">",
+      "</span>",
+      "</div>",
+      '<div style="display:flex; flex-direction:column; align-items:start;">',
+      isLoggedIn
+        ? 'WiiLink Account <span style="opacity:70%;">' +
           userData.username +
-          ' Profile Picture" ',
-        "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
-        userData.username.charAt(0).toUpperCase(),
-        "</div>'\">",
-        "</span>",
-        "</div>",
-        '<div style="display:flex; flex-direction:column; align-items:start;">',
-        isLoggedIn
-          ? 'WiiLink Account <span style="opacity:70%;">' +
-            userData.username +
-            "</span>"
-          : '<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account' +
-            '<span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>' +
-            "</span>" +
-            '<span style="opacity:70%;">' +
-            userData.username +
-            "</span>",
-        "</div>"
-      ].join("");
-    }
+          "</span>"
+        : '<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account' +
+          '<span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>' +
+          "</span>" +
+          '<span style="opacity:70%;">' +
+          userData.username +
+          "</span>",
+      "</div>"
+    ].join("");
+  }
 
-    function createUserPfpHTML(userData, isLoggedIn) {
-      return [
-        '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
-        '<img class="dropdownpfp" src="' + userData.pfp + '?d=404" ',
-        'style="width:40px; height:40px; border-radius:8px;"',
-        "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
-        userData.username.charAt(0).toUpperCase(),
-        "</div>'\">",
-        "</div>"
-      ].join("");
-    }
+  function createUserPfpHTML(userData, isLoggedIn) {
+    return [
+      '<div id="pfp-container" style="width:40px; height:40px; border-radius:8px; margin-right:5px; display:flex; align-items:center; justify-content:center; background:var(--bg-color)">',
+      '<img class="dropdownpfp" src="' + userData.pfp + '?d=404" ',
+      'style="width:40px; height:40px; border-radius:8px;"',
+      "onError=\"this.style.display='none'; this.parentElement.innerHTML='<div style=\\'width:40px; height:40px; border-radius:8px; background:var(--bg-opaque-2); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:20px; color:var(--text-color);\\'>",
+      userData.username.charAt(0).toUpperCase(),
+      "</div>'\">",
+      "</div>"
+    ].join("");
+  }
 
-    /************************
-     * UI Management
-     ************************/
-    function toggle(id) {
-      var element = document.getElementById(id);
-      if (element) {
-        element.style.display =
-          element.style.display === "block" && !element.matches(":hover")
-            ? "none"
-            : "block";
+  /************************
+   * UI Management
+   ************************/
+  function toggle(id) {
+    var element = document.getElementById(id);
+    if (element) {
+      element.style.display =
+        element.style.display === "block" && !element.matches(":hover")
+          ? "none"
+          : "block";
+    }
+  }
+
+  function initClickOutside() {
+    document.addEventListener("click", function (event) {
+      const dropdownMore = document.getElementById("dropdownMore");
+      const newsHeader = document.getElementById("newsheader");
+      const guideHeader = document.getElementById("guideheader");
+      const moreHeader = document.getElementById("moreHeader");
+
+      // Handle dropdownMore
+      if (
+        dropdownMore &&
+        dropdownMore.style.display === "block" &&
+        !dropdownMore.contains(event.target) &&
+        !moreHeader.contains(event.target)
+      ) {
+        dropdownMore.style.display = "none";
       }
+
+      // Handle newsheader
+      if (
+        newsHeader &&
+        newsHeader.style.display === "block" &&
+        !newsHeader.contains(event.target) &&
+        !event.target.matches('[onmouseover*="newsheader"]')
+      ) {
+        newsHeader.style.display = "none";
+      }
+
+      // Handle guideheader
+      if (
+        guideHeader &&
+        guideHeader.style.display === "block" &&
+        !guideHeader.contains(event.target) &&
+        !event.target.matches('[onmouseover*="guideheader"]')
+      ) {
+        guideHeader.style.display = "none";
+      }
+    });
+  }
+
+  function initUI() {
+    var dropdownMenu = document.getElementById("dropMenu");
+    if (dropdownMenu) {
+      dropdownMenu.style.opacity = "0";
+      dropdownMenu.style.pointerEvents = "none";
     }
 
-    function initClickOutside() {
-      document.addEventListener("click", function (event) {
-        const dropdownMore = document.getElementById("dropdownMore");
-        const newsHeader = document.getElementById("newsheader");
-        const guideHeader = document.getElementById("guideheader");
-        const moreHeader = document.getElementById("moreHeader");
-
-        // Handle dropdownMore
-        if (
-          dropdownMore &&
-          dropdownMore.style.display === "block" &&
-          !dropdownMore.contains(event.target) &&
-          !moreHeader.contains(event.target)
-        ) {
-          dropdownMore.style.display = "none";
-        }
-
-        // Handle newsheader
-        if (
-          newsHeader &&
-          newsHeader.style.display === "block" &&
-          !newsHeader.contains(event.target) &&
-          !event.target.matches('[onmouseover*="newsheader"]')
-        ) {
-          newsHeader.style.display = "none";
-        }
-
-        // Handle guideheader
-        if (
-          guideHeader &&
-          guideHeader.style.display === "block" &&
-          !guideHeader.contains(event.target) &&
-          !event.target.matches('[onmouseover*="guideheader"]')
-        ) {
-          guideHeader.style.display = "none";
-        }
+    var gradient = document.getElementById("grad");
+    if (gradient) {
+      document.addEventListener("scroll", function () {
+        gradient.style.opacity = window.pageYOffset > 0 ? "1" : "0";
       });
     }
 
-    function initUI() {
-      var dropdownMenu = document.getElementById("dropMenu");
-      if (dropdownMenu) {
-        dropdownMenu.style.opacity = "0";
-        dropdownMenu.style.pointerEvents = "none";
-      }
+    initClickOutside();
+  }
 
-      var gradient = document.getElementById("grad");
-      if (gradient) {
-        document.addEventListener("scroll", function () {
-          gradient.style.opacity = window.pageYOffset > 0 ? "1" : "0";
-        });
-      }
+  /************************
+   * Initialization
+   ************************/
+  document.addEventListener("DOMContentLoaded", function () {
+    updateUserInterface();
+    initUI();
 
-      initClickOutside();
+    if (document.documentElement.classList.contains("dark")) {
+      document.getElementById("themeColor").innerHTML =
+        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+    } else {
+      document.getElementById("themeColor").innerHTML =
+        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
     }
+  });
+</script>
 
-    /************************
-     * Initialization
-     ************************/
-    document.addEventListener("DOMContentLoaded", function () {
-      updateUserInterface();
-      initUI();
+<style>
+  /* Base Styles */
+  :root {
+    --header-height: 128px;
+    --header-mobile-height: 98px;
+    --border-radius-standard: 8px;
+    --border-radius-large: 12px;
+    --spacing-standard: 8px;
+    --transition-standard: 0.2s;
+    --transition-slow: 0.3s;
+    --max-width: 2000px;
+  }
 
-      if (document.documentElement.classList.contains("dark")) {
-        document.getElementById("themeColor").innerHTML =
-          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
-      } else {
-        document.getElementById("themeColor").innerHTML =
-          '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
-      }
-    });
-  </script>
+  /* Typography */
+  a {
+    font-size: 17px;
+    text-decoration: none;
+    color: white;
+  }
 
-  <style>
-    /* Base Styles */
-    :root {
-      --header-height: 128px;
-      --header-mobile-height: 98px;
-      --border-radius-standard: 8px;
-      --border-radius-large: 12px;
-      --spacing-standard: 8px;
-      --transition-standard: 0.2s;
-      --transition-slow: 0.3s;
-      --max-width: 2000px;
+  a:visited {
+    color: white;
+  }
+
+  /* Layout Components */
+  .bannerholder {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    display: block;
+    background-color: transparent;
+    z-index: 80;
+    position: sticky;
+  }
+
+  .logo {
+    top: 50%;
+    left: 50px;
+    transform: translate(0, -50%);
+    filter: invert(1);
+    position: absolute;
+  }
+
+  /* Navigation */
+  #links,
+  #dropMenu {
+    display: flex;
+    gap: 10px;
+    width: auto;
+    right: 50px;
+    top: 60px;
+    transform: translate(0, -50%);
+    align-items: center;
+    justify-content: center;
+    font-family:
+      systemui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    color: rgba(255, 255, 255, 0.53);
+    position: absolute;
+  }
+
+  /* Header Links */
+  .header-link {
+    height: 50px;
+    font-size: 18px;
+    margin-left: var(--spacing-standard);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-slow);
+    padding: 5px;
+    border-radius: var(--border-radius-standard);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header-link:hover {
+    transform: scale(1.02);
+    background-color: var(--bg-opaque-1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 15px;
+    transition: var(--transition-slow);
+  }
+
+  .header-link:active {
+    transform: scale(0.97);
+    background-color: #ffffff40;
+    transition: var(--transition-standard);
+  }
+
+  .header-link::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 4px;
+    opacity: 0.3;
+    background: #ffffff60;
+    transition: var(--transition-standard);
+  }
+
+  .header-link:hover::after {
+    bottom: 0;
+    opacity: 1;
+  }
+
+  /* Dropdown Styles */
+  #dropdownMore {
+    right: 15px;
+    top: 100%;
+    width: 300px;
+    max-height: calc(100vh - 150px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    padding: var(--spacing-standard);
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-large);
+    z-index: 1;
+    display: none;
+    position: absolute;
+  }
+
+  #dropdownMore::-webkit-scrollbar {
+    display: none;
+  }
+
+  #dropdownMore {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .dropdown-element {
+    width: 100%;
+    position: relative;
+  }
+
+  .dropdown-item {
+    padding: var(--spacing-standard);
+    border-radius: 4px;
+    white-space: wrap !important;
+  }
+
+  /* Popover Header */
+  .popover-header {
+    top: 100%;
+    animation: opin var(--transition-standard) ease-in-out forwards;
+    z-index: 1;
+    display: none;
+    position: absolute;
+  }
+
+  .holder {
+    margin-top: 18px;
+    padding: 8px;
+    border-radius: 12px;
+    background-color: var(--bg-color-light);
+    border: 1px solid var(--border-color);
+  }
+
+  .holder::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid var(--border-color);
+    top: -2px;
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+  }
+
+  .holder::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 18px solid var(--bg-color-light);
+    top: 1px;
+    left: 50%;
+    z-index: 10000;
+    transform: translateX(-50%);
+  }
+
+  .post {
+    transition: 0.2s;
+  }
+
+  .post:hover {
+    transform: scale(1.005);
+    background-color: var(--bg-color-secondary);
+    transition: 0.2s;
+  }
+
+  .post:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+  }
+
+  .post:hover img {
+    opacity: 1 !important;
+    transition: 0.2s;
+  }
+
+  #newsheader {
+    width: 500px;
+    transform: translate(-140px, 0);
+  }
+
+  #guideheader {
+    width: 400px;
+    transform: translate(-45px, 0);
+  }
+
+  /* Utility Classes */
+  .emoji:nth-child(1) {
+    width: 33px;
+    transform: translate(0, -3px);
+  }
+
+  .emoji2 {
+    width: 20px;
+    margin-right: 5px;
+    transform: translate(0, -3px);
+  }
+
+  .no-transitions * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  #moreHeader:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+  }
+
+  #moreHeader:active {
+    transform: scale(0.97);
+    transition: 0.2s;
+  }
+
+  /* Gradients */
+  #grad {
+    background: linear-gradient(
+      0deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(32, 32, 32, 0.5) 100%
+    );
+  }
+
+  /* WiiLink Data Dropdown */
+  .wiilink-data-container {
+    display: block;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .wiilink-data-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+  }
+
+  .wiilink-data-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    opacity: 0;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid var(--bg-opaque-1);
+  }
+
+  .wiilink-data-container:hover .wiilink-data-dropdown {
+    max-height: 200px; /* Adjust based on content */
+    opacity: 1;
+  }
+
+  .wiilink-data-container:hover .chevron-icon {
+    transform: rotate(180deg);
+  }
+
+  .chevron-icon {
+    transition: transform 0.3s ease;
+  }
+
+  .dropdown-subitem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+    font-size: 0.95em;
+    transition: background-color 0.2s;
+  }
+
+  .dropdown-subitem:hover {
+    background-color: var(--bg-opaque-1);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1400px) {
+    .btn2 {
+      opacity: 1;
     }
+  }
 
-    /* Typography */
-    a {
-      font-size: 17px;
-      text-decoration: none;
-      color: white;
-    }
-
-    a:visited {
-      color: white;
-    }
-
-    /* Layout Components */
+  @media (max-width: 1000px) {
     .bannerholder {
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: var(--header-height);
-      display: block;
-      background-color: transparent;
-      z-index: 80;
-      position: sticky;
-    }
-
-    .logo {
-      top: 50%;
-      left: 50px;
-      transform: translate(0, -50%);
-      filter: invert(1);
-      position: absolute;
-    }
-
-    /* Navigation */
-    #links,
-    #dropMenu {
-      display: flex;
-      gap: 10px;
-      width: auto;
-      right: 50px;
-      top: 60px;
-      transform: translate(0, -50%);
-      align-items: center;
-      justify-content: center;
-      font-family:
-        systemui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        "Open Sans",
-        "Helvetica Neue",
-        sans-serif;
-      color: rgba(255, 255, 255, 0.53);
-      position: absolute;
-    }
-
-    /* Header Links */
-    .header-link {
-      height: 50px;
-      font-size: 18px;
-      margin-left: var(--spacing-standard);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: var(--transition-slow);
-      padding: 5px;
-      border-radius: var(--border-radius-standard);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .header-link:hover {
-      transform: scale(1.02);
-      background-color: var(--bg-opaque-1);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      padding: 15px;
-      transition: var(--transition-slow);
-    }
-
-    .header-link:active {
-      transform: scale(0.97);
-      background-color: #ffffff40;
-      transition: var(--transition-standard);
-    }
-
-    .header-link::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      right: 0;
-      height: 4px;
-      opacity: 0.3;
-      background: #ffffff60;
-      transition: var(--transition-standard);
-    }
-
-    .header-link:hover::after {
-      bottom: 0;
-      opacity: 1;
-    }
-
-    /* Dropdown Styles */
-    #dropdownMore {
-      right: 15px;
-      top: 100%;
-      width: 300px;
-      max-height: calc(100vh - 150px);
-      overflow-x: hidden;
-      overflow-y: scroll;
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      padding: var(--spacing-standard);
-      background-color: var(--bg-color-light);
-      border: 1px solid var(--border-color);
-      border-radius: var(--border-radius-large);
-      z-index: 1;
-      display: none;
-      position: absolute;
-    }
-
-    #dropdownMore::-webkit-scrollbar {
-      display: none;
-    }
-
-    #dropdownMore {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-
-    .dropdown-element {
-      width: 100%;
-      position: relative;
-    }
-
-    .dropdown-item {
-      padding: var(--spacing-standard);
-      border-radius: 4px;
-      white-space: wrap !important;
-    }
-
-    /* Popover Header */
-    .popover-header {
-      top: 100%;
-      animation: opin var(--transition-standard) ease-in-out forwards;
-      z-index: 1;
-      display: none;
-      position: absolute;
-    }
-
-    .holder {
-      margin-top: 18px;
-      padding: 8px;
-      border-radius: 12px;
-      background-color: var(--bg-color-light);
-      border: 1px solid var(--border-color);
-    }
-
-    .holder::before {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 20px solid var(--border-color);
-      top: -2px;
-      left: 50%;
-      z-index: 10000;
-      transform: translateX(-50%);
-    }
-
-    .holder::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 0;
-      border-left: 15px solid transparent;
-      border-right: 15px solid transparent;
-      border-bottom: 18px solid var(--bg-color-light);
-      top: 1px;
-      left: 50%;
-      z-index: 10000;
-      transform: translateX(-50%);
-    }
-
-    .post {
-      transition: 0.2s;
-    }
-
-    .post:hover {
-      transform: scale(1.005);
-      background-color: var(--bg-color-secondary);
-      transition: 0.2s;
-    }
-
-    .post:active {
-      transform: scale(0.98);
-      transition: 0.2s;
-    }
-
-    .post:hover img {
-      opacity: 1 !important;
-      transition: 0.2s;
-    }
-
-    #newsheader {
-      width: 500px;
-      transform: translate(-140px, 0);
-    }
-
-    #guideheader {
-      width: 400px;
-      transform: translate(-45px, 0);
-    }
-
-    /* Utility Classes */
-    .emoji:nth-child(1) {
-      width: 33px;
-      transform: translate(0, -3px);
-    }
-
-    .emoji2 {
-      width: 20px;
-      margin-right: 5px;
-      transform: translate(0, -3px);
-    }
-
-    .no-transitions * {
-      transition: none !important;
-      animation: none !important;
-    }
-
-    #moreHeader:hover {
-      transform: scale(1.02);
-      transition: 0.2s;
-    }
-
-    #moreHeader:active {
-      transform: scale(0.97);
-      transition: 0.2s;
-    }
-
-    /* Gradients */
-    #grad {
-      background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(32, 32, 32, 0.5) 100%
-      );
-    }
-
-    /* WiiLink Data Dropdown */
-    .wiilink-data-container {
-      display: block;
-      position: relative;
-      cursor: pointer;
-    }
-
-    .wiilink-data-button {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px;
-      border-radius: 4px;
-      transition: background-color 0.2s;
-    }
-
-    .wiilink-data-dropdown {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-in-out;
+      height: var(--header-mobile-height);
       opacity: 0;
-      margin-left: 10px;
-      padding-left: 10px;
-      border-left: 2px solid var(--bg-opaque-1);
+      pointer-events: none;
     }
 
-    .wiilink-data-container:hover .wiilink-data-dropdown {
-      max-height: 200px; /* Adjust based on content */
+    .lang {
+      display: none;
+    }
+
+    span {
+      display: none;
+    }
+
+    .btn1 {
+      display: none;
+    }
+  }
+
+  @media (min-width: 2000px) {
+    .bannerholder {
+      width: var(--max-width);
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-bottom-left-radius: var(--border-radius-standard);
+      border-bottom-right-radius: var(--border-radius-standard);
+      position: fixed;
+    }
+  }
+
+  /* Animations */
+  @keyframes opin {
+    from {
+      opacity: 0;
+      top: 110%;
+    }
+    to {
+      opacity: 1;
+      top: 100%;
+    }
+  }
+
+  @keyframes opout {
+    from {
       opacity: 1;
     }
-
-    .wiilink-data-container:hover .chevron-icon {
-      transform: rotate(180deg);
+    to {
+      opacity: 0;
     }
+  }
 
-    .chevron-icon {
-      transition: transform 0.3s ease;
+  @keyframes langon {
+    from {
+      opacity: 0;
+      height: 0;
+      transform: translate(50px, -15px);
     }
-
-    .dropdown-subitem {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding: 8px;
-      margin: 4px 0;
-      border-radius: 4px;
-      font-size: 0.95em;
-      transition: background-color 0.2s;
+    to {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -12px);
     }
+  }
 
-    .dropdown-subitem:hover {
-      background-color: var(--bg-opaque-1);
+  @keyframes langoff {
+    from {
+      opacity: 1;
+      height: 320px;
+      transform: translate(50px, -12px);
     }
-
-    /* Responsive Design */
-    @media (max-width: 1400px) {
-      .btn2 {
-        opacity: 1;
-      }
+    to {
+      opacity: 0;
+      height: 0;
+      transform: translate(50px, -15px);
     }
+  }
+</style>
 
-    @media (max-width: 1000px) {
-      .bannerholder {
-        height: var(--header-mobile-height);
-        opacity: 0;
-        pointer-events: none;
-      }
+<style is:global>
+  /* Global Styles */
+  .no-transitions * {
+    transition: none !important;
+    animation: none !important;
+  }
 
-      .lang {
-        display: none;
-      }
+  .dropdown-item {
+    white-space: wrap !important;
+  }
 
-      span {
-        display: none;
-      }
+  .dropdownpfp:hover {
+    border: 2px solid #ffffff30;
+    transition: 0.1s;
+  }
 
-      .btn1 {
-        display: none;
-      }
-    }
-
-    @media (min-width: 2000px) {
-      .bannerholder {
-        width: var(--max-width);
-        left: 50%;
-        transform: translate(-50%, 0);
-        border-bottom-left-radius: var(--border-radius-standard);
-        border-bottom-right-radius: var(--border-radius-standard);
-        position: fixed;
-      }
-    }
-
-    /* Animations */
-    @keyframes opin {
-      from {
-        opacity: 0;
-        top: 110%;
-      }
-      to {
-        opacity: 1;
-        top: 100%;
-      }
-    }
-
-    @keyframes opout {
-      from {
-        opacity: 1;
-      }
-      to {
-        opacity: 0;
-      }
-    }
-
-    @keyframes langon {
-      from {
-        opacity: 0;
-        height: 0;
-        transform: translate(50px, -15px);
-      }
-      to {
-        opacity: 1;
-        height: 320px;
-        transform: translate(50px, -12px);
-      }
-    }
-
-    @keyframes langoff {
-      from {
-        opacity: 1;
-        height: 320px;
-        transform: translate(50px, -12px);
-      }
-      to {
-        opacity: 0;
-        height: 0;
-        transform: translate(50px, -15px);
-      }
-    }
-  </style>
-
-  <style is:global>
-    /* Global Styles */
-    .no-transitions * {
-      transition: none !important;
-      animation: none !important;
-    }
-
-    .dropdown-item {
-      white-space: wrap !important;
-    }
-
-    .dropdownpfp:hover {
-      border: 2px solid #ffffff30;
-      transition: 0.1s;
-    }
-
-    .dropdownpfp {
-      border: 0px solid #ffffff30;
-      transition: 0.1s;
-    }
-  </style>
-</r>
+  .dropdownpfp {
+    border: 0px solid #ffffff30;
+    transition: 0.1s;
+  }
+</style>

@@ -1,0 +1,402 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import HeadText from "../../../components/HeadText.astro";
+import FormattedDate from "../../../components/FormattedDate.astro";
+import { localizePath } from "astro-i18next";
+import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
+import { contentfulClient } from "../../../lib/contentful";
+import type { news } from "../../../lib/contentful";
+
+changeLanguage("fi");
+
+const entries = await contentfulClient.getEntries<news>({
+    content_type: "newsPost"
+});
+let postsContentful = entries.items.map(item => {
+    const { title, slug, date, image, unlist, description, content, author } = item.fields;
+    return {
+        title,
+        slug,
+        date,
+        image,
+        unlist,
+        description,
+        content,
+        author
+    };
+});
+postsContentful.sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+postsContentful = postsContentful.filter(post => post.unlist);
+const sliceDescription = (description: string) => {
+    return (description.split(" ").slice(0, 20).join(" ") +
+        (description.split(" ").length > 20 ? "..." : ""));
+};
+console.log("Posts Contentful:", postsContentful);
+---
+
+<Layout
+  title={t("news.mainTitle")}
+  description={t("news.mainDesc")}
+  image="/img/News_embed.webp"
+/>
+<Header isGuide="display:none;" />
+<div class="hold">
+  <HeadText text="Links" />
+  <div class="welcome-msg">
+    <h2 style="font-size:40px; font-family:Gilroy;">This is Forming Links!</h2>
+    <h3 style="max-width: 800px; font-size: calc(1.3rem + .6vw);">
+      Jess interviews the people behind the scenes of WiiLink, to give some
+      insight into the project and the people who make it happen.
+    </h3>
+  </div>
+  <div class="postholder">
+    {
+      postsContentful.map(post => (
+        <div
+          class="post"
+          onclick={'window.location.href="/news/' + post.slug + '/";'}
+          style="background-color: var(--bg-opaque-1); border-radius:8px; padding: 28px; cursor:pointer; transition: 0.2s;">
+          <a
+            href={localizePath(`/news/${post.slug}/`)}
+            aria-label={post.title + " Link"}
+            style="text-decoration:none; color:var(--text-color);">
+            <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom: 8px;">
+              {post?.author?.fields?.pfp?.fields?.file?.url && (
+                <img
+                  alt="News Author PFP"
+                  class="authimage"
+                  src={post.author.fields.pfp.fields.file.url}
+                />
+              )}
+              <div style="background: var(--border-color); border-radius:8px; padding:6px 12px; font-size:14px; display:flex; align-items:center; justify-content:center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+                <FormattedDate date={new Date(post.date)} />
+              </div>
+            </div>
+            <b style="width:100%; font-size:28px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left; position:relative;">
+              {post.title}
+            </b>
+            <div
+              class="descanim"
+              style="margin-top: 8px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
+              {sliceDescription(post.description)}
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+  <h3
+    style="margin-top:200px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
+    <Trans i18nKey="news.rssTitle">
+      <b
+        >Want to get <c class="color">WiiLink news</c> on your site o service? Just
+        use our <c class="color">RSS feed</c>!</b
+      >
+    </Trans>
+  </h3>
+  <a href="/rss.xml"
+    ><buton
+      class="btn center btn-success"
+      style="left:50%; transform:translate(-50%, 0); margin-top:8px; z-index:1000; position:relative;">
+      <Icon name="lucide:rss" style="margin-right:5px; margin-bottom:3px;" />
+      {t("news.rssButton")}
+    </buton></a
+  >
+</div>
+
+<Footer />
+
+<style>
+  .hold {
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: calc(100% - 20px);
+    max-width: 1500px;
+    position: relative;
+  }
+
+  .herodatahold {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 20px;
+    position: relative;
+  }
+
+  .posthold {
+    transform: translate(0, 0px);
+    opacity: 0;
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .post:nth-child(1) {
+    animation: fadeup 200ms 0.3s forwards;
+  }
+  .post:nth-child(2) {
+    animation: fadeup 200ms 0.35s forwards;
+  }
+  .post:nth-child(3) {
+    animation: fadeup 200ms 0.4s forwards;
+  }
+  .post:nth-child(4) {
+    animation: fadeup 200ms 0.45s forwards;
+    border-radius: 8px 8px 8px 16px;
+  }
+  .post:nth-child(5) {
+    animation: fadeup 200ms 0.5s forwards;
+  }
+  .post:nth-child(6) {
+    animation: fadeup 200ms 0.55s forwards;
+    border-radius: 8px 8px 16px 8px;
+  }
+
+  .posthold:hover {
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 20px #37373756);
+    transition: 0.2s;
+  }
+
+  .fadebefore::before {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+    content: "";
+    background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0) 30%,
+      var(--bg-opaque-2) 100%
+    );
+    z-index: -100000;
+    position: absolute;
+  }
+
+  .authimage {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .mainpost:nth-child(1) {
+    opacity: 1;
+  }
+
+  .postholder {
+    width: 100%;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    position: absolute;
+    gap: 13px;
+    top: 45px;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    position: relative;
+    z-index: 10;
+  }
+
+  .post {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    font-family: Gilroy;
+    opacity: 0;
+    hyphens: auto;
+    transition: 0.2s;
+  }
+
+  .post:hover {
+    transform: scale(1.02) !important;
+    transition: 0.2s;
+  }
+
+  .post:active {
+    transform: scale(0.98) !important;
+    transition: 0.2s;
+  }
+
+  .post:hover {
+    transform: translate(0, -10px);
+    transition: 0.2s;
+  }
+
+  .postmini:hover {
+    background-color: var(--bg-color-tertiary);
+    transition: 0.2s;
+  }
+
+  .postmini img {
+    transition: 0.2s;
+  }
+
+  .postmini:hover img {
+    filter: brightness(0.8) !important;
+    transition: 0.2s;
+  }
+
+  .postmini:hover {
+    transform: scale(1.02);
+    transition: 0.2s;
+  }
+
+  .postmini:active {
+    transform: scale(0.98);
+    transition: 0.2s;
+  }
+
+  .post:hover .heroImage {
+    transform: scale(110%);
+    filter: blur(2px) brightness(0.7);
+    z-index: 0;
+    transition: 0.3s;
+  }
+
+  .newsHero {
+    top: 30px;
+    width: 100%;
+    max-width: 1800px;
+    height: auto;
+    padding: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 16px 16px 8px 8px;
+    animation: fadein 0.2s linear forwards;
+    overflow: hidden;
+    position: relative;
+    transition: 0.2s;
+  }
+
+  .newsHero:hover {
+    transform: translate(-50%, 0) scale(1.01) !important;
+    background-color: var(--bg-color-tertiary) !important;
+    transition: 0.2s;
+  }
+
+  .newsHero:active {
+    transform: translate(-50%, 0) scale(0.99) !important;
+    transition: 0.2s;
+  }
+
+  @keyframes rotate {
+    0% {
+      rotate: 0deg;
+    }
+    100% {
+      rotate: 360deg;
+    }
+  }
+
+  @keyframes fadeup {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .postholder {
+      width: 100%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      position: relative;
+      z-index: 10;
+    }
+
+    .maintitle {
+      font-size: 28px !important;
+    }
+
+    .maindesc {
+      display: none;
+    }
+
+    .mobileimg {
+      width: 100%;
+      max-width: 400px;
+      object-fit: cover;
+    }
+
+    .herodatahold {
+      padding: 0px;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .mobilehide {
+      display: none;
+    }
+
+    .postholdermini {
+      top: 0px;
+      width: 100%;
+      gap: 16px;
+    }
+
+    .postmini {
+      height: 150px;
+    }
+
+    .newsHero {
+      top: 30px;
+      max-width: 1800px;
+      height: auto;
+      padding: 18px;
+      padding-top: 28px;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .innerflexmobile {
+      width: 100%;
+    }
+
+    .mainpostflex {
+      flex-direction: column !important;
+    }
+
+    .mainpostflex r {
+      width: 100%;
+      border-radius: 8px !important;
+      font-size: 16px !important;
+    }
+
+    .heroimg {
+      height: 100%;
+    }
+
+    .post:hover {
+      transform: translate(0, 0px) scale(102%);
+      box-shadow: 0px 0px 0px rgb(187, 187, 187);
+      transition: 0.5s;
+    }
+  }
+
+  @media only screen and (min-width: 2000px) {
+    .hold {
+      left: 50%;
+      transform: translate(-50%, 150px);
+      width: 2000px;
+      margin-bottom: 80px;
+      position: relative;
+    }
+  }
+</style>

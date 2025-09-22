@@ -37,7 +37,6 @@ const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
 };
-console.log("Posts Contentful:", postsContentful);
 ---
 
 <Layout
@@ -183,6 +182,20 @@ console.log("Posts Contentful:", postsContentful);
         </div>
       ))
     }
+  </div>
+  <div style="background-color: var(--bg-color-secondary); border-radius:16px; padding:28px; margin-top:80px; position:relative; display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:20px; margin-bottom:20px;">
+    <span>
+      <h3 style="font-family: gilroy; font-weight:bold;">
+        Forming Links
+      </h3>
+      <p style="margin-bottom:0 !important;">
+       A behind the scenes look at the people who make WiiLink happen, catch up on interviews from developers, content creators, and more! Hosted by Becca!
+      </p>
+    </span> 
+    <a href="/news/forming-links" class="fl-button">
+      <Icon name="lucide:arrow-up-right" style="width:20px; height: 20px; margin-right:5px; margin-bottom:3px;" />
+      Check it out!
+    </a>
   </div>
   <hr
     style="left:50%; transform:translate(-50%, 0); max-width:1600px; margin-top:80px; margin-bottom:40px; border-top: 2px solid var(--bg-opaque-2); position:relative;"
@@ -489,6 +502,22 @@ console.log("Posts Contentful:", postsContentful);
       opacity: 1;
       transform: translateY(0px);
     }
+  }
+
+  .fl-button {
+    text-decoration:none;
+    background:#3faa39;
+    padding:10px 20px;
+    border-radius:8px;
+    font-family:system-ui;
+    color:white !important;
+    transition: 0.2s;
+  }
+
+  .fl-button:hover {
+    transform: scale(102%);
+    background-color: #21931b;
+    transition: 0.2s;
   }
 
   @media only screen and (max-width: 1000px) {
