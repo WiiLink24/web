@@ -60,6 +60,12 @@
         "desc": "Legacy goodies on the RiiConnect24 site!",
         "img": "/img/guidebg-1.webp",
         "link": "https://rc24.xyz/goodies"
+      },
+      {
+        "title": "<span class='palette'></span> Wii Media Converter",
+        "desc": "Convert your photos, video, and audio so it's compatible with the Photo Channel",
+        "img": "/img/guidebg-1.webp",
+        "link": "https://wiimediaconverter.wuaze.com"
       }
     ]
   }
