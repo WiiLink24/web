@@ -1,7 +1,7 @@
 ---
 title: Wii Installation
 icon: download
-pubDate: 2025-06-25
+pubDate: 2025-09-28
 description: Get up-to-date instructions on how to install all of our services on Wii!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -132,6 +132,16 @@ The developers recommended that you read the EULA, as it gives important informa
 8. Once you read the EULA, click on "I ACCEPT".
 
 9. Navigate back to the main settings page, select WiiConnect24, and set "WiiConnect24" and "Standby Connection" to On.
+
+### Setting your region in AnyGlobe Changer
+
+<l class="notice generic smallwidth">This allows you to set your country if the WiiConnect24 settings say that it's not supported.</l>
+1. Launch The Homebrew Channel on your console.
+2. Open AnyGlobe Changer.
+3. Read the disclaimer, and press `1` to continue.
+4. Using the D-pad, set your region and sub-region.
+5. Highlight `Save Settings`, then press `A` to save.
+6. Return to the System Menu.
 
 ### Adding Personal Information
 

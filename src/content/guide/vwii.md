@@ -1,7 +1,7 @@
 ---
 title: Wii U Installation
 icon: download
-pubDate: 2025-06-25
+pubDate: 2025-09-28
 description: Get up-to-date instructions on how to install all of our services on Wii U!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -45,7 +45,9 @@ heroImage: "/img/guidebg-3.webp"
 4. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Paste the patch from `Step 5` into a new line at the bottom of the `hacks_hash.ini`, and save the file.
 5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
 6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
-7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Permanent vWii System Settings`, `Wii System Settings via Options Button`, and `Create message via Calendar button` from the menu. (Feel free to enable other options while you're in this menu)
+7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Always enable WiiConnect24 on boot`, and `Create message via Calendar button` from the menu.
+</br>
+<l class="notice warn">If you have `Permanent vWii System Settings` enabled, you must disable it, as it conflicts with `Always enable WiiConnect24 on boot`.</l>
 8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
 9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
 10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
@@ -136,17 +138,13 @@ If you choose not to copy everything automatically, copy the `WAD` and `apps` fo
 
 ### Connecting to DNS
 
-<l class="notice info smallwidth">This step is <b>optional</b>, but it's recommended as it allows additional services to function.
-</br>
-<b>If you don't have the DNS, WiiLink will still work fine.</b></l>
+<l class="notice info smallwidth">This step is optional, but it's recommended as it allows additional services to function.</l>
 
-1. Go to the Wii Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
+1. Go to the Wii U Menu --> System Settings --> Internet --> Connection Settings --> the Connection that you're using --> Change Settings.
 
-2. Make your way to the "Auto-Obtain DNS" setting.
+2. Make your way to the `DNS` setting.
 
-<l class="notice info smallwidth">The "Auto-Obtain IP Address" and "Auto-Obtain DNS" settings both look similar, so be sure that you're on the DNS setting.</l>
-
-3. Once you've made sure that you're on the DNS setting, Click on "No", then "Advanced Settings".
+3. Once you made sure that you're on the DNS setting, Click on `Don't Auto-Obtain`, then enter the following DNS info:
 
 Set your Primary DNS to --> 167.235.229.36<br>
 Set your Secondary DNS to --> 1.1.1.1
@@ -155,21 +153,15 @@ Set your Secondary DNS to --> 1.1.1.1
 
 <l class="notice generic smallwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
 
-6. Go to the 1st page of the "Internet" category, then select "User Agreements", then select "Yes".
+### Setting your region in AnyGlobe Changer
 
-7. Allow the EULA to load.
-
-<l class="notice info smallwidth">If it tells you that WiiConnect24 isn't being offered in your region, or you receive error 221001, change your country to a supported one and try again (we recommend the United Kingdom for PAL, and the United States for NTSC-U).
-</br>
-After agreeing to the EULA, you can use AnyGlobe Changer in the Homebrew Channel to switch back to your actual country.</l>
-
-The developers recommended that you read the EULA, as it gives important information about the service.
-
-<l class="notice warn smallwidth">If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/WiiLink24/DNS-Server">DNS Server application</a>.</l>
-
-8. Once you read the EULA, click on "I ACCEPT".
-
-9. Navigate back to the main settings page, select WiiConnect24, and set "WiiConnect24" and "Standby Connection" to On.
+<l class="notice generic smallwidth">This allows you to set your country if the WiiConnect24 settings say that it's not supported.</l>
+1. Launch The Homebrew Channel on your console.
+2. Open AnyGlobe Changer.
+3. Read the disclaimer, and press `1` to continue.
+4. Using the D-pad, set your region and sub-region.
+5. Highlight `Save Settings`, then press `A` to save.
+6. Return to the System Menu.
 
 ### Adding Personal Information
 

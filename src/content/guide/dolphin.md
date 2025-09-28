@@ -1,7 +1,7 @@
 ---
 title: Dolphin Installation
 icon: download
-pubDate: 2025-09-05
+pubDate: 2025-09-28
 description: Get up-to-date instructions on how to install all of our services on Dolphin!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -74,8 +74,6 @@ Please wait a moment for the patcher to download and patch the files on your dev
 </br>
 
 <l class="notice info">To use WiiConnect24 services in Dolphin, you need to have the Wii System Menu installed. You can do this by navigating to `Tools` > `Perform Online System Update`</l>
-
-<l class="notice warning">`Wii Mail` doesn't work properly in Dolphin yet, but patching it is necessary for the Everybody Votes Channel to function correctly</l>
 
 1. Open Dolphin Emulator.
 2. Select `Tools`
