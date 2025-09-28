@@ -18,9 +18,9 @@
         "desc": "Quickly catch up on the latest news from around the world and see exactly where it's happening.",
         "link": "/guide/news",
         "isArea": "International",
-        "status": "Full Release",
+        "status": "English Release",
         "icon": "news_icon.webp",
-        "todo": "<span class='circle-check'></span> The service is working properly!",
+        "todo": "<span class='circle-check'></span> The service is working properly!</br></br>However, it is only available in English at present.",
         "completed": "100"
       },
       {

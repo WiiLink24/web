@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: lucide:circle-alert
-pubDate: 2025-01-21
+pubDate: 2025-09-28
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -24,7 +24,9 @@ heroImage: "/img/guidebg-3.webp"
 
 <div class="error">Error Code: 107245 <span class="badge bg-warning">Any Channel</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
 
-<div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock" class="text-info">here</a> to synchronise your time. After doing this, leave your console on the system menu for 30 minutes, then try again. If you still receive the error, ask on <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further help with diagnosing your issue!</h4><hr></div>
+<div class="error">Error Code: FORE000006 <span class="badge bg-primary">Forecast Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock" class="text-info">here</a> to synchronise your time, and try again. If you still receive the error, ask on <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further help with diagnosing your issue!</h4><hr></div>
+
+<div class="error">Error Code: NEWS000006 <span class="badge bg-primary">News Channel</span><h4>If your console isn't set to English, change the language to English. Unfortunately, we are only able to offer the News Channel in English at present. Otherwise, follow the notes above for FORE000006.</h4><hr></div>
 
 <div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and improve general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><span class="download"></span> WiiFlow WFL</a>.</h4><hr></div>
 
