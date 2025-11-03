@@ -1,0 +1,309 @@
+---
+import Header from "../../../../components/Header.astro";
+import Footer from "../../../../components/Footer.astro";
+import Layout from "../../../../layouts/Layout.astro";
+import i18next, { t, changeLanguage } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+
+changeLanguage("fi");
+---
+
+<Layout
+  title="WiiLink - WiiLink Accounts Privacy Policy"
+  description="Privacy policy for WiiLink Accounts"
+  image="/img/branding_bg.webp">
+  <Header isGuide="display:none;" />
+
+  <div class="sectiontop" style="top:200px !important; position:relative;">
+    <section class="section">
+      <h1 style="font-family: Gilroy; margin-bottom: 18px;">
+        WiiLink Accounts Privacy Policy
+      </h1>
+      <h3
+        class="update"
+        style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;"
+        class="updated">
+        Last updated: 3/11/2025
+      </h3>
+      <div class="polka-dot"></div>
+      <p
+        class="title"
+        style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
+        Privacy policy for WiiLink Accounts
+      </p>
+      <section class="section">
+        <l class="notice info fullwidth">
+          Looking for our main Privacy Policy?
+          Find it <a href="/privacy-policy">here</a>.
+        </l></br></br>
+        <p class="title">Privacy Policy</p>
+        <p>
+          The protection and confidentiality of personal data something WiiLink
+          takes extremely seriously. We believe in protecting the information
+          accessed in the most secure way possible. We also believe that being
+          transparent on how we access your data leads to a bigger sense of
+          trust with the consumer.
+          <br /><br />
+          Please take your time and read through this Privacy Policy to the best
+          of your ability to learn how we access and store your data. You will be
+          notified through our Discord server if this document changes.
+          <br /><br />
+          By using WiiLink Accounts, you consent to our practices stated in this
+          document. If you do not consent, please do not use WiiLink Accounts.
+          If you have any questions or concerns about this Privacy Policy, do not
+          hesitate to reach out to staff in our Discord server, or by emailing
+          <a href="mailto:support@wiilink.ca">support@wiilink.ca</a>.
+          <br />
+          <br />
+          <p class="title">What do we access?</p>
+          When you create and use a WiiLink Account, the following personal data
+          is stored by us:
+          <ul style="list-style-type: square">
+            <li>Account name</li>
+            <li>Account username</li>
+            <li>Email Address - Allows us to contact you if you request a password reset</li>
+            <li>IP Address and User-Agent - Shown to you in the "Sessions" page
+              in account settings, to review devices signed into your account</li>
+          </ul>
+
+          Additionally, if you link your account to a console, the following
+          additional data is stored:
+          <ul style="list-style-type: square">
+            <li>Wii Number - Used to allow you to tell which console is which when multiple
+              are linked to your account
+            </li>
+            <li>Console ID - Used to uniquely identify your console to check if you've
+              enabled Domino's ordering
+            </li>
+          </ul>
+
+          This data is used as necessary for the account service. We do not sell
+          or share data.
+          <br />
+          <br />
+          You can exercise your right to be forgotten by deleting your account
+          <a href="https://sso.riiconnect24.net/if/user/#/settings">here</a>.
+          <br />
+          <br />
+          <p class="title">Children's Privacy</p>
+          <section class="section">
+            <div class="container">
+              <div class="notification is-danger">
+                <strong>Important!</strong><br />This service is not intended
+                for children under the age of 13.
+              </div>
+            </div>
+          </section>
+          <p>
+            This service is not intended for children under the age of 13. If
+            you are under the age of 13, please exit this website and do not
+            access this service. WiiLink does not knowingly collect data from
+            children under the age of 13.
+          </p>
+
+          <p class="title">Changes to this Privacy Policy</p>
+          <p>
+            It is our policy to inform the consumers to any changes to this
+            privacy policy. If there is a change, you will be notified through
+            our Discord server. The revision date of the privacy
+            policy is at the top and/or bottom of the page.
+          </p>
+        </p>
+        <br><br>
+        <p class="title">
+            Last Modified
+        </p>
+        <p>
+            Monday, November 3rd, 2025
+        </p>
+      </section>
+      </section>
+      <Footer />
+
+      <style>
+        .section {
+          max-width: 1500px;
+          padding-left: 5px;
+          padding-right: 5px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          margin-bottom: 80px;
+          position: relative;
+          font-family: inter;
+        }
+        .title {
+          font-family: Gilroy;
+          font-size: 30px;
+        }
+
+        .socials {
+          top: 50%;
+          right: 50px;
+          transform: translate(0, -50%);
+          color: white;
+          font-size: 25px;
+          width: 150px;
+          justify-content: right;
+          display: flex;
+          flex-wrap: wrap;
+          position: absolute;
+        }
+        .slogan {
+          left: 80px;
+          font-family:
+            inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            "Open Sans",
+            "Helvetica Neue",
+            sans-serif;
+          color: white;
+          width: 500px;
+          position: relative;
+        }
+        .footer-holder {
+          bottom: 20px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          display: flex;
+          align-items: center;
+          width: 98%;
+          height: 250px;
+          position: absolute;
+        }
+
+        .symbolholder {
+          background-color: var(--bg-color);
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transition: 0.5s;
+          z-index: 1;
+          overflow: hidden;
+          position: fixed;
+        }
+
+        .backsymbol {
+          width: 100%;
+          height: 100%;
+          top: 0%;
+          left: 50%;
+          transform: translate(-50%, 0);
+          z-index: 1;
+          position: absolute;
+        }
+        .contentholder {
+          left: 50%;
+          transform: translate(-50%, 0);
+          max-width: 1000px;
+          position: relative;
+        }
+        .bottomleftcorner {
+          animation: changecolor 10s linear infinite;
+          position: relative;
+        }
+        .bottomleftcornerholder {
+          left: -2.6px;
+          bottom: -3px;
+          scale: 31.6%;
+          transform: translate(-106.5%, 107.3%);
+          z-index: 2;
+          position: absolute;
+        }
+        .square {
+          --img-invert: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(
+            41deg,
+            rgba(0, 138, 255, 1) 0%,
+            rgba(255, 0, 59, 1) 100%
+          );
+          z-index: 0;
+          animation: changecolor 10s linear infinite;
+          position: absolute;
+        }
+        #square2 {
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          background-color: #ffffff;
+          transform: translate(0%, 0%);
+          border-radius: 4px;
+          z-index: 1;
+
+          transition: 0.5s;
+          overflow-y: scroll;
+          overflow-x: hidden;
+          position: absolute;
+        }
+
+        .polka-dot {
+          width: 240px;
+          height: 240px;
+          background-image: radial-gradient(#000 10%, transparent 11%),
+            radial-gradient(#000 10%, transparent 11%);
+          background-size: 30px 30px;
+          background-position:
+            0 0,
+            30px 30px;
+          opacity: 0.1;
+          rotate: 30deg;
+          left: -50px;
+          top: -38px;
+          background-repeat: repeat;
+          animation: rotate 240s linear infinite;
+          position: absolute;
+          z-index: 0;
+        }
+
+        @keyframes rotate {
+          0% {
+            rotate: 0deg;
+          }
+          100% {
+            rotate: 360deg;
+          }
+        }
+
+        .notification {
+          background-color: #292929;
+          color: black;
+          padding: 20px;
+          font-family: Gilroy;
+          border-radius: 8px;
+          border: 2px solid #ffffff20;
+          text-align: center;
+        }
+
+        .is-danger {
+          background-color: #db0f0f20;
+          border: 4px solid #db0f0f80;
+        }
+
+        .is-warning {
+          background-color: #c9b81620;
+          border: 4px solid #c9b81680;
+        }
+
+        strong {
+          font-family: Gilroy;
+          font-size: 20px;
+        }
+
+        @media (max-width: 1000px) {
+          .update {
+            display: none;
+          }
+        }
+      </style>
+    </section>
+  </div></Layout
+>
