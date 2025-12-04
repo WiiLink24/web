@@ -158,11 +158,11 @@
       {
         "color": "#05AAF8",
         "name": "LinkTag",
-        "desc": "LinkTag is a customizable gamertag that you can share with your friends or embed on websites.",
+        "desc": "LinkTag és un nom de jugador personalitzable que pots compartir amb els teus amics o incrustar-lo en llocs web.",
         "link": "/status",
-        "isArea": "Region Free",
-        "status": "In Development",
-        "todo": "<span class='hard-hat'></span> This service is still under development",
+        "isArea": "Regió lliure",
+        "status": "En desenvolupament",
+        "todo": "<span class='hard-hat'></span> Aquest servei encara està en desenvolupament",
         "icon": "linktag_icon.webp",
         "completed": "5"
       }
