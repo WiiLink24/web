@@ -154,6 +154,17 @@
         "todo": "<span class='circle-help'></span> 스트라이프에서 기부하시면 이 서비스를 이용하실 수 있어요!",
         "icon": "",
         "completed": "50"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag는 친구들과 공유하거나 웹사이트에 포함시킬 수 있는 사용자 정의 게임 태그입니다.",
+        "link": "/status",
+        "isArea": "지역 제한 없음",
+        "status": "개발 중",
+        "todo": "<span class='hard-hat'></span> 이 서비스는 아직 개발 중이에요",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

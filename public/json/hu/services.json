@@ -154,6 +154,17 @@
         "todo": "<span class='circle-check'></span> A szolgáltatás fejlesztése szünetel.",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag egy testreszabható gamertag, amelyet megoszthatsz a barátaiddal vagy beágyazhatsz webszolgáltatásokba.",
+        "link": "/status",
+        "isArea": "Régiózár-mentes",
+        "status": "Fejlesztés alatt",
+        "todo": "<span class='hard-hat'></span> Ez a szolgáltatás még fejlesztés alatt áll",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }
