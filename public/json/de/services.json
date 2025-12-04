@@ -162,7 +162,7 @@
         "link": "/status",
         "isArea": "Region-Free",
         "status": "In Entwicklung",
-        "todo": "<span class='hard-hat'></span> Dieses Service ist noch in Entwicklung",
+        "todo": "<span class='hard-hat'></span> Dieser Service ist noch in Entwicklung",
         "icon": "linktag_icon.webp",
         "completed": "5"
       }
