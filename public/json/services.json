@@ -148,11 +148,11 @@
         "color": "#80D4FF",
         "name": "Wii Room Anywhere",
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
-        "link": "/status",
+        "link": "/guide/dokodemo",
         "isArea": "Originally Japan exclusive",
-        "status": "Private Beta",
+        "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
-        "icon": "",
+        "icon": "room_icon.webp",
         "completed": "90"
       }
     ]
