@@ -151,9 +151,9 @@
         "link": "/status",
         "isArea": "Originally Japan exclusive",
         "status": "Private Beta",
-        "todo": "<span class='circle-help'></span> You can access this service by donating on our Stripe!",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "",
-        "completed": "75"
+        "completed": "90"
       }
     ]
   }
