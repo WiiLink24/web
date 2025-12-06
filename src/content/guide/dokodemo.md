@@ -1,6 +1,6 @@
 ---
 title: Wii Room Anywhere
-pubDate: 2023-12-05
+pubDate: 2023-12-06
 description: Get up-to-date instructions on how to patch Wii Room Anywhere!
 icon: lucide:house
 ---
@@ -18,7 +18,7 @@ icon: lucide:house
 </br>
 </br>
 
-<l class="notice info">You need to own the WiiWare title "Dokodemo Wii no Ma" to get Wii Room Anywhere.</l>
+<l class="notice info">You need to own the DSiWare title "Dokodemo Wii no Ma" to get Wii Room Anywhere.</l>
 
 <br>
 
