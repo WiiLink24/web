@@ -1,6 +1,6 @@
 ---
 title: Wii Room Anywhere
-pubDate: 2023-12-06
+pubDate: 2025-12-08
 description: Get up-to-date instructions on how to patch Wii Room Anywhere!
 icon: lucide:house
 ---
@@ -59,7 +59,7 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 2. Click `Browse...` and navigate to your ROM
 3. Choose the language you want the application to be in
 4. Open the "WiiLink" folder, and copy the `nds` folder within to your SD card
-5. Insert your SD card to your console, and install the `.nds` file using GodMode9(i)
+5. Insert your SD card to your console, and launch the `.nds` file using [TWiLight Menu++](https://github.com/DS-Homebrew/TWiLightMenu/releases/latest)
 
 <l class="notice success fullwidth center">Congrats! You've installed Wii Room Anywhere on your console! Enjoy the app to your hearts content!</l>
 ___
