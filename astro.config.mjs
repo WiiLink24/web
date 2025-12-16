@@ -7,6 +7,9 @@ import icon from "astro-icon";
 
 export default defineConfig({
   site: "https://wiilink.ca",
+  build: {
+    inlineStylesheets: 'always'
+  },
   integrations: [mdx({
     extendPlugins: false
   }), partytown(), astroI18next(), sitemap(), icon({
