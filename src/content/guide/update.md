@@ -1,7 +1,7 @@
 ---
 title: Updating WiiLink
 icon: lucide:refresh-cw
-pubDate: 2025-06-25
+pubDate: 2025-12-26
 description: Get up-to-date instructions on how to update your WiiLink channels!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -71,7 +71,8 @@ If you choose not to copy everything automatically, copy the `WAD` and `apps` fo
 <hr style="border-top:2px solid var(--border-color);">
 </br>
 
-## Section II - Installing WADs
+<span id="section-ii---installing-wads"></span>
+## Section II - Installing WADs and Patching `Wii Mail`
 
 <l class="notice info smallwidth">If you’re using Dolphin, install WADs through the menu (`Tools` > `Install WAD…`) instead of following these instructions.</l>
 
@@ -81,9 +82,17 @@ If you choose not to copy everything automatically, copy the `WAD` and `apps` fo
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
 5. If your Wii is not Japanese region, and you have chosen to install regional channels, install `WiiLink Address Settings.wad` before anything else. This is required for use of the Food Channel and the Photo Prints Channel.
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
-7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 
 <l class="notice warn smallwidth">If you receive error `-1022` or `-1029` while installing WADs, press `-` to uninstall the existing WAD, and try again.</l>
+
+7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
+8. Open the `WiiLink Mail Patcher` application inside the Homebrew Channel.
+9. Follow the on-screen instructions.
+
+<l class="notice warn smallwidth">If you receive error `-110211` in the Mail Patcher, head over to [our forum](https://forum.wiilink.ca) or [Discord server](https://discord.gg/wiilink) for support.</l>
+
+10. Once the patcher is finished, you can return to the Wii Menu.
+
 
 </br>
 <hr style="border-top:2px solid var(--border-color);">

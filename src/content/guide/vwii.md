@@ -1,7 +1,7 @@
 ---
 title: Wii U Installation
 icon: download
-pubDate: 2025-09-28
+pubDate: 2025-12-26
 description: Get up-to-date instructions on how to install all of our services on Wii U!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -46,11 +46,11 @@ heroImage: "/img/guidebg-3.webp"
 5. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Launch `Load Priiloader`
 6. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Using your Wii Remote, go to `System Menu Hacks`.
 7. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Enable `Fix NWC24iSetUniversalTime`, `Always enable WiiConnect24 on boot`, and `Create message via Calendar button` from the menu.
-</br>
+
 <l class="notice warn">If you have `Permanent vWii System Settings` enabled, you must disable it, as it conflicts with `Always enable WiiConnect24 on boot`.</l>
-8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A, then press B to go back to the main menu of Priiloader.
-9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Return to the Homebrew Channel.
-10. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Press Home, then `Exit to System Menu`.
+
+8. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Scroll down to `save settings` and press A.
+9. <i style="margin-bottom:13px; margin-right:8px; font-size:25px;"></i> Power off your console.
 
 </br>
 
@@ -115,17 +115,21 @@ If you choose not to copy everything automatically, copy the `WAD` and `apps` fo
 
 ## Section III - Installing WADs and Patching `Wii Mail`
 
-<l class="notice info">If you already have `Wii Mail` patched for use with RiiConnect24, you don't need to run the WiiLink Mail Patcher.</l>
-
-1. Put your SD card or USB drive in your Wii.
-2. Launch the Homebrew Channel on your Wii.
+1. Put your SD card or USB drive in your Wii U.
+2. Launch the Homebrew Channel in your vWii.
 3. Launch yawmME (YAWM ModMii Edition).
 4. Press `A` to select your source device, which defaults to `Wii SD Card`.
 5. If your Wii is not Japanese region, and you have chosen to install regional channels, install `WiiLink Address Settings.wad` before anything else. This is required for use of the Food Channel and the Photo Prints Channel.
 6. Highlight all other WADs and press + to select them. When all of them are selected, press A twice to install the WADs.
+
+<l class="notice warn smallwidth">If you receive error `-1022` or `-1029` while installing WADs, press `-` to uninstall the existing WAD, and try again.</l>
+
 7. After they are successfully installed, press the HOME Button to exit back to the Homebrew Channel.
 8. Open the `WiiLink Mail Patcher` application inside the Homebrew Channel.
 9. Follow the on-screen instructions.
+
+<l class="notice warn smallwidth">If you receive error `-110211` in the Mail Patcher, head over to [our forum](https://forum.wiilink.ca) or [Discord server](https://discord.gg/wiilink) for support.</l>
+
 10. Once the patcher is finished, you can return to the Wii Menu.
 
 </br>
