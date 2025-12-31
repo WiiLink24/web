@@ -38,9 +38,9 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 </br>
 
 1. Select `Wii Room Anywhere` from the main menu
-3. Choose the language you want the application to be in
-4. Open the "WiiLink" folder, and copy the `nds` folder within to your SD card
-5. Insert your SD card to your console, and launch the `.nds` file using [TWiLight Menu++](https://github.com/DS-Homebrew/TWiLightMenu/releases/latest)
+2. Choose the language you want the application to be in
+3. Open the "WiiLink" folder, and copy the `nds` folder within to your SD card
+4. Insert your SD card to your console, and launch the `.nds` file using [TWiLight Menu++](https://github.com/DS-Homebrew/TWiLightMenu/releases/latest)
 
 <l class="notice success fullwidth center">Congrats! You've installed Wii Room Anywhere on your console! Enjoy the app to your hearts content!</l>
 ___
