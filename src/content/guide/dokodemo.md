@@ -18,24 +18,6 @@ icon: lucide:house
 </br>
 </br>
 
-<l class="notice info">You need to own the DSiWare title "Dokodemo Wii no Ma" to get Wii Room Anywhere.</l>
-
-<br>
-
-## Dumping Dokodemo Wii no Ma
-
-### 3DS:
-1. Hold `START` while turning on your console to enter GodMode9
-2. Press `HOME`, and open `Title manager`
-3. Select `NAND/TWL`
-4. Find and select "Dokodemo Wii no Ma" in the list (TWL-KDGJ)
-5. Select `Manage Title...` > `Dump CXI/NDS file`
-
-### DSi:
-Follow the instructions at https://dsi.cfw.guide/dsiware-backups.html.
-
-<br>
-
 ## Installation guide
 
 ### Launching the patcher:
@@ -56,7 +38,6 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 </br>
 
 1. Select `Wii Room Anywhere` from the main menu
-2. Click `Browse...` and navigate to your ROM
 3. Choose the language you want the application to be in
 4. Open the "WiiLink" folder, and copy the `nds` folder within to your SD card
 5. Insert your SD card to your console, and launch the `.nds` file using [TWiLight Menu++](https://github.com/DS-Homebrew/TWiLightMenu/releases/latest)
