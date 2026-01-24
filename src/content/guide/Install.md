@@ -1,7 +1,7 @@
 ---
 title: Installation guide
 icon: download
-pubDate: 2024-07-25
+pubDate: 2024-01-24
 description: Get up-to-date instructions on how to install all of our services!
 heroImage: "/img/guidebg-install.webp"
 ---
@@ -21,14 +21,14 @@ We'll get you up and running in no time, but first, where do you plan to use Wii
 </div>
 <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));  margin-bottom:50px; gap:5px; flex-wrap:nowrap; position:relative;">
   <div style="width:100%; height:70px; margin-top:5px; position:relative;">
-    <a href="/guide/wii">
+    <a href="/guide/patcher">
       <button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:12px 4px 4px 12px; background-color:#0099CC; border:2px solid #33B5E5; transition: all 0.3s ease;" class="btn1 btn btn-primary">
         <img src="../../img/wiimote.webp" style="rotate:30deg; filter:invert(1);" height="25px"> Wii
       </button>
     </a>
   </div>
   <div style="width:100%; height:70px; margin-top:5px; position:relative;">
-    <a href="/guide/dolphin">
+    <a href="/guide/patcher">
       <button type="button" style="width:100%; height:70px; color:white !important; font-family:system-ui; border-radius:4px 4px 4px 4px; background-color:#006699; border:2px solid #3388CC; transition: all 0.3s ease;" class="btn1 btn btn-primary">
         <img src="../../img/dolphin.webp" style="filter:invert(1);" height="25px"> Dolphin
       </button>
