@@ -1,7 +1,7 @@
 ---
 title: Wii U Priiloader
-icon: download
-pubDate: 2025-01-24
+icon: lucide:settings
+pubDate: 2026-01-24
 description: Get up-to-date instructions on how to configure Priiloader on Wii U!
 heroImage: "/img/guidebg-3.webp"
 ---

@@ -1,7 +1,7 @@
 ---
 title: Installation guide
 icon: download
-pubDate: 2024-01-24
+pubDate: 2026-01-24
 description: Get up-to-date instructions on how to install all of our services!
 heroImage: "/img/guidebg-install.webp"
 ---

@@ -1,6 +1,6 @@
 ---
 title: Wii Message Board
-pubDate: 2026-01-24
+pubDate: 2026-01-25
 description: Get up-to-date instructions on how to patch the Wii Message Board!
 icon: lucide:presentation
 ---
@@ -20,7 +20,7 @@ icon: lucide:presentation
 
 ## Installation guide
 
-<l class="notice warn fullwidth">To use this service on vWii, you will need to enable the `Create message via Calendar button` hack in Priiloader. If you are unsure of how to do this, or do not have Priiloader installed, follow [this](/guide/vwii#section-i---priiloader) guide.</l>
+<l class="notice warn fullwidth">To use this service on vWii, you will need to enable the `Create message via Calendar button` hack in Priiloader. If you are unsure of how to do this, or do not have Priiloader installed, follow [this](/guide/vwii) guide.</l>
 </br></br>
 <l class="notice warn fullwidth">At present, this service is <b>not compatible</b> with the Dolphin Emulator.</l>
 </br>
@@ -33,7 +33,7 @@ icon: lucide:presentation
 
 3. Once the patcher is finished, you can return to the Wii Menu.
 
-<l class="notice success smallwidth">Congratulations! You've patched Wii Mail on your Console! You can use the service to your hearts content once again!</l>
+<l class="notice success smallwidth">Congratulations! You've patched Wii Mail on your Console!</l>
 
 <l class="notice generic fullwidth"><b>What's next?</b></br>
 <b>For people looking to use Demae Domino's:</b> Continue to <b><a href="/guide/accounts">linking your console to a WiiLink Account</a></b>.</br>
