@@ -1,6 +1,6 @@
 ---
 title: Everybody Votes Channel
-pubDate: 2024-01-24
+pubDate: 2026-01-25
 icon: lucide:chart-pie
 description: Answer questions and tell the world your answer in national and worldwide polls!
 heroImage: "politicsbanner.webp"
@@ -9,6 +9,8 @@ color: 2291b360
 ---
 
 ### Answer questions and tell the world your answer in national and worldwide polls.
+
+<l class="notice warn smallwidth">With a default Dolphin NAND, the Everybody Votes Channel is disabled to prevent abuse. To use this service in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
 <a href="/extras/vote" id="download-button"
         class="btn btn-success" style="margin-top:5px; width:100%;"> View Poll Results</a>

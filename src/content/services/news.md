@@ -1,6 +1,6 @@
 ---
 title: News Channel
-pubDate: 2024-01-24
+pubDate: 2026-01-25
 icon: lucide:newspaper
 description: Read the global news on your Wii!
 heroImage: "newsbanner.webp"
@@ -14,7 +14,7 @@ color: 407d0f60
 
 With the News Channel, and you can read the news in 7 different languages depending on what
 region your Wii is set to! They all have the location where the article takes place in on the Globe
-(location data comes from <a href="https://developers.google.com/maps/">Google Maps API</a>) and has
+(location data comes from the <a href="https://nominatim.org/release-docs/develop/api/Overview/">Nominatim API</a>) and has
 pictures associated with the article. You can even view specific headlines on the Wii Menu! See below to see
 what news sources are used for each language.
 
@@ -29,46 +29,27 @@ searched for sources that send out enough news.
 			<ul class="collection with-header">
 				<li style="display:flex; align-items:center; justify-content:space-between;">
 					<h5>Japanese</h5>
-					<a href="https://jp.reuters.com">Reuters</a>
+					<a href="https://news.web.nhk/newsweb">NHK</a>
 				</li>
 				<li style="display:flex; align-items:center; justify-content:space-between;">
-					<h5>English (America)</h5>
-					<a href="https://apnews.com">Associated Press</a>
-				</li>
-				<li style="display:flex; align-items:center; justify-content:space-between;">
-					<h5>English (Canada)</h5>
-					<div>
-					<a href="https://www.thecanadianpress.com">The Canadian Press</a> (through <a
-						href="https://thestar.com">Toronto Star</a>) for national news, <a
-						href="https://apnews.com">Associated Press</a> for other news
-						</div>
-				</li>
-				<li style="display:flex; align-items:center; justify-content:space-between;">
-					<h5>English (Europe)</h5>
-					<a href="https://uk.reuters.com">Reuters</a>
+					<h5>English</h5>
+					<a href="https://www.reuters.com/">Reuters</a>
 				</li>
 				<li style="display:flex; align-items:center; justify-content:space-between;">
 					<h5>German</h5>
 					<div>
-					<a href="https://www.afp.com/de">AFP</a> and <a href="https://sid.de">SID</a> for sports news
-					(through <a href="https://spin.de">Spin.de</a>)
+					<a href="https://www.tagesschau.de/">Tagesschau</a>
 					</div>
 				</li>
 				<li style="display:flex; align-items:center; justify-content:space-between;">
 					<h5>French</h5>
 					<div>
-					<a href="https://www.afp.com/fr">AFP</a> (through <a href="http://www.lepoint.fr">Le Point</a>)
+					<a href="https://www.france24.com/fr/">France 24</a>
 					</div>
 				</li>
 				<li style="display:flex; align-items:center; justify-content:space-between;">
-					<h5>Spanish (America)</h5>
-					<a href="https://apnews.com">Associated Press</a>
-				</li>
-				<li style="display:flex; align-items:center; justify-content:space-between;">
-					<h5>Spanish (Europe)</h5>
-					<div>
-					<a href="https://www.afp.com/es">AFP</a> (through <a href="https://rfi.fr">rfi.fr</a>)
-					</div>
+					<h5>Spanish</h5>
+					<a href="https://www.rtve.es/">RTVE</a>
 				</li>
 				<li style="display:flex; align-items:center; justify-content:space-between;">
 					<h5>Italian</h5>
@@ -77,7 +58,7 @@ searched for sources that send out enough news.
 				<li style="display:flex; align-items:center; justify-content:space-between;">
 					<h5>Dutch</h5>
 					<div>
-					<a href="https://www.anp.nl">ANP</a> (through <a href="https://nieuws.nl">Nieuws.nl</a>)
+					<a href="https://nos.nl/">NOS</a>
 					</div>
 				</li>
 			</ul>

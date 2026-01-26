@@ -1,7 +1,7 @@
 ---
 title: Frequently asked questions
 icon: circle-help
-pubDate: 2024-10-02
+pubDate: 2026-01-25
 description: Some frequently asked questions you might be interested in...
 heroImage: "/img/guidebg-2.webp"
 ---
@@ -34,23 +34,17 @@ Is using WiiLink legal?
 
 "I have a question about a WiiLink channel!"
 
-   >  Check our Services and read that channel’s FAQ. Your question may already be answered!
+   >  Check out our [service page](/services) for the channel. Your question may already be answered!
     If you still have questions, please reach out. We’re more than happy to assist!
-        The best time for real-time support is within our Discord server, where an active community exists.
-        You can also contact us via our Twitter account!
+        The best options for real-time support are our [Discord server](https://discord.gg/wiilink) and [forum](https://forum.wiilink.ca), where we have an active community.
 
-"How do I install a WiiLink channel on my Wii or Wii U?"
+"How do I install a WiiLink channel on my console?"
 
    > You’ll want to check out our instructions [here](/guide/install) for simple, easy to follow instructions to get everything installed.
 
 "How do I update a WiiLink channel?"
 
    > Updating WiiLink channels is the exact same as installing! Simply run the WiiLink Patcher once more, and install the created WADs.
-
-"I’m recieving Error -1022/Error -1029 when trying to install WiiLink WADs on my WAD Manager!"
-
-   > Whenever this happens, just press - and then A on the Wii Remote to uninstall the channel(s). Afterwards, reinstall the channel(s) from your WAD directory.
-    If the problem persists, please bring up the issue in support on our Discord server and we will try to help you.
 
 "Is your service open source?"
 

@@ -1,6 +1,6 @@
 ---
 title: WiiLink Accounts
-pubDate: 2024-07-14
+pubDate: 2026-01-24
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
 icon: lucide:id-card
 ---
@@ -25,12 +25,14 @@ WiiLink Accounts are a brand-new way to do all things WiiLink! At present, they 
 
 ![img2](/img/guide/loginpage.png)
 
-2. Download the [**WiiLink Account Linker**](https://oscwii.org/library/app/wiilink-account-linker) from the Open Shop Channel and extract the `apps` folder to the root of your SD Card.
+2. Download the [**WiiLink Account Linker**](https://oscwii.org/library/app/wiilink-account-linker) from the Open Shop Channel (if you don't already have it), and extract the `apps` folder to the root of your SD Card.
 
 3. Launch the `WiiLink Account Linker` from The Homebrew Channel and enter the code it displays at https://sso.riiconnect24.net/device.
 
 ![img2](/img/guide/linkcode.png)
 
-4. Once you have successfully linked your account, navigate back to https://accounts.wiilink.ca. There, you can access the `Food Delivery Settings` tab, select your console's Wii Number, and click on the `Enable Domino's Ordering` button.
+## Enabling Domino's ordering
+
+Once you have successfully linked your account, navigate back to https://accounts.wiilink.ca. There, you can access the `Food Delivery Settings` tab, select your console's Wii Number, and click on the `Enable Domino's Ordering` button.
 
 ![img2](/img/guide/enabledominos.png)
