@@ -2,7 +2,6 @@
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Ad from "../components/Ad.astro";
 import { getCollection } from "astro:content";
 import i18next from "i18next";
 import { localizePath } from "astro-i18next";
@@ -94,8 +93,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
           </div>
         </div>
       </div>
-
-      <Ad />
     <Footer />
     <script is:inline>
       function updateTagline() {

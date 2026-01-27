@@ -4,7 +4,6 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
 import { getCollection } from "astro:content";
-import Ad from "../../../components/Ad.astro";
 import { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
@@ -73,8 +72,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
         </div>
       </a>
     </div>
-
-    <Ad />
 
     <div
       class="line-container bg-1"

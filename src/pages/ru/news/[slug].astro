@@ -7,7 +7,6 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import News from "../../../components/News.astro";
-import Ad from "../../../components/Ad.astro";
 import i18next, { t, changeLanguage } from "i18next";
 
 changeLanguage("ru");
@@ -219,8 +218,6 @@ const readingTime = Math.ceil(wordCount.length / 200);
 </div>
 <div class="article-holder">
   <div class="postexpand" set:html={bodyHTML} />
-
-  <Ad />
 
   <div class="auths">
     {

@@ -3,7 +3,6 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
-import Ad from "../../../components/Ad.astro";
 import { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
@@ -56,8 +55,6 @@ changeLanguage("va");
     </div>
     <div id="postholder" style="padding: 0 5%;"></div>
   </section>
-
-  <Ad />
 
   <h1 id="fetcherStatus" style="display:none;">
     /json{localizePath("/services.json")}
