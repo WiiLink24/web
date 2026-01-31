@@ -2,12 +2,10 @@
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { getCollection } from "astro:content";
 import i18next from "i18next";
 import { localizePath } from "astro-i18next";
 import { Icon } from "astro-icon/components";
 
-const posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
 const { title, description, icon, color, pubDate, type, heroImage } =
   Astro.props;
@@ -20,317 +18,230 @@ const { title, description, icon, color, pubDate, type, heroImage } =
     image="/img/default.webp"
   />
   <Header isGuide="display:none;" />
-      <div
-        class="headtitle"
-        style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
-        <div
-          class="mobileheadtitle"
-          style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
-          {
-            heroImage && (
-              <img class="mainimg" src={"/img/" + heroImage} width="200px" />
-            )
-          }
-          <div>
-            <a href={localizePath("/status")}>
-              <button
-                class="btn"
-                style="top:18px; right:18px; background-color: var(--bg-opaque-1); position:absolute;"
-                >Go to <Icon name="lucide:server" style="margin-left:8px; margin-bottom:3px" /> Status</button
-              >
-            </a>
-            <h2 class="title" id="titleData">{title}</h2>
-            <p id="title" style="display:none;">{title}</p>
-            <p style="max-width:480px;">{description}</p>
-            <hr style="border-top:2px solid var(--color);" />
-            <div
-              style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
-              <div class="mobileHeadAuth" style="display:flex; gap:4px;">
-                <r
-                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;"
-                  datetime={pubDate.toISOString()}>
-                  {
-                    pubDate.toLocaleDateString("en-uk", {
-                      year: "numeric",
-                      month: "short",
-                      day: "numeric"
-                    })
-                  }
-                </r>
-                <r
-                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px; font-family:system-ui; position:relative;">
-                  {type}
-                </r>
-                <r
-                  style="background-color: var(--bg-opaque-2); padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;"
-                  datetime={pubDate.toISOString()}>
-                  <Icon name={icon} style="margin-bottom:3px" />
-                </r>
-              </div>
-              <div>
-                <r
-                  id="readingTime"
-                  style="font-family:system-ui; position:relative;"></r>
-              </div>
-            </div>
-          </div>
-          <div class="extraholder">
-            <span class="badge" id="status" style="color: var(--color);"></span>
-            <div
-              style="height:16px; width:100%; margin-top:8px; border-radius:58px; background-color: var(--bg-opaque-1); position:relative;">
-              <div id="progress" style="height:100%; border-radius:58px;"></div>
-            </div>
-            <hr style="border-top:2px solid var(--color);" />
-            <p id="todo" style="margin-top:8px; max-width:480px;"></p>
-          </div>
-        </div>
+  <div
+    class="headtitle"
+    style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>
+    <div
+      class="mobileheadtitle"
+      style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
+      {
+        heroImage && (
+          <img class="mainimg" src={"/img/" + heroImage} width="200px" />
+        )
+      }
+      <div>
+        <a href={localizePath("/status")}>
+          <button
+            class="btn"
+            style="top:18px; right:18px; background-color: var(--bg-opaque-1); position:absolute;"
+            >Go to <Icon
+              name="lucide:server"
+              style="margin-left:8px; margin-bottom:3px"
+            /> Status</button
+          >
+        </a>
+        <r
+          style="background-color: var(--bg-opaque-2); margin-bottom: 8px; font-size: 15px; padding:4px 10px; border-radius:80px; font-family:system-ui; position:relative; display:inline-block;">
+          {type}
+        </r>
+        <h2 class="title" id="titleData">{title}</h2>
+        <p id="title" style="display:none;">{title}</p>
+        <p style="max-width:480px;">{description}</p>
       </div>
-      <div class="guideholder">
-        <div class="guidecontent" id="container2">
-          <slot /><div
-            id="google_translate_element"
-            style="transform:translate(0, 20px); z-index:100;">
-          </div>
-        </div>
-      </div>
-    <Footer />
-    <script is:inline>
-      function updateTagline() {
-        let tagline = document.getElementById("titleData");
-        let words = tagline.innerText.split(" ");
-        tagline.innerHTML = words
-          .map(
-            (word, index) =>
-              `<span style="--delay: ${index * 0.2}s;">${word}</span>`
-          )
-          .join(" ");
+    </div>
+  </div>
+  <div class="guideholder">
+    <div class="guidecontent" id="container2">
+      <slot />
+    </div>
+  </div>
+  <Footer />
+
+  <style>
+    h3 {
+      color: var(--color) !important;
+    }
+
+    main {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    .title {
+      font-size: 45px;
+      font-family: Gilroy;
+      z-index: 100;
+      position: relative;
+    }
+
+    .titlehold {
+      left: 50%;
+      width: 98%;
+      height: 95%;
+      max-width: 1400px;
+      transform: translate(-50%, 0);
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .topImage {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 600px;
+      opacity: 0.7;
+      filter: blur(16px);
+      pointer-events: none;
+      -webkit-mask-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 1) 0%,
+        transparent 58%
+      );
+      position: fixed;
+      transition: 0.2s;
+    }
+
+    .headtitle {
+      width: 95%;
+      max-width: 1000px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      padding: 80px 30px 80px 30px;
+      border-radius: 18px 18px 8px 8px;
+      margin-bottom: 8px;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .extraholder {
+      height: 100%;
+      min-width: 400px;
+      padding: 16px;
+      background-color: var(--bg-opaque-1);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: none;
+    }
+
+    .guidecontent {
+      width: 95%;
+      left: 50%;
+      scroll-behavior: smooth;
+      transform: translate(-50%, 0);
+      position: relative;
+      font-family: Cafe;
+      margin-top: 30px;
+      text-align: justify;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .guideholder {
+      width: 95%;
+      max-width: 1000px;
+      height: auto;
+      left: 50%;
+      top: 0px;
+      perspective: 1px;
+      border: 0px solid var(--border-color);
+      background-color: var(--bg-color-secondary);
+      transform: translate(-50%, 0);
+      border-radius: 8px 8px 18px 18px;
+      overflow: hidden;
+      padding-bottom: 30px;
+      opacity: 0;
+      position: relative;
+      animation-name: fadeup;
+      animation-duration: 0.5s;
+      animation-fill-mode: forwards;
+    }
+
+    .guideholder::-webkit-scrollbar {
+      display: none;
+    }
+
+    .holder::-webkit-scrollbar {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .color {
+      background: url("/img/header_bg.webp");
+      background: AccentColor;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: brightness(150%);
+    }
+
+    .hover {
+      display: none;
+    }
+
+    @keyframes fadeup {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, 38px);
       }
-
-      document.addEventListener("DOMContentLoaded", function () {
-        async function getServiceData() {
-          const response = await fetch("/json/services.json");
-          const data = await response.json();
-          const title = document.getElementById("title").innerHTML;
-          const service = data.services.service.find(s => s.name === title);
-
-          return service;
-        }
-
-        getServiceData().then(service => {
-          if (!service) return;
-          document.querySelector(".extraholder").style.display = "block";
-          document.getElementById("progress").style.backgroundColor =
-            service.color;
-          document.getElementById("progress").style.width =
-            service.completed + "%";
-          document.getElementById("todo").innerHTML = service.todo;
-          document.getElementById("status").style.backgroundColor =
-            service.color;
-          document.getElementById("status").innerHTML = service.status;
-        });
-
-        updateTagline();
-
-        let post = document.querySelector(".guidecontent");
-        let wordCount = post.innerHTML.split(" ");
-        let readingTime = Math.ceil(wordCount.length / 200);
-        document.getElementById("readingTime").innerHTML =
-          `<span class="clock"></span> ${readingTime} min read`;
-
-        var nav = document.querySelector("nav");
-        if (nav) nav.remove();
-      });
-
-      window.onload = function () {
-        const movableDiv = document.querySelector(".toc-post");
-        movableDiv.style.display = "none";
-      };
-    </script>
-
-    <style>
-      h3 {
-        color: var(--color) !important;
+      100% {
+        opacity: 1;
+        transform: translate(-50%, 0px);
       }
-      
-      main {
-        width: 100%;
-        max-width: 100%;
-        padding: 0;
-      }
+    }
 
-      .title {
-        font-size: 45px;
-        font-family: Gilroy;
-        z-index: 100;
-        position: relative;
-      }
-
-      .titlehold {
-        left: 50%;
-        width: 98%;
-        height: 95%;
-        max-width: 1400px;
-        transform: translate(-50%, 0);
-        margin-bottom: 20px;
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
-        position: relative;
-      }
-
-      .topImage {
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 600px;
-        opacity: 0.7;
-        filter: blur(16px);
-        pointer-events: none;
-        -webkit-mask-image: linear-gradient(
-          180deg,
-          rgba(0, 0, 0, 1) 0%,
-          transparent 58%
-        );
-        position: fixed;
-        transition: 0.2s;
-      }
-
+    @media (max-width: 600px) {
       .headtitle {
-        width: 95%;
-        max-width: 1500px;
-        left: 50%;
-        transform: translate(-50%, 0);
-        padding: 80px 30px 80px 30px;
-        border-radius: 18px 18px 8px 8px;
-        margin-bottom: 8px;
-        animation-name: fadeup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
-        overflow: hidden;
-        position: relative;
+        padding: 20px;
+        padding-top: 80px;
+      }
+
+      .mobileheadtitle {
+        display: flex;
+        flex: column;
+      }
+
+      .mobileheadtitle div {
+        width: 100%;
       }
 
       .extraholder {
-        height: 100%;
-        min-width: 400px;
-        padding: 16px;
-        background-color: var(--bg-opaque-1);
-        border-radius: 8px;
-        margin-bottom: 8px;
-        display: none;
+        min-width: 100%;
       }
+    }
 
-      .guidecontent {
-        width: 95%;
-        left: 50%;
-        scroll-behavior: smooth;
-        transform: translate(-50%, 0);
-        position: relative;
-        font-family: Cafe;
-        margin-top: 30px;
-        text-align: justify;
-        animation-name: fadeup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
+    @media (min-width: 2000px) {
+      .headtitle {
+        margin-top: 130px;
       }
+    }
+  </style>
 
-      .guideholder {
-        width: 95%;
-        max-width: 1500px;
-        height: auto;
-        left: 50%;
-        top: 0px;
-        perspective: 1px;
-        border: 0px solid var(--border-color);
-        background-color: var(--bg-color-secondary);
-        transform: translate(-50%, 0);
-        border-radius: 8px 8px 18px 18px;
-        overflow: hidden;
-        padding-bottom: 30px;
-        opacity: 0;
-        position: relative;
-        animation-name: fadeup;
-        animation-duration: 0.5s;
-        animation-fill-mode: forwards;
+  <style is:global>
+    #titleData span {
+      opacity: 0;
+      transform: translateY(5px);
+      display: inline-block;
+      animation: fadeUpLetter 0.2s forwards;
+      animation-delay: var(--delay);
+      transition: 0.1s;
+    }
+
+    @keyframes fadeUpLetter {
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
-
-      .guideholder::-webkit-scrollbar {
-        display: none;
-      }
-
-      .holder::-webkit-scrollbar {
-        display: none;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      .color {
-        background: url("/img/header_bg.webp");
-        background: AccentColor;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        filter: brightness(150%);
-      }
-
-      .hover {
-        display: none;
-      }
-
-      @keyframes fadeup {
-        0% {
-          opacity: 0;
-          transform: translate(-50%, 38px);
-        }
-        100% {
-          opacity: 1;
-          transform: translate(-50%, 0px);
-        }
-      }
-
-      @media (max-width: 600px) {
-        .headtitle {
-          padding: 20px;
-          padding-top: 80px;
-        }
-
-        .mobileheadtitle {
-          display: flex;
-          flex: column;
-        }
-
-        .mobileheadtitle div {
-          width: 100%;
-        }
-
-        .extraholder {
-          min-width: 100%;
-        }
-      }
-
-      @media (min-width: 2000px) {
-        .headtitle {
-          margin-top: 130px;
-        }
-      }
-    </style>
-
-    <style is:global>
-      #titleData span {
-        opacity: 0;
-        transform: translateY(5px);
-        display: inline-block;
-        animation: fadeUpLetter 0.2s forwards;
-        animation-delay: var(--delay);
-        transition: 0.1s;
-      }
-
-      @keyframes fadeUpLetter {
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-    </style>
+    }
+  </style>
+</html>
