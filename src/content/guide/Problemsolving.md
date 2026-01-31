@@ -1,7 +1,7 @@
 ---
 title: Problem solving
 icon: lucide:circle-alert
-pubDate: 2025-09-28
+pubDate: 2025-12-28
 description: Got any issues? Let's see if we can sort them out!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -18,21 +18,13 @@ heroImage: "/img/guidebg-3.webp"
 <div class="errorCodes" id="error-codes">
 
 
-<div class="error">Invaild Wii Console <span class="badge bg-success">WiiLink Accounts</span><h4>Ensure that you have patched your Wii Mail as per <a href="/guide/board" class="text-info">these instructions</a>. If you have, and you still receive the error, head on over to <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further assistance.</h4><hr></div>
-
 <div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a>, and send a picture of your error, making sure to include your Wii Number.</h4><hr></div>
 
-<div class="error">Error Code: 107245 <span class="badge bg-warning">Any Channel</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
+<div class="error">Error Code: 107245 <span class="badge bg-warning">Region Select</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
 
-<div class="error">Error Code: FORE000006 <span class="badge bg-primary">Forecast Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock" class="text-info">here</a> to synchronise your time, and try again. If you still receive the error, ask on <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further help with diagnosing your issue!</h4><hr></div>
+<div class="error">Error Code: FORE/NEWS000006 <span class="badge bg-primary">Forecast Channel / News Channel</span><h4>Follow the instructions <a href="https://wii.hacks.guide/wiiconnect24#updating-rtc-clock" class="text-info">here</a> to synchronise your time, and try again. If you still receive the error, ask on <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a> for further help with diagnosing your issue!</h4><hr></div>
 
-<div class="error">Error Code: NEWS000006 <span class="badge bg-primary">News Channel</span><h4>If your console isn't set to English, change the language to English. Unfortunately, we are only able to offer the News Channel in English at present. Otherwise, follow the notes above for FORE000006.</h4><hr></div>
-
-<div class="error">Squished screen <span class="badge bg-primary">Wii Room</span><h4>If the channel launches with the screen vertically squished, it means you are running the software in the PAL viewing mode. This is necessary to prevent crashes and improve general instability. To fix this, modify the video mode using a launcher like <a class="btn btn-success" href="https://oscwii.org/library/app/wiiflow"><span class="download"></span> WiiFlow WFL</a>.</h4><hr></div>
-
-<div class="error">Error Code: -1017 <span class="badge bg-warning">Food Channel</span><h4>This is a known issue with the patcher! In the meantime, you will find a file titled "Food Channel (English).wad" on the root of your SD card. Use your favorite WAD manager to install!</h4><hr></div>
-
-<div class="error">Wii Update <span class="badge bg-warning">Food Channel/Photo Prints Channel</span><h4>If the system asks you to update, you didn't install "WiiLink Address Settings.wad". Using yawmME, go to the location where you put "WiiLink Address Settings.wad", then install it by pressing the A Button twice on your Wii remote. 
+<div class="error">Wii Update <span class="badge bg-warning">Food Channel / Photo Prints Channel / Wii Room</span><h4>If the system asks you to update, you didn't install "WiiLink Address Settings.wad". Using yawmME, go to the location where you put "WiiLink Address Settings.wad", then install it by pressing the A Button twice on your Wii remote. If this doesn't work, follow <a href="/guide/update" class="text-info">this guide</a> to update the relevant channel.
 </h4><hr></div>
 
 <div class="error">Error Code: -1022/-1029 <span class="badge bg-warning">Any Channel</span><h4>Using your favorite WAD manager, uninstall the channel, and install again. For yawmME, this means locating the channel WAD, and pressing the - (minus) button on your Wii remote, and pressing A to uninstall. Then, install the WAD again.</h4><hr></div>
@@ -41,7 +33,7 @@ heroImage: "/img/guidebg-3.webp"
 
 <div class="error">Invalid country coode <span class="badge bg-warning">Food Channel</span><h4>Go into your Wii Settings, and change your country to either the US or Canada, as Demae Domino's is only offered in these countries.</h4><hr></div>
 
-<div class="error">Error Code: 51330 <span class="badge bg-warning">Internet Error</span><h4>Make sure that your internet connection to your Wii is working by doing a connection test. If it's successful, run the Mail Patcher again. If it fails, your router is incompatible with the Wii. You can potentially fix this by configuring your router to use the 802.11g or 802.11b band alongside the other bands that it uses.</h4><hr></div>
+<div class="error">Error Code: 5133X <span class="badge bg-warning">Internet Error</span><h4>Make sure that your internet connection to your Wii is working by doing a connection test. If it's successful, run the Mail Patcher again. If it fails, your router is incompatible with the Wii. You can potentially fix this by configuring your router to use the 802.11g or 802.11b band alongside the other bands that it uses.</h4><hr></div>
 
 <div class="error">Error Code: 109139 <span class="badge bg-warning">Any Channel</span><h4>The WiiConnect24 service isn’t activated on your console. Go to Wii Settings → WiiConnect24 and agree to its terms of use. If it reports that “WiiConnect24 and Wii Shop Channel service is not currently being offered”, try changing your Wii’s country setting (for European Wiis, “United Kingdom” is recommended). If it succeeds, you can use AnyGlobe Changer to switch back to your country.<br />If the issue persists, ensure that “Standby Connection” is enabled in WiiConnect24 settings, and “Parental Controls” are turned off.</h4><hr></div>
 

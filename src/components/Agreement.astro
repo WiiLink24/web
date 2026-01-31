@@ -249,8 +249,7 @@ import { Icon } from "astro-icon/components";
 
     <li>
       <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-        ><Icon name="discord" style="margin-bottom:3px;" /> Join our
-        Discord server!</a
+        ><Icon name="discord" style="margin-bottom:3px;" /> Join our Discord server!</a
       >
     </li>
     <li>
@@ -272,6 +271,30 @@ import { Icon } from "astro-icon/components";
     </li>
   </div>
 </div>
+
+<script>
+  // Ensure this runs after DOM is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    const offcanvas = document.getElementById("offcanvasTop");
+    if (!offcanvas) return;
+
+    // Show offcanvas when opened
+    offcanvas.addEventListener("show.bs.offcanvas", function () {
+      offcanvas.style.display = "block";
+      if (document.getElementById("square2")) {
+        document.getElementById("square2").style.overflow = "hidden";
+      }
+    });
+
+    // Hide offcanvas when closed
+    offcanvas.addEventListener("hidden.bs.offcanvas", function () {
+      offcanvas.style.display = "none";
+      if (document.getElementById("square2")) {
+        document.getElementById("square2").style.overflow = "auto";
+      }
+    });
+  });
+</script>
 
 <style>
   .my-select-class {
@@ -310,6 +333,7 @@ import { Icon } from "astro-icon/components";
   .offcanvas {
     background-color: var(--bg-color);
     border-radius: 16px 0px 0px 16px;
+    display: none;
   }
 
   .buttons {

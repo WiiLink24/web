@@ -2,7 +2,6 @@
 import Layout from "./Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import Ad from "../components/Ad.astro";
 import { getCollection } from "astro:content";
 import i18next from "i18next";
 import { localizePath } from "astro-i18next";
@@ -83,12 +82,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
             </div>
             <hr style="border-top:2px solid var(--color);" />
             <p id="todo" style="margin-top:8px; max-width:480px;"></p>
-            <button
-              id="btncolor"
-              class="btn"
-              style="width:100%; position:relative;"
-              >Open the <Icon name="lucide:book" style="margin-bottom:3px" /> {title} guide</button
-            >
           </div>
         </div>
       </div>
@@ -100,8 +93,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
           </div>
         </div>
       </div>
-
-      <Ad />
     <Footer />
     <script is:inline>
       function updateTagline() {
@@ -128,8 +119,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
         getServiceData().then(service => {
           if (!service) return;
           document.querySelector(".extraholder").style.display = "block";
-          document.getElementById("btncolor").style.backgroundColor =
-            service.color;
           document.getElementById("progress").style.backgroundColor =
             service.color;
           document.getElementById("progress").style.width =
@@ -138,9 +127,6 @@ const { title, description, icon, color, pubDate, type, heroImage } =
           document.getElementById("status").style.backgroundColor =
             service.color;
           document.getElementById("status").innerHTML = service.status;
-          document.getElementById("btncolor").onclick = function () {
-            window.location.href = service.link;
-          };
         });
 
         updateTagline();

@@ -11153,7 +11153,7 @@ If you install the Mario Kart Channel in your Wii Menu, you can access each of t
     <case versions="2"/>
   </game>
   <game name="Metroid Prime Hunters (Europe) (EN,FR,DE,ES,IT)">
-    <id>AMHP</id>
+    <id>AMHE</id>
     <type>DS</type>
     <region>PAL</region>
     <languages>EN,FR,DE,ES,IT</languages>

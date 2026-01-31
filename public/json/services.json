@@ -18,9 +18,9 @@
         "desc": "Quickly catch up on the latest news from around the world and see exactly where it's happening.",
         "link": "/guide/news",
         "isArea": "International",
-        "status": "English Release",
+        "status": "Full Release",
         "icon": "news_icon.webp",
-        "todo": "<span class='circle-check'></span> The service is working properly!</br></br>However, it is only available in English at present.",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
         "completed": "100"
       },
       {
@@ -65,7 +65,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "demae_icon.webp",
-        "completed": "80"
+        "completed": "100"
       },
       {
         "color": "#173de8",
@@ -76,7 +76,7 @@
         "status": "Private Beta",
         "todo": "<span class='hard-hat'></span> This service is still under development",
         "icon": "tvnotomo_icon.webp",
-        "completed": "40"
+        "completed": "20"
       },
       {
         "color": "#ed34d8",
@@ -98,7 +98,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "digicam_icon.webp",
-        "completed": "80"
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
@@ -142,29 +142,18 @@
         "status": "Halted",
         "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
-        "completed": "8"
+        "completed": "0"
       },
       {
         "color": "#80D4FF",
         "name": "Wii Room Anywhere",
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",
-        "link": "/status",
+        "link": "/guide/dokodemo",
         "isArea": "Originally Japan exclusive",
-        "status": "Private Beta",
-        "todo": "<span class='circle-help'></span> You can access this service by donating on our Stripe!",
-        "icon": "",
-        "completed": "75"
-      },
-      {
-        "color": "#80D4FF",
-        "name": "LinkTag",
-        "desc": "LinkTag is a customizable gamertag that you can share with your friends or embed on websites.",
-        "link": "/status",
-        "isArea": "Region Free",
-        "status": "In Development",
-        "todo": "<span class='hard-hat'></span> This service is still under development",
-        "icon": "linktag_icon.webp",
-        "completed": "5"
+        "status": "Full Release",
+        "todo": "<span class='circle-check'></span> The service is working properly!",
+        "icon": "room_icon.webp",
+        "completed": "100"
       }
     ]
   }

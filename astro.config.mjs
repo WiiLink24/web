@@ -7,12 +7,66 @@ import icon from "astro-icon";
 
 export default defineConfig({
   site: "https://wiilink.ca",
+  build: {
+    inlineStylesheets: 'always'
+  },
   integrations: [mdx({
     extendPlugins: false
   }), partytown(), astroI18next(), sitemap(), icon({
     iconDir: "public/icons",
     include: {
-      "lucide": ["info", "film", "house", "mail-open", "newspaper", "book", "arrow-right", "circle-alert", "server", "package", "package-open", "users", "tag", "id-card", "stamp", "bookmark", "disc", "shield", "feather", "moon", "sun", "arrow-up-right", "menu", "earth", "shopping-basket", "smile", "zap", "chart-pie", "video", "mic", "tv", "circle", "truck", "camera", "bot", "leaf", "chevron-down", "presentation", "umbrella", "mail", "rss","chevron-left", "chevron-right", "brush", "refresh-cw", "database", "circle-question", "terminal", "app-window"],
+      "lucide": [
+        "info",
+        "film",
+        "house",
+        "mail-open",
+        "newspaper",
+        "book",
+        "arrow-right",
+        "circle-alert",
+        "server",
+        "package",
+        "package-open",
+        "users",
+        "tag",
+        "id-card",
+        "stamp",
+        "bookmark",
+        "disc",
+        "shield",
+        "feather",
+        "moon",
+        "sun",
+        "arrow-up-right",
+        "menu",
+        "earth",
+        "shopping-basket",
+        "smile",
+        "zap",
+        "chart-pie",
+        "video",
+        "mic",
+        "tv",
+        "circle",
+        "truck",
+        "camera",
+        "bot",
+        "leaf",
+        "chevron-down",
+        "presentation",
+        "umbrella",
+        "mail",
+        "rss",
+        "chevron-left",
+        "chevron-right",
+        "brush",
+        "refresh-cw",
+        "database",
+        "circle-question",
+        "terminal",
+        "app-window",
+        "settings"
+      ],
       "simple-icons": ["twitter", "bluesky", "instagram", "youtube"]
     }
   })],

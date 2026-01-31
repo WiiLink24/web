@@ -1,6 +1,6 @@
 ---
 title: Wii Room
-pubDate: 2024-01-24
+pubDate: 2026-01-25
 icon: lucide:house
 description: Feel right at home whilst watching videos on your Wii!
 heroImage: "wiinomabanner.webp"
@@ -16,3 +16,10 @@ Wii no Ma (localized as Wii Room) was a Japan-exclusive Channel made by Nintendo
       can buy your own Mii merchandise. Wii no Ma also had a video-on-demand service which you could buy movies and TV
       shows on. It also had some original programming like "Pokémon Cooking". There also was a downloadable app for the
       DSi that let you transfer things like coupons to it. Wii no Ma lasted for 3 years and ended in 2012.
+
+## Troubleshooting & Questions
+
+</br>
+
+### "Why can I not rent Movies or TV Shows in Wii Room?"
+> You cannot view Movies & TV Shows from the Theater yet due to the feature not being implemented yet.
