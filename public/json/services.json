@@ -18,7 +18,7 @@
         "desc": "Quickly catch up on the latest news from around the world and see exactly where it's happening.",
         "link": "/guide/news",
         "isArea": "International",
-        "status": "English Release",
+        "status": "Full Release",
         "icon": "news_icon.webp",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "completed": "100"
@@ -65,7 +65,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "demae_icon.webp",
-        "completed": "80"
+        "completed": "100"
       },
       {
         "color": "#173de8",
@@ -76,7 +76,7 @@
         "status": "Private Beta",
         "todo": "<span class='hard-hat'></span> This service is still under development",
         "icon": "tvnotomo_icon.webp",
-        "completed": "40"
+        "completed": "20"
       },
       {
         "color": "#ed34d8",
@@ -98,7 +98,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "digicam_icon.webp",
-        "completed": "80"
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
@@ -142,7 +142,7 @@
         "status": "Halted",
         "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
-        "completed": "8"
+        "completed": "0"
       },
       {
         "color": "#80D4FF",
@@ -153,7 +153,7 @@
         "status": "Full Release",
         "todo": "<span class='circle-check'></span> The service is working properly!",
         "icon": "room_icon.webp",
-        "completed": "90"
+        "completed": "100"
       }
     ]
   }
