@@ -12,6 +12,7 @@ export interface news {
     description: EntryFieldTypes.Text;
     content: EntryFieldTypes.RichText;
     author: contentful.Entry<author>;
+    isAnnouncement: EntryFieldTypes.Boolean;
   };
 }
 
