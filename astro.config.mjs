@@ -34,6 +34,7 @@ export default defineConfig({
         "bookmark",
         "disc",
         "shield",
+        "globe",
         "feather",
         "moon",
         "sun",
@@ -65,9 +66,13 @@ export default defineConfig({
         "circle-question",
         "terminal",
         "app-window",
-        "settings"
+        "settings",
+        "shield-check",
+        "heart",
+        "hand-heart",
+        "newspaper"
       ],
-      "simple-icons": ["twitter", "bluesky", "instagram", "youtube"]
+      "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube"]
     }
   })],
 });

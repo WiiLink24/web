@@ -290,6 +290,10 @@ const { title, description, image } = Astro.props;
     color: var(--color) !important;
   }
 
+  h1 {
+    font-family: Gilroy, sans-serif !important;
+  }
+
   .dropdown-item:hover {
     background-color: var(--bg-select) !important;
   }
@@ -350,6 +354,52 @@ const { title, description, image } = Astro.props;
   html.dark .logo,
   html.dark .invert {
     filter: invert(0) !important;
+  }
+
+  .primary-btn {
+    background: #66a54f;
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .primary-btn:hover {
+    background: #5c9446;
+    color: #ffffff !important;
+  }
+
+  .secondary-btn {
+    background: var(--bg-color-secondary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .secondary-btn:hover {
+    background: var(--bg-color-tertiary);
+  }
+
+    .tertiary-btn {
+    background: #1a4697;
+    color: #ffffff !important;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+
+  .tertiary-btn:hover {
+    background: #154080;
+    color: #ffffff !important;
   }
 
   :root {
