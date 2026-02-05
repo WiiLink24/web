@@ -3,7 +3,6 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
-import { getCollection } from "astro:content";
 import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { localizePath } from "astro-i18next";
@@ -11,7 +10,8 @@ import { Icon } from "astro-icon/components";
 
 changeLanguage("fi");
 
-const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf());
+let goodies = await fetch(`https://wiilink.ca/json${localizePath("/goodies.json")}`).then((res) => res.json());
+goodies = goodies.goodies.goodie;
 ---
 
 <Layout
@@ -43,7 +43,22 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       </h3>
     </div>
 
-    <div id="slide-track" class="postholder"></div>
+    <div id="slide-track" class="postholder">
+      {
+        goodies.map((goodie, index) => (
+          <div class="posthold">
+            <div class="post" style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
+              <a href={goodie.link}>
+                <img class="heroImage" src={goodie.img} />
+                <div style="width:100%; bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: flex-end; justify-content: right; position:absolute;">
+                  <div class="title" set:html={goodie.title}></div>
+                  <div class="desc">{goodie.desc}</div>
+                </div>
+              </a>
+            </div>
+          </div> ))
+      }
+    </div>
 
     <h3
       style="margin-top:100px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
@@ -74,41 +89,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     </div>
     <div class="dots"></div>
   </div>
-
-<h1 id="fetcherExtras" style="display:none;">
-  /json{localizePath("/goodies.json")}
-</h1>
-
 <Footer />
-
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", async function () {
-    let fetcher = document.getElementById("fetcherExtras").innerHTML;
-    fetch(fetcher)
-      .then(response => response.json())
-      .then(data => showService(data));
-
-    function showService(data) {
-      let services = document.getElementById("slide-track");
-
-      for (let i = 0; i < data.goodies.goodie.length; i++) {
-        services.innerHTML += `<div class="posthold">
-            <div class="post" style="opacity:0; animation: fadeup 0.1s ${i * 50}ms linear forwards;">
-              <a href="${data.goodies.goodie[i].link}">
-                <img class="heroImage" src="${data.goodies.goodie[i].img}" />
-                <div style="bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: right; justify-content: right; position:absolute;">
-                  <div class="title">
-                    ${data.goodies.goodie[i].title}
-                  </div>
-                  <div class="desc">${data.goodies.goodie[i].desc}</div>
-                </div>
-              </a>
-            </div>
-          </div>`;
-      }
-    }
-  });
-</script>
 
 <style>
   .flexhead {
@@ -121,20 +102,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     display: flex;
     z-index: 100;
     position: absolute;
-  }
-
-  .mainimgsmall {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
-    height: 180px;
-    width: auto;
-    transform: translate(0, 10px);
-    z-index: 10;
-    position: relative;
   }
   @keyframes slideup {
     0% {
@@ -312,28 +279,8 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   .posthold {
     transform: translate(0, 0px);
     filter: drop-shadow(0px 0px 20px #70707056);
-    opacity: 0;
     transition: 0.5s;
     position: relative;
-  }
-
-  .posthold:nth-child(1) {
-    animation: fadeup 200ms 0.3s linear forwards;
-  }
-  .posthold:nth-child(2) {
-    animation: fadeup 200ms 0.35s linear forwards;
-  }
-  .posthold:nth-child(3) {
-    animation: fadeup 200ms 0.4s linear forwards;
-  }
-  .posthold:nth-child(4) {
-    animation: fadeup 200ms 0.45s linear forwards;
-  }
-  .posthold:nth-child(5) {
-    animation: fadeup 200ms 0.5s linear forwards;
-  }
-  .posthold:nth-child(6) {
-    animation: fadeup 200ms 0.55s linear forwards;
   }
 
   .posthold:hover {
@@ -400,12 +347,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
     position: relative;
     height: 250px;
     width: 100%;
@@ -415,14 +356,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     hyphens: auto;
     overflow: hidden;
     transition: 0.5s;
-  }
-
-  .posthold:nth-child(n + 7) {
-    display: none;
-  }
-
-  .postmini:nth-child(n + 8) {
-    display: block;
   }
 
   .postmini {
@@ -436,7 +369,6 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     overflow: hidden;
     border: 2px solid rgba(215, 215, 215, 0.066);
     transition: 0.5s;
-    display: none;
   }
 
   .post:hover {
@@ -455,12 +387,14 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   .heroImage {
     width: 100%;
     height: 100%;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    filter:blur(4px);
     object-fit: cover;
     transition: 0.3s;
   }
 
   .post:hover .heroImage {
-    filter: blur(8px) brightness(0.7);
+    filter: blur(8px);
     rotate: -3deg;
     scale: 120%;
     z-index: 0;
@@ -503,22 +437,19 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .title {
-    width: 110%;
+    width: 100%;
     z-index: 11;
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+    gap: 8px;
     font-size: max(20px, 30px);
-    bottom: 20px;
-    right: 10px;
-    line-height: 30px;
+    margin-bottom: 8px !important;
     font-family: Gilroy;
-    transition: 0.5s;
-    position: absolute;
   }
 
   .title-small {
-    width: 90%;
+    width: 90% !important;
     height: auto;
     z-index: 11;
     font-size: max(20px, 30px);
@@ -533,36 +464,17 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     position: absolute;
   }
 
-  .post:hover .title {
-    bottom: 60%;
-    transform: translate(0, 50%);
-    transition: 0.5s;
-  }
-
   .desc {
-    position: absolute;
     font-family: systemui;
     width: 90%;
     font-size: 20px;
-    right: 20px;
-    bottom: 0;
-    transform: translate(0, 50px);
-    margin-left: 40px;
-    opacity: 0;
-    text-align: justify;
+    text-align: right;
     transition: 0.5s;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-  }
-
-  .post:hover .desc {
-    bottom: 48%;
-    opacity: 1;
-    transform: translate(0, 100%);
-    transition: 0.5s;
   }
 
   .faded {
@@ -719,21 +631,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
       position: relative;
     }
   }
-</style>
 
-<style is:global>
-  .posthold {
-    transform: translate(0, 0px);
-    filter: drop-shadow(0px 0px 20px #70707056);
-    transition: 0.5s;
-    position: relative;
-  }
-
-  .posthold:hover {
-    transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 20px #37373756);
-    transition: 0.5s;
-  }
 
   .post {
     position: relative;
@@ -796,7 +694,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
   }
 
   .post:hover .heroImage {
-    filter: blur(4px) brightness(0.5) grayscale(0);
+    filter: blur(8px);
     scale: 110%;
     opacity: 1;
     z-index: 10;
@@ -807,8 +705,7 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     width: 100%;
     height: 100%;
     scale: 120%;
-    filter: blur(4px) brightness(0.7) grayscale(0.7);
-    opacity: 0;
+    filter: blur(4);
     object-fit: cover;
     z-index: 10;
     transition: 0.3s;
@@ -837,6 +734,21 @@ const posts = (await getCollection("blog")).sort((b, a) => a.data.pubDate.valueO
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
+  }
+</style>
+
+<style is:global>
+  .posthold {
+    transform: translate(0, 0px);
+    filter: drop-shadow(0px 0px 20px #70707056);
+    transition: 0.5s;
+    position: relative;
+  }
+
+  .posthold:hover {
+    transform: translate(0, -5px);
+    filter: drop-shadow(0px 0px 20px #37373756);
+    transition: 0.5s;
   }
 
   .title {

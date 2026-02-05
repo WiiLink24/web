@@ -25,12 +25,13 @@ export async function getStaticPaths() {
             image: item.fields.image,
             unlist: item.fields.unlist,
             description: item.fields.description,
-            author: item.fields.author
+            author: item.fields.author,
+            isAnnouncement: item.fields.isAnnouncement
         }
     }));
     return pages;
 }
-const { content, title, slug, date, image, unlist, description, author } = Astro.props;
+const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = Astro.props;
 let options = {
     renderNode: {
         "embedded-asset-block": (node: any) => {
@@ -216,6 +217,19 @@ const readingTime = Math.ceil(wordCount.length / 200);
     </div>
   </div>
 </div>
+{ isAnnouncement && 
+  <div style="height:0; width: 95%; max-width: 1200px; background: linear-gradient(to right, #4c61af30, var(--bg-color-tertiary)); border-radius:8px; margin-bottom:8px; padding: 0px 20px; left:50%; transform:translate(-50%, 0%); interpolate-size: allow-keywords; animation: sizeup 1000ms 0.5s ease-in-out forwards; position:relative; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; overflow:hidden;">
+  <span>
+  <h2 style="font-family:Gilroy; font-size: 32px;">Also available in WiiLink Announcements!</h2>
+  <p style="font-family:system-ui; margin-bottom: 0px !important;">Get service updates right on your Wii Menu by subscribing to WiiLink Announcements.</br> Get it now by running the latest version of the WiiLink Mail Patcher!</p>
+  </span>
+  <span>
+    <a href="/guide/board" style="text-decoration:none;">
+      <button style="padding:10px 15px; border-radius:8px; border:none; background-color:#5a8630; color:#ffffff !important; font-family:system-ui; cursor:pointer; display: flex; align-items: center; gap: 6px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail-icon lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg> Get Mail Patcher</button>
+    </a>
+  </span>
+</div>
+}
 <div class="article-holder">
   <div class="postexpand" set:html={bodyHTML} />
 
@@ -562,6 +576,17 @@ const readingTime = Math.ceil(wordCount.length / 200);
     100% {
       opacity: 1;
       transform: translate(-50%, 0px);
+    }
+  }
+
+  @keyframes sizeup {
+    0% {
+      padding: 0px 20px;
+      height: 0;
+    }
+    100% {
+      padding: 30px 20px;
+      height: auto;
     }
   }
 

@@ -26,12 +26,6 @@
         "link": "/extras/themes"
       },
       {
-        "title": "<span class='wifi'></span> WiiLink WFC",
-        "desc": "An in progress Nintendo Wi-Fi Connection service!",
-        "img": "/img/guidebg-1.webp",
-        "link": "https://wfc.wiilink24.com"
-      },
-      {
         "title": "<span class='gamepad-2'></span> Wii Remote Testing",
         "desc": "A simple page for testing your Wii Remote",
         "img": "/img/guidebg-1.webp",
@@ -51,7 +45,7 @@
       },
       {
         "title": "<span class='cat'></span> News cat",
-        "desc": "An in progress Nintendo Wi-Fi Connection service!",
+        "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
       },
