@@ -70,7 +70,11 @@ export default defineConfig({
         "shield-check",
         "heart",
         "hand-heart",
-        "newspaper"
+        "newspaper",
+        "wifi",
+        "gamepad-2",
+        "user",
+        "chart-no-axes-column",
       ],
       "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube"]
     }

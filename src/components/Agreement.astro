@@ -45,7 +45,7 @@ import { Icon } from "astro-icon/components";
         ><div
           id="pfp-container"
           style="width:40px; height:40px; border-radius:8px; display:flex; align-items:center; justify-content:center; background:var(--bg-color-tertiary)">
-          <Icon name="user" />
+          <Icon name="lucide:user" />
         </div></a
       >
       <img
@@ -78,7 +78,7 @@ import { Icon } from "astro-icon/components";
         id="themeColorMobile"
         type="button"
         class="btn btn-light"
-        style="border-radius: 4px 16px 4px 4px; background-color: var(--color);"
+        style="border-radius: 4px 16px 4px 4px; border: 0px !important; background-color: var(--color);"
         onclick="themeToggle()"
         ><Icon
           name="lucide:sun"
@@ -157,7 +157,7 @@ import { Icon } from "astro-icon/components";
         aria-label="WiiLink WFC Link"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
         ><div>
-          <Icon name="wifi" style="margin-bottom:3px;" /> WiiLink WFC
+          <Icon name="lucide:wifi" style="margin-bottom:3px;" /> WiiLink WFC
         </div></a
       >
     </li>
@@ -177,7 +177,7 @@ import { Icon } from "astro-icon/components";
         href="https://evc.wiilink.ca"
         aria-label="EVC Viewing Tool Link">
         <div>
-          <Icon name="chart-no-axes-column" style="margin-bottom:3px;" />
+          <Icon name="lucide:chart-no-axes-column" style="margin-bottom:3px;" />
           Everybody Votes Channel
         </div>
       </a>
@@ -241,7 +241,7 @@ import { Icon } from "astro-icon/components";
         style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
         aria-label="Get the date your Wii Remote was manufactured."
         title="Get the date your Wii Remote was manufactured."
-        ><Icon name="gamepad-2" style="margin-bottom:3px;" /></a
+        ><Icon name="lucide:gamepad-2" style="margin-bottom:3px;" /></a
       >
     </div>
 
@@ -341,7 +341,7 @@ import { Icon } from "astro-icon/components";
     display: grid;
     margin-top: 20px;
     grid-template-columns: 2fr 1fr;
-    gap: 8px;
+    gap: 4px;
     position: relative;
   }
 
