@@ -12,11 +12,7 @@ export default defineConfig({
   },
   integrations: [mdx({
     extendPlugins: false
-  }), partytown(), astroI18next(), sitemap({
-    changefreq: 'weekly',
-    priority: 0.7,
-    lastmod: new Date(),
-  }), icon({
+  }), partytown(), astroI18next(), icon({
     iconDir: "public/icons",
     include: {
       "lucide": [
