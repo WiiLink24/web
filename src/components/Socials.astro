@@ -6,10 +6,23 @@ import { Icon } from "astro-icon/components";
 async function fetchCounts() {
   const results = {};
 
+  async function fetchWithTimeout(url, timeout = 5000) {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), timeout);
+    try {
+      const response = await fetch(url, { signal: controller.signal });
+      clearTimeout(timeoutId);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      clearTimeout(timeoutId);
+      throw error;
+    }
+  }
+
   async function fetchGitHub() {
     try {
-      const response = await fetch("https://api.github.com/users/wiilink24");
-      const data = await response.json();
+      const data = await fetchWithTimeout("https://api.github.com/users/wiilink24");
       return data.followers || 0;
     } catch (error) {
       console.error("GitHub Error:", error);
@@ -19,10 +32,9 @@ async function fetchCounts() {
 
   async function fetchDiscord() {
     try {
-      const response = await fetch(
+      const data = await fetchWithTimeout(
         "https://discord.com/api/v9/invites/wiilink?with_counts=true"
       );
-      const data = await response.json();
       return data.approximate_member_count || 0;
     } catch (error) {
       console.error("Discord Error:", error);
@@ -32,11 +44,10 @@ async function fetchCounts() {
 
   async function fetchYouTube() {
     try {
-      const response = await fetch(
+      const data = await fetchWithTimeout(
         "https://mixerno.space/api/youtube-channel-counter/user/UC_14J0EMfli2hVoBaQq0d3w"
       );
-      const data = await response.json();
-      return data.counts[0].count || 0;
+      return (data.counts && data.counts[0] && data.counts[0].count) || 0;
     } catch (error) {
       console.error("YouTube Error:", error);
       return "Error";
@@ -45,10 +56,9 @@ async function fetchCounts() {
 
   async function fetchBluesky() {
     try {
-      const response = await fetch(
+      const data = await fetchWithTimeout(
         "https://api-v2.nextcounts.com/api/bluesky/user/wiilink.ca"
       );
-      const data = await response.json();
       return data.followers || 0;
     } catch (error) {
       console.error("Bluesky Error:", error);
@@ -57,12 +67,14 @@ async function fetchCounts() {
   }
 
   try {
-    const [github, discord, youtube, bluesky] = await Promise.all([
+    const [github, discord, youtube, bluesky] = await Promise.allSettled([
       fetchGitHub(),
       fetchDiscord(),
       fetchYouTube(),
       fetchBluesky()
-    ]);
+    ]).then(results => 
+      results.map(result => result.status === 'fulfilled' ? result.value : "Error")
+    );
 
     return {
       github,
@@ -71,6 +83,7 @@ async function fetchCounts() {
       bluesky
     };
   } catch (error) {
+    console.error("fetchCounts error:", error);
     return {
       github: "Error",
       discord: "Error",
