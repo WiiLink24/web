@@ -9,7 +9,8 @@ changeLanguage("en");
   class="drop-gradient"
   style="border-radius: 16px; box-shadow: 0px 0px 10px var(--shadow); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px; background: url('/img/bg.png') no-repeat center center; background-size: cover; overflow: hidden;">
   <span
-    style="width:100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: center; gap: 8px; padding: 64px 64px; overflow: hidden; position: relative; z-index: 1;">
+    class="welcome-content"
+    style="width:100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: center; gap: 8px; padding: 64px; overflow: hidden; position: relative; z-index: 1;">
     <img src="/img/logo-white.svg" alt="WiiLink Logo" style="width: 120px;" />
     <h1 style="margin-top: 8px; color: white !important;">
       Homebrew that makes a difference.
@@ -77,6 +78,21 @@ changeLanguage("en");
     }
     100% {
       background-position-x: 200%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .drop-gradient {
+      margin: 0px 8px !important;
+    }
+
+    .welcome-content {
+      padding: 32px !important;
+      gap: 12px !important;
+    }
+
+    .welcome-content span, button {
+      width: 100%;
     }
   }
 </style>
