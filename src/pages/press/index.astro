@@ -1,50 +1,45 @@
 ---
+import { changeLanguage } from "i18next";
 import Layout from "../../layouts/Layout.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import { Icon } from "astro-icon/components";
-
 import Welcome from "./components/welcome.astro";
 import Card from "./components/card.astro";
 import Accolades from "./components/accolades.astro";
 import Service from "./components/service.astro";
 import Team from "./components/team.astro";
-
 import { promises as fs } from "fs";
 import path from "path";
 
+changeLanguage("en");
+
 let data;
-
 async function fetchData() {
-  const url = new URL(Astro.request.url);
-  const countryCode = url.pathname.split("/")[1] || "";
-
-  const filePath = path.join(process.cwd(), "public", "json", "services.json");
-
-  try {
-    const fileContents = await fs.readFile(filePath, "utf8");
-    const jsonData = JSON.parse(fileContents);
-    return jsonData.services.service;
-  } catch (error) {
-    console.error(`Failed to read file at ${filePath}:`, error);
-    return [];
-  }
+    const url = new URL(Astro.request.url);
+    const countryCode = url.pathname.split("/")[1] || "";
+    const filePath = path.join(process.cwd(), "public", "json", "services.json");
+    try {
+        const fileContents = await fs.readFile(filePath, "utf8");
+        const jsonData = JSON.parse(fileContents);
+        return jsonData.services.service;
+    }
+    catch (error) {
+        console.error(`Failed to read file at ${filePath}:`, error);
+        return [];
+    }
 }
-
 data = await fetchData();
 const last = data[data.length - 1];
 data = data.slice(0, -4);
 data.push(last);
-
 let team;
-
 async function fetchTeamData() {
-  const filePath = path.join(process.cwd(), "public", "json", "team.json");
-  const fileContents = await fs.readFile(filePath, "utf8");
-  const jsonData = JSON.parse(fileContents);
-  return jsonData.members.member;
+    const filePath = path.join(process.cwd(), "public", "json", "team.json");
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+    return jsonData.members.member;
 }
-
 team = await fetchTeamData();
 const random = Math.floor(Math.random() * (team.length - 10)) + 10;
 team.splice(4, 0, team[random]);

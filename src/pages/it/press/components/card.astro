@@ -1,0 +1,61 @@
+---
+import { changeLanguage } from "i18next";
+import { Icon } from "astro-icon/components";
+
+changeLanguage("it");
+
+interface Props {
+    icon?: string;
+    title: string;
+    description: string;
+}
+const { icon, title, description } = Astro.props;
+---
+
+<div class="card">
+  {
+    icon && (
+      <div class="card-icon">
+        <Icon name={icon} style="width: 32px; height: 32px;" />
+      </div>
+    )
+  }
+  <h3 class="card-title">{title}</h3>
+  <p class="card-description" set:html={description} />
+</div>
+
+<style>
+  .card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+  }
+
+  .card-icon {
+    margin-bottom: 1rem;
+  }
+
+  .card-title {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    font-family: Gilroy, sans-serif;
+  }
+
+  .card-description {
+    margin: 0;
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    line-height: 1.6;
+  }
+</style>
+
+<script>
+  const cards = document.querySelectorAll(".card");
+  cards.forEach(card => {
+    const rotation =
+      (Math.random() * 4.5 + 0.5) * (Math.random() < 0.5 ? 1 : -1);
+    card.style.setProperty("--hover-rotation", `${rotation}deg`);
+  });
+</script>

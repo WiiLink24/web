@@ -1,0 +1,329 @@
+---
+import { changeLanguage } from "i18next";
+import Layout from "../../../layouts/Layout.astro";
+import Header from "../../../components/Header.astro";
+import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import Welcome from "../components/welcome.astro";
+import Card from "../components/card.astro";
+import Accolades from "../components/accolades.astro";
+import Service from "../components/service.astro";
+import Team from "../components/team.astro";
+import { promises as fs } from "fs";
+import path from "path";
+
+changeLanguage("hu");
+
+let data;
+async function fetchData() {
+    const url = new URL(Astro.request.url);
+    const countryCode = url.pathname.split("/")[1] || "";
+    const filePath = path.join(process.cwd(), "public", "json", "services.json");
+    try {
+        const fileContents = await fs.readFile(filePath, "utf8");
+        const jsonData = JSON.parse(fileContents);
+        return jsonData.services.service;
+    }
+    catch (error) {
+        console.error(`Failed to read file at ${filePath}:`, error);
+        return [];
+    }
+}
+data = await fetchData();
+const last = data[data.length - 1];
+data = data.slice(0, -4);
+data.push(last);
+let team;
+async function fetchTeamData() {
+    const filePath = path.join(process.cwd(), "public", "json", "team.json");
+    const fileContents = await fs.readFile(filePath, "utf8");
+    const jsonData = JSON.parse(fileContents);
+    return jsonData.members.member;
+}
+team = await fetchTeamData();
+const random = Math.floor(Math.random() * (team.length - 10)) + 10;
+team.splice(4, 0, team[random]);
+---
+
+<Layout
+  title="WiiLink Press Kit"
+  description="WiiLink Press Kit"
+  image="/img/press-kit.webp">
+  <Header />
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <Welcome
+      title="WiiLink Press Kit"
+      subtitle="Download logos, images, and other assets for use in your articles about WiiLink."
+      img="/img/press/press-kit-hero.webp"
+    />
+
+    <p style="transform:translate(0, 30px); opacity: 0.3;">Featured in</p>
+    <div class="outlets-marquee" aria-label="Media Outlets"></div>
+
+    <div
+      class="header-nav"
+      style="display:flex; flex-direction:row; justify-content:center; gap:3px; padding:10px; margin-top:40px;">
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <a href="#work">Work</a>
+      <a href="#team">Team</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <section class="content-section" id="about">
+      <Card
+        icon="lucide:id-card"
+        title="Who we are"
+        description="WiiLink is a fan-made revival project dedicated to restoring online funcionality across various services on the Wii and DS systems. We are the only project that restores full WiiConect24 and Nintendo Wi-Fi Connection services. We work alongside other homebrew projects and the community to enrich our services with great content, and strive to provide Nintendo-like experiences for our users thanks to our content management team."
+      />
+      <Card
+        icon="lucide:package-open"
+        title="Commitment to openness"
+        description="WiiLink is an open-source project, with our code available on GitHub for transparency and community contributions. We believe in the power of collaboration and welcome developers to join us in enhancing our services. Our open approach ensures that our users can trust in the integrity and security of all services we provide."
+      />
+      <Card
+        icon="lucide:users"
+        title="Supporting creators"
+        description="WiiLink actively supports homebrew developers and content creators by providing a platform to showcase their work. We collaborate with various homebrew projects to showcase their applications and games on our services, helping them reach a wider audience. Our community-driven approach fosters innovation and creativity within the homebrew scene."
+      />
+    </section>
+    <hr style="border: 1px solid var(--color);" />
+    <section class="content-single-section" id="impact">
+      <Card
+        icon="lucide:disc"
+        title="Our story"
+        description="WiiLink is an alternative WiiConnect24 service provider for the Wii. It was originally founded by Dogmander, Marko and Auto1lija in April 2020 as 'Wii No Ma development', later renamed 'Rii no Ma' with the sole goal of reviving Wii no Ma. However, following the merge with BetterConnect24 and a change in command structure, it became WiiLink24 in September 2020. On May 19, 2021, it was rebranded to WiiLink, removing the 24 from the name. After a merger with RiiConnect24, WiiLink became the sole major WiiConnect24 revival service. As it stands, WiiLink is lead by Sketch, with support from a team of dedicated developers, content managers, localizers, community managers, and system admins."
+      />
+      <div style="margin-top: 60px; padding:10px;">
+        <h2>Our impact</h2>
+        <Accolades
+          data={[
+            {
+              value: "10",
+              unit: "k+",
+              name: "WiiLink Accounts",
+              icon: "lucide:users"
+            },
+            {
+              value: "150",
+              unit: "k",
+              name: "Daily users",
+              icon: "lucide:mail-open"
+            },
+            {
+              value: "35",
+              unit: "k+",
+              name: "Discord Members",
+              icon: "simple-icons:discord"
+            },
+            { value: "100", unit: "+", name: "Countries", icon: "lucide:globe" }
+          ]}
+        />
+      </div>
+      <div class="content-section" style="margin-top: 40px;" id="work">
+        <Card
+          icon="lucide:globe"
+          title="Localization"
+          description="Our localization team ensures our content, services, and communications are available in multiple languages, making WiiLink accessible to a global audience."
+        />
+        <Card
+          icon="lucide:server"
+          title="Infrastructure"
+          description="We maintain a robust and reliable server infrastructure to ensure seamless online experiences for our users, with minimal downtime and optimal performance."
+        />
+        <Card
+          icon="lucide:shield-check"
+          title="Security"
+          description="We prioritize the security and privacy of our users, implementing best practices to protect their data and ensure safe online interactions through our moderation team."
+        />
+      </div>
+    </section>
+    <div style="margin-top: 60px; padding:10px;" id="work">
+      <h2>Our work</h2>
+      <p>
+        From watching the news right on your wii, to a brand new localized
+        service for video-on-demand, here are some of the services we provide:
+        <section class="content-section" style="margin-bottom: 0 !important;">
+          <Service data={data} />
+        </section>
+        <p style="opacity:0.6; margin-top: 18px; margin-bottom: 64px;">
+          <Icon name="lucide:info" /> Click on a service card to learn more.
+        </p>
+      </p>
+    </div>
+
+    <div style="margin-top: 60px; padding:10px;">
+      <h2>Our team</h2>
+      <p>
+        Our project is run by some of the best-in-class developers, content
+        creators, localizers, moderators, and system administrators. Their
+        dedication and expertise drive WiiLink forward, ensuring we continue to
+        provide exceptional services to our community.
+        <section
+          class="content-flex-section"
+          style="margin-bottom: 0 !important;">
+          <Team data={team} />
+        </section>
+        <p style="opacity:0.6; margin-top: 18px; margin-bottom: 64px;">
+          <Icon name="lucide:info" /> Click on a team member to learn more about them.
+        </p>
+      </p>
+    </div>
+
+    <div style="margin-top: 60px; padding:10px;" id="support">
+      <h2>Support</h2>
+      <p>
+        Running WiiLink has its costs, and we rely on the generosity of our
+        community to keep the services online and thriving. We'd appreciate it
+        if you could mention donations when covering our service.
+        <section class="content-section" style="margin-bottom: 0 !important;">
+          <Card
+            icon="lucide:server"
+            title="Server Costs"
+            description="Our monthly server costs amount to approximately $200, covering hosting, bandwidth, and maintenance to ensure a smooth experience for our users."
+          />
+          <Card
+            icon="lucide:heart"
+            title="How to Donate"
+            description="You can support WiiLink by donating through our official stripe donation page, accessible on our main site. Every contribution helps us maintain and improve our services."
+          />
+          <Card
+            icon="lucide:hand-heart"
+            title="Other ways to support us"
+            description="Apart from monetary donations, you can support us by spreading the word about WiiLink, contributing to our open-source projects on GitHub, or volunteering your skills in development or localization."
+          />
+        </section>
+      </p>
+    </div>
+
+    <div style="margin-top: 60px; padding:10px;" id="contact">
+      <h2>Reach out</h2>
+      <p>
+        If you have any questions, need further information, or even wish to
+        hold an interview, please don't hesitate to contact our media relations
+        team at:
+        <section
+          class="content-double-section"
+          style="margin-bottom: 0 !important;">
+          <Card
+            icon="lucide:mail"
+            title="Email"
+            description="You can reach us on our official support account requesting a media inquiry. Bear in mind it is not checked as often, and as such we recommend reaching out through Discord instead. <br> <button class='primary-btn' style='margin-top: 18px;' onclick='window.location.href=`mailto:support@wiilink.ca`'>Email Us</button>"
+          />
+          <Card
+            icon="simple-icons:discord"
+            title="Discord"
+            description="This is our preferred contact method. Join our Discord server and reach out to a team member requesting any inquiries you may have.<br> <button class='tertiary-btn' style='margin-top: 18px;' onclick='window.location.href=\`https://discord.gg/wiilink\`'>Join our Discord</button>"
+          />
+        </section>
+      </p>
+    </div>
+  </div>
+  <Footer />
+</Layout>
+
+<style>
+  h2 {
+    font-family: Gilroy, sans-serif;
+  }
+
+  .content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 48px;
+    margin-bottom: 64px;
+  }
+
+  .content-double-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 24px;
+    margin-bottom: 64px;
+  }
+
+  .content-flex-section {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 48px;
+    margin-bottom: 64px;
+  }
+
+  .header-nav a {
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 20px;
+    padding: 8px 32px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    background-color: var(--bg-opaque-1);
+    transition: 0.2s ease-in-out;
+  }
+
+  .header-nav a:first-child {
+    border-radius: 18px 4px 4px 18px;
+  }
+
+  .header-nav a:last-child {
+    border-radius: 4px 18px 18px 4px;
+  }
+
+  .header-nav a:hover {
+    border-radius: 18px;
+    transform: translate(0, -5px);
+    background-color: var(--bg-opaque-2);
+    transition: 0.2s ease-in-out;
+  }
+
+  .outlets-marquee {
+    width: 100%;
+    height: 140px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-image: url("/img/outlets.png");
+    background-repeat: repeat-x;
+    background-position: 0 50%;
+    background-size: 1800px 160%;
+    animation: outlets-scroll 120s linear infinite;
+    -webkit-mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      90deg,
+      transparent 0%,
+      #000 10%,
+      #000 90%,
+      transparent 100%
+    );
+    filter: invert(var(--invert));
+    opacity: 0.3;
+  }
+
+  @keyframes outlets-scroll {
+    from {
+      background-position: 0 50%;
+    }
+    to {
+      background-position: -3600px 50%;
+    }
+  }
+
+  @media (max-width: 900px) {
+    .content-section {
+      grid-template-columns: 1fr;
+    }
+
+    .header-nav {
+      display: none !important;
+    }
+  }
+</style>

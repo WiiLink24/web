@@ -1,0 +1,56 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("ca");
+
+const { data = [] } = Astro.props;
+---
+
+{
+  data.map(
+    service =>
+      service &&
+      service.link && (
+        <a
+          class="service-card"
+          href={service.link}
+          aria-label={service.name + " Link"}
+          style={`background-color:${service.color}10 !important; border: 1px solid ${service.color}60 !important; border-radius:12px; padding:16px; text-decoration:none; color:inherit; display:block; transition: transform 0.3s ease;`}>
+          <div style="display:flex; flex-direction:row; align-items:center; gap:12px;">
+            {service.icon && (
+              <img
+                alt={service.name + " Icon"}
+                loading="lazy"
+                src={`/img/${service.icon}`}
+                style="width: 30px;"
+              />
+            )}
+            <p style="font-weight: 600; font-family: Gilroy; font-size:24px; margin: 0 !important;">
+              {service.name}
+            </p>
+          </div>
+        </a>
+      )
+  )
+}
+
+<style>
+  .service-card {
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .service-card:hover {
+    transform: scale(1.05) rotate(var(--hover-rotation));
+    z-index: 100;
+  }
+</style>
+
+<script>
+  const serviceCards = document.querySelectorAll(".service-card");
+  serviceCards.forEach(card => {
+    const rotation =
+      (Math.random() * 4.5 + 0.5) * (Math.random() < 0.5 ? 1 : -1);
+    card.style.setProperty("--hover-rotation", `${rotation}deg`);
+  });
+</script>

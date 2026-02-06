@@ -1,0 +1,130 @@
+---
+import { changeLanguage } from "i18next";
+import { Icon } from "astro-icon/components";
+
+changeLanguage("it");
+
+const { data = [] } = Astro.props;
+---
+
+<div class="accolades" role="list">
+  {
+    data.map(item => (
+      <div class="accolade" role="listitem">
+        <div class="value" data-target={item.value} data-unit={item.unit ?? ""}>
+          0{item.unit}
+        </div>
+        <div class="label">{item.name}</div>
+        <Icon
+          name={item.icon}
+          style="width: 128px; height: 128px; margin-top:8px; color: var(--color-text-secondary); opacity: 0.3; bottom:-30px; left:-30px; position: absolute;"
+        />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .accolades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 16px;
+    position: relative;
+  }
+
+  .accolade {
+    border-radius: 12px;
+    padding: 16px;
+    background: var(--bg-color-tertiary);
+    border: 1px solid var(--bg-opaque-1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .accolade:hover {
+    transform: scale(1.2) rotate(var(--hover-rotation));
+    z-index: 100;
+  }
+
+  .value {
+    font-size: 38px;
+    font-weight: 700;
+    font-family: Rubik, sans-serif;
+  }
+
+  .label {
+    margin-top: 4px;
+    font-size: 14px;
+    opacity: 0.8;
+  }
+</style>
+
+<script type="module">
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+  const formatter = new Intl.NumberFormat(undefined);
+
+  const animateValue = el => {
+    const targetRaw = el.getAttribute("data-target");
+    const unit = el.getAttribute("data-unit") ?? "";
+    const target = Number.parseFloat(targetRaw);
+
+    if (!Number.isFinite(target) || prefersReducedMotion) {
+      el.textContent = `${targetRaw ?? ""}${unit}`;
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+
+    const isInt = Math.abs(target % 1) < 0.001;
+
+    const tick = now => {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const current = target * progress;
+      const value = isInt ? Math.round(current) : Number(current.toFixed(1));
+      const display = isInt ? formatter.format(value) : value.toFixed(1);
+      el.textContent = `${display}${unit}`;
+
+      if (progress < 1) {
+        requestAnimationFrame(tick);
+      }
+    };
+
+    requestAnimationFrame(tick);
+  };
+
+  const values = document.querySelectorAll(".accolade .value[data-target]");
+  const accolades = document.querySelectorAll(".accolade");
+
+  // Set random rotation for each accolade
+  accolades.forEach(el => {
+    const rotation =
+      (Math.random() * 4.5 + 0.5) * (Math.random() < 0.5 ? 1 : -1);
+    el.style.setProperty("--hover-rotation", `${rotation}deg`);
+  });
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateValue(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  values.forEach(el => observer.observe(el));
+</script>

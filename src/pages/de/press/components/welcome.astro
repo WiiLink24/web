@@ -1,0 +1,82 @@
+---
+import { changeLanguage } from "i18next";
+import { Icon } from "astro-icon/components";
+
+changeLanguage("de");
+---
+
+<div
+  class="drop-gradient"
+  style="border-radius: 16px; box-shadow: 0px 0px 10px var(--shadow); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 16px; background: url('/img/bg.png') no-repeat center center; background-size: cover; overflow: hidden;">
+  <span
+    style="width:100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; text-align: center; gap: 8px; padding: 64px 64px; overflow: hidden; position: relative; z-index: 1;">
+    <img src="/img/logo-white.svg" alt="WiiLink Logo" style="width: 120px;" />
+    <h1 style="margin-top: 8px; color: white !important;">
+      Homebrew that makes a difference.
+    </h1>
+    <p style="margin:0 !important; font-size: 28px; color: white !important;">
+      WiiLink is a community-driven project dedicated to reviving Wii and DS
+      online experiences.
+    </p>
+    <hr style="width: 100%; border: 1px solid #ffffff; margin: 16px 0;" />
+    <span
+      style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <button style="margin-top: 16px; z-index: 1;" class="secondary-btn" onclick="window.location.href='/extras/WiiLink_Press_Kit_2026.zip'" aria-label="Download press kit"
+        ><Icon name="lucide:brush" /> Download press kit</button
+      >
+    </span>
+    <span class="pattern-stack" aria-hidden="true">
+      <span class="pattern-row"></span>
+      <span class="pattern-row"></span>
+      <span class="pattern-row"></span>
+      <span class="pattern-row"></span>
+      <span class="pattern-row"></span>
+      <span class="pattern-row"></span>
+    </span>
+  </span>
+</div>
+
+<style>
+  .pattern-stack {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -68%) scale(2) rotate(-3deg);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    opacity: 0.1;
+    z-index: 0;
+    position: absolute;
+  }
+
+  .pattern-row {
+    height: 50px;
+    width: 100%;
+    background-image: url("/img/pattern_single.png");
+    background-repeat: repeat-x;
+    background-position: 0 50%;
+    background-size: auto 50px;
+    animation: pattern-scroll 90s linear infinite;
+    will-change: background-position;
+  }
+
+  .pattern-row:nth-child(even) {
+    animation-direction: reverse;
+  }
+
+  .drop-gradient {
+    filter: drop-shadow(3px 3px 80px rgba(34, 197, 94, 0.3))
+      drop-shadow(-3px -3px 80px rgba(59, 130, 246, 0.3));
+      border-radius: 16px;
+  }
+
+  @keyframes pattern-scroll {
+    0% {
+      background-position-x: 0;
+    }
+    100% {
+      background-position-x: 200%;
+    }
+  }
+</style>

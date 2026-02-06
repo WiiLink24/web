@@ -1,12 +1,14 @@
 ---
+import { changeLanguage } from "i18next";
 import { Icon } from "astro-icon/components";
 
-interface Props {
-  icon?: string;
-  title: string;
-  description: string;
-}
+changeLanguage("en");
 
+interface Props {
+    icon?: string;
+    title: string;
+    description: string;
+}
 const { icon, title, description } = Astro.props;
 ---
 

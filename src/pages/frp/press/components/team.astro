@@ -1,0 +1,105 @@
+---
+import { changeLanguage } from "i18next";
+
+changeLanguage("frp");
+
+const { data = [] } = Astro.props;
+---
+
+{
+  data.map(member => (
+    <div
+      class="membersmall"
+      data-name={member.name}
+      data-title={member.title}
+      style="
+                    transition:0.3s;
+                    height: 90px;
+                    width: 90px;
+                    align-self: stretch;
+                    background-color: var(--bg-color-secondary);
+                    border-radius: 8px;
+                    display: flex;
+                    overflow: visible;
+                    position: relative;
+                  "
+      key={member.name}>
+      <a
+        href={member.link}
+        aria-label={member.name + `'s Social media`}
+        style="text-decoration: none; color: #21252;">
+        <img
+          loading="lazy"
+          alt={member.name + `'s PFP`}
+          src={member.pfp}
+          style="
+                        background-size url(/img/header_bg.webp);
+                        background-size: cover;
+                        border-radius: 8px;
+                        object-fit: cover;
+                      "
+          width="90px"
+          height="100%"
+        />
+      </a>
+      <div class="tooltip">
+        <div class="tooltip-name">{member.name}</div>
+        <div class="tooltip-title" set:html={member.title} />
+      </div>
+    </div>
+  ))
+}
+
+<style>
+  .membersmall {
+    cursor: pointer;
+  }
+
+  .tooltip {
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+
+  .tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(0, 0, 0, 0.92);
+  }
+
+  .membersmall:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-4px);
+  }
+
+  .tooltip-name {
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 2px;
+    color: white !important;
+  }
+
+  .tooltip-title {
+    font-size: 12px;
+    opacity: 0.8;
+    color: white !important;
+  }
+</style>
