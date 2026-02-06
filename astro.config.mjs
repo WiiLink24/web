@@ -13,7 +13,9 @@ export default defineConfig({
   integrations: [mdx({
     extendPlugins: false
   }), partytown(), astroI18next(), sitemap({
-    filter: (page) => page && typeof page === 'string' && page.length > 0
+    changefreq: 'weekly',
+    priority: 0.7,
+    lastmod: new Date(),
   }), icon({
     iconDir: "public/icons",
     include: {
