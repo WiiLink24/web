@@ -12,7 +12,9 @@ export default defineConfig({
   },
   integrations: [mdx({
     extendPlugins: false
-  }), partytown(), astroI18next(), sitemap(), icon({
+  }), partytown(), astroI18next(), sitemap({
+    filter: (page) => page && typeof page === 'string' && page.length > 0
+  }), icon({
     iconDir: "public/icons",
     include: {
       "lucide": [

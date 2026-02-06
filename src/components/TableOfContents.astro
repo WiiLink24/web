@@ -2,7 +2,7 @@
 const { headings } = Astro.props;
 
 // Group headings by their h2 parent
-const groupedHeadings = headings.reduce((acc, heading) => {
+const groupedHeadings = (headings || []).reduce((acc, heading) => {
   if (heading.depth === 2) {
     acc.push({ ...heading, children: [] });
   } else if (heading.depth === 3 && acc.length > 0) {
