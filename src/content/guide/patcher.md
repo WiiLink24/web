@@ -1,7 +1,7 @@
 ---
 title: WiiLink Patcher
 icon: download
-pubDate: 2026-01-24
+pubDate: 2026-03-08
 description: Get up-to-date instructions on how to use the patcher!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -47,18 +47,20 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
      2. Select your region for the WiiConnect24 channels.
      3. Select the channels you'd like to install.
      4. Select the platform you'll be installing WiiLink onto.
+     5. Select where to save the files from the patcher.
 
 ### Custom Installation
    - Choose `Custom Setup`. Follow the steps below:
      1. Select which channels you'd like to install.
      2. Select platform you'll be installing WiiLink onto.
      3. Select the region of the console you will be installing the channels to.
+     4. Select where to save the files from the patcher.
 
 ![Image of the patcher downloading files](/img/guide/patcher.webp)
 
-Please wait a moment for the patcher to download and patch the files on your device. Once it's done, you can choose to copy the files to your SD Card / USB Device automatically, which we recommend.
+Please wait a moment for the patcher to download and patch the files on your device.
 
-If you choose not to copy everything automatically, copy the `WAD` and `apps` folder from the `WiiLink` directory in your `Downloads` folder to the root of your SD Card or USB Device.
+If you chose not to store files directly on your SD card / USB device, copy the `WAD` and `apps` folder from your chosen output location to the root of your SD card / USB device.
 
 <l class="notice success smallwidth">Congratulations! You've got the files you need to install WiiLink!</l>
 
