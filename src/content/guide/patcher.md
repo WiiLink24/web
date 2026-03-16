@@ -1,7 +1,7 @@
 ---
 title: WiiLink Patcher
 icon: download
-pubDate: 2026-03-08
+pubDate: 2026-03-16
 description: Get up-to-date instructions on how to use the patcher!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -32,7 +32,10 @@ Simply download the Windows release (onefile or zip) of your choosing, and open 
 #### <b>macOS:</b>
 Download the macOS release for your Mac (x64 for Intel, arm64 for Apple Silicon), and extract it. Then, launch Terminal. Type in `xattr -d com.apple.quarantine ` with a trailing space, drag the patcher app file into the terminal, and press enter. After this, you can just right click the app file and choose `Open`!
 
-#### <b>Linux:</b>
+#### <b>Linux Flatpak (recommended):</b>
+Install the patcher from Flathub, and launch it from your application menu!
+
+#### <b>Linux executable:</b>
 Download the Linux release for your computer's architecture and extract it. Then, open a terminal, and use `cd` to change to the directory you extracted the patcher to. Run `chmod +x WiiLinkPatcherGUI` to make the patcher executable, and `./WiiLinkPatcherGUI` to run it.
 
 <l class= "notice info">On some Debian and Ubuntu based distros, the patcher may fail to launch with the following error: </br>
