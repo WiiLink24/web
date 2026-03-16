@@ -77,7 +77,7 @@ export default defineConfig({
         "chart-no-axes-column",
         "chart-bar",
       ],
-      "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube"]
+      "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube", "flathub"]
     }
   })],
 });
