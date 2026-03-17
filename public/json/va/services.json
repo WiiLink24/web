@@ -154,6 +154,17 @@
         "todo": "<span class='bomb'></span> This service's development has been halted.",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag - bu hizmetin geliştirilmesi durduruldu.",
+        "link": "/status",
+        "isArea": "Bölgesiz",
+        "status": "Durduruldu",
+        "todo": "<span class='hard-hat'></span> Bu hizmetin geliştirilmesi durduruldu.",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }
