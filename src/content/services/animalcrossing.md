@@ -8,7 +8,7 @@ type: "Extra"
 color: 4dd14160
 ---
 
-<l class="notice warn smallwidth">Although this service is accessible via our DNS, it is externally managed by Larsen. Direct any queries to him with his contact information at https://larsenv.xyz.</l>
+<l class="notice warn smallwidth">Although this service is accessible via our DNS, it is externally managed by a third party. Direct any queries to him with his contact information at https://larsenv.xyz.</l>
 
 ### Get special items delivered to you right on your Wii!
 
