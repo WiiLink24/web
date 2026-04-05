@@ -18,6 +18,9 @@ heroImage: "/img/guidebg-3.webp"
 <div class="errorCodes" id="error-codes">
 
 
+<div class="error">Favorites don't appear on profile <span class="badge bg-primary">Checkout</span><h4>Open the Nintendo Channel settings, navigate to Data-Sharing Settings, click "I Disagree" then re-enter the menu and click "I Agree." The Nintendo Channel will restart, and your favorites should be available.</h4><hr></div>
+
+
 <div class="error">Error Code: 110211 <span class="badge bg-warning">Wii Mail</span><h4>Head on over to <a href="https://forum.wiilink.ca/c/support/support-wc24" class="text-info">our forum</a>, and send a picture of your error, making sure to include your Wii Number.</h4><hr></div>
 
 <div class="error">Error Code: 107245 <span class="badge bg-warning">Region Select</span><h4>Navigate to Internet Settings, and set your DNS to auto-obtain. Then, return to the channel you were in, set your region, and head back to Internet Settings to re-enable the WiiLink DNS.</h4><hr></div>
