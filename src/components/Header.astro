@@ -290,13 +290,9 @@ const { isMain } = Astro.props;
         class="dropdown-item"
         style="display:flex; flex-direction:row; align-items:center; gap:8px;"
         id="account"
-        href="https://checkout.wiilink.ca"
+        href="https://accounts.wiilink.ca"
         aria-label="Extras Link"
         ><Icon name="lucide:user" />Log into WiiLink Accounts</a
-      >
-      <a href="https://accounts.wiilink.ca" id="accountSettings" class="dropdown-item" style="display:none;" aria-label="Account Management Link"
-        ><Icon name="lucide:settings" style="margin-bottom:2px; margin-right:5px;" />
-        Manage your WiiLink Account</a
       >
       <hr
         style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
@@ -553,8 +549,6 @@ const { isMain } = Astro.props;
         accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
         mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
         moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
-        document.getElementById("accountSettings").style.display = "block";
-
       }
     } catch (error) {
       console.error("Error parsing user data:", error);
