@@ -38,7 +38,7 @@
       {
         "name": "Canal Nintendo",
         "desc": "Assista a trailers, leia análises e baixe demonstrações de DS",
-        "link": "/guide/nintendo
+        "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
@@ -90,6 +90,13 @@
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.webp",
         "bg": "room.webp"
+      },
+      {
+        "name": "LinkTag",
+        "desc": "LinkTag é um gamertag personalizável que você pode compartilhar com seus amigos ou incorporar em sites web.",
+        "link": "/status",
+        "icon": "linktagbanner.webp",
+        "bg": "linktag.webp"
       }
     ]
   }
