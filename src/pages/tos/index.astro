@@ -3,6 +3,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import Layout from "../../layouts/Layout.astro";
 import { t, changeLanguage } from "i18next";
+import { Trans } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
@@ -15,319 +16,226 @@ changeLanguage("en");
 
   <div class="sectiontop">
     <section class="section" style="top:200px !important; position:relative;">
-      <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Terms</h1>
+      <h1 style="font-family: Gilroy; margin-bottom: 18px;">{t("tos.title")}</h1>
       <h4
         class="update"
         style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;"
         class="updated">
-        Last updated: 08/03/2023
+        {t("tos.updated")}
       </h4>
       <div class="polka-dot"></div>
       <p
         class="title"
         style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
-        Terms of usage for the WiiLink family of services
+        {t("tos.desc")}
       </p>
       <p>
-        This agreement is for usage of WiiLink, a replacement WiiConnect24
-        service, as well as services we provide via our DNS
+        {t("tos.about")}
       </p>
       <div
         class="alert alert-warning"
         style="color:black !important; font-family:inter;"
         role="alert">
-        By using this service you automatically agree to these terms and
-        conditions.
+        {t("tos.agreement")}
       </div>
       <p class="cjk">
         <b
-          >This is an agreement between you and WiiLink, and it's developers, as
-          well as the services accessible via the DNS. WiiLink will be referred
-          to as &ldquo;WiiLink&rdquo; or &ldquo;WL&rdquo;.
+          >{t("tos.disclaimer")}
         </b>
       </p>
       <p class="cjk">
         <br />
       </p>
       <p class="cjk">
-        <p class="title">Nintendo's Online Services.</p>
+        <p class="title">{t("tos.nintendo-service")}</p>
       </p>
       <h4 class="cjk">
+        <Trans i18nKey="tos.art-one-title">
         Article 1: <u>Real legal stuff from Nintendo</u>
+        </Trans>
       </h4>
-      <p class="cjk">This agreement covers your use of the Wii Shop channel.</p>
+      <p class="cjk">{t("tos.art-one-desc")}</p>
       <p class="cjk">
-        Further to the terms of this agreement and, where applicable, the Wii
-        Shop Channel Service agreement, this agreement also includes the
-        following documents:
+        {t("tos.art-one-wii-shop-channel-service-agreement")}
       </p>
       <ul>
         <li>
           <p class="cjk">
-            The Wii Network Services Code of Conduct. The purpose of this
-            document is to keep the Wii Network Services a friendly and safe
-            environment.
+            {t("tos.art-one-wii-network-service-coc")}
           </p>
           <li>
             <p class="cjk">
-              The Wii Network Services privacy policy. This document provides
-              you with an understanding of the information that is submitted and
-              collected through the Wii Network Services.
+              {t("tos.art-one-wii-network-service-privacy-policy")}
             </p>
           </li>
           <p class="cjk">
-            We strongly recommend that you review both of these documents before
-            accepting the terms of this agreement. The complete versions of
-            these documents are available at
-            http://wii.nintendo-europe.com/terms.
+            {t("tos.art-one-review-docs")}
+            <a href="http://wii.nintendo-europe.com/terms">http://wii.nintendo-europe.com/terms</a>
           </p>
           <p class="cjk">
-            by accepting the terms of the Wii Network Services agreement, you
-            are also unreservedly accepting all of the terms of these documents.
+            {t("tos.art-one-accept-doc-terms")}
           </p>
           <p class="cjk">
             <br />
           </p>
           <h4 class="cjk">
+          <Trans i18nKey="tos.art-two-title">
             Article 2: <u>Grant of Licence</u>
+          </Trans>
           </h4>
           <p class="cjk">
-            We grant you a personal, limited, non-exclusive, revocable licence
-            to use the Wii Network Services, in accordance with this agreement.
-            Specifically:
+            {t("tos.art-two-licence")}
           </p>
           <ul>
             <li>
               <p class="cjk">
-                The Wii Network Services is solely for your own personal
-                recreational use. However, you are responsible for your use and
-                for anyone else&rsquo;s use of the Wii Network Services through
-                your Wii console, whether or not you give them permission to do
-                so.
+                {t("tos.art-two-wii-network")}
               </p>
               <li>
                 <p class="cjk">
-                  You may not transfer or assign this licence to another person
-                  or entity, and any attempt to transfer or assign this licence
-                  will be void.
+                  {t("tos.art-two-no-transfer")}
                 </p>
                 <li>
                   <p class="cjk">
-                    You may not use or attempt to use the Wii Network Services
-                    for any commercial or illegal purpose, or in a way that may
-                    harm another person or company, or in an unauthorised or
-                    otherwise improper manner as we may specify from time to
-                    time.
+                    {t("tos.art-two-illegal-usage")}
                   </p>
                   <li>
                     <p class="cjk">
-                      You are responsible for clearing all Content, including
-                      games and other software downloaded through the Wii Shop
-                      Channel, and any personal data, and all other stored
-                      sensitive information that is resident on your Wii console
-                      prior to selling or otherwise transferring your Wii
-                      console to any third party. If you acquire a used Wii
-                      console, you are also responsible for clearing all
-                      Content, personal data, and all other stored sensitive
-                      information that may be resident on that Wii console at
-                      the time you acquire it.
+                      {t("tos.art-two-clear-content")}
                     </p>
                   </li>
                   <p class="cjk">
                     <br />
                   </p>
                   <p class="title">
-                    <b>WiiLink</b>
+                    <b>{t("tos.wiilink")}</b>
                   </p>
                   <h4 class="cjk">
+                  <Trans i18nKey="tos.art-three-title">
                     Article 3: <u>WiiLink</u>
+                  </Trans>
                   </h4>
                   <p class="cjk">
-                    By registering for the Wii Network Services and WiiLink you
-                    agree that we may provide you with WiiLink services. Some of
-                    these may be provided via Standby Connection.
+                    {t("tos.art-three-desc")}
                   </p>
                   <p class="cjk">
                     <br />
                   </p>
                   <h4 class="cjk">
+                  <Trans i18nKey="tos.art-four-title">
                     Article 4: <u>upgrades and Changes</u>
+                  </Trans>
                   </h4>
                   <p class="cjk">
-                    The owners of WiiLink may upgrade (patch) any software
-                    distributed through WiiLink or change the Internet content
-                    of WiiLink, in part or in whole, at any time. However, any
-                    such upgrade or change will be for the benefit of users of
-                    WiiLink.
+                    {t("tos.art-four-desc")}
                   </p>
                   <p class="cjk">
                     <br />
                   </p>
                   <p class="title">
-                    <b>Other</b>
+                    <b>{t("tos.other")}</b>
                   </p>
                   <p class="cjk"></p>
                   <h4 class="cjk">
+                  <Trans i18nKey="tos.art-five-title">
                     Article 5: <u>Intellectual property</u>
+                  </Trans>
                   </h4>
                   <p class="cjk">
-                    All WiiLink's servers are based off reverse engineering or
-                    packet dumps of legitimate WiiConnect24 files; thus, all
-                    patchers, content creators, and scripts are &copy; WiiLink
-                    2020-2023
+                    {t("tos.art-five-desc")}
                     <p class="cjk">
                       <br />
                     </p>
                     <h4 class="cjk">
+                    <Trans i18nKey="tos.art-six-title">
                       Article 6: <u>Protection of Personal Information</u>
+                    </Trans>
                     </h4>
                     <p>
-                      As part of WiiLink's service, we provide an optional mail
-                      service through the Wii Message Board. Inbound and
-                      outbound mail is stored in a database in our server. We
-                      will never attempt to access the mail unless a server
-                      issue arises. If you have a complaint regarding a user
-                      sending inappropriate mail, please remove them from your
-                      friends list. WiiLink cannot view or modify your friends
-                      list.
+                      {t("tos.art-six-desc")}
                     </p>
-
                     <p class="cjk">
                       <br />
                     </p>
                     <h4 class="cjk">
+                    <Trans i18nKey="tos.art-seven-title">
                       Article 7: <u>Agreement updates</u>
+                    </Trans>
                     </h4>
                     <p class="cjk">
-                      WiiLink may change the terms and conditions of this
-                      agreement, including the Wii Network Services Code of
-                      Conduct and the Wii Network Services privacy policy which
-                      are both made a part of this agreement, at any time as far
-                      so this is necessary or helpful to enhance the service or
-                      to adapt it to reflect changes in technical or legal
-                      requirements.
+                      {t("tos.art-seven-agreement-changes")}
                     </p>
                     <p class="cjk">
-                      A current version of this agreement will always be
-                      available on the Internet at /tos We
-                      will post a message on the Wii Message board informing you
-                      about a change to this agreement at least 5 days before
-                      the change becomes official.
+                      {t("tos.art-seven-notify-changes")}
                     </p>
                     <p class="cjk">
                       <br />
                     </p>
                     <h4 class="cjk">
+                    <Trans i18nKey="tos.art-eight-title">
                       Article 8: <u>Non-Assignability</u>
+                    </Trans>
                     </h4>
                     <p class="cjk">
-                      You are responsible for use of your Wii console and the
-                      Wii Network Services by your friends and family. You may
-                      not assign this agreement to a third party.
+                      {t("tos.art-eight-desc")}
                     </p>
                     <p class="cjk">
                       <br />
                     </p>
                     <h4 class="cjk">
+                    <Trans i18nKey="tos.art-eight-title">
                       Article 9: <u>Agreement Interpretation</u>
+                    </Trans>
                     </h4>
                     <p class="cjk">
-                      If any part of this agreement is found to be invalid or
-                      unenforceable, that part of the agreement will no longer
-                      apply. You agree that the invalid part will be considered
-                      deleted from the agreement, but that all other parts of
-                      the agreement will remain in effect. You further agree
-                      that we may replace the invalid part by a provision which
-                      reflects or comes closest to reflecting the initial
-                      intention.
+                      {t("tos.art-nine-desc")}
                     </p>
                     <p class="cjk">
                       <br />
                     </p>
                     <h4 class="cjk">
+                    <Trans i18nKey="tos.art-ten-title">
                       Article 10: <u>Definitions</u>
+                    </Trans>
                     </h4>
                     <p>
-                      &ldquo;Content&rdquo; means the software and content,
-                      including applications called &ldquo;Channels&rdquo;,
-                      which Nintendo owns, or has obtained the right to use,
-                      distribute or sublicense, and which is available for
-                      downloading through the Wii Shop Channel Service, or
-                      through other means.
+                      {t("tos.art-ten-content")}
+                    </p>
                     </p>
                     <p>
-                      &ldquo;Nintendo Intellectual property&rdquo; means all
-                      intellectual property associated with the Wii console and
-                      the Wii Network Services, including but not limited to
-                      trademarks, service marks, logos, designs, copyrights,
-                      inventions, patents, trade secrets, know-how and other
-                      confidential and proprietary information which Nintendo
-                      developed, owns or is granted a licence to use.
+                      {t("tos.art-ten-nintendo-ip")}
                     </p>
                     <p>
-                      &ldquo;Wii points&rdquo; means the points which you
-                      purchase from Nintendo through the Wii Shop Channel
-                      Service or via Wii points Cards and which may be used by
-                      you in exchange for a licence to use Content or to
-                      purchase products.
+                      {t("tos.art-ten-wii-points")}
                     </p>
                     <p>
-                      &ldquo;products&rdquo; means any goods other than Content
-                      which are made available for purchase through the Wii Shop
-                      Channel Service.
+                      {t("tos.art-ten-products")}
                     </p>
                     <p class="cjk">
-                      &ldquo;WiiLink&rdquo; means the service whereby WiiLink
-                      can distribute software, material, e-mail and other data
-                      to your Wii console, and the Wii Message board of your Wii
-                      console, at any time and whereby you can send and receive
-                      e-mails, photographs and other material using your Wii
-                      console.
+                      {t("tos.art-ten-wiiLink")}
                     </p>
                     <p class="cjk">
-                      &ldquo;Wii console&rdquo; means Nintendo&rsquo;s system
-                      sold and marketed by Nintendo under the Wii brand,
-                      including any succeeding systems and compatible systems.
+                      {t("tos.art-ten-wii-console")}
                     </p>
                     <p>
-                      &ldquo;Wii Network Services&rdquo; means the Wii Shop
-                      Channel Service, WiiConnect24, and any related services
-                      and material delivered to your Wii console over the
-                      Internet, including but not limited to Content, products
-                      and Wii points.
+                      {t("tos.art-ten-wii-network-services")}
                     </p>
                     <p>
-                      &ldquo;Wii Network Services Code of Conduct&rdquo; means
-                      the code of conduct applicable to the Wii Network Services
-                      as revised by us from time to time, a current version of
-                      which will always be available at
-                      http://wii.nintendo-europe.com/terms
+                      {t("tos.art-ten-wii-network-services-coc")}
+                      <a href="http://wii.nintendo-europe.com/terms">http://wii.nintendo-europe.com/terms</a>
                     </p>
                     <p>
-                      &ldquo;Wii Network Services privacy policy&rdquo; means
-                      the privacy policy applicable to the Wii Network Services
-                      as revised by us from time to time, a current version of
-                      which will always be available at
-                      http://wii.nintendo-europe.com/terms
+                      {t("tos.art-ten-wii-network-services-privacy-policy")}
+                      <a href="http://wii.nintendo-europe.com/terms">http://wii.nintendo-europe.com/terms</a>
                     </p>
                     <p>
-                      &ldquo;Wii points Card&rdquo; means prepaid cards sold or
-                      distributed by Nintendo or Nintendo&rsquo;s promotional
-                      partners which contain credits for Wii points.
+                      {t("tos.art-ten-wii-points-card")}
                     </p>
                     <p>
-                      &ldquo;Wii Shop Channel Account&rdquo; means a
-                      non-transferable personal account that will be established
-                      on your Wii console upon acceptance of these terms and the
-                      Wii Shop Channel Service terms of use, and which you use
-                      in connection with the Wii Shop Channel Service.
+                      {t("tos.art-ten-wii-shop-account")}
                     </p>
                     <p>
-                      &ldquo;Wii Shop Channel Service&rdquo; means the services
-                      related to the Wii Shop Channel Account, Wii points,
-                      products, online store, and download service, all of which
-                      Nintendo directly or indirectly operates, as outlined in
-                      this agreement.
+                      {t("tos.art-ten-wii-shop-service")}
                     </p>
                   </p>
                 </li>
