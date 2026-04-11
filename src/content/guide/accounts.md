@@ -1,6 +1,6 @@
 ---
 title: WiiLink Accounts
-pubDate: 2026-01-24
+pubDate: 2026-04-11
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
 icon: lucide:id-card
 ---
@@ -36,3 +36,13 @@ WiiLink Accounts are a brand-new way to do all things WiiLink! At present, they 
 Once you have successfully linked your account, navigate back to https://accounts.wiilink.ca. There, you can access the `Food Delivery Settings` tab, select your console's Wii Number, and click on the `Enable Domino's Ordering` button.
 
 ![img2](/img/guide/enabledominos.png)
+
+## Enabling Just Eat ordering
+<l class="notice info fullwidth">Follow the guide <a href="/guide/just-eat">here</a> to link your Just Eat account to your WiiLink Account.</l>
+
+## Troubleshooting & Questions
+
+</br>
+
+### Account Linker says there's a parse error at line 1, column 1!
+> The Account Linker could not connect to the internet. You need to wait for the Wi-Fi icon to turn solid (not blinking, and is opaque) before opening the app, in order to ensure it has a connection.
