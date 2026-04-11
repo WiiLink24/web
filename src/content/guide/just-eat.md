@@ -36,7 +36,7 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 
 </br>
 
-### Usage
+### Linker usage:
 1. Log into your [**WiiLink Account**](https://accounts.wiilink.ca).
 
 ![img2](/img/guide/loginpage.png)
@@ -50,6 +50,21 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 4. Log into your Just Eat account using the pop-up the linker opened for you.
 
 <l class="notice warn fullwidth">Do not resize the sign-in window, as it can cause the process to fail.</l>
+
+</br>
+
+### Channel usage:
+1. Launch the channel from the Wii Menu.
+
+2. Ensure your delivery address, and other personal information, is set correctly.
+
+3. Press `Order`, and complete your order, following the on-screen instructions.
+
+![img2](/img/guide/food.png)
+
+4. Once you have placed your order, navigate to [just-eat.wiilink.ca](https://just-eat.wiilink.ca), and complete checkout.
+
+<l class="notice success smallwidth">Congratulations! You've ordered food from Just Eat on your console!</l>
 
 ## Troubleshooting & Questions
 
