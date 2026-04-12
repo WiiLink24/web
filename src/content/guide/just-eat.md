@@ -1,6 +1,6 @@
 ---
 title: Just Eat
-pubDate: 2026-04-11
+pubDate: 2026-04-12
 description: Get up-to-date instructions on how to use Demae Just Eat!
 icon: utensils
 ---
@@ -56,7 +56,11 @@ You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 ### Channel usage:
 1. Launch the channel from the Wii Menu.
 
+<l class="notice info">If you need help getting the channel installed, refer to our guides on [using the patcher](/guide/patcher) and [installing WADs](/guide/wads). WADs for other variants of the Food Channel (Domino's, fake ordering, etc) will not work.</l>
+
 2. Ensure your delivery address, and other personal information, is set correctly.
+
+<l class="notice warn fullwidth">Do not add a space in your ZIP code / postcode. Doing so will cause the channel to throw a `333400` error.</l>
 
 3. Press `Order`, and complete your order, following the on-screen instructions.
 
