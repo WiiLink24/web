@@ -1,6 +1,6 @@
 ---
 title: Wii Message Board
-pubDate: 2026-01-25
+pubDate: 2026-04-11
 description: Get up-to-date instructions on how to patch the Wii Message Board!
 icon: lucide:presentation
 ---
@@ -36,7 +36,7 @@ icon: lucide:presentation
 <l class="notice success smallwidth">Congratulations! You've patched Wii Mail on your Console!</l>
 
 <l class="notice generic fullwidth"><b>What's next?</b></br>
-<b>For people looking to use Demae Domino's:</b> Continue to <b><a href="/guide/accounts">linking your console to a WiiLink Account</a></b>.</br>
+<b>For people looking to use Demae Domino's / Just Eat:</b> Continue to <b><a href="/guide/accounts">linking your console to a WiiLink Account</a></b>.</br>
 <b>For everyone else:</b> You are done! Enjoy using WiiLink to your heart's content!</l>
 
 ## Troubleshooting & Questions
