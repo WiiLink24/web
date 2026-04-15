@@ -154,6 +154,17 @@
         "todo": "<span class='circle-help'></span> Stripeに募金することでテストできます！",
         "icon": "",
         "completed": "50"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTagはカスタマイズ可能なゲームタグで、友達と共有したり、ウェブサイトに埋め込むことができます。",
+        "link": "/status",
+        "isArea": "地域自由",
+        "status": "開発中",
+        "todo": "<span class='hard-hat'></span> このサービスはまだ開発中です",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }
