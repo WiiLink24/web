@@ -16,7 +16,7 @@ changeLanguage("en");
 
   <div class="sectiontop" style="top:200px !important; position:relative;">
     <section class="section">
-      <h1 style="font-family: Gilroy; margin-bottom: 18px;">Privacy Policy</h1>
+      <h1 style="font-family: Gilroy; margin-bottom: 18px;">{t("privacyPolicy.title")}</h1>
       <h3
         class="update"
         style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;"
@@ -27,32 +27,22 @@ changeLanguage("en");
       <p
         class="title"
         style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
-        Privacy policy for the WiiLink family of services
+        {t("privacyPolicy.desc")}
       </p>
       <section class="section">
-        <p class="title">Privacy Policy</p>
+        <p class="title">{t("privacyPolicy.title")}</p>
         <p>
-          The protection and confidentiality of personal data something WiiLink
-          takes extremely seriously. We believe in protecting the information
-          accessed in the most secure way possible. We also believe that being
-          transparent on how we access your data leads to a bigger sense of
-          trust with our users.
+          {t("privacyPolicy.protection")}
           <br /><br />
-          Please take your time and read through this Privacy Policy to the best
-          of your ability to learn how we access and store your data. You will be
-          notified through our Discord server if this document changes.
+          {t("privacyPolicy.read")}
           <br /><br />
-          <p class="title">What do we access?</p>
-          When you use our services, our web server, nginx, logs your IP address.
-          Additionally, your console's Wii Number, MAC Address, Serial Number, and
-          any data you provide to our services (such as Miis submitted to contests,
-          polls you vote on, etc), is stored to allow these services to function
-          correctly.
+          <p class="title">{t("privacyPolicy.access")}</p>
+          {t("privacyPolicy.stored-data")}
           <br /><br />
-          This data is used as necessary for the operation of our services. We do
-          not sell or share data.
+          {t("privacyPolicy.using-data")}
           <br /><br />
-        <p class="title">WiiLink Checkout</p>
+        <p class="title">{t("privacyPolicy.checkout")}</p>
+        <Trans i18nKey="privacyPolicy.about-checkout">
           We have a service, known as "WiiLink Checkout", available at
           <a href="https://checkout.wiilink.ca">https://checkout.wiilink.ca</a>.
           Through this site, you can view your records (such as playtime shared
@@ -62,34 +52,35 @@ changeLanguage("en");
           be viewed using your serial number. If you link your console to an
           account, you gain the ability to enable a public profile, allowing
           people to see your Wii Number alongside your data.
+          </Trans>
           <br /><br />
+          <Trans i18nKey="privacyPolicy.mii-contest-viewer">
           Additionally, your Check Mii Out Channel (also known as Mii Contest
           Channel) artisan, alongside the Miis you post, are publicly visible
           through our viewer at
           <a href="https://miicontest.wiilink.ca/">https://miicontest.wiilink.ca/</a>.
+          </Trans>
         <br /><br />
-        <p class="title">Additional policies</p>
-          Some of our services have their own privacy policies, separate to the
-          main one here. These are the following services:
+        <p class="title">{t("privacyPolicy.additional")}</p>
+          {t("privacyPolicy.seperate-privacy")}
           <ul style="list-style-type: square">
-            <li><a href="/privacy-policy/accounts">WiiLink Accounts</a></li>
-            <li><a href="https://forum.wiilink.ca/privacy">WiiLink Forum</a></li>
-            <li><a href="/privacy-policy/demae-dominos">Demae Domino's</a></li>
-            <li><a href="/privacy-policy/just-eat">Food Channel Just Eat</a></li>
+            <li><a href="/privacy-policy/accounts">{t("privacyPolicy.accounts")}</a></li>
+            <li><a href="https://forum.wiilink.ca/privacy">{t("privacyPolicy.fourms")}</a></li>
+            <li><a href="/privacy-policy/demae-dominos">{t("privacyPolicy.demae")}</a></li>
+            <li><a href="/privacy-policy/just-eat">{t("privacyPolicy.just-eat")}</a></li>
           </ul>
+          <Trans i18nKey="privacyPolicy.cloudflare-protection">
           Furthermore, our services are protected by Cloudflare, and this website
           is hosted by them. By using our services, you agree to the Cloudflare
           privacy policy, which can be found
           <a href="https://www.cloudflare.com/privacypolicy/">here</a>.
+          </Trans>
         <br /><br />
-      <p class="title">Changes to this Privacy Policy</p>
-        It is our policy to inform our users of any changes to this privacy
-        policy. If there is a change, you will be notified through our Discord
-        server. The revision date of the privacy policy is at the
-        bottom of the page.
+      <p class="title">{t("privacyPolicy.changes")}</p>
+        {t("privacyPolicy.change-notification")}
         <br><br>
         <p class="title">
-            Last Modified
+            {t("privacyPolicy.last-modified")}
         </p>
         <p>
             Saturday, April 11th, 2026

@@ -236,7 +236,27 @@
     },
     "privacyPolicy": {
       "mainTitle": "WiiLink - Privacy Policy",
-      "mainDesc": "Privacy Policy for the WiiLink services."
+      "mainDesc": "Privacy Policy for the WiiLink services.",
+      "title": "Privacy Policy",
+      "desc": "Privacy policy for the WiiLink family of services",
+      "protection": "The protection and confidentiality of personal data something WiiLink takes extremely seriously. We believe in protecting the information accessed in the most secure way possible. We also believe that being transparent on how we access your data leads to a bigger sense of trust with our users.",
+      "read": "Please take your time and read through this Privacy Policy to the best of your ability to learn how we access and store your data. You will be notified through our Discord server if this document changes.",
+      "access" : "What do we access?",
+      "stored-data": "When you use our services, our web server, nginx, logs your IP address. Additionally, your console's Wii Number, MAC Address, Serial Number, and any data you provide to our services (such as Miis submitted to contests, polls you vote on, etc), is stored to allow these services to function correctly.",
+      "using-data": "This data is used as necessary for the operation of our services. We do not sell or share data.",
+      "checkout": "WiiLink Checkout",
+      "about-checkout" : "We have a service, known as \"WiiLink Checkout\", available at <0>https://checkout.wiilink.ca</0>. Through this site, you can view your records (such as playtime shared through Nintendo Channel, EVC voting history, etc), as well as those of other users of WiiLink. If your console is not linked to a WiiLink Account, this data is used in overall statistics on the site, and can be viewed using your serial number. If you link your console to an account, you gain the ability to enable a public profile, allowing  people to see your Wii Number alongside your data.",
+      "mii-contest-viewer": "Additionally, your Check Mii Out Channel (also known as Mii Contest Channel) artisan, alongside the Miis you post, are publicly visible through our viewer at <0>https://miicontest.wiilink.ca/</0>.",
+      "additional": "Additional Policies",
+      "seperate-privacy": "Some of our services have their own privacy policies, separate to the main one here. These are the following services:",
+      "accounts": "WiiLink Accounts",
+      "fourms": "WiiLink Forums",
+      "demae": "Demae Domino's",
+      "just-eat": "Food Channel Just Eat",
+      "cloudflare-protection": "Furthermore, our services are protected by Cloudflare, and this website is hosted by them. By using our services, you agree to the Cloudflare privacy policy, which can be found <0>here</0>.",
+      "changes": "Changes to this Privacy Policy",
+      "change-notification": "It is our policy to inform our users of any changes to this privacy policy. If there is a change, you will be notified through our Discord server. The revision date of the privacy policy is at the bottom of the page.",
+      "last-modified": "Last Modified"
     },
     "eula": {
       "mainTitle": "WiiLink - End User License Agreement",
