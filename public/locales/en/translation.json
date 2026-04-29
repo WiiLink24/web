@@ -237,6 +237,7 @@
     "privacyPolicy": {
       "mainTitle": "WiiLink - Privacy Policy",
       "mainDesc": "Privacy Policy for the WiiLink services.",
+      "looking-for-main": "Looking for our main Privacy Policy? Find it <0>here</0>.",
       "title": "Privacy Policy",
       "desc": "Privacy policy for the WiiLink family of services",
       "protection": "The protection and confidentiality of personal data something WiiLink takes extremely seriously. We believe in protecting the information accessed in the most secure way possible. We also believe that being transparent on how we access your data leads to a bigger sense of trust with our users.",
@@ -255,8 +256,11 @@
       "just-eat": "Food Channel Just Eat",
       "cloudflare-protection": "Furthermore, our services are protected by Cloudflare, and this website is hosted by them. By using our services, you agree to the Cloudflare privacy policy, which can be found <0>here</0>.",
       "changes": "Changes to this Privacy Policy",
-      "change-notification": "It is our policy to inform our users of any changes to this privacy policy. If there is a change, you will be notified through our Discord server. The revision date of the privacy policy is at the bottom of the page.",
-      "last-modified": "Last Modified"
+      "change-notification": "It is our policy to inform the consumers to any changes to this privacy policy. If there is a change, you will be notified through our Discord server. The revision date of the privacy policy is at the top and/or bottom of the page.",
+      "last-modified": "Last Modified",
+      "children-privacy": "Children's Privacy",
+      "not-intented-for-children": "<0>Important!</0></1> This service is not intended for children under the age of 13.",
+      "dont-collect-info": "This service is not intended for children under the age of 13. If you are under the age of 13, please exit this website and do not access this service. WiiLink does not knowingly collect data from children under the age of 13."
     },
     "eula": {
       "mainTitle": "WiiLink - End User License Agreement",
@@ -304,5 +308,24 @@
       "request-data": "You can request data deletion or help via our Discord support (as outlined in the WiiLink guidelines).",
       "service-laws": "The service is governed by Canadian law, and we comply with its privacy requirements.",
       "consent-text": "By using Food Channel and providing your information, you consent to the data practices described above. We are committed to safeguarding your privacy while making the food-ordering process as convenient as possible."
-    }
+    },
+    "account-privacy": {
+      "mainTitle": "WiiLink - WiiLink Accounts Privacy Policy",
+      "mainDesc": "Privacy policy for WiiLink Accounts",
+      "title": "WiiLink Accounts Privacy Policy",
+      "desc":"Privacy policy for WiiLink Accounts",
+      "consent": "By using WiiLink Accounts, you consent to our practices stated in this document. If you do not consent, please do not use WiiLink Accounts. If you have any questions or concerns about this Privacy Policy, do not hesitate to reach out to staff in our Discord server, or by emailing <0>support@wiilink.ca</0>.",
+      "stored-data": "When you create and use a WiiLink Account, the following personal data is stored by us:",
+      "account": "Account name",
+      "username": "Account username",
+      "email": "Email Address - Allows us to contact you if you request a password reset",
+      "ip-address": "IP Address and User-Agent - Shown to you in the \"Sessions\" page in account settings, to review devices signed into your account",
+      "geo-ip": "Additionally, our accounts platform uses GeoIP with your IP address for non-specific location information, which is used to help prevent abuse.",
+      "linked-console": "If you link your account to a console, the following additional data is stored:",
+      "wii-number": "Wii Number - Used to allow you to tell which console is which when multiple are linked to your account",
+      "console-id": "Console ID - Used to uniquely identify your console to check if you've enabled Domino's ordering",
+      "serial-number": "Serial Number - Used to uniquely identify your console for Nintendo Channel data visible in WiiLink Checkout",
+      "dont-sell-data": "This data is used as necessary for the account service. We do not sell or share data.",
+      "delete-account": "You can exercise your right to be forgotten by deleting your account <0>here</0>."
+  }
 }

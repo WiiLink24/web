@@ -9,15 +9,15 @@ changeLanguage("en");
 ---
 
 <Layout
-  title="WiiLink - WiiLink Accounts Privacy Policy"
-  description="Privacy policy for WiiLink Accounts"
+  title={t("account-privacy.mainTitle")}
+  description={t("account-privacy.mainDesc")}
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" />
 
   <div class="sectiontop" style="top:200px !important; position:relative;">
     <section class="section">
       <h1 style="font-family: Gilroy; margin-bottom: 18px;">
-        WiiLink Accounts Privacy Policy
+        {t("account-privacy.title")}
       </h1>
       <h3
         class="update"
@@ -29,93 +29,79 @@ changeLanguage("en");
       <p
         class="title"
         style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
-        Privacy policy for WiiLink Accounts
+        {t("account-privacy.desc")}
       </p>
       <section class="section">
         <l class="notice info fullwidth">
+          <Trans i18nKey="privacyPolicy.looking-for-main">
           Looking for our main Privacy Policy?
           Find it <a href="/privacy-policy">here</a>.
+          </Trans>
         </l></br></br>
-        <p class="title">Privacy Policy</p>
+        <p class="title">{t("privacyPolicy.title")}</p>
         <p>
-          The protection and confidentiality of personal data something WiiLink
-          takes extremely seriously. We believe in protecting the information
-          accessed in the most secure way possible. We also believe that being
-          transparent on how we access your data leads to a bigger sense of
-          trust with our users.
+          {t("privacyPolicy.protection")}
           <br /><br />
-          Please take your time and read through this Privacy Policy to the best
-          of your ability to learn how we access and store your data. You will be
-          notified through our Discord server if this document changes.
+          {t("privacyPolicy.read")}
           <br /><br />
+          <Trans i18nKey="account-privacy.consent">
           By using WiiLink Accounts, you consent to our practices stated in this
           document. If you do not consent, please do not use WiiLink Accounts.
           If you have any questions or concerns about this Privacy Policy, do not
           hesitate to reach out to staff in our Discord server, or by emailing
           <a href="mailto:support@wiilink.ca">support@wiilink.ca</a>.
+          </Trans>
           <br />
           <br />
-          <p class="title">What do we access?</p>
-          When you create and use a WiiLink Account, the following personal data
-          is stored by us:
+          <p class="title">{t("privacyPolicy.access")}</p>
+          {t("privacyPolicy.stored-data")}
           <ul style="list-style-type: square">
-            <li>Account name</li>
-            <li>Account username</li>
-            <li>Email Address - Allows us to contact you if you request a password reset</li>
-            <li>IP Address and User-Agent - Shown to you in the "Sessions" page
-              in account settings, to review devices signed into your account</li>
+            <li>{t("account-privacy.account")}</li>
+            <li>{t("account-privacy.username")}</li>
+            <li>{t("account-privacy.email")}</li>
+            <li>{t("account-privacy.ip-address")}</li>
           </ul>
-          Additionally, our accounts platform uses GeoIP with your IP address for
-          non-specific location information, which is used to help prevent abuse.
+          {t("account-privacy.geo-ip")}
           <br /><br />
-          If you link your account to a console, the following additional data is stored:
+          {t("account-privacy.linked-console")}
           <ul style="list-style-type: square">
-            <li>Wii Number - Used to allow you to tell which console is which when multiple
-              are linked to your account
-            </li>
-            <li>Console ID - Used to uniquely identify your console to check if you've
-              enabled Domino's ordering
-            </li>
-            <li>Serial Number - Used to uniquely identify your console for Nintendo Channel
-              data visible in WiiLink Checkout
-            </li>
+            <li>{t("account-privacy.wii-number")}</li>
+            <li>{t("account-privacy.console-id")}</li>
+            <li>{t("account-privacy.serial-number")}</li>
           </ul>
 
-          This data is used as necessary for the account service. We do not sell
-          or share data.
+          {t("account-privacy.dont-sell-data")}
           <br />
           <br />
+          <Trans i18nKey="account-privacy.delete-account">
           You can exercise your right to be forgotten by deleting your account
           <a href="https://sso.riiconnect24.net/if/user/#/settings">here</a>.
+          </Trans>
           <br />
           <br />
-          <p class="title">Children's Privacy</p>
+          <p class="title">{t("privacyPolicy.children-privacy")}</p>
           <section class="section">
             <div class="container">
               <div class="notification is-danger">
+                <Trans i18nKey="privacyPolicy.not-intented-for-children">
                 <strong>Important!</strong><br />This service is not intended
                 for children under the age of 13.
+                </Trans>
               </div>
             </div>
           </section>
           <p>
-            This service is not intended for children under the age of 13. If
-            you are under the age of 13, please exit this website and do not
-            access this service. WiiLink does not knowingly collect data from
-            children under the age of 13.
+            {t("privacyPolicy.dont-collect-info")}
           </p>
 
-          <p class="title">Changes to this Privacy Policy</p>
+          <p class="title">{t("privacyPolicy.changes")}</p>
           <p>
-            It is our policy to inform the consumers to any changes to this
-            privacy policy. If there is a change, you will be notified through
-            our Discord server. The revision date of the privacy
-            policy is at the top and/or bottom of the page.
+            {t("privacyPolicy.change-notification")}
           </p>
         </p>
         <br><br>
         <p class="title">
-            Last Modified
+            {t("privacyPolicy.last-modified")}
         </p>
         <p>
             Saturday, April 4th, 2026
