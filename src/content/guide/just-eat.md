@@ -1,6 +1,6 @@
 ---
 title: Just Eat
-pubDate: 2026-04-12
+pubDate: 2026-05-03
 description: Get up-to-date instructions on how to use Demae Just Eat!
 icon: utensils
 ---
@@ -25,10 +25,22 @@ If you have not done so already, visit the [releases page](https://github.com/Wi
 Simply download the Windows release (onefile or zip) of your choosing, and open the exe!
 
 #### <b>macOS:</b>
-Download the macOS release for your Mac (x64 for Intel, arm64 for Apple Silicon), and extract it. Then, launch Terminal. Type in `xattr -d com.apple.quarantine ` with a trailing space, drag the linker app file into the terminal, and press enter. After this, you can just right click the app file and choose `Open`!
+Download the macOS release for your Mac (x64 for Intel, arm64 for Apple Silicon), and extract it. Then, launch Terminal. Type in
+```bash
+xattr -d com.apple.quarantine 
+```
+with a trailing space, drag the linker app file into the terminal, and press enter. After this, you can just right click the app file and choose `Open`!
 
 #### <b>Linux:</b>
-Download the Linux release for your computer's architecture and extract it. Then, open a terminal, and use `cd` to change to the directory you extracted the linker to. Run `chmod +x JustEatLinker` to make the linker executable, and `./JustEatLinker` to run it.
+Download the Linux release for your computer's architecture and extract it. Then, open a terminal, and use `cd` to change to the directory you extracted the linker to.
+- Make the linker executable:
+```bash
+chmod +x JustEatLinker
+```
+- Run the patcher:
+```bash
+./JustEatLinker
+```
 
 <l class= "notice info">On some Debian and Ubuntu based distros, the linker may fail to launch with the following error: </br>
 `qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.` </br>
