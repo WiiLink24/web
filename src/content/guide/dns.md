@@ -1,7 +1,7 @@
 ---
 title: WiiLink DNS
 icon: lucide:database
-pubDate: 2026-01-24
+pubDate: 2026-05-03
 description: Get up-to-date instructions on how to set your DNS to WiiLink!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -91,7 +91,7 @@ Continue to <b><a href="/guide/board">patching the Wii Message Board</a></b>.</l
 
 <l class="notice generic smallwidth">If the Connection Test failed, use a different Internet Connection or try again.</l>
 
-6. Go to the Wii Menu > `Wii Options` > `WiiConnect24` > `OK` > `Next`.
+6. Go to the Wii Menu > `Wii Options` > `Internet` > `User Agreements` > `Yes`.
 
 7. Allow the EULA to load.
 
@@ -104,6 +104,8 @@ The developers recommended that you read the EULA, as it gives important informa
 <l class="notice warn smallwidth">If you do not see the WiiLink logo on the EULA, the DNS will not work on your network. If you want to enable it, you can use the <a href="https://github.com/WiiLink24/DNS-Server">DNS Server application</a>.</l>
 
 8. Once you read the EULA, click on "I ACCEPT".
+
+9. Navigate back to the main settings page, select WiiConnect24, and set "WiiConnect24" to On.
 
 </br>
 
