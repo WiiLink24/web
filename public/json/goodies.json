@@ -14,8 +14,8 @@
         "link": "/extras/wallpapers"
       },
       {
-        "title": "<span class='chart-no-axes-column'></span>Legacy Poll Viewer",
-        "desc": "View poll results for the Nintendo and RiiCOnnect24 Everybody Votes Channel!",
+        "title": "<span class='chart-no-axes-column'></span> Poll Viewer",
+        "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
       },
