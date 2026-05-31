@@ -13,7 +13,7 @@ color: 2291b360
 <l class="notice warn smallwidth">With a default Dolphin NAND, the Everybody Votes Channel is disabled to prevent abuse. To use this service in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
 <a href="/extras/vote" id="download-button"
-        class="btn btn-success" style="margin-top:5px; width:100%;"> View Poll Results</a>
+        class="btn btn-success" style="margin-top:5px; width:100%; color:white !important;"> View Poll Results</a>
 
 <hr>
 <h4><i class="fab fa-youtube" aria-hidden="true"></i> Watch Video</h4>

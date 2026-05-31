@@ -134,7 +134,7 @@ const tiers = [
                   </h5>
                   <button
                     class="btn"
-                    style={`background-color:${tier.color}; width:100%; display:flex; gap:8px; align-items:center; justify-content:center; text-align:right !important;`}>
+                    style={`background-color:${tier.color}; width:100%; display:flex; gap:8px; align-items:center; color: white! important; justify-content:center; text-align:right !important;`}>
                     <Trans i18nKey={tier.subKey} set:html={tier.subFallback} />
                     <b style="font-size:50px">${tier.price}</b>
                   </button>
@@ -527,7 +527,7 @@ const tiers = [
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: white !important;
     flex-shrink: 0;
   }
 
