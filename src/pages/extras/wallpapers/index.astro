@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
+import { Icon } from "astro-icon/components";
 
 changeLanguage("en");
 ---
@@ -141,7 +142,7 @@ changeLanguage("en");
 </head>
 <body>
 <div class="container">
-  <h1 class="header"><i class="fas download" aria-hidden="true"></i> Wallpaper Downloads</h1>
+  <h1 class="header"><Icon name="download" aria-hidden="true" /> Wallpaper Downloads</h1>
   <h5 class="header">Here's our collection of wallpapers you can download.</h5>
 
   <div style="margin-top:60px; margin-bottom:30px; display:flex; flex-direction:row; flex-wrap:wrap; align-items:center; justify-content:space-between;">
