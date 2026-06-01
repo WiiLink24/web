@@ -6,11 +6,11 @@ import { Icon } from "astro-icon/components";
 async function fetchCounts() {
   const results = {};
 
-  async function fetchWithTimeout(url, timeout = 5000) {
+  async function fetchWithTimeout(url, options = {}, timeout = 5000) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), timeout);
     try {
-      const response = await fetch(url, { signal: controller.signal });
+      const response = await fetch(url, { ...options, signal: controller.signal });
       clearTimeout(timeoutId);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       return await response.json();
@@ -22,7 +22,11 @@ async function fetchCounts() {
 
   async function fetchGitHub() {
     try {
-      const data = await fetchWithTimeout("https://api.github.com/users/wiilink24");
+      const data = await fetchWithTimeout("https://api.github.com/users/wiilink24", {
+        headers: {
+          'Authorization': `Bearer ${import.meta.env.GITHUB_TOKEN}`
+        }
+      });
       return data.followers || 0;
     } catch (error) {
       console.error("GitHub Error:", error);
