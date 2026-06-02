@@ -9,7 +9,7 @@
         "link": "https://github.com/noahpistilli",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-canada_1f1e8-1f1e6.png"
       },
-            {
+      {
         "name": "Becca Williamson",
         "title": "Content Management",
         "color": "#66cdaa",
@@ -216,6 +216,14 @@
         "pfp": "/img/pfp/weebo64.webp",
         "link": "https://weebo64.is-a.dev/",
         "flag": "/img/flags/de.webp"
+      },
+      {
+        "name": "Danionel",
+        "title": "Translator (European Spanish)",
+        "color": "#fc9a21",
+        "pfp": "/img/pfp/danionel.webp",
+        "link": "https://x.com/DanionelP",
+        "flag": "/img/flags/es.webp"
       }
     ]
   }
