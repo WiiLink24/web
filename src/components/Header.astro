@@ -123,7 +123,10 @@ const { isMain } = Astro.props;
         }
         <hr style="border-top: 1px solid var(--border-color);" />
         <div class="post" style="padding:8px; border-radius:4px;">
-          <a href="/news/forming-links" style="display:flex; flex-direction:row; align-items:center; gap:18px;" aria-label="Forming Links News Link">
+          <a
+            href="/news/forming-links"
+            style="display:flex; flex-direction:row; align-items:center; gap:18px;"
+            aria-label="Forming Links News Link">
             <Icon
               name="lucide:mail-open"
               style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
@@ -269,10 +272,14 @@ const { isMain } = Astro.props;
     >
     <a
       class="header-link"
-      href={localizePath("/services")}
-      aria-label="Services Link"
-      ><Icon name="lucide:package" style="margin-right:5px;" />
-      {t("header.services")}</a
+      href="https://wfc.wiilink.ca"
+      aria-label="WiiLink WFC Link"
+      ><img
+        src="/img/wfc.webp"
+        alt="WiiLink WFC Logo"
+        style="height:20px; margin-right:5px;"
+      />
+      WFC</a
     >
     <button
       id="moreHeader"
@@ -290,14 +297,36 @@ const { isMain } = Astro.props;
         class="dropdown-item"
         style="display:flex; flex-direction:row; align-items:center; gap:8px;"
         id="account"
-        href="https://accounts.wiilink.ca"
+        href="https://checkout.wiilink.ca"
         aria-label="Extras Link"
         ><Icon name="lucide:user" />Log into WiiLink Accounts</a
+      >
+      <a
+        href="https://accounts.wiilink.ca"
+        id="accountSettings"
+        class="dropdown-item"
+        style="display:none;"
+        aria-label="Account Management Link"
+        ><Icon
+          name="lucide:settings"
+          style="margin-bottom:2px; margin-right:5px;"
+        />
+        Manage your WiiLink Account</a
       >
       <hr
         style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
       />
       <LanguageDropdown />
+      <a
+        class="dropdown-item"
+        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+        href={localizePath("/services")}
+        aria-label="Services Link"
+        ><div>
+          <Icon name="lucide:package" style="margin-bottom:5px;" />
+          {t("header.services")}
+        </div>
+      </a>
       <a
         class="dropdown-item"
         href={localizePath("/extras")}
@@ -314,13 +343,6 @@ const { isMain } = Astro.props;
           <Icon name="message-circle" style="margin-bottom:5px;" /> WiiLink Forum
         </div></a
       >
-      <a
-        class="dropdown-item"
-        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://wfc.wiilink24.com"
-        aria-label="WiiLink WFC Link"
-        ><div><Icon name="lucide:wifi" style="margin-bottom:5px;" /> WiiLink WFC</div>
-      </a>
       <div class="wiilink-data-container">
         <div class="wiilink-data-button">
           <span
@@ -360,17 +382,10 @@ const { isMain } = Astro.props;
           </a>
         </div>
       </div>
-      <!-- <a
-          class="dropdown-item"
-          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-          href="https://tag.rc24.xyz/"
-          aria-label="LinkTag"
-          ><div><Icon name="lucide:tag" style="margin-bottom:5px;" /> LinkTag</div></a
-        > -->
       <a
         class="dropdown-item"
         style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://card.wiilink24.com/"
+        href="https://checkout.wiilink.ca/private/digicard"
         aria-label="Digicard"
         ><div>
           <Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard
@@ -549,6 +564,7 @@ const { isMain } = Astro.props;
         accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
         mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
         moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
+        document.getElementById("accountSettings").style.display = "block";
       }
     } catch (error) {
       console.error("Error parsing user data:", error);
