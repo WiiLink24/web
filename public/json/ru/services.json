@@ -27,7 +27,7 @@
         "color": "#787878",
         "name": "Канал Nintendo",
         "desc": "Путеводитель по играм Nintendo с обзорами, трейлерами, специальными шоу и демками игр.",
-        "link": "/guide/nintendo
+        "link": "/guide/nintendo",
         "isArea": "Был доступен везде",
         "status": "Полный релиз",
         "icon": "nintendo_icon.webp",
@@ -154,6 +154,17 @@
         "todo": "<span class='bomb'></span> Разработка для этого сервиса была прекращена.",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag - это персонализированный геймтег, который вы можете поделиться с друзьями или встроить на веб-сайты.",
+        "link": "/status",
+        "isArea": "Регион свободный",
+        "status": "В разработке",
+        "todo": "<span class='hard-hat'></span> Этот сервис ещё в разработке",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

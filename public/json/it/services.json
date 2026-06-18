@@ -154,6 +154,17 @@
         "todo": "<span class='bomb'></span> Lo sviluppo di questo servizio è stato interrotto.",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag è un gamertag personalizzabile che puoi condividere con i tuoi amici o incorporare su siti web.",
+        "link": "/status",
+        "isArea": "Regione Libera",
+        "status": "In Sviluppo",
+        "todo": "<span class='hard-hat'></span> Questo servizio è ancora in sviluppo",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

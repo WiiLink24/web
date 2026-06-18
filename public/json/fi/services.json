@@ -154,6 +154,17 @@
         "todo": "<span class='bomb'></span> Tämän palvelun kehitys on lakkautettu.",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag on muokattava pelaajanimi, jonka voit jakaa kavereidesi kanssa tai upottaa verkkosivustoihin.",
+        "link": "/status",
+        "isArea": "Aluevapaa",
+        "status": "Kehitys lakkautettu",
+        "todo": "<span class='hard-hat'></span> Tämän palvelun kehitys on lakkautettu.",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

@@ -151,9 +151,20 @@
         "link": "/status",
         "isArea": "Originalmente exclusivo do Japão",
         "status": "Planeado",
-        "todo": "Verifica mais tarde...",
+        "todo": "<span class='bomb'></span> Este serviço ainda está em desenvolvimento",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag é um gamertag personalizável que você pode compartilhar com seus amigos ou incorporar em sites web.",
+        "link": "/status",
+        "isArea": "Região livre",
+        "status": "Em desenvolvimento",
+        "todo": "<span class='hard-hat'></span> Este serviço ainda está em desenvolvimento",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

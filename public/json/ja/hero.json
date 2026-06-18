@@ -82,6 +82,13 @@
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.webp",
         "bg": "room.webp"
+      },
+      {
+        "name": "LinkTag",
+        "desc": "LinkTagはカスタマイズ可能なゲームタグで、友達と共有したり、ウェブサイトに埋め込むことができます。",
+        "link": "/status",
+        "icon": "linktagbanner.webp",
+        "bg": "linktag.webp"
       }
     ]
   }

@@ -154,6 +154,17 @@
         "todo": "Komm später wieder...",
         "icon": "",
         "completed": "15"
+      },
+      {
+        "color": "#05AAF8",
+        "name": "LinkTag",
+        "desc": "LinkTag ist ein benutzerdefinierbarer Gamertag, den du mit deinen Freunden teilen oder auf Websites einbetten kannst.",
+        "link": "/status",
+        "isArea": "Region-Free",
+        "status": "In Entwicklung",
+        "todo": "<span class='hard-hat'></span> Dieser Service ist noch in Entwicklung",
+        "icon": "linktag_icon.webp",
+        "completed": "5"
       }
     ]
   }

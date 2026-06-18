@@ -90,6 +90,13 @@
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.webp",
         "bg": "room.webp"
+      },
+      {
+        "name": "LinkTag",
+        "desc": "LinkTag è un gamertag personalizzabile che puoi condividere con i tuoi amici o incorporare su siti web.",
+        "link": "/status",
+        "icon": "linktagbanner.webp",
+        "bg": "linktag.webp"
       }
     ]
   }
