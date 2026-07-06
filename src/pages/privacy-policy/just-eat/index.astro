@@ -1,15 +1,16 @@
 ---
-import { changeLanguage } from "i18next";
+import { t, changeLanguage } from "i18next";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
+import { Trans } from "astro-i18next/components";
 
 changeLanguage("en");
 ---
 
 <Layout
-  title="Food Channel Just Eat - Privacy Policy"
-  description="Learn about the privacy policy for using the Food Channel Just Eat service."
+  title={t("je-privacy.mainTitle")}
+  description={t("je-privacy.mainDesc")}
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" />
   
@@ -17,7 +18,7 @@ changeLanguage("en");
     <div class="privacy-content">
               <span style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 1rem;">
       <img src="/img/demaebanner.webp" alt="JustEat Banner" style="height:80px; margin-bottom:28px;"/>
-      <h1>Privacy Policy for Food Channel Just Eat</h1>
+      <h1>{t("je-privacy.title")}</h1>
         <p style="text-align: center; font-size: 0.9rem; color: var(--color);">
             Last updated: April 11, 2026
         </p>
@@ -25,84 +26,92 @@ changeLanguage("en");
       
       <section class="privacy-section">
         <div class="subsection">
-          <h3>Information We Collect</h3>
-          <p>When you use Food Channel, we collect the following personal data via your WiiLink account and our payment interface:</p>
+          <h3>{t("je-privacy.info-collected")}</h3>
+          <p>{t("je-privacy.info-collected-desc")}</p>
           <ul class="data-list">
+            <Trans i18nKey="je-privacy.delivery-location">
             <li><strong>Delivery Location:</strong> Your full address or location where you want food delivered.</li>
+            </Trans>
+            <Trans i18nKey="je-privacy.order-data">
             <li><strong>Order Data:</strong> Details of what you ordered (items, quantity, restaurant, etc.).</li>
+            </Trans>
+            <Trans i18nKey="je-privacy.personal-identity">
             <li><strong>Personal Identity:</strong> Your full name, email address, and any other information you entered into your WiiLink account profile.</li>
+            </Trans>
+            <Trans i18nKey="je-privacy.support-data">
             <li><strong>Support Data:</strong> Any messages or chat transcripts you send in our Discord support channels, if you use them.</li>
+            </Trans>
           </ul>
-          <p>All of this data is used solely to process and fulfill your order. The precise location data is needed to find nearby restaurants. We keep this data only as long as necessary to complete the order, minus support messages which are stored indefinitely.</p>
+          <p>{t("je-privacy.process-order")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Data Retention and Deletion</h3>
-          <p>We immediately delete all temporary order information (location, order details) once the payment is successfully completed and the restaurant has accepted the order. This means that after each transaction, only your registered name and email remain in our system to maintain your account. As an example of best practice, other services state they "will only keep a payment token to process your payment"; we similarly delete all such transactional tokens promptly. In short: we do not retain your location, order or payment details longer than needed. You may delete your account at any time (via the WiiLink interface or by contacting us) which removes all your stored data.</p>
+          <h3>{t("je-privacy.data-retention")}</h3>
+          <p>{t("je-privacy.delete-temp-data")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Use of Your Data</h3>
-          <p>We use your information only to:</p>
+          <h3>{t("je-privacy.use-of-your-data")}</h3>
+          <p>{t("je-privacy.use-your-info")}</p>
           <ul class="data-list">
-            <li>Place your order through Just Eat.</li>
-            <li>Provide support (e.g., answering your queries on Discord).</li>
+            <li>{t("je-privacy.place-order")}</li>
+            <li>{t("je-privacy.provide-support")}</li>
           </ul>
-          <p>We do not use your data for marketing, nor do we share or sell it to advertisers or other third parties. Other than Just Eat, no external party receives your personal details from us. We operate our own servers ("no third-party servers") and keep your data in-house for maximum privacy.</p>
+          <p>{t("je-privacy.not-use-data")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Security</h3>
-          <p>We implement reasonable security measures to protect your data. However, no system is perfectly secure, so you acknowledge the inherent risks of Internet and homebrew usage. Use strong, unique passwords for your WiiLink account and your Just Eat account. We follow WiiLink's approach of commitment to privacy: "We are committed to protecting the privacy and security of your personal information". Data is transmitted over secure channels when possible.</p>
+          <h3>{t("je-privacy.security")}</h3>
+          <p>{t("je-privacy.security-measures")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Cookies and Tracking</h3>
-          <p>Our web UI uses minimal cookies for session management only. We do not engage in behavioral tracking or profiling. We rely on Just Eat's own secure flow for payments.</p>
+          <h3>{t("je-privacy.cookies")}</h3>
+          <p>{t("je-privacy.minimal-cookies")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Third-Party Services</h3>
-          <p>We integrate with Just Eat for ordering, and Discord for support. These services have their own privacy policies. We have no control over these third-party data practices, but we do not share your data with any other third parties.</p>
+          <h3>{t("je-privacy.third-party")}</h3>
+          <p>{t("je-privacy.third-party-services")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Children's Privacy</h3>
-          <p>Users under 16 should only use this service with parental guidance. We do not knowingly collect personal data from children under 13. If we learn that we have inadvertently collected data from a child under 13, we will delete it immediately.</p>
+          <h3>{t("je-privacy.children-privacy")}</h3>
+          <p>{t("je-privacy.not-for-children")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Your Rights</h3>
-          <p>Depending on your jurisdiction, you may have rights to access, correct, or delete your personal data. We honor such requests to the extent required by law. To request deletion of your data or for any privacy inquiries, please contact us via our support channels. Specifically, as stated in our support terms, you can join the WiiLink Discord and ask for data deletion or help. You may also email support. We will respond to legitimate requests within a reasonable timeframe, though we note that support is provided on a case-by-case basis.</p>
+          <h3>{t("je-privacy.your-rights")}</h3>
+          <p>{t("je-privacy.right-to-access")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Retention of Account Data</h3>
-          <p>Even after you stop ordering, your WiiLink account (name and email) is retained until you delete it. This allows you to log in later to place new orders without re-entering information. If you wish, you can delete your account by contacting us on Discord or via email, and we will remove your profile and personal data (email and name) from our system.</p>
+          <h3>{t("je-privacy.retention")}</h3>
+          <p>{t("je-privacy.retained")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Policy Updates</h3>
-          <p>We may update this Privacy Policy over time (for example, to comply with new laws). The latest version is always available in the Food Channel and on our website. Changes become effective immediately upon posting. By continuing to use the service, you agree to the updated policy.</p>
+          <h3>{t("je-privacy.policy-updates")}</h3>
+          <p>{t("je-privacy.update-over-time")}</p>
         </div>
 
         <div class="subsection">
-          <h3>Contact</h3>
-          <p>For any questions or requests about privacy, data access or deletion, please join our official Discord server and post in the "support" channel, or send an email to our support team. Our support staff will assist you. Please do not share sensitive data in Discord chat; use private messages or email if needed.</p>
+          <h3>{t("je-privacy.contact")}</h3>
+          <p>{t("je-privacy.questions-about-privacy")}</p>
         </div>
       </section>
 
       <section class="summary-section">
-        <h2>Summary of Privacy Points</h2>
+        <h2>{t("je-privacy.summary")}</h2>
         <ul class="summary-list">
-          <li>We collect location, order details, name, and email to fulfill orders.</li>
-          <li>All temporary data (location, order) is deleted once an order is paid.</li>
-          <li>We retain only your name and email (to identify your account) until you delete your account.</li>
-          <li>We do not share your personal data with advertisers or unrelated third parties.</li>
-          <li>You can request data deletion or help via our Discord support (as outlined in the WiiLink guidelines).</li>
-          <li>The service is governed by Canadian law, and we comply with its privacy requirements.</li>
+          <li>{t("je-privacy.location")}</li>
+          <li>{t("je-privacy.temp-data")}</li>
+          <li>{t("je-privacy.retain")}</li>          
+          <li>{t("je-privacy.not-share-data")}</li>
+          <li>{t("je-privacy.request-data")}</li>
+          <li>{t("je-privacy.service-laws")}</li>        
         </ul>
-        <p class="consent-text">By using Food Channel and providing your information, you consent to the data practices described above. We are committed to safeguarding your privacy while making the food-ordering process as convenient as possible.</p>
+        <p class="consent-text">{t("je-privacy.consent-text")}</p>
       </section>
     </div>
   </div>
