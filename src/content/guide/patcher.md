@@ -1,7 +1,7 @@
 ---
 title: WiiLink Patcher
 icon: download
-pubDate: 2026-05-03
+pubDate: 2026-07-19
 description: Get up-to-date instructions on how to use the patcher!
 heroImage: "/img/guidebg-1.webp"
 ---
@@ -12,7 +12,7 @@ heroImage: "/img/guidebg-1.webp"
 </div>
 <div style="display:flex; gap:13px; margin-top:10px;background-color:var(--bg-color-tertiary); border:2px solid var(--border-color); align-items:center; justify-content:space-between; padding:35px 20px 30px 20px; border-radius:12px; flex-wrap:wrap; position:relative;"><h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><span class="sd-card"></span> SD Card or USB Drive</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><span class="globe"></span> Internet Connection</h4> <h4 style="font-size:17px; font-family:system-ui; padding:10px; border:0px solid #00000060; border-radius:8px;"><span class="monitor"></span> Windows, Mac, Linux, or Android Device</h4><div style="height:40px; border-radius:8px;  position:relative;">
 <a href="https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases"><button type="button" style="height:50px; padding-left:28px; padding-right:28px; border-radius:12px 4px 4px 12px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="download"></span> WiiLink Patcher</button></a>
-<a href="https://github.com/hwalker56/WiiLinkPatcherAndroid#getting-started"><button type="button" style="height:50px; padding-left:18px; padding-right:18px; border-radius:4px 12px 12px 4px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="android"></span></button></a>
+<a href="https://gist.github.com/hwalker56/f64f3ac7fa0bdcfe62cf5326db89838f"><button type="button" style="height:50px; padding-left:18px; padding-right:18px; border-radius:4px 12px 12px 4px; color:white !important; transform:translate(0, -8px); font-family:system-ui;" class="btn1 btn btn-success"><span class="android"></span></button></a>
 </div></div>
 </br>
 
@@ -54,6 +54,9 @@ chmod +x WiiLinkPatcherGUI
 `qt.qpa.plugin: Could not load the Qt platform plugin "xcb" in "" even though it was found.` </br>
 You can resolve this by running `sudo apt install libxcb-cursor-dev`.</l>
 
+#### <b>Android:</b>
+Follow the instructions [here](https://gist.github.com/hwalker56/f64f3ac7fa0bdcfe62cf5326db89838f) to run the Windows version of the patcher in Winlator.
+
 </br>
 
 ### Express Installation
@@ -77,7 +80,9 @@ Please wait a moment for the patcher to download and patch the files on your dev
 
 If you chose not to store files directly on your SD card / USB device, copy the `WAD` and `apps` folder from your chosen output location to the root of your SD card / USB device.
 
+<span id="whats-next"></span>
 <l class="notice success smallwidth">Congratulations! You've got the files you need to install WiiLink!</l>
 
 <l class="notice generic fullwidth"><b>What's next?</b></br>
-Continue to <b><a href="/guide/wads">installing WADs</a></b>.</l>
+<b>Wii and Dolphin:</b> Continue to <b><a href="/guide/wads">installing WADs</a></b>.</br>
+<b>Wii U:</b> Continue to <b><a href="/guide/vwii">configuring Priiloader</a></b>.</l>

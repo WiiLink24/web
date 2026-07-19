@@ -1,7 +1,7 @@
 ---
 title: Wii U Priiloader
 icon: lucide:settings
-pubDate: 2026-01-24
+pubDate: 2026-07-19
 description: Get up-to-date instructions on how to configure Priiloader on Wii U!
 heroImage: "/img/guidebg-3.webp"
 ---
@@ -54,4 +54,4 @@ heroImage: "/img/guidebg-3.webp"
 <l class="notice success smallwidth">Congratulations! You've setup Priiloader on your console!</l>
 
 <l class="notice generic fullwidth"><b>What's next?</b></br>
-Continue to <b><a href="/guide/patcher">running the WiiLink Patcher</a></b>.</l>
+Continue to <b><a href="/guide/wads">installing WADs</a></b>.</l>
