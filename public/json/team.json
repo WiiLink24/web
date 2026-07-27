@@ -208,6 +208,14 @@
         "pfp": "/img/pfp/weebo64.webp",
         "link": "https://weebo64.is-a.dev/",
         "flag": "/img/flags/de.webp"
+      },
+      {
+        "name": "Danionel",
+        "title": "Translator (European Spanish)",
+        "color": "#fc9a21",
+        "pfp": "/img/pfp/danionel.webp",
+        "link": "https://x.com/DanionelP",
+        "flag": "/img/flags/es.webp"
       }
     ]
   }
