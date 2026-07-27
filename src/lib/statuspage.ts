@@ -1,4 +1,4 @@
-const STATUSPAGE_BASE = "https://status.wiilink24.com";
+const STATUSPAGE_BASE = import.meta.env.STATUSPAGE_BASE ?? "https://status.wiilink24.com";
 
 export interface IncidentUpdate {
   status: string;
