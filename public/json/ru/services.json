@@ -27,7 +27,7 @@
         "color": "#787878",
         "name": "Канал Nintendo",
         "desc": "Путеводитель по играм Nintendo с обзорами, трейлерами, специальными шоу и демками игр.",
-        "link": "/guide/nintendo
+        "link": "/guide/nintendo",
         "isArea": "Был доступен везде",
         "status": "Полный релиз",
         "icon": "nintendo_icon.webp",
