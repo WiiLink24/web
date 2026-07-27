@@ -47,8 +47,8 @@ goodies = goodies.goodies.goodie;
       {
         goodies.map((goodie, index) => (
           <div class="posthold">
+            <a href={goodie.link}>
             <div class="post" style={`opacity:0; animation: fadeup 0.1s ${index * 50}ms linear forwards;`}>
-              <a href={goodie.link}>
                 <img class="heroImage" src={goodie.img} />
                 <div style="width:100%; bottom: 30px; right:30px; display:flex; flex-direction: column; align-items: flex-end; justify-content: right; position:absolute;">
                   <div class="title" set:html={goodie.title}></div>
@@ -681,11 +681,11 @@ goodies = goodies.goodies.goodie;
   }
 
   .post:hover .title {
-    color: white !important;
+    color: var(--color) !important;
   }
 
   .post:hover .desc {
-    color: white !important;
+    color: var(--color) !important;
   }
 
   .post:hover {
