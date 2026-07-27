@@ -1,0 +1,299 @@
+---
+import { Icon } from "astro-icon/components";
+import { localizePath } from "astro-i18next";
+import { StatusSummary, fetchIncidentHistory, fetchStatusSummary } from "../lib/statuspage";
+
+const { isMain, variant = "top", statusSummary: propSummary } = Astro.props;
+
+const incidents = await fetchIncidentHistory();
+const statusSummary: StatusSummary = propSummary ?? await fetchStatusSummary();
+
+const response = await fetch("https://raw.githubusercontent.com/WiiLink24/web/refs/heads/main/public/json" + localizePath("/services.json"));
+const data = await response.json();
+const mergedData = data.services.service.map((service: any) => {
+    const component = statusSummary.components.find(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+        service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+    const serviceIncidents = statusSummary.incidents.filter(incident => {
+        if (incident.components) {
+            return incident.components.some(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+                service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+        }
+        return incident.name.toLowerCase().includes(service.name.toLowerCase());
+    });
+    return {
+        ...service,
+        statuspageStatus: component?.status ?? "operational",
+        incidents: serviceIncidents.map(inc => ({
+            name: inc.name,
+            impact: inc.impact,
+            status: inc.status,
+            description: inc.incident_updates?.[0]?.body ?? "",
+            shortlink: inc.shortlink,
+        })),
+    };
+});
+
+const bannerIncidents = mergedData
+  .filter(svc => svc.incidents.length > 0)
+  .flatMap(svc =>
+    svc.incidents.map(inc => ({
+      incidentName: inc.name,
+      shortlink: inc.shortlink,
+      serviceName: svc.name,
+      serviceIcon: svc.icon,
+      serviceColor: svc.color,
+    }))
+  );
+
+const affectedIcons = [...new Set(bannerIncidents.map(inc => inc.serviceIcon).filter(Boolean))];
+
+const hasActiveIncidents = bannerIncidents.length > 0;
+const showTop = variant === "top" && !isMain && hasActiveIncidents;
+const showNavbar = variant === "navbar" && !!isMain && hasActiveIncidents;
+const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
+---
+
+{showTop && (
+  <div id="incident-banner" class="incident-banner">
+    <div class="incident-banner-inner">
+      {bannerIncidents.length > 1 && (
+        <div class="banner-pagination">
+          {bannerIncidents.map((_, i) => (
+            <span class={`banner-dot ${i === 0 ? 'active' : ''}`} data-index={i}></span>
+          ))}
+        </div>
+      )}
+      <div class="banner-slides">
+        {bannerIncidents.map((inc, i) => (
+          <div class={`banner-slide ${i === 0 ? 'active' : ''}`} data-color={inc.serviceColor} style={`background-color: ${inc.serviceColor};`}>
+            <div class="banner-slide-content">
+              <div class="banner-service-info">
+                {inc.serviceIcon && (
+                  <img src={`/img/${inc.serviceIcon}`} alt={inc.serviceName} class="banner-service-icon" />
+                )}
+                <span class="banner-service-name"><b>{inc.serviceName}</b></span>
+              </div>
+              -
+              <a href={inc.shortlink} target="_blank" rel="noopener noreferrer" class="banner-incident-title text-decoration-none">
+                {inc.incidentName}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+{showNavbar && (
+  <a href={localizePath("/status")} class="navbar-incident" style={`background-color: ${navbarColor};`} aria-label="Active incidents - view status page">
+    <Icon name="lucide:circle-alert" style="width:18px; height:18px;" />
+    {affectedIcons.map(icon => (
+      <img src={`/img/${icon}`} alt="" class="navbar-incident-icon" />
+    ))}
+  </a>
+)}
+
+<style>
+  .incident-banner {
+    width: 100%;
+    z-index: 10001;
+    position: relative;
+  }
+
+  .incident-banner-inner {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .banner-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .banner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .banner-dot.active {
+    background: white;
+    transform: scale(1.3);
+  }
+
+  .banner-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .banner-slides {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 48px;
+  }
+
+  .banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .banner-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+  }
+
+  .banner-slide.exit {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .banner-slide-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner-service-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .banner-service-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+
+  .banner-service-name {
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .banner-incident-title {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .banner-incident-title:hover {
+    opacity: 0.85;
+  }
+
+  .navbar-incident {
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    flex-shrink: 0;
+  }
+
+  .navbar-incident:hover {
+    transform: scale(1.05);
+  }
+
+  .navbar-incident-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+</style>
+
+<script is:inline>
+  function initIncidentBanner() {
+    const banner = document.getElementById('incident-banner');
+    if (!banner) return;
+
+    const slides = banner.querySelectorAll('.banner-slide');
+    const dots = banner.querySelectorAll('.banner-dot');
+    let currentIndex = 0;
+    let autoScrollTimer = null;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'exit');
+        dots[i]?.classList.remove('active');
+      });
+      slides.forEach((slide, i) => {
+        if (i === currentIndex && i !== index) {
+          slide.classList.add('exit');
+        }
+      });
+      currentIndex = index;
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex]?.classList.add('active');
+      banner.style.backgroundColor = slides[currentIndex].dataset.color || '#e74c3c';
+    }
+
+    function nextSlide() {
+      showSlide((currentIndex + 1) % slides.length);
+    }
+
+    function startAutoScroll() {
+      if (slides.length > 1) {
+        autoScrollTimer = setInterval(nextSlide, 4000);
+      }
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollTimer) clearInterval(autoScrollTimer);
+    }
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function(e) {
+        e.stopPropagation();
+        stopAutoScroll();
+        showSlide(i);
+        startAutoScroll();
+      });
+    });
+
+    showSlide(0);
+    startAutoScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIncidentBanner);
+  } else {
+    initIncidentBanner();
+  }
+</script>

@@ -389,12 +389,12 @@ import { Icon } from "astro-icon/components";
   .holder {
     top: 0;
     width: 100%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px 20px;
     z-index: 1000;
     position: fixed;
+    display:none;
   }
 
   .logo {
@@ -414,6 +414,10 @@ import { Icon } from "astro-icon/components";
     .dropdownbtn,
     .logohold {
       display: block;
+    }
+
+    .holder {
+      display: flex;
     }
   }
   @media only screen and (max-width: 430px) {
