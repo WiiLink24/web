@@ -57,7 +57,7 @@ const { isMain } = Astro.props;
   })();
 </script>
 
-<StatuspageBanner isMain={isMain} variant="top" />
+<StatuspageBanner statusSummary={statusSummary} isMain={isMain} variant="top" />
 <Agreement />
 <r lang={i18next.language} class="bannerholder">
   <div
