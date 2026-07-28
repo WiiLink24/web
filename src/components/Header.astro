@@ -57,7 +57,7 @@ const { isMain } = Astro.props;
   })();
 </script>
 
-<StatuspageBanner statusSummary={statusSummary} isMain={isMain} variant="top" />
+<StatuspageBanner isMain={isMain} variant="top" />
 <Agreement />
 <r lang={i18next.language} class="bannerholder">
   <div
@@ -320,6 +320,7 @@ const { isMain } = Astro.props;
         ><Icon name="lucide:package" style="margin-right:5px;" />
         {t("header.services")}</a
       >
+      <StatuspageBanner isMain={isMain} variant="navbar" />
       <button
         id="moreHeader"
         onclick="toggle('dropdownMore');"
