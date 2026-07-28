@@ -334,6 +334,7 @@ import { Icon } from "astro-icon/components";
     background-color: var(--bg-color);
     border-radius: 16px 0px 0px 16px;
     display: none;
+    z-index: 10000000;
   }
 
   .buttons {
@@ -393,7 +394,7 @@ import { Icon } from "astro-icon/components";
     align-items: center;
     padding: 20px 20px;
     z-index: 1000;
-    position: fixed;
+    position: sticky;
     display:none;
   }
 

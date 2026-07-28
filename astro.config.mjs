@@ -76,6 +76,7 @@ export default defineConfig({
         "user",
         "chart-no-axes-column",
         "chart-bar",
+        "x",
       ],
       "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube", "flathub"]
     }

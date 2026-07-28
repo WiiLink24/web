@@ -81,6 +81,9 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
           </div>
         ))}
       </div>
+      <button class="banner-close" aria-label="Close banner">
+        <Icon name="lucide:x" style="width:18px; height:18px;" />
+      </button>
     </div>
   </div>
 )}
@@ -99,6 +102,15 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
     width: 100%;
     z-index: 10001;
     position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .incident-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
   }
 
   .incident-banner-inner {
@@ -213,6 +225,25 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
     opacity: 0.85;
   }
 
+  .banner-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 14px;
+    opacity: 0.7;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .banner-close:hover {
+    opacity: 1;
+  }
+
   .navbar-incident {
     margin-left: 6px;
     display: flex;
@@ -245,6 +276,9 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
 
     const slides = banner.querySelectorAll('.banner-slide');
     const dots = banner.querySelectorAll('.banner-dot');
+    const closeBtn = banner.querySelector('.banner-close');
+    const COOKIE_NAME = 'incident-banner-closed';
+    const COOKIE_DAYS = 3;
     let currentIndex = 0;
     let autoScrollTimer = null;
 
@@ -278,6 +312,31 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
       if (autoScrollTimer) clearInterval(autoScrollTimer);
     }
 
+    function setClosedCookie() {
+      const d = new Date();
+      d.setTime(d.getTime() + COOKIE_DAYS * 24 * 60 * 60 * 1000);
+      document.cookie = COOKIE_NAME + '=true; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+
+    function hasClosedCookie() {
+      return document.cookie.split('; ').some(function(c) {
+        return c === COOKIE_NAME + '=true';
+      });
+    }
+
+    function closeBanner() {
+      banner.classList.add('hidden');
+      stopAutoScroll();
+      setClosedCookie();
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeBanner();
+      });
+    }
+
     dots.forEach(function(dot, i) {
       dot.addEventListener('click', function(e) {
         e.stopPropagation();
@@ -287,8 +346,12 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
       });
     });
 
-    showSlide(0);
-    startAutoScroll();
+    if (hasClosedCookie()) {
+      banner.classList.add('hidden');
+    } else {
+      showSlide(0);
+      startAutoScroll();
+    }
   }
 
   if (document.readyState === 'loading') {
