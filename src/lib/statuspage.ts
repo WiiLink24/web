@@ -40,6 +40,14 @@ export interface RssIncident {
   latestStatus: string;
 }
 
+export interface BannerIncident {
+  incidentName: string;
+  shortlink: string;
+  serviceName: string;
+  serviceIcon: string;
+  serviceColor: string;
+}
+
 function decodeHtmlEntities(text: string): string {
   return text
     .replace(/&lt;/g, "<")
@@ -53,7 +61,13 @@ function stripHtmlTags(html: string): string {
   return html.replace(/<[^>]*>/g, "").trim();
 }
 
-export async function fetchStatusSummary(): Promise<StatusSummary> {
+// Cached at module level so data is fetched only once per build,
+// not once per page per language.
+let summaryCache: Promise<StatusSummary> | null = null;
+let historyCache: Promise<RssIncident[]> | null = null;
+const bannerIncidentsCache = new Map<string, Promise<BannerIncident[]>>();
+
+async function _fetchStatusSummary(): Promise<StatusSummary> {
   try {
     const res = await fetch(`${STATUSPAGE_BASE}/api/v2/summary.json`);
     if (!res.ok) return { indicator: "none", description: "All Systems Operational", incidents: [], components: [] };
@@ -69,7 +83,12 @@ export async function fetchStatusSummary(): Promise<StatusSummary> {
   }
 }
 
-export async function fetchIncidentHistory(): Promise<RssIncident[]> {
+export function fetchStatusSummary(): Promise<StatusSummary> {
+  if (!summaryCache) summaryCache = _fetchStatusSummary();
+  return summaryCache;
+}
+
+async function _fetchIncidentHistory(): Promise<RssIncident[]> {
   try {
     const res = await fetch(`${STATUSPAGE_BASE}/history.rss`);
     if (!res.ok) return [];
@@ -91,6 +110,64 @@ export async function fetchIncidentHistory(): Promise<RssIncident[]> {
   } catch {
     return [];
   }
+}
+
+export function fetchIncidentHistory(): Promise<RssIncident[]> {
+  if (!historyCache) historyCache = _fetchIncidentHistory();
+  return historyCache;
+}
+
+async function _getBannerIncidents(servicesPath: string): Promise<BannerIncident[]> {
+  const statusSummary = await fetchStatusSummary();
+
+  let services: any[] = [];
+  try {
+    const res = await fetch(`https://raw.githubusercontent.com/WiiLink24/web/refs/heads/main/public/json${servicesPath}`);
+    const data = await res.json();
+    services = data.services.service;
+  } catch {}
+
+  const mergedData = services.map((service: any) => {
+    const component = statusSummary.components.find(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+      service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+    const serviceIncidents = statusSummary.incidents.filter(incident => {
+      if (incident.components) {
+        return incident.components.some(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+          service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+      }
+      return incident.name.toLowerCase().includes(service.name.toLowerCase());
+    });
+    return {
+      ...service,
+      statuspageStatus: component?.status ?? "operational",
+      incidents: serviceIncidents.map(inc => ({
+        name: inc.name,
+        impact: inc.impact,
+        status: inc.status,
+        description: inc.incident_updates?.[0]?.body ?? "",
+        shortlink: inc.shortlink,
+      })),
+    };
+  });
+
+  return mergedData
+    .filter(svc => svc.incidents.length > 0)
+    .flatMap(svc =>
+      svc.incidents.map(inc => ({
+        incidentName: inc.name,
+        shortlink: inc.shortlink,
+        serviceName: svc.name,
+        serviceIcon: svc.icon,
+        serviceColor: svc.color,
+      }))
+    );
+}
+
+export function getBannerIncidents(servicesPath: string): Promise<BannerIncident[]> {
+  if (!bannerIncidentsCache.has(servicesPath)) {
+    bannerIncidentsCache.set(servicesPath, _getBannerIncidents(servicesPath));
+  }
+  return bannerIncidentsCache.get(servicesPath)!;
 }
 
 export function getComponentStatus(componentName: string, components: Component[]): string {

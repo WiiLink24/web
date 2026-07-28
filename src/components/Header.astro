@@ -7,7 +7,7 @@ import StatuspageBanner from "../components/StatuspageBanner.astro";
 import { Icon } from "astro-icon/components";
 import { contentfulClient } from "../lib/contentful";
 import type { news } from "../lib/contentful";
-import { fetchStatusSummary } from "../lib/statuspage";
+import { getBannerIncidents } from "../lib/statuspage";
 
 const entries = await contentfulClient.getEntries<news>({
   content_type: "newsPost"
@@ -30,7 +30,7 @@ posts = posts
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .slice(0, 3);
 
-const statusSummary = await fetchStatusSummary();
+const bannerIncidents = await getBannerIncidents(localizePath("/services.json"));
 
 const { isMain } = Astro.props;
 ---
@@ -99,7 +99,7 @@ const { isMain } = Astro.props;
             posts.slice(0, 3).map(post => (
               <div class="post" style="padding:8px; border-radius:4px;">
                 <a
-                  style="display:flex; flex-direction:row; gap:8px;"
+                  style="display:flex; flex-direction:row; align-items:center; gap:16px;"
                   href={localizePath(`/news/${post.slug}/`)}
                   aria-label={post.title + "News Link"}>
                   {post.image?.fields?.file?.url ? (
@@ -270,11 +270,49 @@ const { isMain } = Astro.props;
       </div>
       <a
         class="header-link"
+        onmouseover="toggle('statusheader');"
+        onmouseout="toggle('statusheader');"
         href={localizePath("/status")}
         aria-label="Status Link"
         ><Icon name="lucide:server" style="margin-right:5px;" />
         {t("header.status")}</a
       >
+      <div
+        id="statusheader"
+        class="popover-header"
+        onmouseout="toggle('statusheader');">
+        <div class="holder">
+          {
+            bannerIncidents.length > 0 ? (
+              bannerIncidents.map(inc => (
+                <a
+                  href={inc.shortlink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="status-incident-item"
+                  aria-label={inc.serviceName + " - " + inc.incidentName}>
+                  <span
+                    class="status-incident-icon"
+                    style={`background-color: ${inc.serviceColor};`}>
+                    {inc.serviceIcon && (
+                      <img src={`/img/${inc.serviceIcon}`} alt="" />
+                    )}
+                  </span>
+                  <span class="status-incident-text">
+                    <b>{inc.serviceName}</b>
+                    <small>{inc.incidentName}</small>
+                  </span>
+                </a>
+              ))
+            ) : (
+              <div class="status-all-ok">
+                <Icon name="lucide:circle-check" style="width:20px; height:20px;" />
+                {t("status.allOperational", { defaultValue: "All services working properly" })}
+              </div>
+            )
+          }
+        </div>
+      </div>
       <a
         class="header-link"
         href={localizePath("/services")}
@@ -282,7 +320,6 @@ const { isMain } = Astro.props;
         ><Icon name="lucide:package" style="margin-right:5px;" />
         {t("header.services")}</a
       >
-      <StatuspageBanner statusSummary={statusSummary} isMain={isMain} variant="navbar" />
       <button
         id="moreHeader"
         onclick="toggle('dropdownMore');"
@@ -895,6 +932,81 @@ const { isMain } = Astro.props;
     transition: 0.2s;
   }
 
+  .status-incident-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.2s;
+  }
+
+  .status-incident-item:hover {
+    background-color: var(--bg-opaque-1);
+  }
+
+  .status-incident-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .status-incident-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+
+  .status-incident-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 200px;
+  }
+
+  .status-incident-text b {
+    font-size: 15px;
+  }
+
+  .status-incident-text small {
+    font-size: 13px;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .status-all-ok {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .status-all-ok svg {
+    color: var(--bs-green);
+    flex-shrink: 0;
+  }
+
+  /* Match popover text to the smaller status popover sizing */
+  .popover-header .holder div {
+    font-size: 13px;
+  }
+
+  .popover-header .holder b {
+    font-size: 15px;
+  }
+
   .post:hover {
     transform: scale(1.005);
     background-color: var(--bg-color-secondary);
@@ -918,7 +1030,12 @@ const { isMain } = Astro.props;
 
   #guideheader {
     width: 400px;
-    transform: translate(-45px, 0);
+    transform: translate(-40px, 0);
+  }
+
+  #statusheader {
+    width: 400px;
+    transform: translate(63px, 0);
   }
 
   /* Utility Classes */
