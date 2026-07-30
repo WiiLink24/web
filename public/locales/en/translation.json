@@ -165,7 +165,7 @@
       "mainDesc": "Check service status and completion!",
       "title": "Check out the <1>WiiLink</1> <2>status</2>",
       "subtitle": "Get a glimpse at our <0>progress</0>, in addition to <1>server</1> status!",
-      "serverStatus": "Check the server's status."
+      "serverStatus": "View on statuspage."
     },
     "extras": {
       "mainTitle": "WiiLink - Extras",

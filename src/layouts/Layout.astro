@@ -154,20 +154,6 @@ const { title, description, image } = Astro.props;
     </script>
 
     <script type="module">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-LWN8QCFT7S");
-
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S";
-      document.head.appendChild(script);
-    </script>
-
-    <script type="module">
       let bootstrapLoaded = false;
       function loadBootstrap() {
         if (bootstrapLoaded) return;
@@ -189,17 +175,6 @@ const { title, description, image } = Astro.props;
       });
 
       setTimeout(loadBootstrap, 3000);
-    </script>
-
-    <script type="module">
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.async = true;
-        script.src =
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4011748932374526";
-        script.crossOrigin = "anonymous";
-        document.head.appendChild(script);
-      }, 2000);
     </script>
     <title>{title}</title>
   </head>

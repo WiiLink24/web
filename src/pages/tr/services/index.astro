@@ -43,10 +43,9 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
       </h3>
     </div>
 
-    <div class="polka-dot"></div>
     <div
       class="mobileselect"
-      style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
+      style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative; z-index: 100;">
       <a href="#wiiconnect24">
         <div class="link bg-1" style="border-radius:16px 4px 4px 16px">
           <Icon name="globe" style="margin-bottom:5px;" />
@@ -440,6 +439,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     border-radius: 4px;
     padding: 16px 32px;
     transition: 0.2s;
+    backdrop-filter: blur(18px);
   }
 
   .link:hover {
