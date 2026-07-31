@@ -31,7 +31,21 @@ export async function getStaticPaths() {
     }));
     return pages;
 }
-const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = Astro.props;
+type NewsPostPageProps = {
+    content: any;
+    title: string;
+    slug: string;
+    date: string;
+    image: any;
+    unlist: boolean;
+    description: string;
+    author: any;
+    isAnnouncement: boolean;
+};
+const props = Astro.props as unknown as NewsPostPageProps;
+const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = props;
+const titleText = String(title);
+const articleDate = new Date(String(date));
 let options = {
     renderNode: {
         "embedded-asset-block": (node: any) => {
@@ -59,12 +73,15 @@ let options = {
         }
     }
 };
-let parsedSEOContent = documentToPlainTextString(content);
+let parsedSEOContent = documentToPlainTextString(content as any);
 if (parsedSEOContent.length > 60) {
     parsedSEOContent = parsedSEOContent.slice(0, 160) + "...";
 }
-let bodyHTML = content ? documentToHtmlString(content, options) : "";
-function parseLocalizedContent(html) {
+let bodyHTML = content ? documentToHtmlString(content as any, options) : "";
+function parseLocalizedContent(html: string): Array<{
+    lang: string;
+    content: string;
+}> {
     const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
     let match;
     const localizedContent = [];
@@ -76,7 +93,7 @@ function parseLocalizedContent(html) {
     }
     return localizedContent;
 }
-function parseFloatTags(html) {
+function parseFloatTags(html: string): string {
     const embedRegex = /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
     const floatRegex = /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
     const floatLeftRegex = /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
@@ -111,7 +128,7 @@ function parseFloatTags(html) {
     }
     return floatHTML;
 }
-function parseCenterTags(html) {
+function parseCenterTags(html: string): string {
     const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
     let match;
     let centerHTML = html;
@@ -119,6 +136,192 @@ function parseCenterTags(html) {
         centerHTML = centerHTML.replace(match[0], `<div class="center">${match[1]}</div>`);
     }
     return centerHTML;
+}
+function escapeHtml(text: string) {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+function stripHtmlTags(text: string) {
+    return text.replace(/<[^>]+>/g, "");
+}
+function decodeHtmlEntities(text: string) {
+    return text
+        .replace(/&nbsp;/g, " ")
+        .replace(/&quot;/g, "\"")
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
+}
+function parseChatHeaderLine(line: string): {
+    role: "speaker" | "interviewee";
+    aliases: string[];
+    name: string;
+    avatar: string;
+} | null {
+    const match = line.match(/^(Speaker|Interviewee):\s*([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*-\s*(.+?)\s*\((.+)\)\s*$/i);
+    if (!match) {
+        return null;
+    }
+    return {
+        role: (match[1].toLowerCase() === "speaker" ? "speaker" : "interviewee") as "speaker" | "interviewee",
+        aliases: match[2].split("-").map(alias => alias.trim()).filter(Boolean),
+        name: match[3].trim(),
+        avatar: match[4].trim()
+    };
+}
+function parseChatMessageLine(line: string) {
+    const match = line.match(/^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*:\s*(.+)$/);
+    if (!match) {
+        return null;
+    }
+    return {
+        aliases: match[1].split("-").map(alias => alias.trim()).filter(Boolean),
+        message: match[2].trim()
+    };
+}
+function classifyChatAction(actionText: string) {
+    const normalized = actionText.toLowerCase();
+    if (/(laugh|giggle|smirk|chuckle)/.test(normalized)) {
+        return "laugh";
+    }
+    if (/(think|ponder|hmm|huh|wonder|consider)/.test(normalized)) {
+        return "thought";
+    }
+    if (/(smile|happy|grin|joy|excited|yay)/.test(normalized)) {
+        return "happy";
+    }
+    if (/(sad|sigh|cry|tears|upset|down)/.test(normalized)) {
+        return "sad";
+    }
+    if (/(angry|mad|annoyed|frustrated|grr|huff)/.test(normalized)) {
+        return "angry";
+    }
+    return "neutral";
+}
+function renderChatMessageText(message: string) {
+    const parts: string[] = [];
+    const actionRegex = /\(([^)]+)\)/g;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+    while ((match = actionRegex.exec(message)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(escapeHtml(message.slice(lastIndex, match.index)));
+        }
+        const actionText = match[1].trim();
+        parts.push(`<span class="chat-action chat-action--${classifyChatAction(actionText)}">${escapeHtml(`(${actionText})`)}</span>`);
+        lastIndex = actionRegex.lastIndex;
+    }
+    if (lastIndex < message.length) {
+        parts.push(escapeHtml(message.slice(lastIndex)));
+    }
+    return parts.join("").replace(/\n/g, "<br />");
+}
+function renderChatBubble({ role, name, avatar, message }: {
+    role: "speaker" | "interviewee";
+    name: string;
+    avatar: string;
+    message: string;
+}) {
+    const isSpeaker = role === "speaker";
+    const avatarMarkup = avatar
+        ? `<img class="chat-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />`
+        : `<div class="chat-avatar chat-avatar--fallback" aria-hidden="true">${escapeHtml(name.slice(0, 1).toUpperCase())}</div>`;
+    return `<div class="chat-message ${isSpeaker ? "chat-message--speaker" : "chat-message--interviewee"}">
+    ${isSpeaker ? "" : avatarMarkup}
+    <div class="chat-bubble">
+      <div class="chat-name">${escapeHtml(name)}</div>
+      <div class="chat-text">${renderChatMessageText(message)}</div>
+    </div>
+    ${isSpeaker ? avatarMarkup : ""}
+  </div>`;
+}
+function parseChatTranscript(html: string): string {
+    type ChatParticipant = {
+        role: "speaker" | "interviewee";
+        name: string;
+        avatar: string;
+    };
+    const paragraphs = html.match(/<p>[\s\S]*?<\/p>/g) ?? [];
+    if (paragraphs.length === 0) {
+        return html;
+    }
+    const [firstParagraph, ...remainingParagraphs] = paragraphs;
+    if (!firstParagraph) {
+        return html;
+    }
+    const firstParagraphText = decodeHtmlEntities(stripHtmlTags(firstParagraph.replace(/^<p>|<\/p>$/g, "")).trim());
+    const firstParagraphLines = firstParagraphText
+        .split(/\r?\n/)
+        .map(line => line.trim())
+        .filter(Boolean);
+    if (!firstParagraphLines.includes("---")) {
+        return html;
+    }
+    const participants = new Map<string, ChatParticipant>();
+    const headerLines = firstParagraphLines.filter(line => line !== "---");
+    for (const text of headerLines) {
+        const participant = parseChatHeaderLine(text);
+        if (!participant) {
+            continue;
+        }
+        for (const alias of participant.aliases) {
+            participants.set(alias, {
+                role: participant.role,
+                name: participant.name,
+                avatar: participant.avatar
+            });
+        }
+    }
+    if (participants.size === 0) {
+        return html;
+    }
+    const transformed: string[] = [];
+    let transcriptOpen = false;
+    for (const paragraph of remainingParagraphs) {
+        const paragraphText = decodeHtmlEntities(stripHtmlTags(paragraph.replace(/^<p>|<\/p>$/g, "")).trim());
+        const chatMessage = parseChatMessageLine(paragraphText);
+        if (!chatMessage) {
+            if (transcriptOpen) {
+                transformed.push("</div>");
+                transcriptOpen = false;
+            }
+            transformed.push(paragraph);
+            continue;
+        }
+        const participant = chatMessage.aliases
+            .map(alias => participants.get(alias))
+            .find((item): item is ChatParticipant => Boolean(item));
+        if (!participant) {
+            if (transcriptOpen) {
+                transformed.push("</div>");
+                transcriptOpen = false;
+            }
+            transformed.push(paragraph);
+            continue;
+        }
+        const role = chatMessage.aliases.some(alias => participants.get(alias)?.role === "speaker")
+            ? "speaker"
+            : participant.role;
+        if (!transcriptOpen) {
+            transformed.push("<div class=\"chat-transcript\">");
+            transcriptOpen = true;
+        }
+        transformed.push(renderChatBubble({
+            role,
+            name: participant.name,
+            avatar: participant.avatar,
+            message: chatMessage.message
+        }));
+    }
+    if (transcriptOpen) {
+        transformed.push("</div>");
+    }
+    return transformed.join("");
 }
 const localizedContentArray = parseLocalizedContent(bodyHTML);
 const currentLanguage = i18next.language;
@@ -128,7 +331,8 @@ const defaultContent = localizedContentArray.find(item => item.lang === defaultL
 bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
 bodyHTML = parseFloatTags(bodyHTML); // Ensure parseFloatTags is called on the localized content
 bodyHTML = parseCenterTags(bodyHTML); // Ensure parseCenterTags is called on the localized content
-let words = title.split(" ");
+bodyHTML = parseChatTranscript(bodyHTML);
+let words: string[] = titleText.split(" ");
 let updatedTagline = words
     .map((word, index) => `<span style="--delay: ${index * 0.2}s;">${word}</span>`)
     .join(" ");
@@ -137,8 +341,8 @@ const readingTime = Math.ceil(wordCount.length / 200);
 ---
 
 <Layout
-  title={`WiiLink - ${t("newsPost.name")} (${title})`}
-  description={`${title} - ${description}`}
+  title={`WiiLink - ${t("newsPost.name")} (${titleText})`}
+  description={`${titleText} - ${description}`}
   image={`/img/news-og-img/${slug}.png`}
 />
 
@@ -187,9 +391,9 @@ const readingTime = Math.ceil(wordCount.length / 200);
         <div class="mobileHeadAuth" style="display:flex; gap:4px;">
           <r
             style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;`}
-            datetime={new Date(date).toISOString()}>
+            datetime={articleDate.toISOString()}>
             {
-              new Date(date).toLocaleDateString("en-uk", {
+              articleDate.toLocaleDateString("en-uk", {
                 year: "numeric",
                 month: "short",
                 day: "numeric"
@@ -619,6 +823,14 @@ const readingTime = Math.ceil(wordCount.length / 200);
     .mobileHeadAuth r {
       border-radius: 8px !important;
     }
+
+    .chat-message {
+      max-width: 100%;
+    }
+
+    .chat-text {
+      font-size: 16px;
+    }
   }
 
   @media (min-width: 2000px) {
@@ -650,6 +862,175 @@ const readingTime = Math.ceil(wordCount.length / 200);
   .float h2 {
     font-family: Gilroy !important;
     font-size: 35px;
+  }
+
+  .chat-transcript {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 18px 0 26px;
+  }
+
+  .chat-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+    max-width: min(82%, 860px);
+  }
+
+  .chat-message--speaker {
+    align-self: flex-end;
+  }
+
+  .chat-message--interviewee {
+    align-self: flex-start;
+  }
+
+  .chat-avatar {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    position: static;
+    filter: none;
+  }
+
+  .chat-avatar--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color-tertiary);
+    color: var(--color);
+    font-family: Gilroy;
+    font-size: 18px;
+  }
+
+  .chat-bubble {
+    min-width: 0;
+    padding: 14px 16px;
+    border-radius: 20px 20px 20px 8px;
+    background: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .chat-message--speaker .chat-bubble {
+    border-radius: 20px 20px 8px 20px;
+    background: var(--bg-color-tertiary);
+  }
+
+  .chat-name {
+    margin-bottom: 6px;
+    font-family: Gilroy;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+  }
+
+  .chat-message--speaker .chat-name {
+    text-align: right;
+  }
+
+  .chat-text {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .chat-action {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.88em;
+    font-style: italic;
+    line-height: 1.2;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .chat-action--thought {
+    border-style: dashed;
+    border-radius: 16px 16px 16px 6px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+  }
+
+  .chat-action--thought::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: inherit;
+    border: inherit;
+    transform: scale(0.75);
+  }
+
+  .chat-action--laugh {
+    background: rgba(255, 214, 102, 0.18);
+    border-color: rgba(255, 214, 102, 0.28);
+    color: #ffe7a8;
+  }
+
+  .chat-action--happy {
+    background: rgba(99, 231, 158, 0.16);
+    border-color: rgba(99, 231, 158, 0.28);
+    color: #c9ffe1;
+  }
+
+  .chat-action--sad {
+    background: rgba(131, 176, 255, 0.16);
+    border-color: rgba(131, 176, 255, 0.28);
+    color: #d7e4ff;
+  }
+
+  .chat-action--angry {
+    background: rgba(255, 111, 111, 0.16);
+    border-color: rgba(255, 111, 111, 0.28);
+    color: #ffd1d1;
+  }
+
+  .chat-message--speaker .chat-action {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .chat-message--speaker .chat-action--laugh {
+    background: rgba(255, 214, 102, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--happy {
+    background: rgba(99, 231, 158, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--sad {
+    background: rgba(131, 176, 255, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--angry {
+    background: rgba(255, 111, 111, 0.12);
   }
 
   #titleData span {
@@ -687,6 +1068,14 @@ const readingTime = Math.ceil(wordCount.length / 200);
     }
     .center {
       text-align: center;
+    }
+
+    .chat-message {
+      max-width: 100%;
+    }
+
+    .chat-text {
+      font-size: 16px;
     }
   }
 </style>
