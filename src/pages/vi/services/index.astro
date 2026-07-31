@@ -19,7 +19,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
   description="Check out the services WiiLink has to offer!"
   image="/img/default.webp"
 />
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section={t("header.services")} />
   <div class="hold">
     <div class="welcome-msg">
       <HeadText text={t("header.services")} />

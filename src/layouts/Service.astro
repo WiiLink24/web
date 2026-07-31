@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import i18next from "i18next";
 import { localizePath } from "astro-i18next";
 import { Icon } from "astro-icon/components";
+import { t } from "i18next";
 
 type Props = CollectionEntry<"guide">["data"];
 const { title, description, icon, color, pubDate, type, heroImage } =
@@ -17,7 +18,7 @@ const { title, description, icon, color, pubDate, type, heroImage } =
     description={`${title} - ${description}`}
     image="/img/default.webp"
   />
-  <Header isGuide="display:none;" />
+  <Header isGuide="display:none;" section={t("header.services")} title={title} />
   <div
     class="headtitle"
     style={`background-color: ${color ? "#" + color : "var(--bg-color-tertiary);"}`}>

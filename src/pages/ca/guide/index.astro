@@ -20,7 +20,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   description={t("guide.mainDesc")}
   image="/img/Guide_embed.webp"
 />
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section={t("header.guide")} />
   <div class="hold">
     <HeadText text={t("header.guide")} />
     <div class="welcome-msg">
