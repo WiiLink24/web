@@ -42,7 +42,7 @@ posts = posts
 
 const bannerIncidents = await getBannerIncidents(localizePath("/services.json"));
 
-const { isMain, section, title } = Astro.props;
+const { isGuideOpacity = false, isMain, section, title } = Astro.props;
 ---
 
 <script is:inline>
@@ -68,7 +68,7 @@ const { isMain, section, title } = Astro.props;
 </script>
 
 <StatuspageBanner isMain={isMain} variant="top" />
-<Agreement section={section} title={title} />
+<Agreement section={section} title={title} isGuideOpacity={isGuideOpacity} />
 <r lang={i18next.language} class="bannerholder">
   <div
     style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:10px; padding:10px 20px; position:relative; z-index:10000;">

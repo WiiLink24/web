@@ -4,10 +4,13 @@ import { localizePath } from "astro-i18next";
 import LanguageDropdown from "./LanguageDropdown.astro";
 import { Icon } from "astro-icon/components";
 
-const { section, title } = Astro.props;
+const { section, title, isGuideOpacity = false } = Astro.props;
+const holderStyle = isGuideOpacity
+  ? ""
+  : "background-color: rgb(from var(--bg-color) r g b / 0.8); backdrop-filter: blur(10px); border-radius: 0px 0px 16px 16px;";
 ---
 
-<div class="holder">
+<div class="holder" style={holderStyle}>
   <a
     href={localizePath("/")}
     aria-label="Home Link"
@@ -85,7 +88,7 @@ const { section, title } = Astro.props;
         ><button
           type="button"
           class="btn btn-success"
-          style="border-radius: 16px 4px 4px 4px; width:100%; height:60px;"
+          style="border-radius: 16px; width:100%; height:100%;"
           ><Icon
             name="download"
             style="color: white !important; margin-bottom:3px;"
@@ -96,15 +99,15 @@ const { section, title } = Astro.props;
         id="themeColorMobile"
         type="button"
         class="btn btn-light"
-        style="border-radius: 4px 16px 4px 4px; border: 0px !important; background-color: var(--color);"
+        style="border-radius: 16px; border: 0px !important; background-color: var(--color);"
         onclick="themeToggle()"
         ><Icon
           name="lucide:sun"
           style="color: var(--bg-color-absolute); margin-bottom:3px;"
         /></button
       >
+          <LanguageDropdown ismobile />
     </div>
-    <LanguageDropdown ismobile />
     <div class="elements">
       <a
         class="link"
@@ -293,22 +296,23 @@ const { section, title } = Astro.props;
 <script>
   // Ensure this runs after DOM is ready
   document.addEventListener("DOMContentLoaded", function () {
-    const offcanvas = document.getElementById("offcanvasTop");
+    const offcanvas = document.getElementById("offcanvasTop") as HTMLElement | null;
     if (!offcanvas) return;
+    const square2 = document.getElementById("square2") as HTMLElement | null;
 
     // Show offcanvas when opened
     offcanvas.addEventListener("show.bs.offcanvas", function () {
       offcanvas.style.display = "block";
-      if (document.getElementById("square2")) {
-        document.getElementById("square2").style.overflow = "hidden";
+      if (square2) {
+        square2!.style.overflow = "hidden";
       }
     });
 
     // Hide offcanvas when closed
     offcanvas.addEventListener("hidden.bs.offcanvas", function () {
       offcanvas.style.display = "none";
-      if (document.getElementById("square2")) {
-        document.getElementById("square2").style.overflow = "auto";
+      if (square2) {
+        square2!.style.overflow = "auto";
       }
     });
   });
@@ -359,8 +363,8 @@ const { section, title } = Astro.props;
     width: 100%;
     display: grid;
     margin-top: 20px;
-    grid-template-columns: 2fr 1fr;
-    gap: 4px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
     position: relative;
   }
 

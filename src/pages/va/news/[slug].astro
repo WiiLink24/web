@@ -181,7 +181,7 @@ function parseChatMessageLine(line: string) {
     }
     return {
         aliases: match[1].split("-").map(alias => alias.trim()).filter(Boolean),
-        message: match[2].trim()
+        messageHtml: match[2].trim()
     };
 }
 function classifyChatAction(actionText: string) {
@@ -203,21 +203,21 @@ function classifyChatAction(actionText: string) {
     }
     return "neutral";
 }
-function renderChatMessageText(message: string) {
+function renderChatMessageHtml(messageHtml: string) {
     const parts: string[] = [];
     const actionRegex = /\(([^)]+)\)/g;
     let lastIndex = 0;
     let match: RegExpExecArray | null;
-    while ((match = actionRegex.exec(message)) !== null) {
+    while ((match = actionRegex.exec(messageHtml)) !== null) {
         if (match.index > lastIndex) {
-            parts.push(escapeHtml(message.slice(lastIndex, match.index)));
+            parts.push(messageHtml.slice(lastIndex, match.index));
         }
         const actionText = match[1].trim();
         parts.push(`<span class="chat-action chat-action--${classifyChatAction(actionText)}">${escapeHtml(`(${actionText})`)}</span>`);
         lastIndex = actionRegex.lastIndex;
     }
-    if (lastIndex < message.length) {
-        parts.push(escapeHtml(message.slice(lastIndex)));
+    if (lastIndex < messageHtml.length) {
+        parts.push(messageHtml.slice(lastIndex));
     }
     return parts.join("").replace(/\n/g, "<br />");
 }
@@ -235,7 +235,7 @@ function renderChatBubble({ role, name, avatar, message }: {
     ${isSpeaker ? "" : avatarMarkup}
     <div class="chat-bubble">
       <div class="chat-name">${escapeHtml(name)}</div>
-      <div class="chat-text">${renderChatMessageText(message)}</div>
+      <div class="chat-text">${renderChatMessageHtml(message)}</div>
     </div>
     ${isSpeaker ? avatarMarkup : ""}
   </div>`;
@@ -254,7 +254,7 @@ function parseChatTranscript(html: string): string {
     if (!firstParagraph) {
         return html;
     }
-    const firstParagraphText = decodeHtmlEntities(stripHtmlTags(firstParagraph.replace(/^<p>|<\/p>$/g, "")).trim());
+    const firstParagraphText = decodeHtmlEntities(firstParagraph.replace(/^<p>|<\/p>$/g, "")).trim();
     const firstParagraphLines = firstParagraphText
         .split(/\r?\n/)
         .map(line => line.trim())
@@ -283,7 +283,7 @@ function parseChatTranscript(html: string): string {
     const transformed: string[] = [];
     let transcriptOpen = false;
     for (const paragraph of remainingParagraphs) {
-        const paragraphText = decodeHtmlEntities(stripHtmlTags(paragraph.replace(/^<p>|<\/p>$/g, "")).trim());
+        const paragraphText = decodeHtmlEntities(paragraph.replace(/^<p>|<\/p>$/g, "")).trim();
         const chatMessage = parseChatMessageLine(paragraphText);
         if (!chatMessage) {
             if (transcriptOpen) {
@@ -315,7 +315,7 @@ function parseChatTranscript(html: string): string {
             role,
             name: participant.name,
             avatar: participant.avatar,
-            message: chatMessage.message
+            message: chatMessage.messageHtml
         }));
     }
     if (transcriptOpen) {
