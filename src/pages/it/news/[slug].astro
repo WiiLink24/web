@@ -948,8 +948,18 @@ const readingTime = Math.ceil(wordCount.length / 200);
       sans-serif;
     font-size: 18px;
     line-height: 1.55;
+    text-align: left;
     white-space: pre-wrap;
     word-break: break-word;
+  }
+
+  .chat-message--speaker .chat-text {
+    text-align: right;
+  }
+
+  .chat-message {
+    margin-top: 18px;
+    margin-bottom: 18px;
   }
 
   .chat-action {
