@@ -77,7 +77,7 @@ const headings = extractHeadings(body);
   title={`WiiLink - ${t("guidePost.name")} (${title})`}
   description={`${title} - ${description}`}
   image="/img/Guide_embed.webp">
-  <Header />
+  <Header section={t("header.guide")} title={title} />
   <div class="flex">
     <div class={`guidehold ${heroImage ? 'text-white' : ''}`}>
       <div

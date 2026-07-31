@@ -13,13 +13,23 @@ const entries = await contentfulClient.getEntries<news>({
   content_type: "newsPost"
 });
 
-let posts = entries.items.map(item => {
+type HeaderPost = {
+  title: string;
+  slug: string;
+  date: string;
+  imageUrl?: string;
+  unlist?: boolean;
+  description?: string;
+};
+
+let posts: HeaderPost[] = entries.items.map(item => {
   const { title, slug, date, image, unlist, description } = item.fields;
+  const previewImage = image as any;
   return {
     title,
     slug,
     date,
-    image,
+    imageUrl: previewImage?.fields?.file?.url,
     unlist,
     description
   };
@@ -32,7 +42,7 @@ posts = posts
 
 const bannerIncidents = await getBannerIncidents(localizePath("/services.json"));
 
-const { isMain } = Astro.props;
+const { isMain, section, title } = Astro.props;
 ---
 
 <script is:inline>
@@ -58,7 +68,7 @@ const { isMain } = Astro.props;
 </script>
 
 <StatuspageBanner isMain={isMain} variant="top" />
-<Agreement />
+<Agreement section={section} title={title} />
 <r lang={i18next.language} class="bannerholder">
   <div
     style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:10px; padding:10px 20px; position:relative; z-index:10000;">
@@ -66,15 +76,32 @@ const { isMain } = Astro.props;
       id="grad"
       style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
     ></t>
-    <a href={localizePath("/")} aria-label="Home Link"
-      ><img
+    <a href={localizePath("/")} aria-label="Home Link" style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px;">
+      <img
         loading="lazy"
         class="logo"
         alt="WiiLink Logo"
         style={isMain}
         src=" /img/logo.webp"
         height="69px"
-      /></a
+      />
+    {
+      (section || title) && (
+        <div style="height: 50px; border-left: 2px solid var(--color); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; justify-content: center;">
+          {section && (
+            <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0;">
+              {section}
+            </h1>
+          )}
+          {title && (
+            <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0;">
+              {title}
+            </h2>
+          )}
+        </div>
+      )
+    }
+      </a
     >
     <div id="links">
       <a class="header-link" href={localizePath("/")} aria-label="Home Link"
@@ -102,12 +129,12 @@ const { isMain } = Astro.props;
                   style="display:flex; flex-direction:row; align-items:center; gap:16px;"
                   href={localizePath(`/news/${post.slug}/`)}
                   aria-label={post.title + "News Link"}>
-                  {post.image?.fields?.file?.url ? (
+                  {post.imageUrl ? (
                     <img
                       alt="News Post Image"
                       loading="lazy"
                       style="height:100px; border-radius:4px;"
-                      src={post.image.fields.file.url}
+                      src={post.imageUrl}
                     />
                   ) : (
                     <div style="height:100px; width:177.78px; border-radius:4px; background-color: var(--bg-opaque-1);" />
@@ -734,7 +761,7 @@ const { isMain } = Astro.props;
   /* Base Styles */
   :root {
     --header-height: 128px;
-    --header-mobile-height: 98px;
+    --header-mobile-height: 8px;
     --border-radius-standard: 8px;
     --border-radius-large: 12px;
     --spacing-standard: 8px;

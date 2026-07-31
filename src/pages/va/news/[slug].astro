@@ -346,7 +346,7 @@ const readingTime = Math.ceil(wordCount.length / 200);
   image={`/img/news-og-img/${slug}.png`}
 />
 
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section={unlist ? "Forming Links" : t("header.news")} title={titleText} />
 <div class="headtitle" style="background-color:var(--bg-color-secondary);">
   <div
     style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">

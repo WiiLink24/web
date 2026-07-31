@@ -3,6 +3,8 @@ import { t } from "i18next";
 import { localizePath } from "astro-i18next";
 import LanguageDropdown from "./LanguageDropdown.astro";
 import { Icon } from "astro-icon/components";
+
+const { section, title } = Astro.props;
 ---
 
 <div class="holder">
@@ -10,14 +12,30 @@ import { Icon } from "astro-icon/components";
     href={localizePath("/")}
     aria-label="Home Link"
     class="logohold"
-    style="transform:translate(-50px,0);"
+    style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px;"
     ><img
       loading="lazy"
       alt="WiiLink Logo"
       class="logo"
       src="/img/logo.webp"
       height="50px"
-    /></a
+    />
+     {
+      (section || title) && (
+        <div style="height: 35px; border-left: 2px solid var(--color); margin-left: 5px; padding-left: 15px; display: flex; flex-direction: column; justify-content: center;">
+          {section && (
+            <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0;">
+              {section}
+            </h1>
+          )}
+          {title && (
+            <h2 style="font-size: 14px !important; font-weight: 400; margin-top: 6px; margin-bottom: 0;">
+              {title}
+            </h2>
+          )}
+        </div>
+      )
+    }</a
   >
   <button
     style="z-index:1000;"
@@ -399,11 +417,7 @@ import { Icon } from "astro-icon/components";
   }
 
   .logo {
-    top: 50%;
-    left: 50px;
-    transform: translate(0, -50%);
     filter: invert(1);
-    position: absolute;
   }
 
   .dropdownbtn,
