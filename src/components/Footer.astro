@@ -33,6 +33,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             data-bs-title={t("site.creator")}
             aria-label="Alex's GitHub"
             style="text-decoration: none;"
+            title={"Last updated @ " + new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString()}
             ><button
               type="button"
               class="btn1 btn btn-success"
