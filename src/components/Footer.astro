@@ -34,18 +34,13 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             aria-label="Alex's GitHub"
             style="text-decoration: none;"
             title={"Last updated @ " + new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString()}
-            ><button
-              type="button"
-              class="btn1 btn btn-success"
-              style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
-              ><img
+            ><img
                 alt="Alex's GitHub PFP"
                 loading="lazy"
                 src="https://github.com/humanoidear.png"
-                style="width:20px; transform:translate(-10px, -13.5px);"
-              /></button
-            >
-            <u>Alex</u></a
+                style="width:20px; height:20px; border-radius: 4px; transform: translate(0, -3px);"
+              />
+            Alex</a
           >
         </p>
         <p
@@ -60,11 +55,12 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
+          <Icon name="lucide:newspaper" style="margin-bottom:5px;" />
           <a
             href="/press"
             aria-label="WiiLink WFC Link"
-            style="margin-right:5px;"
-            ><Icon name="lucide:newspaper" style="margin-bottom:5px;" /> Press Kit</a
+            style="margin-left:6px;"
+            >Press Kit</a
           >
         </p>
       </div>

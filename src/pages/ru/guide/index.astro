@@ -30,13 +30,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
             class="badge bg-success"
             style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
           ></span><b style="font-family: Rubik;">WiiLink</b><span
-            class="badge bg-success"
-            style="bottom:8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
+            style="bottom:8px; text-transform: capitalize; color: #145ddc;"
             >guide</span
           >
         </Trans>
       </h2>
-      <h3 style="font-size: calc(1.3rem + .6vw);">
+      <h3 style="font-size: calc(1.3rem + .6vw); max-width: 1000px;">
         <Trans i18nKey="guide.subtitle">
           Here you'll find <b class="color">important information</b> regarding the
           service, as well as helpful <b class="color">guides</b> and <b
@@ -157,11 +156,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   }
 
   .btn-wrapper {
-    width: 320px;
     top: 20px;
     left: 50%;
     transform: translate(-50%, 0);
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
     z-index: 1000;
     position: relative;
@@ -421,6 +421,10 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
     .posthold:nth-child(3)::before {
       border-radius: 8px 8px 16px 16px !important;
+    }
+
+    .desc {
+      display: none;
     }
 
     .subtitle {

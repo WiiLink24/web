@@ -18,6 +18,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-japan_1f1ef-1f1f5.png"
       },
       {
+        "name": "Alex",
+        "title": "Developer & Lead Designer",
+        "color": "#5e97f2",
+        "pfp": "/img/pfp/alex.webp",
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/flags/val.webp"
+      },
+      {
         "name": "Jinjo",
         "title": "Localization Lead",
         "color": "#6a329f",
@@ -40,14 +48,6 @@
         "pfp": "/img/pfp/luna.webp",
         "link": "https://www.youtube.com/@LunaValoaa",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
-      },
-      {
-        "name": "Alex",
-        "title": "Developer / Designer",
-        "color": "#5e97f2",
-        "pfp": "/img/pfp/alex.webp",
-        "link": "https://github.com/Humanoidear",
-        "flag": "/img/flags/val.webp"
       },
       {
         "name": "Palapeli",
@@ -90,6 +90,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
       },
       {
+        "name": "Ninuno",
+        "title": "Developer / Content Management",
+        "color": "#FFFFFF",
+        "pfp": "/img/pfp/ninuno.webp",
+        "link": "https://github.com/ninuno",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
         "name": "diego",
         "title": "Translator (CA, ES, ZH)",
         "color": "#fc5a4e",
@@ -114,6 +122,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
+        "name": "Alex",
+        "title": "Developer / Designer",
+        "color": "#5e97f2",
+        "pfp": "/img/pfp/alex.webp",
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/flags/val.webp"
+      },
+      {
         "name": "Deoku64",
         "title": "Translator (JP/DEU)",
         "color": "#abc9ff",
@@ -128,14 +144,6 @@
         "pfp": "/img/pfp/philemax.webp",
         "link": "https://www.youtube.com/@Philemax/",
         "flag": "https://em-content.zobj.net/source/twitter/53/flag-for-switzerland_1f1e8-1f1ed.png"
-      },
-      {
-        "name": "Ninuno",
-        "title": "Developer / Content Management",
-        "color": "#FFFFFF",
-        "pfp": "/img/pfp/ninuno.webp",
-        "link": "https://github.com/ninuno",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "PablosCorner",

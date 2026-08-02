@@ -10,7 +10,7 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-canada_1f1e8-1f1e6.png"
       },
       {
-        "name": "Becca Williamson",
+        "name": "Becca",
         "title": "Traductor (Japonés)",
         "color": "#66cdaa",
         "pfp": "/img/pfp/becca.webp",
@@ -74,6 +74,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
       },
       {
+        "name": "Ninuno",
+        "title": "Developer / Content Management",
+        "color": "#FFFFFF",
+        "pfp": "/img/pfp/ninuno.webp",
+        "link": "https://github.com/ninuno",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
         "name": "diego",
         "title": "Traductor (CA, ES, ZH)",
         "color": "#fc5a4e",
@@ -112,14 +120,6 @@
         "pfp": "/img/pfp/philemax.webp",
         "link": "https://www.youtube.com/@Philemax/",
         "flag": "https://em-content.zobj.net/source/twitter/53/flag-for-switzerland_1f1e8-1f1ed.png"
-      },
-      {
-        "name": "Ninuno",
-        "title": "Developer / Content Management",
-        "color": "#FFFFFF",
-        "pfp": "/img/pfp/ninuno.webp",
-        "link": "https://github.com/ninuno",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "PablosCorner",

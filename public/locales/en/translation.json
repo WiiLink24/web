@@ -107,7 +107,7 @@
     "svc-site": {
       "mainTitle": "WiiLink - Services",
       "mainDesc": "Check out the services WiiLink has to offer!",
-      "title": "Everything we offer! <1>WiiLink</1> <2>services</2>",
+      "title": "<1>WiiLink</1> <2>services</2>",
       "subtitle": "Here you'll can see <0>everything we offer</0>! Read up and download them for yourself!",
       "wc24-min": "WiiConnect24",
       "jp-min": "Japanese",
@@ -126,7 +126,7 @@
     "news": {
       "mainTitle": "WiiLink - News",
       "mainDesc": "Read up on WiiLink's latest improvements and releases!",
-      "title": "Here are the <1>WiiLink</1> <2>news</2>",
+      "title": "<1>WiiLink</1> <2>news</2>",
       "subtitle": "Catch up on <0>the project's progress</0>, as well as <1>service updates</1>!",
       "otherNews": "Here are some <0>older</0> articles:",
       "rssTitle": "<0>Want to get <1>WiiLink news</1> on your site o service? Use the <2>RSS feed</2>.</0>",
@@ -136,7 +136,7 @@
     "guide": {
       "mainTitle": "WiiLink - Guide",
       "mainDesc": "Get important info and help for our services!",
-      "title": "Welcome to the <1>WiiLink</1> <2>guide</2>",
+      "title": "<1>WiiLink</1> <2>guide</2>",
       "subtitle": "Here you'll find <0>important information</0> regarding the service, as well as helpful <1>guides</1> and <2>troubleshooters</2> to help you out!",
       "specificGuides": "What are you <0>looking for</0>?",
       "helpTitle": "<0>Can't seem to get it <1>working</1>? Don't hesitate to <2>get in touch</c2>!</0>",
@@ -163,14 +163,14 @@
     "status": {
       "mainTitle": "WiiLink - Status",
       "mainDesc": "Check service status and completion!",
-      "title": "Check out the <1>WiiLink</1> <2>status</2>",
+      "title": "<1>WiiLink</1> <2>status</2>",
       "subtitle": "Get a glimpse at our <0>progress</0>, in addition to <1>server</1> status!",
       "serverStatus": "View on statuspage."
     },
     "extras": {
       "mainTitle": "WiiLink - Extras",
       "mainDesc": "Check out some special resources and content!",
-      "title": "Here are the <1>WiiLink</1> <2>extras</2>",
+      "title": "<1>WiiLink</1> <2>extras</2>",
       "subtitle": "In here you'll find <0>special content</0> we've been working on.",
       "helpCall": "<0>Do you think there's something we should <1>add</1> in here? Be sure to <2>get in touch</2>!</0>",
       "contact": "Get in touch!",
