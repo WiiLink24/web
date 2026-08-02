@@ -20,7 +20,7 @@ heroImage: "/img/guidebg-1.webp"
 
 ## Installation guide
 
-If you have not done so already, visit the [WiiLink Patcher releases page](https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases) and download the correct patcher for your operating system.
+If you have not done so already, visit the [homepage](https://wiilink.ca) and download the correct patcher for your operating system.
 
 </br>
 
