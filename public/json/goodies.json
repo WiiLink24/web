@@ -14,16 +14,16 @@
         "link": "/extras/wallpapers"
       },
       {
-        "title": "<span class='chart-no-axes-column'></span> Poll Viewer",
+        "title": "<span class='chart-no-axes-column'></span>Legacy Poll Viewer",
         "desc": "View poll results for the Everybody Votes Channel!",
         "img": "/img/guidebg-2.webp",
         "link": "/extras/vote"
       },
-      {
-        "title": "<span class='paintbrush'></span> Themes",
-        "desc": "Nice themes for your consoles!",
-        "img": "/img/guidebg-3.webp",
-        "link": "/extras/themes"
+            {
+        "title": "<span class='palette'></span> Wii Media Converter",
+        "desc": "Convert your photos, video, and audio so it's compatible with the Photo Channel",
+        "img": "/img/guidebg-1.webp",
+        "link": "https://wiimediaconverter.wuaze.com"
       },
       {
         "title": "<span class='gamepad-2'></span> Wii Remote Testing",
@@ -32,34 +32,16 @@
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<span class='user'></span> Mii Avatar Editor",
-        "desc": "",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/mii"
-      },
-      {
         "title": "<span class='image'></span> Photo Channel Cheats",
         "desc": "Images for getting fast time results!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='cat'></span> News cat",
-        "desc": "",
-        "img": "/img/guidebg-1.webp",
-        "link": "/extras/cat"
-      },
-      {
         "title": "<span class='rc24'></span> RC24 Goodies",
         "desc": "Legacy goodies on the RiiConnect24 site!",
         "img": "/img/guidebg-1.webp",
         "link": "https://rc24.xyz/goodies"
-      },
-      {
-        "title": "<span class='palette'></span> Wii Media Converter",
-        "desc": "Convert your photos, video, and audio so it's compatible with the Photo Channel",
-        "img": "/img/guidebg-1.webp",
-        "link": "https://wiimediaconverter.wuaze.com"
       }
     ]
   }

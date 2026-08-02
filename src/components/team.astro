@@ -84,7 +84,7 @@ team.splice(4, 0, team[random]);
       </div>
       <div id="members" class="members">
         {
-          team.slice(0, 10).map(member => (
+          team.slice(0, 11).map(member => (
             <div
               class="member"
               style={
@@ -110,7 +110,7 @@ team.splice(4, 0, team[random]);
                   href={member.link}
                   aria-label={member.name + `'s Social media`}
                   style="text-decoration: none; color: #212529;">
-                  <h2 style="top: 10px; text-align: right; font-family: Gilroy; position: relative;">
+                  <h2 style="top: 10px; text-align: right; font-family: Gilroy; font-size: 25px; position: relative;">
                     {member.name}
                     <img
                       loading="lazy"
@@ -121,7 +121,7 @@ team.splice(4, 0, team[random]);
                       height=""
                     />
                   </h2>
-                  <h3 style="top: 0px; left: 0; width: 100%; text-align: right; font-size: 25px; font-weight: 200; position: relative;">
+                  <h3 style="top: 0px; left: 0; width: 100%; text-align: right; font-size: 20px; font-weight: 200; position: relative;">
                     <div set:html={member.title} />
                   </h3>
                 </a>
@@ -277,9 +277,6 @@ team.splice(4, 0, team[random]);
     border: 3px solid var(--bg-opaque-1);
   }
   .member:nth-child(1) {
-    grid-row: auto / span 2;
-  }
-  .member:nth-child(5) {
     grid-row: auto / span 2;
   }
   .member:hover,
