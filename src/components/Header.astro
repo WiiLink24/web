@@ -40,7 +40,9 @@ posts = posts
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .slice(0, 3);
 
-const bannerIncidents = await getBannerIncidents(localizePath("/services.json"));
+const bannerIncidents = await getBannerIncidents(
+  localizePath("/services.json")
+);
 
 const { isGuideOpacity = false, isMain, section, title } = Astro.props;
 ---
@@ -76,7 +78,10 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
       id="grad"
       style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
     ></t>
-    <a href={localizePath("/")} aria-label="Home Link" style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px;">
+    <a
+      href={localizePath("/")}
+      aria-label="Home Link"
+      style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px;">
       <img
         loading="lazy"
         class="logo"
@@ -85,24 +90,23 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         src=" /img/logo.webp"
         height="69px"
       />
-    {
-      (section || title) && (
-        <div style="height: 50px; border-left: 2px solid var(--color); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; justify-content: center;">
-          {section && (
-            <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0;">
-              {section}
-            </h1>
-          )}
-          {title && (
-            <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0;">
-              {title}
-            </h2>
-          )}
-        </div>
-      )
-    }
-      </a
-    >
+      {
+        (section || title) && (
+          <div style="height: 50px; border-left: 2px solid var(--color); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; justify-content: center;">
+            {section && (
+              <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0;">
+                {section}
+              </h1>
+            )}
+            {title && (
+              <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0;">
+                {title}
+              </h2>
+            )}
+          </div>
+        )
+      }
+    </a>
     <div id="links">
       <a class="header-link" href={localizePath("/")} aria-label="Home Link"
         ><Icon name="lucide:house" style="margin-right:5px;" />
@@ -333,8 +337,13 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
               ))
             ) : (
               <div class="status-all-ok">
-                <Icon name="lucide:circle-check" style="width:20px; height:20px;" />
-                {t("status.allOperational", { defaultValue: "All services working properly" })}
+                <Icon
+                  name="lucide:circle-check"
+                  style="width:20px; height:20px;"
+                />
+                {t("status.allOperational", {
+                  defaultValue: "All services working properly"
+                })}
               </div>
             )
           }
@@ -463,56 +472,22 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         <hr
           style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
         />
-        <div
-          style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
-          <a
-            href="https://bookmark.rc24.xyz"
-            style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Wii Bookmarks"
-            title="Wii Bookmarks"
-            ><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://disc.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-            title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-            ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://interviews.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Nintendo dev interviews"
-            title="Nintendo dev interviews"
-            ><Icon name="message-circle" style="margin-bottom:3px;" /></a
-          >
-          <a
-            href="http://wiiremote.rc24.xyz/"
-            style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
-            aria-label="Get the date your Wii Remote was manufactured."
-            title="Get the date your Wii Remote was manufactured."
-            ><Icon name="lucide:gamepad-2" style="margin-bottom:3px;" /></a
-          >
-        </div>
-        <hr
-          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-        />
         <a
-          class="dropdown-item"
+          class="dropdown-item hover-opacity"
           href={localizePath("/privacy-policy")}
           aria-label="Privacy Policy Link"
           ><Icon name="lucide:shield" style="margin-bottom:3px;" />
           {t("header.privacyPolicy")}</a
         >
         <a
-          class="dropdown-item"
+          class="dropdown-item hover-opacity"
           href={localizePath("/tos")}
           aria-label="Terms of Service Link"
           ><Icon name="lucide:feather" style="margin-bottom:3px;" />
           {t("header.tos")}</a
         >
         <a
-          class="dropdown-item"
+          class="dropdown-item hover-opacity"
           href={localizePath("/eula")}
           aria-label="EULA Link"
           ><Icon name="lucide:book" style="margin-bottom:3px;" />
@@ -522,37 +497,34 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
           style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
         />
         <div
-          style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
+          style="margin:6px; margin-top:13px; display:flex; flex-direction: row; justify-content:space-between; gap:8px;">
           <button
             id="themeColor"
             type="button"
-            class="btn btn-light dropdown-element"
+            class="bottom-btns"
+            style="background-color: #ffffff;"
             aria-label="Theme Button"
             onclick="themeToggle()"
             ><Icon name="lucide:moon" style="pointer-events:none;" /></button
           >
-          <a href={localizePath("/")} aria-label="Home Link"
-            ><button
-              type="button"
-              class="btn btn-success dropdown-element"
-              aria-label="Download Button"
-              ><Icon
-                name="download"
-                style="color:white !important; margin-bottom:3px;"
-              /></button
-            ></a
-          >
-          <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-            ><button
-              type="button"
-              class="btn btn-primary dropdown-element"
-              aria-label="Discord Button"
-              ><Icon
-                name="discord"
-                style="color:white !important; margin-bottom:3px;"
-              /></button
-            ></a
-          >
+          <span style="display:flex; flex-direction:row; align-items:center; gap:8px;">
+            <a href={localizePath("/")} aria-label="Home Link"
+              ><button type="button" class="bottom-btns" style="background-color: #19a420 !important;" aria-label="Download Button"
+                ><Icon
+                  name="download"
+                  style="color:white !important; margin-bottom:0px;"
+                /></button
+              ></a
+            >
+            <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
+              ><button type="button" class="bottom-btns" style="background-color: #5865F2 !important;" aria-label="Discord Button"
+                ><Icon
+                  name="discord"
+                  style="color:white !important; margin-bottom:0px;"
+                /></button
+              ></a
+            >
+          </span>
         </div>
       </div>
     </div>
@@ -570,7 +542,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
     localStorage.setItem("color-mode", "dark");
     if (themeColorButton) {
       themeColorButton.innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
       themeColorButton.style.filter = "invert(0)";
     }
   }
@@ -580,7 +552,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
     localStorage.setItem("color-mode", "light");
     if (themeColorButton) {
       themeColorButton.innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
       themeColorButton.style.filter = "invert(1)";
     }
   }
@@ -749,10 +721,10 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
 
     if (document.documentElement.classList.contains("dark")) {
       document.getElementById("themeColor").innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
     } else {
       document.getElementById("themeColor").innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
     }
   });
 </script>
@@ -867,6 +839,26 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
 
   .header-link:hover::after {
     bottom: 0;
+    opacity: 1;
+  }
+
+  .bottom-btns {
+    width: 40px;
+    height: 40px;
+    border-radius: 8000px;
+    background-color: var(--bg-color-secondary);
+    display: flex;
+    border: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hover-opacity {
+    opacity: 0.7;
+    transition: var(--transition-standard);
+  }
+
+  .hover-opacity:hover {
     opacity: 1;
   }
 
@@ -1103,6 +1095,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
 
   /* WiiLink Data Dropdown */
   .wiilink-data-container {
+    font-size: 17px;
     display: block;
     position: relative;
     cursor: pointer;
