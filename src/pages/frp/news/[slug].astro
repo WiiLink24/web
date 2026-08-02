@@ -15,7 +15,7 @@ export async function getStaticPaths() {
     const { items } = await contentfulClient.getEntries<news>({
         content_type: "newsPost"
     });
-    const pages = items.map(item => ({
+    return items.map(item => ({
         params: { slug: item.fields.slug },
         props: {
             title: item.fields.title,
@@ -29,7 +29,6 @@ export async function getStaticPaths() {
             isAnnouncement: item.fields.isAnnouncement
         }
     }));
-    return pages;
 }
 type NewsPostPageProps = {
     content: any;
@@ -46,109 +45,92 @@ const props = Astro.props as unknown as NewsPostPageProps;
 const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = props;
 const titleText = String(title);
 const articleDate = new Date(String(date));
-let options = {
+// Contentful rich-text -> HTML rendering (embedded assets)
+const UNSUPPORTED_ASSET_HTML = `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+function renderFileLink(url: string, title: string): string {
+    return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
+}
+const options = {
     renderNode: {
         "embedded-asset-block": (node: any) => {
             const file = node.data.target.fields?.file;
             if (!file || !file.contentType) {
-                return `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+                return UNSUPPORTED_ASSET_HTML;
             }
-            const mimeType = file.contentType;
-            const url = file.url;
+            const { contentType: mimeType, url } = file;
+            const assetTitle = node.data.target.fields.title ?? "";
             if (mimeType.startsWith("image/")) {
-                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${node.data.target.fields.title}"/>`;
+                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${assetTitle}"/>`;
             }
-            else if (mimeType.startsWith("video/")) {
+            if (mimeType.startsWith("video/")) {
                 return `<video style="width:100%; border-radius:8px;" autoplay loop muted>
                             <source src="${url}" type="${mimeType}">
                             Your browser does not support the video tag.
                         </video>`;
             }
-            else if (mimeType === "application/pdf") {
+            if (mimeType === "application/pdf") {
                 return `<embed src="${url}" type="application/pdf" width="100%" height="600px" />`;
             }
-            else {
-                return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${node.data.target.fields.title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
-            }
+            return renderFileLink(url, assetTitle);
         }
     }
 };
 let parsedSEOContent = documentToPlainTextString(content as any);
-if (parsedSEOContent.length > 60) {
+if (parsedSEOContent.length > 160) {
     parsedSEOContent = parsedSEOContent.slice(0, 160) + "...";
 }
 let bodyHTML = content ? documentToHtmlString(content as any, options) : "";
+function extractStyle(attrs: string): string {
+    const match = attrs.match(/style=&quot;(.*?)&quot;/);
+    return match ? match[1] : "";
+}
+function replaceTagBlocks(html: string, tagName: string, render: (attrs: string, inner: string) => string): string {
+    const pattern = new RegExp(`<p>&lt;${tagName}(?=[\\s&])([^&]*?)&gt;</p>([\\s\\S]*?)<p>&lt;end-${tagName}&gt;</p>`, "g");
+    return html.replace(pattern, (_full, attrs: string, inner: string) => render(attrs, inner.trim()));
+}
+function renderFloatChild(side: "left" | "right") {
+    return (attrs: string, inner: string) => `<div class="float float-${side}" style="${extractStyle(attrs)}">${inner}</div>`;
+}
+function parseFloatTags(html: string): string {
+    html = replaceTagBlocks(html, "embed", (attrs, inner) => {
+        const style = extractStyle(attrs);
+        const src = inner.replace(/<\/?p>/g, "");
+        return `<iframe style="width:100%; height:100%; border-radius: 8px; aspect-ratio:16/9; ${style}" title="Embed Content" src="${src}"></iframe>`;
+    });
+    html = replaceTagBlocks(html, "float", (attrs, inner) => {
+        const style = extractStyle(attrs);
+        let innerContent = replaceTagBlocks(inner, "float-left", renderFloatChild("left"));
+        innerContent = replaceTagBlocks(innerContent, "float-right", renderFloatChild("right"));
+        return `<div class="float-container" style="${style} display:flex; justify-content:space-between;">${innerContent}</div>`;
+    });
+    return html;
+}
+function parseCenterTags(html: string): string {
+    return html.replace(/<p>&lt;center&gt;<\/p>([\s\S]*?)<p>&lt;end-center&gt;<\/p>/g, (_full, inner) => `<div class="center">${inner}</div>`);
+}
 function parseLocalizedContent(html: string): Array<{
     lang: string;
     content: string;
 }> {
-    const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
-    let match;
-    const localizedContent = [];
-    while ((match = regex.exec(html)) !== null) {
-        localizedContent.push({
-            lang: match[1],
-            content: match[2].trim()
-        });
-    }
-    return localizedContent;
+    const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>([\s\S]*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/g;
+    return [...html.matchAll(regex)].map(match => ({
+        lang: match[1],
+        content: match[2].trim()
+    }));
 }
-function parseFloatTags(html: string): string {
-    const embedRegex = /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
-    const floatRegex = /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
-    const floatLeftRegex = /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
-    const floatRightRegex = /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
-    let match;
-    let floatHTML = html;
-    while ((match = floatRegex.exec(html)) !== null) {
-        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
-        const style = styleMatch
-            ? `style="${styleMatch[1]} display:flex; justify-content:space-between;"`
-            : "style=\"display:flex; justify-content:space-between;\"";
-        let content = match[2];
-        const hasFloats = floatLeftRegex.test(content) || floatRightRegex.test(content);
-        if (hasFloats) {
-            const processedContent = content
-                .replace(floatLeftRegex, (m, s, c) => `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`)
-                .replace(floatRightRegex, (m, s, c) => `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`);
-            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${processedContent}</div>`);
-        }
-        else {
-            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${content}</div>`);
-        }
-    }
-    while ((match = embedRegex.exec(html)) !== null) {
-        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
-        const style = styleMatch
-            ? `style="${styleMatch[1]} aspect-ratio: 16/10;"`
-            : "style=\"aspect-ratio: 16/10;\"";
-        let content = match[2];
-        content = content.replace(/<\/?p>/g, ""); // Remove surrounding <p> tags
-        floatHTML = floatHTML.replace(match[0], `<iframe style="width:100%; height:100%; border-radius: 8px; aspect-ratio:16/9;" title="Embed Content" ${style} src="${content}"></iframe>`);
-    }
-    return floatHTML;
-}
-function parseCenterTags(html: string): string {
-    const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
-    let match;
-    let centerHTML = html;
-    while ((match = centerRegex.exec(html)) !== null) {
-        centerHTML = centerHTML.replace(match[0], `<div class="center">${match[1]}</div>`);
-    }
-    return centerHTML;
-}
-function escapeHtml(text: string) {
+// HTML escaping / entity decoding
+function escapeHtml(text: string): string {
     return text
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
-        .replace(/\"/g, "&quot;")
+        .replace(/"/g, "&quot;")
         .replace(/'/g, "&#39;");
 }
-function stripHtmlTags(text: string) {
+function stripHtmlTags(text: string): string {
     return text.replace(/<[^>]+>/g, "");
 }
-function decodeHtmlEntities(text: string) {
+function decodeHtmlEntities(text: string): string {
     return text
         .replace(/&nbsp;/g, " ")
         .replace(/&quot;/g, "\"")
@@ -157,53 +139,67 @@ function decodeHtmlEntities(text: string) {
         .replace(/&gt;/g, ">")
         .replace(/&amp;/g, "&");
 }
-function parseChatHeaderLine(line: string): {
-    role: "speaker" | "interviewee";
-    aliases: string[];
+// ---------------------------------------------------------------------------
+// Chat transcript parsing
+//
+// Format:
+//   Speaker: alias-alias2 - Display Name (avatar-url)
+//   Interviewee: alias - Display Name (avatar-url)
+//   ---
+//   alias: message text (action)
+// ---------------------------------------------------------------------------
+type ChatRole = "speaker" | "interviewee";
+type ChatParticipant = {
+    role: ChatRole;
     name: string;
     avatar: string;
-} | null {
-    const match = line.match(/^(Speaker|Interviewee):\s*([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*-\s*(.+?)\s*\((.+)\)\s*$/i);
-    if (!match) {
+};
+function parseChatHeaderLine(line: string): (ChatParticipant & {
+    aliases: string[];
+}) | null {
+    const match = line.match(/^(Speaker|Interviewee):\s*([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*-\s*(.+?)\s*\((.*?)\)\s*$/i);
+    if (!match)
         return null;
-    }
     return {
-        role: (match[1].toLowerCase() === "speaker" ? "speaker" : "interviewee") as "speaker" | "interviewee",
+        role: match[1].toLowerCase() === "speaker" ? "speaker" : "interviewee",
         aliases: match[2].split("-").map(alias => alias.trim()).filter(Boolean),
         name: match[3].trim(),
         avatar: match[4].trim()
     };
 }
-function parseChatMessageLine(line: string) {
-    const match = line.match(/^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*:\s*(.+)$/);
-    if (!match) {
+function parseChatBlock(blockHtml: string): {
+    aliases: string[];
+    messageHtml: string;
+} | null {
+    const innerHtml = blockHtml.replace(/^<p[^>]*>/i, "").replace(/<\/p>$/i, "");
+    const match = innerHtml.match(/^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*:\s*([\s\S]*)$/);
+    if (!match)
         return null;
-    }
     return {
         aliases: match[1].split("-").map(alias => alias.trim()).filter(Boolean),
         messageHtml: match[2].trim()
     };
 }
-function classifyChatAction(actionText: string) {
-    const normalized = actionText.toLowerCase();
-    if (/(laugh|giggle|smirk|chuckle)/.test(normalized)) {
-        return "laugh";
-    }
-    if (/(think|ponder|hmm|huh|wonder|consider)/.test(normalized)) {
-        return "thought";
-    }
-    if (/(smile|happy|grin|joy|excited|yay)/.test(normalized)) {
-        return "happy";
-    }
-    if (/(sad|sigh|cry|tears|upset|down)/.test(normalized)) {
-        return "sad";
-    }
-    if (/(angry|mad|annoyed|frustrated|grr|huff)/.test(normalized)) {
-        return "angry";
-    }
-    return "neutral";
+function splitChatBlocks(html: string): string[] {
+    const blockRegex = /<(?:p|h[1-6]|blockquote|ul|ol|div|figure|table)(?:\s[^>]*)?>[\s\S]*?<\/(?:p|h[1-6]|blockquote|ul|ol|div|figure|table)>|<hr[^>]*>|<img[^>]*>/gi;
+    return html.match(blockRegex) ?? [html];
 }
-function renderChatMessageHtml(messageHtml: string) {
+const CHAT_ACTION_PATTERNS: Array<[
+    RegExp,
+    string
+]> = [
+    [/(laugh|giggle|smirk|chuckle)/, "laugh"],
+    [/(think|ponder|hmm|huh|wonder|consider)/, "thought"],
+    [/(smile|happy|grin|joy|excited|yay)/, "happy"],
+    [/(sad|sigh|cry|tears|upset|down)/, "sad"],
+    [/(angry|mad|annoyed|frustrated|grr|huff)/, "angry"]
+];
+function classifyChatAction(actionText: string): string {
+    const normalized = actionText.toLowerCase();
+    const found = CHAT_ACTION_PATTERNS.find(([pattern]) => pattern.test(normalized));
+    return found ? found[1] : "neutral";
+}
+function renderChatMessageHtml(messageHtml: string): string {
     const parts: string[] = [];
     const actionRegex = /\(([^)]+)\)/g;
     let lastIndex = 0;
@@ -221,16 +217,31 @@ function renderChatMessageHtml(messageHtml: string) {
     }
     return parts.join("").replace(/\n/g, "<br />");
 }
+function getFallbackAvatarColor(name: string): string {
+    let hash = 0;
+    for (const character of name) {
+        hash = character.charCodeAt(0) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash) % 360;
+    return `hsl(${hue} 65% 45%)`;
+}
 function renderChatBubble({ role, name, avatar, message }: {
-    role: "speaker" | "interviewee";
+    role: ChatRole;
     name: string;
     avatar: string;
     message: string;
-}) {
+}): string {
     const isSpeaker = role === "speaker";
+    const initials = name
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(part => part[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase() || name.slice(0, 1).toUpperCase();
     const avatarMarkup = avatar
         ? `<img class="chat-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />`
-        : `<div class="chat-avatar chat-avatar--fallback" aria-hidden="true">${escapeHtml(name.slice(0, 1).toUpperCase())}</div>`;
+        : `<div class="chat-avatar chat-avatar--fallback" aria-hidden="true" style="background:${getFallbackAvatarColor(name)}; color:white;">${escapeHtml(initials)}</div>`;
     return `<div class="chat-message ${isSpeaker ? "chat-message--speaker" : "chat-message--interviewee"}">
     ${isSpeaker ? "" : avatarMarkup}
     <div class="chat-bubble">
@@ -241,103 +252,73 @@ function renderChatBubble({ role, name, avatar, message }: {
   </div>`;
 }
 function parseChatTranscript(html: string): string {
-    type ChatParticipant = {
-        role: "speaker" | "interviewee";
-        name: string;
-        avatar: string;
-    };
-    const paragraphs = html.match(/<p>[\s\S]*?<\/p>/g) ?? [];
-    if (paragraphs.length === 0) {
+    const blocks = splitChatBlocks(html);
+    if (blocks.length === 0)
         return html;
-    }
-    const [firstParagraph, ...remainingParagraphs] = paragraphs;
-    if (!firstParagraph) {
+    const [firstBlock, ...remainingBlocks] = blocks;
+    if (!firstBlock)
         return html;
-    }
-    const firstParagraphText = decodeHtmlEntities(firstParagraph.replace(/^<p>|<\/p>$/g, "")).trim();
-    const firstParagraphLines = firstParagraphText
-        .split(/\r?\n/)
-        .map(line => line.trim())
-        .filter(Boolean);
-    if (!firstParagraphLines.includes("---")) {
+    const firstBlockText = decodeHtmlEntities(firstBlock.replace(/^<p>|<\/p>$/g, "")).trim();
+    const firstBlockLines = firstBlockText.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    if (!firstBlockLines.includes("---"))
         return html;
-    }
     const participants = new Map<string, ChatParticipant>();
-    const headerLines = firstParagraphLines.filter(line => line !== "---");
-    for (const text of headerLines) {
-        const participant = parseChatHeaderLine(text);
-        if (!participant) {
+    for (const line of firstBlockLines) {
+        if (line === "---")
             continue;
-        }
-        for (const alias of participant.aliases) {
-            participants.set(alias, {
-                role: participant.role,
-                name: participant.name,
-                avatar: participant.avatar
-            });
+        const parsed = parseChatHeaderLine(line);
+        if (!parsed)
+            continue;
+        for (const alias of parsed.aliases) {
+            participants.set(alias, { role: parsed.role, name: parsed.name, avatar: parsed.avatar });
         }
     }
-    if (participants.size === 0) {
+    if (participants.size === 0)
         return html;
-    }
-    const transformed: string[] = [];
-    let transcriptOpen = false;
-    for (const paragraph of remainingParagraphs) {
-        const paragraphText = decodeHtmlEntities(paragraph.replace(/^<p>|<\/p>$/g, "")).trim();
-        const chatMessage = parseChatMessageLine(paragraphText);
-        if (!chatMessage) {
-            if (transcriptOpen) {
-                transformed.push("</div>");
-                transcriptOpen = false;
-            }
-            transformed.push(paragraph);
+    const output: string[] = [];
+    for (const block of remainingBlocks) {
+        const messageBlock = parseChatBlock(block);
+        if (!messageBlock) {
+            output.push(block);
             continue;
         }
-        const participant = chatMessage.aliases
+        const participant = messageBlock.aliases
             .map(alias => participants.get(alias))
             .find((item): item is ChatParticipant => Boolean(item));
         if (!participant) {
-            if (transcriptOpen) {
-                transformed.push("</div>");
-                transcriptOpen = false;
-            }
-            transformed.push(paragraph);
+            output.push(block);
             continue;
         }
-        const role = chatMessage.aliases.some(alias => participants.get(alias)?.role === "speaker")
+        const role = messageBlock.aliases.some(alias => participants.get(alias)?.role === "speaker")
             ? "speaker"
             : participant.role;
-        if (!transcriptOpen) {
-            transformed.push("<div class=\"chat-transcript\">");
-            transcriptOpen = true;
-        }
-        transformed.push(renderChatBubble({
+        output.push(renderChatBubble({
             role,
             name: participant.name,
             avatar: participant.avatar,
-            message: chatMessage.messageHtml
+            message: messageBlock.messageHtml
         }));
     }
-    if (transcriptOpen) {
-        transformed.push("</div>");
-    }
-    return transformed.join("");
+    return output.join("");
 }
+// Assemble final body HTML
 const localizedContentArray = parseLocalizedContent(bodyHTML);
 const currentLanguage = i18next.language;
 const defaultLanguage = "en";
 const localizedContent = localizedContentArray.find(item => item.lang === currentLanguage);
 const defaultContent = localizedContentArray.find(item => item.lang === defaultLanguage);
 bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
-bodyHTML = parseFloatTags(bodyHTML); // Ensure parseFloatTags is called on the localized content
-bodyHTML = parseCenterTags(bodyHTML); // Ensure parseCenterTags is called on the localized content
+bodyHTML = parseFloatTags(bodyHTML);
+bodyHTML = parseCenterTags(bodyHTML);
 bodyHTML = parseChatTranscript(bodyHTML);
-let words: string[] = titleText.split(" ");
-let updatedTagline = words
+const updatedTagline = titleText
+    .split(" ")
     .map((word, index) => `<span style="--delay: ${index * 0.2}s;">${word}</span>`)
     .join(" ");
-const wordCount = bodyHTML.split(" ");
-const readingTime = Math.ceil(wordCount.length / 200);
+// Strip tags before counting words, or attribute strings (class names, style
+// rules, URLs) inflate the word count and skew the reading-time estimate.
+const wordCount = stripHtmlTags(bodyHTML).trim().split(/\s+/).filter(Boolean).length;
+const readingTime = Math.ceil(wordCount / 200);
 ---
 
 <Layout
@@ -875,11 +856,11 @@ const readingTime = Math.ceil(wordCount.length / 200);
     display: flex;
     align-items: flex-end;
     gap: 12px;
-    max-width: min(82%, 860px);
   }
 
   .chat-message--speaker {
     align-self: flex-end;
+    justify-content: flex-end;
   }
 
   .chat-message--interviewee {
@@ -909,6 +890,7 @@ const readingTime = Math.ceil(wordCount.length / 200);
 
   .chat-bubble {
     min-width: 0;
+    max-width: min(82%, 860px);
     padding: 14px 16px;
     border-radius: 20px 20px 20px 8px;
     background: var(--bg-color);
@@ -953,13 +935,46 @@ const readingTime = Math.ceil(wordCount.length / 200);
     word-break: break-word;
   }
 
+  .chat-text :is(p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol) {
+    margin: 0 0 0.75em;
+  }
+
+  .chat-text :is(h1, h2, h3, h4, h5, h6) {
+    font-family: Gilroy;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .chat-text h1 {
+    font-size: 1.45em;
+  }
+
+  .chat-text h2 {
+    font-size: 1.3em;
+  }
+
+  .chat-text h3,
+  .chat-text h4 {
+    font-size: 1.15em;
+  }
+
+  .chat-text a {
+    color: #7fd3ff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .chat-text a:hover {
+    color: #b2e6ff;
+  }
+
   .chat-message--speaker .chat-text {
     text-align: right;
   }
 
   .chat-message {
-    margin-top: 18px;
-    margin-bottom: 18px;
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 
   .chat-action {
