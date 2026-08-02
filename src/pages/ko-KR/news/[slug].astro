@@ -8,6 +8,7 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import News from "../../../components/News.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import { extractTranscriptParticipantsFromHtml } from "../../../lib/transcript";
 
 changeLanguage("ko-KR");
 
@@ -310,6 +311,7 @@ const defaultContent = localizedContentArray.find(item => item.lang === defaultL
 bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
 bodyHTML = parseFloatTags(bodyHTML);
 bodyHTML = parseCenterTags(bodyHTML);
+const transcriptParticipants = extractTranscriptParticipantsFromHtml(bodyHTML);
 bodyHTML = parseChatTranscript(bodyHTML);
 const updatedTagline = titleText
     .split(" ")
@@ -328,7 +330,7 @@ const readingTime = Math.ceil(wordCount / 200);
 />
 
 <Header isGuide="display:none;" section={unlist ? "Forming Links" : t("header.news")} title={titleText} />
-<div class="headtitle" style="background-color:var(--bg-color-secondary);">
+<div class="headtitle" style={`background-color:var(--bg-color-secondary); ${unlist ? "border-radius: 32px 32px 32px 10px;" : ""}`}>
   <div
     style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
     {
@@ -370,6 +372,32 @@ const readingTime = Math.ceil(wordCount / 200);
       <div
         style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
         <div class="mobileHeadAuth" style="display:flex; gap:4px;">
+           {unlist && transcriptParticipants.length > 0 && (
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;">
+            {transcriptParticipants.map((participant) => (
+              <div
+                style={`display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:${participant.role === "speaker" ? "999px 999px 999px 300px" : "999px 999px 300px 999px"}; background:${participant.role === "speaker" ? "var(--bg-color-primary)" : "var(--bg-color-tertiary)"}; border:1px solid rgba(255, 255, 255, 0.08); box-shadow:0 10px 20px rgba(0, 0, 0, 0.12);`}>
+                {participant.avatar ? (
+                  <img
+                    src={participant.avatar}
+                    alt={participant.name}
+                    style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.14); flex:0 0 44px;"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    style={`width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 44px; background:${participant.color}; color:white; font-family:Gilroy; font-size:16px; border:2px solid rgba(255,255,255,0.14);`}>
+                    {participant.initials}
+                  </div>
+                )}
+                <div style="display:flex; flex-direction:column; line-height:1.1;">
+                  <span style="font-family:Gilroy; font-size:16px; color:var(--color);">{participant.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        { !unlist && (
           <r
             style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;`}
             datetime={articleDate.toISOString()}>
@@ -389,14 +417,12 @@ const readingTime = Math.ceil(wordCount / 200);
             style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
             >{(author as any).fields.role}</r
           >
+                  )}
         </div>
         <div style="display:flex; flex-direction:row; align-items:center;">
           <r
             style={`font-family:system-ui; color:${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; position:relative;`}
-          ><span class="clock"></span> {readingTime} min read</r> { unlist && <r
-            style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; margin-left:18px; padding:8px 20px; border-radius:8px; font-family:system-ui; display:flex; align-items:center; gap: 6px; position:relative;`}
-          ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg> Unlisted</r> }
-
+          ><span class="clock"></span> {readingTime} min read</r>
         </div>
       </div>
     </div>
@@ -415,7 +441,7 @@ const readingTime = Math.ceil(wordCount / 200);
   </span>
 </div>
 }
-<div class="article-holder">
+<div class="article-holder" style=`${unlist ? "border-radius: 32px !important;" : ""}`}>
   <div class="postexpand" set:html={bodyHTML} />
 
   <div class="auths">
@@ -676,7 +702,7 @@ const readingTime = Math.ceil(wordCount / 200);
     position: absolute;
   }
 
-  img {
+  .mainimg2 {
     width: 100%;
     height: auto;
     top: 0;
