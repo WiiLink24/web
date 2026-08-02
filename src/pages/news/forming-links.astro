@@ -4,20 +4,34 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import HeadText from "../../components/HeadText.astro";
 import FormattedDate from "../../components/FormattedDate.astro";
-import { localizePath } from "astro-i18next";
 import { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
 import { contentfulClient } from "../../lib/contentful";
 import type { news } from "../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { extractTranscriptParticipantsFromHtml, type TranscriptParticipant } from "../../lib/transcript";
 
 changeLanguage("en");
 
+type FormingLinksPost = {
+    title: string;
+    slug: string;
+    date: string;
+    image: any;
+    unlist: boolean;
+    description: string;
+    content: any;
+    author: any;
+    authorPfpUrl?: string;
+    transcriptParticipants: TranscriptParticipant[];
+};
 const entries = await contentfulClient.getEntries<news>({
     content_type: "newsPost"
 });
-let postsContentful = entries.items.map(item => {
+let postsContentful: FormingLinksPost[] = entries.items.map(item => {
     const { title, slug, date, image, unlist, description, content, author } = item.fields;
+    const transcriptParticipants = extractTranscriptParticipantsFromHtml(documentToHtmlString(content as any));
+    const authorPfpUrl = (author as any)?.fields?.pfp?.fields?.file?.url;
     return {
         title,
         slug,
@@ -26,7 +40,9 @@ let postsContentful = entries.items.map(item => {
         unlist,
         description,
         content,
-        author
+        author,
+        authorPfpUrl,
+        transcriptParticipants
     };
 });
 postsContentful.sort((a, b) => {
@@ -40,8 +56,8 @@ const sliceDescription = (description: string) => {
 ---
 
 <Layout
-  title={t("news.mainTitle")}
-  description={t("news.mainDesc")}
+  title="News"
+  description="Latest news from WiiLink."
   image="/img/News_embed.webp"
 />
 <Header isGuide="display:none;" section="Forming Links" />
@@ -60,26 +76,53 @@ const sliceDescription = (description: string) => {
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
-          style="background-color: var(--bg-opaque-1); border-radius:8px; padding: 28px; cursor:pointer; transition: 0.2s;">
+          style={`background-color: var(--bg-opaque-1); border-radius: ${post.transcriptParticipants.length > 0 ? "28px 28px 28px 10px" : "8px"}; padding: 28px; cursor:pointer; transition: 0.2s; position:relative; overflow:visible;`}>
           <a
-            href={localizePath(`/news/${post.slug}/`)}
+            href={`/news/${post.slug}/`}
             aria-label={post.title + " Link"}
-            style="text-decoration:none; color:var(--text-color);">
-            <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom: 8px;">
-              {post?.author?.fields?.pfp?.fields?.file?.url && (
+            style="text-decoration:none; color:var(--text-color); display:block; position:relative; z-index:1;">
+            {post.transcriptParticipants.length == 0 && (
+                          <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom: 8px;">
+              {post.authorPfpUrl && (
                 <img
                   alt="News Author PFP"
                   class="authimage"
-                  src={post.author.fields.pfp.fields.file.url}
+                  src={post.authorPfpUrl}
                 />
               )}
               <div style="background: var(--border-color); border-radius:8px; padding:6px 12px; font-size:14px; display:flex; align-items:center; justify-content:center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                <FormattedDate date={new Date(post.date)} />
+                <FormattedDate pre="" date={new Date(post.date)} />
               </div>
             </div>
+            )}
             <b style="width:100%; font-size:28px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left; position:relative;">
               {post.title}
             </b>
+            {post.transcriptParticipants.length > 0 && (
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; margin-bottom: 12px;">
+                {post.transcriptParticipants.map(participant => (
+                  <div
+                    style={`display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:${participant.role === "speaker" ? "999px 999px 999px 300px" : "999px 999px 300px 999px"}; background:${participant.role === "speaker" ? "var(--bg-color-secondary)" : "var(--bg-color-tertiary)"}; border:1px solid rgba(255,255,255,0.08);`}>
+                    {participant.avatar ? (
+                      <img
+                        src={participant.avatar}
+                        alt={participant.name}
+                        style="width:32px; height:32px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.14); flex:0 0 32px;"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        style={`width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 32px; background:${participant.color}; color:white; font-family:Gilroy; font-size:12px; border:2px solid rgba(255,255,255,0.14);`}>
+                        {participant.initials}
+                      </div>
+                    )}
+                    <span style="display:flex; flex-direction:column; line-height:1.05;">
+                      <b style="font-size:14px;">{participant.name}</b>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
             <div
               class="descanim"
               style="margin-top: 8px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
@@ -92,12 +135,7 @@ const sliceDescription = (description: string) => {
   </div>
   <h3
     style="margin-top:200px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
-    <Trans i18nKey="news.rssTitle">
-      <b
-        >Want to get <c class="color">WiiLink news</c> on your site o service? Just
-        use our <c class="color">RSS feed</c>!</b
-      >
-    </Trans>
+    <b>Want to get <span class="color">WiiLink news</span> on your site or service? Just use our <span class="color">RSS feed</span>!</b>
   </h3>
   <a href="/rss.xml"
     ><buton
