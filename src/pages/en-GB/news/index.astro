@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
 import FormattedDate from "../../../components/FormattedDate.astro";
 import { localizePath } from "astro-i18next";
+import "../../../styles/shared.css";
 import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
@@ -259,12 +260,12 @@ const sliceDescription = (description: string) => {
 <style>
   .hold {
     left: 50%;
+    width: 95%;
     transform: translate(-50%, 0);
     width: calc(100% - 20px);
     max-width: 1500px;
     position: relative;
   }
-
   .herodatahold {
     display: flex;
     flex-direction: row;
@@ -292,13 +293,6 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  .posthold {
-    transform: translate(0, 0px);
-    opacity: 0;
-    transition: 0.5s;
-    position: relative;
-  }
-
   .post:nth-child(1) {
     animation: fadeup 200ms 0.3s forwards;
   }
@@ -320,12 +314,6 @@ const sliceDescription = (description: string) => {
     border-radius: 8px 8px 16px 8px;
   }
 
-  .posthold:hover {
-    transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 20px #37373756);
-    transition: 0.2s;
-  }
-
   .fadebefore::before {
     bottom: 0;
     left: 0;
@@ -345,10 +333,6 @@ const sliceDescription = (description: string) => {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-  }
-
-  .mainpost:nth-child(1) {
-    opacity: 1;
   }
 
   .postholder {
@@ -391,11 +375,6 @@ const sliceDescription = (description: string) => {
 
   .post:hover {
     transform: scale(1.02) !important;
-    transition: 0.2s;
-  }
-
-  .post:active {
-    transform: scale(0.98) !important;
     transition: 0.2s;
   }
 
@@ -483,15 +462,6 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  @keyframes rotate {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
-  }
-
   @keyframes fadeup {
     0% {
       opacity: 0;
@@ -560,10 +530,6 @@ const sliceDescription = (description: string) => {
       gap: 20px;
     }
 
-    .mobilehide {
-      display: none;
-    }
-
     .postholdermini {
       top: 0px;
       width: 100%;
@@ -601,10 +567,6 @@ const sliceDescription = (description: string) => {
       font-size: 16px !important;
     }
 
-    .heroimg {
-      height: 100%;
-    }
-
     .post:hover {
       transform: translate(0, 0px) scale(102%);
       box-shadow: 0px 0px 0px rgb(187, 187, 187);
@@ -612,13 +574,4 @@ const sliceDescription = (description: string) => {
     }
   }
 
-  @media only screen and (min-width: 2000px) {
-    .hold {
-      left: 50%;
-      transform: translate(-50%, 150px);
-      width: 2000px;
-      margin-bottom: 80px;
-      position: relative;
-    }
-  }
 </style>

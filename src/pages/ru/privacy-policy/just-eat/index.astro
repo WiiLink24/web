@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 import Layout from "../../../../layouts/Layout.astro";
+import "../../../../styles/legal.css";
 
 changeLanguage("ru");
 ---
@@ -13,12 +14,12 @@ changeLanguage("ru");
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" />
   
-  <div class="privacy-container">
+  <div class="privacy-container legal">
     <div class="privacy-content">
               <span style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 1rem;">
       <img src="/img/demaebanner.webp" alt="JustEat Banner" style="height:80px; margin-bottom:28px;"/>
       <h1>Privacy Policy for Food Channel Just Eat</h1>
-        <p style="text-align: center; font-size: 0.9rem; color: var(--color);">
+        <p class="update">
             Last updated: April 11, 2026
         </p>
         </span>
@@ -91,193 +92,8 @@ changeLanguage("ru");
           <p>For any questions or requests about privacy, data access or deletion, please join our official Discord server and post in the "support" channel, or send an email to our support team. Our support staff will assist you. Please do not share sensitive data in Discord chat; use private messages or email if needed.</p>
         </div>
       </section>
-
-      <section class="summary-section">
-        <h2>Summary of Privacy Points</h2>
-        <ul class="summary-list">
-          <li>We collect location, order details, name, and email to fulfill orders.</li>
-          <li>All temporary data (location, order) is deleted once an order is paid.</li>
-          <li>We retain only your name and email (to identify your account) until you delete your account.</li>
-          <li>We do not share your personal data with advertisers or unrelated third parties.</li>
-          <li>You can request data deletion or help via our Discord support (as outlined in the WiiLink guidelines).</li>
-          <li>The service is governed by Canadian law, and we comply with its privacy requirements.</li>
-        </ul>
-        <p class="consent-text">By using Food Channel and providing your information, you consent to the data practices described above. We are committed to safeguarding your privacy while making the food-ordering process as convenient as possible.</p>
-      </section>
     </div>
   </div>
 
   <Footer />
 </Layout>
-
-<style>
-  .privacy-container {
-    min-height: 100vh;
-    padding: 80px 20px 40px;
-    background: var(--bg-color);
-    color: var(--color);
-  }
-
-  .privacy-content {
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: 'Rubik', sans-serif;
-    line-height: 1.6;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: 'Gilroy', sans-serif;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent-color, #289bff);
-    margin: 2.5rem 0 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
-    font-family: 'Gilroy', sans-serif;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color);
-    margin: 1.5rem 0 1rem;
-    font-family: 'Gilroy', sans-serif;
-  }
-
-  .privacy-section {
-    margin-bottom: 3rem;
-  }
-
-  .subsection p:last-child {
-    margin-bottom: 0;
-  }
-
-  .data-list {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-  }
-
-  .data-list li {
-    padding: 0.5rem 0;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .data-list li::before {
-    content: "•";
-    color: #4ade80;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-
-  .data-list strong {
-    color: var(--accent-color, #289bff);
-    font-weight: 600;
-  }
-
-  .summary-section {
-    background: var(--bg-color-secondary);
-    padding: 2rem;
-    padding-top: 0rem;
-    border-radius: 16px;
-    border: 2px solid var(--border-color);
-    margin-top: 3rem;
-  }
-
-  .summary-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .summary-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1rem;
-    padding-left: 1.5rem;
-    position: relative;
-  }
-
-  .summary-list li::before {
-    content: "✓";
-    color: #4ade80;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-  }
-
-  .summary-list li:last-child {
-    border-bottom: none;
-  }
-
-  .consent-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: center;
-    color: #4ade80;
-    margin-top: 2rem;
-    padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 8px;
-    border: 2px solid #4ade80;
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .privacy-container {
-      padding: 60px 15px 30px;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .subsection {
-      padding: 1rem;
-    }
-
-    .summary-section {
-      padding: 1.5rem;
-    }
-
-    .subsection p {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.75rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    .subsection {
-      padding: 0.75rem;
-    }
-
-    .summary-section {
-      padding: 1rem;
-    }
-  }
-</style>

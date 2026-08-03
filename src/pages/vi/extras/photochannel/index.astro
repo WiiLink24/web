@@ -4,6 +4,7 @@ import Layout from "../../../../layouts/Layout.astro";
 import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 import { Icon } from "astro-icon/components";
+import "../../../../styles/shared.css";
 
 changeLanguage("vi");
 ---
@@ -34,50 +35,6 @@ changeLanguage("vi");
     opacity:0.6;
   }
 
-  .notice {
-    width: 98%;
-    max-width: 1300px;
-    margin-bottom: 30px;
-    padding: 10px;
-    border-radius: 8px;
-    text-align: center;
-    background-color: rgb(203, 60, 60);
-    box-shadow: 0px 0px 10px rgba(240, 80, 80, 0.1);
-  }
-
-  .container {
-    max-width: 1300px;
-    padding: 20px;
-    text-align: center;
-  }
-
-  .header {
-    margin: 20px 0;
-  }
-
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: ;
-  }
-
-  .card {
-    background-color: var(--bg-color-secondary);
-    color: var(--color);
-    border-radius: 16px;
-    border: 2px solid var(--border-color);
-    overflow: hidden;
-    width: calc(33.333% - 20px);
-    box-shadow: 0 2px 5px var(--shadow-color);
-    transition: 0.3s;
-  }
-
-  .card:hover {
-    transform: scale(1.02);
-    transition: 0.3s;
-  }
-
   .card img {
     border-radius:8px;
     margin-top:13px;
@@ -88,54 +45,6 @@ changeLanguage("vi");
   .card-title {
     text-align:left;
     font-weight: bold;
-  }
-
-  .card-content {
-    padding: 10px;
-  }
-
-  .card-action {
-    margin-bottom:13px;
-    cursor: pointer;
-    border-radius:8px;
-    position: relative;
-    padding: 10px;
-    background: var(--bg-color-tertiary);
-    transition: 0.3s;
-  }
-
-  .card-action:hover {
-    background-color: green;
-    color:white !important;
-    transform: scale(1.02);
-    transition: 0.3s;
-  }
-
-  .card-action:hover a {
-    color:white !important;
-    transition: 0.3s;
-  }
-
-  .card-action::before {
-    content: "\f019";
-    font-family: "FontAwesome"; /* Adjust based on the version of FontAwesome you're using */
-    font-weight: 900; /* Necessary for solid icons */
-    position: absolute;
-    left: 10px; /* Adjust as needed */
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  @media (max-width: 768px) {
-    .card {
-      width: calc(50% - 20px);
-    }
-  }
-
-  @media (max-width: 480px) {
-    .card {
-      width: 100%;
-    }
   }
 
   .btn {
