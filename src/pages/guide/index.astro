@@ -5,6 +5,7 @@ import Footer from "../../components/Footer.astro";
 import HeadText from "../../components/HeadText.astro";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
+import "../../styles/shared.css";
 import { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
@@ -154,7 +155,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     max-width: 1500px;
     position: relative;
   }
-
   .btn-wrapper {
     top: 20px;
     left: 50%;
@@ -174,15 +174,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     left: 50%;
     transform: translate(-50%, 0);
     position: relative;
-  }
-
-  .newstop {
-    left: -30px;
-    top: 70px;
-    transform: translate(0, -50%);
-    height: 200px;
-    filter: opacity(0.1) invert(0);
-    position: absolute;
   }
 
   .posthold {
@@ -370,26 +361,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     }
   }
 
-  .rss {
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    background-color: rgb(98, 141, 98);
-    border-radius: 8px;
-    color: white;
-    font-family: Gilroy;
-    position: absolute;
-    transition: 0.5s;
-  }
-
-  .rss:hover {
-    transform: translate(-50%, -2px);
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.22);
-    transition: 0.5s;
-  }
-
   @media only screen and (max-width: 1000px) {
     .postholder {
       width: 95%;
@@ -449,10 +420,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       font-size: 27px;
     }
 
-    .mobilehide {
-      display: none;
-    }
-
     .postholdermini {
       padding: 0px;
       top: 0px;
@@ -462,35 +429,10 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
       z-index: 10;
     }
 
-    .dateRemove {
-      display: none;
-    }
-
-    .newstop {
-      display: none;
-    }
-
     .posthold:hover {
       transform: translate(0, 0px) scale(102%);
       transition: 0.5s;
     }
   }
 
-  @media only screen and (min-width: 2000px) {
-    .hold {
-      left: 50%;
-      transform: translate(-50%, 150px);
-      width: 2000px;
-      margin-bottom: 80px;
-      position: relative;
-    }
-    .newstop {
-      left: 60px;
-      top: 80px;
-      transform: translate(0, -50%);
-      height: 200px;
-      filter: opacity(0.1) invert(0);
-      position: absolute;
-    }
-  }
 </style>

@@ -2,6 +2,7 @@
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
+import "../../../styles/legal.css";
 import { t, changeLanguage } from "i18next";
 
 changeLanguage("frp");
@@ -13,29 +14,20 @@ changeLanguage("frp");
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" section={t("header.tos")} />
 
-  <div class="sectiontop">
-    <section class="section" style="top:200px !important; position:relative;">
-      <h1 style="font-family: Gilroy; margin-bottom: 18px;">The Terms</h1>
-      <h4
-        class="update"
-        style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;"
-        class="updated">
+  <div class="legal">
+    <section class="section">
+      <h1>The Terms</h1>
+      <h4 class="update">
         Last updated: 08/03/2023
       </h4>
-      <div class="polka-dot"></div>
-      <p
-        class="title"
-        style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
+      <p class="title">
         Terms of usage for the WiiLink family of services
       </p>
       <p>
         This agreement is for usage of WiiLink, a replacement WiiConnect24
         service, as well as services we provide via our DNS
       </p>
-      <div
-        class="alert alert-warning"
-        style="color:black !important; font-family:inter;"
-        role="alert">
+      <div class="alert alert-warning" role="alert">
         By using this service you automatically agree to these terms and
         conditions.
       </div>
@@ -331,87 +323,6 @@ changeLanguage("frp");
                     </p>
                   </p>
                 </li>
-
-                <style>
-                  .section {
-                    max-width: 1500px;
-                    padding-left: 5px;
-                    padding-right: 5px;
-                    left: 50%;
-                    transform: translate(-50%, 50px);
-                    margin-bottom: 80px;
-                    position: relative;
-                    font-family: inter;
-                  }
-                  .title {
-                    font-family: Gilroy;
-                    font-size: 30px;
-                  }
-                  h4 {
-                    font-family: Gilroy;
-                  }
-                  p,
-                  u,
-                  b {
-                    font-family: inter;
-                  }
-                  .polka-dot {
-                    width: 240px;
-                    height: 240px;
-                    background-image: radial-gradient(#000 10%, transparent 11%),
-                      radial-gradient(#000 10%, transparent 11%);
-                    background-size: 30px 30px;
-                    background-position:
-                      0 0,
-                      30px 30px;
-                    opacity: 0.1;
-                    rotate: 30deg;
-                    left: -50px;
-                    top: -38px;
-                    background-repeat: repeat;
-                    animation: rotate 240s linear infinite;
-                    position: absolute;
-                    z-index: 0;
-                  }
-
-                  @keyframes rotate {
-                    0% {
-                      rotate: 0deg;
-                    }
-                    100% {
-                      rotate: 360deg;
-                    }
-                  }
-
-                  .notification {
-                    background-color: #292929;
-                    padding: 20px;
-                    border-radius: 8px;
-                    border: 2px solid #ffffff20;
-                    text-align: center;
-                  }
-
-                  .is-danger {
-                    background-color: #db0f0f20;
-                    border: 4px solid #db0f0f80;
-                  }
-
-                  .is-warning {
-                    background-color: #c9b81620;
-                    border: 4px solid #c9b81680;
-                  }
-
-                  strong {
-                    font-family: Gilroy;
-                    font-size: 20px;
-                  }
-
-                  @media (max-width: 1000px) {
-                    .update {
-                      display: none;
-                    }
-                  }
-                </style>
               </li>
             </li>
           </ul>

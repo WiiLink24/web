@@ -297,32 +297,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 </script>
 
 <style>
-  .flexhead {
-    left: 50%;
-    top: 130px;
-    width: 90%;
-    transform: translate(-50%, 0);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    z-index: 100;
-    position: absolute;
-  }
-
-  .mainimgsmall {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
-    height: 180px;
-    width: auto;
-    transform: translate(0, 10px);
-    z-index: 10;
-    position: relative;
-  }
-
   h2 {
     font-size: calc(1.3rem + 0.6vw);
   }
@@ -446,12 +420,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     border-radius: 16px !important;
     transition: 0.2s;
   }
-
-  .downmargin {
-    width: 100%;
-    height: 500px;
-    position: relative;
-  }
   .subtitle {
     left: 80px;
     font-family: Gilroy;
@@ -459,23 +427,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     padding-bottom: 20px;
     position: relative;
     width: 50%;
-  }
-  .slogan {
-    left: 80px;
-    font-family:
-      inter,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    width: 500px;
-    position: relative;
   }
   .color {
     background: url("/img/header_bg.webp");
@@ -571,17 +522,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     color: black;
   }
 
-  .heroImage {
-    width: 100%;
-    height: 100%;
-    scale: 120%;
-    filter: blur(4px) brightness(0.7) grayscale(0.7);
-    opacity: 0;
-    object-fit: cover;
-    z-index: 10;
-    transition: 0.3s;
-  }
-
   .post:hover .heroImage {
     filter: blur(4px) brightness(0.5) grayscale(0);
     scale: 110%;
@@ -602,22 +542,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     transition: 0.5s;
   }
 
-  .title-small {
-    width: 90%;
-    height: auto;
-    z-index: 11;
-    font-size: max(20px, 30px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    color: #181818;
-    line-height: 30px;
-    font-family: Gilroy;
-    transition: 0.5s;
-    position: absolute;
-  }
-
   .desc {
     font-family: inter;
     font-size: 20px;
@@ -630,34 +554,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
-  }
-
-  .polka-dot {
-    width: 240px;
-    height: 240px;
-    background-image: radial-gradient(#484848 10%, transparent 11%),
-      radial-gradient(#484848 10%, transparent 11%);
-    background-size: 30px 30px;
-    background-position:
-      0 0,
-      30px 30px;
-    opacity: 0.3;
-    rotate: 30deg;
-    left: 20px;
-    top: 50px;
-    background-repeat: repeat;
-    animation: rotate 240s linear infinite;
-    position: absolute;
-    z-index: 0;
-  }
-
-  @keyframes rotate {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
   }
 
   a {

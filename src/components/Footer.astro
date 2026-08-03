@@ -352,7 +352,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
       </h4>
     </div>
 
-    <div class="footer-holder legal" style={display}>
+    <div class="footer-holder legalLinks" style={display}>
       <a href={localizePath("/tos")} aria-label="Terms of Service Link">
         <Icon
           name="lucide:arrow-right"
@@ -488,7 +488,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     padding: 30px;
     margin: auto;
   }
-  .legal {
+  .legalLinks {
     margin-top: 30px;
     opacity: 0.3;
     display: flex;
@@ -496,7 +496,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     align-items: start;
     transition: 0.5s;
   }
-  .legal:hover {
+  .legalLinks:hover {
     opacity: 1;
     transition: 0.5s;
   }
@@ -508,7 +508,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     .tables-holder {
       width: 100% !important;
     }
-    .legal {
+    .legalLinks {
       flex-direction: column;
       gap: 10px;
     }

@@ -3,6 +3,7 @@ import { changeLanguage } from "i18next";
 import Header from "../../../../components/Header.astro";
 import Footer from "../../../../components/Footer.astro";
 import Layout from "../../../../layouts/Layout.astro";
+import "../../../../styles/legal.css";
 
 changeLanguage("fi");
 ---
@@ -13,12 +14,12 @@ changeLanguage("fi");
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" />
 
-  <div class="tos-container">
+  <div class="tos-container legal">
     <div class="tos-content">
         <span style="display:flex; flex-direction:column; justify-content:center; align-items:center; margin-bottom: 1rem;">
       <img src="/img/demaebanner.webp" alt="JustEat Banner" style="height:80px; margin-bottom:28px;"/>
       <h1>Terms of Service for Food Channel Just Eat</h1>
-        <p style="text-align: center; font-size: 0.9rem; color: var(--color);">
+        <p class="update">
             Last updated: April 11, 2026
         </p>
         </span>
@@ -192,189 +193,8 @@ changeLanguage("fi");
           </p>
         </div>
       </section>
-
-      <section class="summary-section">
-        <h2>Summary of Key Points</h2>
-        <ul class="summary-list">
-          <li>
-            <strong>Unofficial Use:</strong> This service is unofficial. Use at your
-            own risk.
-          </li>
-          <li>
-            <strong>Accuracy:</strong> You must enter your delivery location and
-            order details correctly.
-          </li>
-          <li>
-            <strong>Responsibility:</strong> You are responsible for your account
-            security and any consequences of incorrect information.
-          </li>
-          <li>
-            <strong>No Guarantees:</strong> We do not guarantee food will arrive
-            or be correct. We disclaim liability for order issues and any console/network
-            damages.
-          </li>
-          <li>
-            <strong>Age:</strong> Must be 16+, and parental consent is required if
-            you are under 18.
-          </li>
-          <li>
-            <strong>Updates:</strong> We may change or end the service at any time.
-            Notice will be given on Discord or the channel itself.
-          </li>
-          <li>
-            <strong>Third-Party:</strong> We are not responsible for actions by Nintendo,
-            Just Eat, or any third parties.
-          </li>
-        </ul>
-        <p class="agreement-text">
-          By using Food Channel and making orders, you acknowledge that you have
-          read and agree to these Terms of Service.
-        </p>
-      </section>
     </div>
   </div>
 
   <Footer />
 </Layout>
-
-<style>
-  .tos-container {
-    min-height: 100vh;
-    padding: 80px 20px 40px;
-    background: var(--bg-color);
-    color: var(--color);
-  }
-
-  .tos-content {
-    max-width: 900px;
-    margin: 0 auto;
-    font-family: "Rubik", sans-serif;
-    line-height: 1.6;
-  }
-
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--color);
-    margin-bottom: 2rem;
-    text-align: center;
-    font-family: "Gilroy", sans-serif;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--accent-color, #289bff);
-    margin: 2.5rem 0 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--border-color);
-    font-family: "Gilroy", sans-serif;
-  }
-
-  h3 {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--color);
-    margin: 2rem 0 1rem;
-    font-family: "Gilroy", sans-serif;
-  }
-
-  .tos-section {
-    margin-bottom: 3rem;
-  }
-
-  .subsection p:last-child {
-    margin-bottom: 0;
-  }
-
-  .summary-section {
-    background: var(--bg-color-secondary);
-    padding: 2rem;
-    padding-top: 0rem;
-    border-radius: 16px;
-    border: 2px solid var(--border-color);
-    margin-top: 3rem;
-  }
-
-  .summary-list {
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .summary-list li {
-    padding: 0.75rem 0;
-    border-bottom: 1px solid var(--border-color);
-    font-size: 1rem;
-  }
-
-  .summary-list li:last-child {
-    border-bottom: none;
-  }
-
-  .summary-list strong {
-    color: var(--accent-color, #289bff);
-    font-weight: 600;
-  }
-
-  .agreement-text {
-    font-size: 1.1rem;
-    font-weight: 600;
-    text-align: center;
-    color: var(--accent-color, #289bff);
-    margin-top: 2rem;
-    padding: 1rem;
-    background: var(--bg-color);
-    border-radius: 8px;
-    border: 2px solid var(--accent-color, #289bff);
-  }
-
-  /* Mobile responsiveness */
-  @media (max-width: 768px) {
-    .tos-container {
-      padding: 60px 15px 30px;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    h2 {
-      font-size: 1.6rem;
-    }
-
-    h3 {
-      font-size: 1.2rem;
-    }
-
-    .subsection {
-      padding: 1rem;
-    }
-
-    .summary-section {
-      padding: 1.5rem;
-    }
-
-    .subsection p {
-      text-align: left;
-    }
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.75rem;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-    }
-
-    .subsection {
-      padding: 0.75rem;
-    }
-
-    .summary-section {
-      padding: 1rem;
-    }
-  }
-</style>

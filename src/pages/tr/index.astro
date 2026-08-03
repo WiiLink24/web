@@ -9,6 +9,7 @@ import Socials from "../../components/Socials.astro";
 import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import JumpIn from "../../components/JumpIn.astro";
+import "../../styles/shared.css";
 import { t, changeLanguage } from "i18next";
 
 changeLanguage("tr");
@@ -179,15 +180,6 @@ changeLanguage("tr");
 </script>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
   a {
     text-decoration: none;
   }
@@ -213,19 +205,6 @@ changeLanguage("tr");
     min-height: 800px;
     position: relative;
   }
-  .symbolholder {
-    background-color: var(--bg-color-absolute);
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-    position: fixed;
-  }
   #square2 {
     width: calc(100% - 30px);
     height: calc(100% - 30px);
@@ -247,9 +226,6 @@ changeLanguage("tr");
   #pathcorner {
     fill: #0d6efd;
   }
-  .bottomleftcorner {
-    animation: changecolor 10s linear infinite;
-  }
   .bottomleftcornerholder {
     width: 400px;
     height: 400px;
@@ -259,15 +235,6 @@ changeLanguage("tr");
     transform: translate(-100%, 100%);
     pointer-events: none;
     z-index: 2;
-    position: absolute;
-  }
-  .backsymbol {
-    width: calc(100% - 28px);
-    height: calc(100% - 28px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
     position: absolute;
   }
   .mainFooter {
@@ -283,14 +250,6 @@ changeLanguage("tr");
     position: absolute;
   }
 
-  @keyframes changecolor {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    100% {
-      filter: hue-rotate(360deg);
-    }
-  }
   @keyframes fadeout2 {
     0% {
       opacity: 1;
@@ -370,9 +329,6 @@ changeLanguage("tr");
     .square {
       animation: none !important;
       border-radius: 0px;
-    }
-    .mobilehide {
-      display: none;
     }
   }
 
