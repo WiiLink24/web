@@ -14,8 +14,15 @@ let currentPath = url.pathname;
 
 let posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
-posts = posts.slice(3);
-posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
+const mainSlugs = ["install", "problemsolving", "faq"];
+posts = posts
+  .filter(post => !mainSlugs.includes(post.slug))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .sort((a, b) => {
+    if (`/guide/${a.slug}/` === currentPath) return -1;
+    if (`/guide/${b.slug}/` === currentPath) return 1;
+    return 0;
+  });
 let { title, description, icon, pubDate, heroImage, body } = Astro.props;
 
 pubDate = new Date(pubDate).toLocaleDateString('en-US', {
@@ -77,7 +84,7 @@ const headings = extractHeadings(body);
   title={`WiiLink - ${t("guidePost.name")} (${title})`}
   description={`${title} - ${description}`}
   image="/img/Guide_embed.webp">
-  <Header section={t("header.guide")} title={title} isGuideOpacity />
+  <Header section={t("header.guide")} title={title} isGuideOpacity guidePopoverTransitions={false} />
   <div class="flex">
     <div class={`guidehold ${heroImage ? 'text-white' : ''}`}>
       <div
@@ -85,7 +92,9 @@ const headings = extractHeadings(body);
         style="overflow-y:visible; position:relative;">
         <div>
           <div class="sidebarcontent">
-            <div class="post" style="border-radius: 16px 16px 8px 8px;">
+            <div
+              class="post"
+              style="border-radius: 16px 16px 8px 8px; view-transition-name: guide-post-install;">
               <a href={localizePath(`/guide/install/`)}>
                 <img class="mainimg" src="/img/guidebg-1.webp" />
                 <div
@@ -99,7 +108,9 @@ const headings = extractHeadings(body);
                 </div>
               </a>
             </div>
-            <div class="post" style="border-radius: 8px;">
+            <div
+              class="post"
+              style="border-radius: 8px; view-transition-name: guide-post-problemsolving;">
               <a href={localizePath(`/guide/problemsolving/`)}>
                 <img class="mainimg" src="/img/guidebg-3.webp" />
                 <div
@@ -113,7 +124,9 @@ const headings = extractHeadings(body);
                 </div>
               </a>
             </div>
-            <div class="post" style="border-radius: 8px 8px 16px 16px;">
+            <div
+              class="post"
+              style="border-radius: 8px 8px 16px 16px; view-transition-name: guide-post-faq;">
               <a href={localizePath(`/guide/faq/`)}>
                 <img class="mainimg" src="/img/guidebg-2.webp" />
                 <div
@@ -136,7 +149,8 @@ const headings = extractHeadings(body);
                     <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
                   )}
                   <div
-                    class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
+                    class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}
+                    style={`view-transition-name: guide-sidebar-${post.slug};`}>
                     <a href={localizePath(`/guide/${post.slug}/`)}>
                       <div class="title2">
                         <Icon
