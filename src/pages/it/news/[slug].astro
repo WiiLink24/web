@@ -46,6 +46,7 @@ const props = Astro.props as unknown as NewsPostPageProps;
 const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = props;
 const titleText = String(title);
 const articleDate = new Date(String(date));
+const vtName = `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 // Contentful rich-text -> HTML rendering (embedded assets)
 const UNSUPPORTED_ASSET_HTML = `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
 function renderFileLink(url: string, title: string): string {
@@ -329,8 +330,10 @@ const readingTime = Math.ceil(wordCount / 200);
   image={`/img/news-og-img/${slug}.png`}
 />
 
-<Header isGuide="display:none;" section={unlist ? "Forming Links" : t("header.news")} title={titleText} />
-<div class="headtitle" style={`background-color:var(--bg-color-secondary); ${unlist ? "border-radius: 32px 32px 32px 10px;" : ""}`}>
+<Header isGuide="display:none;" section={unlist ? "Forming Links" : t("header.news")} title={titleText} newsPopoverTransitions={false} />
+<div
+  class="headtitle"
+  style={`background-color:var(--bg-color-secondary); ${unlist ? "border-radius: 32px 32px 32px 10px;" : ""} view-transition-name: ${vtName};`}>
   <div
     style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
     {

@@ -44,7 +44,9 @@ const bannerIncidents = await getBannerIncidents(
   localizePath("/services.json")
 );
 
-const { isGuideOpacity = false, isMain, section, title } = Astro.props;
+const { isGuideOpacity = false, isMain, section, title, newsPopoverTransitions = true, guidePopoverTransitions = true } = Astro.props;
+const vtName = (slug: string) =>
+  `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 ---
 
 <script is:inline>
@@ -108,12 +110,12 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         (section || title) && (
           <div style="height: 50px; border-left: 2px solid var(--color); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; justify-content: center; z-index: 100;">
             {section && (
-              <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0;">
+              <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0; view-transition-name: header-title;">
                 {section}
               </h1>
             )}
             {title && (
-              <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0;">
+              <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0; view-transition-name: header-subtitle;">
                 {title}
               </h2>
             )}
@@ -142,7 +144,9 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         <div class="holder">
           {
             posts.slice(0, 3).map(post => (
-              <div class="post" style="padding:8px; border-radius:4px;">
+              <div
+                class="post"
+                style={`padding:8px; border-radius:4px;${newsPopoverTransitions ? ` view-transition-name: ${vtName(post.slug)};` : ""}`}>
                 <a
                   style="display:flex; flex-direction:row; align-items:center; gap:16px;"
                   href={localizePath(`/news/${post.slug}/`)}
@@ -172,7 +176,9 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
             ))
           }
           <hr style="border-top: 1px solid var(--border-color);" />
-          <div class="post" style="padding:8px; border-radius:4px;">
+          <div
+            class="post"
+            style={`padding:8px; border-radius:4px;${newsPopoverTransitions ? " view-transition-name: news-post-forming-links;" : ""}`}>
             <a
               href="/news/forming-links"
               style="display:flex; flex-direction:row; align-items:center; gap:18px;"
@@ -220,7 +226,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         <div class="holder">
           <div
             class="post"
-            style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
+            style={`margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-install;" : ""}`}>
             <img
               src="/img/guidebg-install.webp"
               style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
@@ -249,7 +255,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
           </div>
           <div
             class="post"
-            style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
+            style={`margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-problemsolving;" : ""}`}>
             <img
               src="/img/guidebg-3.webp"
               style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
@@ -278,7 +284,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
           </div>
           <div
             class="post"
-            style="border-radius:4px; display:block; overflow:hidden; position:relative;">
+            style={`border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-faq;" : ""}`}>
             <img
               src="/img/guidebg-2.webp"
               style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition: 0.2s;"
@@ -372,7 +378,7 @@ const { isGuideOpacity = false, isMain, section, title } = Astro.props;
         ><img
           src="/img/wfc.webp"
           alt="WiiLink WFC Logo"
-          style="height:20px; margin-right:5px;"
+          style="height:20px; margin-right:5px; filter: invert(var(--invert)); transition: 0.2s;"
         />
         WFC</a
       >

@@ -34,6 +34,7 @@ postsContentful.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
 postsContentful = postsContentful.filter(post => !post.unlist);
+const vtName = (slug: string) => `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
@@ -45,7 +46,7 @@ const sliceDescription = (description: string) => {
   description={t("news.mainDesc")}
   image="/img/News_embed.webp"
 />
-<Header isGuide="display:none;" section={t("header.news")} />
+<Header isGuide="display:none;" section={t("header.news")} newsPopoverTransitions={false} />
 <div class="hold">
   <HeadText text={t("header.news")} />
   <div class="welcome-msg">
@@ -71,7 +72,7 @@ const sliceDescription = (description: string) => {
   <a
     href={localizePath(`/news/${postsContentful[0].slug}/`)}
     class="newsHero"
-    style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block;`}>
+    style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block; view-transition-name: ${vtName(postsContentful[0].slug)};`}>
     <img
       class="mainimg2"
       style="width:100%; height:100%; filter:blur(80px) brightness(0.5); transform: translate(0, -25%) scale(1.5); position:absolute;"
@@ -143,7 +144,7 @@ const sliceDescription = (description: string) => {
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
-          style="cursor:pointer; transition: 0.2s;">
+          style={`cursor:pointer; transition: 0.2s; view-transition-name: ${vtName(post.slug)};`}>
           <a
             href={localizePath(`/news/${post.slug}/`)}
             aria-label={post.title + " Link"}>
@@ -203,7 +204,10 @@ const sliceDescription = (description: string) => {
   <div class="postholdermini">
        {
       postsContentful.slice(7).map(post => (
-        <a href={localizePath(`/news/${post.slug}/`)} class="postmini">
+        <a
+          href={localizePath(`/news/${post.slug}/`)}
+          class="postmini"
+          style={`view-transition-name: ${vtName(post.slug)};`}>
           {post?.image?.fields?.file?.url && (
             <img
               style="width: 100%; height: 100%; object-fit: cover; filter:brightness(0.7); z-index:0; position:absolute;"
@@ -293,24 +297,10 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  .post:nth-child(1) {
-    animation: fadeup 200ms 0.3s forwards;
-  }
-  .post:nth-child(2) {
-    animation: fadeup 200ms 0.35s forwards;
-  }
-  .post:nth-child(3) {
-    animation: fadeup 200ms 0.4s forwards;
-  }
   .post:nth-child(4) {
-    animation: fadeup 200ms 0.45s forwards;
     border-radius: 8px 8px 8px 16px;
   }
-  .post:nth-child(5) {
-    animation: fadeup 200ms 0.5s forwards;
-  }
   .post:nth-child(6) {
-    animation: fadeup 200ms 0.55s forwards;
     border-radius: 8px 8px 16px 8px;
   }
 
@@ -367,7 +357,6 @@ const sliceDescription = (description: string) => {
     width: 100%;
     border-radius: 8px;
     font-family: Gilroy;
-    opacity: 0;
     hyphens: auto;
     overflow: hidden;
     transition: 0.2s;
@@ -445,7 +434,6 @@ const sliceDescription = (description: string) => {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 16px 16px 8px 8px;
-    animation: fadein 0.2s linear forwards;
     overflow: hidden;
     position: relative;
     transition: 0.2s;
@@ -460,17 +448,6 @@ const sliceDescription = (description: string) => {
   .newsHero:active {
     transform: translate(-50%, 0) scale(0.99) !important;
     transition: 0.2s;
-  }
-
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
   }
 
   .fl-button {

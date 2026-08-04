@@ -21,7 +21,7 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
   description={t("guide.mainDesc")}
   image="/img/Guide_embed.webp"
 />
-<Header isGuide="display:none;" section={t("header.guide")} />
+<Header isGuide="display:none;" section={t("header.guide")} guidePopoverTransitions={false} />
   <div class="hold">
     <HeadText text={t("header.guide")} />
     <div class="welcome-msg">
@@ -66,7 +66,9 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
               href={localizePath(`/guide/${post.slug}/`)}
               class="posthold"
               style="cursor:pointer;">
-              <div class="post">
+              <div
+                class="post"
+                style={`view-transition-name: guide-post-${post.slug};`}>
                 <span class="mobilehide">
                   <div style="top:20px; left:20px; padding:3px 8px; border-radius:8px; background-color: var(--bg-opaque-1); backdrop-filter: blur(8px); color: white !important; z-index: 1000000; position:absolute;">
                   <FormattedDate
@@ -108,7 +110,10 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
               ].includes(post.data.title)
           )
           .map(post => (
-            <a href={localizePath(`/guide/${post.slug}/`)} class="postmini">
+            <a
+              href={localizePath(`/guide/${post.slug}/`)}
+              class="postmini"
+              style={`view-transition-name: guide-sidebar-${post.slug};`}>
               <Icon name={post.data.icon} />
               {post.data.title}
             </a>
@@ -178,7 +183,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .posthold {
     transform: translate(0, 0px);
-    opacity: 0;
     transition: 0.5s;
     overflow: hidden;
     position: relative;
@@ -186,15 +190,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
   .posthold:nth-child(1) {
     border-radius: 16px 8px 8px 16px;
-    animation: fadeup 200ms 0.3s linear forwards;
   }
   .posthold:nth-child(2) {
     border-radius: 8px;
-    animation: fadeup 200ms 0.35s linear forwards;
   }
   .posthold:nth-child(3) {
     border-radius: 8px 16px 16px 8px;
-    animation: fadeup 200ms 0.4s linear forwards;
   }
 
   .postholder {
@@ -350,17 +351,6 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
     overflow: hidden;
   }
 
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translate(0, 20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0, 0px);
-    }
-  }
-
   @media only screen and (max-width: 1000px) {
     .postholder {
       width: 95%;
@@ -404,15 +394,12 @@ const posts = (await getCollection("guide")).sort((b, a) => a.data.pubDate.value
 
     .posthold:nth-child(1) {
       border-radius: 16px 16px 8px 8px;
-      animation: fadeup 200ms 0.3s linear forwards;
     }
     .posthold:nth-child(2) {
       border-radius: 8px;
-      animation: fadeup 200ms 0.35s linear forwards;
     }
     .posthold:nth-child(3) {
       border-radius: 8px 8px 16px 16px;
-      animation: fadeup 200ms 0.4s linear forwards;
     }
 
     .title {

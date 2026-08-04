@@ -50,6 +50,7 @@ postsContentful.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
 postsContentful = postsContentful.filter(post => post.unlist);
+const vtName = (slug: string) => `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
@@ -77,7 +78,7 @@ const sliceDescription = (description: string) => {
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
-          style={`background-color: var(--bg-opaque-1); border-radius: ${post.transcriptParticipants.length > 0 ? "28px 28px 28px 10px" : "8px"}; padding: 28px; cursor:pointer; transition: 0.2s; position:relative; overflow:visible;`}>
+          style={`background-color: var(--bg-opaque-1); border-radius: ${post.transcriptParticipants.length > 0 ? "28px 28px 28px 10px" : "8px"}; padding: 28px; cursor:pointer; transition: 0.2s; position:relative; overflow:visible; view-transition-name: ${vtName(post.slug)};`}>
           <a
             href={`/news/${post.slug}/`}
             aria-label={post.title + " Link"}
