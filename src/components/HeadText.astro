@@ -1,10 +1,69 @@
 ---
-const { text } = Astro.props;
+import { Trans } from "astro-i18next/components";
+
+const {
+  text,
+  titleKey,
+  subtitleKey,
+  title,
+  subtitle,
+  subtitleMaxWidth,
+  extraRight,
+  titleColor
+} = Astro.props;
+
+const highlightStyle = `color:${titleColor ?? "var(--color)"};`;
 ---
 
-<h1 class="newstop">{text}</h1>
+<div class="headtext">
+  <h1 class="newstop">{text}</h1>
+  <div class={`welcome-msg${extraRight ? " extra-right" : ""}`}>
+    <span style="display:flex; flex-direction: column;">
+      <h2 style="font-size:40px; font-family:Gilroy;">
+        {
+          titleKey ? (
+            <Trans i18nKey={titleKey}>
+              <>
+                <span />
+                <b style="font-family: Rubik;">WiiLink</b>
+                <span
+                  style={`bottom:8px; text-transform: capitalize; color:${titleColor ?? "var(--color)"};`}>
+                  {text}
+                </span>
+              </>
+            </Trans>
+          ) : (
+            title
+          )
+        }
+      </h2>
+      <h3
+        style={`font-size: calc(1.3rem + .6vw);${subtitleMaxWidth ? ` max-width:${subtitleMaxWidth}px;` : ""}`}>
+        {
+          subtitleKey ? (
+            <Trans i18nKey={subtitleKey}>
+              <b style={highlightStyle}>1</b> <b style={highlightStyle}>2</b>{" "}
+              <b style={highlightStyle}>3</b>
+            </Trans>
+          ) : (
+            subtitle
+          )
+        }
+      </h3>
+    </span>
+    <slot />
+  </div>
+</div>
 
 <style>
+  .headtext {
+    max-width: 1500px;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+  }
+
   .newstop {
     left: -30px;
     top: 50px;
@@ -23,6 +82,23 @@ const { text } = Astro.props;
     overflow: hidden;
     z-index: 0;
     position: absolute;
+  }
+
+  .welcome-msg {
+    top: 15px;
+    width: 95%;
+    max-width: 1500px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    position: relative;
+  }
+
+  .extra-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   @media only screen and (max-width: 1000px) {
