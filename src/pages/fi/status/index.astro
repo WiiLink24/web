@@ -3,11 +3,49 @@ import Layout from "../../../layouts/Layout.astro";
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
+import { Icon } from "astro-icon/components";
 import { t, changeLanguage } from "i18next";
 import { localizePath } from "astro-i18next";
 import { Trans } from "astro-i18next/components";
+import { fetchIncidentHistory, fetchStatusSummary } from "../../../lib/statuspage";
 
 changeLanguage("fi");
+
+const incidents = await fetchIncidentHistory();
+const statusSummary = await fetchStatusSummary();
+const response = await fetch("https://raw.githubusercontent.com/WiiLink24/web/refs/heads/main/public/json" + localizePath("/services.json"));
+const data = await response.json();
+const mergedData = data.services.service.map((service: any) => {
+    const component = statusSummary.components.find(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+        service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+    const serviceIncidents = statusSummary.incidents.filter(incident => {
+        if (incident.components) {
+            return incident.components.some(c => c.name.toLowerCase().includes(service.name.toLowerCase()) ||
+                service.name.toLowerCase().includes(c.name.toLowerCase().split(" ")[0]));
+        }
+        return incident.name.toLowerCase().includes(service.name.toLowerCase());
+    });
+    return {
+        ...service,
+        statuspageStatus: component?.status ?? "operational",
+        incidents: serviceIncidents.map(inc => ({
+            name: inc.name,
+            impact: inc.impact,
+            status: inc.status,
+            description: inc.incident_updates?.[0]?.body ?? "",
+            shortlink: inc.shortlink,
+        })),
+    };
+});
+const bannerIncidents = mergedData
+    .filter(svc => svc.incidents.length > 0)
+    .flatMap(svc => svc.incidents.map(inc => ({
+    incidentName: inc.name,
+    shortlink: inc.shortlink,
+    serviceName: svc.name,
+    serviceIcon: svc.icon,
+    serviceColor: svc.color,
+})));
 ---
 
 <Layout
@@ -15,31 +53,17 @@ changeLanguage("fi");
   description={t("status.mainDesc")}
   image="/img/Status_embed.webp"
 />
-  <Header isGuide="display:none;" />
+
+  <Header isGuide="display:none;" section={t("header.status")} />
 
   <section>
-    <div class="welcome-msg">
-      <HeadText text={t("header.status")} />
-      <div>
-        <h2 style="font-size:40px; font-family:Gilroy;">
-          <Trans i18nKey="status.title">
-            Check out the <span
-              class="badge bg-primary"
-              style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-            ></span><b style="font-family: Rubik;">WiiLink</b><span
-              class="badge bg-primary"
-              style="bottom: 8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-              >status</span
-            >
-          </Trans>
-        </h2>
-        <h3 style="font-size: calc(1.3rem + .6vw);">
-          <Trans i18nKey="status.subtitle">
-            Get a glimpse at our <b class="color">progress</b>, in addition to
-            the status of our <b class="color">servers</b>!
-          </Trans>
-        </h3>
-      </div>
+    <HeadText
+      text={t("header.status")}
+      titleKey="status.title"
+      subtitleKey="status.subtitle"
+      titleColor="#dccf14"
+      extraRight
+    >
       <a href="https://status.wiilink24.com/"
         ><button
           type="button"
@@ -49,144 +73,123 @@ changeLanguage("fi");
           {t("status.serverStatus")}</button
         ></a
       >
-    </div>
+    </HeadText>
     <div class="intro">
       <div class="polka-dot"></div>
     </div>
-    <div id="postholder" style="padding: 0 5%;"></div>
-  </section>
 
-  <h1 id="fetcherStatus" style="display:none;">
-    /json{localizePath("/services.json")}
-  </h1>
+    <div id="postholder">
+      {mergedData.filter(svc => svc.incidents.length > 0).map((svc, i) => {
+        const badgeColor =
+          svc.status === "Completed" || svc.status === "Full Release"
+            ? "var(--bs-green)"
+            : svc.status === "In development" || svc.status === "Public Beta" || svc.status === "Private Beta"
+              ? "var(--bs-blue)"
+              : svc.status === "Halted" || svc.status === "Planned"
+                ? "var(--bs-red)"
+                : "var(--bs-gray)";
+
+        return (
+          <div
+            style="color:rgb(34,37,41); text-decoration:none;"
+            class="hover"
+          >
+            <div
+              class="service"
+              style={`height:100%; border: 3px solid ${svc.color}20; border-radius:16px; animation: 0.2s ${i * 50}ms fadeup linear forwards; box-shadow:0px 0px 20px #12121220; opacity:0; overflow:hidden;`}
+            >
+              <div style="top:0px; left:0; padding:20px 30px 10px 30px; background-color:var(--bg-color-tertiary); display:flex; flex-direction: row; align-items:center; gap:15px; position:relative;">
+                {svc.icon && (
+                  <img src={`/img/${svc.icon}`} style="object-fit:contain;" width="50px" height="50px" />
+                )}
+                <div>
+                  <h2 style="font-size:30px; margin-bottom:0; font-family:Gilroy; position:relative;">
+                    <a href={svc.link} class="text-decoration-none" style="color:rgb(34,37,41);">
+                    {svc.name}
+                    </a>
+                  </h2>
+                  <h3 style="margin-top:3px; font-size:15px; opacity:1; display:flex; flex-direction:row; gap:8px; align-items:center; position:relative;">
+                    <span class="badge stat" style={`background-color:${badgeColor}`}>{svc.status}</span>
+                    <l style="opacity:0.5;">{svc.isArea}</l>
+                  </h3>
+                </div>
+              </div>
+              <h3 style="top:15px; left:50%; width:90%; transform:translate(-50%, 0); font-size:22px; font-weight:200; position:relative;" set:html={svc.desc}></h3>
+              <div class="barhold" style={`top:30px; left:50%; transform:translate(-50%, 0); width:90%; height:15px; border-top-left-radius:8px; border-top-right-radius:8px; background-color:${svc.color}20; overflow:hidden; position:relative;`}>
+                <div class="bar" style={`height:15px; width:${svc.completed}%; background-color:#ff000060; border-radius:0px;`}></div>
+              </div>
+              <h3 style="margin-top:30px; margin-bottom:20px; left:50%; width:90%; transform:translate(-50%, 0); background-color:#ff150024; padding:15px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; font-size:20px; line-height:28px; font-weight:200; position:relative;">
+                {svc.incidents.map(inc => (
+                  <a href={inc.shortlink} target="_blank" rel="noopener noreferrer" class="text-decoration-none" style="display:flex; flex-direction:row; gap:8px; align-items:center;">
+                    <Icon name="lucide:circle-alert" style="width:24px; height:24px; margin-right:4px;" />
+                    <span>{inc.name}</span>
+                  </a>
+                ))}
+              </h3>
+            </div>
+          </div>
+        );
+      })}
+      {mergedData.filter(svc => svc.incidents.length === 0).map((svc, i) => {
+        const badgeColor =
+          svc.status === "Completed" || svc.status === "Full Release"
+            ? "var(--bs-green)"
+            : svc.status === "In development" || svc.status === "Public Beta" || svc.status === "Private Beta"
+              ? "var(--bs-blue)"
+              : svc.status === "Halted" || svc.status === "Planned"
+                ? "var(--bs-red)"
+                : "var(--bs-gray)";
+
+        return (
+          <a
+            href={svc.link}
+            style="color:rgb(34,37,41); text-decoration:none;"
+            class="hover"
+          >
+            <div
+              class="service"
+              style={`height:100%; border: 3px solid ${svc.color}20; border-radius:16px; animation: 0.2s ${(i + mergedData.filter(s => s.incidents.length > 0).length) * 50}ms fadeup linear forwards; box-shadow:0px 0px 20px #12121220; opacity:0; overflow:hidden;`}
+            >
+              <div style="top:0px; left:0; padding:20px 30px 10px 30px; background-color:var(--bg-color-tertiary); display:flex; flex-direction: row; align-items:center; gap:15px; position:relative;">
+                {svc.icon && (
+                  <img src={`/img/${svc.icon}`} style="object-fit:contain;" width="50px" height="50px" />
+                )}
+                <div>
+                  <h2 style="font-size:30px; margin-bottom:0; font-family:Gilroy; position:relative;">
+                    {svc.name}
+                  </h2>
+                  <h3 style="margin-top:3px; font-size:15px; opacity:1; display:flex; flex-direction:row; gap:8px; align-items:center; position:relative;">
+                    <span class="badge stat" style={`background-color:${badgeColor}`}>{svc.status}</span>
+                    <l style="opacity:0.5;">{svc.isArea}</l>
+                  </h3>
+                </div>
+              </div>
+              <h3 style="top:15px; left:50%; width:90%; transform:translate(-50%, 0); font-size:22px; font-weight:200; position:relative;" set:html={svc.desc}></h3>
+              <div class="barhold" style={`top:30px; left:50%; transform:translate(-50%, 0); width:90%; height:15px; border-top-left-radius:8px; border-top-right-radius:8px; background-color:${svc.color}20; overflow:hidden; position:relative;`}>
+                <div class="bar" style={`height:15px; width:${svc.completed}%; background-color:${svc.color}; border-radius:0px;`}></div>
+              </div>
+              <h3 style="margin-top:30px; margin-bottom:20px; left:50%; width:90%; transform:translate(-50%, 0); background-color:var(--bg-color-tertiary); padding:15px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; font-size:20px; line-height:28px; font-weight:200; position:relative;">
+                {svc.statuspageStatus !== "operational" ? (
+                  <span class="service-status-degraded">
+                    <span class={`incident-indicator ${svc.statuspageStatus}`}></span>
+                    Service degraded
+                  </span>
+                ) : (
+                  <span set:html={svc.todo}></span>
+                )}
+              </h3>
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </section>
 
 <Footer />
 
-<script is:inline>
-  document.addEventListener("DOMContentLoaded", async function () {
-    let fetcher = document.getElementById("fetcherStatus").innerHTML;
-    fetch(fetcher)
-      .then(response => response.json())
-      .then(data => showService(data));
-
-    function showService(data) {
-      let services = document.getElementById("postholder");
-      let display = "display:block;";
-
-      for (let i = 0; i < data.services.service.length; i++) {
-        if (data.services.service[i].icon) {
-          display = "display:block";
-        } else {
-          display = "display:none;";
-        }
-        services.innerHTML +=
-          "<a href='" +
-          data.services.service[i].link +
-          "' style='color:rgb(34,37,41); text-decoration:none;' class='hover'><div class='service' style='height:100%; border: 3px solid " +
-          data.services.service[i].color +
-          "20; border-radius:16px; animation: 0.2s " +
-          i * 50 +
-          "ms fadeup linear forwards; box-shadow:0px 0px 20px #12121220; opacity:0; overflow:hidden;'><div style='top:0px; left:0; padding:20px 30px 10px 30px; background-color:var(--bg-color-tertiary); display:flex; flex-direction: row; align-items:center; gap:15px; position:relative;'><img src='/img/" +
-          data.services.service[i].icon +
-          "' style='object-fit:contain; " +
-          display +
-          "' width='50px' height='50px'><div><h2 style='font-size:30px; margin-bottom:0; font-family:Gilroy; position:relative;'>" +
-          data.services.service[i].name +
-          "</h2><h3 style='margin-top:3px; font-size:15px; opacity:1; display:flex; flex-direction:row; gap:8px; align-items-center; position:relative;'> <span class='badge stat'>" +
-          data.services.service[i].status +
-          "</span> <l style='opacity:0.5;'>" +
-          data.services.service[i].isArea +
-          "</l></h3></div></div><h3 style='top:15px; left:50%; width:90%; transform:translate(-50%, 0); font-size:22px; font-weight:200; position:relative;'>" +
-          data.services.service[i].desc +
-          "</h3><div class='barhold' style='top:30px; left:50%; transform:translate(-50%, 0); width:90%; height:15px; border-top-left-radius:8px; border-top-right-radius:8px; background-color:" +
-          data.services.service[i].color +
-          "20; overflow:hidden; position:relative;'><div class='bar' style='height:15px; width:" +
-          data.services.service[i].completed +
-          "%; background-color:" +
-          data.services.service[i].color +
-          "; border-radius:0px;'></div></div><h3 style='margin-top:30px; margin-bottom:20px; left:50%; width:90%; transform:translate(-50%, 0); background-color:var(--bg-color-tertiary); padding:15px; border-bottom-left-radius:8px; border-bottom-right-radius:8px; font-size:20px; line-height:28px; font-weight:200; position:relative;'>" +
-          data.services.service[i].todo +
-          "</h3></div></a>";
-        if (
-          data.services.service[i].status == "Completed" ||
-          data.services.service[i].status == "Full Release"
-        ) {
-          document.getElementsByClassName("stat")[i].style.backgroundColor =
-            "var(--bs-green)";
-        } else if (
-          data.services.service[i].status == "In development" ||
-          data.services.service[i].status == "Public Beta" ||
-          data.services.service[i].status == "Private Beta"
-        ) {
-          document.getElementsByClassName("stat")[i].style.backgroundColor =
-            "var(--bs-blue)";
-        } else if (
-          data.services.service[i].status == "Halted" ||
-          data.services.service[i].status == "Planned"
-        ) {
-          document.getElementsByClassName("stat")[i].style.backgroundColor =
-            "var(--bs-red)";
-        } else {
-          document.getElementsByClassName("stat")[i].style.backgroundColor =
-            "var(--bs-gray)";
-        }
-      }
-    }
-  });
-</script>
-
-<style is:global>
-  .hover {
-    transform: scale(1) !important;
-    transition: 0.2s !important;
-  }
-  .hover:hover {
-    transform: scale(1.02) !important;
-    transition: 0.2s !important;
-  }
-
-  .hover:hover .service {
-    box-shadow: 0px 0px 30px #ffffff05 !important;
-    transition: 0.2s !important;
-  }
-</style>
-
 <style>
-  .servicehead {
-    text-align: left;
-    top: 60px;
-    font-family: Gilroy;
-    position: relative;
-  }
-  .servicedesc {
-    position: relative;
-    top: 0px;
-    text-align: left;
-  }
-
   h2 {
     font-size: calc(1.3rem + 0.6vw);
-  }
-
-  .welcome-msg {
-    top: 15px;
-    max-width: 90%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    position: relative;
-  }
-  .newstop {
-    left: 60px;
-    top: 200px;
-    transform: translate(0, -50%);
-    height: 200px;
-    filter: opacity(0.1) invert(0);
-    position: absolute;
   }
 
   .intro {
@@ -195,145 +198,6 @@ changeLanguage("fi");
     top: 30px;
     transform: translate(-50%, 0);
     position: relative;
-  }
-  .socials {
-    top: 50%;
-    right: 50px;
-    transform: translate(0, -50%);
-    color: white;
-    font-size: 25px;
-    width: 150px;
-    justify-content: right;
-    display: flex;
-    flex-wrap: wrap;
-    position: absolute;
-  }
-  .slogan {
-    left: 80px;
-    font-family:
-      inter,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    color: white;
-    width: 500px;
-    position: relative;
-  }
-  .footer-holder {
-    bottom: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    display: flex;
-    align-items: center;
-    width: 98%;
-    height: 250px;
-    position: absolute;
-  }
-  @keyframes slideup {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-
-  .symbolholder {
-    background-color: var(--bg-color);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: 0.5s;
-    z-index: 1;
-    overflow: hidden;
-    position: fixed;
-  }
-
-  .backsymbol {
-    width: 100%;
-    height: 100%;
-    top: 0%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    z-index: 1;
-    position: absolute;
-  }
-  .contentholder {
-    left: 50%;
-    transform: translate(-50%, 0);
-    max-width: 1000px;
-    position: relative;
-  }
-  .bottomleftcorner {
-    animation: changecolor 10s linear infinite;
-    position: relative;
-  }
-  .bottomleftcornerholder {
-    left: -2.6px;
-    bottom: -3px;
-    scale: 31.6%;
-    transform: translate(-106.5%, 107.3%);
-    z-index: 2;
-    position: absolute;
-  }
-  .square {
-    --img-invert: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      41deg,
-      rgba(0, 138, 255, 1) 0%,
-      rgba(255, 0, 59, 1) 100%
-    );
-    z-index: 0;
-    animation: changecolor 10s linear infinite;
-    position: absolute;
-  }
-  #square2 {
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background-color: #ffffff;
-    transform: translate(0%, 0%);
-    border-radius: 4px;
-    z-index: 1;
-
-    transition: 0.5s;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    position: absolute;
-  }
-
-  #svcicons {
-    top: 0px;
-    left: 0;
-    mask-image: url("/img/header_bg.webp");
-    -webkit-mask-size: 100%;
-    mask-size: 100%;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    display: flex;
-    gap: 15px;
-    position: absolute;
-  }
-
-  h1 {
-    color: var(--bg-text);
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-    transition: 0.5s;
   }
   h2 {
     --bg-text: #000000;
@@ -351,25 +215,10 @@ changeLanguage("fi");
     filter: brightness(150%);
   }
 
-  element {
-    background-color: #787878;
-
-    border: 2px solid #787878;
-  }
-
-  .serviceshold {
-    left: 50%;
-    transform: translate(-50%, -220px);
-    max-width: 1500px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(540px, 1fr));
-    position: relative;
-  }
-
   #postholder {
     left: 50%;
     transform: translate(-50%, 0);
-    max-width: 1550px;
+    max-width: 1500px;
     margin-bottom:100px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -378,10 +227,6 @@ changeLanguage("fi");
     top: 30px;
     position: relative;
     z-index: 10;
-  }
-
-  .post:hover {
-    border: 3px solid rgba(255, 255, 255, 0.483);
   }
 
   .post:hover .image {
@@ -449,13 +294,6 @@ changeLanguage("fi");
     z-index: 0;
   }
 
-  .topimg {
-    left: 50px;
-    height: 200px;
-    filter: opacity(0.1) invert(0);
-    position: absolute;
-  }
-
   @keyframes rotate {
     0% {
       rotate: 0deg;
@@ -486,21 +324,6 @@ changeLanguage("fi");
     top: 0;
     right: 0;
     position: relative;
-  }
-
-  .work {
-    top: 78px;
-    right: 40px;
-    position: absolute;
-    border: 0px solid white;
-    border-radius: 18px;
-  }
-
-  .chip {
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 18px;
-    line-height: 30px;
   }
 
   .status {
@@ -544,23 +367,6 @@ changeLanguage("fi");
   }
 
   @media (max-width: 1000px) {
-    .serviceshold {
-      left: 0;
-      display: block;
-      transform: translate(0, -50px);
-      width: 100%;
-      overflow: hidden;
-      display: block;
-    }
-    .work {
-      right: 20px;
-    }
-    .newstop {
-      display: none;
-    }
-    .topimg {
-      display: none;
-    }
     #postholder {
       left: 50%;
       width: 95%;
@@ -573,6 +379,7 @@ changeLanguage("fi");
       position: relative;
       padding-bottom: 50px;
       z-index: 10;
+      padding: 0 10px;
     }
     .desc {
       display: none;
@@ -580,11 +387,6 @@ changeLanguage("fi");
     .title {
       right: 20px;
       width: 100%;
-    }
-    .post {
-      height: 150px;
-      width: 50px;
-      margin-bottom: 10px;
     }
     .post:hover .image {
       transform: translate(0, -50%);
@@ -605,16 +407,18 @@ changeLanguage("fi");
 
   @media (min-width: 2000px) {
     section {
-      width: 2000px;
+      width: 1500px;
       left: 50%;
       transform: translate(-50%, 150px);
       margin-bottom: 300px;
       position: relative;
     }
     .status {
-      width: 2000px;
+      width: 1500px;
       left: 50%;
       transform: translate(-50%, 0);
     }
   }
 </style>
+
+

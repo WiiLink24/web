@@ -3,33 +3,50 @@ import { localizePath } from "astro-i18next";
 import i18next, { t, changeLanguage } from "i18next";
 import Agreement from "../components/Agreement.astro";
 import LanguageDropdown from "../components/LanguageDropdown.astro";
+import StatuspageBanner from "../components/StatuspageBanner.astro";
 import { Icon } from "astro-icon/components";
 import { contentfulClient } from "../lib/contentful";
 import type { news } from "../lib/contentful";
+import { getBannerIncidents } from "../lib/statuspage";
 
 const entries = await contentfulClient.getEntries<news>({
   content_type: "newsPost"
 });
 
-let posts = entries.items.map(item => {
+type HeaderPost = {
+  title: string;
+  slug: string;
+  date: string;
+  imageUrl?: string;
+  unlist?: boolean;
+  description?: string;
+};
+
+let posts: HeaderPost[] = entries.items.map(item => {
   const { title, slug, date, image, unlist, description } = item.fields;
+  const previewImage = image as any;
   return {
     title,
     slug,
     date,
-    image,
+    imageUrl: previewImage?.fields?.file?.url,
     unlist,
     description
   };
 });
 
-// Sort by date
 posts = posts.filter(post => !post.unlist);
 posts = posts
   .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   .slice(0, 3);
 
-const { isMain } = Astro.props;
+const bannerIncidents = await getBannerIncidents(
+  localizePath("/services.json")
+);
+
+const { isGuideOpacity = false, isMain, section, title, newsPopoverTransitions = true, guidePopoverTransitions = true } = Astro.props;
+const vtName = (slug: string) =>
+  `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 ---
 
 <script is:inline>
@@ -54,430 +71,531 @@ const { isMain } = Astro.props;
   })();
 </script>
 
-<Agreement />
-
+<StatuspageBanner isMain={isMain} variant="top" />
+<Agreement section={section} title={title} isGuideOpacity={isGuideOpacity} />
 <r lang={i18next.language} class="bannerholder">
-  <t
-    id="grad"
-    style="top:0; left:0; width:100%; height:100px; opacity:0; transition:0.5s; pointer-events:none; z-index:0; position:absolute;"
-  ></t>
-  <a href={localizePath("/")} aria-label="Home Link" class="logohold"
-    ><img
-      loading="lazy"
-      class="logo"
-      alt="WiiLink Logo"
-      style={isMain}
-      src=" /img/logo.webp"
-      height="69px"
-    /></a
-  >
-  <div id="links">
-    <a class="header-link" href={localizePath("/")} aria-label="Home Link"
-      ><Icon name="lucide:house" style="margin-right:5px;" />
-      {t("header.home")}</a
-    >
+  <div
+    style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:10px; padding:10px 20px 0px 20px; position:relative; z-index:10000;">
+<t
+  id="grad"
+  style="
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 0px 0px 16px 16px;
+    background-color: rgb(from var(--bg-color) r g b / 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  "
+></t>
     <a
-      class="header-link"
-      onmouseover="toggle('newsheader');"
-      onmouseout="toggle('newsheader');"
-      href={localizePath("/news")}
-      aria-label="News Link"
-      ><Icon name="lucide:newspaper" style="margin-right:5px;" />
-      {t("header.news")}</a
-    >
-    <div
-      id="newsheader"
-      class="popover-header"
-      onmouseout="toggle('newsheader');">
-      <div class="holder">
-        {
-          posts.slice(0, 3).map(post => (
-            <div class="post" style="padding:8px; border-radius:4px;">
-              <a
-                style="display:flex; flex-direction:row; gap:8px;"
-                href={localizePath(`/news/${post.slug}/`)}
-                aria-label={post.title + "News Link"}>
-                {post.image?.fields?.file?.url ? (
-                  <img
-                    alt="News Post Image"
-                    loading="lazy"
-                    style="height:100px; border-radius:4px;"
-                    src={post.image.fields.file.url}
-                  />
-                ) : (
-                  <div style="height:100px; width:177.78px; border-radius:4px; background-color: var(--bg-opaque-1);" />
-                )}
-                <div>
-                  <div class="title">
-                    <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
-                      {post.title}
-                    </b>
+      href={localizePath("/")}
+      aria-label="Home Link"
+      style="display:flex; flex-direction:row; align-items:center; justify-content:center; gap:10px;">
+      <img
+        loading="lazy"
+        class="logo"
+        alt="WiiLink Logo"
+        style={isMain}
+        src=" /img/logo.webp"
+        height="69px"
+      />
+      {
+        (section || title) && (
+          <div style="height: 50px; border-left: 2px solid var(--color); margin-left: 10px; padding-left: 20px; display: flex; flex-direction: column; justify-content: center; z-index: 100;">
+            {section && (
+              <h1 style="font-family: inter !important; font-size: 20px; font-weight: 900; margin-bottom: 0; view-transition-name: header-title;">
+                {section}
+              </h1>
+            )}
+            {title && (
+              <h2 style="font-size: 14px; font-weight: 400; margin-top: 6px; margin-bottom: 0; view-transition-name: header-subtitle;">
+                {title}
+              </h2>
+            )}
+          </div>
+        )
+      }
+    </a>
+    <div id="links">
+      <a class="header-link" href={localizePath("/")} aria-label="Home Link"
+        ><Icon name="lucide:house" style="margin-right:5px;" />
+        {t("header.home")}</a
+      >
+      <a
+        class="header-link"
+        onmouseover="toggle('newsheader');"
+        onmouseout="toggle('newsheader');"
+        href={localizePath("/news")}
+        aria-label="News Link"
+        ><Icon name="lucide:newspaper" style="margin-right:5px;" />
+        {t("header.news")}</a
+      >
+      <div
+        id="newsheader"
+        class="popover-header"
+        onmouseout="toggle('newsheader');">
+        <div class="holder">
+          {
+            posts.slice(0, 3).map(post => (
+              <div
+                class="post"
+                style={`padding:8px; border-radius:4px;${newsPopoverTransitions ? ` view-transition-name: ${vtName(post.slug)};` : ""}`}>
+                <a
+                  style="display:flex; flex-direction:row; align-items:center; gap:16px;"
+                  href={localizePath(`/news/${post.slug}/`)}
+                  aria-label={post.title + "News Link"}>
+                  {post.imageUrl ? (
+                    <img
+                      alt="News Post Image"
+                      loading="lazy"
+                      style="height:100px; border-radius:4px;"
+                      src={post.imageUrl}
+                    />
+                  ) : (
+                    <div style="height:100px; width:177.78px; border-radius:4px; background-color: var(--bg-opaque-1);" />
+                  )}
+                  <div>
+                    <div class="title">
+                      <b style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                        {post.title}
+                      </b>
+                    </div>
+                    <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                      {post.description}
+                    </div>
                   </div>
-                  <div style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
-                    {post.description}
-                  </div>
+                </a>
+              </div>
+            ))
+          }
+          <hr style="border-top: 1px solid var(--border-color);" />
+          <div
+            class="post"
+            style={`padding:8px; border-radius:4px;${newsPopoverTransitions ? " view-transition-name: news-post-forming-links;" : ""}`}>
+            <a
+              href="/news/forming-links"
+              style="display:flex; flex-direction:row; align-items:center; gap:18px;"
+              aria-label="Forming Links News Link">
+              <Icon
+                name="lucide:mail-open"
+                style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+              />
+              <span>
+                <b
+                  style="width:80%; margin-right:10px; text-align:right; position:relative;">
+                  Forming Links
+                </b>
+                <div
+                  style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
+                  Becca interviews the people behind WiiLink
                 </div>
-              </a>
-            </div>
-          ))
-        }
-        <hr style="border-top: 1px solid var(--border-color);" />
-        <div class="post" style="padding:8px; border-radius:4px;">
-          <a href="/news/forming-links" style="display:flex; flex-direction:row; align-items:center; gap:18px;" aria-label="Forming Links News Link">
+              </span>
+            </a>
+          </div>
+          <hr style="border-top: 1px solid var(--border-color);" />
+          <div
+            style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
             <Icon
-              name="lucide:mail-open"
-              style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+              name="lucide:info"
+              style="margin-right:5px; margin-bottom:2px;"
             />
-            <span>
-              <b
-                style="width:80%; margin-right:10px; text-align:right; position:relative;">
-                Forming Links
-              </b>
-              <div
-                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;   overflow: hidden;">
-                Becca interviews the people behind WiiLink
-              </div>
-            </span>
-          </a>
-        </div>
-        <hr style="border-top: 1px solid var(--border-color);" />
-        <div
-          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
-          <Icon
-            name="lucide:info"
-            style="margin-right:5px; margin-bottom:2px;"
-          />
-          {t("header.news-info")}
+            {t("header.news-info")}
+          </div>
         </div>
       </div>
-    </div>
-    <a
-      class="header-link"
-      onmouseover="toggle('guideheader');"
-      onmouseout="toggle('guideheader');"
-      href={localizePath("/guide/")}
-      aria-label="Guide Link"
-      ><Icon name="lucide:book" style="margin-right:5px;" />
-      {t("header.guide")}</a
-    >
-    <div
-      id="guideheader"
-      class="popover-header"
-      onmouseout="toggle('guideheader');">
-      <div class="holder">
-        <div
-          class="post"
-          style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
-          <img
-            src="/img/guidebg-install.webp"
-            style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
-          />
-          <a
-            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href={localizePath("/guide/install")}
-            aria-label="Install Guide Link">
-            <Icon
-              name="download"
-              style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+      <a
+        class="header-link"
+        onmouseover="toggle('guideheader');"
+        onmouseout="toggle('guideheader');"
+        href={localizePath("/guide/")}
+        aria-label="Guide Link"
+        ><Icon name="lucide:book" style="margin-right:5px;" />
+        {t("header.guide")}</a
+      >
+      <div
+        id="guideheader"
+        class="popover-header"
+        onmouseout="toggle('guideheader');">
+        <div class="holder">
+          <div
+            class="post"
+            style={`margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-install;" : ""}`}>
+            <img
+              src="/img/guidebg-install.webp"
+              style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
             />
-            <span style="width:85%; z-index:1000;">
-              <div class="title">
-                <b
-                  style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                  {t("guidePost.installGuide")}
-                </b>
-              </div>
-              <div
-                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
-                {t("guidePost.installGuide-info")}
-              </div>
-            </span>
-          </a>
-        </div>
-        <div
-          class="post"
-          style="margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;">
-          <img
-            src="/img/guidebg-3.webp"
-            style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
-          />
-          <a
-            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href={localizePath("/guide/problemsolving")}
-            aria-label="Troubleshooting Guide Link">
-            <Icon
-              name="lucide:circle-alert"
-              style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+            <a
+              style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
+              href={localizePath("/guide/install")}
+              aria-label="Install Guide Link">
+              <Icon
+                name="download"
+                style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+              />
+              <span style="width:85%; z-index:1000;">
+                <div class="title">
+                  <b
+                    style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
+                    {t("guidePost.installGuide")}
+                  </b>
+                </div>
+                <div
+                  style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
+                  {t("guidePost.installGuide-info")}
+                </div>
+              </span>
+            </a>
+          </div>
+          <div
+            class="post"
+            style={`margin-bottom:4px; border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-problemsolving;" : ""}`}>
+            <img
+              src="/img/guidebg-3.webp"
+              style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition:0.2s;"
             />
-            <span style="width: 85%; z-index:1000;">
-              <div class="title">
-                <b
-                  style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                  {t("guidePost.problemSolving")}
-                </b>
-              </div>
-              <div
-                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
-                {t("guidePost.problemSolving-info")}
-              </div>
-            </span>
-          </a>
-        </div>
-        <div
-          class="post"
-          style="border-radius:4px; display:block; overflow:hidden; position:relative;">
-          <img
-            src="/img/guidebg-2.webp"
-            style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition: 0.2s;"
-          />
-          <a
-            style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
-            href={localizePath("/guide/faq")}
-            aria-label="FAQ Link">
-            <Icon
-              name="circle-help"
-              style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+            <a
+              style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
+              href={localizePath("/guide/problemsolving")}
+              aria-label="Troubleshooting Guide Link">
+              <Icon
+                name="lucide:circle-alert"
+                style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+              />
+              <span style="width: 85%; z-index:1000;">
+                <div class="title">
+                  <b
+                    style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
+                    {t("guidePost.problemSolving")}
+                  </b>
+                </div>
+                <div
+                  style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
+                  {t("guidePost.problemSolving-info")}
+                </div>
+              </span>
+            </a>
+          </div>
+          <div
+            class="post"
+            style={`border-radius:4px; display:block; overflow:hidden; position:relative;${guidePopoverTransitions ? " view-transition-name: guide-post-faq;" : ""}`}>
+            <img
+              src="/img/guidebg-2.webp"
+              style="height:100%; width: 100%; top:0; left:0; z-index:0; position:absolute; object-fit: cover; opacity: 0; transition: 0.2s;"
             />
-            <span style="width: 85%; z-index:1000;">
-              <div class="title">
-                <b
-                  style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
-                  {t("guidePost.faq")}
-                </b>
-              </div>
-              <div
-                style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
-                {t("guidePost.faq-info")}
-              </div>
-            </span>
-          </a>
-        </div>
-        <hr style="border-top: 1px solid var(--border-color);" />
-        <div
-          style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
-          <Icon name="lucide:info" style="margin-bottom:3px;" />
-          {t("header.guide-info")}
+            <a
+              style="padding:8px; display:flex; flex-direction:row; align-items:center; gap:18px; z-index:10;"
+              href={localizePath("/guide/faq")}
+              aria-label="FAQ Link">
+              <Icon
+                name="circle-help"
+                style="padding:13px; width:60px !important; height:60px !important; background-color: var(--bg-opaque-1); backdrop-filter:blur(8px); border-radius:8px; aspect-ratio: 1/1; z-index:1000;"
+              />
+              <span style="width: 85%; z-index:1000;">
+                <div class="title">
+                  <b
+                    style="width:100%; margin-right:10px; text-align:left; display:flex; flex-direction:row; align-items:center; gap:6px; position:relative;">
+                    {t("guidePost.faq")}
+                  </b>
+                </div>
+                <div
+                  style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; z-index: 1000;">
+                  {t("guidePost.faq-info")}
+                </div>
+              </span>
+            </a>
+          </div>
+          <hr style="border-top: 1px solid var(--border-color);" />
+          <div
+            style="padding-left:8px; font-size:15px; padding-bottom:8px; opacity:0.7;">
+            <Icon name="lucide:info" style="margin-bottom:3px;" />
+            {t("header.guide-info")}
+          </div>
         </div>
       </div>
-    </div>
-    <a
-      class="header-link"
-      href={localizePath("/status")}
-      aria-label="Status Link"
-      ><Icon name="lucide:server" style="margin-right:5px;" />
-      {t("header.status")}</a
-    >
-    <a
-      class="header-link"
-      href={localizePath("/services")}
-      aria-label="Services Link"
-      ><Icon name="lucide:package" style="margin-right:5px;" />
-      {t("header.services")}</a
-    >
-    <button
-      id="moreHeader"
-      onclick="toggle('dropdownMore');"
-      class="btn"
-      style="border: 0px !important;"
-      aria-label="More button"
-      ><Icon
-        name="lucide:chevron-down"
-        style="font-size:30px; pointer-events:none;"
-      />
-    </button>
-    <div id="dropdownMore">
       <a
-        class="dropdown-item"
-        style="display:flex; flex-direction:row; align-items:center; gap:8px;"
-        id="account"
-        href="https://accounts.wiilink.ca"
-        aria-label="Extras Link"
-        ><Icon name="lucide:user" />Log into WiiLink Accounts</a
+        class="header-link"
+        onmouseover="toggle('statusheader');"
+        onmouseout="toggle('statusheader');"
+        href={localizePath("/status")}
+        aria-label="Status Link"
+        ><Icon name="lucide:server" style="margin-right:5px;" />
+        {t("header.status")}</a
       >
-      <hr
-        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-      />
-      <LanguageDropdown />
+      <div
+        id="statusheader"
+        class="popover-header"
+        onmouseout="toggle('statusheader');">
+        <div class="holder">
+          {
+            bannerIncidents.length > 0 ? (
+              bannerIncidents.map(inc => (
+                <a
+                  href={inc.shortlink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="status-incident-item"
+                  aria-label={inc.serviceName + " - " + inc.incidentName}>
+                  <span
+                    class="status-incident-icon"
+                    style={`background-color: ${inc.serviceColor};`}>
+                    {inc.serviceIcon && (
+                      <img src={`/img/${inc.serviceIcon}`} alt="" />
+                    )}
+                  </span>
+                  <span class="status-incident-text">
+                    <b>{inc.serviceName}</b>
+                    <small>{inc.incidentName}</small>
+                  </span>
+                </a>
+              ))
+            ) : (
+              <div class="status-all-ok">
+                <Icon
+                  name="lucide:circle-check"
+                  style="width:20px; height:20px;"
+                />
+                {t("status.allOperational", {
+                  defaultValue: "All services working properly"
+                })}
+              </div>
+            )
+          }
+        </div>
+      </div>
       <a
-        class="dropdown-item"
-        href={localizePath("/extras")}
-        aria-label="Extras Link"
-        ><Icon name="lucide:package-open" style="margin-bottom:5px;" />
-        {t("header.extras")}</a
-      >
-      <a
-        class="dropdown-item"
-        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://forum.wiilink.ca"
-        aria-label="CMOC Viewing Tool Link"
-        ><div>
-          <Icon name="message-circle" style="margin-bottom:5px;" /> WiiLink Forum
-        </div></a
-      >
-      <a
-        class="dropdown-item"
-        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://wfc.wiilink24.com"
+        class="header-link"
+        onmouseover="toggle('wfcheader'); updateWFCStats();"
+        onmouseout="toggle('wfcheader');"
+        href="https://wfc.wiilink.ca"
         aria-label="WiiLink WFC Link"
-        ><div><Icon name="lucide:wifi" style="margin-bottom:5px;" /> WiiLink WFC</div>
-      </a>
-      <div class="wiilink-data-container">
-        <div class="wiilink-data-button">
-          <span
-            style="display:flex; flex-direction:row; align-items:center; gap:8px;">
-            <Icon name="lucide:database" /> WiiLink Data
-          </span>
-          <Icon
-            name="lucide:chevron-down"
-            class="chevron-icon"
-            style="margin-left:auto; font-size:16px;"
-          />
-        </div>
-        <div class="wiilink-data-dropdown">
+        ><img
+          src="/img/wfc.webp"
+          alt="WiiLink WFC Logo"
+          style="height:20px; margin-right:5px; filter: invert(var(--invert)); transition: 0.2s;"
+        />
+        WFC</a
+      >
+      <div
+        id="wfcheader"
+        class="popover-header"
+        onmouseout="toggle('wfcheader');">
+        <div class="holder">
+          <div style="display:flex; flex-direction:row; align-items:center; justify-content:space-between; gap:12px;">
+          <div class="wfc-stat">
+            <span class="wfc-stat-icon">
+              <b class="wfc-stat-value" id="wfc-online">-</b>
+            </span>
+            <span class="wfc-stat-label">
+              <Icon name="lucide:wifi" style="width:20px; height:20px;" />
+              Online
+            </span>
+          </div>
+          <div class="wfc-stat">
+            <span class="wfc-stat-icon">
+              <b class="wfc-stat-value" id="wfc-active">-</b>
+            </span>
+            <span class="wfc-stat-label">
+              <Icon name="lucide:gamepad-2" style="width:20px; height:20px;" />
+              Active
+            </span>
+          </div>
+          <div class="wfc-stat">
+            <span class="wfc-stat-icon">
+              <b class="wfc-stat-value" id="wfc-groups">-</b>
+            </span>
+            <span class="wfc-stat-label">
+              <Icon name="lucide:users" style="width:20px; height:20px;" />
+              Groups
+            </span>
+          </div>
+          </div>
+          <hr style="border-top: 1px solid var(--border-color);" />
           <a
-            href="https://miicontest.wiilink.ca"
-            class="dropdown-subitem"
-            aria-label="CMOC Viewing Tool Link">
-            <Icon name="lucide:users" /> Check Mii Out Channel
-          </a>
-          <a
-            href="https://evc.wiilink.ca"
-            class="dropdown-subitem"
-            aria-label="EVC Viewing Tool Link">
-            <Icon name="chart-no-axes-column" /> Everybody Votes Channel
-          </a>
-          <a
-            href="http://panel.vtp.wiilink24.com/thepollbooth/suggestions"
-            class="dropdown-subitem"
-            aria-label="EVC Suggestions Link">
-            <Icon name="circle-help" /> EVC Suggestions
-          </a>
-          <a
-            href="https://prod.wiilink24.com/theunderground/votes"
-            class="dropdown-subitem"
-            aria-label="Wii Room Votes Link">
-            <Icon name="lucide:house" /> Wii Room Votes
+            class="wfc-visit"
+            href="https://wfc.wiilink24.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WiiLink WFC Website Link">
+            <Icon name="lucide:arrow-up-right" style="width:16px; height:16px;" />
+            Go to the WFC website
           </a>
         </div>
       </div>
-      <!-- <a
+      <button
+        id="moreHeader"
+        onclick="toggle('dropdownMore');"
+        class="btn"
+        style="border: 0px !important;"
+        aria-label="More button"
+        ><Icon
+          name="lucide:chevron-down"
+          style="font-size:30px; pointer-events:none;"
+        />
+      </button>
+      <div id="dropdownMore">
+        <a
+          class="dropdown-item"
+          style="display:flex; flex-direction:row; align-items:center; gap:8px;"
+          id="account"
+          href="https://accounts.wiilink.ca"
+          aria-label="Extras Link"
+          ><Icon name="lucide:user" />Log into WiiLink Accounts</a
+        >
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <LanguageDropdown />
+                <a
+          class="dropdown-item"
+          href={localizePath("/services")}
+          aria-label="Extras Link"
+          ><Icon name="lucide:package" style="margin-bottom:5px;" />
+          {t("header.services")}</a
+        >
+        <a
+          class="dropdown-item"
+          href={localizePath("/extras")}
+          aria-label="Extras Link"
+          ><Icon name="lucide:package-open" style="margin-bottom:5px;" />
+          {t("header.extras")}</a
+        >
+        <a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://forum.wiilink.ca"
+          aria-label="CMOC Viewing Tool Link"
+          ><div>
+            <Icon name="message-circle" style="margin-bottom:5px;" /> WiiLink Forum
+          </div></a
+        >
+        <div class="wiilink-data-container">
+          <div class="wiilink-data-button">
+            <span
+              style="display:flex; flex-direction:row; align-items:center; gap:8px;">
+              <Icon name="lucide:database" /> WiiLink Data
+            </span>
+            <Icon
+              name="lucide:chevron-down"
+              class="chevron-icon"
+              style="margin-left:auto; font-size:16px;"
+            />
+          </div>
+          <div class="wiilink-data-dropdown">
+            <a
+              href="https://miicontest.wiilink.ca"
+              class="dropdown-subitem"
+              aria-label="CMOC Viewing Tool Link">
+              <Icon name="lucide:users" /> Check Mii Out Channel
+            </a>
+            <a
+              href="https://evc.wiilink.ca"
+              class="dropdown-subitem"
+              aria-label="EVC Viewing Tool Link">
+              <Icon name="chart-no-axes-column" /> Everybody Votes Channel
+            </a>
+            <a
+              href="http://panel.vtp.wiilink24.com/thepollbooth/suggestions"
+              class="dropdown-subitem"
+              aria-label="EVC Suggestions Link">
+              <Icon name="circle-help" /> EVC Suggestions
+            </a>
+            <a
+              href="https://prod.wiilink24.com/theunderground/votes"
+              class="dropdown-subitem"
+              aria-label="Wii Room Votes Link">
+              <Icon name="lucide:house" /> Wii Room Votes
+            </a>
+          </div>
+        </div>
+        <!-- <a
           class="dropdown-item"
           style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
           href="https://tag.rc24.xyz/"
           aria-label="LinkTag"
           ><div><Icon name="lucide:tag" style="margin-bottom:5px;" /> LinkTag</div></a
         > -->
-      <a
-        class="dropdown-item"
-        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://card.wiilink24.com/"
-        aria-label="Digicard"
-        ><div>
-          <Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard
-        </div></a
-      >
-      <a
-        class="dropdown-item"
-        style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
-        href="https://stamp.wiilink.ca/"
-        aria-label="Mii Stamp Generator"
-        ><div>
-          <Icon name="lucide:stamp" style="margin-bottom:5px;" /> Mii Stamp Generator
-        </div></a
-      >
-      <hr
-        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-      />
-      <div
-        style="display:flex; flex-direction:row; align-items: center; justify-content:space-between; gap:3px;">
         <a
-          href="https://bookmark.rc24.xyz"
-          style="padding:8px; width:100%; border-radius:8px 4px 4px 8px; background-color:var(--bg-color-secondary); text-align:center;"
-          aria-label="Wii Bookmarks"
-          title="Wii Bookmarks"
-          ><Icon name="lucide:bookmark" style="margin-bottom:3px;" /></a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://card.wiilink24.com/"
+          aria-label="Digicard"
+          ><div>
+            <Icon name="lucide:id-card" style="margin-bottom:5px;" /> Digicard
+          </div></a
         >
         <a
-          href="http://disc.rc24.xyz/"
-          style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-          aria-label="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-          title="Get the date your GameCube, Wii, or Wii U disc was manufactured."
-          ><Icon name="lucide:disc" style="margin-bottom:3px;" /></a
+          class="dropdown-item"
+          style="display:flex; align-items:center; justify-content:space-between; gap:8px;"
+          href="https://stamp.wiilink.ca/"
+          aria-label="Mii Stamp Generator"
+          ><div>
+            <Icon name="lucide:stamp" style="margin-bottom:5px;" /> Mii Stamp Generator
+          </div></a
+        >
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <a
+          class="dropdown-item hover-opacity"
+          href={localizePath("/privacy-policy")}
+          aria-label="Privacy Policy Link"
+          ><Icon name="lucide:shield" style="margin-bottom:3px;" />
+          {t("header.privacyPolicy")}</a
         >
         <a
-          href="http://interviews.rc24.xyz/"
-          style="padding:8px; width:100%; border-radius:4px; background-color:var(--bg-color-secondary); text-align:center;"
-          aria-label="Nintendo dev interviews"
-          title="Nintendo dev interviews"
-          ><Icon name="message-circle" style="margin-bottom:3px;" /></a
+          class="dropdown-item hover-opacity"
+          href={localizePath("/tos")}
+          aria-label="Terms of Service Link"
+          ><Icon name="lucide:feather" style="margin-bottom:3px;" />
+          {t("header.tos")}</a
         >
         <a
-          href="http://wiiremote.rc24.xyz/"
-          style="padding:8px; width:100%; border-radius:4px 8px 8px 4px; background-color:var(--bg-color-secondary); text-align:center;"
-          aria-label="Get the date your Wii Remote was manufactured."
-          title="Get the date your Wii Remote was manufactured."
-          ><Icon name="lucide:gamepad-2" style="margin-bottom:3px;" /></a
+          class="dropdown-item hover-opacity"
+          href={localizePath("/eula")}
+          aria-label="EULA Link"
+          ><Icon name="lucide:book" style="margin-bottom:3px;" />
+          {t("header.eula")}</a
         >
-      </div>
-      <hr
-        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-      />
-      <a
-        class="dropdown-item"
-        href={localizePath("/privacy-policy")}
-        aria-label="Privacy Policy Link"
-        ><Icon name="lucide:shield" style="margin-bottom:3px;" />
-        {t("header.privacyPolicy")}</a
-      >
-      <a
-        class="dropdown-item"
-        href={localizePath("/tos")}
-        aria-label="Terms of Service Link"
-        ><Icon name="lucide:feather" style="margin-bottom:3px;" />
-        {t("header.tos")}</a
-      >
-      <a
-        class="dropdown-item"
-        href={localizePath("/eula")}
-        aria-label="EULA Link"
-        ><Icon name="lucide:book" style="margin-bottom:3px;" />
-        {t("header.eula")}</a
-      >
-      <hr
-        style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
-      />
-      <div
-        style="margin:6px; margin-top:13px; display:grid; grid-template-columns:1fr 1fr 1fr; grid-template-rows: 1fr; gap:8px;">
-        <button
-          id="themeColor"
-          type="button"
-          class="btn btn-light dropdown-element"
-          aria-label="Theme Button"
-          onclick="themeToggle()"
-          ><Icon name="lucide:moon" style="pointer-events:none;" /></button
-        >
-        <a href={localizePath("/")} aria-label="Home Link"
-          ><button
+        <hr
+          style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
+        />
+        <div
+          style="margin:6px; margin-top:13px; display:flex; flex-direction: row; justify-content:space-between; gap:8px;">
+          <button
+            id="themeColor"
             type="button"
-            class="btn btn-success dropdown-element"
-            aria-label="Download Button"
-            ><Icon
-              name="download"
-              style="color:white !important; margin-bottom:3px;"
-            /></button
-          ></a
-        >
-        <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
-          ><button
-            type="button"
-            class="btn btn-primary dropdown-element"
-            aria-label="Discord Button"
-            ><Icon
-              name="discord"
-              style="color:white !important; margin-bottom:3px;"
-            /></button
-          ></a
-        >
+            class="bottom-btns"
+            style="background-color: #ffffff;"
+            aria-label="Theme Button"
+            onclick="themeToggle()"
+            ><Icon name="lucide:moon" style="pointer-events:none;" /></button
+          >
+          <span style="display:flex; flex-direction:row; align-items:center; gap:8px;">
+            <a href={localizePath("/")} aria-label="Home Link"
+              ><button type="button" class="bottom-btns" style="background-color: #19a420 !important;" aria-label="Download Button"
+                ><Icon
+                  name="download"
+                  style="color:white !important; margin-bottom:0px;"
+                /></button
+              ></a
+            >
+            <a href="https://www.discord.gg/wiilink" aria-label="Discord Link"
+              ><button type="button" class="bottom-btns" style="background-color: #5865F2 !important;" aria-label="Discord Button"
+                ><Icon
+                  name="discord"
+                  style="color:white !important; margin-bottom:0px;"
+                /></button
+              ></a
+            >
+          </span>
+        </div>
       </div>
     </div>
   </div>
@@ -494,7 +612,7 @@ const { isMain } = Astro.props;
     localStorage.setItem("color-mode", "dark");
     if (themeColorButton) {
       themeColorButton.innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
       themeColorButton.style.filter = "invert(0)";
     }
   }
@@ -504,7 +622,7 @@ const { isMain } = Astro.props;
     localStorage.setItem("color-mode", "light");
     if (themeColorButton) {
       themeColorButton.innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
       themeColorButton.style.filter = "invert(1)";
     }
   }
@@ -613,6 +731,7 @@ const { isMain } = Astro.props;
       const dropdownMore = document.getElementById("dropdownMore");
       const newsHeader = document.getElementById("newsheader");
       const guideHeader = document.getElementById("guideheader");
+      const wfcHeader = document.getElementById("wfcheader");
       const moreHeader = document.getElementById("moreHeader");
 
       // Handle dropdownMore
@@ -644,6 +763,16 @@ const { isMain } = Astro.props;
       ) {
         guideHeader.style.display = "none";
       }
+
+      // Handle wfcheader
+      if (
+        wfcHeader &&
+        wfcHeader.style.display === "block" &&
+        !wfcHeader.contains(event.target) &&
+        !event.target.matches('[onmouseover*="wfcheader"]')
+      ) {
+        wfcHeader.style.display = "none";
+      }
     });
   }
 
@@ -665,6 +794,35 @@ const { isMain } = Astro.props;
   }
 
   /************************
+   * WiiLink WFC Live Stats
+   ************************/
+  function updateWFCStats() {
+    var online = document.getElementById("wfc-online");
+    var active = document.getElementById("wfc-active");
+    var groups = document.getElementById("wfc-groups");
+    if (!online) return;
+
+    fetch("https://api.wfc.wiilink24.com/api/stats", { cache: "no-store" })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        if (!data || !data.global) return;
+        online.textContent = data.global.online;
+        active.textContent = data.global.active;
+        groups.textContent = data.global.groups;
+      })
+      .catch(function () {});
+  }
+
+  setInterval(function () {
+    var wfcHeader = document.getElementById("wfcheader");
+    if (wfcHeader && wfcHeader.style.display === "block") {
+      updateWFCStats();
+    }
+  }, 10000);
+
+  /************************
    * Initialization
    ************************/
   document.addEventListener("DOMContentLoaded", function () {
@@ -673,10 +831,10 @@ const { isMain } = Astro.props;
 
     if (document.documentElement.classList.contains("dark")) {
       document.getElementById("themeColor").innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>';
     } else {
       document.getElementById("themeColor").innerHTML =
-        '<svg style="pointer-events:none; transform:translate(0, -2px);" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
+        '<svg style="pointer-events:none;" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>';
     }
   });
 </script>
@@ -685,7 +843,7 @@ const { isMain } = Astro.props;
   /* Base Styles */
   :root {
     --header-height: 128px;
-    --header-mobile-height: 98px;
+    --header-mobile-height: 8px;
     --border-radius-standard: 8px;
     --border-radius-large: 12px;
     --spacing-standard: 8px;
@@ -718,11 +876,8 @@ const { isMain } = Astro.props;
   }
 
   .logo {
-    top: 50%;
-    left: 50px;
-    transform: translate(0, -50%);
+    margin-left: 28px;
     filter: invert(1);
-    position: absolute;
   }
 
   /* Navigation */
@@ -732,8 +887,6 @@ const { isMain } = Astro.props;
     gap: 10px;
     width: auto;
     right: 50px;
-    top: 60px;
-    transform: translate(0, -50%);
     align-items: center;
     justify-content: center;
     font-family:
@@ -796,6 +949,26 @@ const { isMain } = Astro.props;
 
   .header-link:hover::after {
     bottom: 0;
+    opacity: 1;
+  }
+
+  .bottom-btns {
+    width: 40px;
+    height: 40px;
+    border-radius: 8000px;
+    background-color: var(--bg-color-secondary);
+    display: flex;
+    border: 0;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hover-opacity {
+    opacity: 0.7;
+    transition: var(--transition-standard);
+  }
+
+  .hover-opacity:hover {
     opacity: 1;
   }
 
@@ -888,6 +1061,81 @@ const { isMain } = Astro.props;
     transition: 0.2s;
   }
 
+  .status-incident-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.2s;
+  }
+
+  .status-incident-item:hover {
+    background-color: var(--bg-opaque-1);
+  }
+
+  .status-incident-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .status-incident-icon img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+
+  .status-incident-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 200px;
+  }
+
+  .status-incident-text b {
+    font-size: 15px;
+  }
+
+  .status-incident-text small {
+    font-size: 13px;
+    opacity: 0.8;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .status-all-ok {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    font-size: 15px;
+    white-space: nowrap;
+  }
+
+  .status-all-ok svg {
+    color: var(--bs-green);
+    flex-shrink: 0;
+  }
+
+  /* Match popover text to the smaller status popover sizing */
+  .popover-header .holder div {
+    font-size: 13px;
+  }
+
+  .popover-header .holder b {
+    font-size: 15px;
+  }
+
   .post:hover {
     transform: scale(1.005);
     background-color: var(--bg-color-secondary);
@@ -911,7 +1159,70 @@ const { isMain } = Astro.props;
 
   #guideheader {
     width: 400px;
-    transform: translate(-45px, 0);
+    transform: translate(-40px, 0);
+  }
+
+  #statusheader {
+    width: 400px;
+    transform: translate(63px, 0);
+  }
+
+  #wfcheader {
+    width: 300px;
+    transform: translate(170px, 0);
+  }
+
+  .wfc-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    transition: 0.2s;
+  }
+
+  .wfc-stat:hover {
+    background-color: var(--bg-opaque-1);
+  }
+
+  .wfc-stat-icon {
+    width: 60px;
+    aspect-ratio: 1 / 1;
+    border-radius: 8px;
+    background-color: var(--bg-opaque-1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .wfc-stat-label {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .popover-header .holder .wfc-stat-value {
+    font-size: 27px;
+    font-variant-numeric: tabular-nums;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .wfc-visit {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.2s;
+  }
+
+  .wfc-visit:hover {
+    background-color: var(--bg-opaque-1);
   }
 
   /* Utility Classes */
@@ -952,6 +1263,7 @@ const { isMain } = Astro.props;
 
   /* WiiLink Data Dropdown */
   .wiilink-data-container {
+    font-size: 17px;
     display: block;
     position: relative;
     cursor: pointer;

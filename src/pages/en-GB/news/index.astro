@@ -5,6 +5,7 @@ import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
 import FormattedDate from "../../../components/FormattedDate.astro";
 import { localizePath } from "astro-i18next";
+import "../../../styles/shared.css";
 import { t, changeLanguage } from "i18next";
 import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
@@ -33,6 +34,7 @@ postsContentful.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
 postsContentful = postsContentful.filter(post => !post.unlist);
+const vtName = (slug: string) => `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
@@ -44,34 +46,18 @@ const sliceDescription = (description: string) => {
   description={t("news.mainDesc")}
   image="/img/News_embed.webp"
 />
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section={t("header.news")} newsPopoverTransitions={false} />
 <div class="hold">
-  <HeadText text={t("header.news")} />
-  <div class="welcome-msg">
-    <h2 style="font-size:40px; font-family:Gilroy;">
-      <Trans i18nKey="news.title">
-        Here is the <span
-          class="badge bg-warning"
-          style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-        ></span><b style="font-family: Rubik;">WiiLink</b><span
-          class="badge bg-warning"
-          style="bottom:8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-          >news</span
-        >
-      </Trans>
-    </h2>
-    <h3 style="font-size: calc(1.3rem + .6vw);">
-      <Trans i18nKey="news.subtitle">
-        Catch up on all our <b class="color">antics</b>, as well as <b
-          class="color">service updates</b
-        >!
-      </Trans>
-    </h3>
-  </div>
+  <HeadText
+    text={t("header.news")}
+    titleKey="news.title"
+    subtitleKey="news.subtitle"
+    titleColor="#14dc3c"
+  />
   <a
     href={localizePath(`/news/${postsContentful[0].slug}/`)}
     class="newsHero"
-    style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block;`}>
+    style={`background-color: var(--bg-color-secondary); text-decoration:none; display:block; view-transition-name: ${vtName(postsContentful[0].slug)};`}>
     <img
       class="mainimg2"
       style="width:100%; height:100%; filter:blur(80px) brightness(0.5); transform: translate(0, -25%) scale(1.5); position:absolute;"
@@ -125,7 +111,7 @@ const sliceDescription = (description: string) => {
           >
         </span>
           <r
-            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
+            style={`background-color: #ffffff20; color: white !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative; text-align:center;`}
             >{(postsContentful[0].author as any).fields.role}</r
           >
         </h5>
@@ -143,7 +129,7 @@ const sliceDescription = (description: string) => {
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
-          style="cursor:pointer; transition: 0.2s;">
+          style={`cursor:pointer; transition: 0.2s; view-transition-name: ${vtName(post.slug)};`}>
           <a
             href={localizePath(`/news/${post.slug}/`)}
             aria-label={post.title + " Link"}>
@@ -203,7 +189,10 @@ const sliceDescription = (description: string) => {
   <div class="postholdermini">
        {
       postsContentful.slice(7).map(post => (
-        <a href={localizePath(`/news/${post.slug}/`)} class="postmini">
+        <a
+          href={localizePath(`/news/${post.slug}/`)}
+          class="postmini"
+          style={`view-transition-name: ${vtName(post.slug)};`}>
           {post?.image?.fields?.file?.url && (
             <img
               style="width: 100%; height: 100%; object-fit: cover; filter:brightness(0.7); z-index:0; position:absolute;"
@@ -260,12 +249,12 @@ const sliceDescription = (description: string) => {
 <style>
   .hold {
     left: 50%;
+    width: 95%;
     transform: translate(-50%, 0);
     width: calc(100% - 20px);
     max-width: 1500px;
     position: relative;
   }
-
   .herodatahold {
     display: flex;
     flex-direction: row;
@@ -293,38 +282,11 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  .posthold {
-    transform: translate(0, 0px);
-    opacity: 0;
-    transition: 0.5s;
-    position: relative;
-  }
-
-  .post:nth-child(1) {
-    animation: fadeup 200ms 0.3s forwards;
-  }
-  .post:nth-child(2) {
-    animation: fadeup 200ms 0.35s forwards;
-  }
-  .post:nth-child(3) {
-    animation: fadeup 200ms 0.4s forwards;
-  }
   .post:nth-child(4) {
-    animation: fadeup 200ms 0.45s forwards;
     border-radius: 8px 8px 8px 16px;
   }
-  .post:nth-child(5) {
-    animation: fadeup 200ms 0.5s forwards;
-  }
   .post:nth-child(6) {
-    animation: fadeup 200ms 0.55s forwards;
     border-radius: 8px 8px 16px 8px;
-  }
-
-  .posthold:hover {
-    transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 20px #37373756);
-    transition: 0.2s;
   }
 
   .fadebefore::before {
@@ -346,10 +308,6 @@ const sliceDescription = (description: string) => {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-  }
-
-  .mainpost:nth-child(1) {
-    opacity: 1;
   }
 
   .postholder {
@@ -384,7 +342,6 @@ const sliceDescription = (description: string) => {
     width: 100%;
     border-radius: 8px;
     font-family: Gilroy;
-    opacity: 0;
     hyphens: auto;
     overflow: hidden;
     transition: 0.2s;
@@ -392,11 +349,6 @@ const sliceDescription = (description: string) => {
 
   .post:hover {
     transform: scale(1.02) !important;
-    transition: 0.2s;
-  }
-
-  .post:active {
-    transform: scale(0.98) !important;
     transition: 0.2s;
   }
 
@@ -467,7 +419,6 @@ const sliceDescription = (description: string) => {
     left: 50%;
     transform: translateX(-50%);
     border-radius: 16px 16px 8px 8px;
-    animation: fadein 0.2s linear forwards;
     overflow: hidden;
     position: relative;
     transition: 0.2s;
@@ -482,26 +433,6 @@ const sliceDescription = (description: string) => {
   .newsHero:active {
     transform: translate(-50%, 0) scale(0.99) !important;
     transition: 0.2s;
-  }
-
-  @keyframes rotate {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
-  }
-
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
   }
 
   .fl-button {
@@ -561,10 +492,6 @@ const sliceDescription = (description: string) => {
       gap: 20px;
     }
 
-    .mobilehide {
-      display: none;
-    }
-
     .postholdermini {
       top: 0px;
       width: 100%;
@@ -589,6 +516,7 @@ const sliceDescription = (description: string) => {
 
     .innerflexmobile {
       width: 100%;
+      flex-direction:column !important;
     }
 
     .mainpostflex {
@@ -601,10 +529,6 @@ const sliceDescription = (description: string) => {
       font-size: 16px !important;
     }
 
-    .heroimg {
-      height: 100%;
-    }
-
     .post:hover {
       transform: translate(0, 0px) scale(102%);
       box-shadow: 0px 0px 0px rgb(187, 187, 187);
@@ -612,13 +536,4 @@ const sliceDescription = (description: string) => {
     }
   }
 
-  @media only screen and (min-width: 2000px) {
-    .hold {
-      left: 50%;
-      transform: translate(-50%, 150px);
-      width: 2000px;
-      margin-bottom: 80px;
-      position: relative;
-    }
-  }
 </style>

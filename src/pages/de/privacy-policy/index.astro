@@ -2,6 +2,7 @@
 import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import Layout from "../../../layouts/Layout.astro";
+import "../../../styles/legal.css";
 import i18next, { t, changeLanguage } from "i18next";
 import { Trans, HeadHrefLangs } from "astro-i18next/components";
 
@@ -14,19 +15,13 @@ changeLanguage("de");
   image="/img/branding_bg.webp">
   <Header isGuide="display:none;" />
 
-  <div class="sectiontop" style="top:200px !important; position:relative;">
+  <div class="legal">
     <section class="section">
-      <h1 style="font-family: Gilroy; margin-bottom: 18px;">Privacy Policy</h1>
-      <h3
-        class="update"
-        style="width:270px; top:20px; right:0; padding:10px; border-radius:8px; font-size:20px; font-family:inter; background-color:#00000060; position:absolute;"
-        class="updated">
-        Last updated: 04/11/2025
+      <h1>Privacy Policy</h1>
+      <h3 class="update">
+        Last updated: 11/04/2026
       </h3>
-      <div class="polka-dot"></div>
-      <p
-        class="title"
-        style="filter:opacity(0.3); font-family:inter; transform:translate(0, -20px);">
+      <p class="title">
         Privacy policy for the WiiLink family of services
       </p>
       <section class="section">
@@ -36,7 +31,7 @@ changeLanguage("de");
           takes extremely seriously. We believe in protecting the information
           accessed in the most secure way possible. We also believe that being
           transparent on how we access your data leads to a bigger sense of
-          trust with the consumer.
+          trust with our users.
           <br /><br />
           Please take your time and read through this Privacy Policy to the best
           of your ability to learn how we access and store your data. You will be
@@ -44,13 +39,30 @@ changeLanguage("de");
           <br /><br />
           <p class="title">What do we access?</p>
           When you use our services, our web server, nginx, logs your IP address.
-          Additionally, your Wii Number, and any other data you provide to our
-          services, is stored to allow these services to function correctly.
+          Additionally, your console's Wii Number, MAC Address, Serial Number, and
+          any data you provide to our services (such as Miis submitted to contests,
+          polls you vote on, etc), is stored to allow these services to function
+          correctly.
           <br /><br />
           This data is used as necessary for the operation of our services. We do
           not sell or share data.
-          <br />
-          <br />
+          <br /><br />
+        <p class="title">WiiLink Checkout</p>
+          We have a service, known as "WiiLink Checkout", available at
+          <a href="https://checkout.wiilink.ca">https://checkout.wiilink.ca</a>.
+          Through this site, you can view your records (such as playtime shared
+          through Nintendo Channel, EVC voting history, etc), as well as those
+          of other users of WiiLink. If your console is not linked to a WiiLink
+          Account, this data is used in overall statistics on the site, and can
+          be viewed using your serial number. If you link your console to an
+          account, you gain the ability to enable a public profile, allowing
+          people to see your Wii Number alongside your data.
+          <br /><br />
+          Additionally, your Check Mii Out Channel (also known as Mii Contest
+          Channel) artisan, alongside the Miis you post, are publicly visible
+          through our viewer at
+          <a href="https://miicontest.wiilink.ca/">https://miicontest.wiilink.ca/</a>.
+        <br /><br />
         <p class="title">Additional policies</p>
           Some of our services have their own privacy policies, separate to the
           main one here. These are the following services:
@@ -58,13 +70,15 @@ changeLanguage("de");
             <li><a href="/privacy-policy/accounts">WiiLink Accounts</a></li>
             <li><a href="https://forum.wiilink.ca/privacy">WiiLink Forum</a></li>
             <li><a href="/privacy-policy/demae-dominos">Demae Domino's</a></li>
+            <li><a href="/privacy-policy/just-eat">Food Channel Just Eat</a></li>
           </ul>
           Furthermore, our services are protected by Cloudflare, and this website
           is hosted by them. By using our services, you agree to the Cloudflare
           privacy policy, which can be found
           <a href="https://www.cloudflare.com/privacypolicy/">here</a>.
+        <br /><br />
       <p class="title">Changes to this Privacy Policy</p>
-        It is our policy to inform the consumers to any changes to this privacy
+        It is our policy to inform our users of any changes to this privacy
         policy. If there is a change, you will be notified through our Discord
         server. The revision date of the privacy policy is at the
         bottom of the page.
@@ -73,196 +87,11 @@ changeLanguage("de");
             Last Modified
         </p>
         <p>
-            Tuesday, November 4th, 2025
+            Saturday, April 11th, 2026
         </p>
       <br />
     </section>
   </div>
   <br /><br /><br />
   <Footer />
-
-  <style>
-    .section {
-      max-width: 1500px;
-      padding-left: 5px;
-      padding-right: 5px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      margin-bottom: 80px;
-      position: relative;
-      font-family: inter;
-    }
-    .title {
-      font-family: Gilroy;
-      font-size: 30px;
-    }
-
-    .socials {
-      top: 50%;
-      right: 50px;
-      transform: translate(0, -50%);
-      color: white;
-      font-size: 25px;
-      width: 150px;
-      justify-content: right;
-      display: flex;
-      flex-wrap: wrap;
-      position: absolute;
-    }
-    .slogan {
-      left: 80px;
-      font-family:
-        inter,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        "Open Sans",
-        "Helvetica Neue",
-        sans-serif;
-      color: white;
-      width: 500px;
-      position: relative;
-    }
-    .footer-holder {
-      bottom: 20px;
-      left: 50%;
-      transform: translate(-50%, 0);
-      display: flex;
-      align-items: center;
-      width: 98%;
-      height: 250px;
-      position: absolute;
-    }
-
-    .symbolholder {
-      background-color: var(--bg-color);
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      transition: 0.5s;
-      z-index: 1;
-      overflow: hidden;
-      position: fixed;
-    }
-
-    .backsymbol {
-      width: 100%;
-      height: 100%;
-      top: 0%;
-      left: 50%;
-      transform: translate(-50%, 0);
-      z-index: 1;
-      position: absolute;
-    }
-    .contentholder {
-      left: 50%;
-      transform: translate(-50%, 0);
-      max-width: 1000px;
-      position: relative;
-    }
-    .bottomleftcorner {
-      animation: changecolor 10s linear infinite;
-      position: relative;
-    }
-    .bottomleftcornerholder {
-      left: -2.6px;
-      bottom: -3px;
-      scale: 31.6%;
-      transform: translate(-106.5%, 107.3%);
-      z-index: 2;
-      position: absolute;
-    }
-    .square {
-      --img-invert: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        41deg,
-        rgba(0, 138, 255, 1) 0%,
-        rgba(255, 0, 59, 1) 100%
-      );
-      z-index: 0;
-      animation: changecolor 10s linear infinite;
-      position: absolute;
-    }
-    #square2 {
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: #ffffff;
-      transform: translate(0%, 0%);
-      border-radius: 4px;
-      z-index: 1;
-
-      transition: 0.5s;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      position: absolute;
-    }
-
-    .polka-dot {
-      width: 240px;
-      height: 240px;
-      background-image: radial-gradient(#000 10%, transparent 11%),
-        radial-gradient(#000 10%, transparent 11%);
-      background-size: 30px 30px;
-      background-position:
-        0 0,
-        30px 30px;
-      opacity: 0.1;
-      rotate: 30deg;
-      left: -50px;
-      top: -38px;
-      background-repeat: repeat;
-      animation: rotate 240s linear infinite;
-      position: absolute;
-      z-index: 0;
-    }
-
-    @keyframes rotate {
-      0% {
-        rotate: 0deg;
-      }
-      100% {
-        rotate: 360deg;
-      }
-    }
-
-    .notification {
-      background-color: #292929;
-      color: black;
-      padding: 20px;
-      font-family: Gilroy;
-      border-radius: 8px;
-      border: 2px solid #ffffff20;
-      text-align: center;
-    }
-
-    .is-danger {
-      background-color: #db0f0f20;
-      border: 4px solid #db0f0f80;
-    }
-
-    .is-warning {
-      background-color: #c9b81620;
-      border: 4px solid #c9b81680;
-    }
-
-    strong {
-      font-family: Gilroy;
-      font-size: 20px;
-    }
-
-    @media (max-width: 1000px) {
-      .update {
-        display: none;
-      }
-    }
-  </style>
 </Layout>
