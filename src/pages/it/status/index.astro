@@ -57,27 +57,13 @@ const bannerIncidents = mergedData
   <Header isGuide="display:none;" section={t("header.status")} />
 
   <section>
-    <div class="welcome-msg">
-      <HeadText text={t("header.status")} />
-      <div>
-        <h2 style="font-size:40px; font-family:Gilroy;">
-          <Trans i18nKey="status.title">
-            Check out the <span
-              class="badge bg-primary"
-              style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-            ></span><b style="font-family: Rubik;">WiiLink</b><span
-              style="bottom:8px; text-transform: capitalize; color: #dccf14;"
-              >status</span
-            >
-          </Trans>
-        </h2>
-        <h3 style="font-size: calc(1.3rem + .6vw);">
-          <Trans i18nKey="status.subtitle">
-            Get a glimpse at our <b class="color">progress</b>, in addition to
-            the status of our <b class="color">servers</b>!
-          </Trans>
-        </h3>
-      </div>
+    <HeadText
+      text={t("header.status")}
+      titleKey="status.title"
+      subtitleKey="status.subtitle"
+      titleColor="#dccf14"
+      extraRight
+    >
       <a href="https://status.wiilink24.com/"
         ><button
           type="button"
@@ -87,7 +73,7 @@ const bannerIncidents = mergedData
           {t("status.serverStatus")}</button
         ></a
       >
-    </div>
+    </HeadText>
     <div class="intro">
       <div class="polka-dot"></div>
     </div>
@@ -204,20 +190,6 @@ const bannerIncidents = mergedData
 <style>
   h2 {
     font-size: calc(1.3rem + 0.6vw);
-  }
-
-  .welcome-msg {
-    top: 15px;
-    width: 95%;
-    max-width: 1500px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    align-items: center;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    position: relative;
   }
 
   .intro {
