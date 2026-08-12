@@ -7,18 +7,18 @@
         "desc": "Descubre el tiempo de tu región, tu país o del mundo entero.",
         "link": "/guide/forecast",
         "isArea": "Internacional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "icon": "forecast_icon.webp",
-        "todo": "<span class='circle-check'></span> ¡El servicio está funcionando correctamente! <br><br> <b> Los usuarios de RiiConnect24</b> necesitarán actualizar a la última versión con el Parcheador de WiiLink para reanudar el servicio.",
-        "completed": "95"
+        "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
+        "completed": "100"
       },
       {
         "color": "#0C9228",
         "name": "Canal Noticias",
-        "desc": "Alcanza rápidamente las últimas noticias de alrededor del mundo y vea exactamente lo que está pasando.",
+        "desc": "Ponte al día rápidamente de las últimas noticias de todo el mundo y descubre exactamente dónde están ocurriendo.",
         "link": "/guide/news",
         "isArea": "Internacional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "icon": "news_icon.webp",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "completed": "100"
@@ -26,98 +26,97 @@
       {
         "color": "#787878",
         "name": "Canal Nintendo",
-        "desc": "Una guía de los títulos de Wii, Nintendo DS y Nintendo 3DS con reseñas, tráileres, shows especiales y demos.",
+        "desc": "Una guía de los títulos de Wii, Nintendo DS y Nintendo 3DS con reseñas, tráileres, programas especiales y demos.",
         "link": "/guide/nintendo",
         "isArea": "Internacional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "icon": "nintendo_icon.webp",
-        "todo": "<span class='circle-check'></span> ¡El servicio está funcionando correctamente!",
-        "completed": "90"
+        "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
+        "completed": "100"
       },
       {
         "color": "#F1E3C1",
         "name": "Canal Concursos Mii",
-        "desc": "Conviértete en un artesano Mii y enseña al mundo tus habilidades al diseñar un Mii en una amplia variedad de concursos.",
+        "desc": "Conviértete en un artesano Mii y demuestra al mundo tus habilidades para diseñar Mii en una amplia variedad de concursos.",
         "link": "/guide/miicontest",
         "isArea": "Internacional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "icon": "miicontest_icon.webp",
-        "todo": "<span class='circle-check'></span> ¡El servicio está funcionando correctamente!",
-        "completed": "80"
+        "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
+        "completed": "100"
       },
       {
         "color": "#283688",
         "name": "Canal Opiniones",
-        "desc": "Descubre lo diferente que piensa el mundo de ti participando en encuestas totalmente nuevas.",
+        "desc": "Descubre en qué meidda el mundo piensa de forma diferente a ti participando en nuevas encuentas.",
         "link": "/guide/evc",
         "isArea": "Internacional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "icon": "democracy_icon.webp",
-        "todo": "<span class='circle-check'></span> ¡El servicio está funcionando correctamente!",
-        "completed": "80"
+        "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
+        "completed": "100"
       },
       {
         "color": "#d4a80b",
         "name": "Canal Comida",
-        "desc": "Pide diferentes tipos de comida a domicilio a través de tu consola Wii.",
+        "desc": "Pide diferentes tipos de comida a domicilio a través de tu Wii.",
         "link": "/guide/demae",
         "isArea": "Originalmente exclusivo de Japón",
-        "status": "Lanzamiento completo",
-        "todo": "<span class='circle-check'></span> ¡El servicio está funcionando correctamente!",
+        "status": "Lanzamiento completado",
+        "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "icon": "demae_icon.webp",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#173de8",
         "name": "Canal Guía de TV",
-        "desc": "Consulta la guía de programación de tu televisión, programa recordatorios de programas y maneja tu televisor con el mando de Wii.",
+        "desc": "Consulta la guía de programación de tu zona, establece recordatorios de programas y maneja tu televisor con el mando de Wii.",
         "link": "/status",
         "isArea": "Originalmente exclusivo de Japón",
         "status": "Beta privada",
-        "todo": "<span class='hard-hat'></span> Este servicio aún está en fase de desarrollo",
+        "todo": "<span class='hard-hat'></span> Aún en fase de desarrollo",
         "icon": "tvnotomo_icon.webp",
-        "completed": "30"
+        "completed": "20"
       },
       {
         "color": "#ed34d8",
         "name": "Canal Kirby TV",
-        "desc": "Mira por tiempo limitado los episodios de <i>Kirby: Right Back at Ya!</i>.",
-        "link": "/guide/kirbytv",
-        "isArea": "Originalmente, en ciertos países europeos",
-        "status": "Lanzamiento completo",
+        "desc": "Disfruta de los episodios de «Kirby: Right Back at Ya!» disponibles por tiempo limitado.",
+        "isArea": "Originalmente en ciertos países europeos",
+        "status": "Lanzamiento completado",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "icon": "kirby_icon.webp",
-        "completed": "90"
+        "completed": "100"
       },
       {
         "color": "#00FFF8",
         "name": "Canal Impresión de fotos",
-        "desc": "Cree álbumes y tarjetas de visita con tus fotos y personajes Mii.",
+        "desc": "Crea álbumes y tarjetas de visita con tus fotos y personajes Mii.",
         "link": "/guide/digicam",
         "isArea": "Originalmente exclusivo de Japón",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona perfectamente!",
         "icon": "digicam_icon.webp",
-        "completed": "75"
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
         "name": "Wii Room",
-        "desc": "Descubra programas y otros contenidos de vídeo a la carta o envíe mensajes a tus amigos de Wii Room.",
+        "desc": "Descubre programas y otros contenidos de vídeo bajo demanda o envía mensajes a tus amigos de Wii Room.",
         "link": "/guide/wiinoma",
         "isArea": "Originalmente exclusivo de Japón",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "icon": "room_icon.webp",
-        "completed": "85"
+        "completed": "100"
       },
       {
         "color": "#05AAF8",
         "name": "Configuración del domicilio",
-        "desc": "Introduzca la información personal necesaria para el Canal Fotos y el Canal Comida.",
+        "desc": "Introduce la información personal necesaria para el Canal Impresión de Fotos y el Canal Comida.",
         "link": "/guide/install/#adding-personal-information",
         "isArea": "Originalmente exclusivo de Japón",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "icon": "",
         "completed": "100"
@@ -125,10 +124,10 @@
       {
         "color": "#05AAF8",
         "name": "Tablón de Mensajes Wii",
-        "desc": "Envía mensajes a amigos Wii y direcciones de correo electrónico registradas.",
+        "desc": "Envía mensajes a tus amigos de Wii y direcciones de correo electrónico registradas.",
         "link": "/guide/board",
         "isArea": "Sin bloqueo regional",
-        "status": "Lanzamiento completo",
+        "status": "Lanzamiento completado",
         "todo": "<span class='circle-check'></span> ¡El servicio funciona correctamente!",
         "icon": "",
         "completed": "100"
@@ -136,24 +135,24 @@
       {
         "color": "#05AAF8",
         "name": "Metroid Prime 3 Preview",
-        "desc": "Mire <i>contenido de</i> Metroid Prime 3: Corruption.",
+        "desc": "Mira <i>contenido de</i> Metroid Prime 3: Corruption.",
         "link": "/status",
         "isArea": "Originalmente América y Europa",
-        "status": "Parado",
-        "todo": "<span class='bomb'></span> El desarrollo de este servicio se ha detenido.",
+        "status": "Suspendido",
+        "todo": "<span class='bomb'></span> El desarrollo de este servicio se ha suspendido.",
         "icon": "",
-        "completed": "8"
+        "completed": "0"
       },
       {
         "color": "#05AAF8",
         "name": "Wii Room Anywhere",
-        "desc": "Una aplicación DSiWare para ver el contenido sin conexión descargado de Wii Room.",
-        "link": "/status",
+        "desc": "Una aplicación DSiWare para ver sin conexión el contenido descargado de Wii Room.",
+        "link": "/guide/dokodemo",
         "isArea": "Originalmente exclusivo de Japón",
-        "status": "Parado",
-        "todo": "<span class='bomb'></span> El desarrollo de este servicio se ha detenido.",
+        "status": "Suspendido",
+        "todo": "<span class='bomb'></span> El desarrollo de este servicio se ha suspendido.",
         "icon": "",
-        "completed": "15"
+        "completed": "100"
       }
     ]
   }

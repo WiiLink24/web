@@ -1,23 +1,23 @@
 {
   "taglines": [
-    "¡Sigue la fiesta como si fuera 2006!",
+    "¡Diviértete como si estuvieses en 2006!",
     "¿Sabías que puedes conectar tu consola Wii a Internet?",
-    "¡Cómo se vio en Scott The Woz!",
+    "¡Tal y como lo viste de Scott The Woz!",
     "El regreso del legendario WiiConnect24",
     "Redescubre tu Wii",
     "Volvamos a la época dorada de Nintendo",
-    "¡Conéctate de nuevo al pasado de la Wii!",
-    "Wii juega. ¿Y tú?",
-    "¡Con una Wii puedes hacer mucho más que perder en Mario Kart!",
-    "El verdadero servicio de reactivación de la red wii",
+    "¡Vuelve a conectar con el pasado de la Wii!",
+    "Wii Play. ¿Y tú?",
+    "¡Puedes hacer mucho más que perder en Mario Kart con una Wii!",
+    "El servicio de recuperación de red de Wii más auténtico",
     "¡Juega como si estuvieras en tu infancia!",
-    "A la Wii le gustaría jugar, otra vez",
-    "Tus recuerdos de la infancia, conectados a nuestros servidores",
+    "Wii queremos jugar, otra vez",
+    "Los recuerdos de tu infancia, conectados a nuestros servidores",
     "WiiLink, el software de Wii que va más allá",
     "Los fans hacen lo que Nintendo no",
-    "¡WiiLink definitivamente da vibras de 2006!",
-    "Uniendo el mundo, una Wii a la vez",
-    "Uno de los mayores pasos de Nintendo en el juego multijugador, ¡Revivido!"
+    "¡WiiLink te transporta directamente a 2006!",
+    "Uniendo el mundo, una Wii tras otra",
+    "¡Uno de los mayores avances de Nintendo en el ámbito de los juegos multijugador, vuelve a la carga!"
   ],
   "hero": {
     "element": [
@@ -30,21 +30,21 @@
       },
       {
         "name": "Canal Noticias",
-        "desc": "Manténgase informado con las últimas noticias de todo el mundo",
+        "desc": "Mantente al día de las últimas noticias de todo el mundo",
         "link": "/guide/news",
         "icon": "newsbanner.webp",
-        "bg": "news.jpg"
+        "bg": "news.webp"
       },
       {
         "name": "Canal Nintendo",
-        "desc": "Vea tráilers, lea críticas y descargue demos de juegos para DS",
+        "desc": "Mira tráilers, lee críticas y descarga demos de juegos de DS",
         "link": "/guide/nintendo",
         "icon": "nintendochannelbanner.webp",
         "bg": "nintendo.webp"
       },
       {
         "name": "Canal Concursos Mii",
-        "desc": "Participate in contests and vote for your favorite Miis",
+        "desc": "Participa en concursos y vota por tus Miis favoritos",
         "link": "/guide/miicontest",
         "icon": "miioutbanner.webp",
         "bg": "checkmiiout.webp"
@@ -54,39 +54,39 @@
         "desc": "Contesta a las encuestas y compara tus opiniones con las de los demás",
         "link": "/guide/evc",
         "icon": "politicsbanner.webp",
-        "bg": "politics.jpg"
+        "bg": "politics.webp"
       },
       {
         "name": "Canal Comida",
-        "desc": "Pide diferentes tipos de comida a domicilio a través de tu consola Wii",
+        "desc": "Pide diferentes tipos de comida a domicilio a través de tu Wii",
         "link": "/guide/demae",
         "icon": "demaebanner.webp",
         "bg": "food.webp"
       },
       {
         "name": "Canal Guía de TV",
-        "desc": "Consulte la programación de televisión y vea los trailers de las próximas series",
+        "desc": "Consulta la programación de televisión y mira los tráilers de las próximas series",
         "link": "/status",
         "icon": "tvnotomobanner.webp",
         "bg": "tvnotomo.webp"
       },
       {
         "name": "Canal Kirby TV",
-        "desc": "¡Vea los episodios del programa de televisión Kirby: Right Back at Ya! Show de Televisión",
+        "desc": "¡Ve los episodios de la serie de televisión «Kirby: Right Back at Ya!»",
         "link": "/guide/kirbytv",
         "icon": "kirbytvbanner.webp",
         "bg": "kirbytv.webp"
       },
       {
         "name": "Canal Impresión de fotos",
-        "desc": "Ordena imprimir tus fotos favoritas desde tu consola Wii",
+        "desc": "Pide copias impresas de tus fotos favoritas desde tu Wii",
         "link": "/guide/digicam",
         "icon": "digicambanner.webp",
         "bg": "digicamprints.webp"
       },
       {
         "name": "Wii Room",
-        "desc": "Descubra espectáculos y contenido de vídeo a la carta de una forma más novedosa",
+        "desc": "Descubre espectáculos y contenidos de vídeo bajo demanda de una forma más innovadora",
         "link": "/guide/wiinoma",
         "icon": "wiinomabanner.webp",
         "bg": "room.webp"
