@@ -440,14 +440,17 @@ const vtName = (slug: string) =>
         />
       </button>
       <div id="dropdownMore">
+        <span style="display:flex; flex-direction:row; align-items:center; gap:3px;">
         <a
           class="dropdown-item"
           style="display:flex; flex-direction:row; align-items:center; gap:8px;"
           id="account"
-          href="https://accounts.wiilink.ca"
+          href="https://checkout.wiilink.ca"
           aria-label="Extras Link"
           ><Icon name="lucide:user" />Log into WiiLink Accounts</a
         >
+        <a id="accountSettings" class="dropdown-item" style="width:30px; height:65px; display:flex; align-items:center; justify-content:center; display:none;" href="https://accounts.wiilink.ca" target="_blank" rel="noopener noreferrer"><Icon name="lucide:settings" /></a>
+        </span>
         <hr
           style="width:106%; transform:translate(-9px, 0); opacity:0.9; margin:8px 0px; border-top:1px solid var(--bg-opaque-1);"
         />
@@ -667,6 +670,7 @@ const vtName = (slug: string) =>
         accountElement.innerHTML = createUserHTML(userData, isLoggedIn);
         mobileaccountbtn.innerHTML = createUserPfpHTML(userData, isLoggedIn);
         moreHeader.innerHTML = createUserPfpHTML(userData, isLoggedIn);
+        document.getElementById("accountSettings").style.display = "flex";
       }
     } catch (error) {
       console.error("Error parsing user data:", error);
@@ -688,13 +692,13 @@ const vtName = (slug: string) =>
       "</div>",
       '<div style="display:flex; flex-direction:column; align-items:start;">',
       isLoggedIn
-        ? 'WiiLink Account <span style="opacity:70%;">' +
+        ? 'WiiLink Account <span style="max-width:170px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; opacity:70%;">' +
           userData.username +
           "</span>"
         : '<span style="display:flex; flex-direction:row; align-items:center; gap:8px;">WiiLink Account' +
           '<span style="font-size: 12px; padding:3px; padding-left:5px; padding-right:5px; border-radius: 8px; background-color: var(--bg-opaque-1);">Logged out</span>' +
           "</span>" +
-          '<span style="opacity:70%;">' +
+          '<span style="max-width:170px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; opacity:70%;">' +
           userData.username +
           "</span>",
       "</div>"
