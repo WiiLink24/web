@@ -134,17 +134,6 @@
         "completed": "100"
       },
       {
-        "color": "#05AAF8",
-        "name": "Metroid Prime 3 Preview",
-        "desc": "View <i>Metroid Prime 3: Corruption</i> content.",
-        "link": "/status",
-        "isArea": "Originally America and Europe",
-        "status": "Halted",
-        "todo": "<span class='bomb'></span> This service's development has been halted.",
-        "icon": "",
-        "completed": "0"
-      },
-      {
         "color": "#80D4FF",
         "name": "Wii Room Anywhere",
         "desc": "A DSiWare application for offline viewing of downloaded Wii Room content.",

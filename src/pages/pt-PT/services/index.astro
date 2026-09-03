@@ -19,31 +19,15 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
   description="Check out the services WiiLink has to offer!"
   image="/img/default.webp"
 />
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section={t("header.services")} />
   <div class="hold">
-    <div class="welcome-msg">
-      <HeadText text={t("header.services")} />
-      <h2 style="font-size:40px; font-family:Gilroy;">
-        <Trans i18nKey="svc-site.title">
-          Everything we offer! <span
-            class="badge bg-success"
-            style="top:-5px; left:0px; font-size:20px; font-family:Gilroy, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-          ></span><b style="font-family: Rubik;">WiiLink</b><span
-            class="badge bg-info"
-            style="bottom:8px; font-size:18px; font-family:inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; position:relative;"
-            >services</span
-          >
-        </Trans>
-      </h2>
-      <h3 style="font-size: calc(1.3rem + .6vw);">
-        <Trans i18nKey="svc-site.subtitle">
-          Here you'll can see <b class="color">everything we offer</b>! Read up
-          and download them for yourself!
-        </Trans>
-      </h3>
-    </div>
+    <HeadText
+      text={t("header.services")}
+      titleKey="svc-site.title"
+      subtitleKey="svc-site.subtitle"
+      titleColor="#1482dc"
+    />
 
-    <div class="polka-dot"></div>
     <div
       class="mobileselect"
       style="width:90%; max-width:1500px; left:50%; margin-top:36px; transform:translate(-50%, 0); display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:4px; position:relative;">
@@ -269,13 +253,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     </h3>
     <div class="btn-wrapper">
       <a href="mailto:support@wiilink.ca"
-        ><div class="btn btn-success" style="padding:10px;">
+        ><div class="btn btn-success" style="padding:10px; color: white !important">
           <Icon name="lucide:mail" style="margin-right:5px; margin-bottom:3px;" />
           {t("guide.helpButton1")}
         </div></a
       >
       <a href="https://discord.gg/wiilink"
-        ><div class="btn btn-primary" style="padding:10px;">
+        ><div class="btn btn-primary" style="padding:10px; color: white !important">
           <Icon name="discord" style="margin-right:5px; margin-bottom:3px;" />
           {t("guide.helpButton2")}
         </div></a
@@ -299,32 +283,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
 </script>
 
 <style>
-  .flexhead {
-    left: 50%;
-    top: 130px;
-    width: 90%;
-    transform: translate(-50%, 0);
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    z-index: 100;
-    position: absolute;
-  }
-
-  .mainimgsmall {
-    -webkit-mask-image: url(/img/mask2.svg);
-    mask-image: url(/img/mask2.svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    mask-size: 100% 100%;
-    mask-position: center;
-    height: 180px;
-    width: auto;
-    transform: translate(0, 10px);
-    z-index: 10;
-    position: relative;
-  }
-
   h2 {
     font-size: calc(1.3rem + 0.6vw);
   }
@@ -336,15 +294,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     transform: translate(-50%, 0);
     display: flex;
     gap: 10px;
-    z-index: 1000;
-    position: relative;
-  }
-
-  .welcome-msg {
-    top: 15px;
-    max-width: 90%;
-    left: 50%;
-    transform: translate(-50%, 0);
     position: relative;
   }
 
@@ -440,18 +389,13 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     border-radius: 4px;
     padding: 16px 32px;
     transition: 0.2s;
+    backdrop-filter: blur(18px);
   }
 
   .link:hover {
     transform: translate(0, -5px);
     border-radius: 16px !important;
     transition: 0.2s;
-  }
-
-  .downmargin {
-    width: 100%;
-    height: 500px;
-    position: relative;
   }
   .subtitle {
     left: 80px;
@@ -460,23 +404,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     padding-bottom: 20px;
     position: relative;
     width: 50%;
-  }
-  .slogan {
-    left: 80px;
-    font-family:
-      inter,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      Roboto,
-      Oxygen,
-      Ubuntu,
-      Cantarell,
-      "Open Sans",
-      "Helvetica Neue",
-      sans-serif;
-    width: 500px;
-    position: relative;
   }
   .color {
     background: url("/img/header_bg.webp");
@@ -572,17 +499,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     color: black;
   }
 
-  .heroImage {
-    width: 100%;
-    height: 100%;
-    scale: 120%;
-    filter: blur(4px) brightness(0.7) grayscale(0.7);
-    opacity: 0;
-    object-fit: cover;
-    z-index: 10;
-    transition: 0.3s;
-  }
-
   .post:hover .heroImage {
     filter: blur(4px) brightness(0.5) grayscale(0);
     scale: 110%;
@@ -603,22 +519,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     transition: 0.5s;
   }
 
-  .title-small {
-    width: 90%;
-    height: auto;
-    z-index: 11;
-    font-size: max(20px, 30px);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    color: #181818;
-    line-height: 30px;
-    font-family: Gilroy;
-    transition: 0.5s;
-    position: absolute;
-  }
-
   .desc {
     font-family: inter;
     font-size: 20px;
@@ -631,34 +531,6 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     overflow: hidden;
     text-overflow: ellipsis;
     position: relative;
-  }
-
-  .polka-dot {
-    width: 240px;
-    height: 240px;
-    background-image: radial-gradient(#484848 10%, transparent 11%),
-      radial-gradient(#484848 10%, transparent 11%);
-    background-size: 30px 30px;
-    background-position:
-      0 0,
-      30px 30px;
-    opacity: 0.3;
-    rotate: 30deg;
-    left: 20px;
-    top: 50px;
-    background-repeat: repeat;
-    animation: rotate 240s linear infinite;
-    position: absolute;
-    z-index: 0;
-  }
-
-  @keyframes rotate {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
   }
 
   a {
@@ -725,7 +597,7 @@ const posts = (await getCollection("services")).sort((a, b) => a.data.title.loca
     .hold {
       left: 50%;
       transform: translate(-50%, 150px);
-      width: 2000px;
+      max-width: 1500px;
       margin-bottom: 80px;
       position: relative;
     }

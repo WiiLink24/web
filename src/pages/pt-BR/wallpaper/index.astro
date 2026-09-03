@@ -2,6 +2,7 @@
 import { changeLanguage } from "i18next";
 import Layout from "../../../layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
+import "../../../styles/shared.css";
 
 changeLanguage("pt-BR");
 ---
@@ -155,16 +156,6 @@ changeLanguage("pt-BR");
 </script>
 
 <style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
   html {
     --color: black;
     --bg-color: white;
@@ -195,30 +186,6 @@ changeLanguage("pt-BR");
     --bg-opaque-1: #ffffff10;
     --bg-opaque-2: #ffffff20;
     --opacity: 0.3;
-  }
-
-  .backsymbol {
-    width: calc(100% - 28px);
-    height: calc(100% - 28px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1;
-    position: absolute;
-  }
-
-  .symbolholder {
-    background-color: var(--bg-color-absolute);
-    top: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    overflow: hidden;
-    position: fixed;
   }
 
   .popup {
@@ -277,9 +244,6 @@ changeLanguage("pt-BR");
     fill: #0d6efd;
     fill: AccentColor !important;
   }
-  .bottomleftcorner {
-    animation: changecolor 10s linear infinite;
-  }
   .bottomleftcornerholder {
     width: 400px;
     height: 400px;
@@ -290,23 +254,6 @@ changeLanguage("pt-BR");
     pointer-events: none;
     z-index: 2;
     position: absolute;
-  }
-
-  @keyframes changecolor {
-    0% {
-      filter: hue-rotate(0deg);
-    }
-    100% {
-      filter: hue-rotate(360deg);
-    }
-  }
-  @keyframes changecolordark {
-    0% {
-      filter: hue-rotate(0deg) invert(1);
-    }
-    100% {
-      filter: hue-rotate(360deg) invert(1);
-    }
   }
 
   .square {

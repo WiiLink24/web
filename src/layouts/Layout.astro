@@ -154,20 +154,6 @@ const { title, description, image } = Astro.props;
     </script>
 
     <script type="module">
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "G-LWN8QCFT7S");
-
-      const script = document.createElement("script");
-      script.async = true;
-      script.src = "https://www.googletagmanager.com/gtag/js?id=G-LWN8QCFT7S";
-      document.head.appendChild(script);
-    </script>
-
-    <script type="module">
       let bootstrapLoaded = false;
       function loadBootstrap() {
         if (bootstrapLoaded) return;
@@ -190,17 +176,6 @@ const { title, description, image } = Astro.props;
 
       setTimeout(loadBootstrap, 3000);
     </script>
-
-    <script type="module">
-      setTimeout(() => {
-        const script = document.createElement("script");
-        script.async = true;
-        script.src =
-          "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4011748932374526";
-        script.crossOrigin = "anonymous";
-        document.head.appendChild(script);
-      }, 2000);
-    </script>
     <title>{title}</title>
   </head>
   <body>
@@ -208,6 +183,10 @@ const { title, description, image } = Astro.props;
   </body>
 </html>
 <style is:global>
+  @view-transition {
+    navigation: auto;
+  }
+
   @font-face {
     font-family: Rubik;
     src: url(/fonts/Rubik.ttf);
@@ -539,19 +518,19 @@ const { title, description, image } = Astro.props;
     padding: 18px;
     margin-bottom: 0px;
     border-radius: 12px;
-    color: rgb(255, 255, 255);
+    color: var(--color);
     display: inline-block;
     position: relative;
   }
   .notice a {
-    color: white !important;
+    color: var(--color) !important;
   }
   .warn {
     background-color: rgba(182, 197, 14, 0.6);
-    color: white;
+    color: var(--color);
   }
   .warn a {
-    color: white;
+    color: var(--color);
   }
   .warn::before {
     margin-left: 5px;
@@ -567,7 +546,7 @@ const { title, description, image } = Astro.props;
   }
   .danger {
     background-color: rgba(197, 14, 14, 0.6);
-    color: white;
+    color: var(--color);
   }
   .danger::before {
     margin-left: 5px;
@@ -583,7 +562,7 @@ const { title, description, image } = Astro.props;
   }
   .success {
     background-color: rgba(10, 190, 40, 0.6);
-    color: white;
+    color: var(--color);
   }
   .success::before {
     margin-left: 5px;
@@ -599,26 +578,26 @@ const { title, description, image } = Astro.props;
   }
   .info {
     background-color: rgba(14, 124, 197, 0.6);
-    color: white;
+    color: var(--color);
   }
   .info code {
     background-color: rgba(14, 124, 197, 0.6);
-    color: white;
+    color: var(--color);
     border-radius: 12px;
   }
   .warn code {
     background-color: rgba(182, 197, 14, 0.6);
-    color: white;
+    color: var(--color);
     border-radius: 12px;
   }
   .danger code {
     background-color: rgba(197, 14, 14, 0.6);
-    color: white;
+    color: var(--color);
     border-radius: 12px;
   }
   .success code {
     background-color: rgba(10, 190, 40, 0.6);
-    color: white;
+    color: var(--color);
     border-radius: 12px;
   }
   .info::before {
@@ -635,6 +614,7 @@ const { title, description, image } = Astro.props;
   }
   .generic {
     background-color: rgba(97, 97, 97, 0.382);
+    color: var(--color);
   }
   .generic::before {
     margin-left: 5px;

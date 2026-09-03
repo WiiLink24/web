@@ -1,0 +1,135 @@
+/* Shared styles for rules duplicated identically across multiple pages.
+   Scoped under `body` so they only affect page content and keep
+   specificity above the lazily-loaded Bootstrap stylesheet. */
+
+/* --- Extras card pages (branding, photochannel, themes, wallpapers) --- */
+body .container {
+  max-width: 1300px;
+  padding: 20px;
+  text-align: center;
+}
+
+body .header {
+  margin: 20px 0;
+}
+
+body .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: ;
+}
+
+body .card {
+  background-color: var(--bg-color-secondary);
+  color: var(--color);
+  border-radius: 16px;
+  border: 2px solid var(--border-color);
+  overflow: hidden;
+  width: calc(33.333% - 20px);
+  box-shadow: 0 2px 5px var(--shadow-color);
+  transition: 0.3s;
+}
+
+body .card:hover {
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+body .card-content {
+  padding: 10px;
+}
+
+body .card-action:hover {
+  background-color: green;
+  color: white !important;
+  transform: scale(1.02);
+  transition: 0.3s;
+}
+
+body .card-action:hover a {
+  color: white !important;
+  transition: 0.3s;
+}
+
+body .card-action::before {
+  content: "\f019";
+  font-family: "FontAwesome";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 768px) {
+  body .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  body .card {
+    width: 100%;
+  }
+}
+
+/* --- Homepage boilerplate (404, index, wallpaper) --- */
+body .symbolholder {
+  background-color: var(--bg-color-absolute);
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  position: fixed;
+}
+
+body .backsymbol {
+  width: calc(100% - 28px);
+  height: calc(100% - 28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  position: absolute;
+}
+
+body .bottomleftcorner {
+  animation: changecolor 10s linear infinite;
+}
+
+@keyframes changecolor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* --- News / guide pages --- */
+body .post:active {
+  transform: scale(0.98) !important;
+  transition: 0.2s;
+}
+
+@media only screen and (min-width: 2000px) {
+  body .hold {
+    left: 50%;
+    transform: translate(-50%, 150px);
+    width: 2000px;
+    margin-bottom: 80px;
+    position: relative;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  body .mobilehide {
+    display: none;
+  }
+}

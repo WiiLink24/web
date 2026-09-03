@@ -4,20 +4,35 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import HeadText from "../../../components/HeadText.astro";
 import FormattedDate from "../../../components/FormattedDate.astro";
-import { localizePath } from "astro-i18next";
+import "../../../styles/shared.css";
 import { t, changeLanguage } from "i18next";
-import { Trans } from "astro-i18next/components";
 import { Icon } from "astro-icon/components";
 import { contentfulClient } from "../../../lib/contentful";
 import type { news } from "../../../lib/contentful";
+import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { extractTranscriptParticipantsFromHtml, type TranscriptParticipant } from "../../../lib/transcript";
 
 changeLanguage("vi");
 
+type FormingLinksPost = {
+    title: string;
+    slug: string;
+    date: string;
+    image: any;
+    unlist: boolean;
+    description: string;
+    content: any;
+    author: any;
+    authorPfpUrl?: string;
+    transcriptParticipants: TranscriptParticipant[];
+};
 const entries = await contentfulClient.getEntries<news>({
     content_type: "newsPost"
 });
-let postsContentful = entries.items.map(item => {
+let postsContentful: FormingLinksPost[] = entries.items.map(item => {
     const { title, slug, date, image, unlist, description, content, author } = item.fields;
+    const transcriptParticipants = extractTranscriptParticipantsFromHtml(documentToHtmlString(content as any));
+    const authorPfpUrl = (author as any)?.fields?.pfp?.fields?.file?.url;
     return {
         title,
         slug,
@@ -26,13 +41,16 @@ let postsContentful = entries.items.map(item => {
         unlist,
         description,
         content,
-        author
+        author,
+        authorPfpUrl,
+        transcriptParticipants
     };
 });
 postsContentful.sort((a, b) => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
 postsContentful = postsContentful.filter(post => post.unlist);
+const vtName = (slug: string) => `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
 const sliceDescription = (description: string) => {
     return (description.split(" ").slice(0, 20).join(" ") +
         (description.split(" ").length > 20 ? "..." : ""));
@@ -40,46 +58,71 @@ const sliceDescription = (description: string) => {
 ---
 
 <Layout
-  title={t("news.mainTitle")}
-  description={t("news.mainDesc")}
+  title="News"
+  description="Latest news from WiiLink."
   image="/img/News_embed.webp"
 />
-<Header isGuide="display:none;" />
+<Header isGuide="display:none;" section="Forming Links" />
 <div class="hold">
-  <HeadText text="Links" />
-  <div class="welcome-msg">
-    <h2 style="font-size:40px; font-family:Gilroy;">This is Forming Links!</h2>
-    <h3 style="max-width: 800px; font-size: calc(1.3rem + .6vw);">
-      Becca interviews the people behind the scenes of WiiLink, to give some
-      insight into the project and the people who make it happen.
-    </h3>
-  </div>
+  <HeadText
+    text="Links"
+    title="Forming Links"
+    subtitle="Becca interviews the people behind the scenes of WiiLink, to give some insight into the project and the people who make it happen."
+    subtitleMaxWidth={800}
+  />
   <div class="postholder">
     {
       postsContentful.map(post => (
         <div
           class="post"
           onclick={'window.location.href="/news/' + post.slug + '/";'}
-          style="background-color: var(--bg-opaque-1); border-radius:8px; padding: 28px; cursor:pointer; transition: 0.2s;">
+          style={`background-color: var(--bg-opaque-1); border-radius: ${post.transcriptParticipants.length > 0 ? "28px 28px 28px 10px" : "8px"}; padding: 28px; cursor:pointer; transition: 0.2s; position:relative; overflow:visible; view-transition-name: ${vtName(post.slug)};`}>
           <a
-            href={localizePath(`/news/${post.slug}/`)}
+            href={`/news/${post.slug}/`}
             aria-label={post.title + " Link"}
-            style="text-decoration:none; color:var(--text-color);">
-            <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom: 8px;">
-              {post?.author?.fields?.pfp?.fields?.file?.url && (
+            style="text-decoration:none; color:var(--text-color); display:block; position:relative; z-index:1;">
+            {post.transcriptParticipants.length == 0 && (
+                          <div style="width:100%; display:flex; flex-direction:row; align-items:center; gap:8px; margin-bottom: 8px;">
+              {post.authorPfpUrl && (
                 <img
                   alt="News Author PFP"
                   class="authimage"
-                  src={post.author.fields.pfp.fields.file.url}
+                  src={post.authorPfpUrl}
                 />
               )}
               <div style="background: var(--border-color); border-radius:8px; padding:6px 12px; font-size:14px; display:flex; align-items:center; justify-content:center; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
-                <FormattedDate date={new Date(post.date)} />
+                <FormattedDate pre="" date={new Date(post.date)} />
               </div>
             </div>
+            )}
             <b style="width:100%; font-size:28px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; text-align:left; position:relative;">
               {post.title}
             </b>
+            {post.transcriptParticipants.length > 0 && (
+              <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; margin-bottom: 12px;">
+                {post.transcriptParticipants.map(participant => (
+                  <div
+                    style={`display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:${participant.role === "speaker" ? "999px 999px 999px 300px" : "999px 999px 300px 999px"}; background:${participant.role === "speaker" ? "var(--bg-color-secondary)" : "var(--bg-color-tertiary)"}; border:1px solid rgba(255,255,255,0.08);`}>
+                    {participant.avatar ? (
+                      <img
+                        src={participant.avatar}
+                        alt={participant.name}
+                        style="width:32px; height:32px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.14); flex:0 0 32px;"
+                      />
+                    ) : (
+                      <div
+                        aria-hidden="true"
+                        style={`width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 32px; background:${participant.color}; color:white; font-family:Gilroy; font-size:12px; border:2px solid rgba(255,255,255,0.14);`}>
+                        {participant.initials}
+                      </div>
+                    )}
+                    <span style="display:flex; flex-direction:column; line-height:1.05;">
+                      <b style="font-size:14px;">{participant.name}</b>
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
             <div
               class="descanim"
               style="margin-top: 8px; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">
@@ -92,12 +135,7 @@ const sliceDescription = (description: string) => {
   </div>
   <h3
     style="margin-top:200px; font-size: calc(1.3rem + .6vw); text-align:center; position:relative; width:100%;">
-    <Trans i18nKey="news.rssTitle">
-      <b
-        >Want to get <c class="color">WiiLink news</c> on your site o service? Just
-        use our <c class="color">RSS feed</c>!</b
-      >
-    </Trans>
+    <b>Want to get <span class="color">WiiLink news</span> on your site or service? Just use our <span class="color">RSS feed</span>!</b>
   </h3>
   <a href="/rss.xml"
     ><buton
@@ -119,52 +157,10 @@ const sliceDescription = (description: string) => {
     max-width: 1500px;
     position: relative;
   }
-
-  .herodatahold {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 28px;
-    padding: 20px;
-    position: relative;
-  }
-
-  .posthold {
-    transform: translate(0, 0px);
-    opacity: 0;
-    transition: 0.5s;
-    position: relative;
-  }
-  .posthold:hover {
-    transform: translate(0, -5px);
-    filter: drop-shadow(0px 0px 20px #37373756);
-    transition: 0.2s;
-  }
-
-  .fadebefore::before {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 300px;
-    content: "";
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0) 30%,
-      var(--bg-opaque-2) 100%
-    );
-    z-index: -100000;
-    position: absolute;
-  }
-
   .authimage {
     width: 40px;
     height: 40px;
     border-radius: 8px;
-  }
-
-  .mainpost:nth-child(1) {
-    opacity: 1;
   }
 
   .postholder {
@@ -196,18 +192,8 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  .post:active {
-    transform: scale(0.98) !important;
-    transition: 0.2s;
-  }
-
   .post:hover {
     transform: translate(0, -10px);
-    transition: 0.2s;
-  }
-
-  .postmini:hover {
-    background-color: var(--bg-color-tertiary);
     transition: 0.2s;
   }
 
@@ -220,67 +206,11 @@ const sliceDescription = (description: string) => {
     transition: 0.2s;
   }
 
-  .postmini:hover {
-    transform: scale(1.02);
-    transition: 0.2s;
-  }
-
-  .postmini:active {
-    transform: scale(0.98);
-    transition: 0.2s;
-  }
-
   .post:hover .heroImage {
     transform: scale(110%);
     filter: blur(2px) brightness(0.7);
     z-index: 0;
     transition: 0.3s;
-  }
-
-  .newsHero {
-    top: 30px;
-    width: 100%;
-    max-width: 1800px;
-    height: auto;
-    padding: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 16px 16px 8px 8px;
-    animation: fadein 0.2s linear forwards;
-    overflow: hidden;
-    position: relative;
-    transition: 0.2s;
-  }
-
-  .newsHero:hover {
-    transform: translate(-50%, 0) scale(1.01) !important;
-    background-color: var(--bg-color-tertiary) !important;
-    transition: 0.2s;
-  }
-
-  .newsHero:active {
-    transform: translate(-50%, 0) scale(0.99) !important;
-    transition: 0.2s;
-  }
-
-  @keyframes rotate {
-    0% {
-      rotate: 0deg;
-    }
-    100% {
-      rotate: 360deg;
-    }
-  }
-
-  @keyframes fadeup {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
   }
 
   @media only screen and (max-width: 1000px) {
@@ -295,71 +225,6 @@ const sliceDescription = (description: string) => {
       z-index: 10;
     }
 
-    .maintitle {
-      font-size: 28px !important;
-    }
-
-    .maindesc {
-      display: none;
-    }
-
-    .mobileimg {
-      width: 100%;
-      max-width: 400px;
-      object-fit: cover;
-    }
-
-    .herodatahold {
-      padding: 0px;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .mobilehide {
-      display: none;
-    }
-
-    .postholdermini {
-      top: 0px;
-      width: 100%;
-      gap: 16px;
-    }
-
-    .postmini {
-      height: 150px;
-    }
-
-    .newsHero {
-      top: 30px;
-      max-width: 1800px;
-      height: auto;
-      padding: 18px;
-      padding-top: 28px;
-      border-radius: 16px;
-      overflow: hidden;
-      position: relative;
-      transition: 0.2s;
-    }
-
-    .innerflexmobile {
-      width: 100%;
-    }
-
-    .mainpostflex {
-      flex-direction: column !important;
-    }
-
-    .mainpostflex r {
-      width: 100%;
-      border-radius: 8px !important;
-      font-size: 16px !important;
-    }
-
-    .heroimg {
-      height: 100%;
-    }
-
     .post:hover {
       transform: translate(0, 0px) scale(102%);
       box-shadow: 0px 0px 0px rgb(187, 187, 187);
@@ -367,13 +232,4 @@ const sliceDescription = (description: string) => {
     }
   }
 
-  @media only screen and (min-width: 2000px) {
-    .hold {
-      left: 50%;
-      transform: translate(-50%, 150px);
-      width: 2000px;
-      margin-bottom: 80px;
-      position: relative;
-    }
-  }
 </style>

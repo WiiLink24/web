@@ -6,7 +6,11 @@ import { Icon } from "astro-icon/components";
 
 async function fetchGitHub() {
   try {
-    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink-Patcher-GUI/releases/latest');
+    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink-Patcher-GUI/releases/latest', {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.GITHUB_TOKEN}`
+      }
+    });
     const data = await response.json();
     return data || 0;
   } catch (error) {
@@ -63,22 +67,8 @@ const heroTitles = await fetchHero();
   <meta name="darkreader-lock" />
 </head>
 
-<script
-type="module"
-src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube.js"
-></script>
-
 <div class="holder">
   <div class="left">
-    <div class="polka-dot promotional-video"></div>
-    <lite-youtube
-      videoid="V_6gwbmHrVA"
-      width="100%"
-      height="250"
-      title="WiiLink Promotional Video"
-      class="promotional-video"
-      style="border-radius: 8px; margin-bottom: 8px; box-shadow:0px 0px 38px #ed5d234b; display:none; z-index: 1;"
-    ></lite-youtube>
     <div style="display:flex; align-items:center; gap:18px;">
       <img
         alt="WiiLink Logo"
@@ -262,19 +252,15 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
           </div>
           <li>
             <a
-              id="download-android"
               class="dropdown-item"
-              style="display:flex; align-items:center; justify-content:space-between;"
-              href="https://github.com/hwalker56/WiiLinkPatcherAndroid"
+              href="https://gist.github.com/hwalker56/f64f3ac7fa0bdcfe62cf5326db89838f"
               aria-label="Download for Android"
-              ><div>
-                <Icon
-                  name="android"
-                  style="margin-right:5px; margin-bottom:3px;"
-                />
-                {t("site.downloadFor")} Android
-              </div>
-              <p style="margin:0; opacity:0.3;">Unofficial</p></a
+              style="color:var(--color) !important;"
+              ><Icon
+                name="android"
+                style="margin-right:5px; margin-bottom:3px;"
+              />
+              {t("site.downloadFor")} Android</a
             >
           </li>
           <li>
@@ -669,7 +655,8 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
       display: none;
     }
     .logo {
-      display: none;
+      width: 120px;
+      margin-top: 80px;
     }
     .notice-mobile {
       width: 100%;
@@ -693,6 +680,7 @@ src="https://cdn.jsdelivr.net/npm/@justinribeiro/lite-youtube@1.5.0/lite-youtube
   #tagline span {
     opacity: 0;
     transform: translateY(5px);
+    font-size: calc(1.325rem + .9vw) !important;
     display: inline-block;
     animation: fadeUpLetter 0.2s forwards;
     animation-delay: var(--delay);

@@ -8,6 +8,7 @@ import Header from "../../../components/Header.astro";
 import Footer from "../../../components/Footer.astro";
 import News from "../../../components/News.astro";
 import i18next, { t, changeLanguage } from "i18next";
+import { extractTranscriptParticipantsFromHtml } from "../../../lib/transcript";
 
 changeLanguage("tr");
 
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
     const { items } = await contentfulClient.getEntries<news>({
         content_type: "newsPost"
     });
-    const pages = items.map(item => ({
+    return items.map(item => ({
         params: { slug: item.fields.slug },
         props: {
             title: item.fields.title,
@@ -29,121 +30,310 @@ export async function getStaticPaths() {
             isAnnouncement: item.fields.isAnnouncement
         }
     }));
-    return pages;
 }
-const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = Astro.props;
-let options = {
+type NewsPostPageProps = {
+    content: any;
+    title: string;
+    slug: string;
+    date: string;
+    image: any;
+    unlist: boolean;
+    description: string;
+    author: any;
+    isAnnouncement: boolean;
+};
+const props = Astro.props as unknown as NewsPostPageProps;
+const { content, title, slug, date, image, unlist, description, author, isAnnouncement } = props;
+const titleText = String(title);
+const articleDate = new Date(String(date));
+const vtName = `news-post-${slug.replace(/[^a-zA-Z0-9-_]/g, "-")}`;
+// Contentful rich-text -> HTML rendering (embedded assets)
+const UNSUPPORTED_ASSET_HTML = `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+function renderFileLink(url: string, title: string): string {
+    return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
+}
+const options = {
     renderNode: {
         "embedded-asset-block": (node: any) => {
             const file = node.data.target.fields?.file;
             if (!file || !file.contentType) {
-                return `<p class="flex flex-row items-center gap-3 font-[MGNHumble]"><svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-10 h-10"> <path d="M3 3h16v2H5v14h14v2H3V3zm18 0h-2v18h2V3zM11 15h2v2h-2v-2zm2-8h-2v6h2V7z" fill="currentColor"/> </svg> Unsupported asset type</p>`;
+                return UNSUPPORTED_ASSET_HTML;
             }
-            const mimeType = file.contentType;
-            const url = file.url;
+            const { contentType: mimeType, url } = file;
+            const assetTitle = node.data.target.fields.title ?? "";
             if (mimeType.startsWith("image/")) {
-                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${node.data.target.fields.title}"/>`;
+                return `<img style="width:100%; height: auto; border-radius: 8px;" src="${url}" alt="${assetTitle}"/>`;
             }
-            else if (mimeType.startsWith("video/")) {
+            if (mimeType.startsWith("video/")) {
                 return `<video style="width:100%; border-radius:8px;" autoplay loop muted>
                             <source src="${url}" type="${mimeType}">
                             Your browser does not support the video tag.
                         </video>`;
             }
-            else if (mimeType === "application/pdf") {
+            if (mimeType === "application/pdf") {
                 return `<embed src="${url}" type="application/pdf" width="100%" height="600px" />`;
             }
-            else {
-                return `<a href="${url}" target="_blank" class="pixel-corners mb-3 border border-white/20 bg-white/5 hover:bg-white/10 hover:text-white text-white flex flex-col items-center justify-between relative"><p class="p-3 w-full flex flex-row items-center justify-between relative" style="margin-bottom:0;"><span class="flex flex-row items-center gap-3"><svg class="w-6 relative" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M21 22H3V2h12v2h2v2h2v2h2v14zM17 6h-2v2h2V6zM5 4v16h14V10h-6V4H5zm8 12H7v2h6v-2zm-6-4h10v2H7v-2zm4-4H7v2h4V8z" fill="currentColor"/> </svg> ${node.data.target.fields.title}</span> <svg class="w-6" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"> <path d="M4 11v2h12v2h2v-2h2v-2h-2V9h-2v2H4zm10-4h2v2h-2V7zm0 0h-2V5h2v2zm0 10h2v-2h-2v2zm0 0h-2v2h2v-2z" fill="currentColor"/> </svg></p></a>`;
-            }
+            return renderFileLink(url, assetTitle);
         }
     }
 };
-let parsedSEOContent = documentToPlainTextString(content);
-if (parsedSEOContent.length > 60) {
+let parsedSEOContent = documentToPlainTextString(content as any);
+if (parsedSEOContent.length > 160) {
     parsedSEOContent = parsedSEOContent.slice(0, 160) + "...";
 }
-let bodyHTML = content ? documentToHtmlString(content, options) : "";
-function parseLocalizedContent(html) {
-    const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>(.*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/gs;
-    let match;
-    const localizedContent = [];
-    while ((match = regex.exec(html)) !== null) {
-        localizedContent.push({
-            lang: match[1],
-            content: match[2].trim()
-        });
-    }
-    return localizedContent;
+let bodyHTML = content ? documentToHtmlString(content as any, options) : "";
+function extractStyle(attrs: string): string {
+    const match = attrs.match(/style=&quot;(.*?)&quot;/);
+    return match ? match[1] : "";
 }
-function parseFloatTags(html) {
-    const embedRegex = /<p>&lt;embed(.*?)&gt;<\/p>(.*?)<p>&lt;end-embed&gt;<\/p>/gs;
-    const floatRegex = /<p>&lt;float(.*?)&gt;<\/p>(.*?)<p>&lt;end-float&gt;<\/p>/gs;
-    const floatLeftRegex = /<p>&lt;float-left(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-left&gt;<\/p>/gs;
-    const floatRightRegex = /<p>&lt;float-right(.*?)&gt;<\/p>(.*?)<p>&lt;end-float-right&gt;<\/p>/gs;
-    let match;
-    let floatHTML = html;
-    while ((match = floatRegex.exec(html)) !== null) {
-        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
-        const style = styleMatch
-            ? `style="${styleMatch[1]} display:flex; justify-content:space-between;"`
-            : "style=\"display:flex; justify-content:space-between;\"";
-        let content = match[2];
-        const hasFloats = floatLeftRegex.test(content) || floatRightRegex.test(content);
-        if (hasFloats) {
-            const processedContent = content
-                .replace(floatLeftRegex, (m, s, c) => `<div class="float float-left" ${s.replace(/&quot;/g, "")}">${c}</div>`)
-                .replace(floatRightRegex, (m, s, c) => `<div class="float float-right" ${s.replace(/&quot;/g, "")}">${c}</div>`);
-            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${processedContent}</div>`);
+function replaceTagBlocks(html: string, tagName: string, render: (attrs: string, inner: string) => string): string {
+    const pattern = new RegExp(`<p>&lt;${tagName}(?=[\\s&])([^&]*?)&gt;</p>([\\s\\S]*?)<p>&lt;end-${tagName}&gt;</p>`, "g");
+    return html.replace(pattern, (_full, attrs: string, inner: string) => render(attrs, inner.trim()));
+}
+function renderFloatChild(side: "left" | "right") {
+    return (attrs: string, inner: string) => `<div class="float float-${side}" style="${extractStyle(attrs)}">${inner}</div>`;
+}
+function parseFloatTags(html: string): string {
+    html = replaceTagBlocks(html, "embed", (attrs, inner) => {
+        const style = extractStyle(attrs);
+        const src = inner.replace(/<\/?p>/g, "");
+        return `<iframe style="width:100%; height:100%; border-radius: 8px; aspect-ratio:16/9; ${style}" title="Embed Content" src="${src}"></iframe>`;
+    });
+    html = replaceTagBlocks(html, "float", (attrs, inner) => {
+        const style = extractStyle(attrs);
+        let innerContent = replaceTagBlocks(inner, "float-left", renderFloatChild("left"));
+        innerContent = replaceTagBlocks(innerContent, "float-right", renderFloatChild("right"));
+        return `<div class="float-container" style="${style} display:flex; justify-content:space-between;">${innerContent}</div>`;
+    });
+    return html;
+}
+function parseCenterTags(html: string): string {
+    return html.replace(/<p>&lt;center&gt;<\/p>([\s\S]*?)<p>&lt;end-center&gt;<\/p>/g, (_full, inner) => `<div class="center">${inner}</div>`);
+}
+function parseLocalizedContent(html: string): Array<{
+    lang: string;
+    content: string;
+}> {
+    const regex = /<p>&lt;begin-localization=&quot;(.*?)&quot;&gt;<\/p>([\s\S]*?)<p>&lt;end-localization=&quot;\1&quot;&gt;<\/p>/g;
+    return [...html.matchAll(regex)].map(match => ({
+        lang: match[1],
+        content: match[2].trim()
+    }));
+}
+// HTML escaping / entity decoding
+function escapeHtml(text: string): string {
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}
+function stripHtmlTags(text: string): string {
+    return text.replace(/<[^>]+>/g, "");
+}
+function decodeHtmlEntities(text: string): string {
+    return text
+        .replace(/&nbsp;/g, " ")
+        .replace(/&quot;/g, "\"")
+        .replace(/&#39;/g, "'")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&amp;/g, "&");
+}
+// ---------------------------------------------------------------------------
+// Chat transcript parsing
+//
+// Format:
+//   Speaker: alias-alias2 - Display Name (avatar-url)
+//   Interviewee: alias - Display Name (avatar-url)
+//   ---
+//   alias: message text (action)
+// ---------------------------------------------------------------------------
+type ChatRole = "speaker" | "interviewee";
+type ChatParticipant = {
+    role: ChatRole;
+    name: string;
+    avatar: string;
+};
+function parseChatHeaderLine(line: string): (ChatParticipant & {
+    aliases: string[];
+}) | null {
+    const match = line.match(/^(Speaker|Interviewee):\s*([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*-\s*(.+?)\s*\((.*?)\)\s*$/i);
+    if (!match)
+        return null;
+    return {
+        role: match[1].toLowerCase() === "speaker" ? "speaker" : "interviewee",
+        aliases: match[2].split("-").map(alias => alias.trim()).filter(Boolean),
+        name: match[3].trim(),
+        avatar: match[4].trim()
+    };
+}
+function parseChatBlock(blockHtml: string): {
+    aliases: string[];
+    messageHtml: string;
+} | null {
+    const innerHtml = blockHtml.replace(/^<p[^>]*>/i, "").replace(/<\/p>$/i, "");
+    const match = innerHtml.match(/^([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\s*:\s*([\s\S]*)$/);
+    if (!match)
+        return null;
+    return {
+        aliases: match[1].split("-").map(alias => alias.trim()).filter(Boolean),
+        messageHtml: match[2].trim()
+    };
+}
+function splitChatBlocks(html: string): string[] {
+    const blockRegex = /<(?:p|h[1-6]|blockquote|ul|ol|div|figure|table)(?:\s[^>]*)?>[\s\S]*?<\/(?:p|h[1-6]|blockquote|ul|ol|div|figure|table)>|<hr[^>]*>|<img[^>]*>/gi;
+    return html.match(blockRegex) ?? [html];
+}
+const CHAT_ACTION_PATTERNS: Array<[
+    RegExp,
+    string
+]> = [
+    [/(laugh|giggle|smirk|chuckle)/, "laugh"],
+    [/(think|ponder|hmm|huh|wonder|consider)/, "thought"],
+    [/(smile|happy|grin|joy|excited|yay)/, "happy"],
+    [/(sad|sigh|cry|tears|upset|down)/, "sad"],
+    [/(angry|mad|annoyed|frustrated|grr|huff)/, "angry"]
+];
+function classifyChatAction(actionText: string): string {
+    const normalized = actionText.toLowerCase();
+    const found = CHAT_ACTION_PATTERNS.find(([pattern]) => pattern.test(normalized));
+    return found ? found[1] : "neutral";
+}
+function renderChatMessageHtml(messageHtml: string): string {
+    const parts: string[] = [];
+    const actionRegex = /\(([^)]+)\)/g;
+    let lastIndex = 0;
+    let match: RegExpExecArray | null;
+    while ((match = actionRegex.exec(messageHtml)) !== null) {
+        if (match.index > lastIndex) {
+            parts.push(messageHtml.slice(lastIndex, match.index));
         }
-        else {
-            floatHTML = floatHTML.replace(match[0], `<div class="float-container" ${style}>${content}</div>`);
+        const actionText = match[1].trim();
+        parts.push(`<span class="chat-action chat-action--${classifyChatAction(actionText)}">${escapeHtml(`(${actionText})`)}</span>`);
+        lastIndex = actionRegex.lastIndex;
+    }
+    if (lastIndex < messageHtml.length) {
+        parts.push(messageHtml.slice(lastIndex));
+    }
+    return parts.join("").replace(/\n/g, "<br />");
+}
+function getFallbackAvatarColor(name: string): string {
+    let hash = 0;
+    for (const character of name) {
+        hash = character.charCodeAt(0) + ((hash << 5) - hash);
+    }
+    const hue = Math.abs(hash) % 360;
+    return `hsl(${hue} 65% 45%)`;
+}
+function renderChatBubble({ role, name, avatar, message }: {
+    role: ChatRole;
+    name: string;
+    avatar: string;
+    message: string;
+}): string {
+    const isSpeaker = role === "speaker";
+    const initials = name
+        .split(/\s+/)
+        .filter(Boolean)
+        .map(part => part[0])
+        .join("")
+        .slice(0, 2)
+        .toUpperCase() || name.slice(0, 1).toUpperCase();
+    const avatarMarkup = avatar
+        ? `<img class="chat-avatar" src="${escapeHtml(avatar)}" alt="${escapeHtml(name)}" />`
+        : `<div class="chat-avatar chat-avatar--fallback" aria-hidden="true" style="background:${getFallbackAvatarColor(name)}; color:white;">${escapeHtml(initials)}</div>`;
+    return `<div class="chat-message ${isSpeaker ? "chat-message--speaker" : "chat-message--interviewee"}">
+    ${isSpeaker ? "" : avatarMarkup}
+    <div class="chat-bubble">
+      <div class="chat-name">${escapeHtml(name)}</div>
+      <div class="chat-text">${renderChatMessageHtml(message)}</div>
+    </div>
+    ${isSpeaker ? avatarMarkup : ""}
+  </div>`;
+}
+function parseChatTranscript(html: string): string {
+    const blocks = splitChatBlocks(html);
+    if (blocks.length === 0)
+        return html;
+    const [firstBlock, ...remainingBlocks] = blocks;
+    if (!firstBlock)
+        return html;
+    const firstBlockText = decodeHtmlEntities(firstBlock.replace(/^<p>|<\/p>$/g, "")).trim();
+    const firstBlockLines = firstBlockText.split(/\r?\n/).map(line => line.trim()).filter(Boolean);
+    if (!firstBlockLines.includes("---"))
+        return html;
+    const participants = new Map<string, ChatParticipant>();
+    for (const line of firstBlockLines) {
+        if (line === "---")
+            continue;
+        const parsed = parseChatHeaderLine(line);
+        if (!parsed)
+            continue;
+        for (const alias of parsed.aliases) {
+            participants.set(alias, { role: parsed.role, name: parsed.name, avatar: parsed.avatar });
         }
     }
-    while ((match = embedRegex.exec(html)) !== null) {
-        const styleMatch = match[1].match(/style=&quot;(.*?)&quot;/);
-        const style = styleMatch
-            ? `style="${styleMatch[1]} aspect-ratio: 16/10;"`
-            : "style=\"aspect-ratio: 16/10;\"";
-        let content = match[2];
-        content = content.replace(/<\/?p>/g, ""); // Remove surrounding <p> tags
-        floatHTML = floatHTML.replace(match[0], `<iframe style="width:100%; height:100%; border-radius: 8px; aspect-ratio:16/9;" title="Embed Content" ${style} src="${content}"></iframe>`);
+    if (participants.size === 0)
+        return html;
+    const output: string[] = [];
+    for (const block of remainingBlocks) {
+        const messageBlock = parseChatBlock(block);
+        if (!messageBlock) {
+            output.push(block);
+            continue;
+        }
+        const participant = messageBlock.aliases
+            .map(alias => participants.get(alias))
+            .find((item): item is ChatParticipant => Boolean(item));
+        if (!participant) {
+            output.push(block);
+            continue;
+        }
+        const role = messageBlock.aliases.some(alias => participants.get(alias)?.role === "speaker")
+            ? "speaker"
+            : participant.role;
+        output.push(renderChatBubble({
+            role,
+            name: participant.name,
+            avatar: participant.avatar,
+            message: messageBlock.messageHtml
+        }));
     }
-    return floatHTML;
+    return output.join("");
 }
-function parseCenterTags(html) {
-    const centerRegex = /<p>&lt;center&gt;<\/p>(.*?)<p>&lt;end-center&gt;<\/p>/gs;
-    let match;
-    let centerHTML = html;
-    while ((match = centerRegex.exec(html)) !== null) {
-        centerHTML = centerHTML.replace(match[0], `<div class="center">${match[1]}</div>`);
-    }
-    return centerHTML;
-}
+// Assemble final body HTML
 const localizedContentArray = parseLocalizedContent(bodyHTML);
 const currentLanguage = i18next.language;
 const defaultLanguage = "en";
 const localizedContent = localizedContentArray.find(item => item.lang === currentLanguage);
 const defaultContent = localizedContentArray.find(item => item.lang === defaultLanguage);
 bodyHTML = localizedContent?.content || defaultContent?.content || bodyHTML;
-bodyHTML = parseFloatTags(bodyHTML); // Ensure parseFloatTags is called on the localized content
-bodyHTML = parseCenterTags(bodyHTML); // Ensure parseCenterTags is called on the localized content
-let words = title.split(" ");
-let updatedTagline = words
+bodyHTML = parseFloatTags(bodyHTML);
+bodyHTML = parseCenterTags(bodyHTML);
+const transcriptParticipants = extractTranscriptParticipantsFromHtml(bodyHTML);
+bodyHTML = parseChatTranscript(bodyHTML);
+const updatedTagline = titleText
+    .split(" ")
     .map((word, index) => `<span style="--delay: ${index * 0.2}s;">${word}</span>`)
     .join(" ");
-const wordCount = bodyHTML.split(" ");
-const readingTime = Math.ceil(wordCount.length / 200);
+// Strip tags before counting words, or attribute strings (class names, style
+// rules, URLs) inflate the word count and skew the reading-time estimate.
+const wordCount = stripHtmlTags(bodyHTML).trim().split(/\s+/).filter(Boolean).length;
+const readingTime = Math.ceil(wordCount / 200);
 ---
 
 <Layout
-  title={`WiiLink - ${t("newsPost.name")} (${title})`}
-  description={`${title} - ${description}`}
+  title={`WiiLink - ${t("newsPost.name")} (${titleText})`}
+  description={`${titleText} - ${description}`}
   image={`/img/news-og-img/${slug}.png`}
 />
 
-<Header isGuide="display:none;" />
-<div class="headtitle" style="background-color:var(--bg-color-secondary);">
+<Header isGuide="display:none;" section={unlist ? "Forming Links" : t("header.news")} title={titleText} newsPopoverTransitions={false} />
+<div
+  class="headtitle"
+  style={`background-color:var(--bg-color-secondary); ${unlist ? "border-radius: 32px 32px 32px 10px;" : ""} view-transition-name: ${vtName};`}>
   <div
     style="display:flex; flex-direction:row; gap:28px; flex-wrap:wrap; align-items:center; justify-content:center;">
     {
@@ -185,11 +375,37 @@ const readingTime = Math.ceil(wordCount.length / 200);
       <div
         style="margin-top:18px; display:flex; flex-direction: row; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px;">
         <div class="mobileHeadAuth" style="display:flex; gap:4px;">
+           {unlist && transcriptParticipants.length > 0 && (
+          <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:stretch;">
+            {transcriptParticipants.map((participant) => (
+              <div
+                style={`display:flex; align-items:center; gap:10px; padding:10px 14px; border-radius:${participant.role === "speaker" ? "999px 999px 999px 300px" : "999px 999px 300px 999px"}; background:${participant.role === "speaker" ? "var(--bg-color-primary)" : "var(--bg-color-tertiary)"}; border:1px solid rgba(255, 255, 255, 0.08); box-shadow:0 10px 20px rgba(0, 0, 0, 0.12);`}>
+                {participant.avatar ? (
+                  <img
+                    src={participant.avatar}
+                    alt={participant.name}
+                    style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid rgba(255,255,255,0.14); flex:0 0 44px;"
+                  />
+                ) : (
+                  <div
+                    aria-hidden="true"
+                    style={`width:44px; height:44px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 44px; background:${participant.color}; color:white; font-family:Gilroy; font-size:16px; border:2px solid rgba(255,255,255,0.14);`}>
+                    {participant.initials}
+                  </div>
+                )}
+                <div style="display:flex; flex-direction:column; line-height:1.1;">
+                  <span style="font-family:Gilroy; font-size:16px; color:var(--color);">{participant.name}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
+        { !unlist && (
           <r
             style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:8px 4px 4px 8px; font-family:system-ui; position:relative;`}
-            datetime={new Date(date).toISOString()}>
+            datetime={articleDate.toISOString()}>
             {
-              new Date(date).toLocaleDateString("en-uk", {
+              articleDate.toLocaleDateString("en-uk", {
                 year: "numeric",
                 month: "short",
                 day: "numeric"
@@ -204,14 +420,12 @@ const readingTime = Math.ceil(wordCount.length / 200);
             style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; padding:8px 20px; border-radius:4px 8px 8px 4px; font-family:system-ui; position:relative;`}
             >{(author as any).fields.role}</r
           >
+                  )}
         </div>
         <div style="display:flex; flex-direction:row; align-items:center;">
           <r
             style={`font-family:system-ui; color:${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; position:relative;`}
-          ><span class="clock"></span> {readingTime} min read</r> { unlist && <r
-            style={`background-color: ${(image as any)?.fields?.file?.url ? "#ffffff20" : "var(--bg-opaque-1)"}; color: ${(image as any)?.fields?.file?.url ? "white" : "var(--color)"} !important; margin-left:18px; padding:8px 20px; border-radius:8px; font-family:system-ui; display:flex; align-items:center; gap: 6px; position:relative;`}
-          ><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye-off"><path d="M10.733 5.076a10.744 10.744 0 0 1 11.205 6.575 1 1 0 0 1 0 .696 10.747 10.747 0 0 1-1.444 2.49"/><path d="M14.084 14.158a3 3 0 0 1-4.242-4.242"/><path d="M17.479 17.499a10.75 10.75 0 0 1-15.417-5.151 1 1 0 0 1 0-.696 10.75 10.75 0 0 1 4.446-5.143"/><path d="m2 2 20 20"/></svg> Unlisted</r> }
-
+          ><span class="clock"></span> {readingTime} min read</r>
         </div>
       </div>
     </div>
@@ -230,7 +444,7 @@ const readingTime = Math.ceil(wordCount.length / 200);
   </span>
 </div>
 }
-<div class="article-holder">
+<div class="article-holder" style=`${unlist ? "border-radius: 32px !important;" : ""}`}>
   <div class="postexpand" set:html={bodyHTML} />
 
   <div class="auths">
@@ -277,10 +491,6 @@ const readingTime = Math.ceil(wordCount.length / 200);
 <Footer />
 
 <style>
-  h3 {
-    color: var(--color) !important;
-  }
-
   a:link {
     color: rgba(32, 213, 136, 1);
   }
@@ -307,19 +517,6 @@ const readingTime = Math.ceil(wordCount.length / 200);
   }
 
   .titles {
-    position: relative;
-  }
-
-  time {
-    color: white;
-  }
-
-  .other {
-    left: 5%;
-    width: 50%;
-    margin-top: 50px;
-    font-family: Gilroy;
-    font-size: 50px;
     position: relative;
   }
 
@@ -439,9 +636,6 @@ const readingTime = Math.ceil(wordCount.length / 200);
     font-family: Gilroy;
     z-index: 100;
   }
-  .last-updated-on {
-    font-style: italic;
-  }
 
   .mobileshow {
     display: none !important;
@@ -460,38 +654,7 @@ const readingTime = Math.ceil(wordCount.length / 200);
     overflow: hidden;
   }
 
-  #heroimg {
-    height: 800px;
-    width: 100%;
-    object-fit: cover;
-    transform: scale(100%);
-    mask-image: linear-gradient(
-      to bottom,
-      rgb(255, 255, 255) 0%,
-      transparent 80%
-    );
-    opacity: 0.5;
-    position: absolute;
-    top: 0;
-    left: 0;
-    overflow: hidden;
-  }
-
-  .faded {
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    background: linear-gradient(
-      0deg,
-      rgb(248, 248, 248) 0%,
-      rgba(244, 244, 244, 0) 100%
-    );
-    position: absolute;
-  }
-
-  img {
+  .mainimg2 {
     width: 100%;
     height: auto;
     top: 0;
@@ -520,52 +683,11 @@ const readingTime = Math.ceil(wordCount.length / 200);
     animation-fill-mode: forwards;
   }
 
-  article {
-    left: 50%;
-    border-radius: 16px;
-    background-color: rgba(244, 244, 244, 0.602);
-    position: relative;
-  }
-
   p {
     font-family: Gilroy;
     color: white;
   }
   h2 {
-  }
-  h3 {
-    font-family: Gilroy;
-  }
-  h4 {
-    font-family: Gilroy;
-  }
-
-  .exit {
-    top: 50px;
-    right: 0;
-    width: 50px;
-    height: 50px;
-    transform: translate(-50%, -50%);
-    border: 0px solid red;
-    border-radius: 8px;
-    position: absolute;
-    z-index: 1000;
-    transition: 0.2s;
-  }
-
-  .exit:hover {
-    border: 3px solid rgba(255, 0, 0, 0.651);
-    transition: 0.2s;
-  }
-  .close {
-    filter: blur(0px) invert(1);
-    transform: scale(50%);
-  }
-
-  .exit:hover .close {
-    filter: invert(16%) sepia(86%) saturate(7500%) hue-rotate(343deg)
-      brightness(98%) contrast(108%);
-    opacity: 0.7;
   }
 
   @keyframes fadeup {
@@ -619,16 +741,13 @@ const readingTime = Math.ceil(wordCount.length / 200);
     .mobileHeadAuth r {
       border-radius: 8px !important;
     }
-  }
 
-  @media (min-width: 2000px) {
-    main {
-      width: 2000px;
-      left: 50%;
-      top: 10px;
-      transform: translate(-50%, 0);
-      border-radius: 8px;
-      position: relative;
+    .chat-message {
+      max-width: 100%;
+    }
+
+    .chat-text {
+      font-size: 16px;
     }
   }
 
@@ -637,12 +756,6 @@ const readingTime = Math.ceil(wordCount.length / 200);
       top: 150px;
       margin-bottom: 160px;
     }
-    .other {
-      left: 50%;
-      transform: translate(-50%, 0);
-      width: 2000px;
-      position: relative;
-    }
   }
 </style>
 
@@ -650,6 +763,219 @@ const readingTime = Math.ceil(wordCount.length / 200);
   .float h2 {
     font-family: Gilroy !important;
     font-size: 35px;
+  }
+
+  .chat-transcript {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin: 18px 0 26px;
+  }
+
+  .chat-message {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .chat-message--speaker {
+    align-self: flex-end;
+    justify-content: flex-end;
+  }
+
+  .chat-message--interviewee {
+    align-self: flex-start;
+  }
+
+  .chat-avatar {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    position: static;
+    filter: none;
+  }
+
+  .chat-avatar--fallback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-color-tertiary);
+    color: var(--color);
+    font-family: Gilroy;
+    font-size: 18px;
+  }
+
+  .chat-bubble {
+    min-width: 0;
+    max-width: min(82%, 860px);
+    padding: 14px 16px;
+    border-radius: 20px 20px 20px 8px;
+    background: var(--bg-color);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: white;
+  }
+
+  .chat-message--speaker .chat-bubble {
+    border-radius: 20px 20px 8px 20px;
+    background: var(--bg-color-tertiary);
+  }
+
+  .chat-name {
+    margin-bottom: 6px;
+    font-family: Gilroy;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+  }
+
+  .chat-message--speaker .chat-name {
+    text-align: right;
+  }
+
+  .chat-text {
+    font-family:
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Roboto,
+      Oxygen,
+      Ubuntu,
+      Cantarell,
+      "Open Sans",
+      "Helvetica Neue",
+      sans-serif;
+    font-size: 18px;
+    line-height: 1.55;
+    text-align: left;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .chat-text :is(p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol) {
+    margin: 0 0 0.75em;
+  }
+
+  .chat-text :is(h1, h2, h3, h4, h5, h6) {
+    font-family: Gilroy;
+    font-weight: 700;
+    line-height: 1.15;
+  }
+
+  .chat-text h1 {
+    font-size: 1.45em;
+  }
+
+  .chat-text h2 {
+    font-size: 1.3em;
+  }
+
+  .chat-text h3,
+  .chat-text h4 {
+    font-size: 1.15em;
+  }
+
+  .chat-text a {
+    color: #7fd3ff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .chat-text a:hover {
+    color: #b2e6ff;
+  }
+
+  .chat-message--speaker .chat-text {
+    text-align: right;
+  }
+
+  .chat-message {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+
+  .chat-action {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 6px;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.88em;
+    font-style: italic;
+    line-height: 1.2;
+    vertical-align: middle;
+    white-space: nowrap;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .chat-action--thought {
+    border-style: dashed;
+    border-radius: 16px 16px 16px 6px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.9);
+    position: relative;
+  }
+
+  .chat-action--thought::after {
+    content: "";
+    position: absolute;
+    left: -5px;
+    bottom: -5px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: inherit;
+    border: inherit;
+    transform: scale(0.75);
+  }
+
+  .chat-action--laugh {
+    background: rgba(255, 214, 102, 0.18);
+    border-color: rgba(255, 214, 102, 0.28);
+    color: #ffe7a8;
+  }
+
+  .chat-action--happy {
+    background: rgba(99, 231, 158, 0.16);
+    border-color: rgba(99, 231, 158, 0.28);
+    color: #c9ffe1;
+  }
+
+  .chat-action--sad {
+    background: rgba(131, 176, 255, 0.16);
+    border-color: rgba(131, 176, 255, 0.28);
+    color: #d7e4ff;
+  }
+
+  .chat-action--angry {
+    background: rgba(255, 111, 111, 0.16);
+    border-color: rgba(255, 111, 111, 0.28);
+    color: #ffd1d1;
+  }
+
+  .chat-message--speaker .chat-action {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .chat-message--speaker .chat-action--laugh {
+    background: rgba(255, 214, 102, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--happy {
+    background: rgba(99, 231, 158, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--sad {
+    background: rgba(131, 176, 255, 0.12);
+  }
+
+  .chat-message--speaker .chat-action--angry {
+    background: rgba(255, 111, 111, 0.12);
   }
 
   #titleData span {
@@ -687,6 +1013,14 @@ const readingTime = Math.ceil(wordCount.length / 200);
     }
     .center {
       text-align: center;
+    }
+
+    .chat-message {
+      max-width: 100%;
+    }
+
+    .chat-text {
+      font-size: 16px;
     }
   }
 </style>

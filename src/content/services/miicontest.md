@@ -12,7 +12,7 @@ color: a0db0b60
 
 <l class="notice warn smallwidth">With a default Dolphin NAND, the Check Mii Out Channel is disabled to prevent abuse. To use this service in Dolphin, [dump a real NAND](https://wii.hacks.guide/bootmii), and import it in `Tools` > `Manage NAND` > `Import BootMii NAND Backup...`</l>
 
-<a href="https://miicontest.wiilink.ca/" style="margin-top:5px; width:100%;" class="btn btn-success"> View Miis and Stats</a>
+<a href="https://miicontest.wiilink.ca/" style="margin-top:5px; width:100%; color:white !important;" class="btn btn-success"> View Miis and Stats</a>
 
 The Check Mii Out Channel/Mii Contest Channel is available with WiiLink! You can post your favorite Miis for the whole WiiLink community to see.
 

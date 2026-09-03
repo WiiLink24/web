@@ -14,9 +14,16 @@ let currentPath = url.pathname;
 
 let posts = await getCollection("guide");
 type Props = CollectionEntry<"guide">["data"];
-posts = posts.slice(3);
-posts.sort((a, b) => (`/guide/${a.slug}/` === currentPath ? -1 : 1));
-let { title, description, icon, pubDate, heroImage, body } = Astro.props;
+const mainSlugs = ["install", "problemsolving", "faq"];
+posts = posts
+  .filter(post => !mainSlugs.includes(post.slug))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .sort((a, b) => {
+    if (`/guide/${a.slug}/` === currentPath) return -1;
+    if (`/guide/${b.slug}/` === currentPath) return 1;
+    return 0;
+  });
+let { title, description, icon, pubDate, heroImage, body, headings } = Astro.props;
 
 pubDate = new Date(pubDate).toLocaleDateString('en-US', {
   year: "numeric",
@@ -32,52 +39,13 @@ const readingTime = (body: string) => {
   const textLength = body.split(" ").length;
   return Math.ceil(textLength / wordsPerMinute);
 };
-
-// Get the headings from this, it is all the ones where they have ## or ### in the markdown
-// Then we can use this to generate the table of contents
-function extractHeadings(markdown: string) {
-  const headings = [];
-  const lines = markdown.split('\n');
-  
-  lines.forEach((line) => {
-    // Match h2 (##) and h3 (###) headings
-    const h2Match = line.match(/^## (.+)/);
-    const h3Match = line.match(/^### (.+)/);
-    
-    if (h2Match) {
-      headings.push({
-        text: h2Match[1],
-        depth: 2,
-        slug: h2Match[1]
-          .toLowerCase()
-          .replace(/-/g, '-')         // Replace existing hyphens with triple hyphens
-          .replace(/[^a-z0-9---]+/g, '-') // Replace other special chars with single hyphens
-          .replace(/(^-|-$)/g, '')      // Remove leading/trailing hyphens
-      });
-    } else if (h3Match) {
-      headings.push({
-        text: h3Match[1],
-        depth: 3,
-        slug: h3Match[1]
-          .toLowerCase()
-          .replace(/-/g, '-')
-          .replace(/[^a-z0-9---]+/g, '-')
-          .replace(/(^-|-$)/g, '')
-      });
-    }
-  });
-
-  return headings;
-}
-
-const headings = extractHeadings(body);
 ---
 
 <Layout
   title={`WiiLink - ${t("guidePost.name")} (${title})`}
   description={`${title} - ${description}`}
   image="/img/Guide_embed.webp">
-  <Header />
+  <Header section={t("header.guide")} title={title} isGuideOpacity guidePopoverTransitions={false} />
   <div class="flex">
     <div class={`guidehold ${heroImage ? 'text-white' : ''}`}>
       <div
@@ -85,7 +53,9 @@ const headings = extractHeadings(body);
         style="overflow-y:visible; position:relative;">
         <div>
           <div class="sidebarcontent">
-            <div class="post" style="border-radius: 16px 16px 8px 8px;">
+            <div
+              class="post"
+              style="border-radius: 16px 16px 8px 8px; view-transition-name: guide-post-install;">
               <a href={localizePath(`/guide/install/`)}>
                 <img class="mainimg" src="/img/guidebg-1.webp" />
                 <div
@@ -99,7 +69,9 @@ const headings = extractHeadings(body);
                 </div>
               </a>
             </div>
-            <div class="post" style="border-radius: 8px;">
+            <div
+              class="post"
+              style="border-radius: 8px; view-transition-name: guide-post-problemsolving;">
               <a href={localizePath(`/guide/problemsolving/`)}>
                 <img class="mainimg" src="/img/guidebg-3.webp" />
                 <div
@@ -113,7 +85,9 @@ const headings = extractHeadings(body);
                 </div>
               </a>
             </div>
-            <div class="post" style="border-radius: 8px 8px 16px 16px;">
+            <div
+              class="post"
+              style="border-radius: 8px 8px 16px 16px; view-transition-name: guide-post-faq;">
               <a href={localizePath(`/guide/faq/`)}>
                 <img class="mainimg" src="/img/guidebg-2.webp" />
                 <div
@@ -136,7 +110,8 @@ const headings = extractHeadings(body);
                     <hr style="transform:translate(0, 8px); border-top: 2px solid var(--border-color);" />
                   )}
                   <div
-                    class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}>
+                    class={`post2 ${currentPath === `/guide/${post.slug}/` ? "active" : ""}`}
+                    style={`view-transition-name: guide-sidebar-${post.slug};`}>
                     <a href={localizePath(`/guide/${post.slug}/`)}>
                       <div class="title2">
                         <Icon
@@ -156,7 +131,7 @@ const headings = extractHeadings(body);
           </div>
 
           <a href="https://wii.hacks.guide">
-            <div class="wiiguide" style="margin-bottom:60px !important; display:flex; flex-direction: row; align-items: center; justify-content: center; gap:3px;">
+            <div class="wiiguide" style="margin-bottom:60px !important; display:flex; text-decoration: none; flex-direction: row; align-items: center; justify-content: center; gap:3px;">
               <Icon name="lucide:earth" />
               <Trans i18nKey="guidePost.visitWiiHacks">
                 Visit wii.hacks.guide
@@ -229,7 +204,7 @@ const headings = extractHeadings(body);
       </div>
     </div>
     <div class="opacityshow" style="height:100%; margin-top: 18px;">
-      <TableOfContents headings={extractHeadings(body)} />
+      <TableOfContents headings={headings} />
     </div>
   </div>
 </Layout>

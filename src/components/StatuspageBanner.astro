@@ -1,0 +1,315 @@
+---
+import { Icon } from "astro-icon/components";
+import { localizePath } from "astro-i18next";
+import { getBannerIncidents } from "../lib/statuspage";
+
+const { isMain, variant = "top" } = Astro.props;
+
+const bannerIncidents = await getBannerIncidents(localizePath("/services.json"));
+
+const affectedIcons = [...new Set(bannerIncidents.map(inc => inc.serviceIcon).filter(Boolean))];
+
+const hasActiveIncidents = bannerIncidents.length > 0;
+const showTop = variant === "top" && !isMain && hasActiveIncidents;
+const showNavbar = variant === "navbar" && !!isMain && hasActiveIncidents;
+const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
+---
+
+{showTop && (
+  <div id="incident-banner" class="incident-banner">
+    <div class="incident-banner-inner">
+      {bannerIncidents.length > 1 && (
+        <div class="banner-pagination">
+          {bannerIncidents.map((_, i) => (
+            <span class={`banner-dot ${i === 0 ? 'active' : ''}`} data-index={i}></span>
+          ))}
+        </div>
+      )}
+      <div class="banner-slides">
+        {bannerIncidents.map((inc, i) => (
+          <div class={`banner-slide ${i === 0 ? 'active' : ''}`} data-color={inc.serviceColor} style={`background-color: ${inc.serviceColor};`}>
+            <div class="banner-slide-content">
+              <div class="banner-service-info">
+                {inc.serviceIcon && (
+                  <img src={`/img/${inc.serviceIcon}`} alt={inc.serviceName} class="banner-service-icon" />
+                )}
+                <span class="banner-service-name"><b>{inc.serviceName}</b></span>
+              </div>
+              -
+              <a href={inc.shortlink} target="_blank" rel="noopener noreferrer" class="banner-incident-title text-decoration-none">
+                {inc.incidentName}
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+      <button class="banner-close" aria-label="Close banner">
+        <Icon name="lucide:x" style="width:18px; height:18px;" />
+      </button>
+    </div>
+  </div>
+)}
+
+<style>
+  .incident-banner {
+    width: 100%;
+    z-index: 10001;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .incident-banner.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+  }
+
+  .incident-banner-inner {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  .banner-pagination {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 10px 12px;
+    z-index: 2;
+    position: relative;
+  }
+
+  .banner-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .banner-dot.active {
+    background: white;
+    transform: scale(1.3);
+  }
+
+  .banner-dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .banner-slides {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 48px;
+  }
+
+  .banner-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+  }
+
+  .banner-slide.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    position: relative;
+  }
+
+  .banner-slide.exit {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  .banner-slide-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 20px;
+    color: white;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .banner-service-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .banner-service-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+
+  .banner-service-name {
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .banner-incident-title {
+    color: white;
+    text-decoration: underline;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .banner-incident-title:hover {
+    opacity: 0.85;
+  }
+
+  .banner-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 14px;
+    opacity: 0.7;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .banner-close:hover {
+    opacity: 1;
+  }
+
+  .navbar-incident {
+    margin-left: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    flex-shrink: 0;
+  }
+
+  .navbar-incident:hover {
+    transform: scale(1.05);
+  }
+
+  .navbar-incident-icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    filter: brightness(10000%);
+  }
+</style>
+
+<script is:inline>
+  function initIncidentBanner() {
+    const banner = document.getElementById('incident-banner');
+    if (!banner) return;
+
+    const slides = banner.querySelectorAll('.banner-slide');
+    const dots = banner.querySelectorAll('.banner-dot');
+    const closeBtn = banner.querySelector('.banner-close');
+    const COOKIE_NAME = 'incident-banner-closed';
+    const COOKIE_DAYS = 3;
+    let currentIndex = 0;
+    let autoScrollTimer = null;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active', 'exit');
+        dots[i]?.classList.remove('active');
+      });
+      slides.forEach((slide, i) => {
+        if (i === currentIndex && i !== index) {
+          slide.classList.add('exit');
+        }
+      });
+      currentIndex = index;
+      slides[currentIndex].classList.add('active');
+      dots[currentIndex]?.classList.add('active');
+      banner.style.backgroundColor = slides[currentIndex].dataset.color || '#e74c3c';
+    }
+
+    function nextSlide() {
+      showSlide((currentIndex + 1) % slides.length);
+    }
+
+    function startAutoScroll() {
+      if (slides.length > 1) {
+        autoScrollTimer = setInterval(nextSlide, 4000);
+      }
+    }
+
+    function stopAutoScroll() {
+      if (autoScrollTimer) clearInterval(autoScrollTimer);
+    }
+
+    function setClosedCookie() {
+      const d = new Date();
+      d.setTime(d.getTime() + COOKIE_DAYS * 24 * 60 * 60 * 1000);
+      document.cookie = COOKIE_NAME + '=true; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+    }
+
+    function hasClosedCookie() {
+      return document.cookie.split('; ').some(function(c) {
+        return c === COOKIE_NAME + '=true';
+      });
+    }
+
+    function closeBanner() {
+      banner.classList.add('hidden');
+      stopAutoScroll();
+      setClosedCookie();
+    }
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeBanner();
+      });
+    }
+
+    dots.forEach(function(dot, i) {
+      dot.addEventListener('click', function(e) {
+        e.stopPropagation();
+        stopAutoScroll();
+        showSlide(i);
+        startAutoScroll();
+      });
+    });
+
+    if (hasClosedCookie()) {
+      banner.classList.add('hidden');
+    } else {
+      showSlide(0);
+      startAutoScroll();
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initIncidentBanner);
+  } else {
+    initIncidentBanner();
+  }
+</script>

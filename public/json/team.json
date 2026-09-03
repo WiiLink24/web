@@ -9,9 +9,9 @@
         "link": "https://github.com/noahpistilli",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-canada_1f1e8-1f1e6.png"
       },
-            {
+      {
         "name": "Becca Williamson",
-        "title": "Content Management",
+        "title": "Content & PR Lead",
         "color": "#66cdaa",
         "pfp": "/img/pfp/becca.webp",
         "link": "https://bsky.app/profile/jess.undertaleplus.com",
@@ -19,7 +19,7 @@
       },
       {
         "name": "Alex",
-        "title": "Developer / Designer",
+        "title": "Developer & Lead Designer",
         "color": "#5e97f2",
         "pfp": "/img/pfp/alex.webp",
         "link": "https://github.com/Humanoidear",
@@ -27,11 +27,27 @@
       },
       {
         "name": "Jinjo",
-        "title": "Localization Management",
+        "title": "Localization Lead",
         "color": "#6a329f",
         "pfp": "/img/pfp/jinjo.webp",
         "link": "https://twitter.com/JinjoGuy",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-brazil_1f1e7-1f1f7.png"
+      },
+      {
+        "name": "GamerKGR",
+        "title": "Content Lead",
+        "color": "#40E0D0",
+        "pfp": "/img/pfp/gamerkgr.webp",
+        "link": "https://gamerkgr.neocities.org/",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
+        "name": "LunaValoäa",
+        "title": "Localization Lead",
+        "color": "#FDB0C0",
+        "pfp": "/img/pfp/luna.webp",
+        "link": "https://www.youtube.com/@LunaValoaa",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
       },
       {
         "name": "Palapeli",
@@ -74,6 +90,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
       },
       {
+        "name": "Ninuno",
+        "title": "Developer / Content Management",
+        "color": "#FFFFFF",
+        "pfp": "/img/pfp/ninuno.webp",
+        "link": "https://github.com/ninuno",
+        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
+      },
+      {
         "name": "diego",
         "title": "Translator (CA, ES, ZH)",
         "color": "#fc5a4e",
@@ -98,6 +122,14 @@
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
+        "name": "Alex",
+        "title": "Developer / Designer",
+        "color": "#5e97f2",
+        "pfp": "/img/pfp/alex.webp",
+        "link": "https://github.com/Humanoidear",
+        "flag": "/img/flags/val.webp"
+      },
+      {
         "name": "Deoku64",
         "title": "Translator (JP/DEU)",
         "color": "#abc9ff",
@@ -112,14 +144,6 @@
         "pfp": "/img/pfp/philemax.webp",
         "link": "https://www.youtube.com/@Philemax/",
         "flag": "https://em-content.zobj.net/source/twitter/53/flag-for-switzerland_1f1e8-1f1ed.png"
-      },
-      {
-        "name": "Ninuno",
-        "title": "Developer / Content Management",
-        "color": "#FFFFFF",
-        "pfp": "/img/pfp/ninuno.webp",
-        "link": "https://github.com/ninuno",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
       },
       {
         "name": "PablosCorner",
@@ -161,30 +185,6 @@
         "link": "https://twitter.com/WolfCitrus",
         "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-kingdom_1f1ec-1f1e7.png"
       },
-            {
-        "name": "LunaValoäa",
-        "title": "Manager / Translator",
-        "color": "#FDB0C0",
-        "pfp": "/img/pfp/luna.webp",
-        "link": "https://www.youtube.com/@LunaValoaa",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-european-union_1f1ea-1f1fa.png"
-      },
-      {
-        "name": "GamerKGR",
-        "title": "Music Composer",
-        "color": "#40E0D0",
-        "pfp": "/img/pfp/gamerkgr.webp",
-        "link": "https://gamerkgr.neocities.org/",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
-      },
-      {
-        "name": "ryaltheamazing",
-        "title": "Social Media",
-        "color": "#ed3939",
-        "pfp": "/img/pfp/ryal.webp",
-        "link": "https://www.youtube.com/channel/UC3FGsaNpe8khHMwKDkmC6sg",
-        "flag": "https://em-content.zobj.net/source/twitter/376/flag-united-states_1f1fa-1f1f8.png"
-      },
       {
         "name": "dhtdht020",
         "title": "Tooling Developer",
@@ -216,6 +216,14 @@
         "pfp": "/img/pfp/weebo64.webp",
         "link": "https://weebo64.is-a.dev/",
         "flag": "/img/flags/de.webp"
+      },
+      {
+        "name": "Danionel",
+        "title": "Translator (European Spanish)",
+        "color": "#fc9a21",
+        "pfp": "/img/pfp/danionel.webp",
+        "link": "https://x.com/DanionelP",
+        "flag": "/img/flags/es.webp"
       }
     ]
   }

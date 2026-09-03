@@ -33,18 +33,14 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
             data-bs-title={t("site.creator")}
             aria-label="Alex's GitHub"
             style="text-decoration: none;"
-            ><button
-              type="button"
-              class="btn1 btn btn-success"
-              style="background-color:white; color:black !important; border-radius:2px; border:0px; box-shadow:0px 0px 10px #ffffff20; width:15px; height:15px; padding:10px; margin:0px; overflow:hidden;"
-              ><img
+            title={"Last updated @ " + new Date().toLocaleDateString() + " - " + new Date().toLocaleTimeString()}
+            ><img
                 alt="Alex's GitHub PFP"
                 loading="lazy"
                 src="https://github.com/humanoidear.png"
-                style="width:20px; transform:translate(-10px, -13.5px);"
-              /></button
-            >
-            <u>Alex</u></a
+                style="width:20px; height:20px; border-radius: 4px; transform: translate(0, -3px);"
+              />
+            Alex</a
           >
         </p>
         <p
@@ -59,11 +55,12 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
         </p>
         <p
           style="margin:0; margin-top:8px; color:#ffffff80; !important; opacity:0.7; margin-right:8px; text-align:left;">
+          <Icon name="lucide:newspaper" style="margin-bottom:5px;" />
           <a
             href="/press"
             aria-label="WiiLink WFC Link"
-            style="margin-right:5px;"
-            ><Icon name="lucide:newspaper" style="margin-bottom:5px;" /> Press Kit</a
+            style="margin-left:6px;"
+            >Press Kit</a
           >
         </p>
       </div>
@@ -355,7 +352,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
       </h4>
     </div>
 
-    <div class="footer-holder legal" style={display}>
+    <div class="footer-holder legalLinks" style={display}>
       <a href={localizePath("/tos")} aria-label="Terms of Service Link">
         <Icon
           name="lucide:arrow-right"
@@ -375,14 +372,6 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
           style="margin-right:5px; margin-bottom:5px;"
         />
         {t("header.eula-long")}</a
-      >
-      <a
-        href="javascript:googlefc.callbackQueue.push(googlefc.showRevocationMessage)"
-        aria-label="Cookies Message Popup"
-        ><Icon
-          name="lucide:arrow-right"
-          style="margin-right:5px; margin-bottom:5px;"
-        /> Privacy and cookie settings</a
       >
     </div>
   </div>
@@ -491,7 +480,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     padding: 30px;
     margin: auto;
   }
-  .legal {
+  .legalLinks {
     margin-top: 30px;
     opacity: 0.3;
     display: flex;
@@ -499,7 +488,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     align-items: start;
     transition: 0.5s;
   }
-  .legal:hover {
+  .legalLinks:hover {
     opacity: 1;
     transition: 0.5s;
   }
@@ -511,7 +500,7 @@ let { display = "", top = "", flex = "", maxwidth = "" } = Astro.props;
     .tables-holder {
       width: 100% !important;
     }
-    .legal {
+    .legalLinks {
       flex-direction: column;
       gap: 10px;
     }

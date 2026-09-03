@@ -9,21 +9,9 @@
       },
       {
         "title": "<span class='image'></span> Fondos de pantalla",
-        "desc": "¡Fondos de pantalla de WiiLink para tu PC!",
+        "desc": "¡Fondos de pantalla de WiiLink para tus dispositivos!",
         "img": "/img/wallpaper_bg.webp",
         "link": "/extras/wallpapers"
-      },
-      {
-        "title": "<i class='fa-solid fa-user-group'></i> Conoce al equipo",
-        "desc": "¡Los principales colaboradores del proyecto!",
-        "img": "/img/guidebg-2.webp",
-        "link": "404"
-      },
-      {
-        "title": "<i class='fa-solid fa-tag'></i> RiiTag",
-        "desc": "¡Un servicio de etiquetado de juegos para Wii y Wii U!",
-        "img": "/img/guidebg-1.webp",
-        "link": "https://tag.rc24.xyz/"
       },
       {
         "title": "<span class='chart-no-axes-column'></span> Visualizador de encuestas",
@@ -32,46 +20,46 @@
         "link": "/extras/vote"
       },
       {
-        "title": "<i class='fa-solid fa-house'></i> Originales de Wii Room",
-        "desc": "¡Mire las traducciones de los contenidos originales de Nintendo para Wii Room!",
-        "img": "/img/guidebg-3.webp",
-        "link": "404"
-      },
-      {
         "title": "<span class='paintbrush'></span> Temas de WiiLink",
-        "desc": "¡Temas geniales para tu Wii!",
+        "desc": "¡Temas muy chulos para tu consola!",
         "img": "/img/guidebg-3.webp",
         "link": "/extras/themes"
       },
       {
-        "title": "<span class='wifi'></span> WiiLink WFC",
-        "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
-        "img": "/img/guidebg-1.webp",
-        "link": "https://wfc.wiilink24.com"
-      },
-      {
-        "title": "<span class='gamepad-2'></span> Prueba del Wii Remote",
-        "desc": "Una simple página para probar tu Wii Remote",
+        "title": "<span class='gamepad-2'></span> Prueba del mando de Wii",
+        "desc": "Una página sencilla para probar tu mando de Wii",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/internetchannel"
       },
       {
-        "title": "<span class='user'></span> Mii",
+        "title": "<span class='user'></span> Editor de avatares Mii",
         "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/mii"
       },
       {
-        "title": "<span class='image'></span> Trucos del Canal Foto",
+        "title": "<span class='image'></span> Trucos del Canal Fotos",
         "desc": "¡Imágenes para obtener resultados rápidos!",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/photochannel"
       },
       {
-        "title": "<span class='cat'></span> Gato del Canal Noticias",
-        "desc": "¡Un servicio de Conexión wifi de Nintendo en progreso!",
+        "title": "<span class='cat'></span> Gato de las noticias",
+        "desc": "",
         "img": "/img/guidebg-1.webp",
         "link": "/extras/cat"
+      },
+      {
+        "title": "<span class='rc24'></span> Extras de RC24",
+        "desc": "¡Extras en la página web de RiiConnect24!",
+        "img": "/img/guidebg-1.webp",
+        "link": "https://rc24.xyz/goodies"
+      },
+      {
+        "title": "<span class='palette'></span> Conversor multimedia para Wii",
+        "desc": "¡Convierte tus fotos, vídeos y audio para que sean compatibles con el Canal Fotos!",
+        "img": "/img/guidebg-1.webp",
+        "link": "https://wiimediaconverter.wuaze.com"
       }
     ]
   }
