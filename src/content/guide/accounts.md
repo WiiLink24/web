@@ -1,6 +1,6 @@
 ---
 title: WiiLink Accounts
-pubDate: 2026-04-11
+pubDate: 2026-09-06
 description: Get up-to-date instructions on how to create and link a WiiLink Account!
 icon: lucide:id-card
 ---
@@ -39,6 +39,12 @@ Once you have successfully linked your account, navigate back to https://account
 
 ## Enabling Just Eat ordering
 <l class="notice info fullwidth">Follow the guide <a href="/guide/just-eat">here</a> to link your Just Eat account to your WiiLink Account.</l>
+
+<br>
+
+<l class="notice generic fullwidth">We recommend trying out WiiLink Checkout to see all your Wii activity in one place. Learn more about it here: <a href="/guide/checkout">WiiLink Checkout Guide</a></l>
+
+<br>
 
 ## Troubleshooting & Questions
 

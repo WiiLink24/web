@@ -78,6 +78,7 @@ export default defineConfig({
         "chart-bar",
         "x",
         "circle-check",
+        "message-circle",
       ],
       "simple-icons": ["twitter", "discord", "bluesky", "instagram", "youtube", "flathub"]
     }
