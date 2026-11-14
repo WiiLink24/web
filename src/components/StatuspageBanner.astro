@@ -18,13 +18,6 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
 {showTop && (
   <div id="incident-banner" class="incident-banner">
     <div class="incident-banner-inner">
-      {bannerIncidents.length > 1 && (
-        <div class="banner-pagination">
-          {bannerIncidents.map((_, i) => (
-            <span class={`banner-dot ${i === 0 ? 'active' : ''}`} data-index={i}></span>
-          ))}
-        </div>
-      )}
       <div class="banner-slides">
         {bannerIncidents.map((inc, i) => (
           <div class={`banner-slide ${i === 0 ? 'active' : ''}`} data-color={inc.serviceColor} style={`background-color: ${inc.serviceColor};`}>
@@ -35,7 +28,7 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
                 )}
                 <span class="banner-service-name"><b>{inc.serviceName}</b></span>
               </div>
-              -
+              <span class="banner-separator" aria-hidden="true">-</span>
               <a href={inc.shortlink} target="_blank" rel="noopener noreferrer" class="banner-incident-title text-decoration-none">
                 {inc.incidentName}
               </a>
@@ -47,15 +40,32 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
         <Icon name="lucide:x" style="width:18px; height:18px;" />
       </button>
     </div>
+    {bannerIncidents.length > 1 && (
+      <div class="banner-pagination" role="group" aria-label="Incident slides">
+        {bannerIncidents.map((inc, i) => (
+          <button
+            type="button"
+            class={`banner-dot ${i === 0 ? 'active' : ''}`}
+            data-index={i}
+            aria-label={`Show ${inc.serviceName} incident: ${inc.incidentName}`}
+            aria-current={i === 0 ? 'true' : 'false'}
+          ></button>
+        ))}
+      </div>
+    )}
   </div>
 )}
 
 <style>
   .incident-banner {
+    --banner-duration: 4s;
     width: 100%;
     z-index: 10001;
     position: relative;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    background-color: #e74c3c;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: background-color 0.5s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
   }
 
   .incident-banner.hidden {
@@ -77,29 +87,63 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
 
   .banner-pagination {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 6px;
-    padding: 10px 12px;
+    padding: 0 20px 10px;
+    position: absolute;
+    bottom: 0;
     z-index: 2;
-    position: relative;
   }
 
   .banner-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.4);
+    appearance: none;
+    -webkit-appearance: none;
+    width: 4px;
+    height: 4px;
+    padding: 0;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.35);
     cursor: pointer;
-    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+    flex: 0 0 auto;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .banner-dot::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 0;
+    border-radius: inherit;
+    background: white;
   }
 
   .banner-dot.active {
-    background: white;
-    transform: scale(1.3);
+    width: 36px;
+    background: rgba(255, 255, 255, 0.3);
   }
 
-  .banner-dot:hover {
-    background: rgba(255, 255, 255, 0.8);
+  .banner-dot.active::after {
+    width: 100%;
+    animation: banner-fill var(--banner-duration) linear forwards;
+  }
+
+  .banner-dot:not(.active):hover {
+    background: rgba(255, 255, 255, 0.65);
+    transform: scale(1.15);
+  }
+
+  @keyframes banner-fill {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .incident-banner:hover .banner-dot.active::after,
+  .incident-banner.hidden .banner-dot.active::after {
+    animation-play-state: paused;
   }
 
   .banner-slides {
@@ -111,36 +155,35 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
 
   .banner-slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: translateY(10px) scale(0.99);
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
+    background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
   }
 
   .banner-slide.active {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     pointer-events: auto;
     position: relative;
+    z-index: 1;
   }
 
   .banner-slide.exit {
     opacity: 0;
-    transform: translateY(-8px);
+    transform: translateY(-10px) scale(0.99);
   }
 
   .banner-slide-content {
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 10px 20px;
+    padding: 12px 52px;
     color: white;
     flex-wrap: wrap;
     justify-content: center;
@@ -157,7 +200,7 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
     width: 28px;
     height: 28px;
     object-fit: contain;
-    filter: brightness(10000%);
+    filter: brightness(10000%) drop-shadow(0 1px 2px rgba(0, 0, 0, 0.2));
   }
 
   .banner-service-name {
@@ -166,35 +209,68 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
     white-space: nowrap;
   }
 
+  .banner-separator {
+    opacity: 0.55;
+    padding: 0 2px;
+  }
+
   .banner-incident-title {
     color: white;
     text-decoration: underline;
+    text-underline-offset: 3px;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.2s;
+    transition: opacity 0.2s ease;
   }
 
   .banner-incident-title:hover {
-    opacity: 0.85;
+    opacity: 0.8;
   }
 
   .banner-close {
-    background: none;
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    padding: 0;
     border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
     color: white;
     cursor: pointer;
-    padding: 10px 14px;
-    opacity: 0.7;
-    transition: 0.2s;
+    opacity: 0.8;
+    transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
     display: flex;
     align-items: center;
-    z-index: 2;
-    position: relative;
+    justify-content: center;
+    z-index: 3;
     flex-shrink: 0;
   }
 
   .banner-close:hover {
     opacity: 1;
+    background: rgba(255, 255, 255, 0.22);
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .incident-banner,
+    .banner-dot,
+    .banner-slide,
+    .banner-close {
+      transition: none;
+    }
+
+    .banner-slide {
+      transform: none;
+    }
+
+    .banner-dot.active::after {
+      animation: none;
+      width: 100%;
+    }
   }
 
   .navbar-incident {
@@ -233,36 +309,36 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
     const COOKIE_NAME = 'incident-banner-closed';
     const COOKIE_DAYS = 3;
     let currentIndex = 0;
-    let autoScrollTimer = null;
 
     function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'exit');
-        dots[i]?.classList.remove('active');
-      });
-      slides.forEach((slide, i) => {
-        if (i === currentIndex && i !== index) {
-          slide.classList.add('exit');
-        }
-      });
+      const previous = currentIndex;
       currentIndex = index;
-      slides[currentIndex].classList.add('active');
-      dots[currentIndex]?.classList.add('active');
-      banner.style.backgroundColor = slides[currentIndex].dataset.color || '#e74c3c';
+
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        slide.classList.toggle('exit', i === previous && previous !== index);
+        slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+      });
+
+      if (index !== previous) {
+        dots.forEach(function(dot) { dot.classList.remove('active'); });
+      }
+
+      const activeDot = dots[index];
+      if (activeDot && !activeDot.classList.contains('active')) {
+        void activeDot.offsetWidth;
+        activeDot.classList.add('active');
+      }
+
+      dots.forEach(function(dot, i) {
+        dot.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+
+      banner.style.backgroundColor = slides[index]?.dataset.color || '#e74c3c';
     }
 
     function nextSlide() {
-      showSlide((currentIndex + 1) % slides.length);
-    }
-
-    function startAutoScroll() {
-      if (slides.length > 1) {
-        autoScrollTimer = setInterval(nextSlide, 4000);
-      }
-    }
-
-    function stopAutoScroll() {
-      if (autoScrollTimer) clearInterval(autoScrollTimer);
+      if (slides.length > 1) showSlide((currentIndex + 1) % slides.length);
     }
 
     function setClosedCookie() {
@@ -279,7 +355,6 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
 
     function closeBanner() {
       banner.classList.add('hidden');
-      stopAutoScroll();
       setClosedCookie();
     }
 
@@ -290,12 +365,16 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
       });
     }
 
-    dots.forEach(function(dot, i) {
+    dots.forEach(function(dot) {
       dot.addEventListener('click', function(e) {
         e.stopPropagation();
-        stopAutoScroll();
-        showSlide(i);
-        startAutoScroll();
+        showSlide(Number(dot.dataset.index));
+      });
+
+      dot.addEventListener('animationend', function() {
+        if (!dot.classList.contains('active')) return;
+        if (banner.classList.contains('hidden')) return;
+        nextSlide();
       });
     });
 
@@ -303,7 +382,6 @@ const navbarColor = bannerIncidents[0]?.serviceColor ?? "#e74c3c";
       banner.classList.add('hidden');
     } else {
       showSlide(0);
-      startAutoScroll();
     }
   }
 

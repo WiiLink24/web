@@ -1,0 +1,788 @@
+---
+import { t } from "i18next";
+import { localizePath } from "astro-i18next";
+import { Trans } from "astro-i18next/components";
+import { Icon } from "astro-icon/components";
+import { readFileSync } from "node:fs";
+
+async function fetchGitHub() {
+  try {
+    const response = await fetch('https://api.github.com/repos/WiiLink24/WiiLink-Patcher-GUI/releases/latest', {
+      headers: {
+        'Authorization': `Bearer ${import.meta.env.GITHUB_TOKEN}`
+      }
+    });
+    const data = await response.json();
+    return data || 0;
+  } catch (error) {
+    console.error('GitHub Error:', error);
+    return 'Error';
+  }
+}
+
+const releaseData = await fetchGitHub();
+
+const assets = releaseData.assets;
+
+const fetcher = 'https://raw.githubusercontent.com/WiiLink24/web/refs/heads/main/public/json' + localizePath("/hero.json");
+
+async function fetchHero() {
+  try {
+    const response = await fetch(fetcher);
+    const responseText = await response.text();
+    const data = JSON.parse(responseText);
+    return data.hero || {};
+  } catch (error) {
+    console.error('Hero Error:', error);
+    return {};
+  }
+}
+
+function updateTagline() {
+    let taglines = [
+      "Meet Tulip, our adorable mascot!",
+      "There's someone new who'd like to meet you!",
+      "Got questions? Tulip's got answers!"
+    ];
+    let randomTagline = taglines[Math.floor(Math.random() * taglines.length)];
+    let letters = randomTagline.split("");
+    return letters
+      .map(
+        (letter, index) =>
+          `<span style="--delay: ${index * 0.02}s; --bob-delay: ${index * 0.05}s">${letter === " " ? "&nbsp;" : letter}</span>`
+      )
+      .join("");
+}
+
+const heroTitles = await fetchHero();
+
+const tulipPoses = JSON.parse(
+  readFileSync("public/img/tulip/tulip_poses/poses.json", "utf8")
+).poses;
+---
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="darkreader-lock" />
+</head>
+
+<div class="holder">
+  <div class="left">
+    <div style="display:flex; align-items:center; gap:18px;">
+      <img
+        alt="WiiLink Logo Scrapbook Style"
+        class="logo"
+        src="/img/tulip/logo.webp"
+        alt="logo"
+        width="250px"
+        style="transform:translate(-60px, 0); filter:invert(0) !important;"
+      />
+      <!-- <marquee
+        scrollamount="1"
+        scrolldelay="20"
+        truespeed
+        class="badge notice-mobile"
+        style="font-size: 18px; text-align: left; background: linear-gradient(45deg, rgb(49, 118, 30), rgb(58, 119, 5)); color: white; margin: 10px 0px;padding: 15px;font-weight: 500; white-space: nowrap; overflow: hidden; cursor:pointer; text-overflow: ellipsis; line-height: 25px;"
+        ><Icon
+          name="lucide:app-window"
+          style="margin-right:8px; margin-bottom:3px;"
+        /> Check out our all new GUI Patcher!</marquee
+      > -->
+    </div>
+    <h2 id="tagline" style="width:auto; margin-top:18px; font-weight:700;" set:html={updateTagline()}
+    ></h2>
+    <p style="font-size:20px; opacity:0.7;">
+      {t("site.heroDesc")}
+    </p>
+    <div class="line-container">
+      <p style="opacity:0.5;">
+        <Icon name="lucide:info" style="margin-right:5px; margin-bottom:3px;" />
+        <a
+          href="https://github.com/WiiLink24/WiiLink-Patcher-GUI"
+          aria-label="WiiLink Patcher GUI"
+          style="text-decoration: none;">WiiLink Patcher GUI {releaseData.tag_name}</a
+        > | {t("site.heroDev")}
+        <a
+          href="https://github.com/hwalker56"
+          aria-label="Harry's GitHub Link">Harry</a
+        >
+      </p>
+      <div class="horizontal-line"></div>
+    </div>
+    <div class="btn-container">
+      <div class="btn-group" id="extra-btn">
+        <button
+          type="button"
+          id="download-btn"
+          class="btn btn-primary btn-lg"
+          style="text-align:left; color:white !important; margin-right:3px; font-size:18px; border-radius:12px 4px 4px 12px;"
+          ><img
+            alt="Loading..."
+            src="/img/loading.gif"
+            style="transform:translate(0, -2px); filter:brightness(1000);"
+            width="20px"
+          />
+          {t("site.load")}</button
+        >
+        <button
+          id="extra-btn-2"
+          type="button"
+          class="btn btn-primary btn-lg dropdown-toggle dropdown-toggle-split"
+          style="color:white !important; border-radius:4px 12px 12px 4px;"
+          data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li>
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+                <Icon
+                  name="microsoft"
+                  style="margin-right:5px; margin-bottom:3px;"
+                />
+                {t("site.downloadFor")} Windows
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
+              </div>
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[5].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-zip"
+                aria-label="Windows ZIP Download">.zip</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[4].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-windows-exe"
+                aria-label="Windows EXE Download">.exe</a
+            >
+            </div>
+          </li>
+          <li>
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+                <Icon
+                  name="apple"
+                  style="margin-right:5px; margin-bottom:3px;"
+                />
+                {t("site.downloadFor")} macOS
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
+            </div>
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[2].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-macos-arm"
+                aria-label="Apple Silicon Download">Apple Silicon</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[3].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-macos-x64"
+                aria-label="Apple x64 Download">x64</a
+              >
+            </div>
+          </li>
+          <li>
+            <div class="line-container">
+              <p
+                style="padding:0px 17px 0px 17px; margin-bottom:0; opacity:0.7;">
+                <Icon
+                  name="linux"
+                  style="margin-right:5px; margin-bottom:3px;"
+                />
+                {t("site.downloadFor")}
+                Linux
+                <div
+                  class="horizontal-line"
+                  style="transform:translate(0, 0); opacity:0.5;">
+                </div>
+              </p>
+            </div>
+            <div
+              style="margin-top: 5px; display:flex; flex-direction: row; gap: 8px; text-align: center;">
+              <a
+                class="dropdown-item"
+                href="https://flathub.org/apps/ca.wiilink.Patcher"
+                style="color:var(--color) !important;"
+                id="download-linux-flathub"
+                aria-label="Flathub Download"><Icon name="simple-icons:flathub" style="margin-right:5px; margin-bottom:3px;" />Flathub</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[1].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-linux-x64"
+                aria-label="Linux x64 Download">x64</a
+              >
+              <a
+                class="dropdown-item"
+                href={releaseData.assets?.[0].browser_download_url}
+                style="color:var(--color) !important;"
+                id="download-linux-arm"
+                aria-label="Linux ARM64 Download">ARM64</a
+              >
+            </div>
+          </li>
+          <div class="line-container" style="gap: 8px; margin-top: 8px;">
+            <p style="padding:0px 0px 0px 17px; margin-bottom:0; opacity:0.7;">
+              {t("site.other")}
+              <div
+                class="horizontal-line"
+                style="transform:translate(0, 0); opacity:0.5;">
+              </div>
+            </p>
+          </div>
+          <li>
+            <a
+              class="dropdown-item"
+              href="https://gist.github.com/hwalker56/f64f3ac7fa0bdcfe62cf5326db89838f"
+              aria-label="Download for Android"
+              style="color:var(--color) !important;"
+              ><Icon
+                name="android"
+                style="margin-right:5px; margin-bottom:3px;"
+              />
+              {t("site.downloadFor")} Android</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="https://github.com/WiiLink24/WiiLink-Patcher-GUI/releases/latest"
+              aria-label="Changelog"
+              style="color:var(--color) !important;"
+              ><Icon
+                name="lucide:book"
+                style="margin-right:5px; margin-bottom:3px;"
+              />
+              {t("site.changelog")}</a
+            >
+          </li>
+          <li>
+            <a
+              id="download-cli"
+              class="dropdown-item"
+              style="display:flex; align-items:center; justify-content:space-between;"
+              href="https://github.com/WiiLink24/WiiLink24-Patcher"
+              aria-label="Download CLI patcher"
+              ><div>
+                <Icon
+                  name="lucide:terminal"
+                  style="margin-right:5px; margin-bottom:3px;"
+                />
+                CLI Patcher
+              </div></a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <button
+        class="btn btn-prmiary guidebtn btn-lg"
+        style="padding-top:11px; padding-bottom:11px; border:1px solid #0d6efd; font-size:18px; border-radius:12px;"
+        onclick="window.location.href = '/guide/install';">
+        <Icon
+          name="lucide:arrow-up-right"
+          style="margin-right:5px; margin-bottom:3px;"
+        />
+        {t("site.installGuide")}
+      </button>
+    </div>
+    <div class="form-check">
+      <input
+        class="form-check-input"
+        type="checkbox"
+        value=""
+        id="flexCheckDefault"
+      />
+      <label class="form-check-label" for="flexCheckDefault">
+        <Trans i18nKey="site.terms">
+          I have read and accepted the <a
+            href={localizePath("/tos")}
+            aria-label="Terms of Service Link">terms of service</a
+          > and the
+          <a href={localizePath("/privacy-policy")} aria-label="Privacy Policy Link"
+            >privacy policy</a
+          >.
+        </Trans>
+      </label>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="holder-svc" id="hero-services">
+      <img
+        alt="Loading..."
+        src="/img/loading.gif"
+        style="top:50%; left:50%; filter:brightness(1000); transform:translate(-50%, -50%); position:absolute;"
+        width="36px"
+      />
+    </div>
+    <div class="bottom-cta">
+      <div class="bar-holder">
+        <div id="bar" class="bar"></div>
+      </div>
+      <a href="#intro" aria-label="Jump to Services List" class="more">
+        {t("site.heroMorePrompt")}
+        <Icon name="lucide:chevron-right" />
+      </a>
+    </div>
+  </div>
+
+  <div id="withThe" style="display:none;">{t("site.withThe")}</div>
+  <div id="downloadPrompt" style="display:none;">
+    {t("site.downloadPrompt")}
+  </div>
+</div>
+
+<script is:inline define:vars={{ assets, heroTitles, tulipPoses }}>
+  function osdetect() {
+    let userAgent = window.navigator.userAgent;
+    let os = "Unknown OS";
+
+    if (userAgent.indexOf("Win") != -1) os = "Windows";
+    if (userAgent.indexOf("Mac") != -1) os = "MacOS";
+    if (userAgent.indexOf("Linux") != -1) os = "Linux";
+
+    return os;
+  }
+
+  function updateButtons() {
+    const buttons = {
+      download: document.getElementById("download-btn"),
+      extra: document.getElementById("extra-btn"),
+      extra2: document.getElementById("extra-btn-2")
+    };
+
+    switch (osdetect()) {
+      case "Windows":
+        buttons.download.innerHTML = `<span class="microsoft"></span> Download for Windows`;
+        buttons.download.onclick = () => window.location.href = assets[4].browser_download_url;
+        break;
+      case "MacOS":
+        buttons.download.innerHTML = `<span class="apple"></span> Download for macOS`;
+        buttons.download.onclick = () => window.location.href = assets[2].browser_download_url;
+        break;
+      case "Linux":
+        buttons.download.innerHTML = `<span class="linux"></span> Download for Linux`;
+        buttons.download.onclick = () => window.location.href = "https://flathub.org/apps/ca.wiilink.Patcher";
+        break;
+      default:
+        buttons.download.innerHTML = `<span class="download"></span> ${document.getElementById("downloadPrompt").textContent}`;
+        buttons.download.onclick = () => window.location.href = "https://www.github.com/WiiLink24/WiiLink-Patcher-GUI/releases";
+    }
+
+    const checkbox = document.getElementById("flexCheckDefault");
+    if (!checkbox) return;
+
+    const isEnabled = checkbox.checked;
+
+    Object.values(buttons).forEach(button => {
+      if (!button) return;
+      button.classList.toggle("disabled", !isEnabled);
+      button.style.transition = isEnabled ? "0.2s" : "";
+    });
+  }
+
+  document
+    .getElementById("flexCheckDefault")
+    ?.addEventListener("change", updateButtons);
+
+    let currentIndex = 0;
+  
+  function updateHero() {
+    let services = heroTitles.element;
+    let randomServices = [];
+  
+    for (let i = 0; i < 3; i++) {
+      randomServices.push(services[(currentIndex + i) % services.length]);
+    }
+  
+    currentIndex = (currentIndex + 3) % services.length;
+  
+    let withThe = document.getElementById("withThe").innerHTML;
+    let html = "";
+    const paperIndex = Math.floor(Math.random() * randomServices.length);
+    const pose = tulipPoses.length
+      ? tulipPoses[Math.floor(Math.random() * tulipPoses.length)]
+      : null;
+  
+    randomServices.forEach((service, index) => {
+      const isPaper = index === paperIndex;
+      const paperStyle = isPaper
+        ? "border-radius:0;overflow:visible;--color:#000;"
+        : "";
+      const paperLayer = isPaper
+        ? `<div aria-hidden="true" style="left:0; top:0; width:100%;height:100%;position:absolute;background-color:#f3efe4;background-image:url('/img/tulip/Paper_Texture.png');background-size:cover;background-position:center;-webkit-mask-image:url('/img/tulip/Banner_mask.svg');mask-image:url('/img/tulip/Banner_mask.svg');-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;pointer-events:none;z-index:0;"></div>`
+        : "";
+      const tulipLayer = isPaper && pose
+        ? (() => {
+            const p = pose.position || {};
+            return `<img class="tulip-pose" alt="" aria-hidden="true" src="/img/tulip/tulip_poses/${pose.image}" style="position:absolute;z-index:2;pointer-events:none;width:${pose.width || "90px"};top:${p.top || "auto"};right:${p.right || "auto"};bottom:${p.bottom || "auto"};left:${p.left || "auto"};transform:${pose.transform || "none"};transform-origin:${pose.origin || "center"};" />`;
+          })()
+        : "";
+      html += `
+      <div class="element" style="display:flex; flex-direction:row; align-items:center; gap:20px; width:100%; padding:20px; border-radius:12px; overflow:hidden; position:relative; animation-name: fadeup; animation-duration: 1s; animation-fill-mode: both; animation-delay: ${index * 0.2}s; ${paperStyle}">
+        ${paperLayer}
+        ${tulipLayer}
+        <img alt="${service.name} Channel Banner" src="/img/${service.icon}" style="height:70px; z-index: 1; position:relative;" alt="${service.name}" />
+        <div style="z-index: 1; position:relative;">
+          <h4 style="display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">${service.desc}</h4>
+          <p style="opacity:0.7; margin-bottom:0 !important;">${withThe}
+          <a href="${service.link}" aria-label="${service.name} Link"${isPaper ? ' style="color:#000 !important;"' : ""}>${service.name}</a>
+          </p>
+        </div>
+        ${isPaper ? "" : `
+        <div style="transform:scale(1.1); height: 100%; width: 100%; overflow: hidden; position: absolute;">
+          <img alt="${service.name} Channel Background" src="/img/${service.bg}" class="webkit-hide" style="filter:blur(8px) saturate(2); opacity:var(--opacity); height:200px; width:500px; -webkit-mask-image: linear-gradient(to left, transparent 25%, black 75%); mask-image: linear-gradient(to left, transparent 8%, black 100%); z-index:0; position:absolute;" alt="${service.name}" />
+        </div>`}
+      </div>
+    `;
+    });
+    document.getElementById("hero-services").innerHTML = html;
+  
+    const bar = document.getElementById("bar");
+    bar.style.animation = "none";
+    void bar.offsetWidth;
+    bar.style.animation = "bar 10s linear forwards";
+    setTimeout(() => {
+      document
+        .querySelectorAll(".element")
+        .forEach(el => el.classList.add("fadeOut"));
+    }, 9500);
+  }
+
+    updateHero();
+    updateButtons();
+    setInterval(updateHero, 10000);
+</script>
+
+<style>
+  .holder {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .left {
+    width: 100%;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: fadeup 500ms 0.5s ease forwards;
+  }
+
+  .logo {
+    filter: invert(1);
+  }
+
+  html.dark .logo {
+    filter: invert(0);
+  }
+
+  .btn-container {
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+    gap: 10px;
+  }
+
+  a:hover {
+    color: white !important;
+    color: AccentColor !important;
+  }
+
+  .form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    background-color: AccentColor;
+    border-color: AccentColor;
+  }
+
+  .btn-group {
+    display: grid;
+    grid-template-columns: 8fr 1fr;
+  }
+
+  .form-check {
+    margin-top: 15px;
+  }
+
+  li {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  .polka-dot {
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(var(--color) 10%, transparent 11%),
+      radial-gradient(var(--color) 10%, transparent 11%);
+    background-size: 30px 30px;
+    background-position:
+      0 0,
+      30px 30px;
+    opacity: 0.3;
+    left: -30px;
+    top: -30px;
+    background-repeat: repeat;
+    animation: rotate 240s linear infinite;
+    display: none;
+    position: absolute;
+    z-index: 0;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+    padding: 8px !important;
+    background-color: var(--bg-color-secondary);
+    border-radius: 12px;
+    z-index: 1000;
+    position: relative;
+  }
+
+  .dropdown-item {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    background-color: var(--bg-color-tertiary);
+    border-radius: 4px;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed !important;
+    transition: 0.2s;
+  }
+
+  .bottom-cta {
+    max-width: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  .holder-svc {
+    max-width: 600px;
+    height: 500px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px;
+    position: relative;
+  }
+
+  .more {
+    opacity: 0.7;
+    transform: translate(0, -5px);
+    font-size: 20px;
+    text-align: right;
+    text-decoration: none;
+    transition: 0.2s;
+  }
+
+  .more:hover {
+    opacity: 1;
+    transition: 0.2s;
+  }
+
+  .more i {
+    transition: 0.2s;
+  }
+
+  .more:hover i {
+    transform: translate(5px, 0);
+    transition: 0.2s;
+  }
+
+  .guidebtn:hover {
+    background-color: #0d6efd;
+    color: white !important;
+  }
+
+  .bar-holder {
+    width: 150px;
+    height: 10px;
+    transform: translate(0, -5px);
+    border-radius: 80px;
+    background-color: var(--bg-opaque-1);
+  }
+
+  .bar {
+    width: 50%;
+    height: 100%;
+    background-color: var(--color);
+    background-color: AccentColor;
+    opacity: 0.3;
+    border-radius: 80px;
+    animation: bar 1s infinite;
+    overflow: hidden;
+  }
+
+  .line-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .line-container .horizontal-line {
+    flex-grow: 1;
+    height: 1px;
+    background-color: var(--color);
+    opacity: 0.5;
+    margin-left: 10px;
+    transform: translate(0, -5px);
+  }
+
+  @keyframes fadeup {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    .right {
+      display: none;
+    }
+    .logo {
+      width: 120px;
+      margin-top: 80px;
+    }
+    .notice-mobile {
+      width: 100%;
+    }
+    .left {
+      left: 50%;
+      transform: translate(-50%, 0) !important;
+      position: relative;
+    }
+    .promotional-video {
+      display: block !important;
+    }
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>
+
+<style is:global>
+  #tagline span {
+    opacity: 0;
+    transform: translateY(5px);
+    font-size: 35px !important;
+    display: inline-block;
+    animation: fadeUpLetter 0.2s forwards;
+    animation-delay: var(--delay);
+    transition: 0.1s;
+  }
+
+  #tagline:hover span {
+    opacity: 1;
+    transform: translateY(0px);
+    animation: bob 3s infinite;
+    animation-delay: var(--bob-delay);
+  }
+
+  @keyframes bob {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes fadeUpLetter {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bar {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  .tulip-pose {
+    animation: tulip-tilt 3s steps(2, jump-none) infinite;
+  }
+
+  @keyframes tulip-tilt {
+    from {
+      rotate: -2deg;
+    }
+    to {
+      rotate: 2deg;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tulip-pose {
+      animation: none;
+    }
+  }
+
+  .element.fadeOut {
+    animation-name: fadeOut !important;
+    animation-duration: 0.45s !important;
+    animation-fill-mode: both !important;
+  }
+
+  @supports (font: -apple-system-body) and (-webkit-appearance: none) {
+    .webkit-hide {
+      display: none;
+    }
+    .element {
+      background-color: var(--bg-opaque-1);
+      border: 1px solid var(--border-color);
+    }
+  }
+</style>

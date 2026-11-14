@@ -1,0 +1,64 @@
+{
+  "poses": [
+    {
+      "image": "tulip_hanging.webp",
+      "position": {
+        "top": "-38px",
+        "right": "18px",
+        "bottom": "auto",
+        "left": "auto"
+      },
+      "width": "180px",
+      "transform": "rotate(-6deg)",
+      "origin": "top center"
+    },
+    {
+      "image": "tulip_mailperson.png",
+      "position": {
+        "top": "auto",
+        "right": "-6px",
+        "bottom": "0px",
+        "left": "auto"
+      },
+      "width": "230px",
+      "transform": "rotate(3deg)",
+      "origin": "bottom center"
+    },
+    {
+      "image": "tulip_playing.png",
+      "position": {
+        "top": "auto",
+        "right": "50px",
+        "bottom": "0px",
+        "left": "auto"
+      },
+      "width": "250px",
+      "transform": "rotate(4deg)",
+      "origin": "bottom center"
+    },
+    {
+      "image": "tulip_sitting.png",
+      "position": {
+        "top": "auto",
+        "right": "6px",
+        "bottom": "-32px",
+        "left": "auto"
+      },
+      "width": "150px",
+      "transform": "rotate(2deg)",
+      "origin": "bottom center"
+    },
+    {
+      "image": "tulip_sleeping.png",
+      "position": {
+        "top": "auto",
+        "right": "auto",
+        "bottom": "-26px",
+        "left": "-14px"
+      },
+      "width": "180px",
+      "transform": "rotate(-4deg)",
+      "origin": "bottom center"
+    }
+  ]
+}
